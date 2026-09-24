@@ -46,6 +46,27 @@ Zusätzlich wollen wir testen, ob das Training besser funktioniert, wenn sich w�
 - eventuell Energieverbrauch
 - Unterschied zwischen Simulation und echtem Roboter
 
+## Aufgabenverteilung
+
+**Kolja**
+- Simulation
+- Reinforcement Learning
+- Training
+- Auswertung der Trainingsdaten
+
+**Ilgar**
+- Aufbau des echten Roboters
+- Elektronik und Motoren
+- Kalibrierung
+- Tests in der echten Welt
+
+**Zusammen**
+- Planung
+- Sim-to-Real
+- Experimente
+- Vergleich der Ergebnisse
+- Präsentation
+
 ## Technik
 
 - Python
