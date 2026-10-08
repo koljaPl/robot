@@ -1,0 +1,113 @@
+{
+  "status": "PROVISIONAL FIT/COST PROTOTYPE; NOT RELEASED FOR MANUFACTURE",
+  "units": "mm",
+  "clearance_mm": 0.4,
+  "parts": [
+    {
+      "part": "torso",
+      "quantity": 1,
+      "bounding_box_mm": [
+        32.0,
+        82.0,
+        88.75
+      ],
+      "volume_cm3": 16.91830530884189,
+      "solid_petg_mass_g_at_1_27": 21.486247742229203,
+      "connected_components": 1,
+      "watertight": true
+    },
+    {
+      "part": "left_thigh",
+      "quantity": 1,
+      "bounding_box_mm": [
+        24.0,
+        13.5,
+        87.75
+      ],
+      "volume_cm3": 4.151991779835497,
+      "solid_petg_mass_g_at_1_27": 5.273029560391081,
+      "connected_components": 1,
+      "watertight": true
+    },
+    {
+      "part": "left_shin",
+      "quantity": 1,
+      "bounding_box_mm": [
+        24.0,
+        24.0,
+        78.0
+      ],
+      "volume_cm3": 4.900081498575192,
+      "solid_petg_mass_g_at_1_27": 6.223103503190494,
+      "connected_components": 1,
+      "watertight": true
+    },
+    {
+      "part": "left_foot",
+      "quantity": 1,
+      "bounding_box_mm": [
+        90.0,
+        45.0,
+        38.25
+      ],
+      "volume_cm3": 14.186070676828875,
+      "solid_petg_mass_g_at_1_27": 18.01630975957267,
+      "connected_components": 1,
+      "watertight": true
+    },
+    {
+      "part": "right_thigh",
+      "quantity": 1,
+      "bounding_box_mm": [
+        24.0,
+        13.5,
+        87.75
+      ],
+      "volume_cm3": 4.151991779835497,
+      "solid_petg_mass_g_at_1_27": 5.273029560391081,
+      "connected_components": 1,
+      "watertight": true
+    },
+    {
+      "part": "right_shin",
+      "quantity": 1,
+      "bounding_box_mm": [
+        24.0,
+        24.0,
+        78.0
+      ],
+      "volume_cm3": 4.900081498575192,
+      "solid_petg_mass_g_at_1_27": 6.223103503190494,
+      "connected_components": 1,
+      "watertight": true
+    },
+    {
+      "part": "right_foot",
+      "quantity": 1,
+      "bounding_box_mm": [
+        90.0,
+        45.0,
+        38.25
+      ],
+      "volume_cm3": 14.186070676828875,
+      "solid_petg_mass_g_at_1_27": 18.01630975957267,
+      "connected_components": 1,
+      "watertight": true
+    }
+  ],
+  "total_solid_volume_cm3": 63.394593219321024,
+  "total_solid_petg_mass_g": 80.5111333885377,
+  "additional_parts": [
+    {
+      "part": "TPU sole",
+      "quantity": 2,
+      "dimensions_mm": [
+        90,
+        45,
+        1
+      ],
+      "estimated_mass_each_g": 4.86
+    }
+  ],
+  "print_request": "7 PETG frames: 0.2 mm layers, 3 perimeters, 25% infill. 2 TPU 95A soles, bonded to feet with adhesive included. All through holes clear without drilling; supports removed; include VAT and shipping. Quotation plate excludes soles and is not a printer-bed layout."
+}
