@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-08",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "versions": {
+    "mujoco": "3.15.0",
+    "gymnasium": "1.4.0",
+    "stable-baselines3": "2.9.0",
+    "torch": "2.14.1+cpu",
+    "numpy": "2.5.3",
+    "tensorboard": "2.21.0",
+    "pyserial": "3.5",
+    "imageio": "2.38.1",
+    "imageio-ffmpeg": "0.6.0",
+    "pytest": "9.1.1",
+    "trimesh": "5.1.1",
+    "manifold3d": "3.5.4"
+  },
+  "source_sha256": {
+    "robot.xml": "75765723cf968895ec3dfc3b8341fce5867981b92f194e53cff653c68dc4fddd",
+    "physical_spec.json": "1d87f5af712793e0604d287a7de355d32da29fa9a27d83f6034085f800a6b80e",
+    "robot_config.py": "215c244bed997e97c2c8f8ea67893f27ae3f17fbdc228cddb444fb791a2cae3e",
+    "humanoid_env.py": "33afc11cc23e1ba79ecbc6333fd4ade373cf640f27dbe218c5ef9be4b6f17698",
+    "servo_control.py": "c0e9af86176d68be27250edef1c7b010b842c38d7329eb7c3751d4cf962f100e",
+    "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+    "train.py": "4426fbfff47305d12751d31ccb6904143c66f31d306449949008f092f60ba13b",
+    "evaluate.py": "dbfd8191ac8ac0d82c75c23a68160597f78b2b6004fbaaf26196500963207d3e",
+    "hardware_interface.py": "e063bd9d19f5956b67ab0be52a5169b847546c3ad6eafc2816e210c686289044",
+    "requirements.txt": "8fd1001ef996222f02a8aedd484c9c6fb1b2e106d9eac2d6ff2e9cce16765ca3"
+  },
+  "checkpoint_sha256": "ebfeebd77ffb352d25fcb31f423bdf2c14eddd6b721575bcefbd624a90d71aaa",
+  "tests": "12 passed in 4.48s",
+  "training_steps": 10240,
+  "supplied_checkpoint_steps": 10000,
+  "resume_check_additional_steps": 1024,
+  "eval_seed_range": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004
+  ],
+  "hardware_status": "not built or tested; quote/budget/fit gates incomplete",
+  "policy_result": "standing/slight drift; no walking target achieved"
+}

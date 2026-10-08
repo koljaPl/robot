@@ -1,0 +1,23 @@
+{
+  "status": "INCOMPLETE",
+  "known_delivered_subtotal_eur": "90.32",
+  "remaining_for_all_unknowns_eur": "9.68",
+  "confirmed_minimum_shortfall_eur": "0.00",
+  "total_price_eur": null,
+  "pending_prices": [
+    "7 ready-finished PETG frames + 2 bonded TPU soles, VAT and German shipping",
+    "6 matching horns + 6 servo shaft retaining screws",
+    "12 M2 x 8 mm ear screws, 12 M2 nuts, 24 M2 washers; 12 horn-to-frame screws/washers matched to supplied horns",
+    "5 A rated DC female 5.5 x 2.1 mm input pigtail/coupler and accessible disconnect, strain relief"
+  ],
+  "unresolved_checks": [
+    "Delivered print/fastener/sole quote",
+    "Actual servo ear/shaft/horn dimensions and horn inclusion",
+    "5 A rated input connector, short bus and extension branch suitability",
+    "Servo signal threshold works at 3.3 V",
+    "Helper labour confirmed free or its quoted charge included",
+    "USB-A computer port available",
+    "Actual delivered checkout totals and stock"
+  ],
+  "purchase_cleared": false
+}

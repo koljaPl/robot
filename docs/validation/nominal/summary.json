@@ -1,0 +1,20 @@
+{
+  "episodes": 5,
+  "falls": 0,
+  "fall_rate": 0.0,
+  "mean_distance_m": 0.001524334695870639,
+  "mean_forward_speed_m_s": 5.081115652902131e-05,
+  "mean_duration_s": 30.0,
+  "mean_total_reward": 6.005963453344355,
+  "walking_successes": 0,
+  "domain_randomization": false,
+  "policy": "docs/validation/smoke_checkpoint.zip",
+  "xml_sha256": "75765723cf968895ec3dfc3b8341fce5867981b92f194e53cff653c68dc4fddd",
+  "seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004
+  ]
+}

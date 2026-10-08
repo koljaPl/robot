@@ -1,0 +1,26 @@
+{
+  "seed": 0,
+  "steps": 10240,
+  "randomization": false,
+  "randomization_config": {
+    "mass": 0.05,
+    "friction": 0.15,
+    "strength": 0.15,
+    "speed": 0.1,
+    "damping": 0.2,
+    "offset_rad": 0.017453292519943295,
+    "delay_seconds": [
+      0.02,
+      0.04
+    ],
+    "gyro_bias": 0.01,
+    "accel_bias": 0.05,
+    "sensor_noise_scale": [
+      0.8,
+      1.2
+    ]
+  },
+  "episode_seconds": 30,
+  "xml_sha256": "75765723cf968895ec3dfc3b8341fce5867981b92f194e53cff653c68dc4fddd",
+  "status": "simulation training; does not establish hardware walking"
+}

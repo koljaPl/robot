@@ -1,0 +1,280 @@
+{
+  "status": "FINITE PROTOTYPE AUDIT; holes/ears/horns unmeasured; not manufacturing approval",
+  "poses": [
+    {
+      "pose": "home",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "zero",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "all_low",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "all_high",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "left_swing",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_0",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_1",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_2",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_3",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_4",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_5",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_6",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_7",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_8",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_9",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_10",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_11",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_12",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_13",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_14",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_15",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_16",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_17",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_18",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_19",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_20",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_21",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_22",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_23",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_24",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_25",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_26",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_27",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_28",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_29",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_30",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_31",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_32",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_33",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_34",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_35",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_36",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_37",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_38",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_39",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_40",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_41",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_42",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_43",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_44",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_45",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_46",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_47",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_48",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    },
+    {
+      "pose": "seed123_sample_49",
+      "frame_intersections": [],
+      "own_servo_intersections": []
+    }
+  ]
+}
