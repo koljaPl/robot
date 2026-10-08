@@ -1,0 +1,507 @@
+{
+  "name": "School Biped S6",
+  "status": "PROVISIONAL: budget, printed fit and hardware calibration not approved",
+  "units": "m, kg, rad, s",
+  "coordinates": "x forward, y left, z up; local body axes match parent at zero joint angle",
+  "home_joint_angles_deg": [-10, 10, 0, -10, 10, 0],
+  "servo": {
+    "model": "Waveshare 15024 MG90S",
+    "mass": 0.0122,
+    "housing_dimensions": [
+      0.0228,
+      0.0122,
+      0.0285
+    ],
+    "shaft_offset_along_case_length": 0.00475,
+    "shaft_to_case_center_axial": 0.01425,
+    "mounting_hole_spacing": 0.028,
+    "mounting_hole_diameter": 0.0022,
+    "status": "housing size and mass are seller claims; shaft/ear/horn dimensions are estimates requiring measurement"
+  },
+  "geometry": {
+    "hip_half_spacing": 0.034,
+    "hip_z": -0.03,
+    "thigh_length": 0.05,
+    "shin_length": 0.05,
+    "foot_dimensions": [
+      0.09,
+      0.045,
+      0.003
+    ],
+    "foot_center": [
+      0.006,
+      0,
+      -0.0225
+    ],
+    "sole_thickness": 0.001,
+    "ankle_to_floor": 0.025,
+    "torso_dimensions": [
+      0.04,
+      0.082,
+      0.066
+    ]
+  },
+  "bodies": [
+    {
+      "name": "torso",
+      "parent": "world",
+      "position": [
+        0,
+        0,
+        0.154240388
+      ],
+      "joint": "root",
+      "axis": null,
+      "limits_deg": null,
+      "components": [
+        {
+          "name": "torso_frame",
+          "mass": 0.021486247742229223,
+          "dimensions": [
+            0.032,
+            0.082,
+            0.08875
+          ],
+          "com": [
+            -0.016308210070435095,
+            -5.215214943911107e-19,
+            -0.0054384916759348196
+          ],
+          "inertia_tensor": [
+            [
+              2.6309016723560255e-05,
+              2.703988807846125e-21,
+              2.1653112995251776e-06
+            ],
+            [
+              2.703988807846125e-21,
+              1.3253368557151762e-05,
+              3.4107973696966715e-22
+            ],
+            [
+              2.1653112995251776e-06,
+              3.4107973696966715e-22,
+              1.578588698727872e-05
+            ]
+          ],
+          "material": "solid PETG estimate, 1270 kg/m\u00b3",
+          "evidence": "generated CAD; actual infill/printed density must be weighed"
+        },
+        {
+          "name": "pico_h",
+          "mass": 0.004,
+          "dimensions": [
+            0.006,
+            0.051,
+            0.021
+          ],
+          "com": [
+            -0.0145,
+            0,
+            0.023
+          ],
+          "material": "PCB and headers",
+          "evidence": "estimate"
+        },
+        {
+          "name": "pca9685",
+          "mass": 0.009,
+          "dimensions": [
+            0.009,
+            0.0625,
+            0.0254
+          ],
+          "com": [
+            -0.013,
+            0,
+            -0.002
+          ],
+          "material": "PCB and connectors",
+          "evidence": "seller claim mass; height estimate"
+        },
+        {
+          "name": "imu",
+          "mass": 0.003,
+          "dimensions": [
+            0.004,
+            0.016,
+            0.02
+          ],
+          "com": [
+            -0.0255,
+            0,
+            0.018
+          ],
+          "material": "PCB",
+          "evidence": "estimate"
+        },
+        {
+          "name": "torso_wires_fasteners",
+          "mass": 0.02,
+          "dimensions": [
+            0.03,
+            0.07,
+            0.04
+          ],
+          "com": [
+            0,
+            0,
+            0.005
+          ],
+          "material": "copper, plastic, steel",
+          "evidence": "estimate includes six added 10 cm extensions, short heavy power wire, capacitor, pullup, board mounting ties and torso hardware; excludes suspended tether"
+        },
+        {
+          "name": "left_hip_servo",
+          "mass": 0.0122,
+          "dimensions": [
+            0.0122,
+            0.0285,
+            0.0228
+          ],
+          "com": [
+            0,
+            0.01975,
+            -0.03475
+          ],
+          "material": "servo composite",
+          "evidence": "seller mass, estimated uniform inertia"
+        },
+        {
+          "name": "right_hip_servo",
+          "mass": 0.0122,
+          "dimensions": [
+            0.0122,
+            0.0285,
+            0.0228
+          ],
+          "com": [
+            0,
+            -0.01975,
+            -0.03475
+          ],
+          "material": "servo composite",
+          "evidence": "seller mass, estimated uniform inertia"
+        }
+      ]
+    },
+    {
+      "name": "left_thigh",
+      "parent": "torso",
+      "position": [
+        0,
+        0.034,
+        -0.03
+      ],
+      "joint": "left_hip",
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits_deg": [
+        -35,
+        35
+      ],
+      "components": [
+        {
+          "name": "left_thigh_frame",
+          "mass": 0.005273029560391083,
+          "dimensions": [
+            0.024,
+            0.013500000000000002,
+            0.08775
+          ],
+          "com": [
+            2.6563334945902374e-19,
+            -0.0009738150793376264,
+            -0.02452563897898925
+          ],
+          "inertia_tensor": [
+            [
+              3.6463630740464687e-06,
+              -1.3640154818355183e-24,
+              3.5681746524361245e-23
+            ],
+            [
+              -1.3640154818355183e-24,
+              3.83564073707392e-06,
+              -5.988303056018393e-07
+            ],
+            [
+              3.5681746524361245e-23,
+              -5.988303056018393e-07,
+              4.6710755114091395e-07
+            ]
+          ],
+          "material": "solid PETG estimate, 1270 kg/m\u00b3",
+          "evidence": "generated CAD; actual infill/printed density must be weighed"
+        },
+        {
+          "name": "left_knee_servo",
+          "mass": 0.0122,
+          "dimensions": [
+            0.0122,
+            0.0285,
+            0.0228
+          ],
+          "com": [
+            0,
+            -0.01425,
+            -0.05475
+          ],
+          "material": "servo composite",
+          "evidence": "seller mass, estimated inertia"
+        },
+        {
+          "name": "left_thigh_joint_fasteners",
+          "mass": 0.0015,
+          "dimensions": [
+            0.02,
+            0.012,
+            0.012
+          ],
+          "com": [
+            0,
+            0,
+            -0.012
+          ],
+          "material": "steel and plastic horns",
+          "evidence": "estimate; weigh installed fasteners/horn"
+        }
+      ]
+    },
+    {
+      "name": "left_shin",
+      "parent": "left_thigh",
+      "position": [
+        0,
+        0,
+        -0.05
+      ],
+      "joint": "left_knee",
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits_deg": [
+        -10,
+        60
+      ],
+      "components": [
+        {
+          "name": "left_shin_frame",
+          "mass": 0.006223103503190493,
+          "dimensions": [
+            0.024,
+            0.024,
+            0.078
+          ],
+          "com": [
+            0.001777148714462294,
+            0.002127532309995988,
+            -0.025264417900762635
+          ],
+          "inertia_tensor": [
+            [
+              3.517439052233832e-06,
+              1.526352745623322e-08,
+              2.3238492246555624e-07
+            ],
+            [
+              1.526352745623322e-08,
+              3.5861170810492066e-06,
+              -2.0583750953748297e-07
+            ],
+            [
+              2.3238492246555624e-07,
+              -2.0583750953748297e-07,
+              3.5938805714611084e-07
+            ]
+          ],
+          "material": "solid PETG estimate, 1270 kg/m\u00b3",
+          "evidence": "generated CAD; actual infill/printed density must be weighed"
+        },
+        {
+          "name": "left_shin_joint_fasteners",
+          "mass": 0.0015,
+          "dimensions": [
+            0.02,
+            0.012,
+            0.012
+          ],
+          "com": [
+            0,
+            0,
+            -0.012
+          ],
+          "material": "steel and plastic horns",
+          "evidence": "estimate; weigh installed fasteners/horn"
+        }
+      ]
+    },
+    {
+      "name": "left_foot",
+      "parent": "left_shin",
+      "position": [
+        0,
+        0,
+        -0.05
+      ],
+      "joint": "left_ankle",
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "limits_deg": [
+        -20,
+        20
+      ],
+      "components": [
+        {
+          "name": "left_foot_frame",
+          "mass": 0.018016309759572663,
+          "dimensions": [
+            0.09,
+            0.045,
+            0.03825
+          ],
+          "com": [
+            0.004134161361397353,
+            1.943645122968221e-20,
+            -0.02037258709585519
+          ],
+          "inertia_tensor": [
+            [
+              3.5912674486333607e-06,
+              -9.047277336272573e-23,
+              4.2675158262628113e-07
+            ],
+            [
+              -9.047277336272573e-23,
+              1.1641060651440434e-05,
+              1.4825539214630055e-22
+            ],
+            [
+              4.2675158262628113e-07,
+              1.4825539214630055e-22,
+              1.356399711276919e-05
+            ]
+          ],
+          "material": "solid PETG estimate, 1270 kg/m\u00b3",
+          "evidence": "generated CAD; actual infill/printed density must be weighed"
+        },
+        {
+          "name": "left_sole",
+          "mass": 0.00486,
+          "dimensions": [
+            0.09,
+            0.045,
+            0.001
+          ],
+          "com": [
+            0.006,
+            0,
+            -0.0245
+          ],
+          "material": "solid TPU 95A, density estimate 1200 kg/m\u00b3",
+          "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
+        },
+        {
+          "name": "left_ankle_servo",
+          "mass": 0.0122,
+          "dimensions": [
+            0.0285,
+            0.0122,
+            0.0228
+          ],
+          "com": [
+            -0.01425,
+            0,
+            -0.00475
+          ],
+          "material": "servo composite",
+          "evidence": "seller mass, estimated inertia"
+        },
+        {
+          "name": "left_foot_joint_fasteners",
+          "mass": 0.0015,
+          "dimensions": [
+            0.02,
+            0.012,
+            0.012
+          ],
+          "com": [
+            0,
+            0,
+            -0.012
+          ],
+          "material": "steel and plastic horns",
+          "evidence": "estimate; weigh installed fasteners/horn"
+        }
+      ]
+    },
+    {
+      "name": "right_thigh",
+      "mirror_of": "left_thigh",
+      "parent": "torso",
+      "position": [
+        0,
+        -0.034,
+        -0.03
+      ],
+      "joint": "right_hip",
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits_deg": [
+        -35,
+        35
+      ]
+    },
+    {
+      "name": "right_shin",
+      "mirror_of": "left_shin",
+      "parent": "right_thigh",
+      "position": [
+        0,
+        0,
+        -0.05
+      ],
+      "joint": "right_knee",
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "limits_deg": [
+        -10,
+        60
+      ]
+    },
+    {
+      "name": "right_foot",
+      "mirror_of": "left_foot",
+      "parent": "right_shin",
+      "position": [
+        0,
+        0,
+        -0.05
+      ],
+      "joint": "right_ankle",
+      "axis": [
+        1,
+        0,
+        0
+      ],
+      "limits_deg": [
+        -20,
+        20
+      ]
+    }
+  ]
+}
