@@ -1,0 +1,407 @@
+- list:
+  - button "EN "
+  - link "Jobs":
+    - /url: https://www.welectron.com/Jobs_1
+  - link "Calibration Service":
+    - /url: /Kalibrierservice_1
+  - link "About us":
+    - /url: https://www.welectron.com/About-us
+  - link "Contact":
+    - /url: https://www.welectron.com/Contact
+  - link "Imprint":
+    - /url: /Impressum
+- banner:
+  - navigation:
+    - link "Welectron":
+      - /url: https://www.welectron.com/Home
+      - img "Welectron"
+    - textbox "Find"
+    - textbox "Find"
+    - button "Find":
+      - generic: 
+    - text: 
+    - list:
+      - text: 
+      - button "My Account":
+        - generic: 
+      - text: 
+      - link "Wish list":
+        - /url: "#"
+        - generic: 
+      - link "Basket":
+        - /url: "#"
+        - generic: 
+        - generic: 0,00 €
+  - navigation:
+    - generic: 
+    - text: 
+    - list:
+      - text: 
+      - link "Test Equipment ":
+        - /url: https://www.welectron.com/Test-Equipment
+        - generic: Test Equipment
+        - text: 
+      - link "Test Accessories ":
+        - /url: https://www.welectron.com/Test-Accessories
+        - generic: Test Accessories
+        - text: 
+      - link "Power Supplies ":
+        - /url: https://www.welectron.com/Power-Supplies
+        - generic: Power Supplies
+        - text: 
+      - link "Lab Equipment ":
+        - /url: https://www.welectron.com/Lab-Equipment
+        - generic: Lab Equipment
+        - text: 
+      - link "3D Printing & Digital Manufacturing ":
+        - /url: https://www.welectron.com/3D-Printing-Digital-Manufacturing
+        - generic: 3D Printing & Digital Manufacturing
+        - text: 
+      - link "Embedded Computing ":
+        - /url: https://www.welectron.com/Embedded-Computing_1
+        - generic: Embedded Computing
+        - text: 
+      - link "Robotics ":
+        - /url: https://www.welectron.com/Robotics
+        - generic: Robotics
+        - text: 
+      - link "Sale %":
+        - /url: https://www.welectron.com/Sale_1
+        - generic: Sale %
+    - generic: 
+  - text:  
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - text: 
+      - link "Homepage":
+        - /url: https://www.welectron.com/
+      - text: /
+      - link "3D Printing & Digital Manufacturing":
+        - /url: https://www.welectron.com/3D-Printing-Digital-Manufacturing
+      - text: /
+      - link "Filament":
+        - /url: https://www.welectron.com/Filament
+      - text: /
+      - link "Allrounder (ASA, ABS, PETG...)":
+        - /url: https://www.welectron.com/Allrounder-ASA-ABS-PETG_1
+      - text: /
+      - link "Sunlu PETG 1,75 mm / 1000 g":
+        - /url: https://www.welectron.com/sunlu-petg_1
+  - 'link "Go to next item: Sunlu PVB 1,75 mm / 1000 g"':
+    - /url: https://www.welectron.com/sunlu-pvb_1
+    - generic: 
+  - 'link "Go to previous item: Sunlu ASA 1,75 mm / 1000 g"':
+    - /url: https://www.welectron.com/sunlu-asa_1
+    - generic: 
+  - img "Standard"
+  - text: 
+  - button "Add to comparison list":
+    - generic: 
+  - button "Add to wish list":
+    - generic: 
+  - img "Sunlu PETG Black 1,75 mm / 1000 g"
+  - text: 
+  - heading "Sunlu PETG Black 1,75 mm / 1000 g" [level=1]
+  - list:
+    - strong: "Artno.:"
+    - text: SN5-314224
+    - strong: "GTIN:"
+    - text: "6933582314224"
+    - strong: "HAN:"
+    - text: SL-Y-PETG-BK-1KG-A
+    - strong: "Manufacturers:"
+    - link "Sunlu":
+      - /url: https://www.welectron.com/Sunlu_1
+  - generic: SUNLU PETG is a tough, water-resistant and versatile PETG filament for functional 3D printed parts, robust models, housings, brackets, accessories and technical everyday applications. It combines practical printability with higher toughness than PLA, good layer adhesion and water and chemical resistance. With 1.75 ±0.02 mm diameter tolerance, 240–260 °C nozzle temperature and 60–70 °C bed temperature, it is suitable for many common FDM/FFF 3D printers. The specific color depends on the selected variant.
+  - generic: 
+  - term: Variant
+  - definition:
+    - combobox "Please select a variation.":
+      - option
+      - option "<span class=\"variation-badge \">12,99 &euro;</span>Sunlu PETG White 1,75 mm / 1000 g"
+      - option "<span class=\"variation-badge \">12,99 &euro;</span>Sunlu PETG Black 1,75 mm / 1000 g" [selected]
+      - option "<span class=\"variation-badge \">12,99 &euro;</span>Sunlu PETG Grey 1,75 mm / 1000 g"
+    - combobox "12,99 €Sunlu PETG Black 1,75 mm / 1000 g":
+      - generic: 12,99 €
+      - text: Sunlu PETG Black 1,75 mm / 1000 g
+      - text:    
+  - generic: 12,99 €
+  - text: incl. 19% VAT
+  - text: (
+  - generic: 10,92 €
+  - text: excl. VAT)
+  - text: plus
+  - link "shipping costs":
+    - /url: https://www.welectron.com/Shipping-cost?shipping_calculator=0
+  - list:
+    - generic: 
+    - text: On stock
+    - text: "Delivery time:"
+    - text: 1 - 3 business days
+    - button "(DE - int. shipments may differ)"
+  - button "decrease quantity":
+    - generic: 
+  - spinbutton "Quantity": "1"
+  - button "increase quantity":
+    - generic: 
+  - button "Add to Basket":
+    - generic: Add to Basket
+    - generic: 
+  - button " Question":
+    - generic: 
+    - text: Question
+  - navigation:
+    - tablist:
+      - tab "Description"
+      - tab "Product Reviews"
+      - text: 
+    - tabpanel "Description":
+      - paragraph
+      - generic: SUNLU PETG
+      - heading "SUNLU PETG" [level=1]
+      - paragraph: Tough, water-resistant and versatile PETG filament for functional 3D printed parts, robust models, housings, accessories and technical everyday applications. Easier to process than many ABS materials and tougher than standard PLA. Available in many colors depending on the variant.
+      - heading "PETG for strong and practical printed parts" [level=2]
+      - paragraph: SUNLU PETG is a versatile filament for printed parts that should be tougher, more water-resistant and more durable than many standard PLA prints. It is suitable for functional components, housings, brackets, jigs, accessories, models, prototypes and parts that require more everyday mechanical reserve and better moisture resistance.
+      - heading "The robust alternative for many standard prints" [level=2]
+      - paragraph: PETG combines practical printability with high toughness, strong layer bonding and good resistance to water and many everyday chemicals. SUNLU PETG is therefore a good choice for parts where PLA would be too brittle or not resistant enough to heat and moisture, while ABS would be too demanding or too prone to warping.
+      - generic: High toughness
+      - generic: Water resistant
+      - generic: Chemical resistant
+      - generic: 1.75 ±0.02 mm
+      - generic: Good layer bonding
+      - generic: Many colors
+      - generic: 240–260 °C
+      - generic: Nozzle temperature according to SUNLU
+      - generic: 60–70 °C
+      - generic: Recommended bed temperature
+      - generic: 320 m
+      - generic: Approx. length for 1 kg / 1.75 mm
+      - generic: 70±5 °C
+      - generic: HDT according to manufacturer data
+      - generic: FUNCTIONAL PETG FILAMENT
+      - heading "For functional parts, housings and robust models" [level=2]
+      - paragraph: SUNLU PETG is especially suitable when printed parts should be stronger, tougher and more moisture-resistant than typical PLA prints. It is a practical choice for workshop parts, brackets, mounts, housings, containers, accessories, prototypes and moderately loaded components for indoor and protected outdoor use.
+      - generic: Functional parts
+      - generic: Housings
+      - generic: Brackets
+      - generic: Accessories
+      - generic: Prototypes
+      - generic: IMPORTANT FOR PETG
+      - heading "Watch bed adhesion and moisture" [level=2]
+      - paragraph: PETG often adheres more strongly to build plates than PLA. Depending on the build surface, a release agent or glue stick can be useful so the part can be removed cleanly. Moist PETG can also cause stringing, bubbles, unstable extrusion and rough surfaces. For reliable results, store the filament dry and dry it before printing when moisture-related issues become visible.
+      - generic: COLOR DEPENDS ON VARIANT
+      - heading "One description for all SUNLU PETG colors" [level=2]
+      - paragraph: This product description is intentionally written without a specific color and can be used for all SUNLU PETG color variants. The selected color is managed through the article title, product images, variant logic and item data. This keeps the technical description consistent while each color remains selectable separately in the shop.
+      - heading "Highlights" [level=2]
+      - heading "High toughness" [level=3]
+      - paragraph: For robust parts that should be less brittle than typical PLA prints.
+      - heading "Water and chemical resistance" [level=3]
+      - paragraph: Suitable for many everyday applications involving moisture or moderate chemical exposure.
+      - heading "Good layer bonding" [level=3]
+      - paragraph: PETG provides strong layer adhesion and is therefore well suited for functional components.
+      - heading "Less warping than ABS" [level=3]
+      - paragraph: Robust printed parts without the high chamber requirements of many ABS setups.
+      - heading "Many color variants" [level=3]
+      - paragraph: For technical parts, color-coded components, decorative objects and creative projects.
+      - heading "Wide compatibility" [level=3]
+      - paragraph: Suitable for many common FDM/FFF printers with 1.75 mm filament systems.
+      - heading "Technical Data" [level=2]
+      - table:
+        - rowgroup:
+          - row "Product SUNLU PETG":
+            - cell "Product"
+            - cell "SUNLU PETG"
+          - row "Material Type PETG filament / Polyethylene Terephthalate Glycol":
+            - cell "Material Type"
+            - cell "PETG filament / Polyethylene Terephthalate Glycol"
+          - row "Color Depends on selected color variant":
+            - cell "Color"
+            - cell "Depends on selected color variant"
+          - row "Diameter 1.75 mm; other diameters depending on availability / variant":
+            - cell "Diameter"
+            - cell "1.75 mm; other diameters depending on availability / variant"
+          - row "Diameter Tolerance 1.75 ±0.02 mm according to SUNLU":
+            - cell "Diameter Tolerance"
+            - cell "1.75 ±0.02 mm according to SUNLU"
+          - row "Content Typically 1000 g filament on spool, unless otherwise specified by variant":
+            - cell "Content"
+            - cell "Typically 1000 g filament on spool, unless otherwise specified by variant"
+          - row "Length Approx. 320 m for 1 kg / 1.75 mm according to SUNLU store data":
+            - cell "Length"
+            - cell "Approx. 320 m for 1 kg / 1.75 mm according to SUNLU store data"
+          - row "Net / Gross Weight 1 kg / 1.3 kg according to SUNLU store data for the 1 kg spool":
+            - cell "Net / Gross Weight"
+            - cell "1 kg / 1.3 kg according to SUNLU store data for the 1 kg spool"
+          - row "Nozzle Temperature 240–260 °C according to SUNLU":
+            - cell "Nozzle Temperature"
+            - cell "240–260 °C according to SUNLU"
+          - row "Print Speed Up to ≤300 mm/s according to SUNLU, depending on printer, hotend and part":
+            - cell "Print Speed"
+            - cell "Up to ≤300 mm/s according to SUNLU, depending on printer, hotend and part"
+          - row "Bed Temperature 60–70 °C according to official SUNLU page; store data lists 60–65 °C":
+            - cell "Bed Temperature"
+            - cell "60–70 °C according to official SUNLU page; store data lists 60–65 °C"
+          - row "Unheated Bed Only with suitable glue / adhesive according to SUNLU store data":
+            - cell "Unheated Bed"
+            - cell "Only with suitable glue / adhesive according to SUNLU store data"
+          - row "Drying 60–65 °C according to store data; store dry, ideally <20% RH with desiccant":
+            - cell "Drying"
+            - cell "60–65 °C according to store data; store dry, ideally <20% RH with desiccant"
+          - row "Retraction Distance 0.8–1.2 mm according to SUNLU, depending on extruder":
+            - cell "Retraction Distance"
+            - cell "0.8–1.2 mm according to SUNLU, depending on extruder"
+          - row "Retraction Speed 30–40 mm/s according to SUNLU, depending on extruder":
+            - cell "Retraction Speed"
+            - cell "30–40 mm/s according to SUNLU, depending on extruder"
+          - row "Density 1.27 g/cm³ according to SUNLU":
+            - cell "Density"
+            - cell "1.27 g/cm³ according to SUNLU"
+          - row "Tensile Strength 48±10 MPa according to SUNLU":
+            - cell "Tensile Strength"
+            - cell "48±10 MPa according to SUNLU"
+          - row "Flexural Strength 70±10 MPa according to SUNLU":
+            - cell "Flexural Strength"
+            - cell "70±10 MPa according to SUNLU"
+          - row "Flexural Modulus 2100±300 MPa according to SUNLU store data":
+            - cell "Flexural Modulus"
+            - cell "2100±300 MPa according to SUNLU store data"
+          - row "Elongation at Break 11±5% according to SUNLU":
+            - cell "Elongation at Break"
+            - cell "11±5% according to SUNLU"
+          - row "Notched Izod Impact Strength 3±1 kJ/m² according to SUNLU":
+            - cell "Notched Izod Impact Strength"
+            - cell "3±1 kJ/m² according to SUNLU"
+          - row "Shrinkage 0.1–0.5% according to SUNLU":
+            - cell "Shrinkage"
+            - cell "0.1–0.5% according to SUNLU"
+          - row "Melt Flow Index 5.7±3 g/10 min according to SUNLU":
+            - cell "Melt Flow Index"
+            - cell "5.7±3 g/10 min according to SUNLU"
+          - row "Shore Hardness 80 according to SUNLU":
+            - cell "Shore Hardness"
+            - cell "80 according to SUNLU"
+          - row "HDT 70±5 °C according to SUNLU":
+            - cell "HDT"
+            - cell "70±5 °C according to SUNLU"
+          - row "Melting Point 195 °C according to SUNLU store data":
+            - cell "Melting Point"
+            - cell "195 °C according to SUNLU store data"
+      - heading "Print Parameter Orientation" [level=2]
+      - table:
+        - rowgroup:
+          - row "Nozzle temperature 240–260 °C according to SUNLU; adjust depending on hotend, part and print speed":
+            - cell "Nozzle temperature"
+            - cell "240–260 °C according to SUNLU; adjust depending on hotend, part and print speed"
+          - row "Bed temperature 60–70 °C; test release agent or glue stick if adhesion is too strong":
+            - cell "Bed temperature"
+            - cell "60–70 °C; test release agent or glue stick if adhesion is too strong"
+          - row "Cooling Moderate part cooling; too much cooling can reduce layer adhesion":
+            - cell "Cooling"
+            - cell "Moderate part cooling; too much cooling can reduce layer adhesion"
+          - row "Note The optimal setting depends on printer, hotend, build plate, cooling, part geometry, color, moisture and slicer profile.":
+            - cell "Note"
+            - cell "The optimal setting depends on printer, hotend, build plate, cooling, part geometry, color, moisture and slicer profile."
+      - heading "Typical Applications" [level=2]
+      - paragraph: SUNLU PETG is suitable for applications where toughness, water resistance, good layer adhesion and practical printability should be combined. For very high heat loads, permanent UV/outdoor use or heavily loaded mechanical parts, ASA, ABS, PA, PC or fiber-reinforced engineering materials should be considered.
+      - generic: Housings
+      - generic: Brackets
+      - generic: Functional parts
+      - generic: Containers
+      - generic: Accessories
+      - generic: Prototypes
+      - generic: Workshop parts
+      - generic: Everyday parts
+      - heading "For robust standard prints with more toughness" [level=2]
+      - paragraph: SUNLU PETG is especially useful when an everyday filament with more toughness, better moisture resistance and stronger layer bonding than PLA is needed. It fits regular FDM printing tasks, functional prototypes, workshop parts and stable models.
+      - heading "Note on PETG" [level=3]
+      - paragraph: PETG can adhere more strongly to build plates than PLA. Depending on the print surface, use a release agent or glue stick to avoid plate damage. For best surface quality, store the filament dry and dry it before printing if stringing, bubbles or popping during extrusion appear.
+      - generic: SUNLU AT WELECTRON
+      - paragraph: Welectron provides advice, fast shipping and suitable support for SUNLU filaments, filament dryers, accessories and clean material workflows in 3D printing.
+      - table:
+        - rowgroup:
+          - 'row "Shipping weight: 1,35 kg"':
+            - cell "Shipping weight:"
+            - cell "1,35 kg"
+- contentinfo:
+  - text: 
+  - generic: Information
+  - generic "Information ":
+    - list:
+      - link "45-Day Money-Back Guarantee":
+        - /url: https://www.welectron.com/Money-Back-Guarantee
+      - link "Payment and Shipping Cost":
+        - /url: https://www.welectron.com/Shipping-cost
+      - link "Sitemap":
+        - /url: https://www.welectron.com/Sitemap-1
+      - link "Contact":
+        - /url: https://www.welectron.com/Contact_1
+      - link "Imprint":
+        - /url: https://www.welectron.com/Imprint
+  - text: 
+  - generic: Legal
+  - generic "Legal ":
+    - list:
+      - link:
+        - /url: https://www.welectron.com/-
+      - link "Revoke Purchase":
+        - /url: https://returns.welectron.com
+      - link "Privacy Statement":
+        - /url: https://www.welectron.com/Privacy-Statement
+      - link "Terms & Conditions":
+        - /url: https://www.welectron.com/Terms-and-Conditions
+      - link "Returns / Right of Withdrawal":
+        - /url: https://www.welectron.com/Returns-Right-of-Withdrawal
+  - generic: Partner
+  - paragraph:
+    - link "Idealo Preisvergleich":
+      - /url: https://www.idealo.de/preisvergleich/Shop/311279.html
+      - img "Idealo Preisvergleich"
+    - link "Geizhals Preisvergleich":
+      - /url: https://geizhals.de/?qlink=Welectron&subi=infos
+      - img "Geizhals Preisvergleich"
+  - generic: Official Distributor
+  - table:
+    - rowgroup:
+      - row:
+        - cell:
+          - link:
+            - /url: https://www.welectron.com/brymen_1
+      - row:
+        - cell:
+          - link:
+            - /url: https://www.welectron.com/Siglent_1
+      - row:
+        - cell:
+          - link:
+            - /url: https://www.welectron.com/Raspberry-Pi_1
+      - row:
+        - cell:
+          - link:
+            - /url: https://www.welectron.com/Bambu-Lab_1
+  - paragraph
+  - generic: Follow Us
+  - paragraph:
+    - link "Welectron LinkedIn":
+      - /url: https://de.linkedin.com/company/welectron
+      - img "Welectron LinkedIn"
+    - link "Welectron Instagram":
+      - /url: https://www.instagram.com/welectron_official/
+      - img "Welectron Instagram"
+  - generic: Cancelation
+  - paragraph:
+    - link "Cancel my order":
+      - /url: https://returns.welectron.com/retoure
+  - text: "* All prices including legal VAT plus"
+  - link "shipping":
+    - /url: https://www.welectron.com/Shipping-cost
+- generic: How we use cookies and other data
+- paragraph: "By selecting \"Accept all\", you give us permission to use the following services on our website: YouTube, ReCaptcha, Doofinder. You can change the settings at any time (fingerprint icon in the bottom left corner). For further details, please see Individual configuration and our Privacy notice."
+- link "Impressum":
+  - /url: https://www.welectron.com/Imprint
+- text: "|"
+- link "Datenschutzerklärung":
+  - /url: https://www.welectron.com/Privacy-Statement
+- button "Accept all"
+- button "Configuration"
+- button "Reject"

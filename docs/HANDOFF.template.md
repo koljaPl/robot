@@ -7,9 +7,13 @@ Short purchase/build plan for humans and AI: [SUMMARY.md](../SUMMARY.md).
 ## 1. Short design recommendation
 
 Retain six Waveshare15024 MG90S servos: hip pitch, knee pitch and ankle roll per
-leg, broad feet, lightweight printed frame, Pico H native PWM, MPU6050, PC USB
+leg, broad feet, Pico native PWM, MPU6050, PC USB
 inference and separate5V servo power. This is a **provisional** design, not a
 purchasable or calibrated walking robot. Nothing purchased/physically tested.
+User can solder; no mandatory helper labour. Compare a complete standard-parts
+frame (unverified) vs own printing (no access; printer purchase comparison only).
+Existing physical prototype remains Pico H/continuous TPU; bare Pico/TPE pads are
+proposals, not a verified replacement. Commercial printing/laser routes are historical.
 The target remains30s standing followed by0.3m visibly alternating walking
 within30s. Software checks and training rewards cannot substitute for that result.
 
@@ -44,12 +48,16 @@ MuJoCo500Hz simulates200Hz IMU on4/6ms intervals; estimator uses actual dt.
 
 {{TEXT:docs/SERVO_COMPARISON.md}}
 
-## 5. Complete required BOM
+## 5. Required BOM and incomplete route alternatives
 
 Authoritative `procurement.json`, checked2026-10-23. Null prices are required,
 unresolved costs, never zero. Quantities include full packs where sold as packs.
 
+Shared parts only; choose and verify a full scenario before procurement.
+
 {{BOM}}
+
+{{SCENARIOS}}
 
 Optional: spare matching servo, thin protective surface, slack safety thread,
 longer adequate power/USB tethers. These are not silently needed to make the
@@ -64,10 +72,15 @@ short initial indoor trial work; several-metre travel needs a newly budgeted tet
 ## 7. Mechanical design
 
 `cad/build_frame.py` is editable CSG; individual STLs, quotation bundle,
-print_manifest and exploded drawing are supplied. Seven PETG frames and two TPU
-soles; no personal printer or drilling/tapping/heat-set inserts required. Unknown
+print_manifest and exploded drawing are supplied for the existing prototype. Seven
+PETG frames/two TPU soles describe that unchanged physical model. New comparison
+uses standard pads and one full PETG spool if printer access is later available;
+no printer access or purchase is assumed. Standard route must use only ready-made
+parts with no fabrication. Unknown
 horn/ear/screw interfaces block finished manufacture. Broad90×45mm feet and
 short50mm links target roughly18cm height. Solid-CAD masses are estimated.
+
+{{TEXT:docs/FRAME_ROUTES.md}}
 
 {{TEXT:cad/ASSEMBLY.md}}
 

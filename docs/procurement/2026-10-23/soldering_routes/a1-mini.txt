@@ -1,0 +1,316 @@
+- list:
+  - button "DE "
+  - link "Jobs und Karriere":
+    - /url: https://www.welectron.com/Jobs
+  - link "Kalibrierservice":
+    - /url: /Kalibrierservice_1
+  - link "Wir über uns":
+    - /url: https://www.welectron.com/Wir-ueber-uns
+  - link "Kontakt":
+    - /url: https://www.welectron.com/Kontakt
+  - link "Impressum":
+    - /url: /Impressum
+- banner:
+  - navigation:
+    - link "Welectron":
+      - /url: https://www.welectron.com/
+      - img "Welectron"
+    - textbox "Suchen"
+    - textbox "Suchen"
+    - button "Suchen":
+      - generic: 
+    - text: 
+    - list:
+      - text: 
+      - button "Mein Konto":
+        - generic: 
+      - text: 
+      - link "Wunschzettel":
+        - /url: "#"
+        - generic: 
+      - link "Warenkorb":
+        - /url: "#"
+        - generic: 
+        - generic: 0,00 €
+  - navigation:
+    - generic: 
+    - text: 
+    - list:
+      - text: 
+      - link "Messtechnik ":
+        - /url: https://www.welectron.com/Messtechnik
+        - generic: Messtechnik
+        - text: 
+      - link "Messzubehör ":
+        - /url: https://www.welectron.com/Messzubehoer
+        - generic: Messzubehör
+        - text: 
+      - link "Stromversorgung ":
+        - /url: https://www.welectron.com/Stromversorgung
+        - generic: Stromversorgung
+        - text: 
+      - link "Laborausstattung ":
+        - /url: https://www.welectron.com/Laborausstattung
+        - generic: Laborausstattung
+        - text: 
+      - link "3D-Druck & Digitale Fertigung ":
+        - /url: https://www.welectron.com/3D-Druck-Digitale-Fertigung
+        - generic: 3D-Druck & Digitale Fertigung
+        - text: 
+      - link "Embedded Computing ":
+        - /url: https://www.welectron.com/Embedded-Computing
+        - generic: Embedded Computing
+        - text: 
+      - link "Robotik ":
+        - /url: https://www.welectron.com/Robotik
+        - generic: Robotik
+        - text: 
+      - link "Deals & Sonderposten %":
+        - /url: https://www.welectron.com/Deals-Sonderposten
+        - generic: Deals & Sonderposten %
+    - generic: 
+  - text:  
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - text: 
+      - link "Startseite":
+        - /url: https://www.welectron.com/
+      - text: /
+      - link "3D-Druck & Digitale Fertigung":
+        - /url: https://www.welectron.com/3D-Druck-Digitale-Fertigung
+      - text: /
+      - link "3D-Drucker (Filament)":
+        - /url: https://www.welectron.com/3D-Drucker-Filament
+      - text: /
+      - link "3D-Drucker":
+        - /url: https://www.welectron.com/3D-Drucker
+      - text: /
+      - link "Bambu Lab A1 mini 3D-Drucker":
+        - /url: https://www.welectron.com/Bambu-Lab-A1-mini-3D-Drucker_1
+  - 'link "zum nächsten Artikel: Bambu Lab H2D 3D-Drucker"':
+    - /url: https://www.welectron.com/Bambu-Lab-H2D-3D-Drucker_1
+    - generic: 
+  - 'link "zum vorherigen Artikel: Bambu Lab A1 3D-Drucker"':
+    - /url: https://www.welectron.com/Bambu-Lab-A1-3D-Drucker_1
+    - generic: 
+  - img "Standard"
+  - text: 
+  - button "Auf die Vergleichsliste":
+    - generic: 
+  - button "Auf den Wunschzettel":
+    - generic: 
+  - img "Bambu Lab A1 mini 3D-Drucker"
+  - img "Bambu Lab A1 mini 3D-Drucker"
+  - img "Bambu Lab A1 mini 3D-Drucker"
+  - img "Bambu Lab A1 mini 3D-Drucker"
+  - img "Bambu Lab A1 mini 3D-Drucker"
+  - text: 
+  - heading "Bambu Lab A1 mini 3D-Drucker" [level=1]
+  - link "Kundenrezensionen":
+    - /url: https://www.welectron.com/Bambu-Lab-A1-mini-3D-Drucker#tab-votes
+    - 'generic "Artikelbewertung: 5/5"':
+      - generic: 
+      - generic: 
+      - generic: 
+      - generic: 
+      - generic: 
+    - text: (1 Bewertungen)
+  - list:
+    - strong: "Artnr.:"
+    - text: BL1-101030
+    - strong: "GTIN:"
+    - text: "6975337036173"
+    - strong: "HAN:"
+    - text: PF002-M-EU
+    - strong: "Hersteller:"
+    - link "Bambu Lab":
+      - /url: https://www.welectron.com/Bambu-Lab
+  - paragraph: Full-auto Kalibrierung, 4-Farbdruck mit AMS Lite, unter 48 dB Geräuscharmut im Silent-Modus, Vollmetall-Linearschienen und -lager, Kompensation von Vibrationen und Durchflussrate
+  - paragraph:
+    - link "Packungsinhalt A1":
+      - /url: https://wiki.bambulab.com/en/a1/manual/acc-in-the-box
+    - link "mini":
+      - /url: https://wiki.bambulab.com/en/a1-mini/manual/acc-in-the-box
+  - generic: 
+  - term: Variante
+  - definition:
+    - radio "189 € A1 mini" [checked]
+    - generic: 189 €
+    - text: A1 mini
+    - radio "299 € A1 mini Combo"
+    - generic: 299 €
+    - text: A1 mini Combo
+  - generic: 189,00 €
+  - text: inkl. 19% MwSt.
+  - text: (
+  - generic: 158,82 €
+  - text: exkl. MwSt.)
+  - link "kostenfreie Lieferung":
+    - /url: https://www.welectron.com/Zahlung-und-Versand?shipping_calculator=0
+  - list:
+    - generic: 
+    - text: ab Lager lieferbar
+    - text: "Lieferzeit:"
+    - text: 1 - 3 Arbeitstage
+    - button "(DE - Ausland abweichend)"
+  - link " Konfigurieren + Kaufen":
+    - /url: "#cfg-container"
+    - generic: 
+    - text: Konfigurieren + Kaufen
+  - button " Produktanfrage":
+    - generic: 
+    - text: Produktanfrage
+  - generic:                             
+  - navigation:
+    - tablist:
+      - tab "Beschreibung"
+      - tab "Kundenrezensionen"
+      - tab "Dokumente (3)"
+    - tabpanel "Beschreibung":
+      - paragraph
+      - paragraph: Entdecken Sie den Bambu Lab A1 Mini - Ihr perfekter Begleiter für den 3D-Druck. Mit Plug-N-Play-Setup ist es einfach, loszulegen. Genießen Sie präzise Drucke jedes Mal mit Funktionen wie Active Flow Rate Compensation und Full Auto Calibration. Sagen Sie dem lauten Drucken Lebewohl mit Active Motor Noise Cancelling. Außerdem erzielen Sie schnelle, hochwertige Drucke mit High Speed Precision. Verbessern Sie noch heute Ihr 3D-Druckerlebnis mit dem Bambu Lab A1 Mini!
+      - heading "Modellübersicht" [level=2]
+      - table:
+        - rowgroup:
+          - row "A1 mini Combo A1 mini":
+            - columnheader
+            - columnheader "A1 mini Combo":
+              - link "A1 mini Combo":
+                - /url: https://www.welectron.com/ext/article.php?no=BL1-101033
+            - columnheader "A1 mini":
+              - link "A1 mini":
+                - /url: https://www.welectron.com/ext/article.php?no=BL1-101030
+          - row "Automatisches Materialsystem(AMS lite) erhalten  ":
+            - cell "Automatisches Materialsystem(AMS lite) erhalten"
+            - cell "":
+              - generic: 
+            - cell "":
+              - generic: 
+          - row "Druckvolumen (BxTxH) 180 x 180 x 180 mm³":
+            - cell "Druckvolumen (BxTxH)"
+            - cell "180 x 180 x 180 mm³"
+          - row "Hotend All-Metal":
+            - cell "Hotend"
+            - cell "All-Metal"
+          - row "Düse Edelstahl":
+            - cell "Düse"
+            - cell "Edelstahl"
+          - row "Max. Hotend-Temperatur 300 ℃":
+            - cell "Max. Hotend-Temperatur"
+            - cell "300 ℃"
+          - row "Düsendurchmesser 0,4 mm, (enthalten) 0,2 mm, 0,6 mm, 0,8 mm":
+            - cell "Düsendurchmesser"
+            - cell "0,4 mm, (enthalten) 0,2 mm, 0,6 mm, 0,8 mm":
+              - text: 0,4 mm, (enthalten)
+              - text: 0,2 mm, 0,6 mm, 0,8 mm
+          - row "Druckplattenoberfläche Bambu Textured PEI Plate(enthalten) Bambu High Temperature Plate(glattes PEI) Bambu Kühlplatte":
+            - cell "Druckplattenoberfläche"
+            - cell "Bambu Textured PEI Plate(enthalten) Bambu High Temperature Plate(glattes PEI) Bambu Kühlplatte":
+              - text: Bambu Textured PEI Plate(enthalten)
+              - text: Bambu High Temperature Plate(glattes PEI)
+              - text: Bambu Kühlplatte
+      - text:    
+      - paragraph:
+        - link "Erweiterte Spezifikationen ":
+          - /url: "#specs"
+      - heading "Lieferumfang" [level=2]
+      - list:
+        - listitem: Gerät
+        - listitem: Spulenhalter
+        - listitem: Reinigungstuch
+        - listitem: Bauplatte
+        - listitem: PTFE-Schlauch x 1
+        - listitem: Bambu-Filamentproben (zufällige Farbe)
+        - listitem: Edelstahldüse (vorinstalliert)
+        - listitem: Zubehörbox
+      - heading "Features" [level=2]
+      - generic: Mehrfarbendruck
+      - generic: Das brandneue AMS Lite ist elegant und zuverlässig und macht den Mehrfarbendruck in 3D für jeden zugänglich.
+      - generic: Aktive Durchflussratenkompensation
+      - generic: Der A1 führt einen bahnbrechenden Ansatz zur Flusssteuerung beim 3D-Druck ein. Er verwendet einen hochauflösenden, hochfrequenten Wirbelstromsensor, um den Düsendruck zu messen. Der Algorithmus von Bambu Lab passt dynamisch die Flussrate basierend auf diesen Messungen an und gewährleistet so eine präzise Extrusion.
+      - generic: Vollautomatische Kalibrierung
+      - generic: Der A1 übernimmt selbstständig verschiedene Kalibrierungen. Er justiert akribisch den Z-Offset, die Bett-Ebene, die Vibrationsresonanz und den Düsendruck für jeden Druckauftrag automatisch.
+      - generic: Einfach anschließen und loslegen
+      - generic: Der A1 Mini kommt vormontiert, voreingestellt und präzise kalibriert zu Ihnen. Die Einrichtung für Ihren ersten Druck dauert nur etwa 20 Minuten.
+      - paragraph:
+        - link "Mehr Features ":
+          - /url: "#features"
+      - table:
+        - rowgroup:
+          - 'row "Versandgewicht: 8,00 kg"':
+            - cell "Versandgewicht:"
+            - cell "8,00 kg"
+    - text:            — —
+- contentinfo:
+  - text: 
+  - generic: Informationen
+  - generic "Informationen ":
+    - list:
+      - link "45 Tage Rückgaberecht":
+        - /url: https://www.welectron.com/Rueckgaberecht
+      - link "Zahlung und Versand":
+        - /url: https://www.welectron.com/Zahlung-und-Versand
+      - link "Sitemap":
+        - /url: https://www.welectron.com/Sitemap
+      - link "Kontakt":
+        - /url: https://www.welectron.com/Kontakt_1
+      - link "Impressum":
+        - /url: https://www.welectron.com/Impressum
+  - text: 
+  - generic: Gesetzliche Informationen
+  - generic "Gesetzliche Informationen ":
+    - list:
+      - link "Batteriegesetzhinweise":
+        - /url: https://www.welectron.com/Batteriegesetzhinweise
+      - link "Vertrag widerrufen":
+        - /url: https://returns.welectron.com
+      - link "Datenschutzerklärung":
+        - /url: https://www.welectron.com/Datenschutzerklaerung
+      - link "AGB":
+        - /url: https://www.welectron.com/AGB
+      - link "Widerrufsrecht":
+        - /url: https://www.welectron.com/Widerrufsrecht
+  - generic: Partner
+  - paragraph:
+    - link "Idealo Preisvergleich":
+      - /url: https://www.idealo.de/preisvergleich/Shop/311279.html
+      - img "Idealo Preisvergleich"
+    - link "Geizhals Preisvergleich":
+      - /url: https://geizhals.de/?qlink=Welectron&subi=infos
+      - img "Geizhals Preisvergleich"
+  - generic: Offizieller Distributor
+  - table:
+    - rowgroup:
+      - row:
+        - cell:
+          - link:
+            - /url: https://www.welectron.com/brymen
+      - row:
+        - cell:
+          - link:
+            - /url: https://www.welectron.com/Siglent
+      - row:
+        - cell:
+          - link:
+            - /url: https://www.welectron.com/Raspberry-Pi
+      - row:
+        - cell:
+          - link:
+            - /url: https://www.welectron.com/Bambu-Lab
+  - paragraph
+  - generic: Follow Us
+  - paragraph:
+    - link "Welectron LinkedIn":
+      - /url: https://de.linkedin.com/company/welectron
+      - img "Welectron LinkedIn"
+    - link "Welectron Instagram":
+      - /url: https://www.instagram.com/welectron_official/
+      - img "Welectron Instagram"
+  - generic: Widerruf
+  - paragraph:
+    - link "Vertrag widerrufen":
+      - /url: https://returns.welectron.com/retoure
+  - text: "* Alle Preise inkl. gesetzlicher MwSt., zzgl."
+  - link "Versand":
+    - /url: https://www.welectron.com/Zahlung-und-Versand

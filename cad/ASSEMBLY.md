@@ -1,10 +1,19 @@
-# S6 assembly prototype — fit gate remains open
+# S6 historical-geometry assembly reference — fit gate remains open
 
-Editable CAD is `build_frame.py`; dimensions in millimetres are derived from `../physical_spec.json`. `stl/` contains seven PETG frame components and two separate TPU soles. `quotation_plate.stl` is a cost-estimation grouping, not a recommended print-bed arrangement. Individual parts fit within approximately 90 mm; a service chooses orientation/supports. `exploded.png` shows body/part names and axes.
+**2026-10-23 route change:** self-soldering is available; no helper is mandatory.
+The geometry below remains the unchanged Pico-H/continuous-TPU prototype, not a
+selected new frame. Proposed bare Pico and discrete TPE pads need measurements,
+new model contacts/masses and identity after selection. Commercial printing is
+historical; compare stock parts vs own printer in [FRAME_ROUTES](../docs/FRAME_ROUTES.md).
+No printer access/purchase is assumed. Individual180mm layouts and a first interface
+sample are in `local_print/`; the185mm quotation batch does not fit an A1 mini.
 
-**Do not order these as manufacturing-ready parts.** The expanded audit detects unresolved fastener-envelope conflicts, and the selected servo's ear, shaft, spline, horn pattern and screws are unmeasured. The intended finished kit requires clear through-holes, removed supports and bonded soles; no drilling, cutting, tapping or heat-set inserts by the assembler. The supplier must provide any necessary finishing and matching fasteners within the delivered quote.
 
-Materials: PETG frames, 0.2 mm layers, 3 perimeters, nominal 25% infill; TPU 95A soles 90×45×1 mm bonded to feet. The mass specification uses solid PETG at 1270 kg/m³ as a conservative estimate; actual infill/adhesive mass must be weighed. Layers should be oriented to resist ear loads rather than split across narrow bridges. Ask for stiff local joint mounting walls, smooth holes and no support debris near rotating horns. Service capability and cost for TPU/bonding are not verified.
+Editable CAD is `build_frame.py`; dimensions in millimetres are derived from `../physical_spec.json`. `stl/` contains seven PETG frame components and two separate TPU soles. `quotation_plate.stl` is a cost-estimation grouping, not a recommended print-bed arrangement. Individual parts fit within approximately 90 mm; layer orientation/supports remain unapproved. `exploded.png` shows body/part names and axes.
+
+**Do not order these as manufacturing-ready parts.** The expanded audit detects unresolved fastener-envelope conflicts, and the selected servo's ear, shaft, spline, horn pattern and screws are unmeasured. The historical commercial-kit proposal required clear through-holes, removed supports and bonded soles; no drilling, cutting, tapping or heat-set inserts by the assembler. No complete compatible standard kit has been found. Local printing requires its own approved sample/profile; do not buy the complete frame or force holes before fit approval.
+
+Materials: PETG frames, 0.2 mm layers, 3 perimeters, nominal 25% infill; TPU 95A soles 90×45×1 mm bonded to feet. The mass specification uses solid PETG at 1270 kg/m³ as a conservative estimate; actual infill/adhesive mass must be weighed. Layers should be oriented to resist ear loads rather than split across narrow bridges. Ask for stiff local joint mounting walls, smooth holes and no support debris near rotating horns. The new comparison proposes8self-adhesive TPE pads instead, with unmeasured grip. No sole/model substitution has been made here.
 
 ## Fastener schedule — provisional, quote as a complete kit
 
@@ -21,12 +30,12 @@ The CAD horn interface has a 6 mm central access opening and two 2.4 mm-wide rad
 
 ## Assembly sequence after the budget/fit gate passes
 
-1. Identify L/R frame parts and six individually calibrated servos. Servo housing and lead-out dimensions must match the kit. Inspect prints and holes; return poor prints for finishing rather than drilling them.
+1. Identify L/R frame parts and six individually calibrated servos. Servo housing and lead-out dimensions must match the kit. Inspect prints and holes; revise/reprint failed sample interfaces rather than drilling them.
 2. Test electronics and one servo without a limb attached. Disable outputs and disconnect motor power before installing a horn. Centre the unloaded servo to its calibrated **zero-joint** pulse, then turn power off. Mount horn and retain it with its matching centre screw; do not use the HOME angle as the mechanical zero reference.
 3. Mount two hip servo cases to the torso ear cradles, shafts facing outward ±y. Attach each thigh moving plate to that hip's horn with two matched screws. There is no passive hip roll axis.
 4. Mount each knee servo case to its thigh's lower cradle. Attach the shin's upper plate to the knee horn. Both simulated pitch axes are +y; the physical right-hand motor sign may be opposite and is corrected in calibration.
 5. Mount ankle servo case to its foot's upright cradle with shaft facing +x. Attach the shin's perpendicular lower plate to the ankle horn. Foot and ankle servo case rotate together; the shin carries the horn. The ankle axis is +x, roll only.
-6. Bonded TPU soles should already be on the feet. Install boards at the coordinates in the specification using prepared holes/ties; do not put a tie over connector pins or strain the board. IMU must be rigidly immobilized and its measured axis rotation recorded.
+6. This prototype uses continuous TPU soles; a later selected pad branch needs its own contact update. Do not treat the model as already changed. Install boards at the coordinates in the specification using prepared holes/ties; do not put a tie over connector pins or strain the board. IMU must be rigidly immobilized and its measured axis rotation recorded.
 7. Route servo leads and prepared extension harness; verify polarity/continuity with motor supply disconnected. Leave a slack service loop and inspect every safe angle manually without forcing the gearbox. Add USB/power strain relief.
 8. Assemble and weigh one leg, then the entire robot. Confirm pitch/roll signs with very small unloaded motions. Test physical cutoff, watchdog and reboot-disarmed state before supported HOME `(-10°, +10°, 0°)` per leg.
 9. On a low clear floor area with thin protection, test stationary poses and increase test length gradually. For a fall, disconnect power, inspect gears/ears, manually pick up and reset. Optional safety thread stays slack and is not required to hold the robot upright.
@@ -52,4 +61,4 @@ The12horn-frame screws/12washers are not the six centre shaft retainers.
 Manufacturer photo shows accessory horns/screws but exact retailer-batch fit/inclusion
 is not confirmed. Do not order generic25T horns or assume centre screws areM2.
 Compact quotation layouts are alternatives to individual files, not extra parts;
-web prices exclude bonding and hole finishing. Current route exceeds budget; no order.
+web prices exclude bonding and hole finishing. Historical commercial route exceeds budget; new comparison remains blocked; no order.

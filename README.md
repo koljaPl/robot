@@ -10,12 +10,14 @@ in `physical_spec.json`. [Offene Beschaffungsfragen](docs/PROCUREMENT_ACTIONS.md
 [Hardware/Protokoll](docs/HARDWARE.md), [Firmware](firmware/README.md) und
 [Kalibrierung](docs/CALIBRATION.md) sind die Arbeitsreferenzen.
 
-**Nichts bestellt oder physisch geprüft.** Aktueller bepreister Beschaffungsweg:163,63€;
-zusätzliche Passungs-/Kleinteilkosten noch offen. Bereits63,63€über Budget.100€ist die
-harte Lieferpreisgrenze. Sechs MG90S mit Pico-Direkt-PWM, MPU6050 und
-kabelgebundener Versorgung sind der vorläufige Entwurf (geschätzt199,4g).
-Firmware und Bench-Werkzeuge sind implementiert; echte elektrische Tests fehlen.
-Das Gehziel ist noch nicht nachgewiesen. 29Tests bestehen; das Gehziel wurde im49.152Schritte-Pilot nicht erreicht.
+**Nichts bestellt oder physisch geprüft.** Löten ist jetzt möglich; keine verpflichtende
+Helferarbeit. Vergleich: fertige Standardmechanik (noch kein vollständiger passender
+6-Gelenk-Bausatz) oder eigener Drucker (nur Kostenvergleich, kein Zugang/Kauf).
+Gemeinsame Teile95,91€ohne Rahmen; Eigen-Druck-Roboter118,43€vor offenen Kosten,
+also18,43€über der harten100€Lieferpreisgrenze. [Details](docs/FRAME_ROUTES.md).
+Der bestehende Pico-H/TPU-Prototyp bleibt unverändert; nackter Pico und Standardpads
+sind Vorschläge, noch keine freigegebene Mechanik. Firmware/Bench-Werkzeuge existieren;
+Gehen ist im historischen49.152-Schritte-Pilot nicht erreicht worden.
 Historische Experimente bleiben unter
 `docs/validation/` erhalten und sind mit dem neuen Modell nicht kompatibel.
 
@@ -24,7 +26,7 @@ python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-dev.txt
 python -m pytest -q
-python tools/budget_gate.py # Exit1: aktueller Beschaffungsweg über Budget
+python tools/budget_gate.py --scenario all # Exit1: Eigen-Druck-Weg über Budget
 python evaluate.py --episodes 1 --output runs/neutral_new
 python train.py --steps 2048 --seed 0 --development --output runs/smoke_new
 ```
@@ -61,7 +63,7 @@ Zusätzlich wollen wir testen, ob das Training besser funktioniert, wenn sich w�
 
 1. Aufgabe, verfügbare Teile und vollständigen Lieferpreis prüfen
 2. Einen Motor, Stromversorgung, Controller und IMU testen und vermessen
-3. Passende Druckteile bestätigen, Prototyp montieren und wiegen
+3. Passende Standardmechanik oder später verfügbaren Probedruck bestätigen, montieren und wiegen
 4. Digitale Kopie aus diesen Messungen erstellen und prüfen
 5. Reinforcement-Learning-Umgebung erstellen
 6. erstes Modell trainieren

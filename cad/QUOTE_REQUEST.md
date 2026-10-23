@@ -1,4 +1,9 @@
-# Assembly-ready quotation brief — no manufacturing release
+# Historical commercial-quotation brief — not a default order
+
+Archived route context2026-10-23. User now compares standard stock mechanics vs
+own printing; no commercial print inquiry/order is planned. See
+[FRAME_ROUTES](../docs/FRAME_ROUTES.md). Original quotation requirements below
+are retained for reference.
 
 Updated2026-10-23. File-specific web calculations exist; no order or supplier
 inquiry sent. Current route is over budget. [Evidence](../docs/PROCUREMENT_ACTIONS.md).

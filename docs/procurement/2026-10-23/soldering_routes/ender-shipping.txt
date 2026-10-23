@@ -1,0 +1,213 @@
+- 'link "Bundle-Deal: 4 Rollen Filament für nur €19,9"':
+  - /url: https://store.creality.com/de/products/k2-pro-combo-3d-drucker
+  - 'heading "Bundle-Deal: 4 Rollen Filament für nur €19,9" [level=4]'
+- button:
+- link:
+  - /url: https://www.creality.com/de?utm_source=creality_store_de&utm_medium=homepage
+- link:
+  - /url: "https://de.crealityfalcon.com/?utm_source=creality_store_de&utm_medium=topbar "
+- paragraph:
+  - paragraph:
+    - strong: Offizieller Creality DE-Store · Versand in DE, AT, BE, CH, LU, LI & CZ.
+- paragraph:
+  - paragraph: 🚚GRATIS Versand ab 99€ + Versand in 1 Werktag！
+- paragraph:
+  - paragraph: "Als Neukunde: 5% Rabatt sofort! Code: DESTORE05"
+- paragraph:
+  - paragraph:
+    - link:
+      - /url: https://store.creality.com/de/collections/filamente-fur-3d-drucker
+      - strong: Filament-Mengenrabatt Kauf 5, bezahl 4 - Kauf 10, bezahl 7
+- paragraph:
+  - paragraph:
+    - text: "Jetzt Upgrade & Spare 10% :"
+    - link:
+      - /url: https://store.creality.com/de/pages/trade-in
+      - text: ♻️Step-Up Programm
+- paragraph:
+  - paragraph:
+    - text: 💳 Genießen Sie
+    - strong: 5% Rabatt
+    - text: auf
+    - link:
+      - /url: https://store.creality.com/de/products/creality-geschenkkarte
+      - text: Creality Geschenkkarten
+    - text: "!"
+- paragraph:
+  - paragraph:
+    - strong: Spare 7%
+    - text: mit dem
+    - link:
+      - /url: https://store.creality.com/de/pages/student-discount
+      - text: Creality Studentenrabatt
+    - text: "!"
+- button "DE DE(Deutsch)":
+  - img "DE"
+  - generic: DE(Deutsch)
+- banner:
+  - link "Creality Store":
+    - /url: /de
+    - img "Creality Store"
+  - navigation:
+    - text: Sale
+    - link "3D-Drucker":
+      - /url: /de/collections/3d-printers
+    - link "3D-Drucker Kombi":
+      - /url: /de/collections/3d-drucker-kombination-sale
+    - link "3D-Scanner":
+      - /url: /de/collections/scanner
+    - link "Filament & Resin":
+      - /url: /de/collections/creality-filament-bulk-sale
+    - link "Zubehör":
+      - /url: /de/collections/accessories
+    - link "Lasergravierer":
+      - /url: /de/collections/engraver
+  - navigation:
+    - link:
+      - /url: /de/account/login?returnTo=%2Fde%2Faccount
+- main:
+  - heading "Versand & Auslieferung" [level=1]
+  - list:
+    - generic: Versandzeit & Regeln
+    - paragraph: Die Versandzeiten variieren je nach Produkt und Verfügbarkeit. Die voraussichtliche Versandzeit wird auf der jeweiligen Produktseite angezeigt. In der Regel werden Bestellungen innerhalb von 3 Tagen nach Zahlungsbestätigung versandt.
+    - paragraph: Wenn Ihre Bestellung mehrere Produkte enthält, richtet sich die Versandzeit nach dem Produkt mit der längsten Bearbeitungszeit. Bestellungen und Combo-Produkte werden grundsätzlich gemeinsam versendet. Wenn Sie einzelne Produkte bereits versenden lassen möchten, sobald diese verfügbar sind, bestellen Sie diese bitte separat.
+    - generic: Lieferländer
+    - paragraph: Deutschland, Österreich, Belgien, Liechtenstein, Luxemburg, Schweiz und Tschechien
+    - generic: Versand
+    - paragraph:
+      - strong: Versanddienstleister
+    - paragraph: Bestellungen werden je nach Lieferland sowie Gewicht und Abmessungen der Produkte mit unseren verfügbaren Versanddienstleistern verschickt.
+    - paragraph:
+      - strong: Versandkosten
+    - paragraph:
+      - strong: "Deutschland, Österreich, Belgien, Liechtenstein, Luxemburg & Tschechien:"
+      - text: Ab einem Bestellwert von 99 € ist der Versand kostenlos.
+    - paragraph:
+      - strong: "Schweiz:"
+      - text: Ab einem Bestellwert von 189 € ist der Versand kostenlos.
+    - paragraph:
+      - strong: Hinweise zum Versand
+    - paragraph: Für besondere Versandwünsche wenden Sie sich bitte an den Creality Support. Bitte überprüfen Sie Ihre Lieferadresse sorgfältig, bevor Sie die Bestellung abschließen.
+    - paragraph: Falls Sie eine falsche Adresse angegeben haben, kontaktieren Sie bitte so schnell wie möglich den Creality Support. Wir werden versuchen, die Lieferadresse gemeinsam mit unserem Logistikpartner zu korrigieren. Nach dem Versand können wir jedoch nicht garantieren, dass eine Adressänderung noch möglich ist.
+    - paragraph: Creality-Bestellungen können grundsätzlich nur innerhalb des Landes versendet werden, in dem die Bestellung aufgegeben wurde. Für zusätzliche Kosten oder Risiken, die durch eine nachträgliche Adressänderung entstehen, ist der Kunde verantwortlich.
+    - paragraph: Bitte geben Sie bei Ihrer Bestellung Ihren vollständigen Namen, die korrekte Lieferadresse und gültige Kontaktdaten an, damit eine erfolgreiche Zustellung gewährleistet werden kann.
+    - paragraph:
+      - strong: "Bitte beachten Sie, dass es unter folgenden Umständen zu Verzögerungen kommen kann:"
+    - list:
+      - listitem: Bei Lieferungen in abgelegene Regionen kann sich die Lieferzeit zusätzlich um 1–2 Werktage verlängern.
+      - listitem: Verzögerungen oder fehlgeschlagene Zustellungen können durch Änderungen der Lieferadresse, falsche oder unvollständige Adress- bzw. Kontaktdaten oder die Verweigerung der Annahme entstehen.
+      - listitem: Bei höherer Gewalt, beispielsweise extremen Wetterbedingungen, Naturkatastrophen, Transportstörungen, staatlichen Maßnahmen oder anderen unvorhersehbaren Ereignissen, kann es zu Verzögerungen kommen.
+      - listitem: Bestimmte Produkte können aufgrund von Sicherheitsbestimmungen nicht per Luftfracht transportiert werden.
+      - listitem: Sendungen können bei Verstößen gegen geltende Transportbestimmungen zurückgehalten oder anderweitig behandelt werden.
+      - listitem: An Wochenenden und Feiertagen kann die Zustellung eingeschränkt sein.
+      - listitem: Bei Lieferadressen wie Schulen, Einrichtungen oder Wohnanlagen kann es zu Verzögerungen kommen, wenn der Zusteller keinen direkten Zugang zum Gebäude hat.
+    - generic: Bestellverfolgung
+    - paragraph:
+      - strong: Sendungsverfolgung
+    - paragraph: Sobald Ihre Bestellung versandt wurde, erhalten Sie eine Versandbestätigung per E-Mail bzw. SMS, sofern Sie SMS-Benachrichtigungen aktiviert haben. Diese enthält Ihre Sendungsnummer und gegebenenfalls einen Link zur Sendungsverfolgung.
+    - paragraph:
+      - strong: "Sie können Ihre Bestellung außerdem wie folgt verfolgen:"
+    - list:
+      - listitem: Melden Sie sich bei Ihrem Creality-Konto an und öffnen Sie „Meine Bestellungen“.
+      - listitem: Wenden Sie sich bei Fragen an den Creality Support.
+    - generic: Paketannahme
+    - paragraph: Sobald Sie oder eine von Ihnen autorisierte Person die Sendung entgegennimmt bzw. dafür unterschreibt, gilt das Paket als zugestellt.
+    - paragraph: Um Ihre Rechte zu schützen, empfehlen wir Ihnen, beim Öffnen des Pakets ein vollständiges Unboxing-Video aufzunehmen und den Inhalt anhand der Packliste zu überprüfen.
+    - paragraph: Sollten Artikel fehlen oder beschädigt sein, wenden Sie sich bitte innerhalb von 24 Stunden nach Erhalt des Pakets an den Creality Support.
+    - generic: Bestellung stornieren
+    - paragraph:
+      - text: "Wenn Ihre Bestellung noch nicht versandt wurde und Sie sie stornieren möchten, kontaktieren Sie uns bitte so schnell wie möglich:"
+      - strong: store.de@creality.com
+- contentinfo:
+  - navigation:
+    - paragraph: Produktauswahl
+    - list:
+      - link "Modellvergleich":
+        - /url: https://store.creality.com/de/pages/compare
+      - link "3D-Drucker":
+        - /url: https://store.creality.com/de/collections/3d-printers
+      - link "3D-Scanner":
+        - /url: https://store.creality.com/de/collections/scanner-gravier
+      - link "Material":
+        - /url: https://de.store.creality.com/collections/creality-filament-bulk-sale
+      - link "Zubehör":
+        - /url: https://store.creality.com/de/collections/accessories
+      - link "Flash-Sale":
+        - /url: https://store.creality.com/de/pages/flash-sale
+    - paragraph: Firma
+    - list:
+      - link "Über Uns":
+        - /url: https://store.creality.com/de/about
+      - link "Kontakt Uns":
+        - /url: https://store.creality.com/de/pages/kontakt-uns
+      - link "B2B Konto":
+        - /url: https://store.creality.com/de/company-registration
+      - link "Blog":
+        - /url: https://store.creality.com/de/blogs
+      - link "Impressum":
+        - /url: https://store.creality.com/de/pages/impressum
+      - link "Treueprogramm":
+        - /url: https://store.creality.com/de/loyalty-program
+    - paragraph: Hilfezentrum
+    - list:
+      - link "Über Bestellung":
+        - /url: https://de.store.creality.com/apps/bestellungsverfolgung
+      - link "Vertrag widerrufen":
+        - /url: https://store.creality.com/de/self-return
+      - link "Herunterladen-Center":
+        - /url: https://www.crealitycloud.com/software-firmware
+      - link "Datenschutzbestimmungen":
+        - /url: https://store.creality.com/de/pages/datenschutzbestimmungen
+      - link "Verkaufsbedingungen":
+        - /url: https://store.creality.com/de/pages/verkaufsbedingungen
+      - link "Versand & Auslieferung":
+        - /url: https://store.creality.com/de/pages/versand-auslieferung
+      - link "Rückgaberecht":
+        - /url: https://de.store.creality.com/pages/ruckgaberecht
+      - link "AGB":
+        - /url: https://de.store.creality.com/pages/allgemeine-geschaftsbedingungen-agb
+    - paragraph: Community
+    - list:
+      - link "Forum":
+        - /url: https://forum.creality.com/
+      - link "Crealitycloud":
+        - /url: https://www.crealitycloud.com/
+      - link "Creality Wiki":
+        - /url: https://wiki.creality.com/en/home
+      - link "Store Group":
+        - /url: https://www.facebook.com/groups/crealitydeutschland
+      - link "Discord":
+        - /url: https://discord.com/invite/NZM4yjZvyx
+      - link "Jetzt Partner werden":
+        - /url: http://app.impact.com/campaign-campaign-info-v2/Creality-EU.brand
+      - link "Craftseek":
+        - /url: https://webapp.craftseek.com/#/download
+    - paragraph: Abonnieren
+    - paragraph: Als erster Neuigkeiten erfahren und über heiße Sonderangebote und Rabattaktionen informiert werden.
+  - link:
+    - /url: https://www.creality.com/de?utm_source=creality_store_de&utm_medium=homepage
+  - link:
+    - /url: https://de.crealityfalcon.com/?utm_source=creality_store_de&utm_medium=footer
+  - link:
+    - /url: https://www.facebook.com/Crealityde
+  - link:
+    - /url: https://www.tiktok.com/@crealityofficial?spm=..index.footer_1.1
+  - link:
+    - /url: https://www.youtube.com/c/Creality3D/featured
+  - link:
+    - /url: https://x.com/Creality3dP
+  - link:
+    - /url: https://www.linkedin.com/company/creality-3d/
+  - link:
+    - /url: https://www.quora.com/profile/William-Liu-351?spm=..index.footer_1.1&amp;spm_prev=..index.header_1.1
+  - link:
+    - /url: https://www.reddit.com/r/Creality/?rdt=64799
+  - link:
+    - /url: https://discord.com/invite/creality
+  - generic: "Email: store.de@creality.com"
+  - button "DE DE(Deutsch)":
+    - img "DE"
+    - generic: DE(Deutsch)
+  - text: "@ 2026 Creality Deutschland|"
+  - generic: Cookie Settings
+- alert

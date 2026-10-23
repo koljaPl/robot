@@ -1,0 +1,948 @@
+- link "Zum Hauptinhalt springen":
+  - /url: "#content-main"
+- link "Zur Suche springen":
+  - /url: "#header-main-search-input"
+- link "Zur Hauptnavigation springen":
+  - /url: "#main-navigation-menu"
+- banner:
+  - generic: 
+  - text: Blitzschneller Versand bis 14 Uhr
+  - text: 
+  - generic: "|"
+  - generic: 
+  - text: Versandkostenfrei ab 200 EUR
+  - link "Support":
+    - /url: https://support.berrybase.de/
+    - generic: 
+    - generic: Support
+  - link "B2B Shop":
+    - /url: https://b2b.berrybase.de/
+    - generic: 
+    - generic: B2B Shop
+  - link "Education":
+    - /url: /education
+    - generic: 
+    - generic: Education
+  - button "Sprache ändern (Deutsch ist die aktuelle Sprache)"
+  - link "Zur Startseite gehen":
+    - /url: /
+    - img "Zur Startseite gehen"
+  - searchbox "Suchbegriff eingeben ..."
+  - button "Suchen":
+  - link "Du hast 0 Produkte auf dem Merkzettel":
+    - /url: /wishlist
+    - paragraph: Du hast 0 Produkte auf dem Merkzettel
+    - text: Merkzettel
+  - button "Ihr Konto":
+    - text: Ihr Konto
+  - link "Warenkorb enthält 0 Positionen. Der Gesamtwert beträgt 0,00 €.":
+    - /url: /checkout/cart
+    - text: Warenkorb
+    - generic: Warenkorb enthält 0 Positionen. Der Gesamtwert beträgt 0,00 €.
+  - button "Shop-Kategorien":
+    - generic: Shop-Kategorien
+  - link "NEU":
+    - /url: /neu
+    - generic: 
+    - generic: NEU
+  - link "SALE":
+    - /url: /sale
+    - generic: 
+    - generic: SALE
+  - link "CLUB":
+    - /url: /club
+    - generic: 
+    - generic: CLUB
+  - link "BLOG":
+    - /url: https://blog.berrybase.de/
+    - generic: 
+    - generic: BLOG
+  - dialog "Shop-Kategorien":
+    - generic: Shop-Kategorien
+    - button "Schließen":
+    - navigation:
+      - link "star-solid-full Neu":
+        - /url: https://www.berrybase.de/neu/
+        - img "star-solid-full"
+        - generic: Neu
+      - link "icon-raspberry-pi Raspberry Pi":
+        - /url: https://www.berrybase.de/raspberry-pi/
+        - img "icon-raspberry-pi"
+        - generic: Raspberry Pi
+      - link "icon-cpu Dev. Boards":
+        - /url: https://www.berrybase.de/dev.-boards/
+        - img "icon-cpu"
+        - generic: Dev. Boards
+      - link "icon-robot Robotik":
+        - /url: https://www.berrybase.de/robotik/
+        - img "icon-robot"
+        - generic: Robotik
+      - link "icon-thermometer Sensoren / Module":
+        - /url: https://www.berrybase.de/sensoren-module/
+        - img "icon-thermometer"
+        - generic: Sensoren / Module
+      - link "icon-lightning Bauelemente":
+        - /url: https://www.berrybase.de/bauelemente/
+        - img "icon-lightning"
+        - generic: Bauelemente
+      - link "icon-power-plug Strom":
+        - /url: https://www.berrybase.de/strom/
+        - img "icon-power-plug"
+        - generic: Strom
+      - link "icon-tools Werkstatt":
+        - /url: https://www.berrybase.de/werkstatt/
+        - img "icon-tools"
+        - generic: Werkstatt
+      - link "screwdriver-solid-full DIY-Reparatur":
+        - /url: https://www.berrybase.de/diy-reparatur/
+        - img "screwdriver-solid-full"
+        - generic: DIY-Reparatur
+      - link "icon-monitor Multimedia / Office":
+        - /url: https://www.berrybase.de/multimedia-office/
+        - img "icon-monitor"
+        - generic: Multimedia / Office
+      - link "icon-network Netzwerk":
+        - /url: https://www.berrybase.de/netzwerk/
+        - img "icon-network"
+        - generic: Netzwerk
+      - link "icon-smart-home Smart Living":
+        - /url: https://www.berrybase.de/smart-living/
+        - img "icon-smart-home"
+        - generic: Smart Living
+      - link "tablet-solid-full Gadgets":
+        - /url: https://www.berrybase.de/gadgets/
+        - img "tablet-solid-full"
+        - generic: Gadgets
+      - link "icon-education Education":
+        - /url: https://www.berrybase.de/education/
+        - img "icon-education"
+        - generic: Education
+      - link "icon-price-tag Sale":
+        - /url: https://www.berrybase.de/sale/
+        - img "icon-price-tag"
+        - generic: Sale
+      - link "brands-solid-full Marken":
+        - /url: /brands
+        - img "brands-solid-full"
+        - generic: Marken
+      - link "newspaper-solid-full Blog":
+        - /url: https://blog.berrybase.de
+        - img "newspaper-solid-full"
+        - generic: Blog
+    - navigation:
+      - link "NEW Neue Produkte":
+        - /url: /neu
+        - generic: NEW
+        - generic: Neue Produkte
+      - link "SALE Sale Artikel":
+        - /url: /sale
+        - generic: SALE
+        - generic: Sale Artikel
+      - link "CLUB BerryBase Club":
+        - /url: /club
+        - generic: CLUB
+        - generic: BerryBase Club
+      - link "BLOG Blog":
+        - /url: https://blog.berrybase.de/
+        - generic: BLOG
+        - generic: Blog
+      - link "Support":
+        - /url: https://support.berrybase.de/
+        - generic: 
+        - generic: Support
+      - link "B2B Shop":
+        - /url: https://b2b.berrybase.de/
+        - generic: 
+        - generic: B2B Shop
+      - link "Education":
+        - /url: /education
+        - generic: 
+        - generic: Education
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - link "Home":
+        - /url: /
+      - link "Werkstatt":
+        - /url: https://www.berrybase.de/werkstatt/
+      - link "Löttechnik":
+        - /url: https://www.berrybase.de/werkstatt/loettechnik/
+      - link "Lötzinn":
+        - /url: https://www.berrybase.de/werkstatt/loettechnik/loetzinn/
+  - link "Bildergalerie überspringen":
+    - /url: "#content-after-target-019bc73aba3c721eae4c4d661ab7e4d6"
+  - region "Bildergalerie mit 1 Elementen":
+    - img "Zhongdi Lötzinn, bleifrei, ø1,0 mm, 2 % Flussmittel, 10 g"
+  - link "Zhongdi":
+    - /url: https://www.berrybase.de/zhongdi/
+    - img "Zhongdi"
+  - generic: "Artikelnummer: ZD-160"
+  - generic: Zhongdi
+  - heading "Zhongdi Lötzinn, bleifrei, ø1,0 mm, 2 % Flussmittel, 10 g" [level=1]
+  - paragraph: 1,90 €
+  - paragraph:
+    - button "Preise inkl. MwSt. zzgl. Versandkosten"
+  - generic: Sofort verfügbar · 90 Stück · 1-3 Tage
+  - button "Anzahl verringern":
+  - spinbutton "Anzahl": "1"
+  - button "Anzahl erhöhen":
+  - button "In den Warenkorb":
+    - generic: In den Warenkorb
+  - button "Zum Merkzettel hinzufügen":
+  - link "Produktinformation":
+    - /url: /product-datasheet/019aea51775a71fba1a860e5b8d57355/create
+    - text: Produktinformation
+  - link:
+    - /url: /berrys-lohnen-sich
+    - alert:
+      - img "P"
+      - text: Jetzt Bestellen und
+      - generic: "4"
+      - text: Berrys sichern
+  - tablist:
+    - tab "Kunden kauften auch" [selected]
+  - tabpanel "Kunden kauften auch":
+    - heading "Kunden kauften auch" [level=2]
+    - generic: 24 Artikel
+    - button "Alle auswählen"
+    - region "Kunden kauften auch":
+      - generic: slide 1 to 5
+      - checkbox "Entlötlitze, Breite 1,0mm, Länge 1,50m" [checked]
+      - img "Entlötlitze, Breite 1,0mm, Länge 1,50m"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Entlötlitze, Breite 1,0mm, Länge 1,50m - Vorschau":
+      - img "goobay"
+      - generic: "45245"
+      - link "Entlötlitze, Breite 1,0mm, Länge 1,50m":
+        - /url: https://www.berrybase.de/entloetlitze-breite-1-0mm-laenge-1-50m
+      - paragraph: "Inhalt: 1.5 Meter (1,20 € / 1 Meter)"
+      - generic: 1,80 €
+      - checkbox "Flussmittel Kolophonium 20g Dose"
+      - img "Flussmittel Kolophonium 20g Dose"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Flussmittel Kolophonium 20g Dose - Vorschau":
+      - img "AG Termopasty"
+      - generic: AGT-033
+      - link "Flussmittel Kolophonium 20g Dose":
+        - /url: https://www.berrybase.de/flussmittel-kolophonium-20g-dose
+      - paragraph
+      - generic: 2,30 €
+      - checkbox "Kupferlitze isoliert, 1x0,14mm, 10m"
+      - img "Kupferlitze isoliert, 1x0,14mm, 10m"
+      - img "Kupferlitze isoliert, 1x0,14mm, 10m"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Kupferlitze isoliert, 1x0,14mm, 10m - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 4.86 von 5 Sternen
+      - img "goobay"
+      - generic: "55045"
+      - link "Kupferlitze isoliert, 1x0,14mm, 10m":
+        - /url: https://www.berrybase.de/kupferlitze-isoliert-1x0-14mm-10m/farbe-schwarz
+      - paragraph: "Inhalt: 10 Meter (0,15 € / 1 Meter)"
+      - generic: 1,50 €
+      - checkbox "Zhongdi ZD-8903A Digitale Lötstation, LCD Anzeige, 160-480°C, kompakte Bauform, 25W 230V"
+      - img "Zhongdi ZD-8903A Digitale Lötstation, LCD Anzeige, 160-480°C, kompakte Bauform, 25W 230V"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Zhongdi ZD-8903A Digitale Lötstation, LCD Anzeige, 160-480°C, kompakte Bauform, 25W 230V - Vorschau":
+      - img "Zhongdi"
+      - generic: ZD-8903A
+      - link "Zhongdi ZD-8903A Digitale Lötstation, LCD Anzeige, 160-480°C, kompakte Bauform, 25W 230V":
+        - /url: https://www.berrybase.de/zhongdi-zd-8903a-digitale-loetstation-lcd-anzeige-160-4800c-kompakte-bauform-25w-230v
+      - paragraph
+      - generic: 28,90 €
+      - checkbox "Breadboard mit 830 Kontakten"
+      - img "Breadboard mit 830 Kontakten"
+      - img "Breadboard mit 830 Kontakten"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Breadboard mit 830 Kontakten - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 4.61 von 5 Sternen
+      - img "BerryBase"
+      - generic: BB-830P
+      - link "Breadboard mit 830 Kontakten":
+        - /url: https://www.berrybase.de/breadboard-mit-830-kontakten
+      - paragraph
+      - generic: 1,90 €
+      - checkbox "Breadboard mit 400 Kontakten"
+      - img "Breadboard mit 400 Kontakten"
+      - img "Breadboard mit 400 Kontakten"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Breadboard mit 400 Kontakten - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 4.6 von 5 Sternen
+      - img "BerryBase"
+      - generic: BB-400P
+      - link "Breadboard mit 400 Kontakten":
+        - /url: https://www.berrybase.de/breadboard-mit-400-kontakten
+      - paragraph
+      - generic: 1,60 €
+      - checkbox "Flussmittelgel 1,4ml Spritze"
+      - img "Flussmittelgel 1,4ml Spritze"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Flussmittelgel 1,4ml Spritze - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 4.67 von 5 Sternen
+      - img "AG Termopasty"
+      - generic: AGT-047
+      - link "Flussmittelgel 1,4ml Spritze":
+        - /url: https://www.berrybase.de/flussmittelgel-1-4ml-spritze
+      - paragraph: "Inhalt: 1 Milliliter (350,00 € / 100 Milliliter)"
+      - generic: 3,50 €
+      - checkbox "Ersatzschwamm für Lötstationen und Lötkolbenständer"
+      - img "Ersatzschwamm für Lötstationen und Lötkolbenständer"
+      - img "Ersatzschwamm für Lötstationen und Lötkolbenständer"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Ersatzschwamm für Lötstationen und Lötkolbenständer - Vorschau":
+      - img "Frei"
+      - generic: "51074"
+      - link "Ersatzschwamm für Lötstationen und Lötkolbenständer":
+        - /url: https://www.berrybase.de/ersatzschwamm-fuer-loetstationen-und-loetkolbenstaender
+      - paragraph
+      - generic: 1,75 €
+      - checkbox "Dritte Hand mit Echtglas Lupe"
+      - img "Dritte Hand mit Echtglas Lupe"
+      - img "Dritte Hand mit Echtglas Lupe"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Dritte Hand mit Echtglas Lupe - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 4.57 von 5 Sternen
+      - img "Frei"
+      - generic: "51199"
+      - link "Dritte Hand mit Echtglas Lupe":
+        - /url: https://www.berrybase.de/dritte-hand-mit-echtglas-lupe
+      - paragraph
+      - generic: 6,50 €
+      - checkbox "Entlötpumpe mit hoher Saugleistung & Teflonspitze"
+      - img "Entlötpumpe mit hoher Saugleistung & Teflonspitze"
+      - img "Entlötpumpe mit hoher Saugleistung & Teflonspitze"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Entlötpumpe mit hoher Saugleistung & Teflonspitze - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 4.5 von 5 Sternen
+      - img "Frei"
+      - generic: "51200"
+      - link "Entlötpumpe mit hoher Saugleistung & Teflonspitze":
+        - /url: https://www.berrybase.de/entloetpumpe-mit-hoher-saugleistung-teflonspitze
+      - paragraph
+      - generic: 2,10 €
+      - checkbox "Schrumpfschlauch-Set, 100-teilig, schwarz"
+      - img "Schrumpfschlauch-Set, 100-teilig, schwarz"
+      - img "Schrumpfschlauch-Set, 100-teilig, schwarz"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Schrumpfschlauch-Set, 100-teilig, schwarz - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 4.6 von 5 Sternen
+      - img "McPower"
+      - generic: T1535561
+      - link "Schrumpfschlauch-Set, 100-teilig, schwarz":
+        - /url: https://www.berrybase.de/schrumpfschlauch-set-100-teilig-schwarz
+      - paragraph
+      - generic: 1,90 €
+      - checkbox "goobay Lötzinn, bleifrei, ø1,0mm"
+      - img "goobay Lötzinn, bleifrei, ø1,0mm"
+      - button "Zum Merkzettel hinzufügen":
+      - button "goobay Lötzinn, bleifrei, ø1,0mm - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 5 von 5 Sternen
+      - img "goobay"
+      - generic: gooLzPBF10
+      - link "goobay Lötzinn, bleifrei, ø1,0mm":
+        - /url: https://www.berrybase.de/goobay-loetzinn-bleifrei-oe1-0mm
+      - paragraph
+      - generic: Ab 4,50 €
+      - checkbox "Entlötlitze, Breite 2,0mm, Länge 1,50m"
+      - img "Entlötlitze, Breite 2,0mm, Länge 1,50m"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Entlötlitze, Breite 2,0mm, Länge 1,50m - Vorschau":
+      - img "goobay"
+      - generic: "45246"
+      - link "Entlötlitze, Breite 2,0mm, Länge 1,50m":
+        - /url: https://www.berrybase.de/entloetlitze-breite-2-0mm-laenge-1-50m
+      - paragraph: "Inhalt: 1.5 Meter (1,27 € / 1 Meter)"
+      - generic: 1,90 €
+      - checkbox "Reinigungswolle für Lötspitzenreinigungskit"
+      - img "Reinigungswolle für Lötspitzenreinigungskit"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Reinigungswolle für Lötspitzenreinigungskit - Vorschau":
+      - img "goobay"
+      - generic: "72360"
+      - link "Reinigungswolle für Lötspitzenreinigungskit":
+        - /url: https://www.berrybase.de/reinigungswolle-fuer-loetspitzenreinigungskit
+      - paragraph
+      - generic: 3,10 €
+      - checkbox "PCWork, PCW04A 2in1 Seitenschneider, Abisolierzange"
+      - img "PCWork, PCW04A 2in1 Seitenschneider, Abisolierzange"
+      - img "PCWork, PCW04A 2in1 Seitenschneider, Abisolierzange"
+      - button "Zum Merkzettel hinzufügen":
+      - button "PCWork, PCW04A 2in1 Seitenschneider, Abisolierzange - Vorschau":
+      - img "PCWork"
+      - generic: PCW04A
+      - link "PCWork, PCW04A 2in1 Seitenschneider, Abisolierzange":
+        - /url: https://www.berrybase.de/pcwork-pcw04a-2in1-seitenschneider-abisolierzange
+      - paragraph
+      - generic: 5,50 €
+      - checkbox "PCWork, PCW08G, Pinzettenset, ESD-sicher, Edelstahl, 9-teilig"
+      - img "PCWork, PCW08G, Pinzettenset, ESD-sicher, Edelstahl, 9-teilig"
+      - img "PCWork, PCW08G, Pinzettenset, ESD-sicher, Edelstahl, 9-teilig"
+      - button "Zum Merkzettel hinzufügen":
+      - button "PCWork, PCW08G, Pinzettenset, ESD-sicher, Edelstahl, 9-teilig - Vorschau":
+      - img "PCWork"
+      - generic: PCW08G
+      - link "PCWork, PCW08G, Pinzettenset, ESD-sicher, Edelstahl, 9-teilig":
+        - /url: https://www.berrybase.de/pcwork-pcw08g-pinzettenset-esd-sicher-edelstahl-9-teilig
+      - paragraph
+      - generic: 8,90 €
+      - checkbox "Goobay Lötfett Dose, 50 g"
+      - img "Goobay Lötfett Dose, 50 g"
+      - img "Goobay Lötfett Dose, 50 g"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Goobay Lötfett Dose, 50 g - Vorschau":
+      - img "goobay"
+      - generic: "45238"
+      - link "Goobay Lötfett Dose, 50 g":
+        - /url: https://www.berrybase.de/goobay-loetfett-dose-50-g
+      - paragraph
+      - generic: 1,95 €
+      - checkbox "Entlötlitze 1,0mm breit, 1,5m lang, flussmittelgetränkt, Kupfer"
+      - img "Entlötlitze 1,0mm breit, 1,5m lang, flussmittelgetränkt, Kupfer"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Entlötlitze 1,0mm breit, 1,5m lang, flussmittelgetränkt, Kupfer - Vorschau":
+      - img "Zhongdi"
+      - generic: ZD-180-10
+      - link "Entlötlitze 1,0mm breit, 1,5m lang, flussmittelgetränkt, Kupfer":
+        - /url: https://www.berrybase.de/entloetlitze-1-0mm-breit-1-5m-lang-flussmittelgetraenkt-kupfer
+      - paragraph
+      - generic: 0,90 €
+      - checkbox "Kupferlitze isoliert, 1x0,14mm, 10m"
+      - img "Kupferlitze isoliert, 1x0,14mm, 10m"
+      - img "Kupferlitze isoliert, 1x0,14mm, 10m"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Kupferlitze isoliert, 1x0,14mm, 10m - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 4.86 von 5 Sternen
+      - img "goobay"
+      - generic: "55044"
+      - link "Kupferlitze isoliert, 1x0,14mm, 10m":
+        - /url: https://www.berrybase.de/kupferlitze-isoliert-1x0-14mm-10m/farbe-rot
+      - paragraph: "Inhalt: 10 Meter (0,15 € / 1 Meter)"
+      - generic: 1,50 €
+      - checkbox "Lötspitzenreinigungskit"
+      - img "Lötspitzenreinigungskit"
+      - img "Lötspitzenreinigungskit"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Lötspitzenreinigungskit - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 5 von 5 Sternen
+      - img "Frei"
+      - generic: "45239"
+      - link "Lötspitzenreinigungskit":
+        - /url: https://www.berrybase.de/loetspitzenreinigungskit
+      - paragraph
+      - generic: 4,20 €
+      - checkbox "Silikon Lötmatte, 280x200mm"
+      - img "Silikon Lötmatte, 280x200mm"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Silikon Lötmatte, 280x200mm - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 5 von 5 Sternen
+      - img "BerryBase"
+      - generic: SIL-MAT-1
+      - link "Silikon Lötmatte, 280x200mm":
+        - /url: https://www.berrybase.de/silikon-loetmatte-280x200mm
+      - paragraph
+      - generic: 5,50 €
+      - checkbox "USB Lötkolben, 5V / 8W"
+      - img "USB Lötkolben, 5V / 8W"
+      - img "USB Lötkolben, 5V / 8W"
+      - button "Zum Merkzettel hinzufügen":
+      - button "USB Lötkolben, 5V / 8W - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 4 von 5 Sternen
+      - img "McPower"
+      - generic: T1540105
+      - link "USB Lötkolben, 5V / 8W":
+        - /url: https://www.berrybase.de/usb-loetkolben-5v-8w
+      - paragraph
+      - generic: 7,50 €
+      - checkbox "Entlötlitze 2,0mm breit, 1,5m lang, flussmittelgetränkt, Kupfer"
+      - img "Entlötlitze 2,0mm breit, 1,5m lang, flussmittelgetränkt, Kupfer"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Entlötlitze 2,0mm breit, 1,5m lang, flussmittelgetränkt, Kupfer - Vorschau":
+      - img "Zhongdi"
+      - generic: ZD-180-20
+      - link "Entlötlitze 2,0mm breit, 1,5m lang, flussmittelgetränkt, Kupfer":
+        - /url: https://www.berrybase.de/entloetlitze-2-0mm-breit-1-5m-lang-flussmittelgetraenkt-kupfer
+      - paragraph
+      - generic: 1,10 €
+      - checkbox "PCWork Digitale Lötstation, 180 - 480°C, 900M-Spitze, HD-LED Dual-Anzeige, Sleep-Funktion, 60W, 24V"
+      - img "PCWork Digitale Lötstation, 180 - 480°C, 900M-Spitze, HD-LED Dual-Anzeige, Sleep-Funktion, 60W, 24V"
+      - img "PCWork Digitale Lötstation, 180 - 480°C, 900M-Spitze, HD-LED Dual-Anzeige, Sleep-Funktion, 60W, 24V"
+      - button "Zum Merkzettel hinzufügen":
+      - button "PCWork Digitale Lötstation, 180 - 480°C, 900M-Spitze, HD-LED Dual-Anzeige, Sleep-Funktion, 60W, 24V - Vorschau":
+      - img "PCWork"
+      - generic: PCW09A
+      - link "PCWork Digitale Lötstation, 180 - 480°C, 900M-Spitze, HD-LED Dual-Anzeige, Sleep-Funktion, 60W, 24V":
+        - /url: https://www.berrybase.de/pcwork-digitale-loetstation-180-4800c-900m-spitze-hd-led-dual-anzeige-sleep-funktion-60w-24v
+      - paragraph
+      - generic: 49,90 €
+      - navigation "Carousel Navigation":
+        - button "Vorheriges":
+        - button "Nächstes":
+    - generic: 1 Artikel ausgewählt
+    - strong: "Gesamt: 1,80 €"
+    - button "1 Artikel in den Warenkorb":
+      - generic: 1 Artikel in den Warenkorb
+  - tablist:
+    - tab "Beschreibung" [selected]
+    - tab "Eigenschaften"
+    - tab "Hersteller"
+    - tab "Hersteller- und Sicherheitsinformationen"
+    - tab "Bewertungen" [selected]
+  - tabpanel "Beschreibung":
+    - heading "Produktinformationen \"Zhongdi Lötzinn, bleifrei, ø1,0 mm, 2 % Flussmittel, 10 g\"" [level=2]
+    - strong: ZD-160 Lötdraht, 1,0 mm, bleifrei, 10 g Rolle
+    - text: Der ZD-160 ist ein bleifreier Lötdraht, der für verschiedene Lötanwendungen geeignet ist. Die Legierung besteht aus einer Zinn-Kupfer-Kombination mit einem Anteil von Sn99,3 % und Cu0,7 %. Der Draht hat einen Durchmesser von 1,0 mm und enthält ein integriertes Flussmittel mit einem Anteil von 2 %. Die Rolle enthält 10 g Lötdraht und eignet sich insbesondere für kleinere Reparaturen oder mobile Anwendungen mit geringem Verbrauch.
+    - text: Typische Einsatzbereiche sind Elektronikarbeiten, allgemeine Lötreparaturen und der Hobbybereich. Die Materialzusammensetzung unterstützt eine zuverlässige Lötverbindung und sorgt für eine gleichmäßige Benetzung beim Verlöten elektrischer Bauteile. Die bleifreie Formulierung entspricht aktuellen Umweltanforderungen und ist eine Alternative zu bleihaltigem Lötdraht bei Anwendungen mit geringem Materialbedarf.
+    - strong: Merkmale im Überblick
+    - list:
+      - listitem: "Bleifreie Zinn-Kupfer-Legierung: Sn99,3 % / Cu0,7 %"
+      - listitem: Integriertes Flussmittel mit 2 % Anteil
+      - listitem: Geeignet für feine Lötarbeiten und kleine Reparaturen
+      - listitem: Kompakte 10 g Rolle für mobilen Einsatz oder geringen Bedarf
+    - strong: Kompatibilität
+    - list:
+      - listitem: Einsetzbar für Elektronik, Reparaturen und Hobbyanwendungen
+    - strong: Technische Daten
+    - list:
+      - listitem: "Legierung: Sn99,3 % / Cu0,7 %"
+      - listitem: "Flussmittelanteil: 2 %"
+      - listitem: "Durchmesser: 1,0 mm"
+      - listitem: "Gewicht: 10 g"
+      - listitem: Bleifrei
+    - strong: Lieferumfang
+    - list:
+      - listitem: 1x ZD-160 Lötdraht, 1,0 mm, 10 g Rolle
+  - tabpanel "acrisSuggestedProducts.product.detail.placeholderSlider"
+  - tabpanel "Kunden haben sich ebenfalls angesehen":
+    - region "Produktgalerie mit 25 Elementen":
+      - link "Produktgalerie überspringen":
+        - /url: "#content-after-target-019bc73aba3c721eae4c4d661e0dd897"
+      - paragraph: Kunden haben sich ebenfalls angesehen
+      - img "AG Tertmopasty Lötpaste Kolophoniumbasis, RMA, halogenfrei, ISO 9454-1 Typ 1134, 20 ml, 50-200 °C"
+      - img "AG Tertmopasty Lötpaste Kolophoniumbasis, RMA, halogenfrei, ISO 9454-1 Typ 1134, 20 ml, 50-200 °C"
+      - button "Zum Merkzettel hinzufügen":
+      - button "AG Tertmopasty Lötpaste Kolophoniumbasis, RMA, halogenfrei, ISO 9454-1 Typ 1134, 20 ml, 50-200 °C - Vorschau":
+      - img "AG Termopasty"
+      - generic: AGT-036
+      - link "AG Tertmopasty Lötpaste Kolophoniumbasis, RMA, halogenfrei, ISO 9454-1 Typ 1134, 20 ml, 50-200 °C":
+        - /url: https://www.berrybase.de/ag-tertmopasty-loetpaste-kolophoniumbasis-rma-halogenfrei-iso-9454-1-typ-1134-20-ml-50-200-0c
+      - generic: 2,50 €
+      - generic: Sofort verfügbar · 3 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "Flussmittelgel 1,4ml Spritze"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Flussmittelgel 1,4ml Spritze - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 4.67 von 5 Sternen
+      - img "AG Termopasty"
+      - generic: AGT-047
+      - link "Flussmittelgel 1,4ml Spritze":
+        - /url: https://www.berrybase.de/flussmittelgel-1-4ml-spritze
+      - generic: 3,50 €
+      - generic: Sofort verfügbar · 82 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "Entlötlitze 1,0mm breit, 1,5m lang, flussmittelgetränkt, Kupfer"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Entlötlitze 1,0mm breit, 1,5m lang, flussmittelgetränkt, Kupfer - Vorschau":
+      - img "Zhongdi"
+      - generic: ZD-180-10
+      - link "Entlötlitze 1,0mm breit, 1,5m lang, flussmittelgetränkt, Kupfer":
+        - /url: https://www.berrybase.de/entloetlitze-1-0mm-breit-1-5m-lang-flussmittelgetraenkt-kupfer
+      - generic: 0,90 €
+      - generic: Sofort verfügbar · 43 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "Dritte Hand mit Echtglas Lupe"
+      - img "Dritte Hand mit Echtglas Lupe"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Dritte Hand mit Echtglas Lupe - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 4.57 von 5 Sternen
+      - img "Frei"
+      - generic: "51199"
+      - link "Dritte Hand mit Echtglas Lupe":
+        - /url: https://www.berrybase.de/dritte-hand-mit-echtglas-lupe
+      - generic: 6,50 €
+      - generic: Sofort verfügbar · 100+ Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "Löthonig, 7,5g Tube"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Löthonig, 7,5g Tube - Vorschau":
+      - img "Donau Elektronik"
+      - generic: LOETHONIG
+      - link "Löthonig, 7,5g Tube":
+        - /url: https://www.berrybase.de/loethonig-7-5g-tube
+      - generic: 5,90 €
+      - generic: Sofort verfügbar · 8 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "Messleitung, 4mm Sicherheitsstecker - Krokodilklemme, 100cm, rot"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Messleitung, 4mm Sicherheitsstecker - Krokodilklemme, 100cm, rot - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 4 von 5 Sternen
+      - img "McPower"
+      - generic: T1325536
+      - link "Messleitung, 4mm Sicherheitsstecker - Krokodilklemme, 100cm, rot":
+        - /url: https://www.berrybase.de/messleitung-4mm-sicherheitsstecker-krokodilklemme-100cm-rot
+      - generic: 2,30 €
+      - generic: Sofort verfügbar · 56 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "Goobay Lötfett Dose, 50 g"
+      - img "Goobay Lötfett Dose, 50 g"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Goobay Lötfett Dose, 50 g - Vorschau":
+      - img "goobay"
+      - generic: "45238"
+      - link "Goobay Lötfett Dose, 50 g":
+        - /url: https://www.berrybase.de/goobay-loetfett-dose-50-g
+      - generic: 1,95 €
+      - generic: Sofort verfügbar · 27 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "Sekundenkleber - 3g Tube"
+      - img "Sekundenkleber - 3g Tube"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Sekundenkleber - 3g Tube - Vorschau":
+      - img "goobay"
+      - generic: "77002"
+      - link "Sekundenkleber - 3g Tube":
+        - /url: https://www.berrybase.de/sekundenkleber-3g-tube
+      - generic: 0,60 €
+      - generic: Sofort verfügbar · 17 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "Broquetas Lötzinn / Lötdraht EC01, 1mm, bleifrei, mit 2,5% No-Clean Flussmittel FLUXPW15"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Broquetas Lötzinn / Lötdraht EC01, 1mm, bleifrei, mit 2,5% No-Clean Flussmittel FLUXPW15 - Vorschau":
+      - img "BROQUETAS"
+      - generic: BROQ-1MM-H
+      - link "Broquetas Lötzinn / Lötdraht EC01, 1mm, bleifrei, mit 2,5% No-Clean Flussmittel FLUXPW15":
+        - /url: https://www.berrybase.de/broquetas-loetzinn-loetdraht-ec01-1mm-bleifrei-mit-2-5-no-clean-flussmittel-fluxpw15
+      - generic: Ab 12,90 €
+      - generic: Sofort verfügbar · 36 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "Optionen wählen"
+      - img "Elektronik Printzange, Seitenschneider"
+      - img "Elektronik Printzange, Seitenschneider"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Elektronik Printzange, Seitenschneider - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 5 von 5 Sternen
+      - img "Donau Elektronik"
+      - generic: E-MC20
+      - link "Elektronik Printzange, Seitenschneider":
+        - /url: https://www.berrybase.de/elektronik-printzange-seitenschneider
+      - generic: 6,30 €
+      - generic: Sofort verfügbar · 11 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "Kupferlitze isoliert, 1x0,14mm, 10m"
+      - img "Kupferlitze isoliert, 1x0,14mm, 10m"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Kupferlitze isoliert, 1x0,14mm, 10m - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 4.86 von 5 Sternen
+      - img "goobay"
+      - generic: "55045"
+      - link "Kupferlitze isoliert, 1x0,14mm, 10m":
+        - /url: https://www.berrybase.de/kupferlitze-isoliert-1x0-14mm-10m/farbe-schwarz
+      - generic: 1,50 €
+      - generic: Sofort verfügbar · 100+ Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - link "Details":
+        - /url: https://www.berrybase.de/kupferlitze-isoliert-1x0-14mm-10m/farbe-schwarz
+      - img "Isolier-Dichtungsband, Wasser & Ozonbeständig, Wetterfest, -40°C bis +90°C, 5m"
+      - img "Isolier-Dichtungsband, Wasser & Ozonbeständig, Wetterfest, -40°C bis +90°C, 5m"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Isolier-Dichtungsband, Wasser & Ozonbeständig, Wetterfest, -40°C bis +90°C, 5m - Vorschau":
+      - img "Frei"
+      - generic: "89867"
+      - link "Isolier-Dichtungsband, Wasser & Ozonbeständig, Wetterfest, -40°C bis +90°C, 5m":
+        - /url: https://www.berrybase.de/isolier-dichtungsband-wasser-ozonbestaendig-wetterfest-400c-bis-900c-5m
+      - generic: 2,90 €
+      - generic: Sofort verfügbar · 1 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "ELECFREAKS Retro Microsoft Makecode Arcade, 2.4 Zoll Display, 560mAh Batterie, LEGO-kompatibel"
+      - img "ELECFREAKS Retro Microsoft Makecode Arcade, 2.4 Zoll Display, 560mAh Batterie, LEGO-kompatibel"
+      - button "Zum Merkzettel hinzufügen":
+      - button "ELECFREAKS Retro Microsoft Makecode Arcade, 2.4 Zoll Display, 560mAh Batterie, LEGO-kompatibel - Vorschau":
+      - img "ELECFREAKS"
+      - generic: EF08247
+      - link "ELECFREAKS Retro Microsoft Makecode Arcade, 2.4 Zoll Display, 560mAh Batterie, LEGO-kompatibel":
+        - /url: https://www.berrybase.de/elecfreaks-retro-microsoft-makecode-arcade-2.4-zoll-display-560mah-batterie-lego-kompatibel
+      - generic: 69,90 €
+      - generic: Sofort verfügbar · 8 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "Lötspitzenreinigungskit"
+      - img "Lötspitzenreinigungskit"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Lötspitzenreinigungskit - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 5 von 5 Sternen
+      - img "Frei"
+      - generic: "45239"
+      - link "Lötspitzenreinigungskit":
+        - /url: https://www.berrybase.de/loetspitzenreinigungskit
+      - generic: 4,20 €
+      - generic: Sofort verfügbar · 100+ Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "Schrumpfschlauch-Set, 100-teilig in Sortimentsbox, schwarz"
+      - img "Schrumpfschlauch-Set, 100-teilig in Sortimentsbox, schwarz"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Schrumpfschlauch-Set, 100-teilig in Sortimentsbox, schwarz - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 5 von 5 Sternen
+      - img "McPower"
+      - generic: T1535533
+      - link "Schrumpfschlauch-Set, 100-teilig in Sortimentsbox, schwarz":
+        - /url: https://www.berrybase.de/schrumpfschlauch-set-100-teilig-in-sortimentsbox-schwarz
+      - generic: 2,80 €
+      - generic: Sofort verfügbar · 26 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "goobay Lötzinn, bleifrei, ø1,0mm"
+      - button "Zum Merkzettel hinzufügen":
+      - button "goobay Lötzinn, bleifrei, ø1,0mm - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 5 von 5 Sternen
+      - img "goobay"
+      - generic: gooLzPBF10
+      - link "goobay Lötzinn, bleifrei, ø1,0mm":
+        - /url: https://www.berrybase.de/goobay-loetzinn-bleifrei-oe1-0mm
+      - generic: Ab 4,50 €
+      - generic: Sofort verfügbar · 69 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "Optionen wählen"
+      - img "McPower Dritte Hand 11M-1, Vier Klemmen, Lötzinn-Halter, Lötschwamm, schwarz"
+      - img "McPower Dritte Hand 11M-1, Vier Klemmen, Lötzinn-Halter, Lötschwamm, schwarz"
+      - button "Zum Merkzettel hinzufügen":
+      - button "McPower Dritte Hand 11M-1, Vier Klemmen, Lötzinn-Halter, Lötschwamm, schwarz - Vorschau":
+      - img "McPower"
+      - generic: T1530723
+      - link "McPower Dritte Hand 11M-1, Vier Klemmen, Lötzinn-Halter, Lötschwamm, schwarz":
+        - /url: https://www.berrybase.de/mcpower-dritte-hand-11m-1-vier-klemmen-loetzinn-halter-loetschwamm-schwarz
+      - generic: 14,90 €
+      - generic: Sofort verfügbar · 18 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "ESP32 NodeMCU Development Board"
+      - img "ESP32 NodeMCU Development Board"
+      - button "Zum Merkzettel hinzufügen":
+      - button "ESP32 NodeMCU Development Board - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 4.76 von 5 Sternen
+      - img "BerryBase"
+      - generic: NMCU-ESP32
+      - link "ESP32 NodeMCU Development Board":
+        - /url: https://www.berrybase.de/esp32-nodemcu-development-board
+      - generic: 6,80 €
+      - generic: Sofort verfügbar · 16 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "goobay Lötzinn, bleifrei, ø0,35 mm - 100g Rolle"
+      - button "Zum Merkzettel hinzufügen":
+      - button "goobay Lötzinn, bleifrei, ø0,35 mm - 100g Rolle - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 5 von 5 Sternen
+      - img "goobay"
+      - generic: "51131"
+      - link "goobay Lötzinn, bleifrei, ø0,35 mm - 100g Rolle":
+        - /url: https://www.berrybase.de/goobay-loetzinn-bleifrei-oe0-35-mm-100g-rolle
+      - generic: 29,50 €
+      - generic: Sofort verfügbar · 5 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "Metallschichtwiderstand, 330,0 Ohm, 1/4W, ±1%, 0207, axial, Durchsteckmontage"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Metallschichtwiderstand, 330,0 Ohm, 1/4W, ±1%, 0207, axial, Durchsteckmontage - Vorschau":
+      - img "Frei"
+      - generic: MSW330R.25
+      - link "Metallschichtwiderstand, 330,0 Ohm, 1/4W, ±1%, 0207, axial, Durchsteckmontage":
+        - /url: https://www.berrybase.de/metallschichtwiderstand-330-0-ohm-1-4w-1-0207-axial-durchsteckmontage
+      - generic: 0,05 €
+      - generic: Sofort verfügbar · 100+ Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "Kabelbinder, UV beständig, Nylon, 100 Stück"
+      - img "Kabelbinder, UV beständig, Nylon, 100 Stück"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Kabelbinder, UV beständig, Nylon, 100 Stück - Vorschau":
+      - img "McPower"
+      - generic: T1535504
+      - link "Kabelbinder, UV beständig, Nylon, 100 Stück":
+        - /url: https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-300x3-6mm
+      - generic: 2,50 €
+      - generic: Sofort verfügbar · 4 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - link "Details":
+        - /url: https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-300x3-6mm
+      - img "HiFiBerry DAC+ XLR Stahlgehäuse, Stahl, passive Kühlung, XLR-Zugang, für Raspberry Pi 5, schwarz"
+      - button "Zum Merkzettel hinzufügen":
+      - button "HiFiBerry DAC+ XLR Stahlgehäuse, Stahl, passive Kühlung, XLR-Zugang, für Raspberry Pi 5, schwarz - Vorschau":
+      - img "HiFiBerry"
+      - generic: HIFI-CASE-XLR
+      - link "HiFiBerry DAC+ XLR Stahlgehäuse, Stahl, passive Kühlung, XLR-Zugang, für Raspberry Pi 5, schwarz":
+        - /url: https://www.berrybase.de/hifiberry-dac-xlr-stahlgehaeuse-stahl-passive-kuehlung-xlr-zugang-fuer-raspberry-pi-5-schwarz
+      - generic: 34,90 €
+      - generic: Sofort verfügbar · 8 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "Pololu DRV8434S SPI Stepper Motor Driver für Schrittmotor, Potentiometer Strombegrenzung, 2A Max, 4,"
+      - img "Pololu DRV8434S SPI Stepper Motor Driver für Schrittmotor, Potentiometer Strombegrenzung, 2A Max, 4,"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Pololu DRV8434S SPI Stepper Motor Driver für Schrittmotor, Potentiometer Strombegrenzung, 2A Max, 4, - Vorschau":
+      - img "Pololu"
+      - generic: POL3767
+      - link "Pololu DRV8434S SPI Stepper Motor Driver für Schrittmotor, Potentiometer Strombegrenzung, 2A Max, 4,":
+        - /url: https://www.berrybase.de/pololu-drv8434s-spi-stepper-motor-driver-fuer-schrittmotor-potentiometer-strombegrenzung-2a-max-4
+      - generic: 14,95 €
+      - generic: Sofort verfügbar · 23 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "Raspberry Pi 3 Modell B+"
+      - img "Raspberry Pi 3 Modell B+"
+      - button "Zum Merkzettel hinzufügen":
+      - button "Raspberry Pi 3 Modell B+ - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 4.93 von 5 Sternen
+      - img "Raspberry Pi"
+      - generic: RPI3-BP
+      - link "Raspberry Pi 3 Modell B+":
+        - /url: https://www.berrybase.de/raspberry-pi-3-modell-b
+      - generic: 41,90 €
+      - generic: Sofort verfügbar · 100+ Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - img "McPower Lötzinn, bleifrei, Ø0,5mm, 100g Rolle"
+      - button "Zum Merkzettel hinzufügen":
+      - button "McPower Lötzinn, bleifrei, Ø0,5mm, 100g Rolle - Vorschau":
+      - paragraph: Durchschnittliche Bewertung von 5 von 5 Sternen
+      - img "McPower"
+      - generic: T1540122
+      - link "McPower Lötzinn, bleifrei, Ø0,5mm, 100g Rolle":
+        - /url: https://www.berrybase.de/mcpower-loetzinn-bleifrei-oe0-5mm-100g-rolle
+      - generic: 12,90 €
+      - generic: Sofort verfügbar · 8 Stück · 1-3 Tage
+      - button: Preise inkl. MwSt. zzgl. Versandkosten
+      - button "In den Warenkorb"
+      - navigation:
+        - button "Vorheriges":
+        - button "Nächstes":
+  - tabpanel "Ähnliche Produkte"
+  - heading "Unsere Empfehlungen für dich" [level=3]
+  - status:
+    - generic: Loading...
+- contentinfo:
+  - list:
+    - link "Raspberry Pi Official Reseller":
+      - /url: /cbax/manufacturer/detail/019234a35a7272c687f867ee49f518c6
+      - img "Raspberry Pi Official Reseller"
+    - link "Arduino Official Reseller":
+      - /url: /arduino/
+      - img "Arduino Official Reseller"
+    - link "Yubico Official E‑Commerce Reseller":
+      - /url: /yubico/
+      - img "Yubico Official E‑Commerce Reseller"
+    - link "Idealo Partner Logo":
+      - /url: https://www.idealo.de/preisvergleich/Shop/313847.html
+      - img "Idealo Partner Logo"
+    - link "Geizhals Logo":
+      - /url: https://geizhals.de/
+      - img "Geizhals Logo"
+    - listitem "Newsletter":
+      - generic: Abonnieren Sie jetzt unseren regelmäßig erscheinenden Newsletter, um rechtzeitig über neue Produkte und Angebote informiert zu werden.
+      - form "Newsletter abonnieren":
+        - generic: E-Mail-Adresse*
+        - textbox "E-Mail-Adresse*":
+          - /placeholder: E-Mail-Adresse eingeben ...
+        - button "Abonnieren":
+        - group "Datenschutz":
+          - strong: Datenschutz
+          - checkbox "Ich habe die Datenschutzbestimmungen zur Kenntnis genommen und die AGB gelesen und bin mit ihnen einverstanden."
+          - text: Ich habe die
+          - button "Datenschutzbestimmungen"
+          - text: zur Kenntnis genommen und die
+          - button "AGB"
+          - text: gelesen und bin mit ihnen einverstanden. *
+        - text: Diese Seite ist durch reCAPTCHA geschützt und es gelten die
+        - link "Datenschutzrichtlinie":
+          - /url: https://policies.google.com/privacy?hl=de
+        - text: und
+        - link "Nutzungsbedingungen":
+          - /url: https://policies.google.com/terms?hl=de
+        - text: .
+        - generic: Die mit einem Stern (*) markierten Felder sind Pflichtfelder.
+    - generic: Informationen
+    - listitem "Informationen":
+      - list:
+        - link "Versand und Zahlungsbedingungen":
+          - /url: https://www.berrybase.de/versand-und-zahlungsbedingungen/
+        - link "Hinweise zur Batterieentsorgung":
+          - /url: https://www.berrybase.de/footer/informationen/hinweise-zur-batterieentsorgung/
+        - link "Widerrufsrecht":
+          - /url: https://www.berrybase.de/footer/informationen/widerrufsrecht/
+        - link "Datenschutz":
+          - /url: https://www.berrybase.de/datenschutz/
+        - link "AGB":
+          - /url: https://www.berrybase.de/agb
+        - link "Impressum":
+          - /url: https://www.berrybase.de/footer/informationen/impressum/
+        - link "Jobs":
+          - /url: https://jobs.sertronics.de/
+        - link "Cookieübersicht":
+          - /url: https://www.berrybase.de/cookieuebersicht/
+    - generic: Shop Service
+    - listitem "Shop Service":
+      - list:
+        - link "Abholung in Berlin":
+          - /url: https://www.berrybase.de/abholung-in-berlin
+        - link "MakerSpace in Berlin":
+          - /url: https://makerspace.berrybase.de
+        - link "Berrys lohnen sich":
+          - /url: https://www.berrybase.de/berrys-lohnen-sich
+        - link "Angebotsanfrage":
+          - /url: https://support.berrybase.de/Angebotsservice
+        - link "Händlerkonditionen":
+          - /url: https://support.berrybase.de/Haendleranfrage/
+        - link "Newsletter":
+          - /url: https://www.berrybase.de/footer/shop-service/newsletter/
+        - link "BerryBase Blog":
+          - /url: https://blog.berrybase.de/
+        - link "FAQ":
+          - /url: https://support.berrybase.de/
+        - link "Kontakt":
+          - /url: https://support.berrybase.de/Kontakt/
+    - generic: Versand und Zahlung
+    - listitem "Versand und Zahlung":
+      - img "PayPal Logo"
+      - img "Amazon Pay Logo"
+      - img "Apple Pay Logo"
+      - img "Mastercard Logo"
+      - img "DHL Logo"
+      - img "Giropay Logo"
+      - img "Google Pay Logo"
+      - img "Klarna Logo"
+      - img "VISA Logo"
+      - img "UPS Logo"
+    - generic: Auf uns ist Verlass
+    - listitem "Auf uns ist Verlass"
+    - link "Vertrag widerrufen":
+      - /url: https://support.berrybase.de/Widerruf/
+  - link "Facebook":
+    - /url: https://www.facebook.com/profile.php?id=61554682647672
+  - link "Youtube":
+    - /url: https://www.youtube.com/@berrybase
+  - link "Instagram":
+    - /url: https://www.instagram.com/berrybase.de
+  - link "LinkedIn":
+    - /url: https://www.linkedin.com/showcase/berrybase/about/
+  - link "Amazon":
+    - /url: https://www.amazon.de/stores/BerryBase/BerryBase/page/03885227-4110-495E-B1AE-11AA21F2A309
+  - link "TikTok":
+    - /url: https://www.tiktok.com/@berrybase.de
+  - generic: © 2026 BerryBase - The Maker Shop
+  - paragraph:
+    - text: Alle Preise inkl. gesetzl. Mehrwertsteuer zzgl.
+    - link "Versandkosten":
+      - /url: https://www.berrybase.de/versand-und-zahlungsbedingungen/
+    - text: und ggf. Nachnahmegebühren, wenn nicht anders angegeben.
+- button "Werkzeugleiste anzeigen":
+  - generic: Werkzeugleiste anzeigen
+- button "Zurück zum Anfang der Seite springen":
+- text: 🍪 ✓ · ·
+- dialog

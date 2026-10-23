@@ -13,7 +13,9 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 - PC inference over USB, wired servo power, no battery or onboard neural inference.
 - Preferred delivered cost EUR 50–75; hard maximum EUR 100 including every part,
   VAT, shipping and any paid assembly preparation. No weaker-servo substitution.
-- Student assembly needs no printer, drilling or cutting; small helper solder job allowed.
+- User can solder: self-prepared harness/headers, no mandatory helper labour.
+- No current printer access; compare standard no-fabrication parts vs own printer.
+- Printer purchase is comparison only, never authorized. No mechanical drilling/cutting/bending.
 - No purchases or supplier messages are authorized by the implementation task.
 
 ## Authoritative inputs
@@ -31,10 +33,16 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 - Distinguish planned, implemented, locally verified, physically verified and blocked.
 - A compiled firmware image is not an electrical test. Standing is not learned walking.
 - Hardware measurements, print fit and delivered quotations cannot be invented.
+- Count full material/consumable packs; tools/printer separate but included in initial cash.
+- Unknown tools, frame hardware, stock or postage must remain unknown, not free.
 - Unknown costs are never zero. Budget and fit must pass before recommending procurement.
-- Current priced route EUR163.63 exceeds cap byEUR63.63before unknowns. Stop ordering;
-  seek cheaper exact manufacturing quote. Print web quotes exclude bonding/fit/kit.
-- No USB adapter unless PC lacksUSB-A; USB-A–Micro-B data cable remains required.
+- Shared proposed basket EUR95.91 excludes frame; standard mechanics remain unverified.
+- Own-print robot subset EUR118.43 exceeds cap byEUR18.43 before unknowns; no purchase.
+- Old EUR163.63 commercial-print route is historical; do not resume service quotes by default.
+- Bare Pico/8 TPE pads are proposals; physical spec/MJCF still use Pico H/TPU soles.
+- Next: complete stock-frame interfaces/landed price; no reduced joints or hidden fabrication.
+- User confirmed25337 Germany and PC USB-A on2026-10-23: no adapter required.
+  USB-A–Micro-B data cable remains required; recheck final checkout for25337.
 - Physical stages need the user's assembly/measurements; continue independent software work.
 - Mechanical stops are not software command limits. Do not invent passive supporting stops.
 - Never expose true joint angles, pose, translation, velocity or contact to the policy.
@@ -48,7 +56,8 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 source .venv/bin/activate
 python -m pytest -q
 python tools/firmware_config.py  # default invalid calibration cannot policy-arm
-python tools/budget_gate.py  # 2 = incomplete; 1 = over budget; 0 = cleared
+python tools/budget_gate.py --scenario all  # 1: own-print over cap; shared default exits2
+python tools/prepare_local_print.py  # individual180mm plates, not print approval
 ```
 
 - Inspect relevant code before edits; preserve historical `docs/validation/` evidence.

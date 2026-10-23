@@ -1,0 +1,1 @@
+{"poses": 55, "conflicts": 550, "report": "docs/validation/2026-10-23/soldering_routes/clearances.json"}

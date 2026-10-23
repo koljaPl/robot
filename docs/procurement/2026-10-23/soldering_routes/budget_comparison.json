@@ -1,0 +1,145 @@
+{
+  "checked_date": "2026-10-23",
+  "shared_subset": {
+    "scenario": "shared subset",
+    "status": "INCOMPLETE",
+    "known_delivered_subtotal_eur": "95.91",
+    "remaining_for_all_unknowns_eur": "4.09",
+    "confirmed_minimum_shortfall_eur": "0.00",
+    "total_price_eur": null,
+    "pending_prices": [],
+    "unresolved_checks": [
+      "Select and verify a complete six-joint frame and all matching hardware; common items alone are NOT a complete robot",
+      "Six-unit Welectron servo stock, actual accessory contents, ear/shaft/spline/horn interfaces",
+      "JR socket/branch wire gauge and contact rating, 3.3V signal compatibility, current/droop and physical DC cutoff",
+      "Final complete checkout to 25337 Germany; no stock reserved or orders placed",
+      "Grip-pad friction/adhesion/contact placement; no verified change to physical twin",
+      "Shared subset only: choose a complete scenario"
+    ],
+    "purchase_cleared": false
+  },
+  "routes": {
+    "standard_parts": {
+      "scenario": "standard_parts",
+      "status": "INCOMPLETE",
+      "known_delivered_subtotal_eur": "95.91",
+      "remaining_for_all_unknowns_eur": "4.09",
+      "confirmed_minimum_shortfall_eur": "0.00",
+      "total_price_eur": null,
+      "pending_prices": [
+        "Complete compatible six-joint frame, links, feet, horns, retainers and matching fasteners, delivered"
+      ],
+      "unresolved_checks": [
+        "Select and verify a complete six-joint frame and all matching hardware; common items alone are NOT a complete robot",
+        "Six-unit Welectron servo stock, actual accessory contents, ear/shaft/spline/horn interfaces",
+        "JR socket/branch wire gauge and contact rating, 3.3V signal compatibility, current/droop and physical DC cutoff",
+        "Final complete checkout to 25337 Germany; no stock reserved or orders placed",
+        "Grip-pad friction/adhesion/contact placement; no verified change to physical twin",
+        "No verified complete compatible six-joint ready-made frame; bracket count and link topology unresolved",
+        "Frame dimensions, mass, fastener counts, EUR landed VAT and shipping unknown",
+        "Comparison only; route has not been selected and approved"
+      ],
+      "purchase_cleared": false
+    },
+    "own_printer": {
+      "scenario": "own_printer",
+      "status": "OVER BUDGET",
+      "known_delivered_subtotal_eur": "118.43",
+      "remaining_for_all_unknowns_eur": "-18.43",
+      "confirmed_minimum_shortfall_eur": "18.43",
+      "total_price_eur": null,
+      "pending_prices": [
+        "6 matching horns + 6 servo shaft retaining screws",
+        "12 horn-to-frame screws and 12 matching washers",
+        "Any printer-specific release/cleaning/support-removal consumables not included in printer kit"
+      ],
+      "unresolved_checks": [
+        "Select and verify a complete six-joint frame and all matching hardware; common items alone are NOT a complete robot",
+        "Six-unit Welectron servo stock, actual accessory contents, ear/shaft/spline/horn interfaces",
+        "JR socket/branch wire gauge and contact rating, 3.3V signal compatibility, current/droop and physical DC cutoff",
+        "Final complete checkout to 25337 Germany; no stock reserved or orders placed",
+        "Grip-pad friction/adhesion/contact placement; no verified change to physical twin",
+        "No existing printer access; comparison does not authorize buying a printer",
+        "Actual ear/horn fit, screw stack/clearance and sample print unverified; manufacturing gate closed",
+        "Seven parts plus cradle/horn fit sample must be sliced; support/layer orientation, tool access and pad placement not approved",
+        "Current physical_spec/MJCF retain Pico H and continuous TPU soles; update only after mechanics selected and measured",
+        "Comparison only; route has not been selected and approved"
+      ],
+      "purchase_cleared": false
+    }
+  },
+  "printer_comparisons": {
+    "a1_mini": {
+      "printer": "Bambu Lab A1 mini, non-Combo BL1-101030 / PF002-M-EU",
+      "selected_for_purchase": false,
+      "robot": {
+        "scenario": "own_printer",
+        "status": "OVER BUDGET",
+        "known_delivered_subtotal_eur": "118.43",
+        "remaining_for_all_unknowns_eur": "-18.43",
+        "confirmed_minimum_shortfall_eur": "18.43",
+        "total_price_eur": null,
+        "pending_prices": [
+          "6 matching horns + 6 servo shaft retaining screws",
+          "12 horn-to-frame screws and 12 matching washers",
+          "Any printer-specific release/cleaning/support-removal consumables not included in printer kit"
+        ],
+        "unresolved_checks": [
+          "Select and verify a complete six-joint frame and all matching hardware; common items alone are NOT a complete robot",
+          "Six-unit Welectron servo stock, actual accessory contents, ear/shaft/spline/horn interfaces",
+          "JR socket/branch wire gauge and contact rating, 3.3V signal compatibility, current/droop and physical DC cutoff",
+          "Final complete checkout to 25337 Germany; no stock reserved or orders placed",
+          "Grip-pad friction/adhesion/contact placement; no verified change to physical twin",
+          "No existing printer access; comparison does not authorize buying a printer",
+          "Actual ear/horn fit, screw stack/clearance and sample print unverified; manufacturing gate closed",
+          "Seven parts plus cradle/horn fit sample must be sliced; support/layer orientation, tool access and pad placement not approved",
+          "Current physical_spec/MJCF retain Pico H and continuous TPU soles; update only after mechanics selected and measured",
+          "Comparison only; route has not been selected and approved"
+        ],
+        "purchase_cleared": false
+      },
+      "printer_and_tools_known_eur": "189.00",
+      "printer_and_tools_total_eur": null,
+      "initial_cash_known_eur": "307.43",
+      "initial_cash_total_eur": null,
+      "delivery_evidence": "sourced published Germany rate; postcode checkout pending",
+      "notes": "Published rates, not a booked 25337 checkout. No assumed joint-order shipping credits; no alternatives added together."
+    },
+    "ender_v3_se": {
+      "printer": "Creality Ender-3 V3 SE, standalone (no PLA bundle)",
+      "selected_for_purchase": false,
+      "robot": {
+        "scenario": "own_printer",
+        "status": "OVER BUDGET",
+        "known_delivered_subtotal_eur": "118.43",
+        "remaining_for_all_unknowns_eur": "-18.43",
+        "confirmed_minimum_shortfall_eur": "18.43",
+        "total_price_eur": null,
+        "pending_prices": [
+          "6 matching horns + 6 servo shaft retaining screws",
+          "12 horn-to-frame screws and 12 matching washers",
+          "Any printer-specific release/cleaning/support-removal consumables not included in printer kit"
+        ],
+        "unresolved_checks": [
+          "Select and verify a complete six-joint frame and all matching hardware; common items alone are NOT a complete robot",
+          "Six-unit Welectron servo stock, actual accessory contents, ear/shaft/spline/horn interfaces",
+          "JR socket/branch wire gauge and contact rating, 3.3V signal compatibility, current/droop and physical DC cutoff",
+          "Final complete checkout to 25337 Germany; no stock reserved or orders placed",
+          "Grip-pad friction/adhesion/contact placement; no verified change to physical twin",
+          "No existing printer access; comparison does not authorize buying a printer",
+          "Actual ear/horn fit, screw stack/clearance and sample print unverified; manufacturing gate closed",
+          "Seven parts plus cradle/horn fit sample must be sliced; support/layer orientation, tool access and pad placement not approved",
+          "Current physical_spec/MJCF retain Pico H and continuous TPU soles; update only after mechanics selected and measured",
+          "Comparison only; route has not been selected and approved"
+        ],
+        "purchase_cleared": false
+      },
+      "printer_and_tools_known_eur": "169.00",
+      "printer_and_tools_total_eur": null,
+      "initial_cash_known_eur": "287.43",
+      "initial_cash_total_eur": null,
+      "delivery_evidence": "sourced published Germany free >=EUR99; postcode checkout pending",
+      "notes": "Published rates, not a booked 25337 checkout. No assumed joint-order shipping credits; no alternatives added together."
+    }
+  }
+}

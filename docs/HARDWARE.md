@@ -2,11 +2,11 @@
 
 Updated 2026-10-23. Implemented source and local compilation are distinct from
 physical verification: **nothing has been purchased or electrically tested**.
-The selected *provisional* revision is Pico H native PWM, six Waveshare15024
+The existing *provisional physical prototype* is Pico H native PWM, six Waveshare15024
 MG90S, MPU6050 and Mean Well GST40A05-P1J. PCA9685 is not in the current basket.
 Its listing is unavailable and removing it resolves the original board/brace overlap.
 
-## Power and helper preparation
+## Power and self-soldered harness
 
 PC USB powers Pico and IMU. Enclosed 5V/5A PSU, including separately priced
 Schuko–C13 mains lead, powers ONLY the servo bus. Never connect servo5V to Pico
@@ -15,16 +15,43 @@ Join logic ground to the short heavy servo-return bus once. Mains wiring remains
 inside the commercial PSU/lead. Capacitor1000µF/16V goes across the bus with
 correct polarity; it is not a substitute for an adequate supply.
 
-A helper prepares six replaceable 10cm JR extension branches: retain each
-servo-side socket, solder red/return to positive/negative 0.75mm² buses, and
-connect the signal via a fitted header/jumper to the chosen Pico pin. Insulate
-all joints and cut ends. No servo current runs in the logic jumper. Fit header
-pins to the IMU if loose; tie boards with insulating separation, secure cables,
-and verify polarity/continuity using a multimeter. The assembler receives a
-finished harness, with no cutting/drilling/soldering. Helper labour must be
-confirmed free or quoted in procurement. Solder is helper workshop consumable.
-Tools: borrowed temperature-controlled iron/solder, wire stripper, cutters,
-heat source and multimeter. These are excluded tools, not hidden robot parts.
+The proposed basket uses a **bare Pico** with user-soldered headers. Existing RP2040
+firmware/pins remain unchanged; current physical mass/geometry still use Pico H.
+Compare Pico H5.50 +one40pin pack0.60 with bare4.10 +two40pin packs1.20:
+header-inclusive saving0.80. Two packs supply40Pico pins +up to8IMU +6signal
+ends, with26spare. Solder10g flux-core, heat-shrink, ties and wire are priced robot
+consumables. Iron access is available; other tools must be confirmed/borrowed or
+priced outside the robot cap but inside initial cash. No mandatory paid helper.
+
+**Prepare unpowered, with the PSU disconnected from mains and DC, and USB removed:**
+
+1. Solder two20pin rows to the bare Pico and the needed IMU header; inspect bridges.
+   Keep IMU I2C/ground leads short. Sensor pull-ups and VCC must be3.3V.
+2. For each of six10cm JR extensions, identify the factory connector that mates to
+   the actual servo cable; preserve it for replaceability. Do not trust connector
+   gender names or wire colours: verify end-to-end continuity and pin order first.
+3. Remove the unused extension end and expose only short conductor lengths. Solder
+   each positive/return branch separately onto short0.75mm² positive/negative buses.
+   Keep each bus section to about10cm; stagger splices, insulate individually, then
+   add overall strain relief. Mark the negative red-wire bus with black shrink at
+   every exposed end. Connector/wire ratings remain a required acceptance test.
+4. Bring each isolated signal to a separate insulated header/jumper and its Pico GPIO.
+   No positive servo wire connects to the Pico. Join servo-bus return to Pico GND
+   with one logic-reference lead; high-current return goes straight to the PSU.
+   Use separate GND pins for IMU and servo reference (e.g.physical38and3).
+5. Solder DC socket positive/return and the1000µF capacitor across the bus; verify
+   socket polarity with a meter and the capacitor's negative stripe. Insulate all
+   socket lugs and metal that could short, secure it off-robot, and strain-relieve
+   the tether. No bare solder joint may reach frame/PCB/another conductor.
+6. With no servo connected, check shorts/continuity, then energize the commercial
+   enclosed PSU and measure centre-positive5V at each branch. Disconnect it before
+   connecting one unloaded servo. Verify current/droop, connector heating and3.3V
+   PWM compatibility before expanding to six. Never work on the mains internals.
+
+Use ventilation, a stable iron stand and eye protection while clipping leads;
+keep hot tools away from insulation/boards. Do not solder powered electronics.
+No breadboard or thin Dupont wire carries servo supply current. Self-soldering is
+not evidence of an electrically qualified harness; bench data is still required.
 
 Estimated average six-servo current0.6–1.5A, assumed peak4.8A (6×0.8A), plus
 logic below0.15A on USB. **Selected-servo current is unknown**; these are sizing
@@ -39,7 +66,7 @@ loaded servo and check connector temperature.
 Accessible full-current DC unplug is the physical emergency cutoff. Selected
 provisional input: [Goobay11638,EUR1.10](https://www.berrybase.de/dc-einbaubuchse-fuer-hohlstecker-5-5x2-1mm-metallausfuehrung-loetanschluss),
 5.5×2.1mm solder socket with nut/washer; retailer specifies5A/30V DC. Replaces the
-unpriced Delock pigtail. Helper solders short0.75mm² bus leads, separately insulates
+unpriced Delock pigtail. User solders short0.75mm² bus leads, separately insulates
 lugs and outer metal, and secures strain relief with listed shrink/ties. Support this
 connection off robot. Verify centre-positive continuity and insulation before power.
 No exposed low-voltage metal may short to boards/fasteners. No mains modification.
@@ -50,7 +77,7 @@ a servo may hold its last position. Always disarm before reconnecting DC.
 
 USB-A–Micro-B data cable connects Pico directly to a USB-A PC; **no extra adapter**
 in base basket. Only a PC without USB-A needs a separately sourced data adapter.
-Available50cm Dupont pack replaces unavailable20cm; helper keeps I2C wiring short
+Available50cm Dupont pack replaces unavailable20cm; user keeps I2C wiring short
 and secures excess. No servo supply current in any Dupont jumper.
 
 ## Pin table
@@ -65,7 +92,8 @@ and secures excess. No servo supply current in any Dupont jumper.
 | Right ankle |7|10|
 | MPU SDA / SCL |4 / 5|6 / 7|
 | IMU VCC |3V3 OUT|36|
-| IMU GND + short common servo ground |GND|38|
+| IMU GND |GND|38|
+| Short common servo ground reference |GND|3|
 
 Native PWM uses a1MHz counter and wrap19999:50Hz and1µs resolution. Paired
 channels share slices with the same frequency. GPIOs produce3.3V logic;

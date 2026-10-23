@@ -1,0 +1,249 @@
+- 'link "Bundle-Deal: 4 Rollen Filament für nur €19,9"':
+  - /url: https://store.creality.com/de/products/k2-pro-combo-3d-drucker
+  - 'heading "Bundle-Deal: 4 Rollen Filament für nur €19,9" [level=4]'
+- button:
+- link:
+  - /url: https://www.creality.com/de?utm_source=creality_store_de&utm_medium=homepage
+- link:
+  - /url: "https://de.crealityfalcon.com/?utm_source=creality_store_de&utm_medium=topbar "
+- paragraph:
+  - paragraph:
+    - strong: Offizieller Creality DE-Store · Versand in DE, AT, BE, CH, LU, LI & CZ.
+- paragraph:
+  - paragraph: 🚚GRATIS Versand ab 99€ + Versand in 1 Werktag！
+- paragraph:
+  - paragraph: "Als Neukunde: 5% Rabatt sofort! Code: DESTORE05"
+- paragraph:
+  - paragraph:
+    - link:
+      - /url: https://store.creality.com/de/collections/filamente-fur-3d-drucker
+      - strong: Filament-Mengenrabatt Kauf 5, bezahl 4 - Kauf 10, bezahl 7
+- paragraph:
+  - paragraph:
+    - text: "Jetzt Upgrade & Spare 10% :"
+    - link:
+      - /url: https://store.creality.com/de/pages/trade-in
+      - text: ♻️Step-Up Programm
+- paragraph:
+  - paragraph:
+    - text: 💳 Genießen Sie
+    - strong: 5% Rabatt
+    - text: auf
+    - link:
+      - /url: https://store.creality.com/de/products/creality-geschenkkarte
+      - text: Creality Geschenkkarten
+    - text: "!"
+- paragraph:
+  - paragraph:
+    - strong: Spare 7%
+    - text: mit dem
+    - link:
+      - /url: https://store.creality.com/de/pages/student-discount
+      - text: Creality Studentenrabatt
+    - text: "!"
+- button "DE DE(Deutsch)":
+  - img "DE"
+  - generic: DE(Deutsch)
+- banner:
+  - link "Creality Store":
+    - /url: /de
+    - img "Creality Store"
+  - navigation:
+    - text: Sale
+    - link "3D-Drucker":
+      - /url: /de/collections/3d-printers
+    - link "3D-Drucker Kombi":
+      - /url: /de/collections/3d-drucker-kombination-sale
+    - link "3D-Scanner":
+      - /url: /de/collections/scanner
+    - link "Filament & Resin":
+      - /url: /de/collections/creality-filament-bulk-sale
+    - link "Zubehör":
+      - /url: /de/collections/accessories
+    - link "Lasergravierer":
+      - /url: /de/collections/engraver
+  - navigation:
+    - link:
+      - /url: /de/account/login?returnTo=%2Fde%2Faccount
+- main:
+  - link "Shop /":
+    - /url: /de
+    - text: Shop
+    - generic: /
+  - link "3D-Drucker /":
+    - /url: /de/collections/3d-printers
+    - text: 3D-Drucker
+    - generic: /
+  - link "Ender-3 V3 SE 3D-Drucker":
+    - /url: /de/products/ender-3-v3-se-3d-drucker
+  - img "14-Tage Rückgabe & Rückerstattung"
+  - generic: 14-Tage Rückgabe & Rückerstattung
+  - img "30 Tage Preisschutz"
+  - generic: 30 Tage Preisschutz
+  - img "Bis zu 24 Monate Garantie"
+  - generic: Bis zu 24 Monate Garantie
+  - img "Lebenslanger Kundensupport"
+  - generic: Lebenslanger Kundensupport
+  - heading "Ender-3 V3 SE 3D-Drucker" [level=1]
+  - img "4.53 / 5":
+  - generic: 4.53 / 68 Bewertungen
+  - generic: € 169,00
+  - generic: € 269,00
+  - generic: Spare € 100,00
+  - paragraph:
+    - strong: Max. Druckgeschwindigkeit von 250 mm/s und eine Beschleunigung von 2500 mm/s und automatische Mehrpunkt-Nivellierung dank CR-Touch
+  - list:
+    - listitem: Ausgestattet mit einem "Sprite" Extruder sorgt für kompatibilität mit verschiedenen Materialien
+    - listitem: Verbesserte UI für eine klarere Sicht auf den Druckstatus
+    - listitem: Automatische Z-Achsen-Kompensation
+    - listitem: Einfacheres laden und entladen des Filaments
+    - listitem: Auspacken und Drucken in nur 20 Minuten
+    - listitem: Kompaktes Design
+  - button "Mehr anzeigen":
+    - text: Mehr anzeigen
+  - heading "TYP" [level=5]
+  - paragraph: Ender-3 V3 SE
+  - generic: € 169,00
+  - generic: Spare € 100,00
+  - paragraph: Ender-3 V3 SE + Hyper Pla * 2PCS
+  - generic: € 185,00
+  - generic: Spare € 124,00
+  - paragraph: Kombi Details
+  - heading "Zubehör" [level=5]
+  - paragraph: Creality & Co-Print Multicolor-Upgrade-Kit für Ender-3 V3/V3 Plus
+  - generic: € 299,00
+  - button [disabled]:
+  - spinbutton: "1"
+  - button:
+  - button "(Co Print) KCM Set 8 Farben Pack":
+    - generic: (Co Print) KCM Set 8 Farben Pack
+  - paragraph: Creality Space Pi Filament Trockenbox
+  - generic: € 69,00
+  - button [disabled]:
+  - spinbutton: "1"
+  - button:
+  - paragraph: 6 PCS Soleyin PLA
+  - generic: € 59,00
+  - generic: Spare € 60,00
+  - paragraph: Kombi Details
+  - button [disabled]:
+  - spinbutton: "1"
+  - button [disabled]:
+  - generic: Ab nur €9,84 pro Rolle
+  - button [disabled]:
+  - spinbutton: "1"
+  - button:
+  - button "In den Warenkorb"
+  - button "Jetzt kaufen"
+  - paragraph: Ender-3 V3 SE 3D-Drucker
+  - paragraph:
+    - text: "Geschätztes Lieferdatum: 26. Okt. - 30. Okt."
+  - generic: € 169,00
+  - generic: inkl. MwSt.
+  - generic: Spare € 100,00
+  - button "In den Warenkorb"
+  - button "Jetzt kaufen"
+  - text: Sorgenfreie Lieferung verfügbar mit Seel.
+  - link "Mehr erfahren":
+    - /url: https://www.seel.com/faq/learn-more-about-seel-worry-free-purchase
+  - generic: Sicherer Checkout
+  - generic: Geschätztes Lieferdatum
+  - generic: 26. Okt. - 30. Okt.
+  - generic: Teilen
+  - link:
+    - /url: https://www.facebook.com/sharer/sharer.php?u=https://store.creality.com/de/products/ender-3-v3-se-3d-drucker
+  - link:
+    - /url: https://x.com/intent/post?text=https://store.creality.com/de/products/ender-3-v3-se-3d-drucker
+- contentinfo:
+  - navigation:
+    - paragraph: Produktauswahl
+    - list:
+      - link "Modellvergleich":
+        - /url: https://store.creality.com/de/pages/compare
+      - link "3D-Drucker":
+        - /url: https://store.creality.com/de/collections/3d-printers
+      - link "3D-Scanner":
+        - /url: https://store.creality.com/de/collections/scanner-gravier
+      - link "Material":
+        - /url: https://de.store.creality.com/collections/creality-filament-bulk-sale
+      - link "Zubehör":
+        - /url: https://store.creality.com/de/collections/accessories
+      - link "Flash-Sale":
+        - /url: https://store.creality.com/de/pages/flash-sale
+    - paragraph: Firma
+    - list:
+      - link "Über Uns":
+        - /url: https://store.creality.com/de/about
+      - link "Kontakt Uns":
+        - /url: https://store.creality.com/de/pages/kontakt-uns
+      - link "B2B Konto":
+        - /url: https://store.creality.com/de/company-registration
+      - link "Blog":
+        - /url: https://store.creality.com/de/blogs
+      - link "Impressum":
+        - /url: https://store.creality.com/de/pages/impressum
+      - link "Treueprogramm":
+        - /url: https://store.creality.com/de/loyalty-program
+    - paragraph: Hilfezentrum
+    - list:
+      - link "Über Bestellung":
+        - /url: https://de.store.creality.com/apps/bestellungsverfolgung
+      - link "Vertrag widerrufen":
+        - /url: https://store.creality.com/de/self-return
+      - link "Herunterladen-Center":
+        - /url: https://www.crealitycloud.com/software-firmware
+      - link "Datenschutzbestimmungen":
+        - /url: https://store.creality.com/de/pages/datenschutzbestimmungen
+      - link "Verkaufsbedingungen":
+        - /url: https://store.creality.com/de/pages/verkaufsbedingungen
+      - link "Versand & Auslieferung":
+        - /url: https://store.creality.com/de/pages/versand-auslieferung
+      - link "Rückgaberecht":
+        - /url: https://de.store.creality.com/pages/ruckgaberecht
+      - link "AGB":
+        - /url: https://de.store.creality.com/pages/allgemeine-geschaftsbedingungen-agb
+    - paragraph: Community
+    - list:
+      - link "Forum":
+        - /url: https://forum.creality.com/
+      - link "Crealitycloud":
+        - /url: https://www.crealitycloud.com/
+      - link "Creality Wiki":
+        - /url: https://wiki.creality.com/en/home
+      - link "Store Group":
+        - /url: https://www.facebook.com/groups/crealitydeutschland
+      - link "Discord":
+        - /url: https://discord.com/invite/NZM4yjZvyx
+      - link "Jetzt Partner werden":
+        - /url: http://app.impact.com/campaign-campaign-info-v2/Creality-EU.brand
+      - link "Craftseek":
+        - /url: https://webapp.craftseek.com/#/download
+    - paragraph: Abonnieren
+    - paragraph: Als erster Neuigkeiten erfahren und über heiße Sonderangebote und Rabattaktionen informiert werden.
+  - link:
+    - /url: https://www.creality.com/de?utm_source=creality_store_de&utm_medium=homepage
+  - link:
+    - /url: https://de.crealityfalcon.com/?utm_source=creality_store_de&utm_medium=footer
+  - link:
+    - /url: https://www.facebook.com/Crealityde
+  - link:
+    - /url: https://www.tiktok.com/@crealityofficial?spm=..index.footer_1.1
+  - link:
+    - /url: https://www.youtube.com/c/Creality3D/featured
+  - link:
+    - /url: https://x.com/Creality3dP
+  - link:
+    - /url: https://www.linkedin.com/company/creality-3d/
+  - link:
+    - /url: https://www.quora.com/profile/William-Liu-351?spm=..index.footer_1.1&amp;spm_prev=..index.header_1.1
+  - link:
+    - /url: https://www.reddit.com/r/Creality/?rdt=64799
+  - link:
+    - /url: https://discord.com/invite/creality
+  - generic: "Email: store.de@creality.com"
+  - button "DE DE(Deutsch)":
+    - img "DE"
+    - generic: DE(Deutsch)
+  - text: "@ 2026 Creality Deutschland|"
+  - generic: Cookie Settings
+- alert

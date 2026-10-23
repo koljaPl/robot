@@ -27,8 +27,24 @@ def main():
                     + (f"{price:.2f} | {price * item['quantity']:.2f}" if price is not None else "**pending** | **pending**")
                     + f" | {item['notes']} |")
     source = source.replace("{{BOM}}", "\n".join(rows))
-    from tools.budget_gate import check_basket
-    source = source.replace("{{BUDGET}}", "```json\n" + json.dumps(check_basket(basket), indent=2) + "\n```")
+    from tools.budget_gate import check_basket, cash_comparison
+    scenario_rows = []
+    for key, route in basket.get("scenarios", {}).items():
+        scenario_rows.extend([f"### {route['name']} — {route['selection_state']}", "",
+                              "| Additional item / source | Qty | Unit € | Line € | Issue |",
+                              "|---|---:|---:|---:|---|"])
+        for item in route["items"]:
+            price = item["unit_price_eur"]
+            label = f"[{item['product']}]({item['url']})" if item["url"] else item["product"]
+            scenario_rows.append(f"| {label} | {item['quantity']} | " +
+                                 (f"{price:.2f} | {price * item['quantity']:.2f}" if price is not None else "pending | pending") +
+                                 f" | {item['notes']} |")
+        scenario_rows.append("")
+    source = source.replace("{{SCENARIOS}}", "\n".join(scenario_rows))
+    reports = {"shared_subset": check_basket(basket),
+               "routes": {key: check_basket(basket, key) for key in basket.get("scenarios", {})},
+               "printer_comparisons": {key: cash_comparison(basket, key) for key in basket.get("printer_options", {})}}
+    source = source.replace("{{BUDGET}}", "```json\n" + json.dumps(reports, indent=2) + "\n```")
     spec = json.loads((ROOT / "physical_spec.json").read_text())
     mass = json.loads((ROOT / "docs/mass_properties.json").read_text())
     by_name = {b["body"]: b for b in mass["bodies"]}

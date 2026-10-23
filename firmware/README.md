@@ -1,4 +1,11 @@
-# Pico SDK firmware
+# Pico firmware — local build and bench preparation
+
+**Soldering update2026-10-23:** proposed bare Pico uses the same RP2040 firmware
+and GPIOs as Pico H. User fits headers and a self-soldered insulated harness; no
+mandatory helper labour. See [wiring sequence](../docs/HARDWARE.md). Do not flash/arm
+this as proof of electrical or mechanical verification. Physical prototype masses
+still refer to Pico H; bare-board replacement remains a measured-twin task.
+
 
 Source is C++17 using official Pico SDK **2.3.1**, revision
 `079c6f39023649b154152db30f1d781e884879bc`, TinyUSB submodule

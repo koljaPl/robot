@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-23",
+  "scope": "soldering/frame comparison and local preparation; no hardware",
+  "pytest": "32 passed in10.55s",
+  "clearance": {
+    "poses": 55,
+    "proxy_intersections": 550,
+    "exit_code": 1,
+    "release": false
+  },
+  "model_regeneration_byte_identical": true,
+  "identity": {
+    "configuration": "3d93f768188c8c55c903658192be75b87124f9a62852720fb5d2fd5b54666a8a",
+    "files": {
+      "physical_spec.json": "d5b242a39dc18ae0b218a9774e6667fd7c96ba9d1002bb8f392dbb2cd9e0b53f",
+      "robot.xml": "ddaa14f1d43cfb2aa4b8de752d4094055f976ed9ba1de246965212ee3bc7f4aa",
+      "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+      "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+      "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+      "humanoid_env.py": "558c11e7554747cb5f0306ea1bcf7f5c67653685f66911830263698e2f80c2fa",
+      "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+      "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+      "calibration.py": "b73947a3a1bb772bac45df3356fc108426c8bc199bd388cfb8b7ac51e5125486",
+      "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+      "firmware/control.h": "dfc0dec9642df663dca6410b8414faf16de480736c8c62fa2fd2da166f9c7200"
+    },
+    "calibration": null
+  },
+  "total_estimated_mass_kg": 0.1994311333885377,
+  "physical_spec_changed": false,
+  "policy_training_performed": false,
+  "physically_verified": false,
+  "all_gates_false": true,
+  "updated_source_sha256": {
+    "procurement.json": "8094f6e3876e3fd5d5d1d4e6a418f2ebc5bd8a2f63986dd975577cad10263181",
+    "tools/budget_gate.py": "27ecdf81195f60d51cf19b9cf05a8c7acd205a56f3a3fd51c69d93f132727d18",
+    "tools/prepare_local_print.py": "3e7f6b3f557faebaaeb36881806268804ceec66a91dc6ac794292d1cda0c1cc9",
+    "tools/build_handoff.py": "254d7f958994e1449d26edde3c64820eb93105f6fc981098a5090f255544b7ee",
+    "tests/test_procurement_routes.py": "32553f9946905f282e9fac8dd9d6aa5fce63d581c374f754e327884a5a0c056f",
+    "cad/local_print/layout.json": "d7e5a1df556c7445561dbf641b24d4e1eeb2922d39cf22b17bf75851493c0be8"
+  },
+  "additional_targeted_check": "4 passed after budget cash-total calculation change; robot/tool unknowns and frame alternatives retained"
+}

@@ -1,107 +1,104 @@
-# S6 robot — project summary for you and the AI
+# S6 robot — short plan for you and the AI
 
-Updated **2026-10-23**. Working plan; authoritative costs: [procurement.json](procurement.json).
+Updated **2026-10-23**. Costs/evidence: [procurement.json](procurement.json). **Nothing ordered or physically tested.**
 
-## Goal and current position
+## Decision and current state
 
-Roughly 18 cm biped: **hip pitch + knee pitch + ankle roll per leg**. PC inference → USB → Pico H direct PWM → six servos. Wired power; no PCA9685/battery/arms. Estimated mass: 199 g.
+Keep six MG90S: hip pitch, knee pitch and ankle roll per leg; roughly 18 cm, PC inference, USB and wired 5 V power. **You can solder; no helper fee is required.** No printer access is assumed. Printer purchase is comparison only. No drilling/cutting/bending of frame parts; cutting/stripping electrical wire is part of soldering.
 
-- **Software checked:** 29 tests pass; firmware compiles; simulation/logging/videos work. The 49,152-step nominal pilot achieved **no walking**. A/B smoke tests: 2,048 steps each; formal comparison pending.
-- **Blocked:** the current priced route is **€163.63 before remaining costs**, over the €100 cap. Mounting fit, electronics, calibration and physical walking remain unverified. Nothing purchased/assembled.
-- **Success:** stand 30 s, then travel ≥0.3 m within 30 s using alternating lifted steps. Drifting/sliding does not count.
+| Frame route | Robot-parts priced subset, VAT + published delivery | Complete delivered price | Decision |
+|---|---:|---|---|
+| Standard parts, no fabrication | **€95.91 before frame/its hardware/delivery** | Unknown | No complete compatible six-joint kit verified; blocked |
+| Own printer: seven PETG parts + standard pads | **€118.43 before unresolved extras** | Unknown; already **€18.43 over €100** | Comparison only; no printer access or print release |
 
-## Purchase list — provisional, not cleared to order
+**Recommendation:** use the proposed bare Pico and self-soldered harness if bench tests pass. Neither frame route is cleared to buy. Buying a printer does not solve the robot budget. Seek an exact compatible standard frame offer; keep local printing as a comparison until access, fit and costs are resolved. Commercial printing/laser cutting are historical alternatives, not default orders.
 
-VAT-inclusive snapshot, 2026-10-23; stock must be confirmed. Quantities mean **packs/items to buy**. An existing PC/laptop is assumed.
+Software: simulation, firmware and bench tools exist; **32 tests passed in this update**. Historical49,152-step PPO pilot **did not walk**. Current model still represents **Pico H + continuous1mm TPU soles**, estimated199.4g; the bare Pico/pad revision is proposed, not silently installed in MuJoCo. [Status/evidence](docs/STATUS.md).
 
-| Item / shop link | Buy quantity | Unit € | Line € | What it does / issue |
+## Common purchase list — proposed, not cleared
+
+Quantities are **full packs/items to buy**, not just quantities consumed. Prices include VAT; delivery is below. Existing PC and soldering-iron access assumed.
+
+| Item / exact source | Buy qty | Unit € | Line € | Purpose / issue |
 |---|---:|---:|---:|---|
-| [Waveshare 15024 MG90S — Welectron](https://www.welectron.com/Waveshare-15024-MG90S-Servo_1) | 6 | 3.50 | 21.00 | Joint motor; six-unit stock/horns unconfirmed |
-| [Raspberry Pi Pico H — BerryBase](https://www.berrybase.de/raspberry-pi-pico-rp2040-mikrocontroller-board-mit-headern) | 1 | 5.50 | 5.50 | USB microcontroller; headers already fitted |
-| [MPU6050 F23107397 — Funduino](https://funduino.com/products/mpu-6050-modul-triaxial-beschleunigungssensor-gyroskop) | 1 | 3.62 | 3.62 | Balance sensor; may need header soldering |
-| [Mean Well GST40A05-P1J — BerryBase](https://www.berrybase.de/meanwell-schaltnetzteil-5v-dc-5-0a-mit-hohlstecker-5-5x2-1mm) | 1 | 15.50 | 15.50 | Enclosed 5 V / 5 A servo power supply |
-| [Goobay 68604, 1.5 m — BerryBase](https://www.berrybase.de/kaltgeraete-netzkabel-schutzkontakt-stecker-abgewinkelt-iec320-c13-buchse-schwarz) | 1 | 3.81 | 3.81 | Schuko–C13 mains lead for the PSU |
-| [RPI-MUSB-1, 1 m — BerryBase](https://www.berrybase.de/offizielles-raspberry-pi-micro-usb-kabel-rot-1-0m) | 1 | 1.80 | 1.80 | USB-A–Micro-B data/power cable for Pico |
-| [DUPK-40-FF-50, 40 leads — BerryBase](https://www.berrybase.de/40pin-jumper-dupont-kabel-female-female-trennbar/laenge-0-50-m) | 1 | 2.20 | 2.20 | Available 50 cm replacement; logic only; helper keeps I2C short |
-| [JR/Futaba extension F23108007, 10 cm — Funduino](https://funduino.com/products/jr-futaba-servo-verlangerung-kabel-10cm-female-male) | 6 | 1.14 | 6.84 | Replaceable servo plugs; helper prepares power harness |
-| [Donau E-175-10, 0.75 mm², 10 m — BerryBase](https://www.berrybase.de/donau-kupferschaltlitze-0-75-mm2-10m-lang-1-adrig-24x0-20mm-pvc-isoliert) | 1 | 5.90 | 5.90 | Short power buses; label polarity |
-| [AiSHi ELK1M16VAWH, 1000 µF / 16 V — BerryBase](https://www.berrybase.de/elektrolytkondensator-1000-f-16v-1050c-1-radial-tht) | 1 | 0.29 | 0.29 | Bulk capacitor across servo supply |
-| [PINH-1X40P, 40 pins — BerryBase](https://www.berrybase.de/stiftleiste-1x-40-polig-rm-2-54-gerade) | 1 | 0.60 | 0.60 | Header pins for sensor/harness |
-| [McPower T1535561, 100 pieces — BerryBase](https://www.berrybase.de/schrumpfschlauch-set-100-teilig-schwarz) | 1 | 1.90 | 1.90 | Heat-shrink insulation for solder joints |
-| [McPower T1535501, 100 ties — BerryBase](https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-100x2-5mm) | 1 | 0.45 | 0.45 | Board mounting, cable restraint and strain relief |
-| [Goobay11638 DC socket — BerryBase](https://www.berrybase.de/dc-einbaubuchse-fuer-hohlstecker-5-5x2-1mm-metallausfuehrung-loetanschluss) | 1 | 1.10 | 1.10 |5.5×2.1mm,5 A; helper solders/insulates; physical unplug cutoff |
-| [P010265 M2 × 8 PH screws, 100 — Schraubenking](https://www.schraubenking-shop.de/M2-x-8mm-Linsenkopfschrauben-PH-DIN7985-Stahl-verzinkt-FKL48-P010265) |1 pack|1.51|1.51|12 used at servo ears; length/fit provisional |
-| [P003474 M2 nuts, 100 — Schraubenking](https://www.schraubenking-shop.de/M2-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P003474) |1 pack|1.13|1.13|12 used;4mm wrench/pliers |
-| [P004198 M2 washers, 100 — Schraubenking](https://www.schraubenking-shop.de/22mm-Unterlegscheiben-DIN125-Edelstahl-A2-P004198) |1 pack|0.99|0.99|24 used: one under each ear screw head/nut |
-| [7 PETG frames, one batch — Meltlab](https://meltlab.de/konfigurator) |1 job|48.70|48.70|Torso + 2 thighs + 2 shins + 2 feet; print/support removal/VAT/DHL only |
-| [2 TPU95A soles, one batch — Meltlab](https://meltlab.de/konfigurator) |1 job|20.09|20.09|Each 90 × 45 × 1 mm; print/VAT/separate DHL; bonding excluded |
+| [MG90S Waveshare15024](https://www.welectron.com/Waveshare-15024-MG90S-Servo_1) — Welectron | 6 | 3.50 | 21.00 | Joint servo; actual horns/retainers unconfirmed |
+| [Bare Pico](https://www.berrybase.de/raspberry-pi-pico-rp2040-mikrocontroller-board) — BerryBase | 1 | 4.10 | 4.10 | USB controller; solder headers |
+| [MPU6050 F23107397](https://funduino.com/products/mpu-6050-modul-triaxial-beschleunigungssensor-gyroskop) — Funduino | 1 | 3.62 | 3.62 | Balance sensor |
+| [GST40A05-P1J](https://www.berrybase.de/meanwell-schaltnetzteil-5v-dc-5-0a-mit-hohlstecker-5-5x2-1mm) — BerryBase | 1 | 15.50 | 15.50 | Enclosed 5V/5A servo PSU |
+| [Goobay68604, 1.5m](https://www.berrybase.de/kaltgeraete-netzkabel-schutzkontakt-stecker-abgewinkelt-iec320-c13-buchse-schwarz) — BerryBase | 1 | 3.81 | 3.81 | Mains lead for PSU |
+| [RPI-MUSB-1, 1m](https://www.berrybase.de/offizielles-raspberry-pi-micro-usb-kabel-rot-1-0m) — BerryBase | 1 | 1.80 | 1.80 | USB-A–Micro-B data cable; no adapter |
+| [DUPK-40-FF-50, 40 leads](https://www.berrybase.de/40pin-jumper-dupont-kabel-female-female-trennbar/laenge-0-50-m) — BerryBase | 1 | 2.20 | 2.20 | Logic wiring only; shorten I2C |
+| [JR/Futaba F23108007, 10cm](https://funduino.com/products/jr-futaba-servo-verlangerung-kabel-10cm-female-male) — Funduino | 6 | 1.14 | 6.84 | Six replaceable servo connections; ratings pending |
+| [Donau E-175-10 red copper wire 0.75 mm², 10 m roll](https://www.berrybase.de/donau-kupferschaltlitze-0-75-mm2-10m-lang-1-adrig-24x0-20mm-pvc-isoliert) — BerryBase | 1 | 5.90 | 5.90 | Short <=10 cm power buses; label negative with black shrink; no long thin power tether |
+| [AiSHi ELK1M16VAWH 1000 µF 16 V capacitor](https://www.berrybase.de/elektrolytkondensator-1000-f-16v-1050c-1-radial-tht) — BerryBase | 1 | 0.29 | 0.29 | Polarity matters; actual tolerance ±20%, inconsistent page title ignored |
+| [PINH-1X40P 40-pin 2.54 mm header](https://www.berrybase.de/stiftleiste-1x-40-polig-rm-2-54-gerade) — BerryBase | 2 | 0.60 | 1.20 | Two full 40-pin packs: 40 Pico pins + up to 8 IMU + 6 individual signal pins = 54, 26 spare |
+| [McPower T1535561 heat-shrink, 100 pieces](https://www.berrybase.de/schrumpfschlauch-set-100-teilig-schwarz) — BerryBase | 1 | 1.90 | 1.90 | Insulation for soldered joints; mark negative polarity |
+| [McPower T1535501 cable ties, 100 x 2.5 mm, pack of 100](https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-100x2-5mm) — BerryBase | 1 | 0.45 | 0.45 | 8 board mounts, 4 cable strain relief, 8 harness restraints; keep away from pinch points |
+| [Goobay 11638 DC socket 5.5 x 2.1 mm, solder lugs, 5 A](https://www.berrybase.de/dc-einbaubuchse-fuer-hohlstecker-5-5x2-1mm-metallausfuehrung-loetanschluss) — BerryBase | 1 | 1.10 | 1.10 | Retailer specifies 5 A / 30 V DC, nut and washer |
+| [Zhongdi ZD-160 lead-free solder, 1 mm, 2% flux, 10 g](https://www.berrybase.de/zhongdi-loetzinn-bleifrei-oe1-0-mm-2-flussmittel-10-g) — BerryBase | 1 | 1.90 | 1.90 | Flux-core solder for headers and harness |
+| [Delock 18309 self-adhesive TPE pads, 10 x 3 mm, pack50](https://www.reichelt.de/de/de/shop/produkt/gummifuesse_rund_selbstklebend_10_x_3_mm_50_stk_schwarz-371081) — Reichelt | 1 | 3.55 | 3.55 | Candidate: 8 used (4 per foot), 42 spare |
 
-**Still required, not priced/approved:**6 matching horns+6 shaft screws (manufacturer [photo](https://www.waveshare.com/img/devkit/accBoard/MG90S-Servo/MG90S-Servo-1.jpg) shows accessories; actual batch/geometry unconfirmed);12 horn-to-frame screws+12 matching washers; hole finishing, adhesive/sole bonding, fit sample/delivery and helper preparation. [Exact questions/evidence](docs/PROCUREMENT_ACTIONS.md). No generic 25T horns or guessed centre screws.
+Two 40-pin header packs provide 80 pins: 40 Pico + up to 8 IMU + 6 signal ends = 54, 26 spare. Bare Pico+headers€5.30 versus Pico H+one header pack€6.10: **saving€0.80**, not€1.40. Same firmware/pin assignments.
 
-Print files: [quote bundle](cad/quote_bundle.zip), [compact layouts](cad/quotation/), [brief](cad/QUOTE_REQUEST.md). **Quotation prototypes only:** dimensions unchanged, orientation/fit unapproved; do not submit both individual and batch files as extra quantities. M2 × 8 may be too short once the actual ear stack is measured. No drilling/tapping by you.
+## Additional frame parts and unresolved hardware
 
-**No USB adapter in the base list.** The USB-A–Micro-B data cable above is required; add an adapter only if your PC has no USB-A. PC port and German delivery postcode remain unconfirmed.
+- **Standard route:** one complete frame kit is required: torso,2thighs,2shins,2feet, all case/horn/link interfaces and matching fasteners. No verified product/quantity/landed price yet. [Cytron ROBO-BK-SG90](https://www.cytron.io/p-robo-bracket-for-microservo-motor), USD2.48 each, is only a case bracket; its included4M2×6+4M3×6 screws do not create a complete leg. Required bracket count remains unknown. Four-joint kits are unsuitable.
+- **Own-print route:** [SUNLU PETG black SN5-314224,1kg spool](https://www.welectron.com/Sunlu-PETG-Black-175-mm-1000-g_1),1×€12.99; seven frame parts:1torso+2thighs+2shins+2feet. Full spool counted; supplied sample filament is not relied on.
+- Ear fasteners, own-print route: buy100each of [M2×8 screws](https://www.schraubenking-shop.de/M2-x-8mm-Linsenkopfschrauben-PH-DIN7985-Stahl-verzinkt-FKL48-P010265) €1.51, [M2 nuts](https://www.schraubenking-shop.de/M2-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P003474) €1.13 and [M2 washers](https://www.schraubenking-shop.de/22mm-Unterlegscheiben-DIN125-Edelstahl-A2-P004198) €0.99. Install12screws/12nuts/24washers; length/clearance still unverified. Delivery€5.90.
+- **Six matching horns + six shaft screws** required; accessory photo is not batch confirmation. **Twelve horn-to-frame screws +12matching washers** also required for the current CAD; exact thread/length and cost unknown. Do not order generic25T horns or guess centre-screw threads. A standard kit must include/price its own verified hardware.
+- Candidate grip: use8Delock18309 pads (4perfoot),42spare in the50pack above.10mm diameter×3mm,TPE, self-adhesive. No TPU spool or separately bonded sole is proposed. Grip/adhesion and final placement need testing; changing from continuous soles requires new contact geometry/fingerprint later.
+- Print-specific cleaning/release consumables and any additional fit hardware remain unpriced until the actual printer/plate/slicer is verified. Unknowns are **not zero**.
 
-**Borrow tools:** soldering kit, cutters/stripper, multimeter, scale, ruler/protractor, phone. Tools excluded from €100; no personal printer/drilling/tapping.
-**Optional:** spare servo (€3.50 + delivery), protective mat, slack safety line. Longer USB/power tethers need separate sourcing/budget.
+## Cost and delivery breakdown
 
-## Cost breakdown
-
-| Current route, incl. VAT | Parts/services € | Delivery € | Subtotal € |
+| Supplier / contents | Parts € | Shipping € | Known € |
 |---|---:|---:|---:|
-| [Welectron](https://www.welectron.com/Shipping-cost): six servos |21.00|4.95|25.95|
-| [BerryBase](https://www.berrybase.de/versand-und-zahlungsbedingungen): electronics/power/wiring including new leads/socket |39.05|4.95|44.00|
-| [Funduino](https://funduino.com/policies/shipping-policy): IMU + six extensions |10.46|4.90|15.36|
-| [Schraubenking](https://www.schraubenking-shop.de/Versandinformationen): three ear-fastener packs |3.63|5.90|9.53|
-| Meltlab:7 PETG, including €11.90 support removal+€5.95 order fee |42.51|6.19|48.70|
-| Meltlab:2 TPU, including €5.95 order fee |13.90|6.19|20.09|
-| **Priced subset** |**130.55**|**33.08**|**163.63**|
-| **Already above€100, before unresolved costs** |||**63.63**|
-| **Complete delivered total** |||**Unknown; higher for this route**|
+| Welectron:6servos |21.00|4.95|25.95|
+| BerryBase:bare Pico,PSU,mains/USB,wire,headers,solder,insulation,restraints,DC socket |40.15|4.95|45.10|
+| Funduino:IMU+6extensions |10.46|4.90|15.36|
+| Reichelt:50grip pads |3.55|5.95|9.50|
+| **Common subset; no complete frame** |**75.16**|**20.75**|**95.91**|
+| Own print adds:full PETG spool +3fastener packs |16.62|5.90|22.52|
+| **Own-print robot subset** |**91.78**|**26.65**|**118.43**|
 
-**Procurement stopped.** Find a cheaper fully quoted manufacturing route; do not order this basket or weaken the servos. Electronics/delivery €85.31 + ear-fastener delivery €9.53 leave only €5.16 for every print/horn/helper cost. Combining the two print jobs may save fees/shipping, but no combined quotation exists.
+Delivery to **25337 Germany**: published standard rates, not a postcode-specific checkout/booking. Stock is not reserved; six-servo availability still needs confirmation. BerryBase/Welectron typically1–3working days for shown stock; Funduino/fastener/pad timing must be checked at checkout. Extra bench/sample shipments cost extra. [Policies and precise questions](docs/PROCUREMENT_ACTIONS.md).
 
-**Delivery plan, not bookings:** Welectron DPD advertised 1–3 working days if all 6 available; BerryBase items usually 1–3 days; Funduino standard tracked DHL (policy says most arrive within 2 working days); fasteners 2–3 working days; prints 4 working days production after payment + 1–2 DHL days. No guaranteed arrival, reservations, address entry or orders. Avoid paid priority; any bench/sample split must add every extra delivery. [Quote records](docs/procurement/2026-10-23/quotes.json).
+| Printer comparison only | Printer incl.VAT + published DE delivery | Robot subset | Initial cash priced subset |
+|---|---:|---:|---:|
+| [Bambu A1 mini non-Combo BL1-101030](https://www.welectron.com/Bambu-Lab-A1-mini-3D-Drucker) |€189+€0|€118.43|**€307.43 + unknowns**|
+| [Creality Ender-3 V3 SE standalone](https://store.creality.com/de/products/ender-3-v3-se-3d-drucker) |€169+€0|€118.43|**€287.43 + unknowns**|
 
-## Full sequence — who does what
+A1mini: exact variant shown in stock,1–3working days;180³mm. Ender: standalone add-to-cart enabled, no stock count;220×220×250mm. Free German shipping is published policy, not confirmed25337 checkout. No discounts assumed. Joint A1/servo/spool shipment could remove€4.95 **once** if verified; even then robot subset€113.48 remains over cap. The table conservatively retains robot-only delivery.
 
-| Order | You / helper | AI / completion gate |
+**Tools:** iron access already available. Borrow/confirm meter, stripper/cutters, safe heat source, scale/ruler and print/support tools; unconfirmed tool purchases make the complete initial cash total unknown. Tools/printer are outside€100; solder, insulation, filament and connectors are inside it. Optional spare servo/protective mat/slack safety line are not base purchases.
+
+## Assembly — conditional on budget, fit and electrical approval
+
+1. **Confirm mechanics first:** exact servo ear/horn dimensions, full screw stack, link directions, cable/fastener clearance and complete delivery price. Standard route has no verified assembly kit yet; do not buy six brackets and assume legs follow.
+2. **Solder and test electronics:** fit40Pico pins and IMU header; build6replaceable servo branches onto short0.75mm² positive/return buses. Insulate every joint, add1000µF capacitor and soldered5A DC socket; label polarity and strain-relieve. USB powers Pico/IMU; servo current bypasses Pico/breadboards. [Detailed harness/pins](docs/HARDWARE.md).
+3. **Bench one unloaded servo +IMU:** verify polarity/current/droop,3.3V signal, physical DC unplug cutoff, disarmed boot/watchdog and single-channel calibration. PWM pins GP0/1/2/3/6/7; IMU GP4/5. [Firmware/commands](firmware/README.md), [measurements](docs/CALIBRATION.md).
+4. **If printing is later selected:** measure interfaces, slice/print [FIRST_interface_sample.stl](cad/local_print/FIRST_interface_sample.stl) before the seven frames. Open one [individual plate](cad/local_print/layout.json) at100%/mm: all fit180mm bounding boxes with margin. The old185mm quote batch does **not** fit. Orientations/supports/strength are not approved. [Route details](docs/FRAME_ROUTES.md).
+5. **Build measured frame:** calibrate zero; power off before fitting matching horns/retainers. Cases:hips→torso,knees→thighs,ankles→feet. Moving horn links:thigh→hip,shin→knee and ankle. Fit only verified fasteners; do not drill/force parts. [Prototype drawing](cad/exploded.png), [assembly reference](cad/ASSEMBLY.md). Standard kit needs its own verified equivalent sequence.
+6. **Fit pads/boards, route and weigh:** candidate4pads perfoot; rigid IMU mount, insulated boards, joint service loops, tether strain relief near torso. Check all angles/collisions; record body masses/COM and new sole geometry before updating twin. Test small manual motions and reachable physical cutoff. Software STOP does not isolate power.
+
+## Project sequence and AI continuation
+
+| Next stage | You | AI / done criterion |
 |---|---|---|
-| 1. Close feasibility **← now** | Resolve servo contents/fit; obtain cheaper complete manufacturing quote and helper cost. | Current route fails €100; replace it with a verified complete basket ≤€100. [Questions](docs/PROCUREMENT_ACTIONS.md). No orders/messages sent. |
-| 2. Bench one servo + IMU | Prepare harness; test PSU/cutoff, USB, IMU, 3.3 V PWM and watchdog. | [Bench tools](firmware/README.md); record actual timing/electrical results. |
-| 3. Measure mounting fit | Measure interfaces; approve one mounting sample. | Resolve 550 estimated fastener-envelope overlaps across 55 poses; these are **not proven bolt collisions**. No manufacturing release. |
-| 4. Print and assemble | Order approved kit; assemble/weigh bodies. | Match CAD, mass ownership, COM/inertia. |
-| 5. Calibrate/manual control | Measure six servos, current/response/latency, IMU and safe poses. | Version calibration/twin. Safe commands ≠ mechanical stops. [Procedure](docs/CALIBRATION.md). |
-| 6. Validate the twin | Supply measurements/videos. | Validate contacts, standing/weight transfer/lifted steps. Existing reference failed; diagnose before large training. |
-| 7. Train/evaluate A vs B | Review gait videos/metrics. | Fixed/randomized PPO; matched weights/budgets; seeds 0/1/2; ≤999,424 steps each. Compatible pilot counts. Validation 2000–2004; final 1000–1009. [Protocol](docs/EXPERIMENT.md). |
-| 8. Transfer progressively | Supervised standing, then short steps; reachable cutoff. | Check fingerprints; log commands/IMU. No IMU double-integration distance. |
-| 9. Compare/report | Video/ruler measurements; equal conditions, alternating A/B order. | Report failures/uncertainty/cable effects. [Trial sheet](docs/templates/physical_trials.csv), [report](docs/REPORT.md). |
-| 10. Extend later | Only after stable walking. | Turning, recovery or terrain; no automatic scope expansion. |
+| **Now: feasibility** | Obtain exact standard-frame offer/measurements; no order yet | Price every interface/hardware/delivery; cap≤€100, otherwise remain blocked |
+| Bench +sample | Solder/test, measure servo/horn/current/response/IMU; sample only with access | Store measured calibration; resolve clearance proxies; no physical claims from simulation |
+| Assembly +twin | Assemble/weigh approved mechanics | Update spec,mass,inertia,transforms,contacts; generate new identity; invalidate prototype policies |
+| Manual motion | Supply standing/weight-transfer/step data | Validate lifted steps before more large training; do not inflate torque |
+| RL A/B | Review videos | Matched initial weights, equal budgets,seeds0/1/2;≤999424steps each; validation2000–2004,test1000–1009 |
+| Transfer +report | Supervised stand, short walks, equal A/B trials with ruler/video | Fingerprints/logs, compare distance/speed/falls; never IMU double-integration distance |
 
-## Assembly in six steps — only after budget and fit approval
+Target:30s standing,then≥0.3m visibly alternating lifted walking within30s; sliding does not count. Extensions wait.
 
-1. **Prepare electronics:** helper finishes soldering/insulation; test one unloaded servo and IMU first. [Power/wiring](docs/HARDWARE.md), [firmware](firmware/README.md).
-2. **Set mechanical zero:** calibrate each servo, disconnect motor power, then fit its matching horn and shaft screw. Zero is not the bent-knee HOME pose.
-3. **Build legs:** hip servo cases → torso; thighs → hip horns; knee cases → thighs; shins → knee horns; ankle cases → feet; shins → ankle horns. Use only the confirmed fastener kit. [Drawing](cad/exploded.png), [detailed assembly](cad/ASSEMBLY.md).
-4. **Fit boards/soles:** service bonds TPU soles; secure Pico/IMU without exposed contacts touching hardware. Leave joint service loops and cable strain relief.
-5. **Wire:** USB powers Pico/IMU; separate 5 V PSU feeds servo bus; common ground. **Never send servo current through Pico or a breadboard.** PWM joint order L hip/knee/ankle, R hip/knee/ankle → GP0/1/2/3/6/7. IMU SDA/SCL → GP4/5, VCC → 3.3 V. [Pin table](docs/HARDWARE.md#pin-table).
-6. **Test conservatively:** weigh bodies, check polarity/directions/ranges and disarmed boot/watchdog. Start manual standing on a low clear floor. Software STOP is not power isolation; disconnect DC after a fall and inspect before restarting.
-
-## AI continuation — mandatory handoff
-
-- Read this file and [AGENTS.md](AGENTS.md); then only relevant details in [STATUS](docs/STATUS.md), [ROADMAP](docs/ROADMAP.md) and implementation. The [full handoff](docs/HANDOFF.md) is reference, not the starting reading task.
-- **Next:** resolve the €63.63 known overrun plus unknown finishing/horn/helper costs; obtain exact cheaper delivered quotes and interface evidence, then update [cost](procurement.json)/[physical](physical_spec.json) ledgers. Label sourced/estimated/measured/unknown with evidence/date; never invent verification.
-- Preserve six joints, €100 delivered, PC inference, six normalized targets/90 IMU-command observations. No privileged SIM observations or weaker-servo substitution.
-- [Gates](docs/gates.json) remain closed. Diagnose missing lifted steps before repeating/extending training; do not inflate torque to force success.
-- **All saved policies are historical** after the firmware parser fix. Use isolated `tools/replay_snapshot.py`; never relabel fingerprints. [Evidence](docs/VALIDATION_CURRENT.md). Compiled firmware is not physically tested; example calibration cannot policy-arm.
-- Update this snapshot/STATUS from ledgers; regenerate handoff/archive; preserve results. No supplier messages/purchases without explicit authorization.
-
-New computer setup: `python3.12 -m venv .venv`, then `.venv/bin/pip install -r requirements-dev.txt`.
+**AI:** read this → [AGENTS](AGENTS.md) → [STATUS](docs/STATUS.md) → relevant [ROADMAP](docs/ROADMAP.md). Keep [gates](docs/gates.json) false. Next task is a complete standard-frame interface/landed-cost proposal, not another commercial-print quote or training run. Local print route fails budget already. Physical spec/MJCF/control are unchanged; all saved policies remain historical. Evidence must say sourced/estimated/measured/unknown. Regenerate handoff/archive after changes; preserve historical quotes and experiments.
 
 ```bash
 .venv/bin/python -m pytest -q
-.venv/bin/python tools/budget_gate.py       # expected exit 1: over budget
-.venv/bin/python tools/check_clearance.py   # expected exit 1: proxy conflicts
-# Historical policy review; choose a new output directory:
-.venv/bin/python tools/replay_snapshot.py --episodes 1 --output runs/review_unique
+.venv/bin/python tools/budget_gate.py --scenario all  # exit1: own-print over cap
+.venv/bin/python tools/prepare_local_print.py        # provisional layouts only
+.venv/bin/python tools/check_clearance.py            # exit1: unresolved proxy overlaps
 ```
