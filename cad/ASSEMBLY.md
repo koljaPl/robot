@@ -38,5 +38,5 @@ The finite checker includes frame/case/electronics and estimated fastener sweeps
 550 overlaps involve unmeasured mass-envelope proxies across55poses. These are
 not confirmed bolt collisions, but cannot be cleared without actual horn/screw
 geometry. Run `python tools/check_clearance.py`; nonzero exit means no release.
-The exploded view shows frames only; electronics/fasteners remain specified in
-the ledger and schedule, not certified fitted hardware.
+The exploded view shows frame, servo-case and PCB envelopes; actual horn/fastener
+fit remains specified provisionally in the ledger/schedule and is not certified.

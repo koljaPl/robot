@@ -2,7 +2,8 @@
 
 ## Einstieg und aktueller Stand
 
-KI/Entwickler starten bei [AGENTS.md](AGENTS.md), dann [Status](docs/STATUS.md)
+Der kurze Gesamtplan für Menschen und KI steht in [SUMMARY.md](SUMMARY.md).
+KI/Entwickler lesen danach [AGENTS.md](AGENTS.md) und [Status](docs/STATUS.md)
 und [Roadmap](docs/ROADMAP.md). Die [generierte Übergabe mit19Abschnitten](docs/HANDOFF.md)
 enthält den vollständigen Code; Preise stehen in `procurement.json`, Maße/Massen
 in `physical_spec.json`. [Offene Beschaffungsfragen](docs/PROCUREMENT_ACTIONS.md),

@@ -2,6 +2,7 @@
 
 Generated from source by `python tools/build_handoff.py`. Do not edit HANDOFF.md.
 Research date2026-10-23. Source files, ledgers and evidence states take precedence.
+Short purchase/build plan for humans and AI: [SUMMARY.md](../SUMMARY.md).
 
 ## 1. Short design recommendation
 
@@ -250,8 +251,8 @@ The finite checker includes frame/case/electronics and estimated fastener sweeps
 550 overlaps involve unmeasured mass-envelope proxies across55poses. These are
 not confirmed bolt collisions, but cannot be cleared without actual horn/screw
 geometry. Run `python tools/check_clearance.py`; nonzero exit means no release.
-The exploded view shows frames only; electronics/fasteners remain specified in
-the ledger and schedule, not certified fitted hardware.
+The exploded view shows frame, servo-case and PCB envelopes; actual horn/fastener
+fit remains specified provisionally in the ledger/schedule and is not certified.
 
 Body origins/axes, command intervals and mass/COM below derive from the ledger.
 Unknown mechanical stops remain null and are absent from provisional MJCF.
@@ -3411,7 +3412,7 @@ invent a quote or substitute simulation verification for physical verification.
 ### Current project status
 
 Updated **2026-10-23**. **Nothing purchased, assembled, flashed or physically tested.**
-Read this after AGENTS.md, then ROADMAP.md for gates. Do not restart broad research.
+Start with SUMMARY.md and AGENTS.md; use this file for evidence and ROADMAP.md for gates. Do not restart broad research.
 
 #### Current checkpoint
 
@@ -3482,7 +3483,8 @@ relabelled or granted physical compatibility. Current invalid-calibration UF2 is
 `docs/validation/2026-10-23/final_control_revision/`.
 
 The superseded first smoke in `runs/2026-10-23/smoke` predates the final fingerprint;
-use `final_smoke`, not that intermediate run. Never relabel an old checkpoint compatible.
+`final_smoke` is also historical after the controller revision. Review archived policies
+only through the isolated replay tool; no saved checkpoint is currently deployment-compatible.
 
 #### Remaining blockers and unknown assumptions
 

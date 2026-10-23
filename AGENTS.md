@@ -1,6 +1,7 @@
 # School Biped S6: start here
 
-Read `docs/STATUS.md`, then the active stage in `docs/ROADMAP.md`.
+Read `SUMMARY.md` first: the short plan, purchase/cost snapshot and AI next task.
+Then read `docs/STATUS.md` and only the relevant stage in `docs/ROADMAP.md`.
 Use the detailed handoff only for relevant reference; do not reread all embedded code.
 
 ## Goal and constraints
@@ -44,7 +45,6 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 source .venv/bin/activate
 python -m pytest -q
 python tools/firmware_config.py  # default invalid calibration cannot policy-arm
-python train.py --steps 2048 --development --output runs/new_smoke
 python tools/budget_gate.py  # 2 = incomplete; 1 = over budget; 0 = cleared
 ```
 
@@ -58,10 +58,15 @@ python tools/budget_gate.py  # 2 = incomplete; 1 = over budget; 0 = cleared
 - B starts from the same initial weights as A, not from a nominal-pretrained policy.
 - Validation seeds 2000–2004; final test seeds 1000–1009. Do not tune on final tests.
 - Full experiments require the stage gates; provisional tests must say provisional.
+- All saved policies are historical after the final firmware parser fix; review only with
+  `tools/replay_snapshot.py`. Do not relabel their fingerprints as current.
+- The nominal pilot and scripted lifts failed: diagnose fit/model/measurements before
+  repeating or extending training; do not increase torque just to force a simulated lift.
 - Stop at the agreed training cap and report failure honestly if walking is unmet.
 
 ## Documentation and packaging
 
+- Keep `SUMMARY.md` brief and synchronized with the authoritative ledgers.
 - Update `docs/STATUS.md` after each completed work chunk: evidence, blockers, next action.
 - Keep `docs/ROADMAP.md` gates synchronized; retain the German school introduction in README.
 - Edit handoff template/reference sources, then run `python tools/build_handoff.py`.

@@ -2,6 +2,7 @@
 
 Generated from source by `python tools/build_handoff.py`. Do not edit HANDOFF.md.
 Research date2026-10-23. Source files, ledgers and evidence states take precedence.
+Short purchase/build plan for humans and AI: [SUMMARY.md](../SUMMARY.md).
 
 ## 1. Short design recommendation
 

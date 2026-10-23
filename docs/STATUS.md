@@ -1,7 +1,7 @@
 # Current project status
 
 Updated **2026-10-23**. **Nothing purchased, assembled, flashed or physically tested.**
-Read this after AGENTS.md, then ROADMAP.md for gates. Do not restart broad research.
+Start with SUMMARY.md and AGENTS.md; use this file for evidence and ROADMAP.md for gates. Do not restart broad research.
 
 ## Current checkpoint
 
@@ -72,7 +72,8 @@ relabelled or granted physical compatibility. Current invalid-calibration UF2 is
 `docs/validation/2026-10-23/final_control_revision/`.
 
 The superseded first smoke in `runs/2026-10-23/smoke` predates the final fingerprint;
-use `final_smoke`, not that intermediate run. Never relabel an old checkpoint compatible.
+`final_smoke` is also historical after the controller revision. Review archived policies
+only through the isolated replay tool; no saved checkpoint is currently deployment-compatible.
 
 ## Remaining blockers and unknown assumptions
 

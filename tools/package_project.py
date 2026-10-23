@@ -14,7 +14,7 @@ def main():
             z.write(ROOT / path, path)
     with zipfile.ZipFile(ROOT / "school_biped_s6.zip", "w", zipfile.ZIP_DEFLATED) as z:
         roots = ["docs", "cad", "tests", "tools", "firmware", "calibrations"]
-        candidates = [ROOT / name for name in ("AGENTS.md", "README.md", "requirements.txt", "requirements-dev.txt", "robot.xml", "physical_spec.json", "procurement.json", "build_model.py", "robot_config.py", "humanoid_env.py", "servo_control.py", "imu_observation.py", "gait_metrics.py", "calibration.py", "hardware_interface.py", "serial_robot.py", "bench.py", "deploy.py", "reference_motion.py", "train.py", "evaluate.py")]
+        candidates = [ROOT / name for name in ("AGENTS.md", "SUMMARY.md", "README.md", "requirements.txt", "requirements-dev.txt", "robot.xml", "physical_spec.json", "procurement.json", "build_model.py", "robot_config.py", "humanoid_env.py", "servo_control.py", "imu_observation.py", "gait_metrics.py", "calibration.py", "hardware_interface.py", "serial_robot.py", "bench.py", "deploy.py", "reference_motion.py", "train.py", "evaluate.py")]
         for folder in roots:
             candidates.extend((ROOT / folder).rglob("*"))
         for path in sorted(candidates):
