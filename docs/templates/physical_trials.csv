@@ -1,0 +1,1 @@
+trial_id,date,condition,policy_sha256,configuration_sha256,calibration_sha256,order,stand_duration_s,walk_duration_s,distance_m,qualifying_gait_distance_m,left_steps,right_steps,alternations,falls,stance_slip_m,video,command_log,floor,cable_routing,notes

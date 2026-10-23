@@ -13,11 +13,17 @@ def main():
         for path in ("cad/QUOTE_REQUEST.md", "cad/ASSEMBLY.md", "cad/exploded.png", "cad/print_manifest.json", "physical_spec.json"):
             z.write(ROOT / path, path)
     with zipfile.ZipFile(ROOT / "school_biped_s6.zip", "w", zipfile.ZIP_DEFLATED) as z:
-        for path in sorted(ROOT.rglob("*")):
+        roots = ["docs", "cad", "tests", "tools", "firmware", "calibrations"]
+        candidates = [ROOT / name for name in ("AGENTS.md", "README.md", "requirements.txt", "requirements-dev.txt", "robot.xml", "physical_spec.json", "procurement.json", "build_model.py", "robot_config.py", "humanoid_env.py", "servo_control.py", "imu_observation.py", "gait_metrics.py", "calibration.py", "hardware_interface.py", "serial_robot.py", "bench.py", "deploy.py", "reference_motion.py", "train.py", "evaluate.py")]
+        for folder in roots:
+            candidates.extend((ROOT / folder).rglob("*"))
+        for path in sorted(candidates):
             rel = path.relative_to(ROOT)
-            if not path.is_file() or any(p in {".git", ".venv", "runs", "__pycache__", ".pytest_cache"} for p in rel.parts):
+            if path.is_symlink() or not path.is_file() or any(part.startswith(".") or part in {"__pycache__", "build"} for part in rel.parts):
                 continue
-            if path.name == "school_biped_s6.zip" or path.suffix == ".pyc":
+            if path.suffix in {".pyc", ".elf", ".o"}:
+                continue
+            if path.suffix == ".zip" and rel.parts[:2] != ("docs", "validation"):
                 continue
             z.write(path, rel)
     print("Created cad/quote_bundle.zip and school_biped_s6.zip")

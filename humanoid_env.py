@@ -7,7 +7,9 @@ import mujoco
 from robot_config import (ROOT, JOINT_NAMES, HOME, PHYSICS_DT, CONTROL_DT, IMU_DT,
                           HISTORY, FRAME_SIZE, DR, BASE_DELAY, TARGET_SPEED,
                           SERVO_TORQUE, SERVO_NO_LOAD_SPEED, GYRO_NOISE,
-                          ACCEL_NOISE, MAX_EPISODE_SECONDS, action_to_target, target_to_action)
+                          ACCEL_NOISE, MAX_EPISODE_SECONDS, action_to_target, target_to_action,
+                          IMU_FILTER_HZ, IMU_ACCEL_RANGE, IMU_GYRO_RANGE)
+from gait_metrics import GaitMetrics, progress_reward
 from servo_control import ServoTargets
 from imu_observation import GravityEstimator, ObservationHistory
 
@@ -16,7 +18,7 @@ class HumanoidEnv(gym.Env):
     metadata = {"render_modes": ["human", "rgb_array"], "render_fps": 50}
 
     def __init__(self, xml_path=None, render_mode=None, domain_randomization=False,
-                 episode_seconds=MAX_EPISODE_SECONDS):
+                 episode_seconds=MAX_EPISODE_SECONDS, calibration=None):
         super().__init__()
         if render_mode not in (None, "human", "rgb_array"):
             raise ValueError("render_mode must be None, human, or rgb_array")
@@ -27,6 +29,7 @@ class HumanoidEnv(gym.Env):
             raise ValueError("MJCF timestep must match robot_config.PHYSICS_DT")
         self.data = mujoco.MjData(self.model)
         self.render_mode = render_mode
+        self.calibration = calibration
         self.domain_randomization = bool(domain_randomization)
         self.max_steps = max(1, int(round(episode_seconds / CONTROL_DT)))
         self.action_space = spaces.Box(-1.0, 1.0, shape=(6,), dtype=np.float32)
@@ -68,13 +71,13 @@ class HumanoidEnv(gym.Env):
             speed_scale = rng.uniform(1 - DR.speed, 1 + DR.speed)
             speed *= speed_scale
             self.no_load_speed *= speed_scale
-            delay = rng.uniform(*DR.delay_seconds)
+            delay = int(rng.choice(DR.delay_ticks)) * CONTROL_DT
             self.offset = rng.uniform(-DR.offset_rad, DR.offset_rad, 6)
             self.gyro_bias = rng.uniform(-DR.gyro_bias, DR.gyro_bias, 3)
             self.accel_bias = rng.uniform(-DR.accel_bias, DR.accel_bias, 3)
             self.noise_scale = rng.uniform(*DR.sensor_noise_scale)
         self.torque_limit = self.model.actuator_forcerange[self.aids, 1].copy()
-        self.servos = ServoTargets(delay=delay, speed=speed)
+        self.servos = ServoTargets(delay=delay, speed=speed, calibration=self.calibration)
         mujoco.mj_setConst(self.model, self.data)
 
     def _raw_imu(self):
@@ -82,7 +85,18 @@ class HumanoidEnv(gym.Env):
         accel = self.data.sensor("imu_accel").data.copy()
         gyro += self.gyro_bias + self.np_random.normal(0, GYRO_NOISE * self.noise_scale, 3)
         accel += self.accel_bias + self.np_random.normal(0, ACCEL_NOISE * self.noise_scale, 3)
-        return gyro, accel
+        gyro = np.clip(gyro, -IMU_GYRO_RANGE, IMU_GYRO_RANGE)
+        accel = np.clip(accel, -IMU_ACCEL_RANGE, IMU_ACCEL_RANGE)
+        # First-order 44 Hz surrogate, not a claim to reproduce silicon DLPF exactly.
+        alpha = 1 - np.exp(-2*np.pi*IMU_FILTER_HZ*IMU_DT)
+        if self.filtered_gyro is None:
+            self.filtered_gyro, self.filtered_accel = gyro.copy(), accel.copy()
+        else:
+            self.filtered_gyro += alpha*(gyro-self.filtered_gyro)
+            self.filtered_accel += alpha*(accel-self.filtered_accel)
+        gyro_lsb, accel_lsb = IMU_GYRO_RANGE/32768, IMU_ACCEL_RANGE/32768
+        return (np.rint(self.filtered_gyro/gyro_lsb)*gyro_lsb,
+                np.rint(self.filtered_accel/accel_lsb)*accel_lsb)
 
     def _motor_envelope(self):
         # Drive-direction torque falls with shaft speed; opposing/braking torque remains.
@@ -103,6 +117,7 @@ class HumanoidEnv(gym.Env):
             mujoco.mj_step(self.model, self.data)
         self.data.time = 0
         mujoco.mj_forward(self.model, self.data)
+        self.filtered_gyro = self.filtered_accel = None
         gyro, accel = self._raw_imu()
         self.estimator.reset(accel)
         self.last_gyro = gyro
@@ -111,20 +126,16 @@ class HumanoidEnv(gym.Env):
         self.servo_next_time = 0.0
         self.last_action = target_to_action(HOME)
         self.servos.reset()
+        self.applied_command = HOME.copy()
         self.steps = 0
         self.total_reward = 0.0
         self.start_position = self.data.xpos[self.torso_id].copy()
         self.nominal_height = self.model.key("home").qpos[2]
-        self.foot_lift_time = np.zeros(2)
-        self.supported_clearance_time = np.zeros(2)
-        self.foot_lift_qualified = np.zeros(2, dtype=bool)
-        self.foot_max_height = np.zeros(2)
-        self.foot_airborne = np.zeros(2, dtype=bool)
-        self.lifted_steps = np.zeros(2, dtype=int)
-        self.last_step_foot = None
+        self.gait = GaitMetrics()
+        self.lifted_steps = self.gait.steps
         self.alternations = 0
         self.done = False
-        frame = self.history.frame(self.estimator.gravity, self.last_gyro, self.servos.applied, self.last_action)
+        frame = self.history.frame(self.estimator.gravity, self.last_gyro, self.applied_command, self.last_action)
         obs = self.history.reset(frame)
         return obs, self._info(False)
 
@@ -148,30 +159,21 @@ class HumanoidEnv(gym.Env):
         return float(self.data.geom_xpos[gid, 2] - np.dot(np.abs(mat[2]), self.model.geom_size[gid]))
 
     def _record_steps(self, contacts):
-        for i in range(2):
-            height = self._minimum_foot_height(i)
-            if not contacts[i]:
-                self.foot_airborne[i] = True
-                self.foot_lift_time[i] += PHYSICS_DT
-                self.foot_max_height[i] = max(self.foot_max_height[i], height)
-                # Require sustained whole-foot clearance and opposite-foot support.
-                # Brief hopping and toe pivots must not count as alternating walking.
-                if height >= 0.003 and contacts[1 - i]:
-                    self.supported_clearance_time[i] += PHYSICS_DT
-                    if self.supported_clearance_time[i] >= 0.04:
-                        self.foot_lift_qualified[i] = True
-                else:
-                    self.supported_clearance_time[i] = 0
-            elif self.foot_airborne[i]:
-                if self.foot_lift_qualified[i]:
-                    self.lifted_steps[i] += 1
-                    if self.last_step_foot is not None and self.last_step_foot != i:
-                        self.alternations += 1
-                    self.last_step_foot = i
-                self.foot_airborne[i] = False
-                self.foot_lift_time[i] = self.foot_max_height[i] = 0
-                self.supported_clearance_time[i] = 0
-                self.foot_lift_qualified[i] = False
+        load = np.zeros(2)
+        force = np.zeros(6)
+        for index, contact in enumerate(self.data.contact):
+            if self.floor_id not in (contact.geom1, contact.geom2):
+                continue
+            other = contact.geom2 if contact.geom1 == self.floor_id else contact.geom1
+            for i in range(2):
+                if other in (self.feet_ids[i], self.foot_plate_ids[i]):
+                    mujoco.mj_contactForce(self.model, self.data, index, force)
+                    load[i] += max(0, force[0])
+        supported = load >= .10 * self.model.body_mass.sum()*9.81
+        self.gait.update(self.data.geom_xpos[self.feet_ids],
+                         [self._minimum_foot_height(i) for i in range(2)],
+                         contacts, supported, PHYSICS_DT)
+        self.alternations = self.gait.alternations
 
     def _info(self, fallen):
         duration = self.steps * CONTROL_DT
@@ -181,7 +183,10 @@ class HumanoidEnv(gym.Env):
                 "fallen": bool(fallen), "total_reward": float(self.total_reward),
                 "lifted_steps_left": int(self.lifted_steps[0]), "lifted_steps_right": int(self.lifted_steps[1]),
                 "alternations": int(self.alternations),
-                "walking_success": bool(not fallen and distance >= 0.3 and min(self.lifted_steps) >= 2 and self.alternations >= 3),
+                "gait_distance_m": float(self.gait.distance),
+                "max_stance_slip_m": float(self.gait.max_stance_slip),
+                "rejected_steps": int(self.gait.rejected),
+                "walking_success": bool(not fallen and distance >= 0.3 and self.gait.distance >= 0.3 and min(self.lifted_steps) >= 2 and self.alternations >= 3),
                 "domain_randomization": self.domain_randomization}
 
     def step(self, action):
@@ -194,9 +199,9 @@ class HumanoidEnv(gym.Env):
         fallen = False
         for _ in range(round(CONTROL_DT / PHYSICS_DT)):
             if self.data.time + 1e-10 >= self.servo_next_time:
-                self.servos.advance(self.data.time, CONTROL_DT)
+                self.applied_command = self.servos.advance(self.data.time, CONTROL_DT)
                 self.servo_next_time += CONTROL_DT
-            applied = self.servos.applied
+            applied = self.applied_command
             # Offset is an unobserved physical calibration error; acknowledged commands
             # remain exactly the same command coordinates as on the real controller.
             limits = self.model.actuator_ctrlrange[self.aids]
@@ -217,7 +222,7 @@ class HumanoidEnv(gym.Env):
             raise FloatingPointError("Non-finite MuJoCo state; inspect model and controller")
         velocity = (self.data.xpos[self.torso_id] - previous_position) / CONTROL_DT
         upright = float(np.clip(self.data.xmat[self.torso_id].reshape(3, 3)[2, 2], 0, 1))
-        terms = {"forward": CONTROL_DT * 10 * float(np.clip(velocity[0], -0.05, 0.06)),
+        terms = {"forward": progress_reward(velocity[0] * CONTROL_DT, CONTROL_DT),
                  "upright": CONTROL_DT * 0.2 * upright,
                  "lateral": -CONTROL_DT * 0.5 * abs(float(velocity[1])),
                  "smoothness": -CONTROL_DT * 0.0001 * float(np.mean(((action - self.last_action) / CONTROL_DT) ** 2)),
@@ -226,7 +231,7 @@ class HumanoidEnv(gym.Env):
         self.steps += 1
         self.total_reward += reward
         self.last_action = action.copy()
-        obs = self.history.append(self.history.frame(self.estimator.gravity, self.last_gyro, self.servos.applied, self.last_action))
+        obs = self.history.append(self.history.frame(self.estimator.gravity, self.last_gyro, self.applied_command, self.last_action))
         terminated = bool(fallen)
         truncated = bool(self.steps >= self.max_steps and not terminated)
         self.done = terminated or truncated

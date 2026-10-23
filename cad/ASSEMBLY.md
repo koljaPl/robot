@@ -2,7 +2,7 @@
 
 Editable CAD is `build_frame.py`; dimensions in millimetres are derived from `../physical_spec.json`. `stl/` contains seven PETG frame components and two separate TPU soles. `quotation_plate.stl` is a cost-estimation grouping, not a recommended print-bed arrangement. Individual parts fit within approximately 90 mm; a service chooses orientation/supports. `exploded.png` shows body/part names and axes.
 
-**Do not order these as manufacturing-ready parts.** CAD passes a finite intersection audit, but the selected servo's ear, shaft, spline, horn pattern and screws are unmeasured. The intended finished kit requires clear through-holes, removed supports and bonded soles; no drilling, cutting, tapping or heat-set inserts by the assembler. The supplier must provide any necessary finishing and matching fasteners within the delivered quote.
+**Do not order these as manufacturing-ready parts.** The expanded audit detects unresolved fastener-envelope conflicts, and the selected servo's ear, shaft, spline, horn pattern and screws are unmeasured. The intended finished kit requires clear through-holes, removed supports and bonded soles; no drilling, cutting, tapping or heat-set inserts by the assembler. The supplier must provide any necessary finishing and matching fasteners within the delivered quote.
 
 Materials: PETG frames, 0.2 mm layers, 3 perimeters, nominal 25% infill; TPU 95A soles 90×45×1 mm bonded to feet. The mass specification uses solid PETG at 1270 kg/m³ as a conservative estimate; actual infill/adhesive mass must be weighed. Layers should be oriented to resist ear loads rather than split across narrow bridges. Ask for stiff local joint mounting walls, smooth holes and no support debris near rotating horns. Service capability and cost for TPU/bonding are not verified.
 
@@ -13,7 +13,7 @@ Materials: PETG frames, 0.2 mm layers, 3 perimeters, nominal 25% infill; TPU 95A
 | Servo housing mounting ears | 12 | M2×8 through screws + 12 M2 nuts + 24 washers; verify real ear holes and combined thickness |
 | Horn shaft retention | 6 | Servo-specific factory screws; thread and supplied inclusion unknown |
 | Horn to moving frame | 12 | Two per horn, matched small screws/washers; factory horn pilot holes and screw lengths unknown |
-| Pico/PCA/IMU mounting | 8 ties | Through prepared frame holes; immobilize IMU and keep board faces clear of plastic/metal |
+| Pico/IMU mounting | 6 ties | Through prepared frame holes; immobilize IMU and keep board faces clear of plastic/metal |
 | Main cable strain relief | 4 ties | At torso near COM; externally support connector weight |
 | Servo harness restraints | 8 ties | Leave a service loop at every joint; no wires crossing horn sweep |
 
@@ -32,3 +32,11 @@ The CAD horn interface has a 6 mm central access opening and two 2.4 mm-wide rad
 9. On a low clear floor area with thin protection, test stationary poses and increase test length gradually. For a fall, disconnect power, inspect gears/ears, manually pick up and reset. Optional safety thread stays slack and is not required to hold the robot upright.
 
 The finite CAD report does not certify horn fasteners, servo-ear insertion, electronics mounting or every continuous-motion clearance. Simulation contact primitives approximate the structure and do not test printed layer strength. The complete robot has not been assembled.
+
+Current revision: Pico native PWM removes the old PCA9685 envelope conflict.
+The finite checker includes frame/case/electronics and estimated fastener sweeps;
+550 overlaps involve unmeasured mass-envelope proxies across55poses. These are
+not confirmed bolt collisions, but cannot be cleared without actual horn/screw
+geometry. Run `python tools/check_clearance.py`; nonzero exit means no release.
+The exploded view shows frames only; electronics/fasteners remain specified in
+the ledger and schedule, not certified fitted hardware.

@@ -27,7 +27,7 @@ def main():
         d.qpos[adr] = angles
         mujoco.mj_forward(m, d)
         rotation = d.xmat[left].reshape(3, 3).T.copy()
-        position = -rotation @ d.xpos[left] + [0, 0, 0.025]
+        position = -rotation @ d.xpos[left] + [0, 0, m.geom("left_foot_sole").size[2] - m.geom("left_foot_sole").pos[2]]
         quat = np.zeros(4)
         mujoco.mju_mat2Quat(quat, rotation.reshape(9))
         d.qpos[:3] = position
@@ -50,7 +50,9 @@ def main():
                      "combined_com_m": com.tolist(), "max_abs_gravity_torque_Nm": max(abs(t) for t in torques),
                      "twice_static_demand_Nm": [2 * abs(t) for t in torques]})
     report = {"assumption": "entire weight on fixed left foot, right foot unloaded; equilibrium may be infeasible outside support polygon", "joint_order": JOINT_NAMES, "poses": rows}
-    (ROOT / "docs/validation/torque_estimates.json").write_text(json.dumps(report, indent=2) + "\n")
+    out = ROOT / "runs/geometry/torque_estimates.json"
+    out.parent.mkdir(parents=True,exist_ok=True)
+    out.write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))
 
 

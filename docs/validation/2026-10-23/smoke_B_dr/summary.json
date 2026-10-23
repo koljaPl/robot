@@ -1,0 +1,40 @@
+{
+  "episodes": 5,
+  "falls": 0,
+  "fall_rate": 0.0,
+  "mean_distance_m": -0.020693010178643226,
+  "mean_forward_speed_m_s": -0.0006897670059547742,
+  "mean_duration_s": 30.0,
+  "mean_total_reward": 5.354093379606594,
+  "mean_gait_distance_m": 0.0,
+  "walking_successes": 0,
+  "domain_randomization": true,
+  "policy": "runs/2026-10-23/smoke_B0/final_model.zip",
+  "identity": {
+    "configuration": "1641779be26172bcb40bd2b94d93a0974f722a676ba6aa2249ec310a8dbf7a1f",
+    "files": {
+      "physical_spec.json": "d5b242a39dc18ae0b218a9774e6667fd7c96ba9d1002bb8f392dbb2cd9e0b53f",
+      "robot.xml": "ddaa14f1d43cfb2aa4b8de752d4094055f976ed9ba1de246965212ee3bc7f4aa",
+      "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+      "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+      "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+      "humanoid_env.py": "558c11e7554747cb5f0306ea1bcf7f5c67653685f66911830263698e2f80c2fa",
+      "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+      "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+      "calibration.py": "b73947a3a1bb772bac45df3356fc108426c8bc199bd388cfb8b7ac51e5125486",
+      "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+      "firmware/control.h": "eac0776e36baf05610a1335e122b734df04a88a2f156d68f97bf31f77b8d1fec"
+    },
+    "calibration": null
+  },
+  "model_sha256": "4d760e9b66689703057920bfb5959e176889e21bf287999d16772b5021b5076a",
+  "policy_seed": null,
+  "xml_sha256": "ddaa14f1d43cfb2aa4b8de752d4094055f976ed9ba1de246965212ee3bc7f4aa",
+  "seeds": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004
+  ]
+}

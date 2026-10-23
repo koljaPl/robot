@@ -47,6 +47,7 @@ def fmt(values):
 def generate(output=ROOT / "robot.xml"):
     spec = json.loads((ROOT / "physical_spec.json").read_text())
     bodies = physical_bodies(spec)
+    dyn = spec["dynamics"]
     root = ET.Element("mujoco", model="SchoolBipedS6_provisional")
     ET.SubElement(root, "compiler", angle="radian", autolimits="true", inertiafromgeom="false")
     ET.SubElement(root, "option", timestep=str(PHYSICS_DT), gravity="0 0 -9.81", integrator="implicitfast", iterations="60")
@@ -54,8 +55,8 @@ def generate(output=ROOT / "robot.xml"):
     ET.SubElement(visual, "global", offwidth="960", offheight="720")
     ET.SubElement(visual, "map", znear="0.002")
     default = ET.SubElement(root, "default")
-    ET.SubElement(default, "joint", limited="true", damping="0.002", armature="0.000005", frictionloss="0.001")
-    ET.SubElement(default, "geom", condim="3", friction="0.8 0.005 0.0001", solref="0.008 1", solimp="0.9 0.95 0.001")
+    ET.SubElement(default, "joint", limited="false", damping=str(dyn["damping_nm_s_rad"]["value"]), armature=str(dyn["armature_kg_m2"]["value"]), frictionloss=str(dyn["frictionloss_nm"]["value"]))
+    ET.SubElement(default, "geom", condim="3", friction=fmt([dyn["sliding_friction"]["value"],0.005,0.0001]), solref="0.008 1", solimp="0.9 0.95 0.001")
     ET.SubElement(default, "position", kp=str(SERVO_KP), kv=str(SERVO_KV), forcelimited="true", forcerange=fmt([-SERVO_TORQUE, SERVO_TORQUE]), ctrllimited="true")
     asset = ET.SubElement(root, "asset")
     for b in bodies:
@@ -80,21 +81,24 @@ def generate(output=ROOT / "robot.xml"):
             ET.SubElement(elem, "site", name="imu_site", pos=fmt(imu["com"]), size="0.003", rgba="1 0.7 0 1")
             ET.SubElement(elem, "camera", name="overview", pos="0.42 -0.5 0.24", xyaxes="0.766 0.643 0 -0.26 0.31 0.916")
         else:
-            ET.SubElement(elem, "joint", name=b["joint"], type="hinge", axis=fmt(b["axis"]), range=fmt(np.deg2rad(b["limits_deg"])))
+            joint_args = dict(name=b["joint"], type="hinge", axis=fmt(b["axis"]))
+            if b["mechanical_limits_deg"] is not None:
+                joint_args.update(limited="true", range=fmt(np.deg2rad(b["mechanical_limits_deg"])))
+            ET.SubElement(elem, "joint", **joint_args)
             if b["name"].endswith("foot"):
                 ET.SubElement(elem, "geom", name=b["name"] + "_plate", type="box", pos=fmt(spec["geometry"]["foot_center"]), size=fmt(np.array(spec["geometry"]["foot_dimensions"]) / 2), rgba="0.08 0.36 0.65 1")
-                solepos = np.array(spec["geometry"]["foot_center"]); solepos[2] -= 0.002
-                ET.SubElement(elem, "geom", name=b["name"] + "_sole", type="box", pos=fmt(solepos), size="0.045 0.0225 0.0005", rgba="0.15 0.15 0.15 1")
-                ET.SubElement(elem, "site", name=b["name"] + "_sole_center", pos=fmt(solepos + [0, 0, -0.0005]), size="0.001")
+                solepos = np.array(spec["geometry"]["foot_center"]); solepos[2] -= (spec["geometry"]["foot_dimensions"][2] + spec["geometry"]["sole_thickness"]) / 2
+                ET.SubElement(elem, "geom", name=b["name"] + "_sole", type="box", pos=fmt(solepos), size=fmt([* (np.array(spec["geometry"]["foot_dimensions"][:2]) / 2), spec["geometry"]["sole_thickness"] / 2]), rgba="0.15 0.15 0.15 1")
+                ET.SubElement(elem, "site", name=b["name"] + "_sole_center", pos=fmt(solepos + [0, 0, -spec["geometry"]["sole_thickness"] / 2]), size="0.001")
             else:
                 # Envelope of thin printed yoke, deliberately narrow for simple contacts.
-                ET.SubElement(elem, "geom", name=b["name"] + "_link", type="capsule", fromto="0 0 -0.006 0 0 -0.044", size="0.006", rgba="0.12 0.55 0.83 1")
+                ET.SubElement(elem, "geom", name=b["name"] + "_link", type="capsule", fromto=fmt([0, 0, -0.006, 0, 0, -(spec["geometry"]["thigh_length"] if b["name"].endswith("thigh") else spec["geometry"]["shin_length"]) + 0.006]), size="0.006", rgba="0.12 0.55 0.83 1")
         for c in b["components"]:
             if "servo" in c["name"]:
                 ET.SubElement(elem, "geom", name=c["name"] + "_case", type="box", pos=fmt(c["com"]), size=fmt(np.array(c["dimensions"]) / 2), rgba="0.15 0.15 0.17 1")
     act = ET.SubElement(root, "actuator")
     for b in bodies[1:]:
-        ET.SubElement(act, "position", name=b["joint"] + "_servo", joint=b["joint"], ctrlrange=fmt(np.deg2rad(b["limits_deg"])))
+        ET.SubElement(act, "position", name=b["joint"] + "_servo", joint=b["joint"], ctrlrange=fmt(np.deg2rad(b["safe_command_deg"])))
     sensors = ET.SubElement(root, "sensor")
     ET.SubElement(sensors, "gyro", name="imu_gyro", site="imu_site")
     ET.SubElement(sensors, "accelerometer", name="imu_accel", site="imu_site")

@@ -19,8 +19,8 @@ SPEC = json.loads((ROOT / "physical_spec.json").read_text())
 GEOMETRY = SPEC["geometry"]
 SERVO = SPEC["servo"]
 SCALE = 1000
-WALL = 3.0
-CLEARANCE = 0.4
+WALL = GEOMETRY["cad_wall"] * SCALE
+CLEARANCE = GEOMETRY["cad_clearance"] * SCALE
 
 
 def box(dim, pos=(0, 0, 0)):
@@ -91,7 +91,7 @@ def foot():
 
 
 def torso():
-    p = box((WALL, 82, 66), (-20, 0, 2))
+    p = box((WALL, GEOMETRY["torso_dimensions"][1]*SCALE, GEOMETRY["torso_dimensions"][2]*SCALE), (-20, 0, 2))
     p -= box((10, 42, 24), (-20, 0, 2))
     for sign in (-1, 1):
         half = GEOMETRY["hip_half_spacing"] * SCALE
@@ -135,14 +135,17 @@ def generate():
     trimesh.util.concatenate(plate).export(folder / "quotation_plate.stl")
     # Separate material: two ready-sized TPU traction soles. Supplier bonds these
     # to the corresponding PETG feet; include adhesive/finishing in the quote.
-    sole = mesh(box((90, 45, 1), (6, 0, -24.5)))
+    sole_dim = [*np.array(GEOMETRY["foot_dimensions"][:2])*SCALE, GEOMETRY["sole_thickness"]*SCALE]
+    sole_pos = np.array(GEOMETRY["foot_center"])*SCALE
+    sole_pos[2] -= (GEOMETRY["foot_dimensions"][2]+GEOMETRY["sole_thickness"])*SCALE/2
+    sole = mesh(box(sole_dim, sole_pos))
     for side in ("left", "right"):
         sole.export(folder / (side + "_sole.stl"))
     summary = {"status": "PROVISIONAL FIT/COST PROTOTYPE; NOT RELEASED FOR MANUFACTURE",
                "units": "mm", "clearance_mm": CLEARANCE,
                "parts": report, "total_solid_volume_cm3": sum(p["volume_cm3"] for p in report),
                "total_solid_petg_mass_g": sum(p["solid_petg_mass_g_at_1_27"] for p in report),
-               "additional_parts": [{"part": "TPU sole", "quantity": 2, "dimensions_mm": [90, 45, 1], "estimated_mass_each_g": 4.86}],
+               "additional_parts": [{"part": "TPU sole", "quantity": 2, "dimensions_mm": [float(v) for v in sole_dim], "estimated_mass_each_g": next(c["mass"] for b in SPEC["bodies"] for c in b.get("components", []) if c["name"]=="left_sole")*1000}],
                "print_request": "7 PETG frames: 0.2 mm layers, 3 perimeters, 25% infill. 2 TPU 95A soles, bonded to feet with adhesive included. All through holes clear without drilling; supports removed; include VAT and shipping. Quotation plate excludes soles and is not a printer-bed layout."}
     (ROOT / "cad" / "print_manifest.json").write_text(json.dumps(summary, indent=2) + "\n")
     draw_exploded(shapes)
@@ -174,11 +177,17 @@ def draw_exploded(shapes):
         m.apply_translation(origins[b["name"]] + extra)
         poly = Poly3DCollection(m.triangles, alpha=0.75, facecolor="#4299ce", linewidths=0.03, edgecolor="#245174")
         ax.add_collection3d(poly)
+        for component in b['components']:
+            if 'servo' not in component['name'] and component['name'] not in ('pico_h','imu'):
+                continue
+            case = trimesh.creation.box(extents=np.array(component['dimensions'])*SCALE)
+            case.apply_translation(origins[b['name']]+extra+np.array(component['com'])*SCALE)
+            ax.add_collection3d(Poly3DCollection(case.triangles,alpha=.55,facecolor='#333333' if 'servo' in component['name'] else '#36a55c',linewidths=.05,edgecolor='#222222'))
         c = m.centroid
         ax.text(*c, b["name"], fontsize=8, color="black", bbox={"facecolor": "white", "alpha": 0.8, "edgecolor": "none", "pad": 1})
     ax.set(xlim=(-55, 70), ylim=(-105, 105), zlim=(-40, 200), xlabel="x forward (mm)", ylabel="y left (mm)", zlabel="z up (mm)")
     ax.set_box_aspect((125, 210, 240)); ax.view_init(elev=17, azim=-45)
-    ax.set_title("S6 exploded frame concept — provisional, hardware fit unmeasured")
+    ax.set_title("S6 exploded assembly envelopes — blue PETG, grey servos, green PCBs; fit unmeasured")
     fig.savefig(ROOT / "cad" / "exploded.png", dpi=160, bbox_inches="tight")
     plt.close(fig)
 

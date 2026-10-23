@@ -1,0 +1,5236 @@
+{
+  "status": "CONFLICTS: NOT RELEASED",
+  "conflict_count": 550,
+  "poses": [
+    {
+      "pose": "home",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 43.02651884030661
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 43.02651884030661
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 736.205001002374
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 736.205001002374
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 43.02651000694641
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 736.204526674599
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.19997024536133
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 43.02651000694641
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 736.204526674599
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.19997024536133
+        }
+      ]
+    },
+    {
+      "pose": "zero",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 54.505558307556385
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 54.505558307556385
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.980100078581
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.980100078581
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 54.5055603436997
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.9798208427455
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.19999771117728
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 54.5055603436997
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.9798208427455
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.19999771117728
+        }
+      ]
+    },
+    {
+      "pose": "all_low",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.36893930506447
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.36893930506447
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 541.7732248104257
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 541.7732248104257
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 43.02653455915424
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 736.2044242661214
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 276.3181953893796
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 43.02653455915424
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 736.2044242661214
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 276.3182035089093
+        }
+      ]
+    },
+    {
+      "pose": "all_high",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.36894148598487
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.36894148598487
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 541.7732248104257
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 541.7732248104257
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.98200112605991
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.4856554371363
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 276.31803679656235
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.98200112605991
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.4856554371363
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 276.31801066398026
+        }
+      ]
+    },
+    {
+      "pose": "left_swing",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.07291795899744
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 43.02651884030661
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 700.0737850691003
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 736.205001002374
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.6455982352245
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 654.1831350490102
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 249.64139805893026
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 43.02651000694641
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 736.204526674599
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.19997024536133
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_0",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 40.17788117984196
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.31324732807434
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 731.8508766197629
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 682.5131648188653
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 47.11618933426985
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 740.3684638878331
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 251.795848518419
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 51.662290948983355
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.6219206322858
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 254.4506798729914
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_1",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.79715093692138
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.511601716196914
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 602.4216010444834
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 629.1558098605019
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 43.70348332067988
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 737.0535715836013
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 255.12286350824016
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.54190679167732
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 644.5321296633847
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 249.98951502869275
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_2",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.13735207248965
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 43.9852325961009
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 676.9825498994724
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 737.3872855297886
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 48.55340683738723
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.3264859018091
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 249.06825447114488
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.83177143337343
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 306.44487212238164
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 250.92609281372813
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_3",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.7029467158186
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.959690054736484
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 692.5377557237443
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 670.4219077186845
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.52108744898518
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 640.569642788927
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 250.95214511019313
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.6690751533788
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 655.7924170391307
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 242.11385178363696
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_4",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.31254106818085
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 37.31031383463892
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 682.4919826543046
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 724.2459232963447
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 44.13326224804041
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 737.557412830447
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.3110987658449
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.87718491991836
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 314.5262279913368
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 243.30806042644176
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_5",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.690811331515185
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.566963144685836
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 607.3786096224667
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 647.5357806099528
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.11699603521629
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 362.1934261720162
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 251.96717118151005
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.50614313945698
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 472.2650135074655
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 247.84644765376774
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_6",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.75719545727998
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 52.16975934581694
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 693.7451616411054
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.7399572600698
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.11488444546194
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 361.7367535181911
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 246.6081130317488
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 48.516125163738934
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.3049283193905
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 242.1252061589371
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_7",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.851492005494265
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 39.8324045004656
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 711.8010126206573
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 731.2304145933304
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.428623346257154
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 444.8632844823078
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 255.7177086394031
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 44.101743585719
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 737.5213645953154
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 271.6893347790812
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_8",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 54.216061949430696
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 36.64242822873621
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.9764700127198
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 719.7541751738245
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.11410116886879
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 676.1870805665767
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 260.2191513018087
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 43.261361712959115
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 736.5066585527311
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 243.09170619690005
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_9",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 48.15643851343475
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 44.9982652657809
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.0866018782035
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 738.4941763816241
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.110600184419205
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 700.7581057300727
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 256.5234497543851
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 44.48899855165496
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 737.9552489090802
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 254.35791801912896
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_10",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 54.46042960220666
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 49.225888648427826
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.9798208427455
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.694219056204
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.4434894859055
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 449.8160103540031
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.78293351065986
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 36.18777006170967
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 715.5857360733462
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 273.1159244019796
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_11",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 51.864537486812424
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 49.05485744878092
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.6721029520486
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.605422060522
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.01204659809457
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 556.9937751488333
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 268.8553931434116
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.823834408711264
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 664.4425705679105
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.24871542215553
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_12",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 46.93041635531313
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 53.49171292400274
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 740.2271139766017
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.93570158074
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.043355958308304
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 592.4096366041075
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 266.7739705926519
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.72776615633915
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 567.5849546260451
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 249.2281688447607
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_13",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 48.61239230115666
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 36.06296375953298
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.361369940314
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 714.2571818176875
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 41.778926966424024
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 734.4592167535047
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 275.45273482042865
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 49.00581795267499
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.5793762222565
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.2133266546987
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_14",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 39.24637874957648
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 40.26451568904895
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 730.1285499865335
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 732.002780914263
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.20518929834316
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 382.4999557643696
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 269.4223352572365
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.977178377755024
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 333.2864985674132
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 244.73901018929527
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_15",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.39041668359391
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.52771747812176
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 684.7140213592647
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 707.4867408724858
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.338504815197666
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 417.3469200807085
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 244.43127087132385
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 54.05128848288041
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.9713141458706
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.96350755961157
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_16",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.74625261416842
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.78024546777641
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 660.441410900421
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 565.6751025331778
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.08277187782369
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 354.78574796877365
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 255.22265741231368
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.679276644372294
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 607.9604367775755
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.87654471871585
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_17",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.63100058618787
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 43.19972105422653
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 653.1187636079576
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 736.4283896707566
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 52.94359075765169
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.8739355905418
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 243.81075674858764
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.81223193812548
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 303.0466178727547
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 248.85434590229247
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_18",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 39.77335398930063
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 38.50925392432828
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 731.1220710891648
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 728.5765572129458
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 53.96286020080629
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.9674226758652
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 248.9820110012017
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 46.193540212882
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 739.6225597991306
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 251.0803950328868
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_19",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 44.029446193690546
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 50.68798071735273
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 737.4383856876811
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.3241751010428
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 39.94204593888185
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 731.4293649448155
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 242.89626673518833
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.46489019546607
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 457.1735579589603
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 246.85468218657238
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_20",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.579654650722695
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 39.76207220684978
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 572.9079583128259
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 731.1014076373394
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.505966449964035
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 620.5582963051856
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 245.52110185981397
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 53.68045294258832
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.9507466652649
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 258.4439687433064
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_21",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 51.25065151202091
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.224084332245866
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.507633044952
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 679.8083444691947
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.51795125657719
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 637.6607539379802
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 248.20314930367115
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.607827288958106
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 651.3029217424555
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 244.61602666568902
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_22",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.52939992850497
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 37.48153305409551
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 707.511675953494
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 725.1288798791938
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 48.18128325142425
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.1016997345796
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 270.0037196141254
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 45.60614182685913
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 739.0915734325754
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 273.6582800857219
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_23",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.22204072363178
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.73169895027178
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 548.4721566403123
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 605.3944082248418
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 44.57355759898928
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 738.047222345238
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 265.27487603066294
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.155038872728255
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 370.7299703731842
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 258.47857428973543
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_24",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.20618841299779
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 51.1412511413298
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 679.2426080539481
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.47440398053
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.37792488566356
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 428.9105465646571
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 262.73376612201304
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 45.92463403979605
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 739.3845970591192
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 245.7805636706249
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_25",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.092515239059765
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 36.99142659726954
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 553.833316106703
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 722.3205100711493
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 38.54056156821571
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 728.6484347673686
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 244.60198424278983
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.501792035763174
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 534.5505997562686
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 266.50645289857005
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_26",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 51.593943687869796
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.25497074145748
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.6042486440274
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 584.5421713498108
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 49.088921230611845
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.6237057489116
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 265.92420385444996
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 53.80986003502221
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.9597530511091
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 263.21071934433195
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_27",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 38.445404772474376
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.94972483229503
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 728.4285622201423
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 712.9743722963176
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 53.22688387108792
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.9095475141075
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 261.24436365257355
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 49.889147274005154
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.0077339158815
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 250.5659164138804
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_28",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.914823714100976
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 42.30721347679378
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 712.5643420405104
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 735.2279548140359
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.37487294438324
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 705.1892230557751
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 258.64456659840886
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.32837080144054
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 682.9536182766151
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 242.7065761621171
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_29",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.56399848156616
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.1845313424742
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 689.2556795322525
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 702.0612967735942
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.30188872355029
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 682.1785594322282
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 246.13039535542978
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.830275150725356
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 563.8432600227025
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 270.8686572546408
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_30",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 50.17924401710866
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 36.103201625064
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.1303854312209
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 714.6948593349225
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 48.133935046412944
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.0717953663179
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.43392839909617
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 49.47175092251746
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.8158791542301
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 250.08224406585438
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_31",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 36.95758638085317
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 46.30539545698059
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 722.0939130531333
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 739.7186255201959
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 40.99972279656231
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 733.2433663272386
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 274.6174139972948
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.720285947032494
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 692.9279062774109
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 265.66818323456454
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_32",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.94746003327316
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.020909564603926
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 697.6925697879997
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 699.1063468594693
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.13710141000047
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 366.6603531659057
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.33360781914755
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 48.04933005035582
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.0186341072294
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 265.61847071480673
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_33",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.591031276594876
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.55553644128531
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 649.8611039372827
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 707.8864100736319
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 44.24352012559484
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 737.682718201977
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 251.62227008054018
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.27901503352405
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 703.6527232714652
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.43375369339608
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_34",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 39.618084610225196
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.698375088649584
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 730.8347374144578
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 657.6556232636649
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 51.56938729591002
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.5975985466284
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 248.4547225012992
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.061507830396295
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 246.40868550159212
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 243.4376952653986
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_35",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 51.226173966792544
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 39.838319458639944
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.500093677394
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 731.2410255550785
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 39.49099895687232
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 730.5960567841721
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 243.6234199864123
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.496478296438
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 468.6187014750976
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 245.69434327865747
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_36",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.668549049087744
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.67774234011609
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 655.7579603456888
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 608.0381053386955
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.55189140959919
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 490.7157480342721
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.69013085447952
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.69386746957025
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 709.7889069351659
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 272.3538091269599
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_37",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 37.41724163860272
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.404469881638306
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 724.8092243863284
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 579.1618225430284
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.18253061611904
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 253.411779687769
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.35094894845642
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 52.7928124240716
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.8521999529476
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 252.38173812619604
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_38",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 41.88438643902782
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.840703148709245
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 734.6161490985032
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 563.4599825120558
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.815147681061546
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 711.3509801409418
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 263.1900805417435
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.55853504498615
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 646.6139802473044
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 246.40259527056332
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_39",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 44.15896485052701
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 49.29761474247766
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 737.587218387991
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.7305197148162
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.13307226633697
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 365.76091827699565
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 262.37487769561704
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.31059942932385
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 409.55500190934436
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 251.38328163644732
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_40",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.65927942879057
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.50907681668184
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 709.3263432252024
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 625.9469822026258
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.25427136095095
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 257.342565812316
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 272.2723711141682
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 53.5909026641275
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.9438319005858
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 242.07351772129593
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_41",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 48.693240576258745
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 45.55105875048184
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.4074438531679
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 739.039523968313
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 47.92941252750563
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 740.9405127164264
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 247.76710164127948
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.591011115611536
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 649.858578153252
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 250.03865833661254
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_42",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 53.54719315211992
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 43.02950085745306
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.9407278257786
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 736.2089103040707
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.25614786503684
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 395.14413460092874
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.41845515622958
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.31763678601544
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 411.4910531074811
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 254.58315487820633
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_43",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.51198160274172
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.94491896561226
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 629.6367490506673
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 697.6419607306925
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.610156653223385
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 517.6795324733248
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 269.80280162138087
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 47.049377776073015
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 740.3178627973939
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.45162132638893
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_44",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.71158580304416
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 36.27719171578883
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 658.453551097824
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 716.486793617587
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 46.02040820679031
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 739.4706621091609
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 244.13763310376672
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.016454892682304
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 341.05991461183294
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 250.82143065917475
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_45",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.2211711425453
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 38.599332978545135
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 585.7731234690045
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 728.7817955520222
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 49.140181501461484
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.6499428054958
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 265.8020907002293
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 48.22168679545189
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.1269258475604
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 272.12772798986913
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_46",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 37.43511001979459
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 48.02302129282896
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 724.8996934636125
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 741.0017141842181
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 53.27416293198348
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.9142214008534
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 250.95282097135293
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.96658847551852
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 331.23170422399835
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.20752626464548
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_47",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.23142287681952
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.24939827140577
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 548.0681428594917
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 680.5949803287367
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 52.72833597760109
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 742.8424446509744
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 263.32184021304323
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 44.152060006950705
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 737.5790834212858
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 266.15629418850284
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_48",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.518047386376
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.505957386412604
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 637.7780684615809
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 622.0898990059613
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 35.6103249699936
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 517.77492240438
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.6188976749644
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.76087111483624
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 566.3818421176256
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 245.63336917597243
+        }
+      ]
+    },
+    {
+      "pose": "seed123_sample_49",
+      "conflicts": [
+        {
+          "a": "torso_frame",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 38.15746910482517
+        },
+        {
+          "a": "torso_frame",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 33.51354002258753
+        },
+        {
+          "a": "left_hip_servo",
+          "b": "left_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 727.7062827562768
+        },
+        {
+          "a": "right_hip_servo",
+          "b": "right_thigh_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 631.6437672063985
+        },
+        {
+          "a": "left_thigh_frame",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 34.76870663916816
+        },
+        {
+          "a": "left_knee_servo",
+          "b": "left_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 693.9964781653616
+        },
+        {
+          "a": "left_shin_frame",
+          "b": "left_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 246.95484509958987
+        },
+        {
+          "a": "right_thigh_frame",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 37.41257260286875
+        },
+        {
+          "a": "right_knee_servo",
+          "b": "right_shin_joint_fasteners",
+          "types": [
+            "servo",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 724.7849831934145
+        },
+        {
+          "a": "right_shin_frame",
+          "b": "right_foot_joint_fasteners",
+          "types": [
+            "frame",
+            "fastener_proxy"
+          ],
+          "overlap_mm3": 241.73312460764615
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "55 discrete poses do not prove continuous motion clearance",
+    "Fastener/horn envelopes are estimates; own attachment overlaps excluded",
+    "Flexible wires, connectors and lead exits need physical routing measurements"
+  ]
+}

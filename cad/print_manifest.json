@@ -102,11 +102,11 @@
       "part": "TPU sole",
       "quantity": 2,
       "dimensions_mm": [
-        90,
-        45,
-        1
+        90.0,
+        45.0,
+        1.0
       ],
-      "estimated_mass_each_g": 4.86
+      "estimated_mass_each_g": 4.859999999999999
     }
   ],
   "print_request": "7 PETG frames: 0.2 mm layers, 3 perimeters, 25% infill. 2 TPU 95A soles, bonded to feet with adhesive included. All through holes clear without drilling; supports removed; include VAT and shipping. Quotation plate excludes soles and is not a printer-bed layout."

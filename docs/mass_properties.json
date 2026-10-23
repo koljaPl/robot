@@ -1,20 +1,20 @@
 {
-  "total_mass_kg": 0.2084311333885377,
+  "total_mass_kg": 0.1994311333885377,
   "bodies": [
     {
       "body": "torso",
-      "mass_kg": 0.08188624774222922,
+      "mass_kg": 0.07288624774222922,
       "com_m": [
-        -0.007350467977241084,
+        -0.006652863288018333,
         0.0,
-        -0.008997271212284885
+        -0.009861294849957715
       ],
       "fullinertia_kg_m2": [
-        8.105527885197221e-05,
-        5.2285488066926594e-05,
-        4.646465270197493e-05,
+        7.714665284266819e-05,
+        5.0923074388658035e-05,
+        4.31514900330104e-05,
         2.541098841762901e-21,
-        8.152129337044088e-06,
+        7.752415604087416e-06,
         0.0
       ],
       "components": [
@@ -49,7 +49,29 @@
             ]
           ],
           "material": "solid PETG estimate, 1270 kg/m\u00b3",
-          "evidence": "generated CAD; actual infill/printed density must be weighed"
+          "evidence": "generated CAD; actual infill/printed density must be weighed",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            }
+          }
         },
         {
           "name": "pico_h",
@@ -65,23 +87,24 @@
             0.023
           ],
           "material": "PCB and headers",
-          "evidence": "estimate"
-        },
-        {
-          "name": "pca9685",
-          "mass": 0.009,
-          "dimensions": [
-            0.009,
-            0.0625,
-            0.0254
-          ],
-          "com": [
-            -0.013,
-            0,
-            -0.002
-          ],
-          "material": "PCB and connectors",
-          "evidence": "seller claim mass; height estimate"
+          "evidence": "estimate",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate"
+            }
+          }
         },
         {
           "name": "imu",
@@ -97,7 +120,24 @@
             0.018
           ],
           "material": "PCB",
-          "evidence": "estimate"
+          "evidence": "estimate",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate"
+            }
+          }
         },
         {
           "name": "torso_wires_fasteners",
@@ -113,7 +153,24 @@
             0.005
           ],
           "material": "copper, plastic, steel",
-          "evidence": "estimate includes six added 10 cm extensions, short heavy power wire, capacitor, pullup, board mounting ties and torso hardware; excludes suspended tether"
+          "evidence": "estimate includes six added 10 cm extensions, short heavy power wire, capacitor, pullup, board mounting ties and torso hardware; excludes suspended tether",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate includes six added 10 cm extensions, short heavy power wire, capacitor, pullup, board mounting ties and torso hardware; excludes suspended tether"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate includes six added 10 cm extensions, short heavy power wire, capacitor, pullup, board mounting ties and torso hardware; excludes suspended tether"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate includes six added 10 cm extensions, short heavy power wire, capacitor, pullup, board mounting ties and torso hardware; excludes suspended tether"
+            }
+          }
         },
         {
           "name": "left_hip_servo",
@@ -129,7 +186,24 @@
             -0.03475
           ],
           "material": "servo composite",
-          "evidence": "seller mass, estimated uniform inertia"
+          "evidence": "seller mass, estimated uniform inertia",
+          "parameter_evidence": {
+            "mass": {
+              "state": "sourced",
+              "date": "2026-10-23",
+              "evidence": "Waveshare15024 listing"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated uniform inertia"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated uniform inertia"
+            }
+          }
         },
         {
           "name": "right_hip_servo",
@@ -145,7 +219,24 @@
             -0.03475
           ],
           "material": "servo composite",
-          "evidence": "seller mass, estimated uniform inertia"
+          "evidence": "seller mass, estimated uniform inertia",
+          "parameter_evidence": {
+            "mass": {
+              "state": "sourced",
+              "date": "2026-10-23",
+              "evidence": "Waveshare15024 listing"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated uniform inertia"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated uniform inertia"
+            }
+          }
         }
       ]
     },
@@ -197,7 +288,29 @@
             ]
           ],
           "material": "solid PETG estimate, 1270 kg/m\u00b3",
-          "evidence": "generated CAD; actual infill/printed density must be weighed"
+          "evidence": "generated CAD; actual infill/printed density must be weighed",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            }
+          }
         },
         {
           "name": "left_knee_servo",
@@ -213,7 +326,24 @@
             -0.05475
           ],
           "material": "servo composite",
-          "evidence": "seller mass, estimated inertia"
+          "evidence": "seller mass, estimated inertia",
+          "parameter_evidence": {
+            "mass": {
+              "state": "sourced",
+              "date": "2026-10-23",
+              "evidence": "Waveshare15024 listing"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated inertia"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated inertia"
+            }
+          }
         },
         {
           "name": "left_thigh_joint_fasteners",
@@ -229,7 +359,24 @@
             -0.012
           ],
           "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn"
+          "evidence": "estimate; weigh installed fasteners/horn",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            }
+          }
         }
       ]
     },
@@ -281,7 +428,29 @@
             ]
           ],
           "material": "solid PETG estimate, 1270 kg/m\u00b3",
-          "evidence": "generated CAD; actual infill/printed density must be weighed"
+          "evidence": "generated CAD; actual infill/printed density must be weighed",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            }
+          }
         },
         {
           "name": "left_shin_joint_fasteners",
@@ -297,7 +466,24 @@
             -0.012
           ],
           "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn"
+          "evidence": "estimate; weigh installed fasteners/horn",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            }
+          }
         }
       ]
     },
@@ -349,7 +535,29 @@
             ]
           ],
           "material": "solid PETG estimate, 1270 kg/m\u00b3",
-          "evidence": "generated CAD; actual infill/printed density must be weighed"
+          "evidence": "generated CAD; actual infill/printed density must be weighed",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            }
+          }
         },
         {
           "name": "left_sole",
@@ -365,7 +573,24 @@
             -0.0245
           ],
           "material": "solid TPU 95A, density estimate 1200 kg/m\u00b3",
-          "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
+          "evidence": "estimate; includes adhesive uncertainty, weigh actual sole",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
+            }
+          }
         },
         {
           "name": "left_ankle_servo",
@@ -381,7 +606,24 @@
             -0.00475
           ],
           "material": "servo composite",
-          "evidence": "seller mass, estimated inertia"
+          "evidence": "seller mass, estimated inertia",
+          "parameter_evidence": {
+            "mass": {
+              "state": "sourced",
+              "date": "2026-10-23",
+              "evidence": "Waveshare15024 listing"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated inertia"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated inertia"
+            }
+          }
         },
         {
           "name": "left_foot_joint_fasteners",
@@ -397,7 +639,24 @@
             -0.012
           ],
           "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn"
+          "evidence": "estimate; weigh installed fasteners/horn",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            }
+          }
         }
       ]
     },
@@ -449,7 +708,29 @@
             ]
           ],
           "material": "solid PETG estimate, 1270 kg/m\u00b3",
-          "evidence": "generated CAD; actual infill/printed density must be weighed"
+          "evidence": "generated CAD; actual infill/printed density must be weighed",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            }
+          }
         },
         {
           "name": "right_knee_servo",
@@ -465,7 +746,24 @@
             -0.05475
           ],
           "material": "servo composite",
-          "evidence": "seller mass, estimated inertia"
+          "evidence": "seller mass, estimated inertia",
+          "parameter_evidence": {
+            "mass": {
+              "state": "sourced",
+              "date": "2026-10-23",
+              "evidence": "Waveshare15024 listing"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated inertia"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated inertia"
+            }
+          }
         },
         {
           "name": "right_thigh_joint_fasteners",
@@ -481,7 +779,24 @@
             -0.012
           ],
           "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn"
+          "evidence": "estimate; weigh installed fasteners/horn",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            }
+          }
         }
       ]
     },
@@ -533,7 +848,29 @@
             ]
           ],
           "material": "solid PETG estimate, 1270 kg/m\u00b3",
-          "evidence": "generated CAD; actual infill/printed density must be weighed"
+          "evidence": "generated CAD; actual infill/printed density must be weighed",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            }
+          }
         },
         {
           "name": "right_shin_joint_fasteners",
@@ -549,7 +886,24 @@
             -0.012
           ],
           "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn"
+          "evidence": "estimate; weigh installed fasteners/horn",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            }
+          }
         }
       ]
     },
@@ -601,7 +955,29 @@
             ]
           ],
           "material": "solid PETG estimate, 1270 kg/m\u00b3",
-          "evidence": "generated CAD; actual infill/printed density must be weighed"
+          "evidence": "generated CAD; actual infill/printed density must be weighed",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            }
+          }
         },
         {
           "name": "right_sole",
@@ -617,7 +993,24 @@
             -0.0245
           ],
           "material": "solid TPU 95A, density estimate 1200 kg/m\u00b3",
-          "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
+          "evidence": "estimate; includes adhesive uncertainty, weigh actual sole",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
+            }
+          }
         },
         {
           "name": "right_ankle_servo",
@@ -633,7 +1026,24 @@
             -0.00475
           ],
           "material": "servo composite",
-          "evidence": "seller mass, estimated inertia"
+          "evidence": "seller mass, estimated inertia",
+          "parameter_evidence": {
+            "mass": {
+              "state": "sourced",
+              "date": "2026-10-23",
+              "evidence": "Waveshare15024 listing"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated inertia"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated inertia"
+            }
+          }
         },
         {
           "name": "right_foot_joint_fasteners",
@@ -649,7 +1059,24 @@
             -0.012
           ],
           "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn"
+          "evidence": "estimate; weigh installed fasteners/horn",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            }
+          }
         }
       ]
     }

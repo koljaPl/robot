@@ -1,0 +1,7 @@
+{
+  "delivered_bom_below_100": false,
+  "servo_and_horn_fit_verified": false,
+  "assembly_clearances_reviewed": false,
+  "measured_actuator_and_imu_fit": false,
+  "reference_weight_transfer_and_lifted_step_verified": false
+}

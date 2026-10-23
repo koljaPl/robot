@@ -1,3 +1,5 @@
+> Historical prototype record,2026-10-08. Current verification: [VALIDATION_CURRENT.md](VALIDATION_CURRENT.md). The old checkpoint is incompatible with the current twin.
+
 # Executed verification — 8 October 2026
 
 These are **local software results**. No hardware was purchased, assembled, weighed or tested. No printing quotation was obtained. The complete delivered BOM is still incomplete; `tools/budget_gate.py` exits 2 and prohibits procurement clearance.

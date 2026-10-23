@@ -1,7 +1,7 @@
 """Bounded serial wire format and calibration helpers, with no automatic arming.
 
-The MCU implementation is specified in docs/HARDWARE.md. No tested firmware or
-live hardware deployment is claimed. All angles here are radians, wire values mrad.
+Firmware source is in firmware/. Only local compiler/protocol checks are claimed;
+physical deployment is pending. All angles here are radians, wire values mrad.
 """
 from dataclasses import dataclass
 import binascii
@@ -65,7 +65,7 @@ def telemetry_frame(frame):
         raise ValueError("Expected T,version,sequence,time,status,6 targets,3 accel,3 gyro")
     values = [int(x) for x in fields[2:]]
     seq, ms, status = values[:3]
-    if not (0 <= seq <= 65535 and 0 <= ms <= 0xFFFFFFFF and 0 <= status <= 31):
+    if not (0 <= seq <= 65535 and 0 <= ms <= 0xFFFFFFFF and 0 <= status <= 63):
         raise ValueError("Invalid telemetry header")
     q = np.array(values[3:9], dtype=float) / 1000
     accel = np.array(values[9:12], dtype=float) / 1000
@@ -91,4 +91,6 @@ def calibrated_pulses(angles, zero_us, us_per_rad, direction, pulse_min, pulse_m
     pulses = zero + sign * gain * q
     if np.any(pulses < low) or np.any(pulses > high):
         raise ValueError("Calibration cannot represent requested angle safely")
-    return np.rint(pulses).astype(int)
+    a = zero + sign*gain*JOINT_LOW
+    b = zero + sign*gain*JOINT_HIGH
+    return np.clip(np.rint(pulses),np.ceil(np.minimum(a,b)),np.floor(np.maximum(a,b))).astype(int)

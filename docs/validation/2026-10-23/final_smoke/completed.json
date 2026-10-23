@@ -1,0 +1,5 @@
+{
+  "actual_timesteps": 2048,
+  "budget": 2048,
+  "initial_policy_sha256": "7efc1058e8b776f6de8d40b9d9359d2ce96bbefff09272d15dc673690ce166d9"
+}

@@ -1,0 +1,86 @@
+{
+  "seed": 0,
+  "condition": "B",
+  "randomization": true,
+  "randomization_config": {
+    "mass": 0.05,
+    "friction": 0.15,
+    "strength": 0.15,
+    "speed": 0.1,
+    "damping": 0.2,
+    "offset_rad": 0.017453292519943295,
+    "delay_ticks": [
+      1,
+      2
+    ],
+    "gyro_bias": 0.01,
+    "accel_bias": 0.05,
+    "sensor_noise_scale": [
+      0.8,
+      1.2
+    ]
+  },
+  "budget": 2048,
+  "requested_budget": 2048,
+  "stage": "smoke",
+  "calibration_record": null,
+  "episode_seconds": 30,
+  "identity": {
+    "configuration": "1641779be26172bcb40bd2b94d93a0974f722a676ba6aa2249ec310a8dbf7a1f",
+    "files": {
+      "physical_spec.json": "d5b242a39dc18ae0b218a9774e6667fd7c96ba9d1002bb8f392dbb2cd9e0b53f",
+      "robot.xml": "ddaa14f1d43cfb2aa4b8de752d4094055f976ed9ba1de246965212ee3bc7f4aa",
+      "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+      "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+      "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+      "humanoid_env.py": "558c11e7554747cb5f0306ea1bcf7f5c67653685f66911830263698e2f80c2fa",
+      "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+      "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+      "calibration.py": "b73947a3a1bb772bac45df3356fc108426c8bc199bd388cfb8b7ac51e5125486",
+      "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+      "firmware/control.h": "eac0776e36baf05610a1335e122b734df04a88a2f156d68f97bf31f77b8d1fec"
+    },
+    "calibration": null
+  },
+  "algorithm": {
+    "learning_rate": 0.0003,
+    "n_steps": 1024,
+    "batch_size": 64,
+    "n_epochs": 10,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_range": 0.2,
+    "ent_coef": 0.005,
+    "policy_kwargs": {
+      "net_arch": [
+        64,
+        64
+      ]
+    }
+  },
+  "validation_seeds": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004
+  ],
+  "reserved_final_seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009
+  ],
+  "source_sha256": {
+    "train.py": "ef03ae7529e37571a20ab41cc3222e499a33074463f495913e270a85af0a3c28",
+    "evaluate.py": "85a85baaf477fe2c8b0979b18fade525ab342f463df55ed416ec53df577233ad"
+  },
+  "status": "provisional development simulation",
+  "initial_policy_sha256": "7efc1058e8b776f6de8d40b9d9359d2ce96bbefff09272d15dc673690ce166d9"
+}

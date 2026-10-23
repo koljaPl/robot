@@ -27,11 +27,13 @@ def main():
                     + (f"{price:.2f} | {price * item['quantity']:.2f}" if price is not None else "**pending** | **pending**")
                     + f" | {item['notes']} |")
     source = source.replace("{{BOM}}", "\n".join(rows))
+    from tools.budget_gate import check_basket
+    source = source.replace("{{BUDGET}}", "```json\n" + json.dumps(check_basket(basket), indent=2) + "\n```")
     spec = json.loads((ROOT / "physical_spec.json").read_text())
     mass = json.loads((ROOT / "docs/mass_properties.json").read_text())
     by_name = {b["body"]: b for b in mass["bodies"]}
     bodies = physical_bodies(spec)
-    rows = ["| Body | Parent | Joint / axis | Origin in parent (mm) | Limits (°) | Mass (g) | COM local (mm) |",
+    rows = ["| Body | Parent | Joint / axis | Origin in parent (mm) | Safe commands, NOT mechanical stops (°) | Mass (g) | COM local (mm) |",
             "|---|---|---|---|---|---:|---|"]
     components = ["| Body | Component (mass assigned once) | Dimensions xyz (mm) | Mass (g) | COM local xyz (mm) |",
                   "|---|---|---|---:|---|"]
@@ -39,7 +41,7 @@ def main():
     for b in bodies:
         m = by_name[b["name"]]
         axis = vec(b["axis"]) if b["axis"] is not None else "floating"
-        limits = str(b["limits_deg"]) if b["limits_deg"] else "free"
+        limits = str(b["safe_command_deg"]) if b["safe_command_deg"] else "free"
         rows.append(f"| {b['name']} | {b['parent']} | {b['joint']} / {axis} | {vec(b['position'], 1000)} | {limits} | {m['mass_kg'] * 1000:.2f} | {vec(m['com_m'], 1000)} |")
         inertia.append(f"| {b['name']} | " + ", ".join(f"{v:.7g}" for v in m["fullinertia_kg_m2"]) + " |")
         for c in b["components"]:
@@ -52,7 +54,7 @@ def main():
         content = (ROOT / name).read_text().rstrip()
         if match[1] == "TEXT":
             return re.sub(r"^(#+) ", r"##\1 ", content, flags=re.MULTILINE)
-        lang = "xml" if name.endswith(".xml") else "json" if name.endswith(".json") else "text" if name.endswith(".txt") else "python"
+        lang = "xml" if name.endswith(".xml") else "json" if name.endswith(".json") else "text" if name.endswith(".txt") else "cpp" if name.endswith((".h", ".cpp")) else "cmake" if name.endswith("CMakeLists.txt") else "python"
         return f"```{lang}\n{content}\n```"
     source = re.sub(r"\{\{(CODE|TEXT):([^}]+)\}\}", include, source)
     if "{{" in source:

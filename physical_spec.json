@@ -3,7 +3,14 @@
   "status": "PROVISIONAL: budget, printed fit and hardware calibration not approved",
   "units": "m, kg, rad, s",
   "coordinates": "x forward, y left, z up; local body axes match parent at zero joint angle",
-  "home_joint_angles_deg": [-10, 10, 0, -10, 10, 0],
+  "home_joint_angles_deg": [
+    -10,
+    10,
+    0,
+    -10,
+    10,
+    0
+  ],
   "servo": {
     "model": "Waveshare 15024 MG90S",
     "mass": 0.0122,
@@ -16,7 +23,44 @@
     "shaft_to_case_center_axial": 0.01425,
     "mounting_hole_spacing": 0.028,
     "mounting_hole_diameter": 0.0022,
-    "status": "housing size and mass are seller claims; shaft/ear/horn dimensions are estimates requiring measurement"
+    "status": "housing size and mass are seller claims; shaft/ear/horn dimensions are estimates requiring measurement",
+    "parameter_evidence": {
+      "model": {
+        "state": "sourced",
+        "date": "2026-10-23",
+        "evidence": "https://www.waveshare.com/mg90s-servo.htm"
+      },
+      "mass": {
+        "state": "sourced",
+        "date": "2026-10-23",
+        "evidence": "https://www.waveshare.com/mg90s-servo.htm"
+      },
+      "housing_dimensions": {
+        "state": "sourced",
+        "date": "2026-10-23",
+        "evidence": "https://www.waveshare.com/mg90s-servo.htm"
+      },
+      "shaft_offset_along_case_length": {
+        "state": "estimated",
+        "date": "2026-10-23",
+        "evidence": "requires measured servo sample before manufacturing"
+      },
+      "shaft_to_case_center_axial": {
+        "state": "estimated",
+        "date": "2026-10-23",
+        "evidence": "requires measured servo sample before manufacturing"
+      },
+      "mounting_hole_spacing": {
+        "state": "estimated",
+        "date": "2026-10-23",
+        "evidence": "requires measured servo sample before manufacturing"
+      },
+      "mounting_hole_diameter": {
+        "state": "estimated",
+        "date": "2026-10-23",
+        "evidence": "requires measured servo sample before manufacturing"
+      }
+    }
   },
   "geometry": {
     "hip_half_spacing": 0.034,
@@ -39,7 +83,10 @@
       0.04,
       0.082,
       0.066
-    ]
+    ],
+    "cad_wall": 0.003,
+    "cad_clearance": 0.0004,
+    "petg_density": 1270
   },
   "bodies": [
     {
@@ -52,7 +99,6 @@
       ],
       "joint": "root",
       "axis": null,
-      "limits_deg": null,
       "components": [
         {
           "name": "torso_frame",
@@ -85,7 +131,29 @@
             ]
           ],
           "material": "solid PETG estimate, 1270 kg/m\u00b3",
-          "evidence": "generated CAD; actual infill/printed density must be weighed"
+          "evidence": "generated CAD; actual infill/printed density must be weighed",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            }
+          }
         },
         {
           "name": "pico_h",
@@ -101,23 +169,24 @@
             0.023
           ],
           "material": "PCB and headers",
-          "evidence": "estimate"
-        },
-        {
-          "name": "pca9685",
-          "mass": 0.009,
-          "dimensions": [
-            0.009,
-            0.0625,
-            0.0254
-          ],
-          "com": [
-            -0.013,
-            0,
-            -0.002
-          ],
-          "material": "PCB and connectors",
-          "evidence": "seller claim mass; height estimate"
+          "evidence": "estimate",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate"
+            }
+          }
         },
         {
           "name": "imu",
@@ -133,7 +202,24 @@
             0.018
           ],
           "material": "PCB",
-          "evidence": "estimate"
+          "evidence": "estimate",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate"
+            }
+          }
         },
         {
           "name": "torso_wires_fasteners",
@@ -149,7 +235,24 @@
             0.005
           ],
           "material": "copper, plastic, steel",
-          "evidence": "estimate includes six added 10 cm extensions, short heavy power wire, capacitor, pullup, board mounting ties and torso hardware; excludes suspended tether"
+          "evidence": "estimate includes six added 10 cm extensions, short heavy power wire, capacitor, pullup, board mounting ties and torso hardware; excludes suspended tether",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate includes six added 10 cm extensions, short heavy power wire, capacitor, pullup, board mounting ties and torso hardware; excludes suspended tether"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate includes six added 10 cm extensions, short heavy power wire, capacitor, pullup, board mounting ties and torso hardware; excludes suspended tether"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate includes six added 10 cm extensions, short heavy power wire, capacitor, pullup, board mounting ties and torso hardware; excludes suspended tether"
+            }
+          }
         },
         {
           "name": "left_hip_servo",
@@ -165,7 +268,24 @@
             -0.03475
           ],
           "material": "servo composite",
-          "evidence": "seller mass, estimated uniform inertia"
+          "evidence": "seller mass, estimated uniform inertia",
+          "parameter_evidence": {
+            "mass": {
+              "state": "sourced",
+              "date": "2026-10-23",
+              "evidence": "Waveshare15024 listing"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated uniform inertia"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated uniform inertia"
+            }
+          }
         },
         {
           "name": "right_hip_servo",
@@ -181,9 +301,33 @@
             -0.03475
           ],
           "material": "servo composite",
-          "evidence": "seller mass, estimated uniform inertia"
+          "evidence": "seller mass, estimated uniform inertia",
+          "parameter_evidence": {
+            "mass": {
+              "state": "sourced",
+              "date": "2026-10-23",
+              "evidence": "Waveshare15024 listing"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated uniform inertia"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated uniform inertia"
+            }
+          }
         }
-      ]
+      ],
+      "safe_command_deg": null,
+      "mechanical_limits_deg": null,
+      "parameter_evidence": {
+        "state": "estimated",
+        "date": "2026-10-23",
+        "evidence": "prototype CAD design; mechanical stops unknown; safe command range is not mechanical travel"
+      }
     },
     {
       "name": "left_thigh",
@@ -198,10 +342,6 @@
         0,
         1,
         0
-      ],
-      "limits_deg": [
-        -35,
-        35
       ],
       "components": [
         {
@@ -235,7 +375,29 @@
             ]
           ],
           "material": "solid PETG estimate, 1270 kg/m\u00b3",
-          "evidence": "generated CAD; actual infill/printed density must be weighed"
+          "evidence": "generated CAD; actual infill/printed density must be weighed",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            }
+          }
         },
         {
           "name": "left_knee_servo",
@@ -251,7 +413,24 @@
             -0.05475
           ],
           "material": "servo composite",
-          "evidence": "seller mass, estimated inertia"
+          "evidence": "seller mass, estimated inertia",
+          "parameter_evidence": {
+            "mass": {
+              "state": "sourced",
+              "date": "2026-10-23",
+              "evidence": "Waveshare15024 listing"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated inertia"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated inertia"
+            }
+          }
         },
         {
           "name": "left_thigh_joint_fasteners",
@@ -267,9 +446,36 @@
             -0.012
           ],
           "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn"
+          "evidence": "estimate; weigh installed fasteners/horn",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            }
+          }
         }
-      ]
+      ],
+      "safe_command_deg": [
+        -35,
+        35
+      ],
+      "mechanical_limits_deg": null,
+      "parameter_evidence": {
+        "state": "estimated",
+        "date": "2026-10-23",
+        "evidence": "prototype CAD design; mechanical stops unknown; safe command range is not mechanical travel"
+      }
     },
     {
       "name": "left_shin",
@@ -284,10 +490,6 @@
         0,
         1,
         0
-      ],
-      "limits_deg": [
-        -10,
-        60
       ],
       "components": [
         {
@@ -321,7 +523,29 @@
             ]
           ],
           "material": "solid PETG estimate, 1270 kg/m\u00b3",
-          "evidence": "generated CAD; actual infill/printed density must be weighed"
+          "evidence": "generated CAD; actual infill/printed density must be weighed",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            }
+          }
         },
         {
           "name": "left_shin_joint_fasteners",
@@ -337,9 +561,36 @@
             -0.012
           ],
           "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn"
+          "evidence": "estimate; weigh installed fasteners/horn",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            }
+          }
         }
-      ]
+      ],
+      "safe_command_deg": [
+        -10,
+        60
+      ],
+      "mechanical_limits_deg": null,
+      "parameter_evidence": {
+        "state": "estimated",
+        "date": "2026-10-23",
+        "evidence": "prototype CAD design; mechanical stops unknown; safe command range is not mechanical travel"
+      }
     },
     {
       "name": "left_foot",
@@ -354,10 +605,6 @@
         1,
         0,
         0
-      ],
-      "limits_deg": [
-        -20,
-        20
       ],
       "components": [
         {
@@ -391,7 +638,29 @@
             ]
           ],
           "material": "solid PETG estimate, 1270 kg/m\u00b3",
-          "evidence": "generated CAD; actual infill/printed density must be weighed"
+          "evidence": "generated CAD; actual infill/printed density must be weighed",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            }
+          }
         },
         {
           "name": "left_sole",
@@ -407,7 +676,24 @@
             -0.0245
           ],
           "material": "solid TPU 95A, density estimate 1200 kg/m\u00b3",
-          "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
+          "evidence": "estimate; includes adhesive uncertainty, weigh actual sole",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
+            }
+          }
         },
         {
           "name": "left_ankle_servo",
@@ -423,7 +709,24 @@
             -0.00475
           ],
           "material": "servo composite",
-          "evidence": "seller mass, estimated inertia"
+          "evidence": "seller mass, estimated inertia",
+          "parameter_evidence": {
+            "mass": {
+              "state": "sourced",
+              "date": "2026-10-23",
+              "evidence": "Waveshare15024 listing"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated inertia"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "seller mass, estimated inertia"
+            }
+          }
         },
         {
           "name": "left_foot_joint_fasteners",
@@ -439,9 +742,36 @@
             -0.012
           ],
           "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn"
+          "evidence": "estimate; weigh installed fasteners/horn",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-23",
+              "evidence": "estimate; weigh installed fasteners/horn"
+            }
+          }
         }
-      ]
+      ],
+      "safe_command_deg": [
+        -20,
+        20
+      ],
+      "mechanical_limits_deg": null,
+      "parameter_evidence": {
+        "state": "estimated",
+        "date": "2026-10-23",
+        "evidence": "prototype CAD design; mechanical stops unknown; safe command range is not mechanical travel"
+      }
     },
     {
       "name": "right_thigh",
@@ -458,10 +788,16 @@
         1,
         0
       ],
-      "limits_deg": [
+      "safe_command_deg": [
         -35,
         35
-      ]
+      ],
+      "mechanical_limits_deg": null,
+      "parameter_evidence": {
+        "state": "estimated",
+        "date": "2026-10-23",
+        "evidence": "prototype CAD design; mechanical stops unknown; safe command range is not mechanical travel"
+      }
     },
     {
       "name": "right_shin",
@@ -478,10 +814,16 @@
         1,
         0
       ],
-      "limits_deg": [
+      "safe_command_deg": [
         -10,
         60
-      ]
+      ],
+      "mechanical_limits_deg": null,
+      "parameter_evidence": {
+        "state": "estimated",
+        "date": "2026-10-23",
+        "evidence": "prototype CAD design; mechanical stops unknown; safe command range is not mechanical travel"
+      }
     },
     {
       "name": "right_foot",
@@ -498,10 +840,121 @@
         0,
         0
       ],
-      "limits_deg": [
+      "safe_command_deg": [
         -20,
         20
-      ]
+      ],
+      "mechanical_limits_deg": null,
+      "parameter_evidence": {
+        "state": "estimated",
+        "date": "2026-10-23",
+        "evidence": "prototype CAD design; mechanical stops unknown; safe command range is not mechanical travel"
+      }
     }
-  ]
+  ],
+  "revision": "s6-native-pwm-provisional-2",
+  "updated_date": "2026-10-23",
+  "controller": {
+    "backend": "pico_pwm",
+    "pins": [
+      0,
+      1,
+      2,
+      3,
+      6,
+      7
+    ],
+    "pwm_hz": 50,
+    "pulse_resolution_us": 1,
+    "i2c_pins": [
+      4,
+      5
+    ],
+    "state": "planned; electrical verification pending"
+  },
+  "parameter_evidence": {
+    "geometry": {
+      "state": "estimated",
+      "date": "2026-10-23",
+      "evidence": "design intent; not manufactured"
+    },
+    "actuator": {
+      "state": "estimated",
+      "date": "2026-10-23",
+      "evidence": "robot_config.py; requires loaded step response"
+    },
+    "mechanical_stops": {
+      "state": "unknown",
+      "date": "2026-10-23",
+      "evidence": "No hardware exists; omitted from MJCF"
+    }
+  },
+  "dynamics": {
+    "kp": {
+      "value": 0.9,
+      "state": "estimated",
+      "date": "2026-10-23",
+      "evidence": "provisional simulation hypothesis; must fit real measurements"
+    },
+    "kv": {
+      "value": 0.012,
+      "state": "estimated",
+      "date": "2026-10-23",
+      "evidence": "provisional simulation hypothesis; must fit real measurements"
+    },
+    "intermittent_torque_nm": {
+      "value": 0.08,
+      "state": "estimated",
+      "date": "2026-10-23",
+      "evidence": "provisional simulation hypothesis; must fit real measurements"
+    },
+    "target_speed_deg_s": {
+      "value": 180,
+      "state": "estimated",
+      "date": "2026-10-23",
+      "evidence": "provisional simulation hypothesis; must fit real measurements"
+    },
+    "no_load_speed_deg_s": {
+      "value": 545.4545454545455,
+      "state": "sourced",
+      "date": "2026-10-23",
+      "evidence": "Waveshare15024 unloaded speed at4.8V; 5V loaded speed unmeasured"
+    },
+    "deadband_deg": {
+      "value": 0.5,
+      "state": "estimated",
+      "date": "2026-10-23",
+      "evidence": "provisional simulation hypothesis; must fit real measurements"
+    },
+    "damping_nm_s_rad": {
+      "value": 0.002,
+      "state": "estimated",
+      "date": "2026-10-23",
+      "evidence": "provisional simulation hypothesis; must fit real measurements"
+    },
+    "frictionloss_nm": {
+      "value": 0.001,
+      "state": "estimated",
+      "date": "2026-10-23",
+      "evidence": "provisional simulation hypothesis; must fit real measurements"
+    },
+    "armature_kg_m2": {
+      "value": 5e-06,
+      "state": "estimated",
+      "date": "2026-10-23",
+      "evidence": "provisional simulation hypothesis; must fit real measurements"
+    },
+    "sliding_friction": {
+      "value": 0.8,
+      "state": "estimated",
+      "date": "2026-10-23",
+      "evidence": "provisional simulation hypothesis; must fit real measurements"
+    },
+    "contact_model": {
+      "value": "condim3 sliding only; torsional/rolling coefficients inactive",
+      "state": "sourced",
+      "date": "2026-10-23",
+      "evidence": "https://mujoco.readthedocs.io/en/stable/computation/index.html#contact"
+    }
+  }
 }

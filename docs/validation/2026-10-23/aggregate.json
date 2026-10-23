@@ -1,0 +1,112 @@
+[
+  {
+    "experiment": "home_dr",
+    "episodes": 5,
+    "fall_rate": 0.0,
+    "mean_distance_m": 2.622902086741305e-05,
+    "mean_forward_speed_m_s": 8.74300695580435e-07,
+    "mean_duration_s": 30.0,
+    "mean_total_reward": 5.999835512406693,
+    "mean_gait_distance_m": 0.0,
+    "walking_successes": 0
+  },
+  {
+    "experiment": "home_nominal",
+    "episodes": 5,
+    "fall_rate": 0.0,
+    "mean_distance_m": 2.7050133472250647e-05,
+    "mean_forward_speed_m_s": 9.016711157416882e-07,
+    "mean_duration_s": 30.0,
+    "mean_total_reward": 6.000008173815644,
+    "mean_gait_distance_m": 0.0,
+    "walking_successes": 0
+  },
+  {
+    "experiment": "pilot_nominal",
+    "episodes": 5,
+    "fall_rate": 0.0,
+    "mean_distance_m": 0.00857717588104918,
+    "mean_forward_speed_m_s": 0.00028590586270163933,
+    "mean_duration_s": 30.0,
+    "mean_total_reward": 6.036018598594723,
+    "mean_gait_distance_m": 0.0,
+    "walking_successes": 0
+  },
+  {
+    "experiment": "pilot_randomized",
+    "episodes": 5,
+    "fall_rate": 0.0,
+    "mean_distance_m": 0.008672839285819967,
+    "mean_forward_speed_m_s": 0.0002890946428606656,
+    "mean_duration_s": 30.0,
+    "mean_total_reward": 6.036371098760088,
+    "mean_gait_distance_m": 0.0,
+    "walking_successes": 0
+  },
+  {
+    "experiment": "smoke_A_dr",
+    "episodes": 5,
+    "fall_rate": 0.0,
+    "mean_distance_m": -0.019210741622903697,
+    "mean_forward_speed_m_s": -0.0006403580540967898,
+    "mean_duration_s": 30.0,
+    "mean_total_reward": 5.454230532192559,
+    "mean_gait_distance_m": 0.0,
+    "walking_successes": 0
+  },
+  {
+    "experiment": "smoke_A_nominal",
+    "episodes": 5,
+    "fall_rate": 0.0,
+    "mean_distance_m": -0.01987443775154793,
+    "mean_forward_speed_m_s": -0.0006624812583849312,
+    "mean_duration_s": 30.0,
+    "mean_total_reward": 5.462526164352669,
+    "mean_gait_distance_m": 0.0,
+    "walking_successes": 0
+  },
+  {
+    "experiment": "smoke_B_dr",
+    "episodes": 5,
+    "fall_rate": 0.0,
+    "mean_distance_m": -0.020693010178643226,
+    "mean_forward_speed_m_s": -0.0006897670059547742,
+    "mean_duration_s": 30.0,
+    "mean_total_reward": 5.354093379606594,
+    "mean_gait_distance_m": 0.0,
+    "walking_successes": 0
+  },
+  {
+    "experiment": "smoke_B_nominal",
+    "episodes": 5,
+    "fall_rate": 0.0,
+    "mean_distance_m": -0.020395542214379347,
+    "mean_forward_speed_m_s": -0.0006798514071459783,
+    "mean_duration_s": 30.0,
+    "mean_total_reward": 5.3774482319469445,
+    "mean_gait_distance_m": 0.0,
+    "walking_successes": 0
+  },
+  {
+    "experiment": "untrained_dr",
+    "episodes": 5,
+    "fall_rate": 0.0,
+    "mean_distance_m": -0.025744486233375507,
+    "mean_forward_speed_m_s": -0.0008581495411125169,
+    "mean_duration_s": 30.0,
+    "mean_total_reward": 5.078034214390194,
+    "mean_gait_distance_m": 0.0,
+    "walking_successes": 0
+  },
+  {
+    "experiment": "untrained_nominal",
+    "episodes": 5,
+    "fall_rate": 0.0,
+    "mean_distance_m": -0.02582353763520185,
+    "mean_forward_speed_m_s": -0.0008607845878400615,
+    "mean_duration_s": 30.0,
+    "mean_total_reward": 5.084225794613077,
+    "mean_gait_distance_m": 0.0,
+    "walking_successes": 0
+  }
+]

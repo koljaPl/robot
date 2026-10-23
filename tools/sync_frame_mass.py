@@ -18,35 +18,20 @@ def main():
     for body in spec["bodies"]:
         if "mirror_of" in body:
             continue
+        if any(c.get("parameter_evidence", {}).get("mass", {}).get("state") == "measured" for c in body.get("components", [])):
+            raise ValueError("Refusing to overwrite measured mass: " + body["name"])
         mesh = trimesh.load_mesh(ROOT / "cad/stl" / (body["name"] + ".stl"))
         mesh.apply_scale(0.001)
-        mesh.density = 1270  # kg/m³ PETG; solid mesh, deliberately conservative
+        mesh.density = spec["geometry"]["petg_density"]  # kg/m³ PETG; solid mesh, deliberately conservative
         mp = mesh.mass_properties
         frame = {"name": body["name"] + "_frame", "mass": float(mp.mass),
                  "dimensions": mesh.extents.tolist(), "com": mp.center_mass.tolist(),
                  "inertia_tensor": mp.inertia.tolist(), "material": "solid PETG estimate, 1270 kg/m³",
                  "evidence": "generated CAD; actual infill/printed density must be weighed"}
+        frame["parameter_evidence"] = {k: {"state": "estimated", "date": spec["updated_date"], "evidence": frame["evidence"]} for k in ("mass", "com", "dimensions", "inertia_tensor")}
         body["components"][0] = frame
-        if body["name"] != "torso":
-            # Separate from servo masses, soles, and torso harness allowance.
-            body["components"] = [c for c in body["components"] if not c["name"].endswith("_joint_fasteners")]
-            body["components"].append({"name": body["name"] + "_joint_fasteners", "mass": 0.0015,
-                "dimensions": [0.02, 0.012, 0.012], "com": [0, 0, -0.012],
-                "material": "steel and plastic horns", "evidence": "estimate; weigh installed fasteners/horn"})
-    torso = spec["bodies"][0]
-    pico = next(c for c in torso["components"] if c["name"] == "pico_h")
-    pico.update(dimensions=[0.006, 0.051, 0.021], com=[-0.0145, 0, 0.023])
-    pca = next(c for c in torso["components"] if c["name"] == "pca9685")
-    pca.update(dimensions=[0.009, 0.0625, 0.0254], com=[-0.013, 0, -0.002])
-    imu = next(c for c in torso["components"] if c["name"] == "imu")
-    imu.update(dimensions=[0.004, 0.016, 0.02], com=[-0.0255, 0, 0.018])
-    harness = next(c for c in torso["components"] if c["name"] == "torso_wires_fasteners")
-    harness["mass"] = 0.020
-    harness["evidence"] = "estimate includes six added 10 cm extensions, short heavy power wire, capacitor, pullup, board mounting ties and torso hardware; excludes suspended tether"
-    for b in spec["bodies"]:
-        for c in b.get("components", []):
-            if c["name"] == "left_sole":
-                c.update(mass=0.00486, material="solid TPU 95A, density estimate 1200 kg/m³", evidence="estimate; includes adhesive uncertainty, weigh actual sole")
+        # Existing horns/fasteners/electronics are independent ledger entries.
+        # Never recreate them from a generic allowance or erase their provenance.
     path.write_text(json.dumps(spec, indent=2) + "\n")
 
 

@@ -1,0 +1,71 @@
+# School Biped S6: start here
+
+Read `docs/STATUS.md`, then the active stage in `docs/ROADMAP.md`.
+Use the detailed handoff only for relevant reference; do not reread all embedded code.
+
+## Goal and constraints
+
+- School question: From Simulation to Reality: How does a robot learn?
+- Six joints: left hip/knee pitch/ankle roll, then right hip/knee pitch/ankle roll.
+- Coordinates: x forward, y left, z up; software units m, kg, rad, s.
+- 15–20 cm, broad feet, lightweight, repairable; walking precedes extensions.
+- PC inference over USB, wired servo power, no battery or onboard neural inference.
+- Preferred delivered cost EUR 50–75; hard maximum EUR 100 including every part,
+  VAT, shipping and any paid assembly preparation. No weaker-servo substitution.
+- Student assembly needs no printer, drilling or cutting; small helper solder job allowed.
+- No purchases or supplier messages are authorized by the implementation task.
+
+## Authoritative inputs
+
+- `procurement.json`: exact basket, quotations, dated source evidence, unresolved costs.
+- `physical_spec.json`: geometry, rigid-body component ownership and physical parameters.
+- `robot_config.py`: shared policy timing, action mapping and randomization hypotheses.
+- Calibration records: per-servo pulse mapping and IMU alignment/bias; examples are invalid
+  for policy deployment until measured and explicitly validated.
+- Source code is authoritative over copies embedded in generated documentation.
+
+## Evidence and gates
+
+- Label parameters sourced, estimated, measured or unknown, with evidence/date.
+- Distinguish planned, implemented, locally verified, physically verified and blocked.
+- A compiled firmware image is not an electrical test. Standing is not learned walking.
+- Hardware measurements, print fit and delivered quotations cannot be invented.
+- Unknown costs are never zero. Budget and fit must pass before recommending procurement.
+- Physical stages need the user's assembly/measurements; continue independent software work.
+- Mechanical stops are not software command limits. Do not invent passive supporting stops.
+- Never expose true joint angles, pose, translation, velocity or contact to the policy.
+- Simulation truth is allowed for dynamics, rewards and explicitly separated metrics.
+- Applied command targets are acknowledgements, not measured shaft feedback.
+- Software stop is not physical motor-power isolation. Boot disarmed; never auto-arm.
+
+## Work and verification
+
+```bash
+source .venv/bin/activate
+python -m pytest -q
+python tools/firmware_config.py  # default invalid calibration cannot policy-arm
+python train.py --steps 2048 --development --output runs/new_smoke
+python tools/budget_gate.py  # 2 = incomplete; 1 = over budget; 0 = cleared
+```
+
+- Inspect relevant code before edits; preserve historical `docs/validation/` evidence.
+- Write new experiment artifacts under a new run directory, with source/config/model hashes.
+- Rebuild CAD/model after physical edits; check mass, axes, contacts and clearances.
+- Do not run `sync_frame_mass.py` over measured masses; it is for prototype CAD estimates.
+- Never resume a policy across changed action mapping, preprocessing or physical identity.
+- Default training: CPU PPO, 1024-step rollouts; 2048 smoke, at most 50000 pilot;
+  final A/B seeds 0,1,2, equal budgets at most 1000000 each, rounded down to rollouts.
+- B starts from the same initial weights as A, not from a nominal-pretrained policy.
+- Validation seeds 2000–2004; final test seeds 1000–1009. Do not tune on final tests.
+- Full experiments require the stage gates; provisional tests must say provisional.
+- Stop at the agreed training cap and report failure honestly if walking is unmet.
+
+## Documentation and packaging
+
+- Update `docs/STATUS.md` after each completed work chunk: evidence, blockers, next action.
+- Keep `docs/ROADMAP.md` gates synchronized; retain the German school introduction in README.
+- Edit handoff template/reference sources, then run `python tools/build_handoff.py`.
+- Generated handoff must contain the actual current code and its original 19 sections.
+- Packaging must use an explicit source/artifact allowlist. Never package `.aws`, `.codex`,
+  `.agents`, `.git`, credentials, toolchains, virtual environments or private local files.
+- Claims in final reports must distinguish historical, newly executed and physical results.
