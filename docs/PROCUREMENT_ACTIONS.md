@@ -1,55 +1,102 @@
-# Procurement evidence and precise outstanding actions
+# Component and delivery review — 2026-10-23
 
-Updated2026-10-23. Authoritative prices and unknowns: `procurement.json`.
-`python tools/budget_gate.py` computes the known sum; unknown costs remain null.
-Current selected revision removes PCA9685 and its OE resistor; six MG90S retained.
-Direct Pico PWM supplies16 channels according to official RP2040 documentation;
-six share three slices, with no shortage of channels. It does not verify the
-servo's3.3V input or make the harness free. GPIO protection/loading/timing need
-one-servo bench measurements before approval.
+**Procurement stopped: this selected route has €163.63 of priced positions, already
+€63.63 above the €100 cap, before remaining required costs. Nothing ordered or
+reserved; no supplier messages sent.** This is a route-specific shortfall, not proof
+that every possible supplier route costs this much. The full total remains unknown.
+Authoritative quantities/prices: [procurement.json](../procurement.json).
 
-Research changes: PSU now€15.50; MPU module now€3.62; JR extension public sale
-€1.14; red0.75mm² wire€5.90. BerryBase DHL remains€4.95 but free threshold is now
-€200. Welectron shipping€4.95 below€49 DPD threshold. Funduino moved to
-funduino.com; shipping could not be refreshed from usable policy content, so the
-old€4.90 is **not** silently retained. Pico/USB/header/cap/shrink/ties listings
-were reviewed. FF jumper live variants unavailable, despite cached stock claims;
-an available replacement and any changed price/shipping still need evidence.
+## What was resolved
 
-No file-specific delivered print quotation was obtained. Meltlab's public
-[pricing explanation](https://meltlab.de/preise) requires uploading exact files
-and slicing. Its examples are not a quote. There was no enabled browser surface
-for this session, and no supplier message/purchase was authorized or sent.
-`cad/quote_bundle.zip` is a quotation/fit-review bundle only. Do not order it as
-released manufacturing files: horn interfaces and fastener sweeps remain unknown.
+- Six exact Waveshare15024 MG90S remain €21.00 inclVAT at
+  [Welectron](https://www.welectron.com/Waveshare-15024-MG90S-Servo_1).
+  Listing says short supply; six-unit availability is not established.
+- Available **DUPK-40-FF-50**, 40 female/female 50cm leads, replaces unavailable20cm:
+  [BerryBase €2.20](https://www.berrybase.de/40pin-jumper-dupont-kabel-female-female-trennbar/laenge-0-50-m).
+  Logic only; helper must keep I2C short and validate the completed harness.
+- **Goobay11638**, 5.5×2.1mm solder socket, is listed at
+  [BerryBase €1.10](https://www.berrybase.de/dc-einbaubuchse-fuer-hohlstecker-5-5x2-1mm-metallausfuehrung-loetanschluss),
+  rated5A/30V DC with nut/washer. Replaces unpriced Delock83290 candidate.
+  This is a retailer specification, not an electrical test. Insulation/strain relief
+  and branch ratings remain helper/bench gates. No servo current through Pico.
+- Funduino's **current** [policy](https://funduino.com/policies/shipping-policy)
+  confirms standard German DHL **€4.90**, free above€69 after discounts, tracking.
+  The browser resolved the previously inaccessible policy; [snapshot](procurement/2026-10-23/funduino-shipping.txt).
+- Exact standard M2 ear fastener packs now sourced:100 screws€1.51,
+  100nuts€1.13,100washers€0.99; DHL€5.90. Used quantities12/12/24.
+  See the linked SKUs in SUMMARY; lengths and clearance remain provisional.
+- No USB adapter is in the base basket. USB-A–Micro-B **data cable remains required**;
+  only a PC without USB-A needs an additional priced adapter.
 
-## Questions ready for a human to send or resolve
+## File-specific print prices — actual web calculations, no order
 
-1. **Welectron, Waveshare15024:** Are six units available together at€3.50inclVAT?
-   Does each include a matching horn set and shaft-retaining screw? Please provide
-   spline count/diameter, screw thread/length, horn thickness and hole pattern,
-   ear hole spacing/diameter, ear plane relative to shaft, shaft-center offset,
-   housing drawing and lead exit. Is3.3V PWM guaranteed? Any current/continuous
-   torque data for this exact batch? Do not substitute a different MG90S brand.
-2. **Print service:** Review the seven individual PETG STLs and two TPU soles in
-   the bundle, NOT quotation_plate as an extra part. Quote0.2mm layers/three walls/
-   25%infill, supports removed, all holes factory-clear for assembly without
-   drilling/tapping, two bonded TPU95A soles including adhesive, matched fastener
-   kit, VAT and delivery to Germany. Quote a sample horn/cradle interface first,
-   with separate shipping if applicable. Identify all fit modifications and quote
-   any CAD/finishing labour. Manufacturing release waits for measured interfaces.
-3. **Harness supplier/helper:** Confirm ratings for JR branch contacts/wires and
-   the full5A DC input. Candidate Delock83290 manufacturer's data says18AWG;
-   retailer metadata conflict must be resolved. Quote delivered input pigtail,
-   strain relief and any preparation fee. Confirm the helper's labour/consumables
-   are free or add its price. No guessed free horns/screws/connector substitutions.
-4. **Checkout:** Resolve FF logic leads with exact available SKU; confirm sensor/
-   extension combined shipping and all retailer totals including VAT. Confirm PC
-   has USB-A; otherwise include an actually priced data adapter. If bench and full
-   orders are split, charge every additional delivery, including sample prints.
+[Quote records/settings/hashes](procurement/2026-10-23/quotes.json).
 
-**Gate:** known-priced subtotal€78.91 is not a delivered price. All unresolved
-items must fit the remaining€21.09. There is no confirmed monetary shortfall yet;
-there is missing evidence. If a complete delivered quote exceeds€100, report
-`total−100` and stop procurement. €50–75 is already below the known-priced subset;
-it is not demonstrated feasible. No weaker motor substitution is authorized.
+| Job, qty1 file at100% scale | Parts € | Support removal € | Order fee € | DHL € | Delivered € |
+|---|---:|---:|---:|---:|---:|
+| Seven PETG parts in compact batch |24.66|11.90|5.95|6.19|**48.70**|
+| Two TPU95A sole slabs in batch |7.95|0.00|5.95|6.19|**20.09**|
+
+VAT19% included. Quote from [Meltlab configurator](https://meltlab.de/konfigurator):
+PETG black,0.2mm,3walls,25%infill; TPU black,0.2mm,3walls,4top/bottom layers,
+15%infill setting (skins fill the1mm slab). Advertised4workingdays production
+**after payment**, then DHL1–2workingdays. No delivery date or slot reserved.
+Germany selected; no postcode/address entered. Combined-material order fees and
+shipping savings are **unconfirmed**; costs conservatively count two jobs.
+The seven-individual-file alternative was€78.31; not added to the basket.
+
+`cad/quotation/` contains seven and two disconnected original components, respectively;
+these layouts replace individual-file submission, not extra robot parts.
+`tools/quote_layout.py` preserves dimensions/volume and records source hashes.
+**Layouts are for quotation only:** structural layer orientation and actual fit require
+review. Web prices do not cover hole clearing, horn-fit inspection, a sample,
+adhesive/sole bonding, or a matched screw kit. TPU grip is not measured.
+The original compact-PETG checkout text was recovered from this session transcript
+after its temporary tab expired; no batch screenshot. The sole quote has saved DOM
+and screenshot.
+Final measured files/settings must be re-quoted before purchase.
+
+## Horns and fasteners: do not guess compatibility
+
+Waveshare's [package photograph](https://www.waveshare.com/img/devkit/accBoard/MG90S-Servo/MG90S-Servo-1.jpg)
+shows three horn shapes and three screws. Both manufacturer and retailer text list
+only one servo. This supports accessory availability, **not exact Welectron-batch
+inclusion or a known spline, screw thread, hole pattern or fit**. No generic25T horn
+or guessed M2 centre screw is selected. Keep six matched horns/retainers unpriced
+until the supplier confirms their inclusion or an exact compatible accessory price.
+
+M2 ear mounting needs12screws,12nuts,24washers. For the proposed3mm printed plate,
+0.3mm washers and1.6mm nut, M2×8 leaves2.8mm for ear thickness **before** allowing
+thread projection; one0.4mm pitch of projection leaves2.4mm. This is a calculated
+fit check, not evidence the real ear is thin enough. Head diameter4mm, washer OD5mm
+and nut SW4 also need sweep/access checks. Do not clamp/crush a plastic ear.
+The12horn-to-frame screws and12washers are separate from six shaft retainers;
+factory horn holes may require a different diameter/thread. Do not drill/tap horns.
+
+## Precise human/supplier actions — drafts, not sent
+
+1. **Welectron, WS8-015024:**
+   “Bitte bestätigen Sie6gleiche Waveshare15024 zu je3,50€inklMwSt ab Lager,
+   inklusive passender Servohebel und je einer Abtriebs-Befestigungsschraube.
+   Welche Verzahnung, Schraubengewinde/-länge und Hebel-Lochmaße sind enthalten?
+   Bitte Maßzeichnung für Gehäuse, Befestigungsohren, Wellenmitte und Kabelausgang;
+   ist3,3V PWM garantiert?” Confirm exact stock and contents before selecting spares.
+2. **Print provider, after measured interface approval:**
+   “Bitte Angebot für7PETG-Teile und2TPU95A-Sohlen90×45×1mm gemäß Dateien,
+   maßhaltig und montagefertig: Stützen entfernt, Löcher frei, Sohlen verklebt
+   inklusive Klebstoff. Bitte Schichtorientierung und Schraubenpassung prüfen;
+   separates Muster, Nacharbeit, gemischte Materialien und Versand nach Deutschland
+   vollständig ausweisen. Keine Fertigung ohne Freigabe.” Provide final hashes;
+   ask for one combined shipment/fee, but do not assume a discount.
+3. **Helper:** confirm free labour/consumables or quote them; inspect socket polarity,
+   fully insulated low-voltage input and short buses, JR branch fit/gauge/contacts,
+   MCU signal levels and short I2C leads. Bench-test current/droop/watchdog/cutoff.
+4. **User:** German delivery postcode and PC USB-A availability remain unanswered.
+   Final address/payment stays with user. No paid priority/split shipments selected.
+   Any bench/sample-first split adds new deliveries; recheck the full budget first.
+
+**Next:** obtain a genuinely cheaper complete frame/sole/finishing route with exact
+files (for example a school/local service quote, never assumed free), or explicitly
+revise the budget with the user. Current electronics/delivery€85.31 plus ear-fastener
+shipment€9.53 leaves only€5.16 for every print, horn, finishing and helper unknown.
+Do not recommend the current over-budget basket for ordering; do not weaken servos.

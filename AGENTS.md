@@ -32,6 +32,9 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 - A compiled firmware image is not an electrical test. Standing is not learned walking.
 - Hardware measurements, print fit and delivered quotations cannot be invented.
 - Unknown costs are never zero. Budget and fit must pass before recommending procurement.
+- Current priced route EUR163.63 exceeds cap byEUR63.63before unknowns. Stop ordering;
+  seek cheaper exact manufacturing quote. Print web quotes exclude bonding/fit/kit.
+- No USB adapter unless PC lacksUSB-A; USB-A–Micro-B data cable remains required.
 - Physical stages need the user's assembly/measurements; continue independent software work.
 - Mechanical stops are not software command limits. Do not invent passive supporting stops.
 - Never expose true joint angles, pose, translation, velocity or contact to the policy.

@@ -1,14 +1,33 @@
-# Quotation brief — not submitted and not an actual quotation
+# Assembly-ready quotation brief — no manufacturing release
 
-Please price the supplied **seven named PETG frame STLs once each**, plus **two named TPU sole STLs once each**. Ignore `quotation_plate.stl` for quantities: it duplicates the seven frames and is only a geometric grouping.
+Updated2026-10-23. File-specific web calculations exist; no order or supplier
+inquiry sent. Current route is over budget. [Evidence](../docs/PROCUREMENT_ACTIONS.md).
 
-PETG: 0.2 mm layers, 3 perimeters, nominal 25% infill, stiff joint walls. TPU 95A: 90×45×1 mm soles, bonded to their feet with adhesive included. Supply parts cleaned, supports removed, holes clear for assembly with screws; the student has no drill/printer/taps. Please include German VAT, shipment, all finishing and a matched fastener kit. See `ASSEMBLY.md` for provisional fastener quantities. Please confirm layer orientation, dimensional tolerance and the mounting interfaces against a sample of the selected Waveshare 15024 MG90S and its actual supplied horns before manufacture.
+Supply **7PETG frames**: torso×1, left/right thigh×1each, shin×1each, foot×1each;
+plus **2TPU95A soles90×45×1mm**. Price each part exactly once. Choose either
+individual `stl/` files or the corresponding batch files in `quotation/`, never
+both. Ignore old `quotation_plate.stl`: it is not an additional part or a print layout.
+Batch files have7/2disconnected bodies, scale100%, mm. Layout/source hashes are
+in `quotation/layout.json`; these orientations need structural review.
 
-The CAD is currently a **quotation/fit prototype**, not a manufacturing release. Servo shaft/ear/horn measurements must be supplied before final printing. Cost changes after those fit changes require a revised quote. No purchase authorization is implied by requesting a price.
+PETG:0.2mm layers,3walls,nominal25%infill, stiff joint mounts. TPU:0.2mm layers,
+3walls,4top/bottom skins; flat1mm soles. Include support removal, clear through
+holes without student drilling/tapping, bonded soles and adhesive, fit inspection,
+matching fasteners, VAT and German delivery. Quote any fit sample and its delivery
+separately; confirm whether both materials can share order/shipping fees.
 
-Automatic service candidates researched: [Meltlab](https://meltlab.de/preise) and [Printfaktur](https://printfaktur.de/). No automatic upload/browser was available in this session, so no price was obtained. The remaining budget is only **€21.09 for printing, all unresolved fasteners/horns, current-rated power connection, Funduino shipping and any helper fee together**, using the current sourced basket. This number is a budget constraint, never a printing quotation. School lab/donated manufacturing could change cost, but is not assumed.
+Fasteners needed:12ear screws (provisionallyM2×8),12M2nuts,24M2washers;
+6matching servo horns/retainers (supplier inclusion unresolved);12horn-to-frame
+screws and12matching washers with thread/length matched to factory horn holes.
+[Assembly schedule](ASSEMBLY.md). Do not substitute a guessed spline/thread.
 
-Updated2026-10-23: submit only for quotation/review, not production. The broader
-clearance audit flags unmeasured fastener proxies. Include the exact final CAD
-file hashes in a delivered quotation; quote any sample print separately and
-include its delivery in the total budget. No supplier inquiry has been sent.
+Servo: exact Waveshare15024MG90S. Final manufacture requires actual horn, shaft,
+ear and lead-exit measurements and one fit sample. Review layers for ear loads,
+clear moving screw sweeps and board/cable access. Quote final hash-identified files
+again after fit revisions. No approved clearances or layer strength are implied.
+
+Observed Meltlab prices: compact7PETG€48.70, separate2TPU€20.09inclVAT/delivery;
+printing/PETG support removal only. Hole finishing, bonding, sample and hardware
+were NOT quoted. [Full settings/breakdown](../docs/procurement/2026-10-23/quotes.json).
+The current priced route totals€163.63before remaining required costs, so procurement
+is stopped under the€100cap. A cheaper fully sourced delivered route is needed.

@@ -13,7 +13,7 @@ physical transfer has taken place.
 | Stage | State | Actual evidence / blocker |
 |---|---|---|
 | Requirements / entry | implemented | AGENTS.md, ROADMAP.md, this file; six joints and EUR100 maximum retained |
-| A: hardware research | blocked | Refreshed procurement.json; known-priced subset EUR78.91, total unknown; exact print/fastener/input/shipping evidence missing |
+| A: hardware research | blocked | Refreshed procurement.json; known-priced route EUR163.63, EUR63.63over cap before unknowns; file-specific PETG/TPU quotes obtained; horn/fit/finishing/helper costs remain |
 | B: mechanics | implemented / blocked | Native-PWM revision removes PCA envelope; CAD/ledger agree at199.4g estimated;55poses yield550 unreviewed fastener-proxy overlaps, no manufacturing release |
 | C: bench/interface | locally verified | C++ official Pico SDK2.3.1 build/UF2; Python host/bench/deployment, persistent compiled calibration, explicit arm/watchdog/CRC/fingerprints; no electrical test |
 | D: twin/RL | locally verified provisional |29tests, compilation/mass/axes/inertias, Gym/SB3, clipped commands, discrete delay, corrected reward, gait exploit tests; measured response and lifted-step reference still missing |
@@ -26,7 +26,7 @@ physical transfer has taken place.
 - Six Waveshare15024 MG90S, hip pitch/knee pitch/ankle roll per leg.
 - Pico H **direct native PWM** GP0,1,2,3,6,7; MPU6050 GP4/5;50Hz commands/200Hz IMU.
   PCA9685 removed from current basket/spec because unavailable and extra mounting conflict.
-- Wired5V/5A PSU with separate USB logic and common ground. Input/branch ratings and
+- Wired5V/5A PSU with separate USB logic and common ground. Input socket now sourced5A; branch ratings and
   MG90S3.3V signal threshold remain unresolved. No programmable hardware torque cap.
 - Basket/evidence: `procurement.json`, `docs/PROCUREMENT_ACTIONS.md`, `SERVO_COMPARISON.md`.
 - Geometry/mass/dynamics/provenance: `physical_spec.json`; generated `robot.xml`,
@@ -77,9 +77,11 @@ only through the isolated replay tool; no saved checkpoint is currently deployme
 
 ## Remaining blockers and unknown assumptions
 
-1. **Procurement:** exact delivered print/finishing/sole/fastener quote, horn/screw contents,
-   rated input connection, Funduino shipping, available FF jumpers and any helper charge.
-   EUR21.09 remains for all unknowns. No exact shortfall is known; total is not established.
+1. **Procurement:** selected route alreadyEUR163.63before unpriced horn/retainer,
+   horn screws/washers, hole finishing/sole bonding/sample and helper costs. Known
+   route shortfallEUR63.63. Exact PETG48.70/TPU20.09web quotes are NOT an assembly-ready
+   kit. FF50cmreplacement,5Ainput socket and Funduino4.90shipping now sourced.
+   No order, supplier message, reserved stock or production slot. Six servo stock pending.
 2. **Fit:** ear/shaft/spline/horn geometry and fastener sweeps unmeasured.550proxy overlaps
    are not550confirmed physical bolt collisions. Resolve actual hardware interfaces first.
 3. **Physics:** servo sustainable torque/current, loaded response/latency/backlash, supply
@@ -92,15 +94,15 @@ only through the isolated replay tool; no saved checkpoint is currently deployme
 
 ## Exact next task / executable checks
 
-**Next human-dependent task:** resolve the four precise supplier/checkout questions in
-`docs/PROCUREMENT_ACTIONS.md`; obtain a file-specific delivered fit/print quote. No messages
+**Next human-dependent task:** resolve the route overrun and precise questions in
+`docs/PROCUREMENT_ACTIONS.md`; obtain a cheaper complete delivered fit/print quote. No messages
 or purchases have been sent. Do not order a complete frame before servo/horn sample fit.
 
 **Next software command:**
 
 ```bash
 .venv/bin/python -m pytest -q
-.venv/bin/python tools/budget_gate.py # expected exit2, incomplete
+.venv/bin/python tools/budget_gate.py # expected exit1, over budget
 .venv/bin/python tools/check_clearance.py # expected exit1, proxy conflicts
 ```
 
@@ -108,3 +110,14 @@ Then use received dimensions/quotes to replace unknowns; helper/user performs th
 bench and IMU measurements in CALIBRATION.md. Provisional independent tooling is prepared;
 formal training and physical completion remain blocked by `docs/gates.json`. Do not set a
 gate true without linked evidence. Generated full reference: `docs/HANDOFF.md`.
+
+## Procurement follow-up evidence
+
+`docs/procurement/2026-10-23/quotes.json` records actual STL-based printing prices,
+not public example allowances. The sole quote and Funduino policy have saved DOM;
+the original compact-PETG checkout text was recovered from this session transcript
+after its tab expired (no screenshot).
+`tools/quote_layout.py` creates quotation-only unchanged-geometry batches, with
+source hashes. Actual layer orientation, fit, bonding and grip remain unverified.
+No physics/control code or current identity changed. Prior basket preserved under
+`docs/history/2026-10-23/pre_delivery_check/`. USB adapter omitted unless PC lacksUSB-A.

@@ -1,0 +1,651 @@
+- link "Zum Hauptinhalt springen":
+  - /url: "#main-wrapper"
+- link "Zur Suche springen":
+  - /url: "#search-header"
+- link "Zum Menü springen":
+  - /url: "#mainNavigation"
+- list:
+  - link "Kontakt":
+    - /url: https://www.schraubenking-shop.de/Kontakt
+  - link "News":
+    - /url: https://www.schraubenking-shop.de/News
+- list:
+  - generic: 
+  - text: +43 (0)7723 42616
+  - generic: 
+  - text: Versandkostenfrei ab 99€ nach AT/DE
+  - generic: 
+  - text: "Support:"
+  - link "shop@schraubenking.at":
+    - /url: mailto:shop@schraubenking.at
+- banner:
+  - navigation "#global.mainNavigation#":
+    - link "Schraubenking-shop.de - ihr Fachmarkt für Schrauben und Verbindungstechnik Startseite":
+      - /url: https://www.schraubenking-shop.de/
+      - img "Schraubenking-shop.de - ihr Fachmarkt für Schrauben und Verbindungstechnik Startseite"
+    - search:
+      - textbox "Suchen"
+      - button "Suchen":
+        - img: 
+      - text: 
+    - list:
+      - button "Mein Konto":
+        - generic "Mein Konto": 
+      - text: "* *"
+      - text: 
+      - button "Wunschzettel":
+        - generic "Wunschzettel": 
+      - button "Warenkorb":
+        - generic: 
+        - generic: 0,00 €
+  - navigation "#global.categoryNavigation#":
+    - text:  
+    - list:
+      - link "Verbindungstechnik ":
+        - /url: https://www.schraubenking-shop.de/Schrauben-Muttern-Scheiben
+        - generic: Verbindungstechnik
+        - text: 
+      - link "Installationstechnik ":
+        - /url: https://www.schraubenking-shop.de/Installationstechnik
+        - generic: Installationstechnik
+        - text: 
+      - link "Kunststoffartikel ":
+        - /url: https://www.schraubenking-shop.de/Kunststoffartikel
+        - generic: Kunststoffartikel
+        - text: 
+      - link "Verbinder, Beschläge, Profile ":
+        - /url: https://www.schraubenking-shop.de/Verbinder-Beschlaege-Profile
+        - generic: Verbinder, Beschläge, Profile
+        - text: 
+      - link "Seile, Ketten ":
+        - /url: https://www.schraubenking-shop.de/Seile-Seilzubehoer
+        - generic: Seile, Ketten
+        - text: 
+      - link "Chemie ":
+        - /url: https://www.schraubenking-shop.de/Chemie
+        - generic: Chemie
+        - text: 
+      - link "Werkzeuge, Maschinen ":
+        - /url: https://www.schraubenking-shop.de/Werkzeuge-Maschinen
+        - generic: Werkzeuge, Maschinen
+        - text: 
+      - link "Betriebsbedarf ":
+        - /url: https://www.schraubenking-shop.de/Arbeitsschutz
+        - generic: Betriebsbedarf
+        - text: 
+    - text: 
+  - text:  
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - text: 
+      - link "Zurück zur Liste":
+        - /url: https://www.schraubenking-shop.de/Sechskantmuttern#buy_form_5039
+      - text: "|"
+      - link "Startseite":
+        - /url: https://www.schraubenking-shop.de/
+      - text: /
+      - link "Verbindungstechnik":
+        - /url: https://www.schraubenking-shop.de/Schrauben-Muttern-Scheiben
+      - text: /
+      - link "Muttern":
+        - /url: https://www.schraubenking-shop.de/Muttern-Sechskantmutter-Hutmuttern
+      - text: /
+      - link "Sechskantmuttern":
+        - /url: https://www.schraubenking-shop.de/Sechskantmuttern
+      - text: /
+      - link "M2 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.)":
+        - /url: https://www.schraubenking-shop.de/M2-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P003474
+  - button "In den Warenkorb"
+  - text: 
+  - button "Auf die Vergleichsliste":
+    - generic: 
+  - button "Auf den Wunschzettel":
+    - generic: 
+  - img "M2 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.)"
+  - text: 
+  - heading "M2 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.)" [level=1]
+  - list:
+    - strong: "Artikelnummer:"
+    - text: P003474
+  - heading "Originalkarton zu 1000 Stk. *" [level=6]
+  - table:
+    - rowgroup:
+      - row "ab Grundpreis":
+        - columnheader "ab"
+        - columnheader "Grundpreis"
+    - rowgroup:
+      - row "1 1,13 € pro 100 Stück":
+        - cell "1"
+        - cell "1,13 € pro 100 Stück"
+      - row "3 0,69 € pro 100 Stück":
+        - cell "3"
+        - cell "0,69 € pro 100 Stück"
+      - row "5 0,58 € pro 100 Stück":
+        - cell "5"
+        - cell "0,58 € pro 100 Stück"
+      - row "10 0,50 € pro 100 Stück":
+        - cell "10"
+        - cell "0,50 € pro 100 Stück"
+      - row "25 0,44 € pro 100 Stück":
+        - cell "25"
+        - cell "0,44 € pro 100 Stück"
+      - row "50 0,42 € pro 100 Stück":
+        - cell "50"
+        - cell "0,42 € pro 100 Stück"
+      - row "100 0,40 € pro 100 Stück":
+        - cell "100"
+        - cell "0,40 € pro 100 Stück"
+  - list:
+    - generic: 
+    - text: Sofort verfügbar
+    - text: "Lieferzeit:"
+    - text: 2 - 3 Werktage
+    - button "(DE - Ausland abweichend)"
+  - button " Frage zum Artikel":
+    - generic: 
+    - text: Frage zum Artikel
+  - generic: "Gesamtpreis:"
+  - generic: 
+  - generic: 
+  - generic: 1,13 €
+  - generic: =
+  - generic: 1,13 €
+  - text: inkl. 19% USt. , zzgl.
+  - link "Versand":
+    - /url: https://www.schraubenking-shop.de/Versandinformationen?shipping_calculator=0
+  - button "Menge verringern":
+    - generic: 
+  - spinbutton "Menge": "1"
+  - generic: x 100 Stk.
+  - button "Menge erhöhen":
+    - generic: 
+  - button "In den Warenkorb":
+    - generic: In den Warenkorb
+    - generic: 
+    - 'img "Kontext: Erfolg"'
+  - generic: Beschreibung 
+  - generic "Beschreibung ":
+    - generic: Sechskantmuttern gemäß DIN 934 / ISO 4032 aus Stahl verzinkt Festigkeitsklasse 8
+    - text: der Klassiker unter den Befestigungselementen mit Sechskantform für den Ansatz von Maul- oder Ringschlüsseln. Standardmäßig ist die Sechskantmutter in Regelgewinde gefertigt, sofern nicht eine andere Gewindesteigung angegeben (wie z.B. M8
+    - strong: x 1
+    - text: ). Die Bauhöhe beträgt ca. 0,8 x Durchmesser.
+    - generic: Durchmesser (d) und Festigkeitsklasse (FKL) per Artikelbezeichnung
+    - generic: "Technische Daten:"
+    - table:
+      - rowgroup:
+        - row "Durchmesser Innen(d) Höhe (m) in mm Eckmaß (e) in mm Schlüsselweite (s) in mm Gewindesteigung in mm":
+          - cell "Durchmesser Innen(d)":
+            - generic: Durchmesser Innen(d)
+          - cell "Höhe (m) in mm":
+            - text: Höhe (m)
+            - text: in mm
+          - cell "Eckmaß (e) in mm":
+            - text: Eckmaß (e)
+            - text: in mm
+          - cell "Schlüsselweite (s) in mm":
+            - text: Schlüsselweite (s)
+            - text: in mm
+          - cell "Gewindesteigung in mm":
+            - generic: Gewindesteigung
+            - generic: in mm
+        - row "M2 1,6 4,32 SW 4 0,4":
+          - cell "M2":
+            - generic: M2
+          - cell "1,6":
+            - generic: 1,6
+          - cell "4,32":
+            - generic: 4,32
+          - cell "SW 4":
+            - generic: SW 4
+          - cell "0,4"
+        - row "M2,5 2 5,45 SW 5 0,45":
+          - cell "M2,5":
+            - generic: M2,5
+          - cell "2":
+            - generic: "2"
+          - cell "5,45":
+            - generic: 5,45
+          - cell "SW 5":
+            - generic: SW 5
+          - cell "0,45"
+        - row "M3 2,4 6,01 SW 5,5 0,5":
+          - cell "M3":
+            - generic: M3
+          - cell "2,4":
+            - generic: 2,4
+          - cell "6,01":
+            - generic: 6,01
+          - cell "SW 5,5":
+            - generic: SW 5,5
+          - cell "0,5"
+        - row "M3,5 2,8 6,58 SW 6 0,6":
+          - cell "M3,5":
+            - generic: M3,5
+          - cell "2,8":
+            - generic: 2,8
+          - cell "6,58":
+            - generic: 6,58
+          - cell "SW 6":
+            - generic: SW 6
+          - cell "0,6"
+        - row "M4 3,2 7,66 SW 7 0,7":
+          - cell "M4":
+            - generic: M4
+          - cell "3,2":
+            - generic: 3,2
+          - cell "7,66":
+            - generic: 7,66
+          - cell "SW 7":
+            - generic: SW 7
+          - cell "0,7"
+        - row "M5 4 8,79 SW 8 0,8":
+          - cell "M5":
+            - generic: M5
+          - cell "4":
+            - generic: "4"
+          - cell "8,79":
+            - generic: 8,79
+          - cell "SW 8":
+            - generic: SW 8
+          - cell "0,8"
+        - row "M6 5 11,05 SW 10 1":
+          - cell "M6":
+            - generic: M6
+          - cell "5":
+            - generic: "5"
+          - cell "11,05":
+            - generic: 11,05
+          - cell "SW 10":
+            - generic: SW 10
+          - cell "1"
+        - row "M7 5,5 12,12 SW 11 1":
+          - cell "M7":
+            - generic: M7
+          - cell "5,5":
+            - generic: 5,5
+          - cell "12,12":
+            - generic: 12,12
+          - cell "SW 11":
+            - generic: SW 11
+          - cell "1"
+        - row "M8 6,5 14,38 SW 13 1,25":
+          - cell "M8":
+            - generic: M8
+          - cell "6,5":
+            - generic: 6,5
+          - cell "14,38":
+            - generic: 14,38
+          - cell "SW 13":
+            - generic: SW 13
+          - cell "1,25"
+        - row "M10 8 18,9 SW 17 (SW 16) *1 1,5":
+          - cell "M10":
+            - generic: M10
+          - cell "8":
+            - generic: "8"
+          - cell "18,9":
+            - generic: 18,9
+          - cell "SW 17 (SW 16) *1":
+            - generic: SW 17 (SW 16) *1
+          - cell "1,5"
+        - row "M12 10 21,1 SW 19 (SW 18) *1 1,75":
+          - cell "M12":
+            - generic: M12
+          - cell "10":
+            - generic: "10"
+          - cell "21,1":
+            - generic: 21,1
+          - cell "SW 19 (SW 18) *1":
+            - generic: SW 19 (SW 18) *1
+          - cell "1,75"
+        - row "M14 11 24,49 SW 22 (SW 21) *1 2":
+          - cell "M14":
+            - generic: M14
+          - cell "11":
+            - generic: "11"
+          - cell "24,49":
+            - generic: 24,49
+          - cell "SW 22 (SW 21) *1":
+            - generic: SW 22 (SW 21) *1
+          - cell "2"
+        - row "M16 13 26,75 SW 24 2":
+          - cell "M16":
+            - generic: M16
+          - cell "13":
+            - generic: "13"
+          - cell "26,75":
+            - generic: 26,75
+          - cell "SW 24":
+            - generic: SW 24
+          - cell "2"
+        - row "M18 15 29,56 SW 27 2,5":
+          - cell "M18":
+            - generic: M18
+          - cell "15":
+            - generic: "15"
+          - cell "29,56":
+            - generic: 29,56
+          - cell "SW 27":
+            - generic: SW 27
+          - cell "2,5"
+        - row "M20 16 32,95 SW 30 2,5":
+          - cell "M20":
+            - generic: M20
+          - cell "16":
+            - generic: "16"
+          - cell "32,95":
+            - generic: 32,95
+          - cell "SW 30":
+            - generic: SW 30
+          - cell "2,5"
+        - row "M22 18 35,03 SW 32 (SW 34) *1 2,5":
+          - cell "M22":
+            - generic: M22
+          - cell "18":
+            - generic: "18"
+          - cell "35,03":
+            - generic: 35,03
+          - cell "SW 32 (SW 34) *1":
+            - generic: SW 32 (SW 34) *1
+          - cell "2,5"
+        - row "M24 19 39,55 SW 36 3":
+          - cell "M24":
+            - generic: M24
+          - cell "19":
+            - generic: "19"
+          - cell "39,55":
+            - generic: 39,55
+          - cell "SW 36":
+            - generic: SW 36
+          - cell "3"
+        - row "M27 22 45,2 SW 41 3":
+          - cell "M27":
+            - generic: M27
+          - cell "22":
+            - generic: "22"
+          - cell "45,2":
+            - generic: 45,2
+          - cell "SW 41":
+            - generic: SW 41
+          - cell "3"
+        - row "M30 24 50,85 SW 46 3,5":
+          - cell "M30":
+            - generic: M30
+          - cell "24":
+            - generic: "24"
+          - cell "50,85":
+            - generic: 50,85
+          - cell "SW 46":
+            - generic: SW 46
+          - cell "3,5"
+        - row "M33 26 55,37 SW 50 3,5":
+          - cell "M33":
+            - generic: M33
+          - cell "26":
+            - generic: "26"
+          - cell "55,37":
+            - generic: 55,37
+          - cell "SW 50":
+            - generic: SW 50
+          - cell "3,5"
+        - row "M36 29 60,79 SW 55 4":
+          - cell "M36":
+            - generic: M36
+          - cell "29":
+            - generic: "29"
+          - cell "60,79":
+            - generic: 60,79
+          - cell "SW 55":
+            - generic: SW 55
+          - cell "4"
+        - row "M39 31 66,44 SW 60 4":
+          - cell "M39":
+            - generic: M39
+          - cell "31":
+            - generic: "31"
+          - cell "66,44":
+            - generic: 66,44
+          - cell "SW 60":
+            - generic: SW 60
+          - cell "4"
+        - row "M42 34 71,3 SW 65 4,5":
+          - cell "M42":
+            - generic: M42
+          - cell "34":
+            - generic: "34"
+          - cell "71,3":
+            - generic: 71,3
+          - cell "SW 65":
+            - generic: SW 65
+          - cell "4,5"
+        - row "M45 36 76,95 SW 70 4,5":
+          - cell "M45":
+            - generic: M45
+          - cell "36":
+            - generic: "36"
+          - cell "76,95":
+            - generic: 76,95
+          - cell "SW 70":
+            - generic: SW 70
+          - cell "4,5"
+        - row "M48 38 82,6 SW 75 5":
+          - cell "M48":
+            - generic: M48
+          - cell "38":
+            - generic: "38"
+          - cell "82,6":
+            - generic: 82,6
+          - cell "SW 75":
+            - generic: SW 75
+          - cell "5"
+        - row "M52 42 88,25 SW 80 5":
+          - cell "M52":
+            - generic: M52
+          - cell "42":
+            - generic: "42"
+          - cell "88,25":
+            - generic: 88,25
+          - cell "SW 80":
+            - generic: SW 80
+          - cell "5"
+    - paragraph: "*1.. Schlüsselweiten DIN/ISO abweichend (Schlüsselweite in Klammer = ISO Schüsselweite)"
+    - paragraph:
+      - text: "Hinweis zur Auswahl von Muttern:"
+      - text: Die Festigkeitsklasse einer Mutter sollte immer gleich oder höher der Festigkeitsklasse der Schraube sein. D.h. bei verzinkten Schrauben der Festigkeitsklasse 8.8 sollten Muttern der Festigkeitsklasse 8 benutzt werden.
+    - table:
+      - rowgroup:
+        - row "Produkteigenschaft Wert":
+          - columnheader "Produkteigenschaft"
+          - columnheader "Wert"
+      - rowgroup:
+        - 'row "Info VPE: Erklärung zur Inhaltsangabe \" Originalkarton zu xx Stk.*\" Bei Abnahme dieser Stückzahl liefern wir in der Originalverpackung der Herstellers. Um die Lieferfähigkeit zu gewährleisten, beziehen wir Ware teilweise von unterschiedlichen Herstellern/Lieferanten, weshalb leider auch oftmals unterschiedlich große Verpackungseinheiten (VPEs) haben. Wir sind bemüht immer in Originalverpackungen zu liefern, können dies bei unterschiedlichen VPEs nicht zu 100% garantieren. Verkaufslose: Alle unsere Produkte werden in 1, 10 oder 100 Stk. Verkaufslosen angeboten. Wenn Sie z.B. einen Artikel mit der Losgröße \"10 Stk.\" nun 3 x in den Warenkorb legen, so erhalten Sie 3 x 10 = 30 Stk. Mehrere Lose gleicher Artikel werden gemeinsam verpackt in einem Zipp Beutel mit Identifizierung oder im Originalkarton geliefert (weitere Details, Losgrößen und Staffelpreise finden Sie hier)"':
+          - cell "Info VPE:"
+          - 'cell "Erklärung zur Inhaltsangabe \" Originalkarton zu xx Stk.*\" Bei Abnahme dieser Stückzahl liefern wir in der Originalverpackung der Herstellers. Um die Lieferfähigkeit zu gewährleisten, beziehen wir Ware teilweise von unterschiedlichen Herstellern/Lieferanten, weshalb leider auch oftmals unterschiedlich große Verpackungseinheiten (VPEs) haben. Wir sind bemüht immer in Originalverpackungen zu liefern, können dies bei unterschiedlichen VPEs nicht zu 100% garantieren. Verkaufslose: Alle unsere Produkte werden in 1, 10 oder 100 Stk. Verkaufslosen angeboten. Wenn Sie z.B. einen Artikel mit der Losgröße \"10 Stk.\" nun 3 x in den Warenkorb legen, so erhalten Sie 3 x 10 = 30 Stk. Mehrere Lose gleicher Artikel werden gemeinsam verpackt in einem Zipp Beutel mit Identifizierung oder im Originalkarton geliefert (weitere Details, Losgrößen und Staffelpreise finden Sie hier)"':
+            - heading "Erklärung zur Inhaltsangabe \" Originalkarton zu xx Stk.*\"" [level=4]
+            - generic: Bei Abnahme dieser Stückzahl liefern wir in der Originalverpackung der Herstellers. Um die Lieferfähigkeit zu gewährleisten, beziehen wir Ware teilweise von unterschiedlichen Herstellern/Lieferanten, weshalb leider auch oftmals unterschiedlich große Verpackungseinheiten (VPEs) haben. Wir sind bemüht immer in Originalverpackungen zu liefern, können dies bei unterschiedlichen VPEs nicht zu 100% garantieren.
+            - strong: "Verkaufslose:"
+            - text: Alle unsere Produkte werden in
+            - strong: 1, 10 oder 100 Stk
+            - text: . Verkaufslosen angeboten. Wenn Sie z.B. einen Artikel mit der Losgröße "10 Stk." nun 3 x in den Warenkorb legen, so erhalten Sie 3 x 10 = 30 Stk. Mehrere Lose gleicher Artikel werden gemeinsam verpackt in einem Zipp Beutel mit Identifizierung oder im Originalkarton geliefert (weitere Details, Losgrößen und Staffelpreise finden Sie
+            - link "hier":
+              - /url: /Shopbedienung
+            - text: )
+            - paragraph
+    - generic: Angaben zur Produktsicherheit
+    - strong: "Herstellerinformationen:"
+    - text: Schraubenking GmbH
+    - text: Katzenberg 58
+    - text: Kirchdorf am Inn, Österreich, 4982
+    - text: shop@schraubenking.at
+    - text: https://www.schraubenking.at
+  - generic: "Kunden kauften dazu folgende Artikel:"
+  - link "M3 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.) M3 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.) 1,06 € * 1,06 € pro 100 Stück":
+    - /url: https://www.schraubenking-shop.de/M3-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P002545
+    - img "M3 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.)"
+    - generic: M3 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.)
+    - generic: 1,06 € *
+    - generic: 1,06 € pro 100 Stück
+  - link "M4 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.) M4 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.) 1,06 € * 1,06 € pro 100 Stück":
+    - /url: https://www.schraubenking-shop.de/M4-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P002610
+    - img "M4 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.)"
+    - generic: M4 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.)
+    - generic: 1,06 € *
+    - generic: 1,06 € pro 100 Stück
+  - link "2,2mm Unterlegscheiben DIN125 Edelstahl A2 (100 Stk.) 2,2mm Unterlegscheiben DIN125 Edelstahl A2 (100 Stk.) 0,99 € * 0,99 € pro 100 Stück":
+    - /url: https://www.schraubenking-shop.de/22mm-Unterlegscheiben-DIN125-Edelstahl-A2-P004198
+    - img "2,2mm Unterlegscheiben DIN125 Edelstahl A2 (100 Stk.)"
+    - generic: 2,2mm Unterlegscheiben DIN125 Edelstahl A2 (100 Stk.)
+    - generic: 0,99 € *
+    - generic: 0,99 € pro 100 Stück
+  - link "M5 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.) M5 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.) 1,12 € * 1,12 € pro 100 Stück":
+    - /url: https://www.schraubenking-shop.de/M5-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P002611
+    - img "M5 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.)"
+    - generic: M5 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.)
+    - generic: 1,12 € *
+    - generic: 1,12 € pro 100 Stück
+  - link "M2 x 8mm Zylinderschrauben DIN912 Edelstahl A2 (10 Stk.) M2 x 8mm Zylinderschrauben DIN912 Edelstahl A2 (10 Stk.) 0,89 € * 8,93 € pro 100 Stück":
+    - /url: https://www.schraubenking-shop.de/M2-x-8mm-Zylinderschrauben-DIN912-Edelstahl-A2-P002802
+    - img "M2 x 8mm Zylinderschrauben DIN912 Edelstahl A2 (10 Stk.)"
+    - generic: M2 x 8mm Zylinderschrauben DIN912 Edelstahl A2 (10 Stk.)
+    - generic: 0,89 € *
+    - generic: 8,93 € pro 100 Stück
+  - link "M6 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.) M6 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.) 1,50 € * 1,50 € pro 100 Stück":
+    - /url: https://www.schraubenking-shop.de/M6-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P000443
+    - img "M6 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.)"
+    - generic: M6 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (100 Stk.)
+    - generic: 1,50 € *
+    - generic: 1,50 € pro 100 Stück
+  - link "3,2mm Unterlegscheiben DIN125 Stahl verzinkt (100 Stk.) 3,2mm Unterlegscheiben DIN125 Stahl verzinkt (100 Stk.) 0,82 € * 0,82 € pro 100 Stück":
+    - /url: https://www.schraubenking-shop.de/32mm-Unterlegscheiben-DIN125-Stahl-verzinkt-P002539
+    - img "3,2mm Unterlegscheiben DIN125 Stahl verzinkt (100 Stk.)"
+    - generic: 3,2mm Unterlegscheiben DIN125 Stahl verzinkt (100 Stk.)
+    - generic: 0,82 € *
+    - generic: 0,82 € pro 100 Stück
+  - generic: Ähnliche Artikel
+  - link "M12 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt... M12 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt FKL8 (10 Stk.) 2,52 € * 25,23 € pro 100 Stück":
+    - /url: https://www.schraubenking-shop.de/M12-Sechskantmuttern-Linksgewinde-DIN934-Stahl-verzinkt-FKL8-P004721
+    - img "M12 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt..."
+    - generic: M12 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt FKL8 (10 Stk.)
+    - generic: 2,52 € *
+    - generic: 25,23 € pro 100 Stück
+  - link "M20 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt... M20 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt FKL8 (1 Stk.) 1,11 € * 110,67 € pro 100 Stück":
+    - /url: https://www.schraubenking-shop.de/M20-Sechskantmuttern-Linksgewinde-DIN934-Stahl-verzinkt-FKL8-P003379
+    - img "M20 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt..."
+    - generic: M20 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt FKL8 (1 Stk.)
+    - generic: 1,11 € *
+    - generic: 110,67 € pro 100 Stück
+  - link "M2 Sechskantmuttern DIN934 Edelstahl A2 (100 Stk.) M2 Sechskantmuttern DIN934 Edelstahl A2 (100 Stk.) 1,86 € * 1,86 € pro 100 Stück":
+    - /url: https://www.schraubenking-shop.de/M2-Sechskantmuttern-DIN934-Edelstahl-A2-P002807
+    - img "M2 Sechskantmuttern DIN934 Edelstahl A2 (100 Stk.)"
+    - generic: M2 Sechskantmuttern DIN934 Edelstahl A2 (100 Stk.)
+    - generic: 1,86 € *
+    - generic: 1,86 € pro 100 Stück
+  - link "M16x1.5 Feingewinde Sechskantmuttern DIN934 Stahl... M16x1.5 Feingewinde Sechskantmuttern DIN934 Stahl verzinkt FKL8 (10 Stk.) 2,25 € * 22,49 € pro 100 Stück":
+    - /url: https://www.schraubenking-shop.de/M16x15-Feingewinde-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P003839
+    - img "M16x1.5 Feingewinde Sechskantmuttern DIN934 Stahl..."
+    - generic: M16x1.5 Feingewinde Sechskantmuttern DIN934 Stahl verzinkt FKL8 (10 Stk.)
+    - generic: 2,25 € *
+    - generic: 22,49 € pro 100 Stück
+  - link "M6 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt... M6 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt FKL8 (100 Stk.) 3,12 € * 3,12 € pro 100 Stück":
+    - /url: https://www.schraubenking-shop.de/M6-Sechskantmuttern-Linksgewinde-DIN934-Stahl-verzinkt-FKL8-P003371
+    - img "M6 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt..."
+    - generic: M6 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt FKL8 (100 Stk.)
+    - generic: 3,12 € *
+    - generic: 3,12 € pro 100 Stück
+  - link "M16 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt... M16 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt FKL8 (10 Stk.) 2,92 € * 29,16 € pro 100 Stück":
+    - /url: https://www.schraubenking-shop.de/M16-Sechskantmuttern-Linksgewinde-DIN934-Stahl-verzinkt-FKL8-P004722
+    - img "M16 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt..."
+    - generic: M16 Sechskantmuttern Linksgewinde DIN934 Stahl verzinkt FKL8 (10 Stk.)
+    - generic: 2,92 € *
+    - generic: 29,16 € pro 100 Stück
+  - link "M16 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (10 Stk.) M16 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (10 Stk.) 1,84 € * 18,45 € pro 100 Stück":
+    - /url: https://www.schraubenking-shop.de/M16-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P001547
+    - img "M16 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (10 Stk.)"
+    - generic: M16 Sechskantmuttern DIN934 Stahl verzinkt FKL8 (10 Stk.)
+    - generic: 1,84 € *
+    - generic: 18,45 € pro 100 Stück
+  - generic: "* *"
+- contentinfo:
+  - text: 
+  - generic: Informationen
+  - region "Informationen ":
+    - navigation:
+      - link "Wir über uns":
+        - /url: https://www.schraubenking-shop.de/Wir-ueber-uns
+      - link "Zahlung":
+        - /url: https://www.schraubenking-shop.de/Zahlung
+      - link "Versandinformationen":
+        - /url: https://www.schraubenking-shop.de/Versandinformationen
+      - link "Bestellvorgang":
+        - /url: https://www.schraubenking-shop.de/Bestellvorgang
+  - text: 
+  - generic: Gesetzliche Informationen
+  - region "Gesetzliche Informationen ":
+    - navigation:
+      - link "Datenschutz":
+        - /url: https://www.schraubenking-shop.de/Datenschutz
+      - link "AGB":
+        - /url: https://www.schraubenking-shop.de/AGB
+      - link "Sitemap":
+        - /url: https://www.schraubenking-shop.de/Sitemap
+      - link "Impressum":
+        - /url: https://www.schraubenking-shop.de/Impressum
+      - link "Widerrufsrecht":
+        - /url: https://www.schraubenking-shop.de/Widerrufsrecht
+      - paragraph:
+        - link "Vertrag widerrufen":
+          - /url: https://www.schraubenking-shop.de/Ruecktrittsformular
+  - generic: Zahlung / Versand
+  - paragraph:
+    - img "Paypal"
+    - img "Kreditkarten"
+    - img "SEPA"
+    - img "Vorkasse"
+  - paragraph:
+    - img "GooglePay"
+    - img "ApplePay"
+    - img "Kauf auf Rechnung"
+  - paragraph:
+    - link ">> Zahlungsdetails":
+      - /url: https://www.schraubenking-shop.de/Zahlung
+  - paragraph:
+    - img "Post"
+    - img "DHL"
+    - img "GLS"
+  - paragraph:
+    - link ">> Versanddetails":
+      - /url: https://www.schraubenking-shop.de/Versandinformationen
+  - generic: Kontakt & Service
+  - paragraph: Wir beraten Sie gerne unter
+  - heading "Telefon +43 (0)7723 42616 MO-FR 7-11:30 / 13:00-16 Uhr" [level=3]:
+    - img "Telefon"
+    - text: +43 (0)7723 42616
+    - text: MO-FR 7-11:30 / 13:00-16 Uhr
+  - heading "Email shop@schraubenking.at" [level=3]:
+    - img "Email"
+    - link "shop@schraubenking.at":
+      - /url: mailto:shop@schraubenking.at
+  - paragraph:
+    - text: oder über unser
+    - link "Kontaktformular":
+      - /url: https://www.schraubenking-shop.de/Kontakt
+  - paragraph
+  - text: "* Alle Preise inkl. gesetzlicher USt., zzgl."
+  - link "Versand":
+    - /url: https://www.schraubenking-shop.de/Versandinformationen
+  - generic: © by Schraubenking GmbH Alle Preise inkl. gesetzlicher USt.
+  - text: Powered by
+  - link "JTL-Shop":
+    - /url: https://jtl-url.de/jtlshop
+- text: ·
+- link "Logo von Shopauskunft Hervorragend 4.88 / 5.00":
+  - /url: https://www.shopauskunft.de/review/www.schraubenking.at
+  - img "Logo von Shopauskunft"
+  - img: xmlns="http://www.w3.org/2000/svg"> d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+  - img: xmlns="http://www.w3.org/2000/svg"> d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+  - img: xmlns="http://www.w3.org/2000/svg"> d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+  - img: xmlns="http://www.w3.org/2000/svg"> d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+  - img: xmlns="http://www.w3.org/2000/svg"> d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z">
+  - generic: Hervorragend
+  - generic: 4.88 / 5.00

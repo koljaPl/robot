@@ -94,21 +94,28 @@ unresolved costs, never zero. Quantities include full packs where sold as packs.
 | Sensors | [Funduino F23107397 MPU6050 module](https://funduino.com/products/mpu-6050-modul-triaxial-beschleunigungssensor-gyroskop) — Funduino | 1 | 3.62 | 3.62 | Header soldering/board orientation to confirm |
 | Power | [Mean Well GST40A05-P1J 5 V 5 A desktop PSU](https://www.berrybase.de/meanwell-schaltnetzteil-5v-dc-5-0a-mit-hohlstecker-5-5x2-1mm) — BerryBase | 1 | 15.50 | 15.50 | C14 inlet; centre-positive 5.5 x 2.1 mm; no mains lead in package |
 | Power | [Goobay 68604 Schuko to C13, 1.5 m](https://www.berrybase.de/kaltgeraete-netzkabel-schutzkontakt-stecker-abgewinkelt-iec320-c13-buchse-schwarz) — BerryBase | 1 | 3.81 | 3.81 | Exact 1.5 m variant; 10 A AC rating |
-| Wiring/connectors | [Official Raspberry Pi RPI-MUSB-1 USB data cable 1 m](https://www.berrybase.de/offizielles-raspberry-pi-micro-usb-kabel-rot-1-0m) — BerryBase | 1 | 1.80 | 1.80 | USB-A PC assumed; USB-C-only PC requires extra adapter, currently not priced |
-| Wiring/connectors | [DUPK-40-FF-20, 40 female-female Dupont leads, 20 cm](https://www.berrybase.de/40pin-jumper-dupont-kabel-female-female-trennbar/laenge-0-20-m) — BerryBase | 1 | 1.80 | 1.80 | Logic/IMU only, AWG28; never main servo power; replacement/source required; NOT cleared |
+| Wiring/connectors | [Official Raspberry Pi RPI-MUSB-1 USB data cable 1 m](https://www.berrybase.de/offizielles-raspberry-pi-micro-usb-kabel-rot-1-0m) — BerryBase | 1 | 1.80 | 1.80 | USB-A to Micro-B DATA cable required for Pico. No separate adapter in base basket, per user. Add a priced data adapter only if PC has no USB-A; port not confirmed. |
+| Wiring/connectors | [DUPK-40-FF-50, 40 female-female Dupont leads, 50 cm](https://www.berrybase.de/40pin-jumper-dupont-kabel-female-female-trennbar/laenge-0-50-m) — BerryBase | 1 | 2.20 | 2.20 | Available replacement for unavailable 20 cm SKU; logic/IMU only. Helper routes/shortens excess as needed; never servo power. Long I2C leads require bench validation. |
 | Wiring/connectors | [Funduino F23108007 JR-Futaba extension, 10 cm](https://funduino.com/products/jr-futaba-servo-verlangerung-kabel-10cm-female-male) — Funduino | 6 | 1.14 | 6.84 | Helper prepares power-injection harness; branch current rating/gauge unverified; now native Pico signals; helper separates high-current power from GPIO |
 | Wiring/connectors | [Donau E-175-10 red copper wire 0.75 mm², 10 m roll](https://www.berrybase.de/donau-kupferschaltlitze-0-75-mm2-10m-lang-1-adrig-24x0-20mm-pvc-isoliert) — BerryBase | 1 | 5.90 | 5.90 | Short <=10 cm power buses; label negative with black shrink; no long thin power tether |
 | Power | [AiSHi ELK1M16VAWH 1000 µF 16 V capacitor](https://www.berrybase.de/elektrolytkondensator-1000-f-16v-1050c-1-radial-tht) — BerryBase | 1 | 0.29 | 0.29 | Polarity matters; actual tolerance ±20%, inconsistent page title ignored |
 | Wiring/connectors | [PINH-1X40P 40-pin 2.54 mm header](https://www.berrybase.de/stiftleiste-1x-40-polig-rm-2-54-gerade) — BerryBase | 1 | 0.60 | 0.60 | Helper cuts/solders signal and sensor headers as needed; Pico headers already fitted |
 | Wiring/connectors | [McPower T1535561 heat-shrink, 100 pieces](https://www.berrybase.de/schrumpfschlauch-set-100-teilig-schwarz) — BerryBase | 1 | 1.90 | 1.90 | Insulate helper-soldered harness; mark polarity; helper supplies solder as workshop consumable |
 | Fasteners | [McPower T1535501 cable ties, 100 x 2.5 mm, pack of 100](https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-100x2-5mm) — BerryBase | 1 | 0.45 | 0.45 | 8 board mounts, 4 cable strain relief, 8 harness restraints; keep away from pinch points |
-| Mechanical | [7 ready-finished PETG frames + 2 bonded TPU soles, VAT and German shipping](https://meltlab.de/preise) — Print service, quote pending | 1 | **pending** | **pending** | Exact STL upload quote unavailable; no printer/browser surface available. Not a price allowance |
-| Mechanical | [6 matching horns + 6 servo shaft retaining screws](https://www.welectron.com/Waveshare-15024-MG90S-Servo_1) — Selected servo supplier; package confirmation pending | 1 | **pending** | **pending** | Required. Do not assume included; exact spline/horn pattern/shaft screw thread unknown |
-| Fasteners | 12 M2 x 8 mm ear screws, 12 M2 nuts, 24 M2 washers; 12 horn-to-frame screws/washers matched to supplied horns — Print-service assembly kit quote pending | 1 | **pending** | **pending** | Dimensions/lengths provisional; supplier must include a matching kit and factory-clear holes. No drilling/tapping by assembler |
-| Power | [5 A rated DC female 5.5 x 2.1 mm input pigtail/coupler and accessible disconnect, strain relief](https://www.delock.de/produkt/83290/pdf.html?sprache=de) — Not selected: current-rated connector still unresolved | 1 | **pending** | **pending** | Candidate Delock 83290: manufacturer 18 AWG,5 A,24 V,5.5x2.1mm,50cm. Helper retains female pigtail. Exact delivered retailer price unresolved; alternate.de lists EUR4.29 + shipping from EUR7.99, non-stock; not a complete checkout quote. |
+| Mechanical | [7 PETG frames in one unchanged-geometry batch STL, support removal, VAT and German DHL delivery](https://meltlab.de/konfigurator) — Meltlab instant configurator | 1 | 48.70 | 48.70 | File-specific observed web quote, not order: parts24.66 + support removal11.90 + order fee5.95 + DHL6.19. PETG black, 100% scale, 0.2mm,3walls,25%infill. Does NOT include soles, bonding, fit sample, hole finishing or fasteners. Quote-only orientation; re-quote final measured geometry. See docs/procurement/2026-10-23/quotes.json. |
+| Mechanical | [6 matching horns + 6 servo shaft retaining screws](https://www.welectron.com/Waveshare-15024-MG90S-Servo_1) — Selected servo supplier; package confirmation pending | 1 | **pending** | **pending** | Manufacturer package photo shows three horn shapes and three screws, but text lists servo only. Six selected horns and six correct retainers required; exact Welectron batch inclusion/spline/thread/geometry remain unconfirmed. No generic 25T substitution; no extra horns bought until confirmed. |
+| Fasteners | 12 horn-to-frame screws and 12 matching washers — Servo/print supplier; interface confirmation pending | 1 | **pending** | **pending** | Two per horn; thread, diameter, length and washer size unconfirmed. Not the shaft-retaining screws. Match factory horn holes and frame thickness without drilling/tapping; supplier/helper must price and fit-check. M2 ear fasteners now separately sourced. |
+| Power | [Goobay 11638 DC socket 5.5 x 2.1 mm, solder lugs, 5 A](https://www.berrybase.de/dc-einbaubuchse-fuer-hohlstecker-5-5x2-1mm-metallausfuehrung-loetanschluss) — BerryBase | 1 | 1.10 | 1.10 | Retailer specifies 5 A / 30 V DC, nut and washer. Helper solders short 0.75 mm2 bus, insulates lugs/case and provides strain relief using listed shrink/ties; support off robot. Unplug PSU DC for physical cutoff. Not branch-current or electrical verification. |
 | Shipping | [Welectron German DPD shipping](https://www.welectron.com/Shipping-cost) — Welectron | 1 | 4.95 | 4.95 | Basket under €49 free-shipping threshold |
 | Shipping | [BerryBase German DHL shipping](https://www.berrybase.de/versand-und-zahlungsbedingungen) — BerryBase | 1 | 4.95 | 4.95 | DHL EUR4.95 below EUR200; free-shipping threshold changed from recorded EUR150 |
-| Shipping | [Funduino German shipping](https://funduino.com/policies/shipping-policy) — Funduino | 1 | **pending** | **pending** | Shop moved to funduino.com; shipping policy returned no usable rate; old EUR4.90 not revalidated |
+| Shipping | [Funduino German shipping](https://funduino.com/policies/shipping-policy) — Funduino | 1 | 4.90 | 4.90 | Current policy opened in browser: Germany standard DHL EUR4.90 inclVAT; free only from EUR69 after discounts; tracking; no express surcharge. Snapshot docs/procurement/2026-10-23/funduino-shipping.txt |
+| Mechanical | [2 TPU 95A soles 90 x 45 x 1 mm in one batch STL, VAT and separate German DHL delivery](https://meltlab.de/konfigurator) — Meltlab instant configurator | 1 | 20.09 | 20.09 | Actual two-component file: parts7.95 + order fee5.95 + DHL6.19. Black,100%scale,0.2mm,3walls,4top/bottom layers,15%infill setting (1mm slab filled by skins). No support removal needed for flat slabs; bonding/adhesive NOT quoted. Combined-material order savings not confirmed. |
+| Mechanical | [Hole finishing, sole bonding/adhesive and mounting fit sample including any extra delivery](https://meltlab.de/kontakt) — Print service/helper: quote pending | 1 | **pending** | **pending** | Print web prices cover printing and PETG support removal only. Required assembly-ready finishing/bonding, actual fit check and any sample costs remain unknown; do not assume free. |
+| Fasteners | [Schraubenking P010265 M2 x 8 PH DIN7985 zinc-plated steel 4.8, pack100](https://www.schraubenking-shop.de/M2-x-8mm-Linsenkopfschrauben-PH-DIN7985-Stahl-verzinkt-FKL48-P010265) — Schraubenking | 1 | 1.51 | 1.51 | 12 ear screws used; 88 spare. Exact length/ear fit provisional. Head4mm dia/1.6mm high, PH1; M2 coarse thread. Do not order before stack/clearance review. |
+| Fasteners | [Schraubenking P003474 M2 DIN934 zinc-plated steel class8 nuts, pack100](https://www.schraubenking-shop.de/M2-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P003474) — Schraubenking | 1 | 1.13 | 1.13 | 12 used;88spare. Current browser price1.13; stale cached page1.16/20%VAT rejected. SW4,1.6mm high,0.4mm pitch; match M2 ear screws. |
+| Fasteners | [Schraubenking P004198 M2 DIN125 A2 washers 2.2 x 5 x 0.3 mm, pack100](https://www.schraubenking-shop.de/22mm-Unterlegscheiben-DIN125-Edelstahl-A2-P004198) — Schraubenking | 1 | 0.99 | 0.99 | 24 used at ears: one under each head and nut. 76spare; horn washer compatibility not presumed. Check5mm OD clears plastic ear/slot and horn sweep. |
+| Shipping | [Schraubenking German standard DHL delivery](https://www.schraubenking-shop.de/Versandinformationen) — Schraubenking | 1 | 5.90 | 5.90 | Current Germany standard rate below99EUR; DHL1-3days afterdispatch. No priority selected. One shipment for all three fastener packs. |
+| Preparation | Helper soldering, insulation/strain relief and workshop consumables — School/helper, not yet confirmed | 1 | **pending** | **pending** | Headers, capacitor, six power-injection branches and DC socket. Tools excluded but robot consumables/labour must be confirmed donated or priced. No free preparation assumed. |
 
 Optional: spare matching servo, thin protective surface, slack safety thread,
 longer adequate power/USB tethers. These are not silently needed to make the
@@ -118,90 +125,134 @@ short initial indoor trial work; several-metre travel needs a newly budgeted tet
 
 ```json
 {
-  "status": "INCOMPLETE",
-  "known_delivered_subtotal_eur": "78.91",
-  "remaining_for_all_unknowns_eur": "21.09",
-  "confirmed_minimum_shortfall_eur": "0.00",
+  "status": "OVER BUDGET",
+  "known_delivered_subtotal_eur": "163.63",
+  "remaining_for_all_unknowns_eur": "-63.63",
+  "confirmed_minimum_shortfall_eur": "63.63",
   "total_price_eur": null,
   "pending_prices": [
-    "7 ready-finished PETG frames + 2 bonded TPU soles, VAT and German shipping",
     "6 matching horns + 6 servo shaft retaining screws",
-    "12 M2 x 8 mm ear screws, 12 M2 nuts, 24 M2 washers; 12 horn-to-frame screws/washers matched to supplied horns",
-    "5 A rated DC female 5.5 x 2.1 mm input pigtail/coupler and accessible disconnect, strain relief",
-    "Funduino German shipping"
+    "12 horn-to-frame screws and 12 matching washers",
+    "Hole finishing, sole bonding/adhesive and mounting fit sample including any extra delivery",
+    "Helper soldering, insulation/strain relief and workshop consumables"
   ],
   "unresolved_checks": [
-    "Delivered print/fastener/sole quote",
-    "Actual servo ear/shaft/horn dimensions and horn inclusion",
-    "5 A rated input connector, short bus and extension branch suitability",
-    "Servo signal threshold works at 3.3 V",
-    "Helper labour confirmed free or its quoted charge included",
-    "USB-A computer port available",
-    "Actual delivered checkout totals and stock",
-    "Native Pico 3.3 V signal compatibility and timed PWM capture",
-    "Unavailable FF jumpers need sourced available replacement",
-    "Funduino shipping after shop migration",
-    "Delock 83290 delivered price and correct 18 AWG variant (retailer description conflicts)"
+    "Reduce complete delivered route below EUR100; current known subset alone exceeds cap by EUR63.63",
+    "Six-unit Welectron stock and exact batch horn/retainer inclusion",
+    "Actual servo ear/shaft/spline/horn dimensions; choose horn screws and verify M2x8 grip length",
+    "Print structural orientation, factory-clear holes, sole bonding/adhesive, fit sample and any added deliveries",
+    "JR branch wire/contact current suitability and actual six-servo current/droop",
+    "3.3V servo input threshold and measured PWM/IMU timing",
+    "Helper labour and consumables confirmed free or quoted",
+    "German postcode and final checkout confirmation; no address entered or order placed",
+    "USB-A availability; no adapter in base basket unless PC lacks USB-A"
   ],
   "purchase_cleared": false
 }
 ```
 
-### Procurement evidence and precise outstanding actions
+### Component and delivery review — 2026-10-23
 
-Updated2026-10-23. Authoritative prices and unknowns: `procurement.json`.
-`python tools/budget_gate.py` computes the known sum; unknown costs remain null.
-Current selected revision removes PCA9685 and its OE resistor; six MG90S retained.
-Direct Pico PWM supplies16 channels according to official RP2040 documentation;
-six share three slices, with no shortage of channels. It does not verify the
-servo's3.3V input or make the harness free. GPIO protection/loading/timing need
-one-servo bench measurements before approval.
+**Procurement stopped: this selected route has €163.63 of priced positions, already
+€63.63 above the €100 cap, before remaining required costs. Nothing ordered or
+reserved; no supplier messages sent.** This is a route-specific shortfall, not proof
+that every possible supplier route costs this much. The full total remains unknown.
+Authoritative quantities/prices: [procurement.json](../procurement.json).
 
-Research changes: PSU now€15.50; MPU module now€3.62; JR extension public sale
-€1.14; red0.75mm² wire€5.90. BerryBase DHL remains€4.95 but free threshold is now
-€200. Welectron shipping€4.95 below€49 DPD threshold. Funduino moved to
-funduino.com; shipping could not be refreshed from usable policy content, so the
-old€4.90 is **not** silently retained. Pico/USB/header/cap/shrink/ties listings
-were reviewed. FF jumper live variants unavailable, despite cached stock claims;
-an available replacement and any changed price/shipping still need evidence.
+#### What was resolved
 
-No file-specific delivered print quotation was obtained. Meltlab's public
-[pricing explanation](https://meltlab.de/preise) requires uploading exact files
-and slicing. Its examples are not a quote. There was no enabled browser surface
-for this session, and no supplier message/purchase was authorized or sent.
-`cad/quote_bundle.zip` is a quotation/fit-review bundle only. Do not order it as
-released manufacturing files: horn interfaces and fastener sweeps remain unknown.
+- Six exact Waveshare15024 MG90S remain €21.00 inclVAT at
+  [Welectron](https://www.welectron.com/Waveshare-15024-MG90S-Servo_1).
+  Listing says short supply; six-unit availability is not established.
+- Available **DUPK-40-FF-50**, 40 female/female 50cm leads, replaces unavailable20cm:
+  [BerryBase €2.20](https://www.berrybase.de/40pin-jumper-dupont-kabel-female-female-trennbar/laenge-0-50-m).
+  Logic only; helper must keep I2C short and validate the completed harness.
+- **Goobay11638**, 5.5×2.1mm solder socket, is listed at
+  [BerryBase €1.10](https://www.berrybase.de/dc-einbaubuchse-fuer-hohlstecker-5-5x2-1mm-metallausfuehrung-loetanschluss),
+  rated5A/30V DC with nut/washer. Replaces unpriced Delock83290 candidate.
+  This is a retailer specification, not an electrical test. Insulation/strain relief
+  and branch ratings remain helper/bench gates. No servo current through Pico.
+- Funduino's **current** [policy](https://funduino.com/policies/shipping-policy)
+  confirms standard German DHL **€4.90**, free above€69 after discounts, tracking.
+  The browser resolved the previously inaccessible policy; [snapshot](procurement/2026-10-23/funduino-shipping.txt).
+- Exact standard M2 ear fastener packs now sourced:100 screws€1.51,
+  100nuts€1.13,100washers€0.99; DHL€5.90. Used quantities12/12/24.
+  See the linked SKUs in SUMMARY; lengths and clearance remain provisional.
+- No USB adapter is in the base basket. USB-A–Micro-B **data cable remains required**;
+  only a PC without USB-A needs an additional priced adapter.
 
-#### Questions ready for a human to send or resolve
+#### File-specific print prices — actual web calculations, no order
 
-1. **Welectron, Waveshare15024:** Are six units available together at€3.50inclVAT?
-   Does each include a matching horn set and shaft-retaining screw? Please provide
-   spline count/diameter, screw thread/length, horn thickness and hole pattern,
-   ear hole spacing/diameter, ear plane relative to shaft, shaft-center offset,
-   housing drawing and lead exit. Is3.3V PWM guaranteed? Any current/continuous
-   torque data for this exact batch? Do not substitute a different MG90S brand.
-2. **Print service:** Review the seven individual PETG STLs and two TPU soles in
-   the bundle, NOT quotation_plate as an extra part. Quote0.2mm layers/three walls/
-   25%infill, supports removed, all holes factory-clear for assembly without
-   drilling/tapping, two bonded TPU95A soles including adhesive, matched fastener
-   kit, VAT and delivery to Germany. Quote a sample horn/cradle interface first,
-   with separate shipping if applicable. Identify all fit modifications and quote
-   any CAD/finishing labour. Manufacturing release waits for measured interfaces.
-3. **Harness supplier/helper:** Confirm ratings for JR branch contacts/wires and
-   the full5A DC input. Candidate Delock83290 manufacturer's data says18AWG;
-   retailer metadata conflict must be resolved. Quote delivered input pigtail,
-   strain relief and any preparation fee. Confirm the helper's labour/consumables
-   are free or add its price. No guessed free horns/screws/connector substitutions.
-4. **Checkout:** Resolve FF logic leads with exact available SKU; confirm sensor/
-   extension combined shipping and all retailer totals including VAT. Confirm PC
-   has USB-A; otherwise include an actually priced data adapter. If bench and full
-   orders are split, charge every additional delivery, including sample prints.
+[Quote records/settings/hashes](procurement/2026-10-23/quotes.json).
 
-**Gate:** known-priced subtotal€78.91 is not a delivered price. All unresolved
-items must fit the remaining€21.09. There is no confirmed monetary shortfall yet;
-there is missing evidence. If a complete delivered quote exceeds€100, report
-`total−100` and stop procurement. €50–75 is already below the known-priced subset;
-it is not demonstrated feasible. No weaker motor substitution is authorized.
+| Job, qty1 file at100% scale | Parts € | Support removal € | Order fee € | DHL € | Delivered € |
+|---|---:|---:|---:|---:|---:|
+| Seven PETG parts in compact batch |24.66|11.90|5.95|6.19|**48.70**|
+| Two TPU95A sole slabs in batch |7.95|0.00|5.95|6.19|**20.09**|
+
+VAT19% included. Quote from [Meltlab configurator](https://meltlab.de/konfigurator):
+PETG black,0.2mm,3walls,25%infill; TPU black,0.2mm,3walls,4top/bottom layers,
+15%infill setting (skins fill the1mm slab). Advertised4workingdays production
+**after payment**, then DHL1–2workingdays. No delivery date or slot reserved.
+Germany selected; no postcode/address entered. Combined-material order fees and
+shipping savings are **unconfirmed**; costs conservatively count two jobs.
+The seven-individual-file alternative was€78.31; not added to the basket.
+
+`cad/quotation/` contains seven and two disconnected original components, respectively;
+these layouts replace individual-file submission, not extra robot parts.
+`tools/quote_layout.py` preserves dimensions/volume and records source hashes.
+**Layouts are for quotation only:** structural layer orientation and actual fit require
+review. Web prices do not cover hole clearing, horn-fit inspection, a sample,
+adhesive/sole bonding, or a matched screw kit. TPU grip is not measured.
+The original compact-PETG checkout text was recovered from this session transcript
+after its temporary tab expired; no batch screenshot. The sole quote has saved DOM
+and screenshot.
+Final measured files/settings must be re-quoted before purchase.
+
+#### Horns and fasteners: do not guess compatibility
+
+Waveshare's [package photograph](https://www.waveshare.com/img/devkit/accBoard/MG90S-Servo/MG90S-Servo-1.jpg)
+shows three horn shapes and three screws. Both manufacturer and retailer text list
+only one servo. This supports accessory availability, **not exact Welectron-batch
+inclusion or a known spline, screw thread, hole pattern or fit**. No generic25T horn
+or guessed M2 centre screw is selected. Keep six matched horns/retainers unpriced
+until the supplier confirms their inclusion or an exact compatible accessory price.
+
+M2 ear mounting needs12screws,12nuts,24washers. For the proposed3mm printed plate,
+0.3mm washers and1.6mm nut, M2×8 leaves2.8mm for ear thickness **before** allowing
+thread projection; one0.4mm pitch of projection leaves2.4mm. This is a calculated
+fit check, not evidence the real ear is thin enough. Head diameter4mm, washer OD5mm
+and nut SW4 also need sweep/access checks. Do not clamp/crush a plastic ear.
+The12horn-to-frame screws and12washers are separate from six shaft retainers;
+factory horn holes may require a different diameter/thread. Do not drill/tap horns.
+
+#### Precise human/supplier actions — drafts, not sent
+
+1. **Welectron, WS8-015024:**
+   “Bitte bestätigen Sie6gleiche Waveshare15024 zu je3,50€inklMwSt ab Lager,
+   inklusive passender Servohebel und je einer Abtriebs-Befestigungsschraube.
+   Welche Verzahnung, Schraubengewinde/-länge und Hebel-Lochmaße sind enthalten?
+   Bitte Maßzeichnung für Gehäuse, Befestigungsohren, Wellenmitte und Kabelausgang;
+   ist3,3V PWM garantiert?” Confirm exact stock and contents before selecting spares.
+2. **Print provider, after measured interface approval:**
+   “Bitte Angebot für7PETG-Teile und2TPU95A-Sohlen90×45×1mm gemäß Dateien,
+   maßhaltig und montagefertig: Stützen entfernt, Löcher frei, Sohlen verklebt
+   inklusive Klebstoff. Bitte Schichtorientierung und Schraubenpassung prüfen;
+   separates Muster, Nacharbeit, gemischte Materialien und Versand nach Deutschland
+   vollständig ausweisen. Keine Fertigung ohne Freigabe.” Provide final hashes;
+   ask for one combined shipment/fee, but do not assume a discount.
+3. **Helper:** confirm free labour/consumables or quote them; inspect socket polarity,
+   fully insulated low-voltage input and short buses, JR branch fit/gauge/contacts,
+   MCU signal levels and short I2C leads. Bench-test current/droop/watchdog/cutoff.
+4. **User:** German delivery postcode and PC USB-A availability remain unanswered.
+   Final address/payment stays with user. No paid priority/split shipments selected.
+   Any bench/sample-first split adds new deliveries; recheck the full budget first.
+
+**Next:** obtain a genuinely cheaper complete frame/sole/finishing route with exact
+files (for example a school/local service quote, never assumed free), or explicitly
+revise the budget with the user. Current electronics/delivery€85.31 plus ear-fastener
+shipment€9.53 leaves only€5.16 for every print, horn, finishing and helper unknown.
+Do not recommend the current over-budget basket for ordering; do not weaken servos.
 
 ## 7. Mechanical design
 
@@ -253,6 +304,19 @@ not confirmed bolt collisions, but cannot be cleared without actual horn/screw
 geometry. Run `python tools/check_clearance.py`; nonzero exit means no release.
 The exploded view shows frame, servo-case and PCB envelopes; actual horn/fastener
 fit remains specified provisionally in the ledger/schedule and is not certified.
+
+#### 2026-10-23 purchasing/fit clarification
+
+[Exact component/delivery review](../docs/PROCUREMENT_ACTIONS.md) contains the
+three M2 pack links (buy100each; install12screws/12nuts/24washers) and separate
+unknown horn hardware. M2×8 is provisional:3mm printed plate+two0.3mmwashers+
+1.6mmnut leaves2.8mm for the ear, before thread projection. Check actual stack,
+head4mm/washer5mm/nutSW4 sweep and wrench access; change length only after measurement.
+The12horn-frame screws/12washers are not the six centre shaft retainers.
+Manufacturer photo shows accessory horns/screws but exact retailer-batch fit/inclusion
+is not confirmed. Do not order generic25T horns or assume centre screws areM2.
+Compact quotation layouts are alternatives to individual files, not extra parts;
+web prices exclude bonding and hole finishing. Current route exceeds budget; no order.
 
 Body origins/axes, command intervals and mass/COM below derive from the ledger.
 Unknown mechanical stops remain null and are absent from provisional MJCF.
@@ -1309,15 +1373,22 @@ several metres need a newly sourced thicker tether/longer USB cable and budget.
 1000µF stores only~0.04ms at4.8A for0.2V droop. Measure4.8–6V at the farthest
 loaded servo and check connector temperature.
 
-Accessible full-current DC unplug is the physical emergency cutoff. Candidate
-[Delock83290](https://www.delock.com/produkt/83290/merkmale.html?setLanguage=de)
-is specified18AWG/5A/24V; a helper could retain its female pigtail and join the
-short bus. Exact delivered price and conflicting retailer gauge description
-remain unresolved. Unrated Goobay76743 is not accepted as5A. JR branch gauge,
-contacts and actual servo currents also need confirmation. Do not clear the
-basket merely because a connector fits. STOP/PWM silence **does not physically
-disconnect motor power**; an analogue servo may hold its last position. Always
-disarm before reconnecting DC. Support tether weight near the body COM.
+Accessible full-current DC unplug is the physical emergency cutoff. Selected
+provisional input: [Goobay11638,EUR1.10](https://www.berrybase.de/dc-einbaubuchse-fuer-hohlstecker-5-5x2-1mm-metallausfuehrung-loetanschluss),
+5.5×2.1mm solder socket with nut/washer; retailer specifies5A/30V DC. Replaces the
+unpriced Delock pigtail. Helper solders short0.75mm² bus leads, separately insulates
+lugs and outer metal, and secures strain relief with listed shrink/ties. Support this
+connection off robot. Verify centre-positive continuity and insulation before power.
+No exposed low-voltage metal may short to boards/fasteners. No mains modification.
+JR branch gauge/contacts and actual servo current still require confirmation.
+Socket rating is not a complete harness or bench approval. Unrated Goobay76743
+is not accepted as5A. STOP/PWM silence **does not disconnect motor power**;
+a servo may hold its last position. Always disarm before reconnecting DC.
+
+USB-A–Micro-B data cable connects Pico directly to a USB-A PC; **no extra adapter**
+in base basket. Only a PC without USB-A needs a separately sourced data adapter.
+Available50cm Dupont pack replaces unavailable20cm; helper keeps I2C wiring short
+and secures excess. No servo supply current in any Dupont jumper.
 
 #### Pin table
 
@@ -3370,6 +3441,10 @@ States and actual evidence belong in STATUS.md. No stage is physically verified 
 | F / 8,9,10,11,13 | User: bench, assembly, calibration and physical trials; AI: firmware/tools/data analysis/report | Real test data; frozen compatible policies; equal trials and alternating A/B order |
 | Extensions / 12 | Future: turning, terrain, recovery | Stable baseline walking first; no automatic scope expansion |
 
+Current procurement route is blocked atEUR163.63before unresolved costs; quotes exist
+but no manufacturing release or order. Next is a cheaper complete delivered route,
+not repeating example-price research or silently increasing theEUR100cap.
+
 #### Fixed engineering contracts
 
 - Joint order L hip/knee/ankle, R hip/knee/ankle; +Y pitch, +X roll.
@@ -3424,7 +3499,7 @@ physical transfer has taken place.
 | Stage | State | Actual evidence / blocker |
 |---|---|---|
 | Requirements / entry | implemented | AGENTS.md, ROADMAP.md, this file; six joints and EUR100 maximum retained |
-| A: hardware research | blocked | Refreshed procurement.json; known-priced subset EUR78.91, total unknown; exact print/fastener/input/shipping evidence missing |
+| A: hardware research | blocked | Refreshed procurement.json; known-priced route EUR163.63, EUR63.63over cap before unknowns; file-specific PETG/TPU quotes obtained; horn/fit/finishing/helper costs remain |
 | B: mechanics | implemented / blocked | Native-PWM revision removes PCA envelope; CAD/ledger agree at199.4g estimated;55poses yield550 unreviewed fastener-proxy overlaps, no manufacturing release |
 | C: bench/interface | locally verified | C++ official Pico SDK2.3.1 build/UF2; Python host/bench/deployment, persistent compiled calibration, explicit arm/watchdog/CRC/fingerprints; no electrical test |
 | D: twin/RL | locally verified provisional |29tests, compilation/mass/axes/inertias, Gym/SB3, clipped commands, discrete delay, corrected reward, gait exploit tests; measured response and lifted-step reference still missing |
@@ -3437,7 +3512,7 @@ physical transfer has taken place.
 - Six Waveshare15024 MG90S, hip pitch/knee pitch/ankle roll per leg.
 - Pico H **direct native PWM** GP0,1,2,3,6,7; MPU6050 GP4/5;50Hz commands/200Hz IMU.
   PCA9685 removed from current basket/spec because unavailable and extra mounting conflict.
-- Wired5V/5A PSU with separate USB logic and common ground. Input/branch ratings and
+- Wired5V/5A PSU with separate USB logic and common ground. Input socket now sourced5A; branch ratings and
   MG90S3.3V signal threshold remain unresolved. No programmable hardware torque cap.
 - Basket/evidence: `procurement.json`, `docs/PROCUREMENT_ACTIONS.md`, `SERVO_COMPARISON.md`.
 - Geometry/mass/dynamics/provenance: `physical_spec.json`; generated `robot.xml`,
@@ -3488,9 +3563,11 @@ only through the isolated replay tool; no saved checkpoint is currently deployme
 
 #### Remaining blockers and unknown assumptions
 
-1. **Procurement:** exact delivered print/finishing/sole/fastener quote, horn/screw contents,
-   rated input connection, Funduino shipping, available FF jumpers and any helper charge.
-   EUR21.09 remains for all unknowns. No exact shortfall is known; total is not established.
+1. **Procurement:** selected route alreadyEUR163.63before unpriced horn/retainer,
+   horn screws/washers, hole finishing/sole bonding/sample and helper costs. Known
+   route shortfallEUR63.63. Exact PETG48.70/TPU20.09web quotes are NOT an assembly-ready
+   kit. FF50cmreplacement,5Ainput socket and Funduino4.90shipping now sourced.
+   No order, supplier message, reserved stock or production slot. Six servo stock pending.
 2. **Fit:** ear/shaft/spline/horn geometry and fastener sweeps unmeasured.550proxy overlaps
    are not550confirmed physical bolt collisions. Resolve actual hardware interfaces first.
 3. **Physics:** servo sustainable torque/current, loaded response/latency/backlash, supply
@@ -3503,15 +3580,15 @@ only through the isolated replay tool; no saved checkpoint is currently deployme
 
 #### Exact next task / executable checks
 
-**Next human-dependent task:** resolve the four precise supplier/checkout questions in
-`docs/PROCUREMENT_ACTIONS.md`; obtain a file-specific delivered fit/print quote. No messages
+**Next human-dependent task:** resolve the route overrun and precise questions in
+`docs/PROCUREMENT_ACTIONS.md`; obtain a cheaper complete delivered fit/print quote. No messages
 or purchases have been sent. Do not order a complete frame before servo/horn sample fit.
 
 **Next software command:**
 
 ```bash
 .venv/bin/python -m pytest -q
-.venv/bin/python tools/budget_gate.py # expected exit2, incomplete
+.venv/bin/python tools/budget_gate.py # expected exit1, over budget
 .venv/bin/python tools/check_clearance.py # expected exit1, proxy conflicts
 ```
 
@@ -3519,6 +3596,17 @@ Then use received dimensions/quotes to replace unknowns; helper/user performs th
 bench and IMU measurements in CALIBRATION.md. Provisional independent tooling is prepared;
 formal training and physical completion remain blocked by `docs/gates.json`. Do not set a
 gate true without linked evidence. Generated full reference: `docs/HANDOFF.md`.
+
+#### Procurement follow-up evidence
+
+`docs/procurement/2026-10-23/quotes.json` records actual STL-based printing prices,
+not public example allowances. The sole quote and Funduino policy have saved DOM;
+the original compact-PETG checkout text was recovered from this session transcript
+after its tab expired (no screenshot).
+`tools/quote_layout.py` creates quotation-only unchanged-geometry batches, with
+source hashes. Actual layer orientation, fit, bonding and grip remain unverified.
+No physics/control code or current identity changed. Prior basket preserved under
+`docs/history/2026-10-23/pre_delivery_check/`. USB adapter omitted unless PC lacksUSB-A.
 
 ### Local verification record —2026-10-23
 

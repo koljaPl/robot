@@ -1,0 +1,159 @@
+Original browser tool quotation output recovered from this session transcript; no screenshot.
+
+Browser tab: 2, Title: "3D-Druck Sofortpreis berechnen | Meltlab", URL: "https://meltlab.de/konfigurator?material=PETG".
+0 AXWebArea 3D-Druck Sofortpreis berechnen | Meltlab, URL: meltlab.de/konfigurator?material=PETG
+	1 container root
+		2 container Notifications (F8)
+			3 content list
+		4 container Notifications alt+T
+		5 container
+			6 link Description: Geschäftskunde oder SLS, Harz & Metall gesucht? 3D-Druckdienstleister.de, Value: 3d-druckdienstleister.de/
+			7 link Description: +49 5221 12 13 100, Value: tel:+4952211213100
+			8 link Description: info@meltlab.de, Value: mailto:info@meltlab.de
+			9 link Description: Meltlab Logo, Value: meltlab.de/
+			10 link Description: STARTSEITE, Value: meltlab.de/
+			11 link Description: KONFIGURATOR, Value: meltlab.de/konfigurator
+			12 link Description: PERSONALISIEREN, Value: meltlab.de/personalisieren
+			13 link Description: MATERIALIEN, Value: meltlab.de/materialien
+			14 link Description: PREISE, Value: meltlab.de/preise
+			15 link Description: RATGEBER, Value: meltlab.de/ratgeber
+			16 link Description: MIETEN, Value: meltlab.de/mieten
+			17 link Description: ÜBER UNS, Value: meltlab.de/ueber-uns
+			18 link Description: KONTAKT, Value: meltlab.de/kontakt
+			19 link Description: Mein Konto, Value: meltlab.de/konto
+		20 container
+			21 text Sofortpreis
+			22 heading 3D-Druck online bestellen · Sofortpreis, Value: 1
+				23 text 3D-Druck online bestellen  ·  Sofortpreis
+			24 container
+				25 text Keine eigene Datei? 
+				26 link Description: Geschenke mit Namen personalisieren, Value: meltlab.de/personalisieren
+			27 text 3D-Druck-Service: STL hochladen, Material und Farbe wählen, Sofortpreis erhalten und nach Fertigung in 2–4 Arbeitstagen versenden lassen.
+			28 heading FRAGE ZU BAUTEIL, MATERIAL ODER LIEFERZEIT?, Value: 2
+				29 text FRAGE ZU BAUTEIL, MATERIAL ODER LIEFERZEIT?
+			30 container Suche nach Bauteilen, Materialien und Lieferzeit
+				31 text Suchbegriff
+				32 search text field (settable) Suchbegriff, ID: answer-search
+				33 button Suchen
+			34 image
+			35 text Datei
+			36 image
+			37 text Optionen 3 Bestellen
+			38 heading Bestellung abschließen, Value: 2
+				39 text Bestellung abschließen
+			40 text Adresse, Zusammenfassung und Zahlung.
+			41 heading Deine Bestellung, Value: 3
+				42 text Deine Bestellung
+			43 image Thumbnail von petg_seven_batch.stl
+			44 text petg_seven_batch.stl
+			45 container
+				46 text PETG  · Schwarz  ·  1  Stück
+			47 text PETG · Standard · 25% Füllung · Bauplatte: Textured PEI · Stützen: Gleiches Material · Support entfernen
+			48 text 24,66 €
+			49 text Preis-Impact deiner Einstellungen
+			50 text Füllung 25% —  mehr Material & längere Druckzeit Nachbearbeitung: Support entfernen —  manueller Arbeitsaufwand pro Bauteil
+			51 text Alle übrigen erweiterten Optionen (z. B. Schichtdicke) sind bereits im Teilepreis enthalten.
+			52 text Teile 24,66  € Nachbearbeitung (einmalig) 11,90  € Auftragspauschale 5,95  € Versand · DHL Zustellung in 1–2 Werktagen nach Fertigstellung 6,19  € Gesamt inkl.  19 % MwSt. 48,70  €
+			53 text Fertigung in 4 Arbeitstagen, danach Versand
+			54 text Ab Zahlungseingang; die Transportzeit kommt hinzu.
+			55 heading Lieferadresse, Value: 3
+				56 text Lieferadresse
+			57 text Vorname *
+			58 text field (settable) Vorname *, ID: firstName
+			59 text Nachname *
+			60 text field (settable) Nachname *, ID: lastName
+			61 container
+				62 text Firma  (optional)
+			63 text field (settable) Firma (optional), ID: company
+			64 text E-Mail *
+			65 text field (settable) E-Mail *
+			66 text Telefon *
+			67 text field (settable) Telefon *
+			68 text Straße + Hausnummer *
+			69 text field (settable) Straße + Hausnummer *, ID: street
+			70 text PLZ *
+			71 text field (settable) PLZ *, ID: zip
+			72 text Stadt *
+			73 text field (settable) Stadt *, ID: city
+			74 text Land *
+			75 combo box (collapsed) Value: Deutschland, Secondary Actions: Expand
+				76 text Deutschland
+			77 checkbox Value: 0, ID: createAccount, Description: Kostenloses Kundenkonto anlegen (optional – Bestellungen, Rechnungen und Entwürfe jederzeit ohne Passwort per Einmal-Code einsehen)
+			78 container
+				79 text Kostenloses Kundenkonto anlegen  (optional – Bestellungen, Rechnungen und Entwürfe jederzeit ohne Passwort per Einmal-Code einsehen)
+			80 button Zurück
+				81 image
+				82 text Zurück
+			83 button Weiter zur Zahlung
+				84 text Weiter zur Zahlung
+				85 image
+			86 heading Gutschein-Code, Value: 3
+				87 text Gutschein-Code
+			88 text field (settable)
+			89 button (disabled) Einlösen
+			90 container zahlung-section
+				91 heading Rechtliche Hinweise, Value: 3
+					92 text Rechtliche Hinweise
+				93 container
+					94 checkbox (settable, integer) Description: Ich habe die AGB gelesen und erkenne sie an., Value: 0
+					95 text Ich habe die 
+					96 link Description: AGB, Value: meltlab.de/agb
+					97 text  gelesen und erkenne sie an.
+				98 container
+					99 checkbox (settable, integer) Description: Ich habe die Datenschutzerklärung zur Kenntnis genommen., Value: 0
+					100 text Ich habe die 
+					101 link Description: Datenschutzerklärung, Value: meltlab.de/datenschutz
+					102 text  zur Kenntnis genommen.
+				103 container
+					104 checkbox (settable, integer) Value: 0, Description: Optional: Ich bin damit einverstanden, dass meine E-Mail-Adresse und/oder Telefonnummer an DHL übermittelt werden, um Benachrichtigungen zur Paketverfolgung und Zustellung zu erhalten. Diese Einwilligung kann jederzeit mit Wirkung für die Zukunft widerrufen werden.
+					105 text Optional: Ich bin damit einverstanden, dass meine E-Mail-Adresse und/oder Telefonnummer an DHL übermittelt werden, um Benachrichtigungen zur Paketverfolgung und Zustellung zu erhalten. Diese Einwilligung kann jederzeit mit Wirkung für die Zukunft widerrufen werden.
+				106 text Zahlungsmethode
+				107 button PayPal Sofortzahlung, Kreditkarte möglich
+					108 text PayPal
+					109 text Sofortzahlung, Kreditkarte möglich
+				110 button Banküberweisung Vorkasse · Produktion nach Zahlungseingang
+					111 image
+					112 text Banküberweisung
+					113 text Vorkasse · Produktion nach Zahlungseingang
+				114 container
+					115 text Mit Klick auf den PayPal-Button gibst du eine  verbindliche, zahlungspflichtige Bestellung  ab.
+				116 text PayPal-Button erscheint, sobald Adresse & Hinweise vollständig sind
+				117 text Bitte fülle die Lieferadresse vollständig aus, um die Bestellung abzuschließen.
+				118 button Zurück zu Optionen
+					119 image
+					120 text Zurück zu Optionen
+		121 container
+			122 image Meltlab Logo
+			123 text Deine Idee. Schicht für Schicht. XH Group
+			124 image
+			125 text Neuer Markt 2, 32052 Herford
+			126 image
+			127 link Description: info@meltlab.de, Value: mailto:info@meltlab.de
+			128 image
+			129 link Description: +49 5221 12 13 100, Value: tel:+4952211213100
+			130 link Description: Per WhatsApp fragen, Value: wa.me/4917664189523
+			131 text Leistungen:
+			132 link Description: Preise, Value: meltlab.de/preise
+			133 link Description: Materialien, Value: meltlab.de/materialien
+			134 link Description: Ratgeber, Value: meltlab.de/ratgeber
+			135 link Description: Personalisieren, Value: meltlab.de/personalisieren
+			136 link Description: Multicolor 3D-Druck, Value: meltlab.de/multicolor-3d-druck
+			137 link Description: Bambu Lab Druckservice, Value: meltlab.de/bambu-lab-druckservice
+			138 link Description: FAQ, Value: meltlab.de/faq
+			139 link Description: Suche, Value: meltlab.de/suche
+			140 text Regionen:
+			141 link Description: 3D-Druck Herford, Value: meltlab.de/3d-druck-herford
+			142 link Description: 3D-Druck Bielefeld, Value: meltlab.de/3d-druck-bielefeld
+			143 link Description: 3D-Druck NRW, Value: meltlab.de/3d-druck-nrw
+			144 text B2B & Industrie:
+			145 link Description: Geschäftskunden, Value: meltlab.de/geschaeftskunden
+			146 link Description: 3D-Druckdienstleister (SLS, Harz & Metall), Value: 3d-druckdienstleister.de/
+			147 link Description: Kontakt, Value: meltlab.de/kontakt
+			148 link Description: Mein Konto, Value: meltlab.de/konto
+			149 link Description: Impressum, Value: meltlab.de/impressum
+			150 link Description: Datenschutz, Value: meltlab.de/datenschutz
+			151 link Description: Widerruf, Value: meltlab.de/widerruf
+			152 link Description: AGB, Value: meltlab.de/agb
+			153 text © 2026 Meltlab
+
+The focused UI element is 0 AXWebArea 3D-Druck Sofortpreis berechnen | Meltlab, URL: meltlab.de/konfigurator?material=PETG

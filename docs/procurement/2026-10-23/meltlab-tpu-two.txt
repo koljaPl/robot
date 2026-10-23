@@ -1,0 +1,196 @@
+- region "Notifications (F8)":
+  - list
+- region "Notifications alt+T"
+- banner:
+  - link "Geschäftskunde oder SLS, Harz & Metall gesucht? 3D-Druckdienstleister.de":
+    - /url: https://3d-druckdienstleister.de
+    - generic: Geschäftskunde oder SLS, Harz & Metall gesucht?
+    - generic: 3D-Druckdienstleister.de
+  - link "+49 5221 12 13 100":
+    - /url: tel:+4952211213100
+    - generic: +49 5221 12 13 100
+  - link "info@meltlab.de":
+    - /url: mailto:info@meltlab.de
+    - generic: info@meltlab.de
+  - link "Meltlab Logo":
+    - /url: /
+    - img "Meltlab Logo"
+  - navigation:
+    - link "Startseite":
+      - /url: /
+    - link "Konfigurator":
+      - /url: /konfigurator
+    - link "Personalisieren":
+      - /url: /personalisieren
+    - link "Materialien":
+      - /url: /materialien
+    - link "Preise":
+      - /url: /preise
+    - link "Ratgeber":
+      - /url: /ratgeber
+    - link "Mieten":
+      - /url: /mieten
+    - link "Über uns":
+      - /url: /ueber-uns
+    - link "Kontakt":
+      - /url: /kontakt
+  - link "Mein Konto":
+    - /url: /konto
+    - generic: Mein Konto
+- main:
+  - paragraph: Sofortpreis
+  - heading "3D-Druck online bestellen · Sofortpreis" [level=1]
+  - paragraph:
+    - text: Keine eigene Datei?
+    - link "Geschenke mit Namen personalisieren":
+      - /url: /personalisieren
+  - paragraph: "3D-Druck-Service: STL hochladen, Material und Farbe wählen, Sofortpreis erhalten und nach Fertigung in 2–4 Arbeitstagen versenden lassen."
+  - heading "Frage zu Bauteil, Material oder Lieferzeit?" [level=2]
+  - search "Suche nach Bauteilen, Materialien und Lieferzeit":
+    - generic: Suchbegriff
+    - searchbox "Suchbegriff"
+    - button "Suchen"
+  - generic: Datei
+  - generic: Optionen
+  - generic: "3"
+  - generic: Bestellen
+  - heading "Bestellung abschließen" [level=2]
+  - paragraph: Adresse, Zusammenfassung und Zahlung.
+  - heading "Deine Bestellung" [level=3]
+  - img "Thumbnail von tpu_two_soles_batch.stl"
+  - paragraph: tpu_two_soles_batch.stl
+  - paragraph: TPU 95A · Schwarz · 1 Stück
+  - paragraph: "TPU 95A · Standard · 15% Füllung · Bauplatte: Textured PEI · Stützen: Gleiches Material"
+  - generic: 7,95 €
+  - generic: Teile
+  - generic: 7,95 €
+  - generic: Auftragspauschale
+  - generic: 5,95 €
+  - text: Versand · DHL
+  - generic: Zustellung in 1–2 Werktagen nach Fertigstellung
+  - generic: 6,19 €
+  - generic: Gesamt inkl. 19% MwSt.
+  - generic: 20,09 €
+  - paragraph: Fertigung in 4 Arbeitstagen, danach Versand
+  - paragraph: Ab Zahlungseingang; die Transportzeit kommt hinzu.
+  - heading "Lieferadresse" [level=3]
+  - text: Vorname *
+  - textbox "Vorname *":
+    - /placeholder: Max
+  - text: Nachname *
+  - textbox "Nachname *":
+    - /placeholder: Mustermann
+  - generic: Firma (optional)
+  - textbox "Firma (optional)":
+    - /placeholder: Musterfirma GmbH
+  - text: E-Mail *
+  - textbox "E-Mail *":
+    - /placeholder: max@beispiel.de
+  - text: Telefon *
+  - textbox "Telefon *":
+    - /placeholder: +49 123 456789
+  - text: Straße + Hausnummer *
+  - textbox "Straße + Hausnummer *":
+    - /placeholder: Musterstraße 1
+  - text: PLZ *
+  - textbox "PLZ *":
+    - /placeholder: "12345"
+  - text: Stadt *
+  - textbox "Stadt *":
+    - /placeholder: Musterstadt
+  - text: Land *
+  - combobox:
+    - generic: Deutschland
+  - checkbox "Kostenloses Kundenkonto anlegen (optional – Bestellungen, Rechnungen und Entwürfe jederzeit ohne Passwort per Einmal-Code einsehen)"
+  - generic: Kostenloses Kundenkonto anlegen (optional – Bestellungen, Rechnungen und Entwürfe jederzeit ohne Passwort per Einmal-Code einsehen)
+  - button "Zurück":
+    - text: Zurück
+  - button "Weiter zur Zahlung":
+    - text: Weiter zur Zahlung
+  - heading "Gutschein-Code" [level=3]
+  - textbox "Code eingeben"
+  - button "Einlösen" [disabled]
+  - heading "Rechtliche Hinweise" [level=3]
+  - checkbox "Ich habe die AGB gelesen und erkenne sie an."
+  - text: Ich habe die
+  - link "AGB":
+    - /url: /agb
+  - text: gelesen und erkenne sie an.
+  - checkbox "Ich habe die Datenschutzerklärung zur Kenntnis genommen."
+  - text: Ich habe die
+  - link "Datenschutzerklärung":
+    - /url: /datenschutz
+  - text: zur Kenntnis genommen.
+  - 'checkbox "Optional: Ich bin damit einverstanden, dass meine E-Mail-Adresse und/oder Telefonnummer an DHL übermittelt werden, um Benachrichtigungen zur Paketverfolgung und Zustellung zu erhalten. Diese Einwilligung kann jederzeit mit Wirkung für die Zukunft widerrufen werden."'
+  - generic: "Optional: Ich bin damit einverstanden, dass meine E-Mail-Adresse und/oder Telefonnummer an DHL übermittelt werden, um Benachrichtigungen zur Paketverfolgung und Zustellung zu erhalten. Diese Einwilligung kann jederzeit mit Wirkung für die Zukunft widerrufen werden."
+  - paragraph: Zahlungsmethode
+  - button "PayPal Sofortzahlung, Kreditkarte möglich":
+    - paragraph: PayPal
+    - paragraph: Sofortzahlung, Kreditkarte möglich
+  - button "Banküberweisung Vorkasse · Produktion nach Zahlungseingang":
+    - paragraph: Banküberweisung
+    - paragraph: Vorkasse · Produktion nach Zahlungseingang
+  - paragraph:
+    - text: Mit Klick auf den PayPal-Button gibst du eine
+    - strong: verbindliche, zahlungspflichtige Bestellung
+    - text: ab.
+  - generic: PayPal-Button erscheint, sobald Adresse & Hinweise vollständig sind
+  - paragraph: Bitte fülle die Lieferadresse vollständig aus, um die Bestellung abzuschließen.
+  - button "Zurück zu Optionen":
+    - text: Zurück zu Optionen
+- contentinfo:
+  - img "Meltlab Logo"
+  - generic: Deine Idee. Schicht für Schicht.
+  - paragraph: XH Group
+  - generic: Neuer Markt 2, 32052 Herford
+  - link "info@meltlab.de":
+    - /url: mailto:info@meltlab.de
+  - link "+49 5221 12 13 100":
+    - /url: tel:+4952211213100
+  - link "Per WhatsApp fragen":
+    - /url: https://wa.me/4917664189523
+    - text: Per WhatsApp fragen
+  - paragraph
+  - generic: "Leistungen:"
+  - link "Preise":
+    - /url: /preise
+  - link "Materialien":
+    - /url: /materialien
+  - link "Ratgeber":
+    - /url: /ratgeber
+  - link "Personalisieren":
+    - /url: /personalisieren
+  - link "Multicolor 3D-Druck":
+    - /url: /multicolor-3d-druck
+  - link "Bambu Lab Druckservice":
+    - /url: /bambu-lab-druckservice
+  - link "FAQ":
+    - /url: /faq
+  - link "Suche":
+    - /url: /suche
+  - generic: "Regionen:"
+  - link "3D-Druck Herford":
+    - /url: /3d-druck-herford
+  - link "3D-Druck Bielefeld":
+    - /url: /3d-druck-bielefeld
+  - link "3D-Druck NRW":
+    - /url: /3d-druck-nrw
+  - generic: "B2B & Industrie:"
+  - link "Geschäftskunden":
+    - /url: /geschaeftskunden
+  - link "3D-Druckdienstleister (SLS, Harz & Metall)":
+    - /url: https://3d-druckdienstleister.de
+    - text: 3D-Druckdienstleister (SLS, Harz & Metall)
+  - link "Kontakt":
+    - /url: /kontakt
+  - link "Mein Konto":
+    - /url: /konto
+  - link "Impressum":
+    - /url: /impressum
+  - link "Datenschutz":
+    - /url: /datenschutz
+  - link "Widerruf":
+    - /url: /widerruf
+  - link "AGB":
+    - /url: /agb
+  - generic: © 2026 Meltlab

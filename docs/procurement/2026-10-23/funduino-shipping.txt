@@ -1,0 +1,242 @@
+- region "Cookie-Einwilligung":
+  - dialog "Diese Webseite benutzt Cookies":
+    - heading "Diese Webseite benutzt Cookies" [level=2]:
+      - generic: Diese Webseite benutzt Cookies
+    - text: Wir nutzen Cookies und ähnliche Technologien. Manche sind für den Shop technisch notwendig, andere helfen uns zu verstehen, wie unser Shop genutzt wird, und unsere Werbung passend auszuspielen. Dabei werden auch Daten an Dienstleister übertragen. Du entscheidest selbst, was du zulässt und kannst deine Auswahl jederzeit ändern.
+    - link "Datenschutzerklärung":
+      - /url: /policies/terms-of-service
+    - link "Impressum":
+      - /url: /pages/imprint-page
+    - button "Einstellungen"
+    - button "Ablehnen"
+    - button "Akzeptieren"
+- link "Direkt zum Inhalt":
+  - /url: "#MainContent"
+- complementary:
+  - paragraph:
+    - strong: "Schulen & Unternehmen:"
+    - text: Kauf auf Rechnung vorübergehend per Vorkasse + kurze Mail an
+    - link "info@funduino.de":
+      - /url: mailto:info@funduino.de
+    - text: . Mehr Infos →
+  - 'link "Schulen & Unternehmen: Kauf auf Rechnung vorübergehend per Vorkasse + kurze Mail an info@funduino.de. Mehr Infos →"':
+    - /url: /blogs/neuigkeiten/neuer-shop-aktueller-stand
+    - generic: "Schulen & Unternehmen: Kauf auf Rechnung vorübergehend per Vorkasse + kurze Mail an info@funduino.de. Mehr Infos →"
+- 'link "Kundenrabatte werden gerade eingerichtet, bis dahin 10 % für alle mit dem Code: START10 12 Tage 04 Std 26 Min"':
+  - /url: /collections/aktion-sale
+  - text: "Kundenrabatte werden gerade eingerichtet, bis dahin 10 % für alle mit dem Code:"
+  - generic: START10
+  - generic: "12"
+  - generic: Tage
+  - generic: ":"
+  - generic: "04"
+  - generic: Std
+  - generic: ":"
+  - generic: "26"
+  - generic: Min
+- banner:
+  - link "Funduino - Startseite":
+    - /url: /
+    - img "Funduino - Startseite"
+  - button "Suche nach Mikrocontroller, Sensoren …":
+    - generic: Suche nach Mikrocontroller, Sensoren …
+  - button "Deutsch Sprache":
+    - generic: Deutsch
+    - generic: Sprache
+  - button "Konto":
+  - button "Warenkorb":
+  - status
+- navigation "Kategorien":
+  - list:
+    - link "Bildung":
+      - /url: /collections/bildung
+      - text: Bildung
+    - link "Elektronische Module":
+      - /url: /collections/elektronische-module
+      - text: Elektronische Module
+    - link "Bauelemente":
+      - /url: /collections/bauelemente
+      - text: Bauelemente
+    - link "Robotik":
+      - /url: /collections/robotik
+      - text: Robotik
+    - link "Kreativtechnik":
+      - /url: /collections/kreativtechnik
+      - text: Kreativtechnik
+    - link "Werkstatt":
+      - /url: /collections/werkstatt
+      - text: Werkstatt
+    - link "Sale":
+      - /url: /collections/sale
+    - link "Bundles":
+      - /url: /collections/bundles
+- main:
+  - heading "Versand" [level=1]
+  - paragraph: Wir liefern nach Deutschland, in alle unten genannten EU-Länder und in die Schweiz.
+  - table:
+    - rowgroup:
+      - row "Versandart / Land Versandkosten (inkl. MwSt.)":
+        - cell "Versandart / Land":
+          - strong: Versandart / Land
+        - cell "Versandkosten (inkl. MwSt.)":
+          - strong: Versandkosten (inkl. MwSt.)
+      - row "Deutschland – Standard (DHL) 4,90 €":
+        - cell "Deutschland – Standard (DHL)":
+          - strong: Deutschland – Standard (DHL)
+        - cell "4,90 €":
+          - strong: 4,90 €
+      - row "Deutschland – Standard ab 69 € Warenwert kostenlos":
+        - cell "Deutschland – Standard ab 69 € Warenwert"
+        - cell "kostenlos":
+          - strong: kostenlos
+      - row "Deutschland – priorisierte Bearbeitung (DHL) 6,90 €":
+        - cell "Deutschland – priorisierte Bearbeitung (DHL)":
+          - strong: Deutschland – priorisierte Bearbeitung (DHL)
+        - cell "6,90 €":
+          - strong: 6,90 €
+      - row "Deutschland – priorisierte Bearbeitung ab 69 € Warenwert 1,99 €":
+        - cell "Deutschland – priorisierte Bearbeitung ab 69 € Warenwert"
+        - cell "1,99 €":
+          - strong: 1,99 €
+      - row "Schweiz 12,90 €":
+        - cell "Schweiz":
+          - strong: Schweiz
+        - cell "12,90 €":
+          - strong: 12,90 €
+      - 'row "EU-Länder: Belgien, Bulgarien, Dänemark, Estland, Finnland, Frankreich, Griechenland, Irland, Italien, Kroatien, Lettland, Litauen, Luxemburg, Malta, Niederlande, Österreich, Polen, Portugal, Rumänien, Schweden, Slowakei, Slowenien, Spanien, Tschechien, Ungarn, Zypern 7,90 €"':
+        - 'cell "EU-Länder: Belgien, Bulgarien, Dänemark, Estland, Finnland, Frankreich, Griechenland, Irland, Italien, Kroatien, Lettland, Litauen, Luxemburg, Malta, Niederlande, Österreich, Polen, Portugal, Rumänien, Schweden, Slowakei, Slowenien, Spanien, Tschechien, Ungarn, Zypern"':
+          - strong: "EU-Länder:"
+          - text: Belgien, Bulgarien, Dänemark, Estland, Finnland, Frankreich, Griechenland, Irland, Italien, Kroatien, Lettland, Litauen, Luxemburg, Malta, Niederlande, Österreich, Polen, Portugal, Rumänien, Schweden, Slowakei, Slowenien, Spanien, Tschechien, Ungarn, Zypern
+        - cell "7,90 €":
+          - strong: 7,90 €
+  - paragraph:
+    - text: Die Grenze von 69 € gilt für den Warenwert
+    - strong: nach Abzug von Rabatten
+    - text: ". Beispiel: Ihre Bestellung kostet 70 € und Sie ziehen den Bildungsrabatt von 10 % ab. Dann liegt der Warenwert bei 63 €, und der Versand wird berechnet."
+  - heading "Speditionsware" [level=3]
+  - paragraph:
+    - text: Große und schwere Artikel (z. B. humanoide Roboter, Roboterhunde, Cobots und CO2-Lasercutter) liefern wir per Spedition. Die Lieferung erfolgt
+    - strong: frei Bordsteinkante
+    - text: ": Die Spedition stellt die Ware am Straßenrand vor der Lieferadresse ab. Das Hineintragen in das Gebäude oder in bestimmte Räume ist nicht enthalten. Die Spedition meldet sich vorher, um einen Liefertermin zu vereinbaren."
+  - heading "Rücksendung von Speditionsware" [level=4]
+  - paragraph: Bitte melden Sie sich vor der Rücksendung von Speditionsware bei uns. Auf Wunsch organisieren wir die Abholung für Sie. Die Kosten dafür teilen wir Ihnen vorab mit. Wenn Sie die Rücksendung selbst organisieren, bitten wir Sie, eine versicherte Versandart zu wählen, die Ware transportsicher zu verpacken und ihren Zustand vor der Übergabe an die Spedition mit Fotos festzuhalten. Bitte bewahren Sie den Einlieferungsbeleg auf.
+  - paragraph: Diese Bitten sind keine Voraussetzung für die wirksame Ausübung Ihres Widerrufsrechts.
+  - heading "Allgemeine Informationen zum Warenversand bei Funduino" [level=3]
+  - heading "Wie lange dauert es, bis ich meine Bestellung erhalte?" [level=4]
+  - paragraph: 95,2 % unserer Sendungen innerhalb Deutschlands werden in maximal zwei Werktagen zugestellt. Bei Speditionsware, Sperrgut und beim Versand in andere Länder kann die Lieferung etwas länger dauern.
+  - heading "Bekomme ich für meine Sendung eine Sendungsverfolgungsnummer?" [level=4]
+  - paragraph: Wir versenden grundsätzlich mit Sendungsverfolgung. Die Sendungsnummer finden Sie in der Versandbestätigung per E-Mail und in Ihrem Kundenkonto unter „Bestellungen“.
+  - heading "Hinweise zur Verzollung beim Versand in Drittländer" [level=4]
+  - paragraph: Bei Sendungen in Drittländer (z. B. in die Schweiz) können Einfuhrabgaben wie Zoll und Einfuhrumsatzsteuer anfallen. Diese erhebt bei der Einfuhr die zuständige Zollstelle des jeweiligen Landes.
+  - heading "Erstattung der Umsatzsteuer bei Ausfuhr in Drittländer" [level=4]
+  - paragraph:
+    - text: Sie empfangen Ihre Bestellung in Deutschland und führen sie anschließend zur weiteren Verwendung in ein Drittland aus? Dann können Sie sich die Umsatzsteuer nachträglich erstatten lassen. Voraussetzung ist ein ausgefülltes
+    - link "Formular":
+      - /url: https://www.zoll.de/SharedDocs/Downloads/DE/FormulareMerkblaetter/Privatpersonen/ausfuhr_abnehmerbescheinigung.html
+    - text: oder die Originalrechnung mit Zollstempel. Außerdem müssen die gesetzlichen Fristen eingehalten sein. Die Umsatzsteuer erstatten wir auf das ursprüngliche Zahlungsmittel. Für diesen Service berechnen wir eine Bearbeitungsgebühr von 15,00 €.
+  - heading "Wir denken an die Umwelt" [level=4]
+  - paragraph: Alle unsere Mitarbeitenden sind darin unterwiesen, unnötigen Müll zu vermeiden. Wenn möglich, verwenden wir auch für Ihre Bestellung Kartonagen oder Füllmaterial, die schon einmal im Versandkreislauf waren. Dabei verwenden wir für Ihren Versand immer nur geprüfte Versandmaterialien.
+- contentinfo:
+  - heading "Jetzt Gratis-Versand sichern!" [level=2]
+  - paragraph: Melde dich zum Newsletter an und erhalte Projektideen, Neuheiten und Aktionen.
+  - generic: E-Mail-Adresse
+  - textbox "E-Mail-Adresse"
+  - button "Jetzt anmelden"
+  - img "Funduino"
+  - paragraph:
+    - text: Funduino GmbH
+    - text: Bornestraße 22
+    - text: 48529 Nordhorn
+  - heading "Funduino" [level=2]
+  - list "Funduino":
+    - link "Über uns":
+      - /url: /pages/ueber-uns
+    - link "Anleitungen":
+      - /url: /blogs/anleitungen
+    - link "Karriere":
+      - /url: /pages/karriere
+  - heading "Service" [level=2]
+  - list "Service":
+    - link "Versand & Lieferzeiten":
+      - /url: /policies/shipping-policy
+    - link "Kontakt":
+      - /url: https://6dbyqr-jf.myshopify.com/community/faq
+    - link "Gutscheine":
+      - /url: /collections/gutscheine
+    - link "Kundengruppe Bildungsbereich":
+      - /url: /pages/kundengruppe-bildungsbereich
+    - link "Funduino Affiliate Programm":
+      - /url: /pages/funduino-affiliate-programm
+    - link "Leihgeräte anfragen":
+      - /url: /pages/leihgerate
+  - heading "Informationen" [level=2]
+  - list "Informationen":
+    - link "Impressum":
+      - /url: /policies/legal-notice
+    - link "Datenschutzerklärung":
+      - /url: /policies/privacy-policy
+    - link "AGB":
+      - /url: /policies/terms-of-service
+    - link "Widerrufsbelehrung":
+      - /url: /policies/refund-policy
+    - link "Batteriegesetz-Hinweise":
+      - /url: /pages/batteriegesetz-battg
+    - link "WEEE / Elektroaltgeräte":
+      - /url: /pages/informationen-elektro-elektronikgeraete
+    - link "Cookie-Einstellungen":
+      - /url: "#reopenBanner"
+  - heading "Zahlungsarten" [level=2]
+  - group "Akzeptierte Zahlungsarten":
+    - img "PayPal"
+    - img "Google Pay"
+    - img "VISA"
+    - img "Mastercard"
+    - img "Amazon Pay"
+    - img "Apple Pay"
+    - img "Klarna"
+    - img "iDEAL"
+    - img "eps"
+  - heading "Versand" [level=2]
+  - img "Versand mit DHL"
+  - heading "Folge uns" [level=2]
+  - list "Folge uns":
+    - link "Facebook":
+      - /url: https://www.facebook.com/FunduinoGmbH/
+      - generic: Facebook
+    - link "Instagram":
+      - /url: https://www.instagram.com/funduino/
+      - generic: Instagram
+    - link "YouTube":
+      - /url: https://www.youtube.com/@funduino
+      - generic: YouTube
+    - link "TikTok":
+      - /url: https://www.tiktok.com/@funduino
+      - generic: TikTok
+  - link "Vertrag widerrufen":
+    - /url: /pages/widerrufsformular
+  - paragraph:
+    - text: "* Alle Preise inkl. gesetzlicher MwSt., zzgl."
+    - link "Versandkosten":
+      - /url: /policies/shipping-policy
+    - text: .
+  - paragraph: © 2026 Funduino GmbH
+- dialog "POPUP Form":
+  - button "Close dialog" [active]:
+  - img "login@mailody.de"
+  - heading "Neu hier?" [level=1]:
+    - strong: Neu hier?
+  - paragraph:
+    - text: Melden Sie sich jetzt zu unserem Newsletter an und erhalten Sie
+    - strong: kostenlosen Versand
+    - text: für Ihre erste Bestellung.
+  - generic: Vorname
+  - textbox "Vorname":
+    - /placeholder: Ihr Vorname
+  - generic: Nachname
+  - textbox "Nachname":
+    - /placeholder: Ihr Nachname
+  - generic: Email
+  - textbox "Email":
+    - /placeholder: Ihre E-Mail-Adresse
+  - button "Jetzt anmelden"
+  - alert

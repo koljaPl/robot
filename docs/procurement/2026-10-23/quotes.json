@@ -1,0 +1,108 @@
+{
+  "checked_date": "2026-10-23",
+  "shop": "Meltlab",
+  "url": "https://meltlab.de/konfigurator",
+  "evidence_state": "sourced",
+  "order_placed": false,
+  "address_entered": false,
+  "manufacturing_released": false,
+  "destination": "Germany selected; postcode not provided",
+  "quotes": [
+    {
+      "name": "PETG seven individual files",
+      "total_eur": 78.31,
+      "component_count": 7,
+      "parts_eur": null,
+      "support_removal_eur": 11.9,
+      "order_fee_eur": null,
+      "shipping_eur": null,
+      "vat_percent": 19,
+      "evidence": "meltlab-petg-seven.txt",
+      "production_workdays_after_payment": 4,
+      "transport_workdays_after_production": [
+        1,
+        2
+      ],
+      "not_included": [
+        "bonding/adhesive",
+        "hole fit/clearing",
+        "fasteners",
+        "fit sample",
+        "assembly"
+      ]
+    },
+    {
+      "name": "PETG compact batch",
+      "total_eur": 48.7,
+      "component_count": 7,
+      "parts_eur": 24.66,
+      "support_removal_eur": 11.9,
+      "order_fee_eur": 5.95,
+      "shipping_eur": 6.19,
+      "vat_percent": 19,
+      "evidence": "meltlab-petg-batch.txt (original browser checkout output recovered from session transcript; no screenshot)",
+      "production_workdays_after_payment": 4,
+      "transport_workdays_after_production": [
+        1,
+        2
+      ],
+      "not_included": [
+        "bonding/adhesive",
+        "hole fit/clearing",
+        "fasteners",
+        "fit sample",
+        "assembly"
+      ],
+      "file": "cad/quotation/petg_seven_batch.stl",
+      "sha256": "b2a8b33851ca65c9aaff6df451bf2f20a9680a26f1098e93de98cca90f172f9b",
+      "bbox_mm": [
+        185,
+        167,
+        38.25
+      ],
+      "scale_percent": 100,
+      "material": "PETG",
+      "colour": "black",
+      "layer_mm": 0.2,
+      "walls": 3,
+      "infill_percent": 25
+    },
+    {
+      "name": "TPU two soles batch",
+      "total_eur": 20.09,
+      "component_count": 2,
+      "parts_eur": 7.95,
+      "support_removal_eur": 0,
+      "order_fee_eur": 5.95,
+      "shipping_eur": 6.19,
+      "vat_percent": 19,
+      "evidence": "meltlab-tpu-two.txt",
+      "production_workdays_after_payment": 4,
+      "transport_workdays_after_production": [
+        1,
+        2
+      ],
+      "not_included": [
+        "bonding/adhesive",
+        "hole fit/clearing",
+        "fasteners",
+        "fit sample",
+        "assembly"
+      ],
+      "file": "cad/quotation/tpu_two_soles_batch.stl",
+      "sha256": "7943723bee952a6879831e0e4df1c4890d48eb4bfc591e5146619ea8c9c4dcd7",
+      "bbox_mm": [
+        185,
+        45,
+        1
+      ],
+      "scale_percent": 100,
+      "material": "TPU95A",
+      "colour": "black",
+      "layer_mm": 0.2,
+      "walls": 3,
+      "infill_percent": 15
+    }
+  ],
+  "basis": "Non-binding file-specific web prices, not supplier acceptance of assembly fit. Separate-job costs selected conservatively. Re-quote after any geometry/orientation/settings change; combined-material shipping/order fee reduction unconfirmed."
+}

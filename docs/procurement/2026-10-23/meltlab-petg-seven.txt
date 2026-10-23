@@ -1,0 +1,286 @@
+- region "Notifications (F8)":
+  - list
+- region "Notifications alt+T"
+- banner:
+  - link "Geschäftskunde oder SLS, Harz & Metall gesucht? 3D-Druckdienstleister.de":
+    - /url: https://3d-druckdienstleister.de
+    - generic: Geschäftskunde oder SLS, Harz & Metall gesucht?
+    - generic: 3D-Druckdienstleister.de
+  - link "+49 5221 12 13 100":
+    - /url: tel:+4952211213100
+    - generic: +49 5221 12 13 100
+  - link "info@meltlab.de":
+    - /url: mailto:info@meltlab.de
+    - generic: info@meltlab.de
+  - link "Meltlab Logo":
+    - /url: /
+    - img "Meltlab Logo"
+  - navigation:
+    - link "Startseite":
+      - /url: /
+    - link "Konfigurator":
+      - /url: /konfigurator
+    - link "Personalisieren":
+      - /url: /personalisieren
+    - link "Materialien":
+      - /url: /materialien
+    - link "Preise":
+      - /url: /preise
+    - link "Ratgeber":
+      - /url: /ratgeber
+    - link "Mieten":
+      - /url: /mieten
+    - link "Über uns":
+      - /url: /ueber-uns
+    - link "Kontakt":
+      - /url: /kontakt
+  - link "Mein Konto":
+    - /url: /konto
+    - generic: Mein Konto
+- main:
+  - paragraph: Sofortpreis
+  - heading "3D-Druck online bestellen · Sofortpreis" [level=1]
+  - paragraph:
+    - text: Keine eigene Datei?
+    - link "Geschenke mit Namen personalisieren":
+      - /url: /personalisieren
+  - paragraph: "3D-Druck-Service: STL hochladen, Material und Farbe wählen, Sofortpreis erhalten und nach Fertigung in 2–4 Arbeitstagen versenden lassen."
+  - heading "Frage zu Bauteil, Material oder Lieferzeit?" [level=2]
+  - search "Suche nach Bauteilen, Materialien und Lieferzeit":
+    - generic: Suchbegriff
+    - searchbox "Suchbegriff"
+    - button "Suchen"
+  - generic: Datei
+  - generic: "2"
+  - generic: Optionen
+  - generic: "3"
+  - generic: Bestellen
+  - heading "Optionen wählen" [level=2]
+  - paragraph: Material, Farbe und Stabilität für dein Modell.
+  - heading "Material" [level=3]
+  - combobox:
+    - generic: PETG · Standard
+  - paragraph: Eignet sich für die meisten Privatprojekte — Deko, Prototypen, Ersatzteile.
+  - paragraph:
+    - text: "Drucker: Bambu Lab P2S"
+    - generic: · automatisch nach Material, Farben & Bauteilgröße
+  - heading "Vorteile & Nachteile" [level=3]:
+    - button "Vorteile & Nachteile":
+      - text: Vorteile & Nachteile
+  - link "Welches Material passt?":
+    - /url: /materialien#auswahlhilfe
+  - heading "Farbe" [level=3]
+  - generic: Schwarz
+  - button "Schwarz" [pressed]
+  - button "Weiß"
+  - button "Translucent"
+  - heading "Qualität" [level=3]
+  - button "Schnell günstig":
+    - generic: Schnell
+    - generic: günstig
+  - button "Standard empfohlen":
+    - generic: Standard
+    - generic: empfohlen
+  - button "Detail feinste Oberfläche":
+    - generic: Detail
+    - generic: feinste Oberfläche
+  - heading "Stabilität" [level=3]
+  - button "Leicht (10%) Deko":
+    - generic: Leicht (10%)
+    - generic: Deko
+  - button "Stabil (15%) empfohlen":
+    - generic: Stabil (15%)
+    - generic: empfohlen
+  - button "Sehr robust (40%) belastbar":
+    - generic: Sehr robust (40%)
+    - generic: belastbar
+  - heading "Bauplatte / Oberfläche der Unterseite" [level=3]
+  - paragraph: Bestimmt die Optik der Modellseite, die auf der Druckplatte liegt. Kein Aufpreis. Nicht jede Platte ist für jedes Material vom Hersteller freigegeben — gesperrte Platten sind mit Begründung markiert.
+  - button "Cool Plate Unterseite glatt und glänzend. Von Bambu Lab für dieses Material nicht freigegeben — der Slicer setzt 0 °C Betttemperatur und verweigert den Druck." [disabled]:
+    - generic: Cool Plate
+    - generic: Unterseite glatt und glänzend.
+    - generic: Von Bambu Lab für dieses Material nicht freigegeben — der Slicer setzt 0 °C Betttemperatur und verweigert den Druck.
+  - button "Cool Plate SuperTack Unterseite matt und nahezu glatt. Betttemperatur 55–60 °C":
+    - generic: Cool Plate SuperTack
+    - generic: Unterseite matt und nahezu glatt.
+    - generic: Betttemperatur 55–60 °C
+  - button "Engineering Plate Unterseite glatt, ohne Glanz. Betttemperatur 60–80 °C Haftmittel/Trennmittel wird verwendet":
+    - generic: Engineering Plate
+    - generic: Unterseite glatt, ohne Glanz.
+    - generic: Betttemperatur 60–80 °C
+    - generic: Haftmittel/Trennmittel wird verwendet
+  - button "Smooth PEI Unterseite glatt, glänzend und besonders planeben. Betttemperatur 60–80 °C Haftmittel/Trennmittel wird verwendet":
+    - generic: Smooth PEI
+    - generic: Unterseite glatt, glänzend und besonders planeben.
+    - generic: Betttemperatur 60–80 °C
+    - generic: Haftmittel/Trennmittel wird verwendet
+  - button "Textured PEI Empfohlen Unterseite matt mit feiner, sichtbarer Struktur. Betttemperatur 60–80 °C":
+    - generic: Textured PEI
+    - generic: Empfohlen
+    - generic: Unterseite matt mit feiner, sichtbarer Struktur.
+    - generic: Betttemperatur 60–80 °C
+  - heading "Stützmaterial" [level=3]
+  - paragraph: Falls Stützen nötig sind, wähle hier, womit sie gedruckt werden. Standard = gleiches Material wie der Druck.
+  - button "Gleiches Material Standard · günstig":
+    - generic: Gleiches Material
+    - generic: Standard · günstig
+  - button "Premium PVA rückstandslos auflösbar":
+    - generic: Premium PVA
+    - generic: rückstandslos auflösbar
+  - button "Support for PLA/PETG rückstandslos auflösbar":
+    - generic: Support for PLA/PETG
+    - generic: rückstandslos auflösbar
+  - paragraph:
+    - text: "Gewähltes Stützmaterial:"
+    - generic: gleich wie Druckmaterial
+    - text: (mechanisch entfernbar)
+  - heading "Nachbearbeitung" [level=3]
+  - paragraph: "Optional: zusätzliche manuelle Arbeitsschritte nach dem Druck. Pauschalen fallen einmalig pro Bestellung an — unabhängig von Stückzahl und Anzahl der Bauteile."
+  - generic: Support entfernen
+  - generic: einmalig pro Bestellung · + 11,90 €
+  - button "Nein"
+  - button "Ja" [pressed]
+  - paragraph:
+    - text: "Gewählte Optionen:"
+    - generic: "1"
+    - text: "· Aufpreis einmalig (im Gesamtpreis enthalten):"
+    - generic: 11,90 €
+  - heading "Größe & Stückzahl" [level=3]
+  - generic: torso.stl
+  - generic: Anzahl
+  - spinbutton: "1"
+  - text: Skalieren
+  - generic: 10–288%
+  - slider
+  - spinbutton: "100"
+  - generic: "%"
+  - generic: "Maße:"
+  - generic: 3.2 × 8.2 × 8.9 cm
+  - generic: left_thigh.stl
+  - generic: Anzahl
+  - spinbutton: "1"
+  - text: Skalieren
+  - generic: 10–291%
+  - slider
+  - spinbutton: "100"
+  - generic: "%"
+  - generic: "Maße:"
+  - generic: 2.4 × 1.4 × 8.8 cm
+  - generic: right_thigh.stl
+  - generic: Anzahl
+  - spinbutton: "1"
+  - text: Skalieren
+  - generic: 10–291%
+  - slider
+  - spinbutton: "100"
+  - generic: "%"
+  - generic: "Maße:"
+  - generic: 2.4 × 1.4 × 8.8 cm
+  - generic: left_shin.stl
+  - generic: Anzahl
+  - spinbutton: "1"
+  - text: Skalieren
+  - generic: 10–328%
+  - slider
+  - spinbutton: "100"
+  - generic: "%"
+  - generic: "Maße:"
+  - generic: 2.4 × 2.4 × 7.8 cm
+  - generic: right_shin.stl
+  - generic: Anzahl
+  - spinbutton: "1"
+  - text: Skalieren
+  - generic: 10–328%
+  - slider
+  - spinbutton: "100"
+  - generic: "%"
+  - generic: "Maße:"
+  - generic: 2.4 × 2.4 × 7.8 cm
+  - generic: left_foot.stl
+  - generic: Anzahl
+  - spinbutton: "1"
+  - text: Skalieren
+  - generic: 10–284%
+  - slider
+  - spinbutton: "100"
+  - generic: "%"
+  - generic: "Maße:"
+  - generic: 9.0 × 4.5 × 3.8 cm
+  - generic: right_foot.stl
+  - generic: Anzahl
+  - spinbutton: "1"
+  - text: Skalieren
+  - generic: 10–284%
+  - slider
+  - spinbutton: "100"
+  - generic: "%"
+  - generic: "Maße:"
+  - generic: 9.0 × 4.5 × 3.8 cm
+  - paragraph: Profi-Einstellungen
+  - 'button "Erweiterte Optionen & technische Details Pro Pro-Tipp: Füllgrad, Schichthöhe und Skalierung wirken direkt auf Gewicht, Druckzeit und Preis — der Slicer rechnet nach jeder Änderung neu. Die Materialempfehlung zeigt dir für jeden Parameter den passenden Wert."':
+    - generic: Erweiterte Optionen & technische Details
+    - generic: Pro
+    - paragraph: "Pro-Tipp: Füllgrad, Schichthöhe und Skalierung wirken direkt auf Gewicht, Druckzeit und Preis — der Slicer rechnet nach jeder Änderung neu. Die Materialempfehlung zeigt dir für jeden Parameter den passenden Wert."
+  - text: Kostenloser Versand
+  - generic: 78,31 €
+  - paragraph: inkl. 19% MwSt. & Versand · Endpreis
+  - paragraph: Fertigung in 4 Arbeitstagen, danach Versand
+  - button "Zurück"
+  - button "Weiter zur Bestellung" [active]:
+    - generic: Weiter zur Bestellung
+- contentinfo:
+  - img "Meltlab Logo"
+  - generic: Deine Idee. Schicht für Schicht.
+  - paragraph: XH Group
+  - generic: Neuer Markt 2, 32052 Herford
+  - link "info@meltlab.de":
+    - /url: mailto:info@meltlab.de
+  - link "+49 5221 12 13 100":
+    - /url: tel:+4952211213100
+  - link "Per WhatsApp fragen":
+    - /url: https://wa.me/4917664189523
+    - text: Per WhatsApp fragen
+  - paragraph
+  - generic: "Leistungen:"
+  - link "Preise":
+    - /url: /preise
+  - link "Materialien":
+    - /url: /materialien
+  - link "Ratgeber":
+    - /url: /ratgeber
+  - link "Personalisieren":
+    - /url: /personalisieren
+  - link "Multicolor 3D-Druck":
+    - /url: /multicolor-3d-druck
+  - link "Bambu Lab Druckservice":
+    - /url: /bambu-lab-druckservice
+  - link "FAQ":
+    - /url: /faq
+  - link "Suche":
+    - /url: /suche
+  - generic: "Regionen:"
+  - link "3D-Druck Herford":
+    - /url: /3d-druck-herford
+  - link "3D-Druck Bielefeld":
+    - /url: /3d-druck-bielefeld
+  - link "3D-Druck NRW":
+    - /url: /3d-druck-nrw
+  - generic: "B2B & Industrie:"
+  - link "Geschäftskunden":
+    - /url: /geschaeftskunden
+  - link "3D-Druckdienstleister (SLS, Harz & Metall)":
+    - /url: https://3d-druckdienstleister.de
+    - text: 3D-Druckdienstleister (SLS, Harz & Metall)
+  - link "Kontakt":
+    - /url: /kontakt
+  - link "Mein Konto":
+    - /url: /konto
+  - link "Impressum":
+    - /url: /impressum
+  - link "Datenschutz":
+    - /url: /datenschutz
+  - link "Widerruf":
+    - /url: /widerruf
+  - link "AGB":
+    - /url: /agb
+  - generic: © 2026 Meltlab

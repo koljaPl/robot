@@ -10,8 +10,8 @@ in `physical_spec.json`. [Offene Beschaffungsfragen](docs/PROCUREMENT_ACTIONS.md
 [Hardware/Protokoll](docs/HARDWARE.md), [Firmware](firmware/README.md) und
 [Kalibrierung](docs/CALIBRATION.md) sind die Arbeitsreferenzen.
 
-**Nichts bestellt oder physisch geprüft.** Bekannte bepreiste Positionen:78,91€;
-Gesamtkosten wegen fehlender Druck-/Kleinteil-/Versandpreise unbekannt.100€ist die
+**Nichts bestellt oder physisch geprüft.** Aktueller bepreister Beschaffungsweg:163,63€;
+zusätzliche Passungs-/Kleinteilkosten noch offen. Bereits63,63€über Budget.100€ist die
 harte Lieferpreisgrenze. Sechs MG90S mit Pico-Direkt-PWM, MPU6050 und
 kabelgebundener Versorgung sind der vorläufige Entwurf (geschätzt199,4g).
 Firmware und Bench-Werkzeuge sind implementiert; echte elektrische Tests fehlen.
@@ -24,7 +24,7 @@ python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-dev.txt
 python -m pytest -q
-python tools/budget_gate.py # Exit2: Beschaffung unvollständig
+python tools/budget_gate.py # Exit1: aktueller Beschaffungsweg über Budget
 python evaluate.py --episodes 1 --output runs/neutral_new
 python train.py --steps 2048 --seed 0 --development --output runs/smoke_new
 ```

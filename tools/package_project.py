@@ -10,6 +10,9 @@ def main():
     with zipfile.ZipFile(ROOT / "cad/quote_bundle.zip", "w", zipfile.ZIP_DEFLATED) as z:
         for name in names:
             z.write(ROOT / f"cad/stl/{name}.stl", f"stl/{name}.stl")
+        for path in sorted((ROOT / "cad/quotation").glob("*")):
+            if path.is_file() and path.suffix in {".stl", ".json"}:
+                z.write(path, str(path.relative_to(ROOT)))
         for path in ("cad/QUOTE_REQUEST.md", "cad/ASSEMBLY.md", "cad/exploded.png", "cad/print_manifest.json", "physical_spec.json"):
             z.write(ROOT / path, path)
     with zipfile.ZipFile(ROOT / "school_biped_s6.zip", "w", zipfile.ZIP_DEFLATED) as z:

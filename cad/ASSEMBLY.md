@@ -40,3 +40,16 @@ not confirmed bolt collisions, but cannot be cleared without actual horn/screw
 geometry. Run `python tools/check_clearance.py`; nonzero exit means no release.
 The exploded view shows frame, servo-case and PCB envelopes; actual horn/fastener
 fit remains specified provisionally in the ledger/schedule and is not certified.
+
+## 2026-10-23 purchasing/fit clarification
+
+[Exact component/delivery review](../docs/PROCUREMENT_ACTIONS.md) contains the
+three M2 pack links (buy100each; install12screws/12nuts/24washers) and separate
+unknown horn hardware. M2×8 is provisional:3mm printed plate+two0.3mmwashers+
+1.6mmnut leaves2.8mm for the ear, before thread projection. Check actual stack,
+head4mm/washer5mm/nutSW4 sweep and wrench access; change length only after measurement.
+The12horn-frame screws/12washers are not the six centre shaft retainers.
+Manufacturer photo shows accessory horns/screws but exact retailer-batch fit/inclusion
+is not confirmed. Do not order generic25T horns or assume centre screws areM2.
+Compact quotation layouts are alternatives to individual files, not extra parts;
+web prices exclude bonding and hole finishing. Current route exceeds budget; no order.

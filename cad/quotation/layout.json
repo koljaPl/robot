@@ -1,0 +1,149 @@
+{
+  "status": "QUOTATION ONLY. Structural orientation/fit unapproved; unchanged component geometries",
+  "frame_bbox_mm": [
+    185.0,
+    167.0,
+    38.25
+  ],
+  "frame_components": 7,
+  "sole_bbox_mm": [
+    185.0,
+    45.0,
+    1.0
+  ],
+  "parts": [
+    {
+      "part": "left_foot",
+      "source_sha256": "5743f7037b5058d933cae742e17d86598df200c937d23e692d057f2224f52f63",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "bbox_min_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max_mm": [
+        90.0,
+        45.0,
+        38.25
+      ]
+    },
+    {
+      "part": "right_foot",
+      "source_sha256": "28e593c7b732432a15f5d1f3dead1c909c386186acd5b34cf1f2ff93f0828105",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "bbox_min_mm": [
+        95.0,
+        0.0,
+        0.0
+      ],
+      "bbox_max_mm": [
+        185.0,
+        45.0,
+        38.25
+      ]
+    },
+    {
+      "part": "torso",
+      "source_sha256": "c5d104f5450c3aa17d5440e82bd2e345160ec62aba41712d39889a547d53f5e2",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "bbox_min_mm": [
+        0.0,
+        50.0,
+        0.0
+      ],
+      "bbox_max_mm": [
+        88.75,
+        132.0,
+        32.0
+      ]
+    },
+    {
+      "part": "left_thigh",
+      "source_sha256": "dec834440d803f2a75fef9a41dda4bb427bb6c007b1adc5b9863f9437dd67d23",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "bbox_min_mm": [
+        94.0,
+        50.0,
+        0.0
+      ],
+      "bbox_max_mm": [
+        118.0,
+        137.75,
+        13.500000000000007
+      ]
+    },
+    {
+      "part": "right_thigh",
+      "source_sha256": "d62fbe9849f09deadc9060f359db90bc23fe1ce1d8d4248cee27ac94892ddcdb",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "bbox_min_mm": [
+        123.0,
+        50.0,
+        0.0
+      ],
+      "bbox_max_mm": [
+        147.0,
+        137.75,
+        13.5
+      ]
+    },
+    {
+      "part": "left_shin",
+      "source_sha256": "dd2e6a50129feb020f3a09cbea4bd35c0fef1d59047ccc2a0026daeb6e55f2d7",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "bbox_min_mm": [
+        0.0,
+        143.0,
+        0.0
+      ],
+      "bbox_max_mm": [
+        78.0,
+        167.0,
+        24.0
+      ]
+    },
+    {
+      "part": "right_shin",
+      "source_sha256": "c0f6b652ce63ab93d2e894e10597d9434e25d8c2acc8b89b0e8893484f666a07",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "bbox_min_mm": [
+        83.0,
+        143.0,
+        0.0
+      ],
+      "bbox_max_mm": [
+        161.0,
+        167.0,
+        24.0
+      ]
+    }
+  ]
+}

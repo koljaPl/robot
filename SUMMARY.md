@@ -7,7 +7,7 @@ Updated **2026-10-23**. Working plan; authoritative costs: [procurement.json](pr
 Roughly 18 cm biped: **hip pitch + knee pitch + ankle roll per leg**. PC inference → USB → Pico H direct PWM → six servos. Wired power; no PCA9685/battery/arms. Estimated mass: 199 g.
 
 - **Software checked:** 29 tests pass; firmware compiles; simulation/logging/videos work. The 49,152-step nominal pilot achieved **no walking**. A/B smoke tests: 2,048 steps each; formal comparison pending.
-- **Unverified:** delivered cost, mounting fit, real electronics, calibration and physical walking. Nothing purchased/assembled.
+- **Blocked:** the current priced route is **€163.63 before remaining costs**, over the €100 cap. Mounting fit, electronics, calibration and physical walking remain unverified. Nothing purchased/assembled.
 - **Success:** stand 30 s, then travel ≥0.3 m within 30 s using alternating lifted steps. Drifting/sliding does not count.
 
 ## Purchase list — provisional, not cleared to order
@@ -22,47 +22,52 @@ VAT-inclusive snapshot, 2026-10-23; stock must be confirmed. Quantities mean **p
 | [Mean Well GST40A05-P1J — BerryBase](https://www.berrybase.de/meanwell-schaltnetzteil-5v-dc-5-0a-mit-hohlstecker-5-5x2-1mm) | 1 | 15.50 | 15.50 | Enclosed 5 V / 5 A servo power supply |
 | [Goobay 68604, 1.5 m — BerryBase](https://www.berrybase.de/kaltgeraete-netzkabel-schutzkontakt-stecker-abgewinkelt-iec320-c13-buchse-schwarz) | 1 | 3.81 | 3.81 | Schuko–C13 mains lead for the PSU |
 | [RPI-MUSB-1, 1 m — BerryBase](https://www.berrybase.de/offizielles-raspberry-pi-micro-usb-kabel-rot-1-0m) | 1 | 1.80 | 1.80 | USB-A–Micro-B data/power cable for Pico |
-| [DUPK-40-FF-20, 40 leads — BerryBase](https://www.berrybase.de/40pin-jumper-dupont-kabel-female-female-trennbar/laenge-0-20-m) | 1 | 1.80 | 1.80 | Logic/IMU connections; **unavailable**, replacement needed |
+| [DUPK-40-FF-50, 40 leads — BerryBase](https://www.berrybase.de/40pin-jumper-dupont-kabel-female-female-trennbar/laenge-0-50-m) | 1 | 2.20 | 2.20 | Available 50 cm replacement; logic only; helper keeps I2C short |
 | [JR/Futaba extension F23108007, 10 cm — Funduino](https://funduino.com/products/jr-futaba-servo-verlangerung-kabel-10cm-female-male) | 6 | 1.14 | 6.84 | Replaceable servo plugs; helper prepares power harness |
 | [Donau E-175-10, 0.75 mm², 10 m — BerryBase](https://www.berrybase.de/donau-kupferschaltlitze-0-75-mm2-10m-lang-1-adrig-24x0-20mm-pvc-isoliert) | 1 | 5.90 | 5.90 | Short power buses; label polarity |
 | [AiSHi ELK1M16VAWH, 1000 µF / 16 V — BerryBase](https://www.berrybase.de/elektrolytkondensator-1000-f-16v-1050c-1-radial-tht) | 1 | 0.29 | 0.29 | Bulk capacitor across servo supply |
 | [PINH-1X40P, 40 pins — BerryBase](https://www.berrybase.de/stiftleiste-1x-40-polig-rm-2-54-gerade) | 1 | 0.60 | 0.60 | Header pins for sensor/harness |
 | [McPower T1535561, 100 pieces — BerryBase](https://www.berrybase.de/schrumpfschlauch-set-100-teilig-schwarz) | 1 | 1.90 | 1.90 | Heat-shrink insulation for solder joints |
 | [McPower T1535501, 100 ties — BerryBase](https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-100x2-5mm) | 1 | 0.45 | 0.45 | Board mounting, cable restraint and strain relief |
+| [Goobay11638 DC socket — BerryBase](https://www.berrybase.de/dc-einbaubuchse-fuer-hohlstecker-5-5x2-1mm-metallausfuehrung-loetanschluss) | 1 | 1.10 | 1.10 |5.5×2.1mm,5 A; helper solders/insulates; physical unplug cutoff |
+| [P010265 M2 × 8 PH screws, 100 — Schraubenking](https://www.schraubenking-shop.de/M2-x-8mm-Linsenkopfschrauben-PH-DIN7985-Stahl-verzinkt-FKL48-P010265) |1 pack|1.51|1.51|12 used at servo ears; length/fit provisional |
+| [P003474 M2 nuts, 100 — Schraubenking](https://www.schraubenking-shop.de/M2-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P003474) |1 pack|1.13|1.13|12 used;4mm wrench/pliers |
+| [P004198 M2 washers, 100 — Schraubenking](https://www.schraubenking-shop.de/22mm-Unterlegscheiben-DIN125-Edelstahl-A2-P004198) |1 pack|0.99|0.99|24 used: one under each ear screw head/nut |
+| [7 PETG frames, one batch — Meltlab](https://meltlab.de/konfigurator) |1 job|48.70|48.70|Torso + 2 thighs + 2 shins + 2 feet; print/support removal/VAT/DHL only |
+| [2 TPU95A soles, one batch — Meltlab](https://meltlab.de/konfigurator) |1 job|20.09|20.09|Each 90 × 45 × 1 mm; print/VAT/separate DHL; bonding excluded |
 
-**Also required; prices or fit still unresolved:**
+**Still required, not priced/approved:**6 matching horns+6 shaft screws (manufacturer [photo](https://www.waveshare.com/img/devkit/accBoard/MG90S-Servo/MG90S-Servo-1.jpg) shows accessories; actual batch/geometry unconfirmed);12 horn-to-frame screws+12 matching washers; hole finishing, adhesive/sole bonding, fit sample/delivery and helper preparation. [Exact questions/evidence](docs/PROCUREMENT_ACTIONS.md). No generic 25T horns or guessed centre screws.
 
-| Item / quantity | Where / action |
-|---|---|
-| 7 rigid PETG frames: torso + 2 thighs/shins/feet; 2 grippy TPU soles, 90 × 45 × 1 mm | [Meltlab](https://meltlab.de/preise): [files](cad/quote_bundle.zip), [quote brief](cad/QUOTE_REQUEST.md). Include finishing, clear holes, sole bonding, VAT/delivery and one fit sample. **Not quoted.** |
-| 6 servo horns (shaft-to-frame levers) + 6 retaining screws | [Welectron](https://www.welectron.com/Waveshare-15024-MG90S-Servo_1): inclusion/spline/dimensions/thread unconfirmed. |
-| 12 M2 × 8 screws + 12 M2 nuts + 24 washers; 12 horn-to-frame screws and matching washers | Print service: matched kit; dimensions provisional. [Schedule](cad/ASSEMBLY.md). |
-| 1 rated DC input/disconnect (PSU-to-servo bus) | Candidate [Delock 83290](https://www.delock.com/produkt/83290/merkmale.html?setLanguage=de), [retailer candidate](https://www.alternate.de/DeLOCK/DC-Verl%C3%A4ngerungskabel/html/product/1317847). Confirm 5 A / 18 AWG variant, branch ratings and delivered price; helper prepares pigtail. |
-| 1 helper preparation job | School/helper solders headers/capacitor/harness and supplies solder; confirm free help or price. |
-| Funduino delivery; any separate supplier/sample deliveries | [Shipping policy](https://funduino.com/policies/shipping-policy): rate could not be verified. Count every shipment. |
-| USB data adapter, only if PC has no USB-A | Only for USB-C-only PC; model/price pending. |
+Print files: [quote bundle](cad/quote_bundle.zip), [compact layouts](cad/quotation/), [brief](cad/QUOTE_REQUEST.md). **Quotation prototypes only:** dimensions unchanged, orientation/fit unapproved; do not submit both individual and batch files as extra quantities. M2 × 8 may be too short once the actual ear stack is measured. No drilling/tapping by you.
+
+**No USB adapter in the base list.** The USB-A–Micro-B data cable above is required; add an adapter only if your PC has no USB-A. PC port and German delivery postcode remain unconfirmed.
 
 **Borrow tools:** soldering kit, cutters/stripper, multimeter, scale, ruler/protractor, phone. Tools excluded from €100; no personal printer/drilling/tapping.
 **Optional:** spare servo (€3.50 + delivery), protective mat, slack safety line. Longer USB/power tethers need separate sourcing/budget.
 
 ## Cost breakdown
 
-| Current priced positions | € |
-|---|---:|
-| [Welectron](https://www.welectron.com/Shipping-cost): six servos + €4.95 delivery | 25.95 |
-| [BerryBase](https://www.berrybase.de/versand-und-zahlungsbedingungen): listed items + €4.95 delivery | 42.50 |
-| Funduino: sensor + six extensions, **delivery missing** | 10.46 |
-| **Priced subset, including the unavailable jumper pack** | **78.91** |
-| **Space left under €100 for every unresolved cost** | **21.09** |
-| **Complete delivered total** | **Unknown** |
+| Current route, incl. VAT | Parts/services € | Delivery € | Subtotal € |
+|---|---:|---:|---:|
+| [Welectron](https://www.welectron.com/Shipping-cost): six servos |21.00|4.95|25.95|
+| [BerryBase](https://www.berrybase.de/versand-und-zahlungsbedingungen): electronics/power/wiring including new leads/socket |39.05|4.95|44.00|
+| [Funduino](https://funduino.com/policies/shipping-policy): IMU + six extensions |10.46|4.90|15.36|
+| [Schraubenking](https://www.schraubenking-shop.de/Versandinformationen): three ear-fastener packs |3.63|5.90|9.53|
+| Meltlab:7 PETG, including €11.90 support removal+€5.95 order fee |42.51|6.19|48.70|
+| Meltlab:2 TPU, including €5.95 order fee |13.90|6.19|20.09|
+| **Priced subset** |**130.55**|**33.08**|**163.63**|
+| **Already above€100, before unresolved costs** |||**63.63**|
+| **Complete delivered total** |||**Unknown; higher for this route**|
 
-Parts €69.01 + two deliveries €9.90; jumper replacement may change this. €50–75 is not met. **Do not order until costs/stock/fit pass. Stop if delivered total exceeds €100.**
+**Procurement stopped.** Find a cheaper fully quoted manufacturing route; do not order this basket or weaken the servos. Electronics/delivery €85.31 + ear-fastener delivery €9.53 leave only €5.16 for every print/horn/helper cost. Combining the two print jobs may save fees/shipping, but no combined quotation exists.
+
+**Delivery plan, not bookings:** Welectron DPD advertised 1–3 working days if all 6 available; BerryBase items usually 1–3 days; Funduino standard tracked DHL (policy says most arrive within 2 working days); fasteners 2–3 working days; prints 4 working days production after payment + 1–2 DHL days. No guaranteed arrival, reservations, address entry or orders. Avoid paid priority; any bench/sample split must add every extra delivery. [Quote records](docs/procurement/2026-10-23/quotes.json).
 
 ## Full sequence — who does what
 
 | Order | You / helper | AI / completion gate |
 |---|---|---|
-| 1. Close feasibility **← now** | Confirm servo contents/drawing, print/sample/fastener quote, harness and shipping. | Complete basket ≤€100. [Questions](docs/PROCUREMENT_ACTIONS.md). No orders/messages sent. |
+| 1. Close feasibility **← now** | Resolve servo contents/fit; obtain cheaper complete manufacturing quote and helper cost. | Current route fails €100; replace it with a verified complete basket ≤€100. [Questions](docs/PROCUREMENT_ACTIONS.md). No orders/messages sent. |
 | 2. Bench one servo + IMU | Prepare harness; test PSU/cutoff, USB, IMU, 3.3 V PWM and watchdog. | [Bench tools](firmware/README.md); record actual timing/electrical results. |
 | 3. Measure mounting fit | Measure interfaces; approve one mounting sample. | Resolve 550 estimated fastener-envelope overlaps across 55 poses; these are **not proven bolt collisions**. No manufacturing release. |
 | 4. Print and assemble | Order approved kit; assemble/weigh bodies. | Match CAD, mass ownership, COM/inertia. |
@@ -85,7 +90,7 @@ Parts €69.01 + two deliveries €9.90; jumper replacement may change this. €
 ## AI continuation — mandatory handoff
 
 - Read this file and [AGENTS.md](AGENTS.md); then only relevant details in [STATUS](docs/STATUS.md), [ROADMAP](docs/ROADMAP.md) and implementation. The [full handoff](docs/HANDOFF.md) is reference, not the starting reading task.
-- **Next:** close quote/interface/electrical unknowns; update [cost](procurement.json)/[physical](physical_spec.json) ledgers. Label sourced/estimated/measured/unknown with evidence/date; never invent verification.
+- **Next:** resolve the €63.63 known overrun plus unknown finishing/horn/helper costs; obtain exact cheaper delivered quotes and interface evidence, then update [cost](procurement.json)/[physical](physical_spec.json) ledgers. Label sourced/estimated/measured/unknown with evidence/date; never invent verification.
 - Preserve six joints, €100 delivered, PC inference, six normalized targets/90 IMU-command observations. No privileged SIM observations or weaker-servo substitution.
 - [Gates](docs/gates.json) remain closed. Diagnose missing lifted steps before repeating/extending training; do not inflate torque to force success.
 - **All saved policies are historical** after the firmware parser fix. Use isolated `tools/replay_snapshot.py`; never relabel fingerprints. [Evidence](docs/VALIDATION_CURRENT.md). Compiled firmware is not physically tested; example calibration cannot policy-arm.
@@ -95,7 +100,7 @@ New computer setup: `python3.12 -m venv .venv`, then `.venv/bin/pip install -r r
 
 ```bash
 .venv/bin/python -m pytest -q
-.venv/bin/python tools/budget_gate.py       # expected exit 2: incomplete
+.venv/bin/python tools/budget_gate.py       # expected exit 1: over budget
 .venv/bin/python tools/check_clearance.py   # expected exit 1: proxy conflicts
 # Historical policy review; choose a new output directory:
 .venv/bin/python tools/replay_snapshot.py --episodes 1 --output runs/review_unique

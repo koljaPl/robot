@@ -14,6 +14,10 @@ States and actual evidence belong in STATUS.md. No stage is physically verified 
 | F / 8,9,10,11,13 | User: bench, assembly, calibration and physical trials; AI: firmware/tools/data analysis/report | Real test data; frozen compatible policies; equal trials and alternating A/B order |
 | Extensions / 12 | Future: turning, terrain, recovery | Stable baseline walking first; no automatic scope expansion |
 
+Current procurement route is blocked atEUR163.63before unresolved costs; quotes exist
+but no manufacturing release or order. Next is a cheaper complete delivered route,
+not repeating example-price research or silently increasing theEUR100cap.
+
 ## Fixed engineering contracts
 
 - Joint order L hip/knee/ankle, R hip/knee/ankle; +Y pitch, +X roll.

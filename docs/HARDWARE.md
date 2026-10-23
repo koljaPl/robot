@@ -36,15 +36,22 @@ several metres need a newly sourced thicker tether/longer USB cable and budget.
 1000µF stores only~0.04ms at4.8A for0.2V droop. Measure4.8–6V at the farthest
 loaded servo and check connector temperature.
 
-Accessible full-current DC unplug is the physical emergency cutoff. Candidate
-[Delock83290](https://www.delock.com/produkt/83290/merkmale.html?setLanguage=de)
-is specified18AWG/5A/24V; a helper could retain its female pigtail and join the
-short bus. Exact delivered price and conflicting retailer gauge description
-remain unresolved. Unrated Goobay76743 is not accepted as5A. JR branch gauge,
-contacts and actual servo currents also need confirmation. Do not clear the
-basket merely because a connector fits. STOP/PWM silence **does not physically
-disconnect motor power**; an analogue servo may hold its last position. Always
-disarm before reconnecting DC. Support tether weight near the body COM.
+Accessible full-current DC unplug is the physical emergency cutoff. Selected
+provisional input: [Goobay11638,EUR1.10](https://www.berrybase.de/dc-einbaubuchse-fuer-hohlstecker-5-5x2-1mm-metallausfuehrung-loetanschluss),
+5.5×2.1mm solder socket with nut/washer; retailer specifies5A/30V DC. Replaces the
+unpriced Delock pigtail. Helper solders short0.75mm² bus leads, separately insulates
+lugs and outer metal, and secures strain relief with listed shrink/ties. Support this
+connection off robot. Verify centre-positive continuity and insulation before power.
+No exposed low-voltage metal may short to boards/fasteners. No mains modification.
+JR branch gauge/contacts and actual servo current still require confirmation.
+Socket rating is not a complete harness or bench approval. Unrated Goobay76743
+is not accepted as5A. STOP/PWM silence **does not disconnect motor power**;
+a servo may hold its last position. Always disarm before reconnecting DC.
+
+USB-A–Micro-B data cable connects Pico directly to a USB-A PC; **no extra adapter**
+in base basket. Only a PC without USB-A needs a separately sourced data adapter.
+Available50cm Dupont pack replaces unavailable20cm; helper keeps I2C wiring short
+and secures excess. No servo supply current in any Dupont jumper.
 
 ## Pin table
 
