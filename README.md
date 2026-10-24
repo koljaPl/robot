@@ -20,9 +20,14 @@ Haftpads. Keine gedruckten TPU-Sohlen, kein Drucker-/Filamentkauf. [Druckprobe](
 Der bepreiste Korb kostet105,34€**vor** Druck/Probe/Horn-Kleinteilen: mindestens5,34€
 über der100€Grenze. Eine aktuelle dateispezifische Druckquote fehlt; der STL-Upload
 zuMeltlab wurde durch die automatische Freigabeprüfung blockiert.
-Die vorläufige MuJoCo-Kopie passt zum neuen CAD; geschätzt197.1g.41Tests bestehen.
-Der neue2048Schritte-Smoke und die manuellen Hebeversuche zeigen **kein Gehen**.
+Die vorläufige MuJoCo-Kopie passt zum neuen CAD; geschätzt197.1g.49Tests bestehen.
+Der2048Schritte-PPO-Smoke zeigt **kein gelerntes Gehen**; Skriptreferenzen werden separat bewertet.
 Alte Modelle/UF2bleiben historisch. [Prüfstand](docs/VALIDATION_CURRENT.md).
+Eine neue [Standbein-/Schrittdiagnose](docs/STANCE_TRANSFER.md) erreicht einen
+geprüften simulierten Schritt aus dem Stand, auch gespiegelt. Die neuere
+[Schrittreferenz mit Gewichtsübergabe](docs/REFERENCE_GAIT.md) erreicht vier
+abwechselnde Schritte und6,6cm in30s im nominalen Modell; mit randomisierten
+Parametern nur0–1Schritte. Das30cm-Ziel bleibt offen, Modell/Kraftgrenzen unverändert.
 
 ```bash
 python3.12 -m venv .venv

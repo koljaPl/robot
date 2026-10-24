@@ -1,0 +1,41 @@
+[
+  {
+    "profile": "geometric50_swap",
+    "seed": 43,
+    "first_stance": "left",
+    "video_saved": false,
+    "final_metrics": {
+      "distance_m": 0.003333192420283684,
+      "lateral_distance_m": 0.00023860016076982174,
+      "duration_s": 30.0,
+      "mean_speed_m_s": 0.00011110641400945614,
+      "fallen": false,
+      "total_reward": 5.4597330908127395,
+      "lifted_steps_left": 1,
+      "lifted_steps_right": 0,
+      "alternations": 0,
+      "gait_distance_m": 0.011181289383621097,
+      "max_stance_slip_m": 0.002569023294776397,
+      "rejected_steps": 189,
+      "walking_success": false,
+      "domain_randomization": false,
+      "reward_terms": {
+        "forward": 0.00018351897493181987,
+        "upright": 0.0039996549106009515,
+        "lateral": -7.188374500831672e-06,
+        "smoothness": -1.084935219204933e-10,
+        "fall": 0.0
+      }
+    },
+    "max_whole_foot_clearance_m": [
+      0.0038592492120225665,
+      0.0030023435043141423
+    ],
+    "longest_20ms_sampled_clearance_at_least_3mm_s": [
+      0.1,
+      0.02
+    ],
+    "max_tracking_error_deg": 3.8979357553271923,
+    "max_static_envelope_utilization": 0.7993769421356197
+  }
+]

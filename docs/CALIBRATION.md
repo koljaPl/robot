@@ -2,6 +2,28 @@
 
 All numbers currently in `physical_spec.json` and `robot_config.py` are estimates except the explicitly labelled seller claims. A school kitchen scale, ruler, protractor, phone camera, known weights and a borrowed multimeter are enough to replace many estimates. No prolonged stall tests.
 
+## Priorities from the provisional gait diagnosis
+
+The [current scripted baseline](REFERENCE_GAIT.md) has a weakest credited flight
+peaking only0.177mm above the3mm threshold; mixed parameter randomization removes
+most qualifying steps. Do not tune further against guessed physics or infer a
+specific cause from those mixed draws. After budget clearance, prioritize:
+
+1. Actual servo/horn/ear/screw dimensions and sample fit before the full frame.
+2. Joint pulse mapping and repeated approach from both directions, with external
+   angle/video measurements. Requested angles and applied acknowledgements are
+   **not shaft measurements**. HOME holds retain the existing software deadband
+   history; measure the physical servo's additional response separately.
+3. Loaded motion, delay and supply voltage/current under safe small loads.
+   The0.95s swap is a trajectory choice, not a measured actuator parameter.
+4. Finished pad friction/adhesion and actual assembled body masses/COM. Solid-CAD
+   mass and assumed0.8 sliding friction must not become measured by relabelling.
+
+For `tools/fit_response.py`, `angle_rad` must come from external measurement;
+never fill it with acknowledged commands. Preserve raw timestamped video/CSV,
+clock alignment and uncertainty. The first-order fit does not uniquely identify
+MuJoCo gains, sustainable torque or backlash; no automatic parameter replacement.
+
 | Parameter | Inexpensive procedure | Where it goes |
 |---|---|---|
 | Housing/ears/shaft/horns | Photograph one servo against a ruler, measure ear hole pitch/diameter, shaft centre relative to the body, axial shaft height, horn screw thread, horn holes, supplied screws and lead exit. Have a sample printed interface checked before all prints. | `physical_spec.json` servo dimensions; `cad/build_frame.py` cradle/horn geometry |

@@ -1,0 +1,28 @@
+{
+  "configuration": "4d3b0dcbad59774b12f9c908c74446f6bf7452d5bdf34a08f07cf4271cc15019",
+  "immutable_source_snapshots_checked": 12,
+  "old_baseline_reproduced_exactly": true,
+  "video_physics_metrics_equal_nonrendered": true,
+  "frozen_replay_metrics_exact": true,
+  "frozen_baseline_record_sha256": "89f9f1b7b344ed0937e19536fe639eb437bee78b1aa7f5db3f3f7b3772720128",
+  "home_hold_keeps_acknowledged_deadband_bias": true,
+  "independent_raw_credited_step_checks": 12,
+  "nominal_steps_each_foot": 2,
+  "nominal_alternations": 3,
+  "nominal_body_distance_m": 0.06602147908947796,
+  "randomized_step_counts": [
+    1,
+    1,
+    1,
+    1,
+    0
+  ],
+  "walking_target_met": false,
+  "physical_gates_all_false": true,
+  "training_steps_added": 0,
+  "known_priced_budget_eur": "105.34",
+  "complete_delivered_budget_unknown": true,
+  "full_test_result": ".................................................                        [100%]\n49 passed in 14.21s",
+  "figure_and_video_frames_visually_reviewed": true,
+  "nominal_video_sha256": "af5a345a42ca596736799a9571272f65f4fdeb7e6083d4d5ff03aa35a41cfbd8"
+}

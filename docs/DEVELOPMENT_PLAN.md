@@ -45,6 +45,19 @@ for3s; both HOME transition orders still produce zero qualifying steps. See
 support while preventing stance-foot rocking, with the current limits and measured
 plant. No geometry, gain, torque or policy fingerprint changed; no PPO steps added.
 
+**Further local development:** stance-crouch preparation followed by swapping leg
+extension now gives one qualifying step from HOME, mirrored on either side. An
+independent raw2ms audit confirms112ms whole-foot clearance>=3mm,22.36mm touchdown
+advance and2.33mm stance motion. Zero alternations; only3.33mm body advance.
+See [current result](STANCE_TRANSFER.md). Next: isolate first-swing clearance and
+phase/foot-placement effects before proposing repeatable alternating motion.
+
+**Current continuation:** timing study plus weight handoff gives four alternating
+nominal steps and6.60cm torso advance/30s; mirrored replay agrees. Five randomized
+draws give0–1steps. See [frozen scripted baseline](REFERENCE_GAIT.md). Freeze nominal
+tuning; next prepare calibration analysis/parameter isolation while budget, sample
+fit and real response/friction measurements remain blocked. No extra PPO or gate release.
+
 ## 2. Close the complete delivered budget and interfaces — AI + user/supplier
 
 - Start from procurement.json; do not treat old printing prices as current quotes.

@@ -1,0 +1,112 @@
+{
+  "state": "locally verified scripted single step; walking acceptance unmet",
+  "episodes": [
+    {
+      "first_stance": "left",
+      "seed": 42,
+      "distance_m": 0.003333192420283684,
+      "steps_left": 1,
+      "steps_right": 0,
+      "alternations": 0,
+      "gait_distance_m": 0.011181289383621097,
+      "fallen": false,
+      "walking_success": false
+    },
+    {
+      "first_stance": "left",
+      "seed": 43,
+      "distance_m": 0.003333192420283684,
+      "steps_left": 1,
+      "steps_right": 0,
+      "alternations": 0,
+      "gait_distance_m": 0.011181289383621097,
+      "fallen": false,
+      "walking_success": false
+    },
+    {
+      "first_stance": "left",
+      "seed": 44,
+      "distance_m": 0.003333192420283684,
+      "steps_left": 1,
+      "steps_right": 0,
+      "alternations": 0,
+      "gait_distance_m": 0.011181289383621097,
+      "fallen": false,
+      "walking_success": false
+    },
+    {
+      "first_stance": "right",
+      "seed": 42,
+      "distance_m": 0.003333192419131044,
+      "steps_left": 0,
+      "steps_right": 1,
+      "alternations": 0,
+      "gait_distance_m": 0.011181289383231745,
+      "fallen": false,
+      "walking_success": false
+    },
+    {
+      "first_stance": "right",
+      "seed": 43,
+      "distance_m": 0.003333192419131044,
+      "steps_left": 0,
+      "steps_right": 1,
+      "alternations": 0,
+      "gait_distance_m": 0.011181289383231745,
+      "fallen": false,
+      "walking_success": false
+    },
+    {
+      "first_stance": "right",
+      "seed": 44,
+      "distance_m": 0.003333192419131044,
+      "steps_left": 0,
+      "steps_right": 1,
+      "alternations": 0,
+      "gait_distance_m": 0.011181289383231745,
+      "fallen": false,
+      "walking_success": false
+    }
+  ],
+  "independent_raw_step_checks": [
+    {
+      "foot": "left",
+      "touchdown_time_s": 22.591999999998357,
+      "raw_max_continuous_3mm_lift_s": 0.11200000000000009,
+      "raw_forward_advance_m": 0.022362578767242194,
+      "raw_lateral_advance_m": -0.00961061633052621,
+      "raw_max_stance_slip_m": 0.0023343608179336433,
+      "opposite_continuously_supported": true,
+      "both_supported_at_touchdown": true,
+      "passes_existing_single_step_thresholds": true,
+      "first_stance": "left"
+    },
+    {
+      "foot": "right",
+      "touchdown_time_s": 22.591999999998357,
+      "raw_max_continuous_3mm_lift_s": 0.11200000000000009,
+      "raw_forward_advance_m": 0.02236257876646349,
+      "raw_lateral_advance_m": 0.009610616332487713,
+      "raw_max_stance_slip_m": 0.0023343608178786625,
+      "opposite_continuously_supported": true,
+      "both_supported_at_touchdown": true,
+      "passes_existing_single_step_thresholds": true,
+      "first_stance": "right"
+    }
+  ],
+  "walking_successes": 0,
+  "interpretation": "Sensor seeds change unused noisy IMU only: nominal open-loop dynamics are identical, not6independent robustness trials. Mirroring reproduces the opposite-side step.",
+  "input_sha256": {
+    "docs/validation/2026-10-24/stance_transfer_review/left42/summary.json": "694858b3883ff10807b51b30072eb416a2094de0697486dae277ec47b98c9de4",
+    "docs/validation/2026-10-24/stance_transfer_review/left43/summary.json": "bd57e6b795cfcf564acdbbd2358d5f3e81fcc4f5459f555f169cc4529114cc3d",
+    "docs/validation/2026-10-24/stance_transfer_review/left44/summary.json": "7f75c3d9186d09eff1cedecf35417326a33e7934251922d6d70da824a2decfb2",
+    "docs/validation/2026-10-24/stance_transfer_review/right42/summary.json": "85891cd472c9e10abb4cfadb4dda030a3588131605f5219bb352afe489efcd46",
+    "docs/validation/2026-10-24/stance_transfer_review/right43/summary.json": "82ffe638af912ca2d44970a885486bf77b30b4a3e8ecc9757620bee4bcdfbba5",
+    "docs/validation/2026-10-24/stance_transfer_review/right44/summary.json": "944555daa67fe019891f9285b25fcab01cfaa7cf5e77bbdb73dc7170f5b2f081",
+    "docs/validation/2026-10-24/stance_transfer_audit/left42/summary.json": "3bcfb43d004142a7e56f22571505e6e90e520136e2dac4eaa3891be6b5b7ffed",
+    "docs/validation/2026-10-24/stance_transfer_audit/left42/physics_trace.csv": "8a44f42e2ae7f175c0acaac5c2db56072b3957f68ebce32d68c5ad5d4b03aeb8",
+    "docs/validation/2026-10-24/stance_transfer_audit/right42/summary.json": "a2fd86c9b7d798553ff0585d28d175b94ef2fc02b944d0d4ce5e5232d0bda72f",
+    "docs/validation/2026-10-24/stance_transfer_audit/right42/physics_trace.csv": "9403d7bed0acf663ba6505c39fc8afa7c98a3bb6b9ab15f261efbaf0bd1f3512"
+  },
+  "report_source_sha256": "4f3136d762e9fe310a1bd34f911586d657cb0abda0f10fba42396f1a556fffd3"
+}

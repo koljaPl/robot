@@ -28,6 +28,8 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 - Calibration records: per-servo pulse mapping and IMU alignment/bias; examples are invalid
   for policy deployment until measured and explicitly validated.
 - Source code is authoritative over copies embedded in generated documentation.
+- Frozen provisional script: `docs/baselines/scripted_r2.json` identifies the exact
+  snapshot/replay command and expected metrics; it is not hardware/training approval.
 
 ## Evidence and gates
 
@@ -79,9 +81,11 @@ python tools/prepare_print_order.py  # two quotation ZIPs; never manufacturing a
 - Current firmware header is regenerated invalid; ARM/Pico firmware build must be repeated before flash.
 - The nominal pilot and scripted lifts failed: diagnose fit/model/measurements before
   repeating or extending training; do not increase torque just to force a simulated lift.
-- `docs/SUPPORT_DIAGNOSIS.md`: prepared20deg poses hold single support3s; both
-  HOME transitions fail. Offline anchoring is NOT reference-gait/physical approval.
-- Next AI task: level-stance HOME-to-support transition analysis, not more PPO;
+- `docs/REFERENCE_GAIT.md`: handoff script gives4alternating nominal steps,
+  mirrored,6.60cm/30s; five randomized draws give0–1steps. Target30cm fails.
+  Raw2ms audit retained; no measured-reference/physical/formal-training approval.
+- Next AI task: freeze this script, prepare calibration analysis/parameter isolation;
+  no further nominal tuning, stronger motors, relaxed acceptance or more PPO;
   next human task: affordable complete quote and measured servo/horn/sample fit.
 - Stop at the agreed training cap and report failure honestly if walking is unmet.
 

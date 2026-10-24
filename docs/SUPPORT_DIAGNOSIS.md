@@ -4,6 +4,11 @@
 verification. Geometry, gains, torque envelope, policy observations and model
 fingerprint remain unchanged. No new PPO training was run.
 
+**Follow-up:** a later stance-crouch/swap probe reaches one qualifying scripted
+step from HOME. The [current handoff baseline](REFERENCE_GAIT.md) reaches four
+nominal alternating steps but fails the distance/robustness targets. The failed
+sequences below are preserved earlier evidence, not the latest result.
+
 ## What was tested
 
 1. **154 ideal poses:** either stance foot placed level at its pad plane, within

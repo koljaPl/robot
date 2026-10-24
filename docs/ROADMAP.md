@@ -20,12 +20,16 @@ strength and complete delivered quotation remain blocked. Common95.81EUR plus
 priced ear hardware/delivery9.53EUR already exceeds100EUR by5.34EUR before printing.
 Next human action: authorize exact current-STL quotation upload toMeltlab or return
 its quote/settings/hashes; no order/message. Then actual servo/horn measurements and
-sample fit are required. Current41tests and historical2048step smoke are local evidence only.
-The scripts from HOME still produce no qualifying lift; do not expand training to hide that.
-New offline diagnosis found154ideal poses, including mirrored20° prepared states
-that hold single support for3s after initialization; both tested HOME transition
-orders still fail. These holds do not clear the reference gate. Next independent
-AI work is support-transition/stance-rocking diagnosis; see SUPPORT_DIAGNOSIS.md.
+sample fit are required. Current49tests and historical2048step smoke are local evidence only.
+The newest handoff script gives4qualifying alternating nominal steps, mirrored,
+6.60cm torso advance in30s. Five randomized draws drop to0–1steps. The30cm goal
+still fails; do not expand training to hide this or assume measured robustness.
+Earlier offline diagnosis found154ideal poses, including mirrored20° prepared
+states that hold single support for3s after initialization; the original two
+HOME transition orders failed. Anchored holds do not clear the reference gate. Next independent
+AI work is calibration-analysis preparation and parameter isolation with the
+script frozen; see REFERENCE_GAIT.md. Guessed plant data and fragile nominal
+steps do not clear the measured-reference/training gate.
 
 ## Fixed engineering contracts
 

@@ -73,9 +73,9 @@ Tools: iron access confirmed; borrow/confirm meter, stripper/cutters, safe shrin
 
 | Stage | Verified now / next |
 |---|---|
-| CAD/print package | Implemented;41 tests now pass,55 sampled poses have0 modeled collisions; **5 unknown interface groups still block manufacture** |
+| CAD/print package | Implemented;49 tests now pass,55 sampled poses have0 modeled collisions; **5 unknown interface groups still block manufacture** |
 | MuJoCo | Compiles; matching pad geometry/mass ownership;30 s neutral standing. Estimated masses/strength/friction, not calibrated |
-| Motion | Support diagnosis:154ideal poses; two prepared20° poses hold one foot>25mm clear for3s. **Both tested HOME transitions still fail to lift**; no walking or strength increase |
+| Motion | New handoff script: **four qualifying alternating steps**, mirrored;6.60cm torso advance/30s. Five randomized runs drop to0–1steps. **30cm target still fails**; no strength increase |
 | PPO | New 2048-step smoke/reload/evaluation done:0 walking successes,0 gait distance. Older 49,152-step pilot is historical |
 | Current blocker | Complete affordable quote, actual horn/ear/screw fit, printed strength and physical measurements |
 | Later | Measured twin → manual lifted-step verification → bounded fixed/DR A/B training → supervised physical stand/steps → equal real trials/report |
@@ -88,9 +88,10 @@ Read this → [AGENTS](AGENTS.md) → relevant status/roadmap. Active route is o
 
 **Next human action:** specific permission for Meltlab quotation uploads, or returned quote; then actual servo measurements and sample fit. Keep all[physical gates](docs/gates.json)false. Regenerate handoff and packages after a geometry change. [Full19-section reference](docs/HANDOFF.md), [project archive](school_biped_s6.zip).
 
-**Next AI work:** review a HOME-to-single-support trajectory that moves the COM
-over a level stance foot within current limits. [Diagnosis/evidence](docs/SUPPORT_DIAGNOSIS.md)
-separates ideal poses, free-dynamic holds and failed transitions; no further PPO now.
+**Next AI work:** freeze the [scripted baseline](docs/REFERENCE_GAIT.md); prepare
+calibration analysis and isolate parameter sensitivity before further tuning.
+The narrow lift margin and randomized failures require measured plant/fit data.
+No further PPO now; this provisional script clears no physical or formal-training gate.
 
 ```bash
 .venv/bin/python -m pytest -q
@@ -99,4 +100,7 @@ MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/prepare_print_order.py
 .venv/bin/python tools/check_clearance.py # expected1:unknown interfaces
 MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/analyze_support.py --output runs/support_NEW
 .venv/bin/python tools/transfer_reference.py --output runs/transfer_NEW
+.venv/bin/python tools/stance_transfer.py --profiles geometric50_swap --output runs/stance_NEW
+.venv/bin/python tools/audit_transfer.py --output runs/stance_audit_NEW
+.venv/bin/python tools/handoff_probe.py --profiles compact --output runs/handoff_NEW
 ```

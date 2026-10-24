@@ -1,0 +1,229 @@
+{
+  "case": "baseline",
+  "first_stance": "left",
+  "final_metrics": {
+    "distance_m": 0.003333192420283684,
+    "lateral_distance_m": 0.00023860016076982174,
+    "duration_s": 30.0,
+    "mean_speed_m_s": 0.00011110641400945614,
+    "fallen": false,
+    "total_reward": 5.4597330908127395,
+    "lifted_steps_left": 1,
+    "lifted_steps_right": 0,
+    "alternations": 0,
+    "gait_distance_m": 0.011181289383621097,
+    "max_stance_slip_m": 0.002569023294776397,
+    "rejected_steps": 189,
+    "walking_success": false,
+    "domain_randomization": false,
+    "reward_terms": {
+      "forward": 0.00018351897493181987,
+      "upright": 0.0039996549106009515,
+      "lateral": -7.188374500831672e-06,
+      "smoothness": -1.084935219204933e-10,
+      "fall": 0.0
+    }
+  },
+  "events": [
+    {
+      "event": "lift_qualified",
+      "foot": "left",
+      "time_s": 22.44599999999844,
+      "continuous_whole_foot_clear_s": 0.04000000000000002,
+      "whole_foot_height_m": 0.00346481376423312,
+      "foot_contact": false,
+      "opposite_supported": true
+    },
+    {
+      "event": "step_accepted",
+      "foot": "left",
+      "time_s": 22.591999999998357,
+      "qualified_at_s": 22.44599999999844,
+      "forward_touchdown_advance_m": 0.022362578767242194,
+      "lateral_touchdown_advance_m": -0.00961061633052621,
+      "stance_center_slip_m": 0.0023343608179336433,
+      "both_feet_supported_at_touchdown": true,
+      "credited_midpoint_distance_m": 0.011181289383621097
+    },
+    {
+      "event": "lift_qualified",
+      "foot": "left",
+      "time_s": 24.865999999997097,
+      "continuous_whole_foot_clear_s": 0.04000000000000002,
+      "whole_foot_height_m": 0.0038201850278926025,
+      "foot_contact": false,
+      "opposite_supported": true
+    }
+  ],
+  "flights_above_2mm": [
+    {
+      "foot": "right",
+      "touchdown_time_s": 8.569999999999531,
+      "raw_max_continuous_3mm_lift_s": 0.0,
+      "raw_forward_advance_m": 0.020165986708992716,
+      "raw_lateral_advance_m": 0.0029736716228656035,
+      "raw_max_stance_slip_m": 0.0025847026574571537,
+      "opposite_continuously_supported": true,
+      "both_supported_at_touchdown": true,
+      "passes_existing_single_step_thresholds": false,
+      "takeoff_time_s": 8.215999999999413,
+      "peak_height_m": 0.0029873063766397852
+    },
+    {
+      "foot": "right",
+      "touchdown_time_s": 10.954000000000327,
+      "raw_max_continuous_3mm_lift_s": 0.004,
+      "raw_forward_advance_m": -0.008510888248806959,
+      "raw_lateral_advance_m": -0.0011433505192653612,
+      "raw_max_stance_slip_m": 0.000531125532322431,
+      "opposite_continuously_supported": true,
+      "both_supported_at_touchdown": true,
+      "passes_existing_single_step_thresholds": false,
+      "takeoff_time_s": 10.792000000000273,
+      "peak_height_m": 0.0030067057289814196
+    },
+    {
+      "foot": "left",
+      "touchdown_time_s": 22.591999999998357,
+      "raw_max_continuous_3mm_lift_s": 0.11200000000000009,
+      "raw_forward_advance_m": 0.022362578767242194,
+      "raw_lateral_advance_m": -0.00961061633052621,
+      "raw_max_stance_slip_m": 0.0023343608179336433,
+      "opposite_continuously_supported": true,
+      "both_supported_at_touchdown": true,
+      "passes_existing_single_step_thresholds": true,
+      "takeoff_time_s": 22.181999999998585,
+      "peak_height_m": 0.0035399815251681535
+    },
+    {
+      "foot": "left",
+      "touchdown_time_s": 24.93599999999706,
+      "raw_max_continuous_3mm_lift_s": 0.06400000000000004,
+      "raw_forward_advance_m": -0.010468061959839063,
+      "raw_lateral_advance_m": 0.0038072773254640667,
+      "raw_max_stance_slip_m": 0.0010225395692560848,
+      "opposite_continuously_supported": true,
+      "both_supported_at_touchdown": true,
+      "passes_existing_single_step_thresholds": false,
+      "takeoff_time_s": 24.75199999999716,
+      "peak_height_m": 0.0038614835224149635
+    }
+  ],
+  "phase_boundary_states": [
+    {
+      "time_s": 2.0,
+      "requested_deg": [
+        -10.0,
+        10.0,
+        0.0,
+        -10.0,
+        10.0,
+        0.0
+      ],
+      "applied_ack_deg": [
+        -9.969465635276325,
+        9.969465635276325,
+        0.0,
+        -9.969465635276325,
+        9.969465635276325,
+        0.0
+      ],
+      "actual_joint_deg_DIAGNOSTIC_ONLY": [
+        -9.815597537537089,
+        10.350584506826307,
+        5.58708243282619e-10,
+        -9.815597545118319,
+        10.350584514304256,
+        5.585804830849538e-10
+      ],
+      "root_qpos_DIAGNOSTIC_ONLY": [
+        -0.0005884736803228871,
+        7.374953853453644e-11,
+        0.15617944024459907,
+        0.9999889937380386,
+        7.940425373174375e-12,
+        -0.004691737714829089,
+        4.62281785969769e-12
+      ],
+      "root_qvel_DIAGNOSTIC_ONLY": [
+        1.2371088372402631e-11,
+        3.8864357904982756e-11,
+        1.4758067846874778e-12,
+        1.0205082714281935e-10,
+        1.1245669968224803e-10,
+        5.826525426905807e-11
+      ],
+      "foot_centres_m_DIAGNOSTIC_ONLY": [
+        [
+          0.014682399738626943,
+          0.03400000007663072,
+          -4.8860538512073e-06
+        ],
+        [
+          0.014682399745915857,
+          -0.03399999992336932,
+          -4.886053710819599e-06
+        ]
+      ]
+    },
+    {
+      "time_s": 16.0,
+      "requested_deg": [
+        -10.001868749999998,
+        10.002989999999995,
+        0.0004772662453100225,
+        -9.998131250000002,
+        9.9992525,
+        0.0004772662453100225
+      ],
+      "applied_ack_deg": [
+        -10.313240312354818,
+        10.427831871380983,
+        0.11459155902616465,
+        -9.740282517223996,
+        9.85487407625016,
+        0.11459155902616465
+      ],
+      "actual_joint_deg_DIAGNOSTIC_ONLY": [
+        -10.641241872360753,
+        11.199921516764906,
+        0.11989984277326796,
+        -9.101045274036238,
+        9.852921224684403,
+        0.13246856458917144
+      ],
+      "root_qpos_DIAGNOSTIC_ONLY": [
+        0.0011140853651736603,
+        0.001971724098661973,
+        0.15618165253617863,
+        0.9940483563093446,
+        -0.0018017586563148892,
+        -0.006377166061818981,
+        -0.10873799123331515
+      ],
+      "root_qvel_DIAGNOSTIC_ONLY": [
+        0.0009658971710859757,
+        0.000443690339902197,
+        -0.0001579705955342648,
+        -0.004380468691624198,
+        0.007781304454965394,
+        -0.010843691702407648
+      ],
+      "foot_centres_m_DIAGNOSTIC_ONLY": [
+        [
+          0.024536510706127803,
+          0.031315807311827565,
+          0.00011610911514988581
+        ],
+        [
+          0.00828998775277765,
+          -0.03472811069269154,
+          -4.108453944932922e-06
+        ]
+      ]
+    }
+  ],
+  "duration_s": 30,
+  "walking_acceptance_trial": false,
+  "note": "bounded trajectory diagnostic, not learned or physical walking"
+}

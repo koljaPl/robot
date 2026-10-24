@@ -1,0 +1,31 @@
+[
+  {
+    "event": "lift_qualified",
+    "foot": "left",
+    "time_s": 22.44599999999844,
+    "continuous_whole_foot_clear_s": 0.04000000000000002,
+    "whole_foot_height_m": 0.00346481376423312,
+    "foot_contact": false,
+    "opposite_supported": true
+  },
+  {
+    "event": "step_accepted",
+    "foot": "left",
+    "time_s": 22.591999999998357,
+    "qualified_at_s": 22.44599999999844,
+    "forward_touchdown_advance_m": 0.022362578767242194,
+    "lateral_touchdown_advance_m": -0.00961061633052621,
+    "stance_center_slip_m": 0.0023343608179336433,
+    "both_feet_supported_at_touchdown": true,
+    "credited_midpoint_distance_m": 0.011181289383621097
+  },
+  {
+    "event": "lift_qualified",
+    "foot": "left",
+    "time_s": 24.865999999997097,
+    "continuous_whole_foot_clear_s": 0.04000000000000002,
+    "whole_foot_height_m": 0.0038201850278926025,
+    "foot_contact": false,
+    "opposite_supported": true
+  }
+]

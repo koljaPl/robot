@@ -1,0 +1,16 @@
+{
+  "configuration": "4d3b0dcbad59774b12f9c908c74446f6bf7452d5bdf34a08f07cf4271cc15019",
+  "unchanged_plant_control_and_observations": true,
+  "training_steps_added": 0,
+  "source_snapshots_verified": 10,
+  "audit_and_rendered_replay_metrics_identical": true,
+  "single_steps_independently_verified": 2,
+  "walking_successes": 0,
+  "all_gates_remain_false": true,
+  "priced_basket_eur": "105.34",
+  "full_delivered_budget_unknown": true,
+  "handoff_sections": 19,
+  "pytest": ".............................................                            [100%]\n45 passed in 13.31s",
+  "video_sha256": "67f773ea4479095a3514019bd6e3800eb42bb58a43f73fa05fd19852fbbc22db",
+  "plot_and_video_frames_visually_reviewed": true
+}

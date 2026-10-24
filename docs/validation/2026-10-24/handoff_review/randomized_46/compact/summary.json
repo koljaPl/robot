@@ -1,0 +1,134 @@
+{
+  "profile": "compact",
+  "first_stance": "left",
+  "durations": {
+    "prepare_s": 3.0,
+    "load_s": 1.5,
+    "swap_s": 0.95,
+    "hold_s": 0.55,
+    "cycles": 4
+  },
+  "seed": 46,
+  "domain_randomization": true,
+  "runtime_parameters": {
+    "total_mass_kg": 0.19508626767953957,
+    "body_masses_kg": [
+      0.0,
+      0.07254121771057614,
+      0.01932333106609412,
+      0.008728176435029886,
+      0.033658910581801156,
+      0.018952343614916742,
+      0.008734539668416376,
+      0.03314774860270514
+    ],
+    "floor_sliding_friction": 0.8027464429047703,
+    "static_torque_envelope_Nm": [
+      0.08596418524790007,
+      0.08913179546254903,
+      0.07997951940394266,
+      0.08707772278887242,
+      0.06932413494088899,
+      0.08552862037135475
+    ],
+    "target_speed_rad_s": 3.357060246363704,
+    "no_load_speed_rad_s": 10.17290983746577,
+    "command_delay_s": 0.04,
+    "joint_offsets_rad": [
+      -0.011131620374164358,
+      0.004827354773941226,
+      -0.0007416398553312248,
+      3.9813973963725297e-05,
+      0.006316183650611793,
+      -0.015514565891827111
+    ],
+    "joint_damping": [
+      0.0022183221860160385,
+      0.0016531759481477968,
+      0.0016840473292267174,
+      0.0019120757287828232,
+      0.001860870952022768,
+      0.0018013481020688448
+    ]
+  },
+  "final_metrics": {
+    "distance_m": 0.06921713286222643,
+    "lateral_distance_m": 0.03028452322645591,
+    "duration_s": 30.0,
+    "mean_speed_m_s": 0.0023072377620742142,
+    "fallen": false,
+    "total_reward": 6.094718335962843,
+    "lifted_steps_left": 0,
+    "lifted_steps_right": 0,
+    "alternations": 0,
+    "gait_distance_m": 0.0,
+    "max_stance_slip_m": 0.00259275201412017,
+    "rejected_steps": 208,
+    "walking_success": false,
+    "domain_randomization": true,
+    "reward_terms": {
+      "forward": -3.972475126623465e-11,
+      "upright": 0.003968710439744847,
+      "lateral": -2.771703873361009e-11,
+      "smoothness": -0.0,
+      "fall": 0.0
+    }
+  },
+  "events": [],
+  "flights_above_2mm": [
+    {
+      "foot": "right",
+      "touchdown_time_s": 7.015999999999449,
+      "raw_max_continuous_3mm_lift_s": 0.0,
+      "raw_forward_advance_m": 0.017394803502668463,
+      "raw_lateral_advance_m": 0.003046989372051119,
+      "raw_max_stance_slip_m": 0.0024796886672098493,
+      "opposite_continuously_supported": true,
+      "both_supported_at_touchdown": true,
+      "passes_existing_single_step_thresholds": false,
+      "takeoff_time_s": 6.695999999999485,
+      "peak_height_m": 0.002292027647985478
+    },
+    {
+      "foot": "left",
+      "touchdown_time_s": 13.02600000000102,
+      "raw_max_continuous_3mm_lift_s": 0.0,
+      "raw_forward_advance_m": 0.018677244857743844,
+      "raw_lateral_advance_m": -0.004561263531828501,
+      "raw_max_stance_slip_m": 0.0018605264758559956,
+      "opposite_continuously_supported": true,
+      "both_supported_at_touchdown": true,
+      "passes_existing_single_step_thresholds": false,
+      "takeoff_time_s": 12.704000000000912,
+      "peak_height_m": 0.0022124985251431853
+    },
+    {
+      "foot": "right",
+      "touchdown_time_s": 19.020000000000337,
+      "raw_max_continuous_3mm_lift_s": 0.0,
+      "raw_forward_advance_m": 0.0184277960825975,
+      "raw_lateral_advance_m": 0.0030756379939826835,
+      "raw_max_stance_slip_m": 0.002604272305824106,
+      "opposite_continuously_supported": true,
+      "both_supported_at_touchdown": true,
+      "passes_existing_single_step_thresholds": false,
+      "takeoff_time_s": 18.664000000000534,
+      "peak_height_m": 0.002407896208131716
+    },
+    {
+      "foot": "left",
+      "touchdown_time_s": 25.02599999999701,
+      "raw_max_continuous_3mm_lift_s": 0.0,
+      "raw_forward_advance_m": 0.018607846762827895,
+      "raw_lateral_advance_m": -0.004850129678538512,
+      "raw_max_stance_slip_m": 0.0018583266248573139,
+      "opposite_continuously_supported": true,
+      "both_supported_at_touchdown": true,
+      "passes_existing_single_step_thresholds": false,
+      "takeoff_time_s": 24.703999999997187,
+      "peak_height_m": 0.002218713790004636
+    }
+  ],
+  "video_saved": false,
+  "endpoint": "last prepared support target held; no automatic return or hardware deployment"
+}

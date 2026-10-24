@@ -4164,6 +4164,28 @@ python tools/package_project.py
 
 All numbers currently in `physical_spec.json` and `robot_config.py` are estimates except the explicitly labelled seller claims. A school kitchen scale, ruler, protractor, phone camera, known weights and a borrowed multimeter are enough to replace many estimates. No prolonged stall tests.
 
+#### Priorities from the provisional gait diagnosis
+
+The [current scripted baseline](REFERENCE_GAIT.md) has a weakest credited flight
+peaking only0.177mm above the3mm threshold; mixed parameter randomization removes
+most qualifying steps. Do not tune further against guessed physics or infer a
+specific cause from those mixed draws. After budget clearance, prioritize:
+
+1. Actual servo/horn/ear/screw dimensions and sample fit before the full frame.
+2. Joint pulse mapping and repeated approach from both directions, with external
+   angle/video measurements. Requested angles and applied acknowledgements are
+   **not shaft measurements**. HOME holds retain the existing software deadband
+   history; measure the physical servo's additional response separately.
+3. Loaded motion, delay and supply voltage/current under safe small loads.
+   The0.95s swap is a trajectory choice, not a measured actuator parameter.
+4. Finished pad friction/adhesion and actual assembled body masses/COM. Solid-CAD
+   mass and assumed0.8 sliding friction must not become measured by relabelling.
+
+For `tools/fit_response.py`, `angle_rad` must come from external measurement;
+never fill it with acknowledged commands. Preserve raw timestamped video/CSV,
+clock alignment and uncertainty. The first-order fit does not uniquely identify
+MuJoCo gains, sustainable torque or backlash; no automatic parameter replacement.
+
 | Parameter | Inexpensive procedure | Where it goes |
 |---|---|---|
 | Housing/ears/shaft/horns | Photograph one servo against a ruler, measure ear hole pitch/diameter, shaft centre relative to the body, axial shaft height, horn screw thread, horn holes, supplied screws and lead exit. Have a sample printed interface checked before all prints. | `physical_spec.json` servo dimensions; `cad/build_frame.py` cradle/horn geometry |
@@ -4385,12 +4407,16 @@ strength and complete delivered quotation remain blocked. Common95.81EUR plus
 priced ear hardware/delivery9.53EUR already exceeds100EUR by5.34EUR before printing.
 Next human action: authorize exact current-STL quotation upload toMeltlab or return
 its quote/settings/hashes; no order/message. Then actual servo/horn measurements and
-sample fit are required. Current41tests and historical2048step smoke are local evidence only.
-The scripts from HOME still produce no qualifying lift; do not expand training to hide that.
-New offline diagnosis found154ideal poses, including mirrored20° prepared states
-that hold single support for3s after initialization; both tested HOME transition
-orders still fail. These holds do not clear the reference gate. Next independent
-AI work is support-transition/stance-rocking diagnosis; see SUPPORT_DIAGNOSIS.md.
+sample fit are required. Current49tests and historical2048step smoke are local evidence only.
+The newest handoff script gives4qualifying alternating nominal steps, mirrored,
+6.60cm torso advance in30s. Five randomized draws drop to0–1steps. The30cm goal
+still fails; do not expand training to hide this or assume measured robustness.
+Earlier offline diagnosis found154ideal poses, including mirrored20° prepared
+states that hold single support for3s after initialization; the original two
+HOME transition orders failed. Anchored holds do not clear the reference gate. Next independent
+AI work is calibration-analysis preparation and parameter isolation with the
+script frozen; see REFERENCE_GAIT.md. Guessed plant data and fragile nominal
+steps do not clear the measured-reference/training gate.
 
 #### Fixed engineering contracts
 
@@ -4478,6 +4504,19 @@ for3s; both HOME transition orders still produce zero qualifying steps. See
 [diagnosis](SUPPORT_DIAGNOSIS.md). The next control question is reaching single
 support while preventing stance-foot rocking, with the current limits and measured
 plant. No geometry, gain, torque or policy fingerprint changed; no PPO steps added.
+
+**Further local development:** stance-crouch preparation followed by swapping leg
+extension now gives one qualifying step from HOME, mirrored on either side. An
+independent raw2ms audit confirms112ms whole-foot clearance>=3mm,22.36mm touchdown
+advance and2.33mm stance motion. Zero alternations; only3.33mm body advance.
+See [current result](STANCE_TRANSFER.md). Next: isolate first-swing clearance and
+phase/foot-placement effects before proposing repeatable alternating motion.
+
+**Current continuation:** timing study plus weight handoff gives four alternating
+nominal steps and6.60cm torso advance/30s; mirrored replay agrees. Five randomized
+draws give0–1steps. See [frozen scripted baseline](REFERENCE_GAIT.md). Freeze nominal
+tuning; next prepare calibration analysis/parameter isolation while budget, sample
+fit and real response/friction measurements remain blocked. No extra PPO or gate release.
 
 #### 2. Close the complete delivered budget and interfaces — AI + user/supplier
 
@@ -4590,6 +4629,11 @@ after each completed chunk, preserve historical runs, regenerate handoff/archive
 verification. Geometry, gains, torque envelope, policy observations and model
 fingerprint remain unchanged. No new PPO training was run.
 
+**Follow-up:** a later stance-crouch/swap probe reaches one qualifying scripted
+step from HOME. The [current handoff baseline](REFERENCE_GAIT.md) reaches four
+nominal alternating steps but fails the distance/robustness targets. The failed
+sequences below are preserved earlier evidence, not the latest result.
+
 #### What was tested
 
 1. **154 ideal poses:** either stance foot placed level at its pad plane, within
@@ -4660,6 +4704,225 @@ candidate is at the20° software bound, so no unmeasured extra travel is availab
 Obtain the complete affordable basket and real servo/horn sample in parallel.
 Manufacturing, reference-gait and physical-transfer gates remain false.
 
+### Scripted stance-transfer result — 2026-10-24
+
+**Implemented and locally verified; provisional model only.** One qualifying
+scripted step now occurs from an ordinary HOME reset. Alternating walking,
+learned walking and physical transfer remain unachieved. No model, actuator,
+observation, joint limit or policy fingerprint changed; no additional PPO ran.
+
+**Follow-up:** [REFERENCE_GAIT.md](REFERENCE_GAIT.md) records four alternating
+nominal handoff steps and randomized fragility. This page preserves the earlier
+single-step result; it is not the latest motion checkpoint.
+
+#### What changed
+
+Earlier references shortened the intended swing leg immediately. The new
+open-loop diagnostic first bends the stance knee and coordinates both ankles
+with the resulting leg-height difference. After transferring load, it extends
+the stance leg and shortens the swing leg. It then returns and mirrors the
+sequence. Commands use the existing normalized-action mapping,50Hz updates,
+delayed/slew-limited targets and estimated0.08Nm envelope.
+
+The geometric preparation assumes equal hip+knee pitch on both sides. Its ankle
+roll is `atan2(L × (cos(knee_swing) − cos(knee_stance)), hip_spacing)`, with
+dimensions from physical_spec.json. Forward-kinematics tests confirm level pad
+planes during this ideal preparation. Dynamics still include actual contact,
+friction, compliance and torque/speed limits; no foot is pinned to the floor.
+
+#### Bounded tests and results
+
+| Probe | Result in30s |
+|---|---|
+| Simultaneous crouch/lean,50° stance knee | No qualifying lifted step |
+| Crouch before lean,50° knee | No qualifying lifted step |
+| Matched-height preparation,50° knee | No qualifying lifted step |
+| Matched-height preparation,40° knee | No qualifying lifted step |
+| Matched50° preparation, then swap leg extension | One qualifying step, zero alternations; body advances3.33mm; walking fails |
+
+The last probe was replayed with first stance left/right and sensor seeds42–44.
+All six logs reproduce the corresponding one-sided step. **These are not six
+independent robustness trials:** nominal open-loop dynamics do not consume IMU
+noise, so changing its seed cannot vary the motion. Mirroring gives the opposite
+side. The first swing still misses acceptance; the second succeeds after the
+earlier motion changes foot placement. Maximum sampled foot clearances are only
+about3.00/3.86mm, so the margin above the3mm criterion is small.
+
+#### Independent check of the credited step
+
+The existing GaitMetrics implementation is unchanged. An observer wrapper records
+its inputs every2ms; a separate report recomputes the flight/landing checks from
+raw CSV rather than trusting the accepted-event label.
+
+| Evidence, left-first replay | Measured in simulation |
+|---|---:|
+| Credited foot / touchdown | Left /22.592s |
+| Longest continuous whole-foot clearance>=3mm during that flight |112ms |
+| Forward foot-centre advance at touchdown |22.36mm |
+| Lateral foot-centre movement |9.61mm |
+| Maximum stance-centre movement over the flight |2.33mm |
+| Opposite foot continuously supported | Yes |
+| Both feet supported at touchdown | Yes |
+| Credited midpoint gait distance |11.18mm |
+| Final body displacement / alternations |3.33mm /0 |
+
+The mirrored replay gives matching opposite-side evidence. This meets the
+existing **single-step** thresholds, not the project target of0.3m alternating
+walking within30s plus a separate30s stand. Force/position diagnostics remain
+outside policy observations; physical step evidence requires external video.
+
+![Physics-step evidence](validation/2026-10-24/stance_transfer_report/single_step_trace.png)
+
+[Video](validation/2026-10-24/stance_transfer_review/left42/geometric50_swap.mp4)
+and [reviewed frames](validation/2026-10-24/stance_transfer_report/video_frames.png).
+The wide video provides visual context;3mm acceptance comes from simulation
+geometry/force diagnostics, not a claimed pixel measurement or physical test.
+
+#### Reproduce or inspect
+
+```bash
+.venv/bin/python tools/stance_transfer.py --profiles geometric50_swap --output runs/stance_NEW
+MUJOCO_GL=egl .venv/bin/python tools/stance_transfer.py --profiles geometric50_swap --video --output runs/stance_video_NEW
+.venv/bin/python tools/audit_transfer.py --output runs/stance_audit_NEW
+.venv/bin/python tools/audit_transfer.py --first-stance right --output runs/stance_mirror_audit_NEW
+.venv/bin/python -m pytest -q
+```
+
+Immutable records under validation/2026-10-24/: stance_transfer/ (initial four
+probes), stance_transfer_swap/ (first swap probe), stance_transfer_review/ (six
+replays/video), stance_transfer_audit/ (two raw15000-row traces/events),
+stance_transfer_report/ (independent checks, aggregate CSV, plot, frames).
+Each run retains its actual diagnostic source and matching model/mesh snapshot;
+diagnostic source evolved, while the model/control fingerprint stayed fixed.
+
+#### Next work and gates
+
+Investigate why the first swing remains below the duration/clearance requirement
+and how earlier foot placement affects the second swing. Any further bounded
+probe must declare its phase change and preserve current strength/limits. Do not
+relax3mm/40ms acceptance or increase torque to turn a marginal step into success.
+Resolve physical servo response, pad friction, fit and delivered cost in parallel.
+Keep the reference, manufacturing and formal-training gates false: one scripted
+step is insufficient for repeatable alternating walking or measured Sim-to-Real.
+
+### Provisional scripted gait baseline — 2026-10-24
+
+**Locally verified simulation, not a learned policy or physical result.** A new
+weight-handoff sequence produces four qualifying alternating steps from HOME.
+The 30 cm walking target remains unmet, and performance is fragile under the
+existing parameter-randomization hypotheses. All release/training gates stay closed.
+
+#### Findings from the phase study
+
+The original first forward flight peaked at **2.987 mm**, below the unchanged
+3 mm requirement. Its later backward return briefly exceeded 3 mm but did not
+advance. The second forward flight qualified after a different command/contact
+history. Requesting HOME did not erase that history: the estimated software
+deadband retained acknowledged targets up to 0.458° from their initial values.
+These are command acknowledgements, not measured shaft positions.
+
+| Controlled comparison | Result |
+|---|---|
+| Original 1 s swap | One qualifying step, no alternation |
+| 0.75 s swap | Both feet lift clearly; stance movement >4 mm rejects both steps |
+| 1.25 s swap | Lower stance movement, insufficient lift |
+| 40° rather than 50° preparation knee | No qualifying steps |
+| Extra 2 s HOME hold | Same one-step outcome; commands retain deadband history |
+| 0.95 s swap, all other phases retained | Two qualifying steps and one alternation; only 2.07 mm net torso advance |
+
+The extra-hold comparison is a **32 s history diagnostic**, not a 30 s acceptance
+trial. It rules out residual body motion as a sufficient explanation by itself;
+it does not isolate command hysteresis from foot placement or contact equilibrium.
+No internal pose, velocity or actuator-history resets were used between phases.
+
+#### Weight handoff instead of reversing each step
+
+Reversing each swap back toward HOME undid much of the forward foot placement.
+The new sequence prepares the opposite stance after touchdown instead:
+
+`prepare stance → shift load → swap leg extension → hold → prepare opposite stance`
+
+The compact variant uses 3 s preparation, 1.5 s load transfer, 0.95 s swap and
+0.55 s hold per cycle. Four cycles follow an initial 2 s quiet period; the last
+support target is held to 30 s. **It does not finish at HOME.** It is a simulation
+diagnostic, not released hardware control. Targets depend on time and design
+geometry only; privileged geometry/contact data are logged separately.
+
+| Nominal result, first stance left or mirrored right | Value |
+|---|---:|
+| Qualifying steps / alternations | 2 per foot / 3 |
+| Torso forward displacement in 30 s | 6.60 cm |
+| Qualifying midpoint gait distance | 4.39 cm |
+| Mean torso forward speed | 2.20 mm/s |
+| Minimum peak whole-foot height across credited flights | 3.177 mm |
+| Continuous clearance ≥3 mm per flight | 56, 78, 88, 90 ms |
+| Largest stance movement across those flights, including touchdown | 2.525 mm |
+| Falls / project walking acceptance | 0 / failed |
+
+The torso also ends about 3.16 cm laterally displaced, with the sign reversed in
+the mirrored run; the final leaned posture contributes to that measurement.
+Neither torso displacement nor individual foot advance alone proves straight
+walking. Raw 2 ms traces independently confirm all credited step thresholds.
+The slower three-cycle variant produces three steps and 4.58 cm torso advance.
+
+#### Randomized diagnostic check
+
+Same compact script; five draws from the **existing, unmeasured** mass, friction,
+strength, speed, damping, offset, delay and IMU ranges. No tuning after these draws.
+
+| Environment / seed | Torso advance cm | Gait distance cm | Qualifying steps | Alternations |
+|---|---:|---:|---:|---:|
+| Nominal, left or mirrored right | 6.60 | 4.39 | 4 | 3 |
+| Randomized 42 | 8.31 | 1.30 | 1 | 0 |
+| Randomized 43 | 5.30 | 1.05 | 1 | 0 |
+| Randomized 44 | 6.36 | 1.17 | 1 | 0 |
+| Randomized 45 | 7.09 | 1.33 | 1 | 0 |
+| Randomized 46 | 6.92 | 0.00 | 0 | 0 |
+
+All remain upright, but none meets walking acceptance. Distance alone hides
+unqualified movement. This is **not the fixed-trained versus DR-trained policy
+experiment**: it is one handwritten script in different simulated environments.
+Five mixed draws establish fragility in these draws, not which parameter caused
+it, measured hardware tolerances, or real transfer performance.
+
+![Nominal and randomized diagnostic results](validation/2026-10-24/handoff_report/handoff_results.png)
+
+[Nominal video](validation/2026-10-24/handoff_review/nominal_left/compact/episode.mp4),
+[reviewed frames](validation/2026-10-24/handoff_report/video_frames.png),
+[per-episode CSV](validation/2026-10-24/handoff_report/episodes.csv),
+[independent audit](validation/2026-10-24/handoff_report/summary.json).
+
+#### Reproduction and continuation
+
+[Machine-readable frozen baseline](baselines/scripted_r2.json) records the exact
+model/control fingerprint, immutable source snapshot, replay command and expected
+nominal metrics. Use its snapshot to compare later measured revisions explicitly;
+do not relabel a changed model as the same baseline.
+
+```bash
+.venv/bin/python tools/phase_study.py --output runs/phase_NEW
+.venv/bin/python tools/handoff_probe.py --profiles compact --output runs/handoff_NEW
+MUJOCO_GL=egl .venv/bin/python tools/handoff_probe.py --profiles compact --video --output runs/handoff_video_NEW
+.venv/bin/python tools/handoff_probe.py --profiles compact --domain-randomization --seed 42 --output runs/handoff_DR_NEW
+.venv/bin/python -m pytest -q
+```
+
+Preserved records: phase_study/ (five original comparisons),
+phase_study_followup/ and its mirror (0.95 s), handoff_probes/ (two sequences),
+handoff_review/ (two nominal and five randomized episodes), handoff_report/
+(12 independently checked credited steps, tables, plot and video frames).
+Paths above are under validation/2026-10-24/. Actual diagnostic source versions,
+model/mesh hashes and randomized runtime parameters are retained. No plant,
+observation or threshold changes and no additional PPO training occurred.
+
+**Next:** freeze this script as a diagnostic baseline rather than tune further
+against guessed physics. Resolve the affordable basket and sample fit, then
+measure joint offsets, loaded response, latency/current and pad friction before
+updating the twin. AI can prepare calibration analysis and isolate individual
+parameter effects; mixed randomization alone cannot identify a cause. Keep
+manufacturing, measured-reference, formal-training and physical-transfer gates
+closed. Hardware measurements are still absent and the full walking target fails.
+
 ### Current project status — 2026-10-24
 
 Start with SUMMARY.md and AGENTS.md. **Nothing bought, printed, assembled, flashed
@@ -4671,8 +4934,8 @@ or physically verified.** Active revision:**S6-PETG-pad-r2**, outsourced PETG.
 | Hardware research / budget | blocked | Common95.81 +ear-hardware delivery9.53 =105.34before prints/sample/horns;5.34over cap. Updated ledger/source dates |
 | CAD / order preparation | implemented, locally verified partial | Seven connected watertightPETGmeshes; two-piece sample ZIP, seven-piece frame ZIP, drawings/manifests/fastener schedule.0modeled collisions/55poses;5unknown fit groups; NOT manufacture-approved |
 | Shared control / firmware | locally verified partial | Existing GPIO/protocol retained; invalid current header/nativeC++tests pass. ARMbuild from previous revision is historical; physical timing/calibration absent |
-| Provisional MuJoCo / Gym | locally verified | BarePico/header ownership,8TPEpad contacts,estimated197.053g,axes/inertias/contacts/reward/provenance checked;41tests now pass |
-| Manual reference | blocked |154ideal pose probes; prepared±20° single-support holds retain>25mm swing clearance3s. Both bounded HOME transition orders:zero qualifying lifts/steps; plant still unmeasured |
+| Provisional MuJoCo / Gym | locally verified | BarePico/header ownership,8TPEpad contacts,estimated197.053g,axes/inertias/contacts/reward/provenance checked;49tests now pass |
+| Manual reference | locally verified partial, full gate blocked | Handoff script:4alternating steps, mirrored,6.60cm torso/4.39cm gait in30s; no falls. Randomized draws give0–1steps;30cm acceptance and measured plant still missing |
 | PPO / evaluation | locally verified smoke only | New2048steps A0, reload/CSV/validation/video;0success/0gait under nominal/randomized validation. No larger run |
 | Physical build / calibration / transfer | planned, blocked | No hardware. Bench/soldering/sample/assembly/calibration procedures ready; requires user measurements and budget/fit clearance |
 | Formal A/B / school experiment | planned, blocked | No current full six-run experiment or real trials. Exact seeds/budgets remain in roadmap |
@@ -4695,11 +4958,24 @@ use simulation truth. Safe command intervals are not mechanical stops.
 #### Evidence and limits
 
 - Current local report:VALIDATION_CURRENT.md; artifacts:validation/2026-10-24/print_revision/final/.
--41tests pass, including eight-pad contacts, whole-foot cylinder/plate heights,
+-49tests pass, including eight-pad contacts, whole-foot cylinder/plate heights,
   component ownership, alternative-budget accounting and package quantities/hashes.
 - New support analysis/transition tools are locally verified; source/mesh snapshots,
-  CSV and plot are linked from SUPPORT_DIAGNOSIS.md. Current full-suite log:
+  CSV and plot are linked from SUPPORT_DIAGNOSIS.md. Earlier full-suite log:
   validation/2026-10-24/support_diagnosis_final/pytest.txt (41passed in10.31s).
+- New stance-transfer evidence: STANCE_TRANSFER.md and validation/2026-10-24/
+  stance_transfer_report/. One audited step:112ms>=3mm whole-foot clearance,
+  22.36mm forward touchdown,2.33mm stance motion, supported opposite foot.
+  Mirrored starts reproduce it; sensor seeds42–44 do not vary open-loop dynamics.
+  No alternation or walking; no model/control/observation change or new PPO.
+  Earlier full-suite log:validation/2026-10-24/stance_transfer_report/pytest.txt
+  (45passed in13.31s), including transparent trace and independent audit rejection tests.
+- Current REFERENCE_GAIT.md: timing study identifies lift/slip tradeoff;0.95s swaps
+  plus weight handoff produce4alternating nominal steps (56–90ms lift,≥3.177mm,
+  ≤2.525mm raw stance movement). Five randomized draws produce0–1steps, all stay
+  upright, no walking successes. Independent raw audit checks12credited steps
+  across both nominal mirrors and randomized draws. No model/threshold change or PPO.
+  Latest log:validation/2026-10-24/handoff_report/pytest.txt (49passed in14.21s).
 - Current estimated mass197.053g. No infill-adjusted/measured mass claim.
 -0modeled collisions does NOT clear physical fit: horn/screw shapes, servo ear positions,
   printed tolerances/layer strength, cables/ties/tool access remain unknown. Historical550
@@ -4716,9 +4992,11 @@ use simulation truth. Safe command intervals are not mechanical stops.
 
 #### Exact next task
 
-**AI, independent work:** investigate a HOME-to-single-support transition that
-retains a level loaded stance foot. Two bounded transition orders failed; preserve
-their evidence and existing strength/limits. No further PPO. Read
+**AI, independent work:** freeze the [current scripted baseline](REFERENCE_GAIT.md),
+prepare calibration analysis and isolate parameter sensitivity. Nominal tuning now
+outpaces physical evidence: randomized failures and sub-millimetre lift margins
+require measured plant/fit data. Preserve strength/limits and3mm/40ms acceptance;
+no further PPO. Read relevant
 [support diagnosis](SUPPORT_DIAGNOSIS.md); the [detailed plan](DEVELOPMENT_PLAN.md)
 specifies all remaining dependencies, owners and completion criteria.
 
@@ -4740,6 +5018,9 @@ MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/prepare_print_order.py
 .venv/bin/python tools/check_clearance.py #1, unresolved interfaces
 MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/analyze_support.py --output runs/support_NEW
 .venv/bin/python tools/transfer_reference.py --output runs/transfer_NEW
+.venv/bin/python tools/stance_transfer.py --profiles geometric50_swap --output runs/stance_NEW
+.venv/bin/python tools/audit_transfer.py --output runs/stance_audit_NEW
+.venv/bin/python tools/handoff_probe.py --profiles compact --output runs/handoff_NEW
 ```
 
 Human-facing instructions/packages:SUMMARY.md,cad/QUOTE_REQUEST.md,cad/ASSEMBLY.md.
@@ -4829,6 +5110,60 @@ This clarifies an unachieved support transition; it proves no physical or learne
 The expanded full suite passes **41 tests in10.31s**; its log is in
 support_diagnosis_final/pytest.txt. The37-test result above is the preserved
 pre-diagnosis verification, not an additional test count.
+
+#### Scripted stance-crouch/swap follow-up — unchanged physics
+
+[STANCE_TRANSFER.md](STANCE_TRANSFER.md) documents four additional failed
+stance-crouch probes and a fifth leg-extension-swap probe that reaches one
+qualifying step from HOME. Two mirrored starting orders and three sensor seeds
+reproduce the corresponding single-sided result. Noise seeds affect unused IMU
+readings only, so these are not independent physical/parameter robustness trials.
+
+Independent recomputation from raw2ms trace:112ms continuous whole-foot lift>=3mm,
+22.36mm forward touchdown,2.33mm maximum stance-centre movement, continuously
+supported opposite foot. Final body distance3.33mm, credited gait distance11.18mm,
+zero alternations, no falls. **Walking remains unachieved**, no PPO added and no
+gate cleared. The diagnostic wrapper is tested to preserve exact state,
+observations, rewards and original metrics. Video and representative frames were
+inspected; raw geometry/force diagnostics establish simulated thresholds.
+The expanded suite passes **45tests in13.31s**, recorded in
+stance_transfer_report/pytest.txt. Earlier37/41-test logs remain historical.
+
+Artifacts: validation/2026-10-24/stance_transfer/, stance_transfer_swap/,
+stance_transfer_review/, stance_transfer_audit/ and stance_transfer_report/.
+Each run retains the diagnostic source version it actually executed, with hashes;
+model/control identity remains4d3b0dcbad59774b12f9c908c74446f6bf7452d5bdf34a08f07cf4271cc15019.
+
+#### Phase/history study and weight handoff — latest motion checkpoint
+
+[REFERENCE_GAIT.md](REFERENCE_GAIT.md) records the bounded continuation. The
+original first forward flight peaks at2.987mm; faster swaps improve lift but
+exceed the3mm stance-motion threshold, slower swaps miss lift. A0.95s swap gives
+two qualifying steps. Returning each step backwards toHOME still erases much of
+the advance. Extra2s HOME settling preserves the result and command deadband bias;
+it does not isolate all causes of history dependence.
+
+Two handoff probes then transfer weight to the landed foot. The compact version
+produces **four qualifying alternating steps**,3alternations,6.602cm torso advance,
+4.393cm qualifying gait distance, no fall in30s. Mirroring gives matching results.
+Raw credited flights clear3mm for56–90ms, peak at≥3.177mm and have≤2.525mm stance
+movement including touchdown. Video/frames inspected. This remains a handwritten
+open-loop diagnostic and falls well short of the30cm target.
+
+Five existing-DR draws, seeds42–46, produce1,1,1,1,0credited steps and zero
+alternations/successes; all stay upright. Their5–8cm torso displacements do not
+establish walking. Mixed draws show fragility, not parameter attribution or real
+hardware tolerances. No trained-policy A/B comparison, PPO extension, relaxed
+threshold, changed plant or gate release occurred. Freeze the nominal script.
+
+Current suite: **49tests passed in14.21s**, handoff_report/pytest.txt. New tests
+cover exact baseline preservation, safe/mirrored/rate-bounded phase and handoff
+commands, and deadband history retained despite HOME holds. Independent raw checks
+verify all12credited steps across two nominal and five randomized review episodes.
+Artifacts under validation/2026-10-24/: phase_study/, phase_study_followup/,
+phase_study_followup_mirror/, handoff_probes/, handoff_review/, handoff_report/.
+Actual source snapshots/hashes and randomized runtime parameters are retained;
+configuration identity remains unchanged. Physical fit/actuator data are absent.
 
 #### Procurement and next evidence
 

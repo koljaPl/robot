@@ -1,0 +1,192 @@
+{
+  "state": "provisional handoff diagnosis, no learned/physical walking claim",
+  "configuration_identity": {
+    "configuration": "4d3b0dcbad59774b12f9c908c74446f6bf7452d5bdf34a08f07cf4271cc15019",
+    "files": {
+      "physical_spec.json": "f9e9b2018bde072c8632befacd4ca4c04b14e7a6230b961a131487d4e4e5300d",
+      "robot.xml": "859065cffb998e3f7f8ab6cd736937882b636949b4ffbba78e4b7dce91ec3917",
+      "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+      "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+      "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+      "humanoid_env.py": "3a9a3fadca8b001b1c294cb051e489221f54e1675a310a58b2af08f3a9da50ae",
+      "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+      "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+      "calibration.py": "b73947a3a1bb772bac45df3356fc108426c8bc199bd388cfb8b7ac51e5125486",
+      "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+      "firmware/control.h": "dfc0dec9642df663dca6410b8414faf16de480736c8c62fa2fd2da166f9c7200"
+    },
+    "calibration": null
+  },
+  "source_sha256": {
+    "cad/stl/left_foot.stl": "5743f7037b5058d933cae742e17d86598df200c937d23e692d057f2224f52f63",
+    "cad/stl/left_shin.stl": "dd2e6a50129feb020f3a09cbea4bd35c0fef1d59047ccc2a0026daeb6e55f2d7",
+    "cad/stl/left_thigh.stl": "dec834440d803f2a75fef9a41dda4bb427bb6c007b1adc5b9863f9437dd67d23",
+    "cad/stl/right_foot.stl": "28e593c7b732432a15f5d1f3dead1c909c386186acd5b34cf1f2ff93f0828105",
+    "cad/stl/right_shin.stl": "c0f6b652ce63ab93d2e894e10597d9434e25d8c2acc8b89b0e8893484f666a07",
+    "cad/stl/right_thigh.stl": "d62fbe9849f09deadc9060f359db90bc23fe1ce1d8d4248cee27ac94892ddcdb",
+    "cad/stl/torso.stl": "daa823157995a2814ac1453eb35cc44c5aeaf5338bf0d237f0238bc8a54ba4c4",
+    "calibration.py": "b73947a3a1bb772bac45df3356fc108426c8bc199bd388cfb8b7ac51e5125486",
+    "evaluate.py": "82c5393c0f98992df8b991e60a2a8dec48fa47df076420be44b077dbad62c52f",
+    "firmware/control.h": "dfc0dec9642df663dca6410b8414faf16de480736c8c62fa2fd2da166f9c7200",
+    "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+    "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+    "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+    "humanoid_env.py": "3a9a3fadca8b001b1c294cb051e489221f54e1675a310a58b2af08f3a9da50ae",
+    "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+    "physical_spec.json": "f9e9b2018bde072c8632befacd4ca4c04b14e7a6230b961a131487d4e4e5300d",
+    "requirements-dev.txt": "814456c9bc9fdfcc526bf542b6c9fe734755f5596eeb9be24bc868bd033c4464",
+    "requirements.txt": "8fd1001ef996222f02a8aedd484c9c6fb1b2e106d9eac2d6ff2e9cce16765ca3",
+    "robot.xml": "859065cffb998e3f7f8ab6cd736937882b636949b4ffbba78e4b7dce91ec3917",
+    "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+    "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+    "tools/analyze_support.py": "86d3fe98155b7e7c27c9c15fc3cec0789a794a5752cee56381df53cd3f3335b6",
+    "tools/audit_transfer.py": "a96e33afe729b9780541c2eee876f849d8a924dc91d9900e0a508e02490ef729",
+    "tools/diagnose_motion.py": "89db4d3dce39cb187702b22a6e0e6fea8afa2af4efd2243ccac52dbf4017dc28",
+    "tools/handoff_probe.py": "d43a5727afd57e1a1be6a579f1815f20f12d70b45beeecb65cf3c4f2783df074",
+    "tools/phase_study.py": "8d9d8df24f62c60c787d588ce29cfc3aaae44fb1a1b808786e83210e7d81c539",
+    "tools/report_transfer.py": "4f3136d762e9fe310a1bd34f911586d657cb0abda0f10fba42396f1a556fffd3",
+    "tools/stance_transfer.py": "7c7c5135a1ec767d972728fc81e58fdb013f2ca39dab3e6bfabb4b89b4bf7177"
+  },
+  "profiles": [
+    {
+      "profile": "compact",
+      "first_stance": "left",
+      "durations": {
+        "prepare_s": 3.0,
+        "load_s": 1.5,
+        "swap_s": 0.95,
+        "hold_s": 0.55,
+        "cycles": 4
+      },
+      "seed": 46,
+      "domain_randomization": true,
+      "runtime_parameters": {
+        "total_mass_kg": 0.19508626767953957,
+        "body_masses_kg": [
+          0.0,
+          0.07254121771057614,
+          0.01932333106609412,
+          0.008728176435029886,
+          0.033658910581801156,
+          0.018952343614916742,
+          0.008734539668416376,
+          0.03314774860270514
+        ],
+        "floor_sliding_friction": 0.8027464429047703,
+        "static_torque_envelope_Nm": [
+          0.08596418524790007,
+          0.08913179546254903,
+          0.07997951940394266,
+          0.08707772278887242,
+          0.06932413494088899,
+          0.08552862037135475
+        ],
+        "target_speed_rad_s": 3.357060246363704,
+        "no_load_speed_rad_s": 10.17290983746577,
+        "command_delay_s": 0.04,
+        "joint_offsets_rad": [
+          -0.011131620374164358,
+          0.004827354773941226,
+          -0.0007416398553312248,
+          3.9813973963725297e-05,
+          0.006316183650611793,
+          -0.015514565891827111
+        ],
+        "joint_damping": [
+          0.0022183221860160385,
+          0.0016531759481477968,
+          0.0016840473292267174,
+          0.0019120757287828232,
+          0.001860870952022768,
+          0.0018013481020688448
+        ]
+      },
+      "final_metrics": {
+        "distance_m": 0.06921713286222643,
+        "lateral_distance_m": 0.03028452322645591,
+        "duration_s": 30.0,
+        "mean_speed_m_s": 0.0023072377620742142,
+        "fallen": false,
+        "total_reward": 6.094718335962843,
+        "lifted_steps_left": 0,
+        "lifted_steps_right": 0,
+        "alternations": 0,
+        "gait_distance_m": 0.0,
+        "max_stance_slip_m": 0.00259275201412017,
+        "rejected_steps": 208,
+        "walking_success": false,
+        "domain_randomization": true,
+        "reward_terms": {
+          "forward": -3.972475126623465e-11,
+          "upright": 0.003968710439744847,
+          "lateral": -2.771703873361009e-11,
+          "smoothness": -0.0,
+          "fall": 0.0
+        }
+      },
+      "events": [],
+      "flights_above_2mm": [
+        {
+          "foot": "right",
+          "touchdown_time_s": 7.015999999999449,
+          "raw_max_continuous_3mm_lift_s": 0.0,
+          "raw_forward_advance_m": 0.017394803502668463,
+          "raw_lateral_advance_m": 0.003046989372051119,
+          "raw_max_stance_slip_m": 0.0024796886672098493,
+          "opposite_continuously_supported": true,
+          "both_supported_at_touchdown": true,
+          "passes_existing_single_step_thresholds": false,
+          "takeoff_time_s": 6.695999999999485,
+          "peak_height_m": 0.002292027647985478
+        },
+        {
+          "foot": "left",
+          "touchdown_time_s": 13.02600000000102,
+          "raw_max_continuous_3mm_lift_s": 0.0,
+          "raw_forward_advance_m": 0.018677244857743844,
+          "raw_lateral_advance_m": -0.004561263531828501,
+          "raw_max_stance_slip_m": 0.0018605264758559956,
+          "opposite_continuously_supported": true,
+          "both_supported_at_touchdown": true,
+          "passes_existing_single_step_thresholds": false,
+          "takeoff_time_s": 12.704000000000912,
+          "peak_height_m": 0.0022124985251431853
+        },
+        {
+          "foot": "right",
+          "touchdown_time_s": 19.020000000000337,
+          "raw_max_continuous_3mm_lift_s": 0.0,
+          "raw_forward_advance_m": 0.0184277960825975,
+          "raw_lateral_advance_m": 0.0030756379939826835,
+          "raw_max_stance_slip_m": 0.002604272305824106,
+          "opposite_continuously_supported": true,
+          "both_supported_at_touchdown": true,
+          "passes_existing_single_step_thresholds": false,
+          "takeoff_time_s": 18.664000000000534,
+          "peak_height_m": 0.002407896208131716
+        },
+        {
+          "foot": "left",
+          "touchdown_time_s": 25.02599999999701,
+          "raw_max_continuous_3mm_lift_s": 0.0,
+          "raw_forward_advance_m": 0.018607846762827895,
+          "raw_lateral_advance_m": -0.004850129678538512,
+          "raw_max_stance_slip_m": 0.0018583266248573139,
+          "opposite_continuously_supported": true,
+          "both_supported_at_touchdown": true,
+          "passes_existing_single_step_thresholds": false,
+          "takeoff_time_s": 24.703999999997187,
+          "peak_height_m": 0.002218713790004636
+        }
+      ],
+      "video_saved": false,
+      "endpoint": "last prepared support target held; no automatic return or hardware deployment"
+    }
+  ],
+  "plant_changed": false,
+  "acceptance_thresholds_changed": false,
+  "seed": 46,
+  "domain_randomization": true,
+  "training_steps_added": 0,
+  "randomization_state": "existing conservative hypotheses, not measured tolerances"
+}

@@ -9,8 +9,8 @@ or physically verified.** Active revision:**S6-PETG-pad-r2**, outsourced PETG.
 | Hardware research / budget | blocked | Common95.81 +ear-hardware delivery9.53 =105.34before prints/sample/horns;5.34over cap. Updated ledger/source dates |
 | CAD / order preparation | implemented, locally verified partial | Seven connected watertightPETGmeshes; two-piece sample ZIP, seven-piece frame ZIP, drawings/manifests/fastener schedule.0modeled collisions/55poses;5unknown fit groups; NOT manufacture-approved |
 | Shared control / firmware | locally verified partial | Existing GPIO/protocol retained; invalid current header/nativeC++tests pass. ARMbuild from previous revision is historical; physical timing/calibration absent |
-| Provisional MuJoCo / Gym | locally verified | BarePico/header ownership,8TPEpad contacts,estimated197.053g,axes/inertias/contacts/reward/provenance checked;41tests now pass |
-| Manual reference | blocked |154ideal pose probes; prepared±20° single-support holds retain>25mm swing clearance3s. Both bounded HOME transition orders:zero qualifying lifts/steps; plant still unmeasured |
+| Provisional MuJoCo / Gym | locally verified | BarePico/header ownership,8TPEpad contacts,estimated197.053g,axes/inertias/contacts/reward/provenance checked;49tests now pass |
+| Manual reference | locally verified partial, full gate blocked | Handoff script:4alternating steps, mirrored,6.60cm torso/4.39cm gait in30s; no falls. Randomized draws give0–1steps;30cm acceptance and measured plant still missing |
 | PPO / evaluation | locally verified smoke only | New2048steps A0, reload/CSV/validation/video;0success/0gait under nominal/randomized validation. No larger run |
 | Physical build / calibration / transfer | planned, blocked | No hardware. Bench/soldering/sample/assembly/calibration procedures ready; requires user measurements and budget/fit clearance |
 | Formal A/B / school experiment | planned, blocked | No current full six-run experiment or real trials. Exact seeds/budgets remain in roadmap |
@@ -33,11 +33,24 @@ use simulation truth. Safe command intervals are not mechanical stops.
 ## Evidence and limits
 
 - Current local report:VALIDATION_CURRENT.md; artifacts:validation/2026-10-24/print_revision/final/.
--41tests pass, including eight-pad contacts, whole-foot cylinder/plate heights,
+-49tests pass, including eight-pad contacts, whole-foot cylinder/plate heights,
   component ownership, alternative-budget accounting and package quantities/hashes.
 - New support analysis/transition tools are locally verified; source/mesh snapshots,
-  CSV and plot are linked from SUPPORT_DIAGNOSIS.md. Current full-suite log:
+  CSV and plot are linked from SUPPORT_DIAGNOSIS.md. Earlier full-suite log:
   validation/2026-10-24/support_diagnosis_final/pytest.txt (41passed in10.31s).
+- New stance-transfer evidence: STANCE_TRANSFER.md and validation/2026-10-24/
+  stance_transfer_report/. One audited step:112ms>=3mm whole-foot clearance,
+  22.36mm forward touchdown,2.33mm stance motion, supported opposite foot.
+  Mirrored starts reproduce it; sensor seeds42–44 do not vary open-loop dynamics.
+  No alternation or walking; no model/control/observation change or new PPO.
+  Earlier full-suite log:validation/2026-10-24/stance_transfer_report/pytest.txt
+  (45passed in13.31s), including transparent trace and independent audit rejection tests.
+- Current REFERENCE_GAIT.md: timing study identifies lift/slip tradeoff;0.95s swaps
+  plus weight handoff produce4alternating nominal steps (56–90ms lift,≥3.177mm,
+  ≤2.525mm raw stance movement). Five randomized draws produce0–1steps, all stay
+  upright, no walking successes. Independent raw audit checks12credited steps
+  across both nominal mirrors and randomized draws. No model/threshold change or PPO.
+  Latest log:validation/2026-10-24/handoff_report/pytest.txt (49passed in14.21s).
 - Current estimated mass197.053g. No infill-adjusted/measured mass claim.
 -0modeled collisions does NOT clear physical fit: horn/screw shapes, servo ear positions,
   printed tolerances/layer strength, cables/ties/tool access remain unknown. Historical550
@@ -54,9 +67,11 @@ use simulation truth. Safe command intervals are not mechanical stops.
 
 ## Exact next task
 
-**AI, independent work:** investigate a HOME-to-single-support transition that
-retains a level loaded stance foot. Two bounded transition orders failed; preserve
-their evidence and existing strength/limits. No further PPO. Read
+**AI, independent work:** freeze the [current scripted baseline](REFERENCE_GAIT.md),
+prepare calibration analysis and isolate parameter sensitivity. Nominal tuning now
+outpaces physical evidence: randomized failures and sub-millimetre lift margins
+require measured plant/fit data. Preserve strength/limits and3mm/40ms acceptance;
+no further PPO. Read relevant
 [support diagnosis](SUPPORT_DIAGNOSIS.md); the [detailed plan](DEVELOPMENT_PLAN.md)
 specifies all remaining dependencies, owners and completion criteria.
 
@@ -78,6 +93,9 @@ MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/prepare_print_order.py
 .venv/bin/python tools/check_clearance.py #1, unresolved interfaces
 MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/analyze_support.py --output runs/support_NEW
 .venv/bin/python tools/transfer_reference.py --output runs/transfer_NEW
+.venv/bin/python tools/stance_transfer.py --profiles geometric50_swap --output runs/stance_NEW
+.venv/bin/python tools/audit_transfer.py --output runs/stance_audit_NEW
+.venv/bin/python tools/handoff_probe.py --profiles compact --output runs/handoff_NEW
 ```
 
 Human-facing instructions/packages:SUMMARY.md,cad/QUOTE_REQUEST.md,cad/ASSEMBLY.md.
