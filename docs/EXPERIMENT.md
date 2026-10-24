@@ -41,7 +41,7 @@ Turning, recovery and terrain are conditional extensions after walking works.
 
 ## Human-assisted physical sequence
 
-1. Clear delivered basket, helper job, rated connections and fit questions.
+1. Clear delivered basket, self-soldered harness, rated connections and fit questions.
 2. On bench: test enclosed PSU/physical disconnect, Pico USB, stationary IMU,
    one unloaded servo,3.3V PWM and boot/disarm/STOP/watchdog. Log actual timing.
 3. Measure servo/shaft/horn/ear interfaces; approve one sample mounting interface

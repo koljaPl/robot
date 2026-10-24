@@ -65,6 +65,22 @@ only; metrics exactly match the original videos. Physics/controller identity did
 not change. New rendering source hashes/copies are saved with those evaluations.
 No video proves physical success.
 
+## Additional support diagnosis — same model identity, no new training
+
+See [SUPPORT_DIAGNOSIS.md](SUPPORT_DIAGNOSIS.md). New tools/tests probe154ideal
+single-support configurations (48pass limited static screens), replay three existing
+motions with load/foot-roll diagnostics, release four prepared poses for3s, and
+test two22s command-only transitions from HOME. Prepared±20° states retain>=25.36mm
+swing clearance;±15° states settle back to double support. Both HOME transitions
+produce zero qualifying steps. No torque/geometry/control/preprocessing change.
+Current model identity stays4d3b0dcbad59774b12f9c908c74446f6bf7452d5bdf34a08f07cf4271cc15019.
+New immutable records:validation/2026-10-24/support_diagnosis_final/ and
+validation/2026-10-24/transition_probes/, including CSV, plot and source/mesh hashes.
+This clarifies an unachieved support transition; it proves no physical or learned gait.
+The expanded full suite passes **41 tests in10.31s**; its log is in
+support_diagnosis_final/pytest.txt. The37-test result above is the preserved
+pre-diagnosis verification, not an additional test count.
+
 ## Procurement and next evidence
 
 Active priced basket105.34EUR **before** current prints/sample/horn extras; minimum

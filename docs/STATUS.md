@@ -9,8 +9,8 @@ or physically verified.** Active revision:**S6-PETG-pad-r2**, outsourced PETG.
 | Hardware research / budget | blocked | Common95.81 +ear-hardware delivery9.53 =105.34before prints/sample/horns;5.34over cap. Updated ledger/source dates |
 | CAD / order preparation | implemented, locally verified partial | Seven connected watertightPETGmeshes; two-piece sample ZIP, seven-piece frame ZIP, drawings/manifests/fastener schedule.0modeled collisions/55poses;5unknown fit groups; NOT manufacture-approved |
 | Shared control / firmware | locally verified partial | Existing GPIO/protocol retained; invalid current header/nativeC++tests pass. ARMbuild from previous revision is historical; physical timing/calibration absent |
-| Provisional MuJoCo / Gym | locally verified | New barePico/header ownership,8TPEpad contacts,estimated197.053g,axes/inertias/contacts/reward/provenance checked;37tests pass |
-| Manual reference | blocked |46s reference +three bounded ankle variants:zero qualifying lifts/steps; strength/plant assumptions unmeasured |
+| Provisional MuJoCo / Gym | locally verified | BarePico/header ownership,8TPEpad contacts,estimated197.053g,axes/inertias/contacts/reward/provenance checked;41tests now pass |
+| Manual reference | blocked |154ideal pose probes; prepared±20° single-support holds retain>25mm swing clearance3s. Both bounded HOME transition orders:zero qualifying lifts/steps; plant still unmeasured |
 | PPO / evaluation | locally verified smoke only | New2048steps A0, reload/CSV/validation/video;0success/0gait under nominal/randomized validation. No larger run |
 | Physical build / calibration / transfer | planned, blocked | No hardware. Bench/soldering/sample/assembly/calibration procedures ready; requires user measurements and budget/fit clearance |
 | Formal A/B / school experiment | planned, blocked | No current full six-run experiment or real trials. Exact seeds/budgets remain in roadmap |
@@ -33,8 +33,11 @@ use simulation truth. Safe command intervals are not mechanical stops.
 ## Evidence and limits
 
 - Current local report:VALIDATION_CURRENT.md; artifacts:validation/2026-10-24/print_revision/final/.
--37tests pass, including eight-pad contacts, whole-foot cylinder/plate heights,
+-41tests pass, including eight-pad contacts, whole-foot cylinder/plate heights,
   component ownership, alternative-budget accounting and package quantities/hashes.
+- New support analysis/transition tools are locally verified; source/mesh snapshots,
+  CSV and plot are linked from SUPPORT_DIAGNOSIS.md. Current full-suite log:
+  validation/2026-10-24/support_diagnosis_final/pytest.txt (41passed in10.31s).
 - Current estimated mass197.053g. No infill-adjusted/measured mass claim.
 -0modeled collisions does NOT clear physical fit: horn/screw shapes, servo ear positions,
   printed tolerances/layer strength, cables/ties/tool access remain unknown. Historical550
@@ -51,6 +54,14 @@ use simulation truth. Safe command intervals are not mechanical stops.
 
 ## Exact next task
 
+**AI, independent work:** investigate a HOME-to-single-support transition that
+retains a level loaded stance foot. Two bounded transition orders failed; preserve
+their evidence and existing strength/limits. No further PPO. Read
+[support diagnosis](SUPPORT_DIAGNOSIS.md); the [detailed plan](DEVELOPMENT_PLAN.md)
+specifies all remaining dependencies, owners and completion criteria.
+
+**Human/supplier-dependent track:**
+
 1. Obtain **specific permission** for current STL quotation uploads toMeltlab, or have
    user return exact-file quotes. Automatic approval review blocked the upload because
    it shares design data externally without named-provider authorization. No upload,
@@ -65,6 +76,8 @@ use simulation truth. Safe command intervals are not mechanical stops.
 .venv/bin/python tools/budget_gate.py #1, active basket over cap before prints
 MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/prepare_print_order.py
 .venv/bin/python tools/check_clearance.py #1, unresolved interfaces
+MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/analyze_support.py --output runs/support_NEW
+.venv/bin/python tools/transfer_reference.py --output runs/transfer_NEW
 ```
 
 Human-facing instructions/packages:SUMMARY.md,cad/QUOTE_REQUEST.md,cad/ASSEMBLY.md.

@@ -3,6 +3,7 @@
 Generated from source by `python tools/build_handoff.py`. Do not edit HANDOFF.md.
 Research/revision date2026-10-24. Source files, ledgers and evidence states take precedence.
 Short purchase/build plan for humans and AI: [SUMMARY.md](../SUMMARY.md).
+Detailed continuation dependencies and completion gates: [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md).
 
 ## 1. Short design recommendation
 
@@ -4316,7 +4317,7 @@ Turning, recovery and terrain are conditional extensions after walking works.
 
 #### Human-assisted physical sequence
 
-1. Clear delivered basket, helper job, rated connections and fit questions.
+1. Clear delivered basket, self-soldered harness, rated connections and fit questions.
 2. On bench: test enclosed PSU/physical disconnect, Pico USB, stationary IMU,
    one unloaded servo,3.3V PWM and boot/disarm/STOP/watchdog. Log actual timing.
 3. Measure servo/shaft/horn/ear interfaces; approve one sample mounting interface
@@ -4366,6 +4367,7 @@ walking. Long formal training is blocked until fit/calibration/reference gates.
 
 Approved 2026-10-23. Preserve six joints and EUR 100 maximum delivered cost.
 States and actual evidence belong in STATUS.md. No stage is physically verified without data.
+Detailed tasks, owners, files, evidence and dependencies: [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md).
 
 | Stage / original phases | Work and owner | Completion gate |
 |---|---|---|
@@ -4383,8 +4385,12 @@ strength and complete delivered quotation remain blocked. Common95.81EUR plus
 priced ear hardware/delivery9.53EUR already exceeds100EUR by5.34EUR before printing.
 Next human action: authorize exact current-STL quotation upload toMeltlab or return
 its quote/settings/hashes; no order/message. Then actual servo/horn measurements and
-sample fit are required. Current37tests and2048step smoke are local evidence only.
-The script still produces no qualifying lift; do not expand training to hide that.
+sample fit are required. Current41tests and historical2048step smoke are local evidence only.
+The scripts from HOME still produce no qualifying lift; do not expand training to hide that.
+New offline diagnosis found154ideal poses, including mirrored20° prepared states
+that hold single support for3s after initialization; both tested HOME transition
+orders still fail. These holds do not clear the reference gate. Next independent
+AI work is support-transition/stance-rocking diagnosis; see SUPPORT_DIAGNOSIS.md.
 
 #### Fixed engineering contracts
 
@@ -4426,6 +4432,234 @@ When quotations or measurements block a stage, name the missing evidence and pre
 the precise question/data template. Continue independent software preparation. Do not
 invent a quote or substitute simulation verification for physical verification.
 
+### Detailed continuation plan
+
+Updated 2026-10-24. Read SUMMARY.md for the priced shopping list and assembly
+overview; STATUS.md records evidence. This plan orders the work without clearing
+procurement, manufacturing, further training or physical deployment.
+
+#### Starting checkpoint
+
+- **Implemented:** seven-part PETG frame, two-part fit sample, drawings and quotation
+  ZIPs; provisional r2 MuJoCo twin; shared control/IMU interface, firmware sources,
+  PPO/evaluation, calibration and experiment tools.
+- **Locally verified:** 37 existing tests, 30 s neutral standing, one 2048-step r2
+  smoke run and reload. Scripted motions and learned smoke policy achieve **no
+  qualifying walking**. These records are preserved.
+- **Estimated:** 197.1 g solid-CAD total mass, actuator dynamics, friction, mounting
+  dimensions and print strength. No physical measurements exist.
+- **Blocked:** EUR105.34 priced parts/delivery before printing/sample/horn extras;
+  exact quote and physical fit missing. No purchases, uploads or supplier messages.
+
+#### 1. Diagnose the failed lifted-step reference — AI, executable now
+
+**Purpose:** establish whether target poses can lift a foot while supporting the
+COM, and distinguish ideal kinematics from actual servo/contact behaviour. More
+PPO cannot answer that question reliably.
+
+- Add an offline diagnostic that anchors either stance foot at the pad plane,
+  computes full-foot clearance, COM/support margin and gravity torque by virtual
+  work. Use the current model and safe limits; do not strengthen actuators.
+- Replay the existing three bounded reference profiles, recording load split,
+  contact footprint, COM margin, joint tracking and torque utilization.
+- Check a finite, documented set of stance/swing poses. A sampled feasible pose
+  is only a candidate; absence in a finite set is not an impossibility proof.
+- Save CSV/JSON, plot, source snapshot and hashes in a new validation directory.
+
+**Files:** tools/analyze_support.py, tests/test_support_analysis.py, validation
+record and status. **Done:** reproducible diagnosis with stated limitations and
+one evidence-based next mechanical/control question. **Blocks:** reference-gait
+approval and substantial training. Static clearance alone never proves gait.
+
+**Implemented and locally checked in this continuation:**154poses, three original
+profile replays, four prepared holds, and two bounded HOME transition probes
+(tools/transfer_reference.py). Mirrored20° prepared holds retain>=25mm clearance
+for3s; both HOME transition orders still produce zero qualifying steps. See
+[diagnosis](SUPPORT_DIAGNOSIS.md). The next control question is reaching single
+support while preventing stance-foot rocking, with the current limits and measured
+plant. No geometry, gain, torque or policy fingerprint changed; no PPO steps added.
+
+#### 2. Close the complete delivered budget and interfaces — AI + user/supplier
+
+- Start from procurement.json; do not treat old printing prices as current quotes.
+  Current known shortfall is **at least EUR5.34**, plus every unknown cost.
+- Verify stock for six exact servos, supplied horns/shaft screws, ear geometry,
+  horn hole pattern, horn-to-frame screw thread/length and branch connector ratings.
+- Seek savings through verified complete deliveries/consumable consolidation;
+  preserve six joints, actuator capability, replaceability and electrical safety.
+- Obtain separate exact-file sample and frame quotes: PETG, finishing, usable
+  holes, support removal, VAT, packaging and delivery to25337. Account for staged
+  shipping. No TPU soles, printer, filament pack or USB adapter.
+- External CAD upload to Meltlab remains subject to specific provider/payload
+  authorization following the prior automatic-review rejection. Alternatively,
+  user uploads the quotation ZIPs and returns itemized quotes/settings/file hashes.
+
+**Files:** procurement.json, docs/PROCUREMENT_ACTIONS.md, SUMMARY.md.
+**Done:** complete sourced <=EUR100 delivered basket, or precise unresolved costs
+and shortfall with procurement still blocked. **Blocks:** any purchase or print
+release. The existing basket is not affordable merely because prints are unpriced.
+
+#### 3. Bench one real servo and IMU; qualify the mounting sample — user + AI
+
+- After budget clearance, inspect exact supplied hardware and measure interfaces
+  before obtaining the fit sample. Failed fit requires CAD revision/requotation.
+- Solder Pico/IMU headers and insulated power harness; servo current bypasses Pico.
+  Verify polarity, common ground, PSU droop/current, branch connections, physical
+  disconnect, USB data and3.3V PWM compatibility.
+- Build current firmware; test disarmed startup, packet rejection, STOP and100ms
+  watchdog in single-channel mode. No policy arming with example calibration.
+- Measure pulse mapping/direction/range, offsets, unloaded and loaded response,
+  command latency, backlash and approximate usable torque without prolonged stall.
+  Record stationary IMU bias/noise/alignment. Test two sample pieces without drilling.
+
+**Files:** firmware/, bench.py, calibrations/, dated raw CSV/video/measurement
+records. Procedures: HARDWARE.md, CALIBRATION.md, cad/ASSEMBLY.md.
+**Done:** measured interface fit and bench records, validated per-channel calibration,
+physical cutoff/watchdog tests. **Blocks:** full frame and policy transfer.
+
+#### 4. Freeze the assembly and measured twin — AI + user
+
+- Resolve diagnostic findings from task1 against measurements; propose any required
+  geometry change explicitly. Recheck torque margin rather than inflating model strength.
+- Regenerate CAD/model from physical_spec.json; check case/board/fastener/tool/cable
+  sweeps and support geometry. Unknown interfaces must still fail manufacturing checks.
+- Obtain the approved full frame; assemble, weigh components and complete rigid bodies
+  without assigning mass twice. Record pad locations/adhesion/friction and tether effects.
+- Fit actuator response/delay/strength/damping; update pulse quantization and IMU model.
+  Record evidence/state/date; keep estimates where COM/inertia cannot be measured.
+- Generate new model/control/calibration fingerprints; preserve incompatible policies
+  as historical. Verify all joint signs, limits, manual standing and lifted reference.
+
+**Files:** physical_spec.json, build_model.py, CAD, calibration, robot_config.py,
+model/control sources when justified, firmware generated configuration.
+**Done:** reproducible model/accounting/clearance tests plus measured fit/plant and
+reviewed lifted-step evidence. **Blocks:** substantial training and physical policy use.
+
+#### 5. Conduct bounded fixed-versus-randomized experiments — AI
+
+- Reuse the established smoke evidence; do not add steps automatically. If a changed
+  configuration requires another smoke, explicitly record the new run/budget first.
+- Once the stage gates pass: <=50000-step nominal pilot; final A/B seeds0,1,2 at
+  equal budgets <=1000000 each, rounded down to1024-step PPO rollouts. An unchanged
+  pilot counts toward its final run. No nominal pretraining advantage for B.
+- Match initial A/B weights. Validation2000–2004 selects success, gait distance,
+  reward in that order; reserve1000–1009 for final testing. Include HOME/untrained
+  baselines and nominal/randomized evaluation for every policy.
+- Save manifests, hashes, actual steps, CSV, aggregate metrics and reviewed videos.
+  Report sliding, toe rocking, stationary lifts and falls separately.
+
+**Files:** train.py, evaluate.py, tools/experiments.py, new run directories.
+**Done:** equal-budget reproducible results or honest failure at the cap. Acceptance:
+30s stand, then >=0.3m qualifying alternating walking within30s, whole-foot lift
+>=3mm for>=40ms, non-sliding touchdown progress. **Blocks:** learned walking claim.
+
+#### 6. Supervised transfer and school experiment — user + AI
+
+- Verify compatible fingerprints/calibration, cutoff/watchdog and conservative limits.
+  Begin standing; progress to short steps only after safe manual/bench tests.
+- Use a low clear area, thin protective surface and optional slack line. Support the
+  tether externally without lifting/pushing the robot; record its influence.
+- Alternate fixed/DR trial order with equal conditions, limits and trial budgets.
+  Measure distance and foot motion using video/ruler; log timestamped IMU/commands.
+  Do not infer travel through double integration of the MPU6050.
+- Produce the school report: question, design/budget, method, A/B tables, videos,
+  failures, cable effects and limitations. Turning/recovery/terrain wait for walking.
+
+**Files:** dated physical trial records, docs/EXPERIMENT.md and school report.
+**Done:** actual physical results with provenance; success is optional, honest
+reporting is mandatory. Simulated evidence cannot complete this task.
+
+#### Continuation rules and commands
+
+AI may implement diagnostics, tests and data-analysis preparation while human tasks
+are pending. Keep gates false until their evidence exists. Update STATUS/SUMMARY
+after each completed chunk, preserve historical runs, regenerate handoff/archive.
+
+```bash
+.venv/bin/python -m pytest -q
+.venv/bin/python tools/analyze_support.py --output runs/support_diagnosis_NEW
+.venv/bin/python tools/budget_gate.py  # expected1 until known shortfall resolved
+.venv/bin/python tools/check_clearance.py  # expected1 while interfaces unknown
+.venv/bin/python tools/build_handoff.py
+.venv/bin/python tools/package_project.py
+```
+
+### Support and lifted-step diagnosis — 2026-10-24
+
+**Local provisional-model evidence only.** No physical fit, strength or walking
+verification. Geometry, gains, torque envelope, policy observations and model
+fingerprint remain unchanged. No new PPO training was run.
+
+#### What was tested
+
+1. **154 ideal poses:** either stance foot placed level at its pad plane, within
+   existing safe command intervals. Compute COM projection, pad support hull,
+   exact whole-foot clearance and gravity torque. This is offline engineering
+   kinematics, not an artificial constraint added to the training environment.
+2. **Existing three18s profiles:** replay without state changes; log both normal
+   loads, loaded-contact hull, tracking error and actual foot roll/clearance.
+3. **Four3s prepared-pose holds:** initialize each pose kinematically once, then
+   release the floating robot into ordinary dynamics. This tests holding a pose,
+   explicitly **not** reaching it from HOME.
+4. **Two22s HOME transitions:** lean20° then shorten the swing leg, or shorten
+   first then lean. Both sides tested, same bounds/servo approximation and seed42.
+   No state anchoring, extra torque, altered contact or training.
+
+#### Results
+
+| Test | Observed result | Interpretation |
+|---|---|---|
+| HOME, ideal single support | COM14.5mm outside either stance pad hull | Double-support HOME is not a quiet single-support pose |
+| Static pose scan |48of154 pass sampled COM/clearance/estimated-torque/collision screens | Candidate poses exist; this is not a gait or exhaustive feasibility proof |
+| Left20° lean, right hip−35°/knee35° | Ideal clearance31.04mm; COM8.64mm inside stance hull; peak static torque0.02099Nm | Fits the provisional0.08Nm hypothesis, even at2×static demand; not measured servo capability |
+| Original15° reference, held swing windows | Intended stance supports about54.2%; actual feet roll about±21.3° | Both feet remain loaded and rock; transient zero load is not a sustained lifted step |
+| Prepared±15° poses | Swing settles back onto floor, no fall | Ideal2.44mm COM margin is insufficient to retain this pose with the actual compliant controller/contact dynamics |
+| Prepared±20° poses | Both mirrored holds last3s; minimum swing clearance25.36mm; final stance load100% | A sustained single-support state exists in this provisional model, but a HOME transition has not been demonstrated |
+| Lean-first HOME transition |0qualifying steps; max clearance<0.001mm; distance−4.58mm | No walking |
+| Shorten-first HOME transition |0qualifying steps; max clearance0.015mm; distance+6.11mm | Forward drift is not walking |
+
+The failed reference is **not evidence that the servos are saturating**: maximum
+observed actuator torque during the original profiles is only about42% of the
+estimated static envelope; maximum target tracking error is2.27°. Feet rolling
+and an unreached support state are directly observed. The cause of the transition
+failure is not fully isolated: contact equilibrium, trajectory and actuator
+compliance need review against physical measurements. Do not increase torque or
+claim that these few poses prove the architecture either works or cannot work.
+
+![Support and clearance diagnostic](validation/2026-10-24/support_diagnosis_final/support_diagnosis.png)
+
+#### Reproduction and evidence
+
+```bash
+MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/analyze_support.py --output runs/support_NEW
+.venv/bin/python tools/transfer_reference.py --output runs/transfer_NEW
+.venv/bin/python -m pytest -q
+```
+
+- [Final support summary](validation/2026-10-24/support_diagnosis_final/summary.json),
+  static_poses.json, dynamic/hold CSVs and hashed source/mesh snapshot.
+- [Transition results](validation/2026-10-24/transition_probes/summary.json), both
+  CSVs and hashed runnable source/mesh snapshot.
+- The earlier support_diagnosis/ directory is the preserved initial scan, before
+  prepared holds and transition probes. Its source snapshot is partial; use the
+  final record for reproduction.
+
+The64-point inscribed pad-circle hull conservatively approximates a flat pad
+patch. Dynamic hulls use only instantaneous loaded solver contact points; a
+degenerate line/point hull is reported without a numeric margin. Static torque
+omits acceleration, cable force and flex. Command-level20ms clearance streaks
+are diagnostics, not replacements for the physics-step gait acceptance test.
+
+#### Next decision
+
+Before another training run or a mechanical redesign, investigate a transition
+that moves the COM into the stance pad area while retaining a level loaded foot.
+Review actual ankle response, pad friction and foot rocking against bench/video
+measurements; test any proposed trajectory in a new bounded diagnostic. The current
+candidate is at the20° software bound, so no unmeasured extra travel is available.
+Obtain the complete affordable basket and real servo/horn sample in parallel.
+Manufacturing, reference-gait and physical-transfer gates remain false.
+
 ### Current project status — 2026-10-24
 
 Start with SUMMARY.md and AGENTS.md. **Nothing bought, printed, assembled, flashed
@@ -4437,8 +4671,8 @@ or physically verified.** Active revision:**S6-PETG-pad-r2**, outsourced PETG.
 | Hardware research / budget | blocked | Common95.81 +ear-hardware delivery9.53 =105.34before prints/sample/horns;5.34over cap. Updated ledger/source dates |
 | CAD / order preparation | implemented, locally verified partial | Seven connected watertightPETGmeshes; two-piece sample ZIP, seven-piece frame ZIP, drawings/manifests/fastener schedule.0modeled collisions/55poses;5unknown fit groups; NOT manufacture-approved |
 | Shared control / firmware | locally verified partial | Existing GPIO/protocol retained; invalid current header/nativeC++tests pass. ARMbuild from previous revision is historical; physical timing/calibration absent |
-| Provisional MuJoCo / Gym | locally verified | New barePico/header ownership,8TPEpad contacts,estimated197.053g,axes/inertias/contacts/reward/provenance checked;37tests pass |
-| Manual reference | blocked |46s reference +three bounded ankle variants:zero qualifying lifts/steps; strength/plant assumptions unmeasured |
+| Provisional MuJoCo / Gym | locally verified | BarePico/header ownership,8TPEpad contacts,estimated197.053g,axes/inertias/contacts/reward/provenance checked;41tests now pass |
+| Manual reference | blocked |154ideal pose probes; prepared±20° single-support holds retain>25mm swing clearance3s. Both bounded HOME transition orders:zero qualifying lifts/steps; plant still unmeasured |
 | PPO / evaluation | locally verified smoke only | New2048steps A0, reload/CSV/validation/video;0success/0gait under nominal/randomized validation. No larger run |
 | Physical build / calibration / transfer | planned, blocked | No hardware. Bench/soldering/sample/assembly/calibration procedures ready; requires user measurements and budget/fit clearance |
 | Formal A/B / school experiment | planned, blocked | No current full six-run experiment or real trials. Exact seeds/budgets remain in roadmap |
@@ -4461,8 +4695,11 @@ use simulation truth. Safe command intervals are not mechanical stops.
 #### Evidence and limits
 
 - Current local report:VALIDATION_CURRENT.md; artifacts:validation/2026-10-24/print_revision/final/.
--37tests pass, including eight-pad contacts, whole-foot cylinder/plate heights,
+-41tests pass, including eight-pad contacts, whole-foot cylinder/plate heights,
   component ownership, alternative-budget accounting and package quantities/hashes.
+- New support analysis/transition tools are locally verified; source/mesh snapshots,
+  CSV and plot are linked from SUPPORT_DIAGNOSIS.md. Current full-suite log:
+  validation/2026-10-24/support_diagnosis_final/pytest.txt (41passed in10.31s).
 - Current estimated mass197.053g. No infill-adjusted/measured mass claim.
 -0modeled collisions does NOT clear physical fit: horn/screw shapes, servo ear positions,
   printed tolerances/layer strength, cables/ties/tool access remain unknown. Historical550
@@ -4479,6 +4716,14 @@ use simulation truth. Safe command intervals are not mechanical stops.
 
 #### Exact next task
 
+**AI, independent work:** investigate a HOME-to-single-support transition that
+retains a level loaded stance foot. Two bounded transition orders failed; preserve
+their evidence and existing strength/limits. No further PPO. Read
+[support diagnosis](SUPPORT_DIAGNOSIS.md); the [detailed plan](DEVELOPMENT_PLAN.md)
+specifies all remaining dependencies, owners and completion criteria.
+
+**Human/supplier-dependent track:**
+
 1. Obtain **specific permission** for current STL quotation uploads toMeltlab, or have
    user return exact-file quotes. Automatic approval review blocked the upload because
    it shares design data externally without named-provider authorization. No upload,
@@ -4493,6 +4738,8 @@ use simulation truth. Safe command intervals are not mechanical stops.
 .venv/bin/python tools/budget_gate.py #1, active basket over cap before prints
 MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/prepare_print_order.py
 .venv/bin/python tools/check_clearance.py #1, unresolved interfaces
+MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/analyze_support.py --output runs/support_NEW
+.venv/bin/python tools/transfer_reference.py --output runs/transfer_NEW
 ```
 
 Human-facing instructions/packages:SUMMARY.md,cad/QUOTE_REQUEST.md,cad/ASSEMBLY.md.
@@ -4566,6 +4813,22 @@ validation seeds and algorithm settings. Videos are640×480,50fps; representativ
 only; metrics exactly match the original videos. Physics/controller identity did
 not change. New rendering source hashes/copies are saved with those evaluations.
 No video proves physical success.
+
+#### Additional support diagnosis — same model identity, no new training
+
+See [SUPPORT_DIAGNOSIS.md](SUPPORT_DIAGNOSIS.md). New tools/tests probe154ideal
+single-support configurations (48pass limited static screens), replay three existing
+motions with load/foot-roll diagnostics, release four prepared poses for3s, and
+test two22s command-only transitions from HOME. Prepared±20° states retain>=25.36mm
+swing clearance;±15° states settle back to double support. Both HOME transitions
+produce zero qualifying steps. No torque/geometry/control/preprocessing change.
+Current model identity stays4d3b0dcbad59774b12f9c908c74446f6bf7452d5bdf34a08f07cf4271cc15019.
+New immutable records:validation/2026-10-24/support_diagnosis_final/ and
+validation/2026-10-24/transition_probes/, including CSV, plot and source/mesh hashes.
+This clarifies an unachieved support transition; it proves no physical or learned gait.
+The expanded full suite passes **41 tests in10.31s**; its log is in
+support_diagnosis_final/pytest.txt. The37-test result above is the preserved
+pre-diagnosis verification, not an additional test count.
 
 #### Procurement and next evidence
 

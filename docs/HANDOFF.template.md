@@ -3,6 +3,7 @@
 Generated from source by `python tools/build_handoff.py`. Do not edit HANDOFF.md.
 Research/revision date2026-10-24. Source files, ledgers and evidence states take precedence.
 Short purchase/build plan for humans and AI: [SUMMARY.md](../SUMMARY.md).
+Detailed continuation dependencies and completion gates: [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md).
 
 ## 1. Short design recommendation
 
@@ -290,6 +291,10 @@ walking. Long formal training is blocked until fit/calibration/reference gates.
 ## 19. Exact build/test order and current checkpoint
 
 {{TEXT:docs/ROADMAP.md}}
+
+{{TEXT:docs/DEVELOPMENT_PLAN.md}}
+
+{{TEXT:docs/SUPPORT_DIAGNOSIS.md}}
 
 {{TEXT:docs/STATUS.md}}
 

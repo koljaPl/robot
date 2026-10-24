@@ -2,6 +2,7 @@
 
 Read `SUMMARY.md` first: the short plan, purchase/cost snapshot and AI next task.
 Then read `docs/STATUS.md` and only the relevant stage in `docs/ROADMAP.md`.
+Detailed task dependencies/owners/done criteria: `docs/DEVELOPMENT_PLAN.md`.
 Use the detailed handoff only for relevant reference; do not reread all embedded code.
 
 ## Goal and constraints
@@ -78,6 +79,10 @@ python tools/prepare_print_order.py  # two quotation ZIPs; never manufacturing a
 - Current firmware header is regenerated invalid; ARM/Pico firmware build must be repeated before flash.
 - The nominal pilot and scripted lifts failed: diagnose fit/model/measurements before
   repeating or extending training; do not increase torque just to force a simulated lift.
+- `docs/SUPPORT_DIAGNOSIS.md`: prepared20deg poses hold single support3s; both
+  HOME transitions fail. Offline anchoring is NOT reference-gait/physical approval.
+- Next AI task: level-stance HOME-to-support transition analysis, not more PPO;
+  next human task: affordable complete quote and measured servo/horn/sample fit.
 - Stop at the agreed training cap and report failure honestly if walking is unmet.
 
 ## Documentation and packaging

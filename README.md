@@ -9,6 +9,9 @@ enthält den vollständigen Code; Preise stehen in `procurement.json`, Maße/Mas
 in `physical_spec.json`. [Offene Beschaffungsfragen](docs/PROCUREMENT_ACTIONS.md),
 [Hardware/Protokoll](docs/HARDWARE.md), [Firmware](firmware/README.md) und
 [Kalibrierung](docs/CALIBRATION.md) sind die Arbeitsreferenzen.
+Der [detaillierte Entwicklungsplan](docs/DEVELOPMENT_PLAN.md) nennt Reihenfolge,
+Zuständigkeiten und Abschlusskriterien. Die [Stütz-/Hebediagnose](docs/SUPPORT_DIAGNOSIS.md)
+trennt vorbereitete Einbein-Posen von weiterhin fehlgeschlagenen Übergängen aus dem Stand.
 
 **Nichts bestellt oder physisch geprüft.** Aktiver Entwurf: **S6-PETG-pad-r2**,
 siebenPETG-Teile vom Druckservice, nackter Pico mit Stiftleisten und acht gekaufte
@@ -17,7 +20,7 @@ Haftpads. Keine gedruckten TPU-Sohlen, kein Drucker-/Filamentkauf. [Druckprobe](
 Der bepreiste Korb kostet105,34€**vor** Druck/Probe/Horn-Kleinteilen: mindestens5,34€
 über der100€Grenze. Eine aktuelle dateispezifische Druckquote fehlt; der STL-Upload
 zuMeltlab wurde durch die automatische Freigabeprüfung blockiert.
-Die vorläufige MuJoCo-Kopie passt zum neuen CAD; geschätzt197.1g.37Tests bestehen.
+Die vorläufige MuJoCo-Kopie passt zum neuen CAD; geschätzt197.1g.41Tests bestehen.
 Der neue2048Schritte-Smoke und die manuellen Hebeversuche zeigen **kein Gehen**.
 Alte Modelle/UF2bleiben historisch. [Prüfstand](docs/VALIDATION_CURRENT.md).
 

@@ -2,6 +2,7 @@
 
 Approved 2026-10-23. Preserve six joints and EUR 100 maximum delivered cost.
 States and actual evidence belong in STATUS.md. No stage is physically verified without data.
+Detailed tasks, owners, files, evidence and dependencies: [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md).
 
 | Stage / original phases | Work and owner | Completion gate |
 |---|---|---|
@@ -19,8 +20,12 @@ strength and complete delivered quotation remain blocked. Common95.81EUR plus
 priced ear hardware/delivery9.53EUR already exceeds100EUR by5.34EUR before printing.
 Next human action: authorize exact current-STL quotation upload toMeltlab or return
 its quote/settings/hashes; no order/message. Then actual servo/horn measurements and
-sample fit are required. Current37tests and2048step smoke are local evidence only.
-The script still produces no qualifying lift; do not expand training to hide that.
+sample fit are required. Current41tests and historical2048step smoke are local evidence only.
+The scripts from HOME still produce no qualifying lift; do not expand training to hide that.
+New offline diagnosis found154ideal poses, including mirrored20° prepared states
+that hold single support for3s after initialization; both tested HOME transition
+orders still fail. These holds do not clear the reference gate. Next independent
+AI work is support-transition/stance-rocking diagnosis; see SUPPORT_DIAGNOSIS.md.
 
 ## Fixed engineering contracts
 

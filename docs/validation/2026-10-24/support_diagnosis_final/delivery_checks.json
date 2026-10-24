@@ -1,0 +1,12 @@
+{
+  "configuration_identity": "4d3b0dcbad59774b12f9c908c74446f6bf7452d5bdf34a08f07cf4271cc15019",
+  "physical_and_training_gates_all_false": true,
+  "no_new_training": true,
+  "priced_budget_eur": "105.34",
+  "complete_budget_unknown": true,
+  "source_snapshots_match_current_inputs": true,
+  "handoff_sections": 19,
+  "full_pytest_result": ".........................................                                [100%]\n41 passed in 10.31s",
+  "archive_contents_checked": true,
+  "figure_visually_reviewed": true
+}
