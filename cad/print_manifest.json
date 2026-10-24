@@ -7,12 +7,12 @@
       "part": "torso",
       "quantity": 1,
       "bounding_box_mm": [
-        32.0,
+        33.5,
         82.0,
         88.75
       ],
-      "volume_cm3": 16.91830530884189,
-      "solid_petg_mass_g_at_1_27": 21.486247742229203,
+      "volume_cm3": 17.278305308841897,
+      "solid_petg_mass_g_at_1_27": 21.94344774222921,
       "connected_components": 1,
       "watertight": true
     },
@@ -95,19 +95,20 @@
       "watertight": true
     }
   ],
-  "total_solid_volume_cm3": 63.394593219321024,
-  "total_solid_petg_mass_g": 80.5111333885377,
+  "total_solid_volume_cm3": 63.75459321932103,
+  "total_solid_petg_mass_g": 80.9683333885377,
   "additional_parts": [
     {
-      "part": "TPU sole",
-      "quantity": 2,
+      "part": "ordinary Delock18309 adhesive TPE pad",
+      "quantity": 8,
+      "printed": false,
       "dimensions_mm": [
-        90.0,
-        45.0,
-        1.0
-      ],
-      "estimated_mass_each_g": 4.859999999999999
+        10,
+        10,
+        3
+      ]
     }
   ],
-  "print_request": "7 PETG frames: 0.2 mm layers, 3 perimeters, 25% infill. 2 TPU 95A soles, bonded to feet with adhesive included. All through holes clear without drilling; supports removed; include VAT and shipping. Quotation plate excludes soles and is not a printer-bed layout."
+  "revision": "S6-PETG-pad-r2",
+  "print_request": "7 PETG frames ONLY: 0.2mm layers, 3walls,25%infill. No printed soles/filament purchase. Quote support removal, usable holes without student drilling, fit sample, finishing, VAT and delivery separately; no manufacturing release."
 }

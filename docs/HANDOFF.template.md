@@ -1,7 +1,7 @@
 # From Simulation to Reality: How does a robot learn?
 
 Generated from source by `python tools/build_handoff.py`. Do not edit HANDOFF.md.
-Research date2026-10-23. Source files, ledgers and evidence states take precedence.
+Research/revision date2026-10-24. Source files, ledgers and evidence states take precedence.
 Short purchase/build plan for humans and AI: [SUMMARY.md](../SUMMARY.md).
 
 ## 1. Short design recommendation
@@ -10,10 +10,10 @@ Retain six Waveshare15024 MG90S servos: hip pitch, knee pitch and ankle roll per
 leg, broad feet, Pico native PWM, MPU6050, PC USB
 inference and separate5V servo power. This is a **provisional** design, not a
 purchasable or calibrated walking robot. Nothing purchased/physically tested.
-User can solder; no mandatory helper labour. Compare a complete standard-parts
-frame (unverified) vs own printing (no access; printer purchase comparison only).
-Existing physical prototype remains Pico H/continuous TPU; bare Pico/TPE pads are
-proposals, not a verified replacement. Commercial printing/laser routes are historical.
+User can solder; no mandatory helper. Active route is outsourced PETG:seven frame
+parts,two separate fit samples,eight bought TPE pads. Bare Pico/header ownership
+and pad contacts now match the provisional twin. No printer/filament/printedTPU
+purchase. Complete delivered budget, actual fit and strength are still blocked.
 The target remains30s standing followed by0.3m visibly alternating walking
 within30s. Software checks and training rewards cannot substitute for that result.
 
@@ -50,10 +50,11 @@ MuJoCo500Hz simulates200Hz IMU on4/6ms intervals; estimator uses actual dt.
 
 ## 5. Required BOM and incomplete route alternatives
 
-Authoritative `procurement.json`, checked2026-10-23. Null prices are required,
+Authoritative `procurement.json`, checked2026-10-24. Null prices are required,
 unresolved costs, never zero. Quantities include full packs where sold as packs.
 
-Shared parts only; choose and verify a full scenario before procurement.
+Shared parts plus active commercial_print scenario are the required basket. Other
+scenarios are retained comparisons, not additional quantities or purchase selections.
 
 {{BOM}}
 
@@ -71,14 +72,11 @@ short initial indoor trial work; several-metre travel needs a newly budgeted tet
 
 ## 7. Mechanical design
 
-`cad/build_frame.py` is editable CSG; individual STLs, quotation bundle,
-print_manifest and exploded drawing are supplied for the existing prototype. Seven
-PETG frames/two TPU soles describe that unchanged physical model. New comparison
-uses standard pads and one full PETG spool if printer access is later available;
-no printer access or purchase is assumed. Standard route must use only ready-made
-parts with no fabrication. Unknown
-horn/ear/screw interfaces block finished manufacture. Broad90×45mm feet and
-short50mm links target roughly18cm height. Solid-CAD masses are estimated.
+`cad/build_frame.py` generates sevenPETG frames from physical_spec.json. Separate
+sample/frame ZIPs include quantities,hashes,editable sources,drawings and fastener
+schedule.90x45mm feet,50mm links,roughly18cm height. Ordinary10x3mm pads replace
+continuous soles. Motor-ear/horn/shaft/screw fit remains unmeasured; sample first.
+No manufacturing approval or actual printed density/strength is implied.
 
 {{TEXT:docs/FRAME_ROUTES.md}}
 
@@ -283,8 +281,8 @@ continuous torque, loaded speed/response/backlash,3.3V input, printed strength,
 actual masses/COM, friction, IMU alignment/noise and tether forces remain unknown
 or estimated. No compiler run proves electronics safety. PWM STOP is not power
 isolation. Cheap position servos have no measured joint feedback or torque cap.
-Finite sampled clearances do not prove all continuous paths. Current fastener
-proxies cause unresolved conflicts and block manufacture. No physical hardware
+Finite sampled clearances do not prove all continuous paths. Dimensioned M2hardware at estimated
+positions has no sampled modeled collision; five unknown interface groups still block manufacture. No physical hardware
 or measured twin exists. Walking target remains unachieved unless actual recorded
 metrics/video demonstrate otherwise. Standing alone or increasing reward is not
 walking. Long formal training is blocked until fit/calibration/reference gates.

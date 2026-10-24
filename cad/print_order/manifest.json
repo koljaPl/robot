@@ -1,0 +1,419 @@
+{
+  "revision": "S6-PETG-pad-r2",
+  "state": "QUOTATION PROTOTYPE / FIT SAMPLE; NOT RELEASED",
+  "manufacturing_approved": false,
+  "units": "mm",
+  "scale_percent": 100,
+  "frame_parts": 7,
+  "sample_pieces": 2,
+  "files": [
+    {
+      "file": "frame/torso.stl",
+      "quantity": 1,
+      "sha256": "517d9c7c5394299944620a42e6c6b7cc41654d75fe5d7a3e903d1a7cf9a69000",
+      "source_sha256": "daa823157995a2814ac1453eb35cc44c5aeaf5338bf0d237f0238bc8a54ba4c4",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "source_coordinate_frame": "torso",
+      "export_coordinate_frame": "print_bed",
+      "body_to_print_bed_transform_mm": [
+        [
+          6.123233995736766e-17,
+          0.0,
+          1.0,
+          58.75
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          46.0
+        ],
+        [
+          -1.0,
+          0.0,
+          6.123233995736766e-17,
+          10.000000000000004
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          93.75,
+          87.0,
+          33.5
+        ]
+      ]
+    },
+    {
+      "file": "frame/left_thigh.stl",
+      "quantity": 1,
+      "sha256": "c24ea94df155e47f556e10b62e5e29e156f363d539e3dbf10564e5ddc9c07fd6",
+      "source_sha256": "dec834440d803f2a75fef9a41dda4bb427bb6c007b1adc5b9863f9437dd67d23",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "source_coordinate_frame": "left_thigh",
+      "export_coordinate_frame": "print_bed",
+      "body_to_print_bed_transform_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          17.0
+        ],
+        [
+          0.0,
+          6.123233995736766e-17,
+          -1.0,
+          19.0
+        ],
+        [
+          -0.0,
+          1.0,
+          6.123233995736766e-17,
+          8.500000000000005
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          29.0,
+          92.75,
+          13.500000000000007
+        ]
+      ]
+    },
+    {
+      "file": "frame/right_thigh.stl",
+      "quantity": 1,
+      "sha256": "ea2bacfe19b7fa8695e23fdd179e0c2a6f5660ab6e3866958a87b0121eda7bb7",
+      "source_sha256": "d62fbe9849f09deadc9060f359db90bc23fe1ce1d8d4248cee27ac94892ddcdb",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "source_coordinate_frame": "right_thigh",
+      "export_coordinate_frame": "print_bed",
+      "body_to_print_bed_transform_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          17.0
+        ],
+        [
+          0.0,
+          6.123233995736766e-17,
+          -1.0,
+          19.0
+        ],
+        [
+          -0.0,
+          1.0,
+          6.123233995736766e-17,
+          5.000000000000002
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          29.0,
+          92.75,
+          13.5
+        ]
+      ]
+    },
+    {
+      "file": "frame/left_shin.stl",
+      "quantity": 1,
+      "sha256": "7eb73aa80b859f34575fa5554855a56b23740f2d3c20f659019207414d060f5d",
+      "source_sha256": "dd2e6a50129feb020f3a09cbea4bd35c0fef1d59047ccc2a0026daeb6e55f2d7",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "source_coordinate_frame": "left_shin",
+      "export_coordinate_frame": "print_bed",
+      "body_to_print_bed_transform_mm": [
+        [
+          6.123233995736766e-17,
+          0.0,
+          1.0,
+          69.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          17.0
+        ],
+        [
+          -1.0,
+          0.0,
+          6.123233995736766e-17,
+          12.000000000000002
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          83.0,
+          29.0,
+          24.0
+        ]
+      ]
+    },
+    {
+      "file": "frame/right_shin.stl",
+      "quantity": 1,
+      "sha256": "de0ea74ac68d77f5391b0f39fefee3203b8ff7c9f16a4e59ae0c337c03a14fc1",
+      "source_sha256": "c0f6b652ce63ab93d2e894e10597d9434e25d8c2acc8b89b0e8893484f666a07",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "source_coordinate_frame": "right_shin",
+      "export_coordinate_frame": "print_bed",
+      "body_to_print_bed_transform_mm": [
+        [
+          6.123233995736766e-17,
+          0.0,
+          1.0,
+          69.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          17.0
+        ],
+        [
+          -1.0,
+          0.0,
+          6.123233995736766e-17,
+          12.000000000000002
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          83.0,
+          29.0,
+          24.0
+        ]
+      ]
+    },
+    {
+      "file": "frame/left_foot.stl",
+      "quantity": 1,
+      "sha256": "269dc33b5405c14ca1b316c4a218cba9c93e0b6b500a506d460353fa6011177f",
+      "source_sha256": "5743f7037b5058d933cae742e17d86598df200c937d23e692d057f2224f52f63",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "source_coordinate_frame": "left_foot",
+      "export_coordinate_frame": "print_bed",
+      "body_to_print_bed_transform_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          44.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          27.5
+        ],
+        [
+          -0.0,
+          0.0,
+          1.0,
+          24.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          95.0,
+          50.0,
+          38.25
+        ]
+      ]
+    },
+    {
+      "file": "frame/right_foot.stl",
+      "quantity": 1,
+      "sha256": "8b8f5566729e14b72fd3c376a90653238e735384f3b97a458708d0a296f9f286",
+      "source_sha256": "28e593c7b732432a15f5d1f3dead1c909c386186acd5b34cf1f2ff93f0828105",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "source_coordinate_frame": "right_foot",
+      "export_coordinate_frame": "print_bed",
+      "body_to_print_bed_transform_mm": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          44.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          27.5
+        ],
+        [
+          -0.0,
+          0.0,
+          1.0,
+          24.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          95.0,
+          50.0,
+          38.25
+        ]
+      ]
+    },
+    {
+      "file": "sample/ear_cradle.stl",
+      "quantity": 1,
+      "sha256": "67222ed4048de778daac0139315220df5be1663fd3297086c6fb65f526f1c778",
+      "role": "fit sample only; not an eighth/ninth frame part"
+    },
+    {
+      "file": "sample/horn_plate.stl",
+      "quantity": 1,
+      "sha256": "9d6ad9ab4db1a3c0fbb0f7516dc9da7e0c05d6ece2a139de2305184b8b30156e",
+      "role": "fit sample only; not an eighth/ninth frame part"
+    }
+  ],
+  "physical_spec_sha256": "f9e9b2018bde072c8632befacd4ca4c04b14e7a6230b961a131487d4e4e5300d",
+  "source_cad_sha256": "47531526a8379c4d745766b8914c07b74c6072ca33b81e98e459adc06c996f31",
+  "quotation_batch_sha256": "70b33a79f299d2d222bf30ab2bb286d5e1f9870328a1789f0755760f8b88eeac",
+  "quotation_batch_bounds_mm": [
+    185.0,
+    167.0,
+    38.25
+  ],
+  "print_settings": {
+    "route": "commercial PETG FDM, ordinary adhesive TPE pads",
+    "frame_parts": 7,
+    "sample_pieces": 2,
+    "state": "quotation prototype; manufacturing NOT released",
+    "layer_height_mm": 0.2,
+    "walls": 3,
+    "infill_percent": 25,
+    "printed_soles": false,
+    "mechanical_stops": "unknown, omitted",
+    "measurements_required": [
+      "servo ear spacing/holes/thickness and case axial location",
+      "shaft height, spline, supplied horn shape/hole radii/thickness",
+      "retaining-screw thread/length; horn-to-frame screw thread/length",
+      "lead exit and connector mating; installed screw/tool sweeps",
+      "sample insertion fit and actual printed hole diameters",
+      "printed masses/layer strength, pad friction/adhesion",
+      "Pico header11mm pin envelope, PCB stand-off fit and Dupont/cable clearances"
+    ]
+  },
+  "source_date": "2026-10-24",
+  "unknown_interfaces": [
+    "servo ear spacing/holes/thickness and case axial location",
+    "shaft height, spline, supplied horn shape/hole radii/thickness",
+    "retaining-screw thread/length; horn-to-frame screw thread/length",
+    "lead exit and connector mating; installed screw/tool sweeps",
+    "sample insertion fit and actual printed hole diameters",
+    "printed masses/layer strength, pad friction/adhesion",
+    "Pico header11mm pin envelope, PCB stand-off fit and Dupont/cable clearances"
+  ],
+  "note": "Sample2pieces separately priced/shipped. Full order7pieces only. Combined file is an ALTERNATIVE quote input, not extra quantity. No TPU soles/filament/printer included."
+}

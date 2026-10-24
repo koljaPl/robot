@@ -1,0 +1,1 @@
+Superseded in-turn development output before the final Pico/header geometry. Do not claim these describe final r2. Stored identities/metrics retained; a complete source snapshot of this intermediate geometry was not captured. Final source/results are in ../final/.

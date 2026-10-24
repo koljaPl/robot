@@ -1,0 +1,243 @@
+{
+  "revision": "S6-PETG-pad-r2",
+  "status": "SAMPLED KNOWN GEOMETRY CLEAR; UNKNOWN INTERFACES BLOCK RELEASE",
+  "manufacturing_released": false,
+  "conflict_count": 0,
+  "poses": [
+    {
+      "pose": "home",
+      "conflicts": []
+    },
+    {
+      "pose": "zero",
+      "conflicts": []
+    },
+    {
+      "pose": "all_low",
+      "conflicts": []
+    },
+    {
+      "pose": "all_high",
+      "conflicts": []
+    },
+    {
+      "pose": "left_swing",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_0",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_1",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_2",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_3",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_4",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_5",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_6",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_7",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_8",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_9",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_10",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_11",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_12",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_13",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_14",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_15",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_16",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_17",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_18",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_19",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_20",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_21",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_22",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_23",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_24",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_25",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_26",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_27",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_28",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_29",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_30",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_31",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_32",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_33",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_34",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_35",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_36",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_37",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_38",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_39",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_40",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_41",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_42",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_43",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_44",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_45",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_46",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_47",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_48",
+      "conflicts": []
+    },
+    {
+      "pose": "seed123_sample_49",
+      "conflicts": []
+    }
+  ],
+  "unknown_interfaces": [
+    "Actual servo-ear spacing, axial position, thickness and mounting insertion fit unmeasured",
+    "Factory horn shape/hole pattern/spline/shaft and12horn screws+6retainers unknown; not collision-tested",
+    "Dimensioned M2 hardware uses an estimated1.4mm ear and installation pose; verify stack/projection/tool access",
+    "Flexible wires, connectors, lead exits, board tie routing and continuous sweeps require physical checks",
+    "Printed layer strength, support removal and hole tolerances require reviewed sample"
+  ],
+  "intentional_attachment_exclusions": [
+    "Pico header conductors through Pico PCB envelope only; exact pin holes not meshed"
+  ],
+  "limitations": [
+    "55 discrete poses do not prove continuous motion clearance",
+    "M2 shapes sourced; placements estimated. Unknown horns are NOT silently assumed clear.",
+    "Historical mass proxy boxes replaced, not certified; do not compare raw conflict counts as physical validation"
+  ]
+}

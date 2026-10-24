@@ -6,7 +6,7 @@ States and actual evidence belong in STATUS.md. No stage is physically verified 
 | Stage / original phases | Work and owner | Completion gate |
 |---|---|---|
 | Entry / 0,13 | AI: concise AGENTS, STATUS and this roadmap; preserve historical evidence | New session can identify constraints, sources, blockers and next command quickly |
-| A / 1 | AI: compare standard stock mechanics vs own printing; soldering basket, headers, pads, connector ratings and delivered costs; no purchases/messages | Complete sourced basket <=EUR100, fit information or explicit unresolved evidence/shortfall |
+| A / 1 | AI: active commercial PETG quotation, complete sample/frame finishing and delivered costs; soldered electronics/ordinary pads; no purchases/messages | Complete sourced basket <=EUR100, fit information or explicit unresolved evidence/shortfall |
 | B / 1,2 | AI: reconcile CAD and physical ledger, PCB/case/frame clearance, fasteners; user/supplier: sample fit | Checked geometry; no unverified manufacturing release; solid masses remain estimates |
 | C / 3,8 | AI: Pico SDK C++ firmware, PC bench/client, bounded protocol and persistent calibration | Firmware builds and host tests pass; actual electrical timing/cutoff still needs bench |
 | D / 2,3,4,9 | AI: common limits/preprocessing, realistic command scheduling, reward and metrics; user: measured parameters | Reproducible twin; no fake stops/positive closed-loop progress/sliding success; measured vs provisional explicit |
@@ -14,11 +14,13 @@ States and actual evidence belong in STATUS.md. No stage is physically verified 
 | F / 8,9,10,11,13 | User: bench, assembly, calibration and physical trials; AI: firmware/tools/data analysis/report | Real test data; frozen compatible policies; equal trials and alternating A/B order |
 | Extensions / 12 | Future: turning, terrain, recovery | Stable baseline walking first; no automatic scope expansion |
 
-Current proposed shared subset is EUR95.91 without frame. Standard route lacks a
-complete compatible kit. Own-print robot subset EUR118.43 exceeds cap byEUR18.43
-before unknowns; no printer access or purchase selection. Commercial print/laser
-routes are historical. Next: exact stock-frame interfaces and complete landed cost.
-Physical model remains Pico H/TPU; proposals need selection/measurements before updating it.
+Current checkpoint: quotation CAD and matching r2 twin implemented; real fit,
+strength and complete delivered quotation remain blocked. Common95.81EUR plus
+priced ear hardware/delivery9.53EUR already exceeds100EUR by5.34EUR before printing.
+Next human action: authorize exact current-STL quotation upload toMeltlab or return
+its quote/settings/hashes; no order/message. Then actual servo/horn measurements and
+sample fit are required. Current37tests and2048step smoke are local evidence only.
+The script still produces no qualifying lift; do not expand training to hide that.
 
 ## Fixed engineering contracts
 
@@ -49,8 +51,8 @@ Physical model remains Pico H/TPU; proposals need selection/measurements before 
 1. Resolve delivered budget and component interfaces before ordering.
 2. User solders/insulates short harness and headers; checks cutoff, one servo and IMU.
 3. Record pulse mapping, directions, range, speed/strength/current/latency and IMU noise.
-4. Confirm stock-frame interfaces, or measured print sample if access later exists;
-   approve complete budget/clearance, then frame assembly and body weighing.
+4. Confirm printed mounting sample on actual servo/horn, review layer/fastener
+   clearance and complete delivered budget, then obtain frame and weigh bodies.
 5. Validate all six joints, manual stand, watchdog, faults and cables.
 6. Reconcile measured twin and configuration identity; retrain incompatible policies.
 7. Policy stand, short steps, longer trials; use ruler/video, never IMU double integration.

@@ -39,9 +39,11 @@ class HumanoidEnv(gym.Env):
         self.aids = np.array([self.model.actuator(n + "_servo").id for n in JOINT_NAMES])
         self.torso_id = self.model.body("torso").id
         self.floor_id = self.model.geom("floor").id
-        self.feet_ids = [self.model.geom(s + "_foot_sole").id for s in ("left", "right")]
         self.foot_plate_ids = [self.model.geom(s + "_foot_plate").id for s in ("left", "right")]
-        self.foot_ids = set(self.feet_ids + self.foot_plate_ids)
+        self.foot_geom_groups = [set([self.foot_plate_ids[i]] + [self.model.geom(f"{side}_foot_pad_{j}").id for j in range(4)])
+                                 for i, side in enumerate(("left", "right"))]
+        self.foot_ids = set.union(*self.foot_geom_groups)
+        self.foot_center_sites = [self.model.site(s + "_foot_contact_center").id for s in ("left", "right")]
         self.nominal = {name: getattr(self.model, name).copy() for name in (
             "body_mass", "body_inertia", "geom_friction", "dof_damping", "actuator_forcerange")}
         self.estimator = GravityEstimator()
@@ -148,15 +150,23 @@ class HumanoidEnv(gym.Env):
                 if other not in self.foot_ids:
                     bad_contact = True
                 for i in range(2):
-                    if other in (self.feet_ids[i], self.foot_plate_ids[i]):
+                    if other in self.foot_geom_groups[i]:
                         contacts[i] = True
         return contacts, bad_contact
 
     def _minimum_foot_height(self, foot_index):
-        gid = self.feet_ids[foot_index]
-        mat = self.data.geom_xmat[gid].reshape(3, 3)
-        # Lowest box corner: the whole foot must clear the floor, not just a toe.
-        return float(self.data.geom_xpos[gid, 2] - np.dot(np.abs(mat[2]), self.model.geom_size[gid]))
+        heights = []
+        for gid in self.foot_geom_groups[foot_index]:
+            zaxis = self.data.geom_xmat[gid].reshape(3, 3)[2]
+            size = self.model.geom_size[gid]
+            if self.model.geom_type[gid] == mujoco.mjtGeom.mjGEOM_CYLINDER:
+                # Exact support function of a rotated finite cylinder.
+                extent = size[0] * np.linalg.norm(zaxis[:2]) + size[1] * abs(zaxis[2])
+            else:
+                extent = np.dot(np.abs(zaxis), size)
+            heights.append(self.data.geom_xpos[gid, 2] - extent)
+        # All pads AND the plate must clear; a raised toe/one pad is insufficient.
+        return float(min(heights))
 
     def _record_steps(self, contacts):
         load = np.zeros(2)
@@ -166,11 +176,11 @@ class HumanoidEnv(gym.Env):
                 continue
             other = contact.geom2 if contact.geom1 == self.floor_id else contact.geom1
             for i in range(2):
-                if other in (self.feet_ids[i], self.foot_plate_ids[i]):
+                if other in self.foot_geom_groups[i]:
                     mujoco.mj_contactForce(self.model, self.data, index, force)
                     load[i] += max(0, force[0])
         supported = load >= .10 * self.model.body_mass.sum()*9.81
-        self.gait.update(self.data.geom_xpos[self.feet_ids],
+        self.gait.update(self.data.site_xpos[self.foot_center_sites],
                          [self._minimum_foot_height(i) for i in range(2)],
                          contacts, supported, PHYSICS_DT)
         self.alternations = self.gait.alternations

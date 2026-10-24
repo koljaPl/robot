@@ -1,7 +1,7 @@
 """Editable constructive-solid-geometry prototype using the physical spec (mm).
 
-Exports seven assembly components and a nested print plate. Meshes are for
-fit-checking/quotations. Servo ear, shaft and horn dimensions are unmeasured;
+Exports seven assembly components. Meshes are for fit-checking/quotations.
+Servo ear, shaft and horn dimensions are unmeasured;
 do not order these as production-ready parts. No tapped holes or heat-set inserts.
 """
 import json
@@ -21,6 +21,8 @@ SERVO = SPEC["servo"]
 SCALE = 1000
 WALL = GEOMETRY["cad_wall"] * SCALE
 CLEARANCE = GEOMETRY["cad_clearance"] * SCALE
+MOUNT = GEOMETRY["mount"]
+FEATURES = GEOMETRY["cad_features"]
 
 
 def box(dim, pos=(0, 0, 0)):
@@ -40,19 +42,23 @@ def cradle():
     """Pitch servo ear plate, shaft axis +Y, interface origin on shaft."""
     dz = SERVO["shaft_offset_along_case_length"] * SCALE
     dim = SERVO["housing_dimensions"]
-    p = box((20, WALL, 38), (0, -7, -dz))
-    p -= box((dim[1]*SCALE + CLEARANCE, 12, dim[0]*SCALE + CLEARANCE), (0, -7, -dz))
+    y = MOUNT["case_plate_y"] * SCALE
+    p = box((MOUNT["case_plate_width"]*SCALE, WALL, MOUNT["case_plate_height"]*SCALE), (0, y, -dz))
+    cut = FEATURES["tool_cut_depth"]*SCALE
+    p -= box((dim[1]*SCALE + CLEARANCE, cut, dim[0]*SCALE + CLEARANCE), (0, y, -dz))
     for sign in (-1, 1):
-        p -= hole(1.2, 12, (0, -7, -dz + sign * SERVO["mounting_hole_spacing"] * SCALE / 2), "y")
+        p -= hole(MOUNT["ear_clearance_diameter"]*SCALE/2, cut, (0, y, -dz + sign * SERVO["mounting_hole_spacing"] * SCALE / 2), "y")
     return p
 
 
 def horn_plate():
-    p = box((24, WALL, 28), (0, 3.5, 0))
-    p -= hole(3, 12, (0, 3.5, 0), "y")
+    y = MOUNT["horn_plate_y"]*SCALE
+    p = box(tuple(v*SCALE for v in MOUNT["horn_plate_dimensions"]), (0, y, 0))
+    cut = FEATURES["tool_cut_depth"]*SCALE
+    p -= hole(MOUNT["shaft_access_diameter"]*SCALE/2, cut, (0, y, 0), "y")
     # Radial slots accept several existing horn-hole radii after measurement.
     for sign in (-1, 1):
-        p -= box((2.4, 12, 7), (0, 3.5, sign * 9))
+        p -= box((MOUNT["horn_slot_width"]*SCALE, cut, MOUNT["horn_slot_length"]*SCALE), (0, y, sign * MOUNT["horn_slot_radius"]*SCALE))
     return p
 
 
@@ -62,21 +68,23 @@ def thigh():
     # Return to the fixed servo-ear plane before the knee's moving horn sweep.
     # A straight plate on +Y would intersect the shin's top horn plate.
     for sign in (-1, 1):
-        p += box((4, WALL, 20), (sign * 10, 3.5, -22))
-        p += box((4, 13.5, 4), (sign * 10, -1.75, -30))
-        p += box((4, WALL, 13), (sign * 10, -7, -36.5))
+        for feature in FEATURES["thigh_bridges"]:
+            center=np.array(feature["center"])*SCALE;center[0]*=sign
+            p += box(tuple(v*SCALE for v in feature["dimensions"]),tuple(center))
     return p
 
 
 def shin():
     length = GEOMETRY["shin_length"] * SCALE
-    p = horn_plate() + box((24, WALL, length - 18), (0, 3.5, -(length - 18) / 2))
-    p -= box((16, 10, 12), (0, 3.5, -23))
+    web=length-FEATURES["shin_web_allowance"]*SCALE
+    p = horn_plate() + box((MOUNT["horn_plate_dimensions"][0]*SCALE, WALL, web), (0, MOUNT["horn_plate_y"]*SCALE, -web/2))
+    p -= box(tuple(v*SCALE for v in FEATURES["shin_window_dimensions"]), tuple(v*SCALE for v in FEATURES["shin_window_center"]))
     # Roll-axis moving horn plate: rotate pitch mount around Z to face +X.
     ankle = horn_plate().rotate((0, 0, -90)).translate((0, 0, -length))
     p += ankle
     # Corner rib joins the two perpendicular horn interfaces.
-    p += box((6, 8, 12), (5, 3, -length + 14))
+    center=np.array(FEATURES["shin_corner_offset_from_ankle"])*SCALE;center[2]-=length
+    p += box(tuple(v*SCALE for v in FEATURES["shin_corner_dimensions"]),tuple(center))
     return p
 
 
@@ -86,25 +94,75 @@ def foot():
     p = box(tuple(dim), tuple(pos))
     p += cradle().rotate((0, 0, -90))
     for sign in (-1, 1):
-        p += box((12, 4, 14), (-7, sign * 8.5, -17))
+        center=np.array(FEATURES["foot_rib_center"])*SCALE;center[1]*=sign
+        p += box(tuple(v*SCALE for v in FEATURES["foot_rib_dimensions"]),tuple(center))
     return p
 
 
 def torso():
-    p = box((WALL, GEOMETRY["torso_dimensions"][1]*SCALE, GEOMETRY["torso_dimensions"][2]*SCALE), (-20, 0, 2))
-    p -= box((10, 42, 24), (-20, 0, 2))
+    back = MOUNT["torso_back_x"]*SCALE
+    z=FEATURES["torso_window_center_z"]*SCALE
+    p = box((WALL, GEOMETRY["torso_dimensions"][1]*SCALE, GEOMETRY["torso_dimensions"][2]*SCALE), (back, 0, z))
+    p -= box(tuple(v*SCALE for v in FEATURES["torso_window_dimensions"]), (back, 0, z))
     for sign in (-1, 1):
         half = GEOMETRY["hip_half_spacing"] * SCALE
         mount = cradle()
         if sign < 0:
             mount = mount.mirror((0, 1, 0))
         p += mount.translate((0, sign * half, GEOMETRY["hip_z"] * SCALE))
-        p += box((16, 6, 8), (-14, sign * (half - 7), -18))
+        p += box(tuple(v*SCALE for v in FEATURES["torso_brace_dimensions"]),
+                 (FEATURES["torso_brace_x"]*SCALE,sign*(half-FEATURES["torso_brace_hip_inset"]*SCALE),FEATURES["torso_brace_z"]*SCALE))
     # Through-hole rows permit screw-mounted boards or cable ties without drilling.
-    for y in (-32, -16, 16, 32):
-        for z in (10, 28):
-            p -= hole(1.6, 10, (-20, y, z), "x")
+    for y in MOUNT["board_tie_y"]:
+        for z in MOUNT["board_tie_z"]:
+            p -= hole(MOUNT["board_tie_hole_diameter"]*SCALE/2, 10, (back, y*SCALE, z*SCALE), "x")
+    # Solid dielectric stand-offs; PCB placement in the ledger clears their tips.
+    # Tie slots stay available; no inserts, drilling or metal spacers required.
+    for y in MOUNT["board_support_y"]:
+        for z in MOUNT["board_support_z"]:
+            p += box(tuple(v*SCALE for v in MOUNT["board_support_size"]),
+                     (back + WALL/2 + MOUNT["board_support_size"][0]*SCALE/2, y*SCALE, z*SCALE))
+    for y in MOUNT["imu_support_y"]:
+        p += box(tuple(v*SCALE for v in MOUNT["imu_support_dimensions"]),
+                 (back-WALL/2-MOUNT["imu_support_dimensions"][0]*SCALE/2,y*SCALE,MOUNT["imu_support_z"]*SCALE))
     return p
+
+
+def ear_fastener():
+    """M2x8 shank/head, nut and two washers, axis+Y; ear placement is estimated.
+
+    Origin is plate centre. Nominal ear thickness is a fit hypothesis, not a
+    sourced servo dimension. Do not use this shape to clear unknown horn hardware.
+    """
+    h = SPEC["hardware_interfaces"]["ear_bolt"]
+    mm = lambda name: h[name]*SCALE
+    near = WALL/2 + mm("washer_thickness")
+    p = hole(mm("shaft_diameter")/2, mm("length_under_head"), (0, near-mm("length_under_head")/2, 0), "y")
+    p += hole(mm("head_diameter")/2, mm("head_height"), (0, near+mm("head_height")/2, 0), "y")
+    for y in (WALL/2+mm("washer_thickness")/2,
+              -WALL/2-mm("ear_thickness_estimate")-mm("washer_thickness")/2):
+        p += hole(mm("washer_od")/2, mm("washer_thickness"), (0,y,0), "y") - hole(mm("washer_id")/2, 3, (0,y,0), "y")
+    nut_y = -WALL/2-mm("ear_thickness_estimate")-mm("washer_thickness")-mm("nut_height")/2
+    nut = md.Manifold.cylinder(mm("nut_height"), mm("nut_across_flats")/np.sqrt(3), circular_segments=6, center=True)
+    p += nut.rotate((90,0,0)).translate((0,nut_y,0))
+    return p
+
+
+def hardware_meshes():
+    """Dimensioned ear hardware in owning body coordinates; no mystery mass boxes."""
+    out = {}
+    for body in physical_bodies(SPEC):
+        for component in body["components"]:
+            if "_ear_bolt_" not in component["name"]:
+                continue
+            solid = ear_fastener()
+            if "ankle" in component["name"]:
+                solid = solid.rotate((0,0,-90))
+            elif component["name"].startswith("right_"):
+                solid = solid.mirror((0,1,0))
+            solid = solid.translate(tuple(v*SCALE for v in component["com"]))
+            out[component["name"]] = (body["name"], mesh(solid))
+    return out
 
 
 def mesh(solid):
@@ -115,11 +173,14 @@ def mesh(solid):
 def generate():
     folder = ROOT / "cad" / "stl"
     folder.mkdir(parents=True, exist_ok=True)
+    # Superseded generated geometry is preserved under docs/history, never shipped
+    # as current order quantities alongside the new ordinary-pad revision.
+    for obsolete in ("left_sole.stl", "right_sole.stl", "quotation_plate.stl"):
+        (folder / obsolete).unlink(missing_ok=True)
     shapes = {"torso": torso(), "left_thigh": thigh(), "left_shin": shin(), "left_foot": foot()}
     for part in ("thigh", "shin", "foot"):
         shapes["right_" + part] = shapes["left_" + part].mirror((0, 1, 0))
     report = []
-    plate = []
     for index, (name, solid) in enumerate(shapes.items()):
         m = mesh(solid)
         if not m.is_watertight or m.volume <= 0:
@@ -128,25 +189,13 @@ def generate():
         report.append({"part": name, "quantity": 1, "bounding_box_mm": m.extents.tolist(),
                        "volume_cm3": m.volume / 1000, "solid_petg_mass_g_at_1_27": m.volume / 1000 * 1.27,
                        "connected_components": len(m.split()), "watertight": bool(m.is_watertight)})
-        layout = m.copy()
-        # Quotation plate only; a printer must choose final support/orientation.
-        layout.apply_translation(-layout.bounds[0] + [index % 3 * 110, index // 3 * 110, 0])
-        plate.append(layout)
-    trimesh.util.concatenate(plate).export(folder / "quotation_plate.stl")
-    # Separate material: two ready-sized TPU traction soles. Supplier bonds these
-    # to the corresponding PETG feet; include adhesive/finishing in the quote.
-    sole_dim = [*np.array(GEOMETRY["foot_dimensions"][:2])*SCALE, GEOMETRY["sole_thickness"]*SCALE]
-    sole_pos = np.array(GEOMETRY["foot_center"])*SCALE
-    sole_pos[2] -= (GEOMETRY["foot_dimensions"][2]+GEOMETRY["sole_thickness"])*SCALE/2
-    sole = mesh(box(sole_dim, sole_pos))
-    for side in ("left", "right"):
-        sole.export(folder / (side + "_sole.stl"))
     summary = {"status": "PROVISIONAL FIT/COST PROTOTYPE; NOT RELEASED FOR MANUFACTURE",
                "units": "mm", "clearance_mm": CLEARANCE,
                "parts": report, "total_solid_volume_cm3": sum(p["volume_cm3"] for p in report),
                "total_solid_petg_mass_g": sum(p["solid_petg_mass_g_at_1_27"] for p in report),
-               "additional_parts": [{"part": "TPU sole", "quantity": 2, "dimensions_mm": [float(v) for v in sole_dim], "estimated_mass_each_g": next(c["mass"] for b in SPEC["bodies"] for c in b.get("components", []) if c["name"]=="left_sole")*1000}],
-               "print_request": "7 PETG frames: 0.2 mm layers, 3 perimeters, 25% infill. 2 TPU 95A soles, bonded to feet with adhesive included. All through holes clear without drilling; supports removed; include VAT and shipping. Quotation plate excludes soles and is not a printer-bed layout."}
+               "additional_parts": [{"part": "ordinary Delock18309 adhesive TPE pad", "quantity": 8, "printed": False, "dimensions_mm": [10,10,3]}],
+               "revision": SPEC["revision"],
+               "print_request": "7 PETG frames ONLY: 0.2mm layers, 3walls,25%infill. No printed soles/filament purchase. Quote support removal, usable holes without student drilling, fit sample, finishing, VAT and delivery separately; no manufacturing release."}
     (ROOT / "cad" / "print_manifest.json").write_text(json.dumps(summary, indent=2) + "\n")
     draw_exploded(shapes)
     print(json.dumps(summary, indent=2))
@@ -178,11 +227,12 @@ def draw_exploded(shapes):
         poly = Poly3DCollection(m.triangles, alpha=0.75, facecolor="#4299ce", linewidths=0.03, edgecolor="#245174")
         ax.add_collection3d(poly)
         for component in b['components']:
-            if 'servo' not in component['name'] and component['name'] not in ('pico_h','imu'):
+            if 'servo' not in component['name'] and component['name'] not in ('pico','imu') and not component['name'].startswith('pico_header_') and '_pad_' not in component['name']:
                 continue
-            case = trimesh.creation.box(extents=np.array(component['dimensions'])*SCALE)
+            case = (trimesh.creation.cylinder(radius=component['radius']*SCALE,height=component['dimensions'][2]*SCALE)
+                    if component.get('primitive')=='cylinder_z' else trimesh.creation.box(extents=np.array(component['dimensions'])*SCALE))
             case.apply_translation(origins[b['name']]+extra+np.array(component['com'])*SCALE)
-            ax.add_collection3d(Poly3DCollection(case.triangles,alpha=.55,facecolor='#333333' if 'servo' in component['name'] else '#36a55c',linewidths=.05,edgecolor='#222222'))
+            ax.add_collection3d(Poly3DCollection(case.triangles,alpha=.55,facecolor='#333333' if 'servo' in component['name'] or '_pad_' in component['name'] else '#36a55c',linewidths=.05,edgecolor='#222222'))
         c = m.centroid
         ax.text(*c, b["name"], fontsize=8, color="black", bbox={"facecolor": "white", "alpha": 0.8, "edgecolor": "none", "pad": 1})
     ax.set(xlim=(-55, 70), ylim=(-105, 105), zlim=(-40, 200), xlabel="x forward (mm)", ylabel="y left (mm)", zlabel="z up (mm)")

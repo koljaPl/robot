@@ -23,9 +23,9 @@
   <worldbody>
     <light pos="0 -1 2" dir="0 0 -1" diffuse="0.8 0.8 0.8" />
     <geom name="floor" type="plane" size="3 3 0.05" rgba="0.87 0.88 0.90 1" />
-    <body name="torso" pos="0 0 0.154240388">
+    <body name="torso" pos="0 0 0.1562403877">
       <geom name="torso_visual" type="mesh" mesh="torso_mesh" contype="0" conaffinity="0" group="2" rgba="0.12 0.55 0.83 1" />
-      <inertial mass="0.07288624774" pos="-0.006652863288 0 -0.00986129485" fullinertia="7.714665284e-05 5.092307439e-05 4.315149003e-05 2.541098842e-21 7.752415604e-06 0" />
+      <inertial mass="0.07574344774" pos="-0.006320972389 3.578534529e-19 -0.01029907144" fullinertia="8.148312538e-05 5.344089513e-05 4.48989327e-05 -6.368545737e-22 7.760571147e-06 -8.856730812e-22" />
       <freejoint name="root" />
       <geom name="torso_collision" type="box" pos="0 0 0.01" size="0.02 0.041 0.025" rgba="0.10 0.45 0.8 0.8" />
       <site name="imu_site" pos="-0.0255 0 0.018" size="0.003" rgba="1 0.7 0 1" />
@@ -34,44 +34,50 @@
       <geom name="right_hip_servo_case" type="box" pos="0 -0.01975 -0.03475" size="0.0061 0.01425 0.0114" rgba="0.15 0.15 0.17 1" />
       <body name="left_thigh" pos="0 0.034 -0.03">
         <geom name="left_thigh_visual" type="mesh" mesh="left_thigh_mesh" contype="0" conaffinity="0" group="2" rgba="0.12 0.55 0.83 1" />
-        <inertial mass="0.01897302956" pos="7.38254531e-20 -0.009433651865 -0.04297017599" fullinertia="1.075607705e-05 9.509006643e-06 2.306096954e-06 -1.321364545e-23 9.846621791e-24 -2.552040829e-06" />
+        <inertial mass="0.01977302956" pos="7.08385379e-20 -0.009228983103 -0.04336712372" fullinertia="1.201338719e-05 1.06953106e-05 2.361686476e-06 -1.292696745e-23 9.290620081e-24 -2.750783224e-06" />
         <joint name="left_hip" type="hinge" axis="0 1 0" />
         <geom name="left_thigh_link" type="capsule" fromto="0 0 -0.006 0 0 -0.044" size="0.006" rgba="0.12 0.55 0.83 1" />
         <geom name="left_knee_servo_case" type="box" pos="0 -0.01425 -0.05475" size="0.0061 0.01425 0.0114" rgba="0.15 0.15 0.17 1" />
         <body name="left_shin" pos="0 0 -0.05">
           <geom name="left_shin_visual" type="mesh" mesh="left_shin_mesh" contype="0" conaffinity="0" group="2" rgba="0.12 0.55 0.83 1" />
-          <inertial mass="0.007723103503" pos="0.001431986556 0.001714317795 -0.0226881703" fullinertia="3.771568488e-06 3.870592897e-06 4.366762365e-07 1.069363096e-08 2.608766246e-07 -1.717283681e-07" />
+          <inertial mass="0.008623103503" pos="0.001769592628 0.002022456737 -0.02519082456" fullinertia="5.202857017e-06 5.271289455e-06 4.593362007e-07 2.259577502e-08 3.37397356e-07 -3.106646077e-07" />
           <joint name="left_knee" type="hinge" axis="0 1 0" />
           <geom name="left_shin_link" type="capsule" fromto="0 0 -0.006 0 0 -0.044" size="0.006" rgba="0.12 0.55 0.83 1" />
           <body name="left_foot" pos="0 0 -0.05">
             <geom name="left_foot_visual" type="mesh" mesh="left_foot_mesh" contype="0" conaffinity="0" group="2" rgba="0.12 0.55 0.83 1" />
-            <inertial mass="0.03657630976" pos="-0.001919484737 9.573768603e-21 -0.0153667454" fullinertia="7.376615256e-06 2.141873222e-05 2.153521221e-05 -9.259259754e-23 2.911645236e-06 1.500083034e-22" />
+            <inertial mass="0.03225878756" pos="-0.003143726384 1.312871641e-20 -0.01408134211" fullinertia="6.690079177e-06 1.906430994e-05 1.860375222e-05 -7.946502952e-23 2.654014327e-06 1.523359921e-22" />
             <joint name="left_ankle" type="hinge" axis="1 0 0" />
             <geom name="left_foot_plate" type="box" pos="0.006 0 -0.0225" size="0.045 0.0225 0.0015" rgba="0.08 0.36 0.65 1" />
-            <geom name="left_foot_sole" type="box" pos="0.006 0 -0.0245" size="0.045 0.0225 0.0005" rgba="0.15 0.15 0.15 1" />
-            <site name="left_foot_sole_center" pos="0.006 0 -0.025" size="0.001" />
+            <geom name="left_foot_pad_0" type="cylinder" pos="-0.031 -0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <geom name="left_foot_pad_1" type="cylinder" pos="-0.031 0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <geom name="left_foot_pad_2" type="cylinder" pos="0.043 -0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <geom name="left_foot_pad_3" type="cylinder" pos="0.043 0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <site name="left_foot_contact_center" pos="0.006 0 -0.027" size="0.001" />
             <geom name="left_ankle_servo_case" type="box" pos="-0.01425 0 -0.00475" size="0.01425 0.0061 0.0114" rgba="0.15 0.15 0.17 1" />
           </body>
         </body>
       </body>
       <body name="right_thigh" pos="0 -0.034 -0.03">
         <geom name="right_thigh_visual" type="mesh" mesh="right_thigh_mesh" contype="0" conaffinity="0" group="2" rgba="0.12 0.55 0.83 1" />
-        <inertial mass="0.01897302956" pos="7.38254531e-20 0.009433651865 -0.04297017599" fullinertia="1.075607705e-05 9.509006643e-06 2.306096954e-06 1.321364545e-23 9.846621791e-24 2.552040829e-06" />
+        <inertial mass="0.01977302956" pos="7.08385379e-20 0.009228983103 -0.04336712372" fullinertia="1.201338719e-05 1.06953106e-05 2.361686476e-06 1.292696745e-23 9.290620081e-24 2.750783224e-06" />
         <joint name="right_hip" type="hinge" axis="0 1 0" />
         <geom name="right_thigh_link" type="capsule" fromto="0 0 -0.006 0 0 -0.044" size="0.006" rgba="0.12 0.55 0.83 1" />
         <geom name="right_knee_servo_case" type="box" pos="0 0.01425 -0.05475" size="0.0061 0.01425 0.0114" rgba="0.15 0.15 0.17 1" />
         <body name="right_shin" pos="0 0 -0.05">
           <geom name="right_shin_visual" type="mesh" mesh="right_shin_mesh" contype="0" conaffinity="0" group="2" rgba="0.12 0.55 0.83 1" />
-          <inertial mass="0.007723103503" pos="0.001431986556 -0.001714317795 -0.0226881703" fullinertia="3.771568488e-06 3.870592897e-06 4.366762365e-07 -1.069363096e-08 2.608766246e-07 1.717283681e-07" />
+          <inertial mass="0.008623103503" pos="0.001769592628 -0.002022456737 -0.02519082456" fullinertia="5.202857017e-06 5.271289455e-06 4.593362007e-07 -2.259577502e-08 3.37397356e-07 3.106646077e-07" />
           <joint name="right_knee" type="hinge" axis="0 1 0" />
           <geom name="right_shin_link" type="capsule" fromto="0 0 -0.006 0 0 -0.044" size="0.006" rgba="0.12 0.55 0.83 1" />
           <body name="right_foot" pos="0 0 -0.05">
             <geom name="right_foot_visual" type="mesh" mesh="right_foot_mesh" contype="0" conaffinity="0" group="2" rgba="0.12 0.55 0.83 1" />
-            <inertial mass="0.03657630976" pos="-0.001919484737 -9.573768603e-21 -0.0153667454" fullinertia="7.376615256e-06 2.141873222e-05 2.153521221e-05 9.259259754e-23 2.911645236e-06 -1.500083034e-22" />
+            <inertial mass="0.03225878756" pos="-0.003143726384 -1.312871641e-20 -0.01408134211" fullinertia="6.690079177e-06 1.906430994e-05 1.860375222e-05 7.946502952e-23 2.654014327e-06 -1.523359921e-22" />
             <joint name="right_ankle" type="hinge" axis="1 0 0" />
             <geom name="right_foot_plate" type="box" pos="0.006 0 -0.0225" size="0.045 0.0225 0.0015" rgba="0.08 0.36 0.65 1" />
-            <geom name="right_foot_sole" type="box" pos="0.006 0 -0.0245" size="0.045 0.0225 0.0005" rgba="0.15 0.15 0.15 1" />
-            <site name="right_foot_sole_center" pos="0.006 0 -0.025" size="0.001" />
+            <geom name="right_foot_pad_0" type="cylinder" pos="-0.031 0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <geom name="right_foot_pad_1" type="cylinder" pos="-0.031 -0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <geom name="right_foot_pad_2" type="cylinder" pos="0.043 0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <geom name="right_foot_pad_3" type="cylinder" pos="0.043 -0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <site name="right_foot_contact_center" pos="0.006 0 -0.027" size="0.001" />
             <geom name="right_ankle_servo_case" type="box" pos="-0.01425 0 -0.00475" size="0.01425 0.0061 0.0114" rgba="0.15 0.15 0.17 1" />
           </body>
         </body>
@@ -91,6 +97,6 @@
     <accelerometer name="imu_accel" site="imu_site" />
   </sensor>
   <keyframe>
-    <key name="home" qpos="0 0 0.154240388 1 0 0 0 -0.1745329252 0.1745329252 0 -0.1745329252 0.1745329252 0" ctrl="-0.1745329252 0.1745329252 0 -0.1745329252 0.1745329252 0" />
+    <key name="home" qpos="0 0 0.1562403877 1 0 0 0 -0.1745329252 0.1745329252 0 -0.1745329252 0.1745329252 0" ctrl="-0.1745329252 0.1745329252 0 -0.1745329252 0.1745329252 0" />
   </keyframe>
 </mujoco>

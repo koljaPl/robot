@@ -1,64 +1,90 @@
-# S6 historical-geometry assembly reference — fit gate remains open
+# S6-PETG-pad-r2 — assembly and fit checklist
 
-**2026-10-23 route change:** self-soldering is available; no helper is mandatory.
-The geometry below remains the unchanged Pico-H/continuous-TPU prototype, not a
-selected new frame. Proposed bare Pico and discrete TPE pads need measurements,
-new model contacts/masses and identity after selection. Commercial printing is
-historical; compare stock parts vs own printer in [FRAME_ROUTES](../docs/FRAME_ROUTES.md).
-No printer access/purchase is assumed. Individual180mm layouts and a first interface
-sample are in `local_print/`; the185mm quotation batch does not fit an A1 mini.
+**Quotation prototype, not manufacturing-approved.** All dimensions are in the
+physical ledger; none of this is a physical test. [Exploded view](exploded.png),
+[interface drawing](print_order/drawings/interfaces.png), [fasteners](print_order/fasteners.csv).
+Commercial printing is active; no printer/spool or printed TPU sole purchase.
 
+## Parts and exact installed quantities
 
-Editable CAD is `build_frame.py`; dimensions in millimetres are derived from `../physical_spec.json`. `stl/` contains seven PETG frame components and two separate TPU soles. `quotation_plate.stl` is a cost-estimation grouping, not a recommended print-bed arrangement. Individual parts fit within approximately 90 mm; layer orientation/supports remain unapproved. `exploded.png` shows body/part names and axes.
+Seven printed PETG parts: torso, L/Rthigh, L/Rshin, L/Rfoot, one each. Two separate
+interface samples are test pieces, not extra frame parts. Eight ordinary Delock18309
+TPE pads, four per foot. [Quote brief](QUOTE_REQUEST.md).
 
-**Do not order these as manufacturing-ready parts.** The expanded audit detects unresolved fastener-envelope conflicts, and the selected servo's ear, shaft, spline, horn pattern and screws are unmeasured. The historical commercial-kit proposal required clear through-holes, removed supports and bonded soles; no drilling, cutting, tapping or heat-set inserts by the assembler. No complete compatible standard kit has been found. Local printing requires its own approved sample/profile; do not buy the complete frame or force holes before fit approval.
-
-Materials: PETG frames, 0.2 mm layers, 3 perimeters, nominal 25% infill; TPU 95A soles 90×45×1 mm bonded to feet. The mass specification uses solid PETG at 1270 kg/m³ as a conservative estimate; actual infill/adhesive mass must be weighed. Layers should be oriented to resist ear loads rather than split across narrow bridges. Ask for stiff local joint mounting walls, smooth holes and no support debris near rotating horns. The new comparison proposes8self-adhesive TPE pads instead, with unmeasured grip. No sole/model substitution has been made here.
-
-## Fastener schedule — provisional, quote as a complete kit
-
-| Purpose | Quantity | Proposed type / unresolved fit |
+| Use | Installed quantity | Known / unresolved |
 |---|---:|---|
-| Servo housing mounting ears | 12 | M2×8 through screws + 12 M2 nuts + 24 washers; verify real ear holes and combined thickness |
-| Horn shaft retention | 6 | Servo-specific factory screws; thread and supplied inclusion unknown |
-| Horn to moving frame | 12 | Two per horn, matched small screws/washers; factory horn pilot holes and screw lengths unknown |
-| Pico/IMU mounting | 6 ties | Through prepared frame holes; immobilize IMU and keep board faces clear of plastic/metal |
-| Main cable strain relief | 4 ties | At torso near COM; externally support connector weight |
-| Servo harness restraints | 8 ties | Leave a service loop at every joint; no wires crossing horn sweep |
+| Servo ear screws |12|M2×8 P010265;8mm under-head,4mm head diameter,1.6mm head height; actual grip length unverified|
+| Ear nuts |12|P003474 M2,SW4,1.6mm height|
+| Ear washers |24|P004198,2.2×5×0.3mm; one each side|
+| Factory horns |6|Actual Waveshare batch/spline/shape/hole pattern unknown|
+| Shaft retainers |6|Factory-matching thread and length unknown; do not assume M2|
+| Horn-to-frame screws and washers |12+12|Two per horn; diameter/thread/length/washer size unknown|
+| Board / tether / harness ties |6/4/8|From full100pack; exact safe routing needs review|
 
-The CAD horn interface has a 6 mm central access opening and two 2.4 mm-wide radial slots. It is a fit concept, not evidence that the included horns/screws match. If a factory horn cannot fasten without modifying it, **revise/quote the interface before printing**, or have the supplier deliver matched adapters; include their price/mass. Do not press in an incompatible spline or use glue as a structural joint.
+M2 ear hardware has dimensioned clearance shapes at **estimated** positions.
+The old fastener mass boxes were not actual bolts; their550historical intersections
+were not verified physical collisions. Unknown horn hardware still blocks release.
 
-## Assembly sequence after the budget/fit gate passes
+## 1 — Fit sample before the full frame
 
-1. Identify L/R frame parts and six individually calibrated servos. Servo housing and lead-out dimensions must match the kit. Inspect prints and holes; revise/reprint failed sample interfaces rather than drilling them.
-2. Test electronics and one servo without a limb attached. Disable outputs and disconnect motor power before installing a horn. Centre the unloaded servo to its calibrated **zero-joint** pulse, then turn power off. Mount horn and retain it with its matching centre screw; do not use the HOME angle as the mechanical zero reference.
-3. Mount two hip servo cases to the torso ear cradles, shafts facing outward ±y. Attach each thigh moving plate to that hip's horn with two matched screws. There is no passive hip roll axis.
-4. Mount each knee servo case to its thigh's lower cradle. Attach the shin's upper plate to the knee horn. Both simulated pitch axes are +y; the physical right-hand motor sign may be opposite and is corrected in calibration.
-5. Mount ankle servo case to its foot's upright cradle with shaft facing +x. Attach the shin's perpendicular lower plate to the ankle horn. Foot and ankle servo case rotate together; the shin carries the horn. The ankle axis is +x, roll only.
-6. This prototype uses continuous TPU soles; a later selected pad branch needs its own contact update. Do not treat the model as already changed. Install boards at the coordinates in the specification using prepared holes/ties; do not put a tie over connector pins or strain the board. IMU must be rigidly immobilized and its measured axis rotation recorded.
-7. Route servo leads and prepared extension harness; verify polarity/continuity with motor supply disconnected. Leave a slack service loop and inspect every safe angle manually without forcing the gearbox. Add USB/power strain relief.
-8. Assemble and weigh one leg, then the entire robot. Confirm pitch/roll signs with very small unloaded motions. Test physical cutoff, watchdog and reboot-disarmed state before supported HOME `(-10°, +10°, 0°)` per leg.
-9. On a low clear floor area with thin protection, test stationary poses and increase test length gradually. For a fall, disconnect power, inspect gears/ears, manually pick up and reset. Optional safety thread stays slack and is not required to hold the robot upright.
+1. Identify one exact servo, original horn and retaining screw. With no horn attached,
+   bench-calibrate the zero pulse using [CALIBRATION](../docs/CALIBRATION.md).
+2. Measure case, ear hole spacing/diameter/thickness, axial ear/shaft locations,
+   supplied horn holes/radii, shaft screw and lead exit. Record units and photos.
+3. After budget approval obtain the **two-piece sample**. Check insertion without
+   bending/cracking, both ear holes, nut/head/washer access and case clearance.
+4. Test a centred original horn on the horn plate. Opening6mm and2.4×7mm radial
+   slots are provisional. Confirm two screws can retain it without drilling the
+   horn/print, splitting plastic or bottoming a screw in the servo.
+5. Measure every printed hole/slot and inspect layers. A failed sample means revise
+   CAD and re-quote; do not force/drill it or print the full frame unchanged.
 
-The finite CAD report does not certify horn fasteners, servo-ear insertion, electronics mounting or every continuous-motion clearance. Simulation contact primitives approximate the structure and do not test printed layer strength. The complete robot has not been assembled.
+## 2 — Bench and mechanical zero
 
-Current revision: Pico native PWM removes the old PCA9685 envelope conflict.
-The finite checker includes frame/case/electronics and estimated fastener sweeps;
-550 overlaps involve unmeasured mass-envelope proxies across55poses. These are
-not confirmed bolt collisions, but cannot be cleared without actual horn/screw
-geometry. Run `python tools/check_clearance.py`; nonzero exit means no release.
-The exploded view shows frame, servo-case and PCB envelopes; actual horn/fastener
-fit remains specified provisionally in the ledger/schedule and is not certified.
+Solder/insulate the bare Pico, IMU header and replaceable harness as described in
+[HARDWARE](../docs/HARDWARE.md). Test PSU polarity, DC disconnect, one unloaded
+servo,3.3V PWM, IMU, disarmed startup and100ms watchdog first. USB powers logic;
+servo power bypasses Pico/breadboard. No physical gate is passed yet.
 
-## 2026-10-23 purchasing/fit clarification
+Set each servo to its measured **zero-joint** pulse, then disconnect DC before
+fitting its compatible horn and shaft screw. HOME(-10,+10,0deg per leg) is not
+mechanical zero. Software STOP is not physical isolation.
 
-[Exact component/delivery review](../docs/PROCUREMENT_ACTIONS.md) contains the
-three M2 pack links (buy100each; install12screws/12nuts/24washers) and separate
-unknown horn hardware. M2×8 is provisional:3mm printed plate+two0.3mmwashers+
-1.6mmnut leaves2.8mm for the ear, before thread projection. Check actual stack,
-head4mm/washer5mm/nutSW4 sweep and wrench access; change length only after measurement.
-The12horn-frame screws/12washers are not the six centre shaft retainers.
-Manufacturer photo shows accessory horns/screws but exact retailer-batch fit/inclusion
-is not confirmed. Do not order generic25T horns or assume centre screws areM2.
-Compact quotation layouts are alternatives to individual files, not extra parts;
-web prices exclude bonding and hole finishing. Historical commercial route exceeds budget; new comparison remains blocked; no order.
+## 3 — Assemble the verified frame
+
+1. Mount left/right hip **cases to torso**. Output shafts face the corresponding
+   lateral sides. Attach each thigh's upper horn plate to its hip horn.
+2. Mount each knee **case to its thigh's lower cradle**. Attach the shin's upper
+   plate to that knee horn. Hip and knee axes are pitch(+Y in the model).
+3. Mount each ankle **case to its foot cradle**, shaft toward the corresponding
+   perpendicular shin plate. Attach the shin's lower plate to the ankle horn.
+   Ankle axis is roll(+X). The shin owns the ankle horn; the foot owns its case.
+4. Fit only the confirmed screw schedule. The example3mm frame+1.4mm assumed ear+
+   two0.3mm washers+1.6mm nut needs6.6mm under-head; M2×8 leaves1.4mm projection
+   **only if that assumed ear stack is correct**. Check sweeps and wrench access.
+
+## 4 — Electronics, pads and cables
+
+- Bare Pico PCB is51×21mm; two20pin headers are separately represented with an11mm
+  pin envelope. Printed stand-offs support the PCB centre, away from GPIO rows.
+  IMU sits on the opposite side. Check actual connector, tie and solder clearance;
+  immobilize IMU and record its sensor-to-body alignment.
+- Attach four pads under each90×45mm foot: x=-31,+43mm and y=±14.5mm relative
+  to the ankle frame (see drawing). Pads are10mm diameter×3mm. Clean/dry the
+  surface as the pad maker permits; test adhesion and slip before dynamic use.
+- Route six removable servo connections with service loops; keep wires out of
+  horn/fastener sweeps. Support the tether/DC socket externally and restrain the
+  cable near torso COM. Never use a tight overhead line to hold the robot up.
+
+## 5 — Weigh, inspect and calibrate
+
+Weigh every assembled rigid body and installed hardware once. The current model
+uses solid-CAD PETG inertia and estimated electronics/hardware/pad masses, not
+slicer25%infill or measured masses. Match measured COM/masses and version the twin.
+
+With motor power off inspect full safe sweeps, lead exits, connectors, access to
+retainers and all through-holes. Then test small unloaded motions, physical cutoff,
+watchdog, disarmed reboot and manual standing. At a fall disconnect DC, inspect
+gears/ears, pick up manually and deliberately reinitialize. Physical policies need
+measured validated calibration and matching fingerprints; the smoke policy is not
+approved for hardware. Full-frame release and walking remain blocked.

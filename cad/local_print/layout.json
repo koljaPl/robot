@@ -12,7 +12,7 @@
       "part": "torso",
       "quantity": 1,
       "file": "plate_torso.stl",
-      "source_sha256": "c5d104f5450c3aa17d5440e82bd2e345160ec62aba41712d39889a547d53f5e2",
+      "source_sha256": "daa823157995a2814ac1453eb35cc44c5aeaf5338bf0d237f0238bc8a54ba4c4",
       "rotation_deg": [
         0,
         90,
@@ -27,10 +27,10 @@
         [
           93.75,
           87.0,
-          32.0
+          33.5
         ]
       ],
-      "volume_mm3": 16918.305308841893,
+      "volume_mm3": 17278.305308841893,
       "components": 1
     },
     {
@@ -202,10 +202,10 @@
       ]
     ]
   },
-  "source_cad_sha256": "da80c964e9b9500e77de27e2e9722fe0643b262d242f64b1d38364c82ae53fd4",
-  "physical_spec_sha256": "d5b242a39dc18ae0b218a9774e6667fd7c96ba9d1002bb8f392dbb2cd9e0b53f",
+  "source_cad_sha256": "47531526a8379c4d745766b8914c07b74c6072ca33b81e98e459adc06c996f31",
+  "physical_spec_sha256": "f9e9b2018bde072c8632befacd4ca4c04b14e7a6230b961a131487d4e4e5300d",
   "slicer_verified": false,
   "structural_orientation_verified": false,
-  "material": "One full 1 kg PETG spool counted in robot basket; no TPU spool",
-  "notes": "Open ONE plate at a time, units mm, scale100%. Old185mm batch does not fit. No supports/holes/strength certified. Grip pads are a proposed revision, not current model contacts."
+  "material": "Commercial PETG service supplies material; no spool/printer/TPU soles in active basket",
+  "notes": "Open ONE plate at a time, units mm, scale100%. No supports/holes/strength certified. Ordinary grip pads are represented in current provisional contacts, not physically verified. Local180mm layout is an optional quotation orientation, not printer purchase approval."
 }

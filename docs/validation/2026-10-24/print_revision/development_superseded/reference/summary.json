@@ -1,0 +1,58 @@
+{
+  "lean_sign": 1,
+  "source_sha256": "90091a3a8da016670d4d216f3e5073da3f1912cddc4a46d6c1abe36b4bdd6c9a",
+  "identity": {
+    "configuration": "9764e24c8df0eb1fa59ed6e76f26abfa2a8daa8fa5bb422d6c7a7dd1467fd784",
+    "files": {
+      "physical_spec.json": "c0c79e9e4ea23eed3d5b4879e54818ff6f196704c73bd7c16b7ad7a501745427",
+      "robot.xml": "6d051e3ed2a558c6114d3eba0bea810c85b57fd08357b5febb2616b0b17749f9",
+      "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+      "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+      "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+      "humanoid_env.py": "3a9a3fadca8b001b1c294cb051e489221f54e1675a310a58b2af08f3a9da50ae",
+      "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+      "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+      "calibration.py": "b73947a3a1bb772bac45df3356fc108426c8bc199bd388cfb8b7ac51e5125486",
+      "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+      "firmware/control.h": "dfc0dec9642df663dca6410b8414faf16de480736c8c62fa2fd2da166f9c7200"
+    },
+    "calibration": null
+  },
+  "standing_30s": true,
+  "reference_completed": true,
+  "result": {
+    "distance_m": -0.0019484450341788826,
+    "lateral_distance_m": -5.179073705098286e-06,
+    "duration_s": 46.0,
+    "mean_speed_m_s": -4.235750074301919e-05,
+    "fallen": false,
+    "total_reward": 9.134797581424019,
+    "lifted_steps_left": 0,
+    "lifted_steps_right": 0,
+    "alternations": 0,
+    "gait_distance_m": 0.0,
+    "max_stance_slip_m": 1.3553111885705759e-05,
+    "rejected_steps": 70,
+    "walking_success": false,
+    "domain_randomization": false,
+    "whole_foot_height_left_m": -7.955809556923262e-06,
+    "whole_foot_height_right_m": -1.1273884638946744e-05,
+    "actual_lh_rad": -0.1714973327932818,
+    "actual_lk_rad": 0.1810143205819559,
+    "actual_la_rad": -0.0006571639831828505,
+    "actual_rh_rad": -0.1750329273412513,
+    "actual_rk_rad": 0.18451528175520066,
+    "actual_ra_rad": -0.0006564542192824781,
+    "target_lh_rad": -0.176,
+    "target_lk_rad": 0.176,
+    "target_la_rad": -0.008,
+    "target_rh_rad": -0.176,
+    "target_rk_rad": 0.176,
+    "target_ra_rad": -0.008
+  },
+  "max_full_foot_clearance_m": {
+    "left": -2.769163753886658e-06,
+    "right": -2.9952375733071582e-06
+  },
+  "gate": "PASS only if reviewed weight transfer and lifted step; completing sequence alone is insufficient"
+}

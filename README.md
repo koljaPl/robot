@@ -10,23 +10,23 @@ in `physical_spec.json`. [Offene Beschaffungsfragen](docs/PROCUREMENT_ACTIONS.md
 [Hardware/Protokoll](docs/HARDWARE.md), [Firmware](firmware/README.md) und
 [Kalibrierung](docs/CALIBRATION.md) sind die Arbeitsreferenzen.
 
-**Nichts bestellt oder physisch geprüft.** Löten ist jetzt möglich; keine verpflichtende
-Helferarbeit. Vergleich: fertige Standardmechanik (noch kein vollständiger passender
-6-Gelenk-Bausatz) oder eigener Drucker (nur Kostenvergleich, kein Zugang/Kauf).
-Gemeinsame Teile95,91€ohne Rahmen; Eigen-Druck-Roboter118,43€vor offenen Kosten,
-also18,43€über der harten100€Lieferpreisgrenze. [Details](docs/FRAME_ROUTES.md).
-Der bestehende Pico-H/TPU-Prototyp bleibt unverändert; nackter Pico und Standardpads
-sind Vorschläge, noch keine freigegebene Mechanik. Firmware/Bench-Werkzeuge existieren;
-Gehen ist im historischen49.152-Schritte-Pilot nicht erreicht worden.
-Historische Experimente bleiben unter
-`docs/validation/` erhalten und sind mit dem neuen Modell nicht kompatibel.
+**Nichts bestellt oder physisch geprüft.** Aktiver Entwurf: **S6-PETG-pad-r2**,
+siebenPETG-Teile vom Druckservice, nackter Pico mit Stiftleisten und acht gekaufte
+Haftpads. Keine gedruckten TPU-Sohlen, kein Drucker-/Filamentkauf. [Druckprobe](cad/sample_quotation_package.zip),
+[7-Teile-Angebotspaket](cad/frame_quotation_package.zip), [Zeichnung](cad/print_order/drawings/interfaces.png).
+Der bepreiste Korb kostet105,34€**vor** Druck/Probe/Horn-Kleinteilen: mindestens5,34€
+über der100€Grenze. Eine aktuelle dateispezifische Druckquote fehlt; der STL-Upload
+zuMeltlab wurde durch die automatische Freigabeprüfung blockiert.
+Die vorläufige MuJoCo-Kopie passt zum neuen CAD; geschätzt197.1g.37Tests bestehen.
+Der neue2048Schritte-Smoke und die manuellen Hebeversuche zeigen **kein Gehen**.
+Alte Modelle/UF2bleiben historisch. [Prüfstand](docs/VALIDATION_CURRENT.md).
 
 ```bash
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-dev.txt
 python -m pytest -q
-python tools/budget_gate.py --scenario all # Exit1: Eigen-Druck-Weg über Budget
+python tools/budget_gate.py # Exit1: aktiver Druckservice-Weg schon vor Druck über Budget
 python evaluate.py --episodes 1 --output runs/neutral_new
 python train.py --steps 2048 --seed 0 --development --output runs/smoke_new
 ```
@@ -109,7 +109,7 @@ Zusätzlich wollen wir testen, ob das Training besser funktioniert, wenn sich w�
 - MuJoCo
 - Gymnasium
 - Stable-Baselines3 / PPO
-- Raspberry Pi Pico H mit direktem PWM und MPU6050 für den echten Roboter
+- Raspberry Pi Pico mit selbst gelöteten Stiftleisten, direktem PWM und MPU6050
 
 ## Ziel
 

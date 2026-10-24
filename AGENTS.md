@@ -14,8 +14,9 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 - Preferred delivered cost EUR 50–75; hard maximum EUR 100 including every part,
   VAT, shipping and any paid assembly preparation. No weaker-servo substitution.
 - User can solder: self-prepared harness/headers, no mandatory helper labour.
-- No current printer access; compare standard no-fabrication parts vs own printer.
-- Printer purchase is comparison only, never authorized. No mechanical drilling/cutting/bending.
+- Active route: commercial PETG printing, seven frame parts +two separate fit samples.
+- Eight ordinary TPE pads; no printed TPU soles or filament spool in active basket.
+- No printer purchase. Student does no mechanical drilling/cutting/bending; service finishes holes.
 - No purchases or supplier messages are authorized by the implementation task.
 
 ## Authoritative inputs
@@ -36,11 +37,13 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 - Count full material/consumable packs; tools/printer separate but included in initial cash.
 - Unknown tools, frame hardware, stock or postage must remain unknown, not free.
 - Unknown costs are never zero. Budget and fit must pass before recommending procurement.
-- Shared proposed basket EUR95.91 excludes frame; standard mechanics remain unverified.
-- Own-print robot subset EUR118.43 exceeds cap byEUR18.43 before unknowns; no purchase.
-- Old EUR163.63 commercial-print route is historical; do not resume service quotes by default.
-- Bare Pico/8 TPE pads are proposals; physical spec/MJCF still use Pico H/TPU soles.
-- Next: complete stock-frame interfaces/landed price; no reduced joints or hidden fabrication.
+- Active commercial basket: common95.81 +ear-fastener delivery9.53 =105.34EUR BEFORE
+  print/sample/horn extras; minimum known shortfall5.34EUR for this basket. No procurement.
+- New quotes must identify current geometry hashes; old commercial/own-printer prices are historical.
+- Model revision S6-PETG-pad-r2 owns bare Pico+headers and8discrete pad contacts.
+- Manufacturing remains blocked by real horn/ear/screw fit, finishing/layer strength and budget.
+- Automatic approval review blocked Meltlab STL upload. No upload/message/order occurred;
+  get specific authorization for that provider/payload or let user return the quote.
 - User confirmed25337 Germany and PC USB-A on2026-10-23: no adapter required.
   USB-A–Micro-B data cable remains required; recheck final checkout for25337.
 - Physical stages need the user's assembly/measurements; continue independent software work.
@@ -56,8 +59,8 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 source .venv/bin/activate
 python -m pytest -q
 python tools/firmware_config.py  # default invalid calibration cannot policy-arm
-python tools/budget_gate.py --scenario all  # 1: own-print over cap; shared default exits2
-python tools/prepare_local_print.py  # individual180mm plates, not print approval
+python tools/budget_gate.py  # default active commercial route;1=over cap,2=incomplete
+python tools/prepare_print_order.py  # two quotation ZIPs; never manufacturing approval
 ```
 
 - Inspect relevant code before edits; preserve historical `docs/validation/` evidence.
@@ -70,8 +73,9 @@ python tools/prepare_local_print.py  # individual180mm plates, not print approva
 - B starts from the same initial weights as A, not from a nominal-pretrained policy.
 - Validation seeds 2000–2004; final test seeds 1000–1009. Do not tune on final tests.
 - Full experiments require the stage gates; provisional tests must say provisional.
-- All saved policies are historical after the final firmware parser fix; review only with
-  `tools/replay_snapshot.py`. Do not relabel their fingerprints as current.
+- Pre-r2 policies/UF2 are historical; use isolated replay, never relabel fingerprints.
+- Current2048step r2 smoke is provisional and NOT physical/deployment approval.
+- Current firmware header is regenerated invalid; ARM/Pico firmware build must be repeated before flash.
 - The nominal pilot and scripted lifts failed: diagnose fit/model/measurements before
   repeating or extending training; do not increase torque just to force a simulated lift.
 - Stop at the agreed training cap and report failure honestly if walking is unmet.

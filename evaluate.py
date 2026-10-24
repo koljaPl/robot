@@ -9,6 +9,14 @@ from humanoid_env import HumanoidEnv
 from robot_config import ROOT, HOME, CONTROL_DT, target_to_action
 
 
+def show_physical_geometry(model):
+    """Hide overlapping proxy drawings only; their contact physics is unchanged."""
+    for i in range(model.ngeom):
+        name=model.geom(i).name
+        if name=='torso_collision' or name.endswith(('_link','_foot_plate')):
+            model.geom_rgba[i,3]=0
+
+
 def evaluate(model_path=None, episodes=10, seed=1000, randomize=False,
              output=ROOT / "runs" / "evaluation", video=False, render=False,
              episode_seconds=30, baseline="home", policy_seed=0):
@@ -25,6 +33,8 @@ def evaluate(model_path=None, episodes=10, seed=1000, randomize=False,
     metadata = check_policy(model_path) if model_path else None
     env = HumanoidEnv(render_mode=mode, domain_randomization=randomize, episode_seconds=episode_seconds,
                       calibration=metadata.get("calibration_record") if metadata else None)
+    if mode is not None:
+        show_physical_geometry(env.model)
     model = None
     if model_path:
         from stable_baselines3 import PPO
@@ -75,6 +85,8 @@ def evaluate(model_path=None, episodes=10, seed=1000, randomize=False,
         summary["model_sha256"] = hashlib.sha256(Path(model_path).read_bytes()).hexdigest() if model_path else None
         summary["policy_seed"] = policy_seed if baseline == "untrained" else None
         summary["xml_sha256"] = hashlib.sha256((ROOT / "robot.xml").read_bytes()).hexdigest()
+        summary["evaluation_source_sha256"] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+        summary["visualization"] = "physical CAD/servo cases/pads; overlapping proxy drawings hidden, contacts unchanged" if mode else None
         summary["seeds"] = list(range(seed, seed + episodes))
         with (output / "episodes.csv").open("w", newline="") as f:
             c = csv.DictWriter(f, fieldnames=list(records[0]))

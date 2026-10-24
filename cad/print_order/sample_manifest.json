@@ -1,0 +1,83 @@
+{
+  "revision": "S6-PETG-pad-r2",
+  "state": "QUOTATION PROTOTYPE / FIT SAMPLE; NOT RELEASED",
+  "manufacturing_approved": false,
+  "units": "mm",
+  "scale_percent": 100,
+  "frame_parts": 7,
+  "sample_pieces": 2,
+  "files": [
+    {
+      "file": "sample/ear_cradle.stl",
+      "quantity": 1,
+      "sha256": "67222ed4048de778daac0139315220df5be1663fd3297086c6fb65f526f1c778",
+      "role": "fit sample only; not an eighth/ninth frame part"
+    },
+    {
+      "file": "sample/horn_plate.stl",
+      "quantity": 1,
+      "sha256": "9d6ad9ab4db1a3c0fbb0f7516dc9da7e0c05d6ece2a139de2305184b8b30156e",
+      "role": "fit sample only; not an eighth/ninth frame part"
+    }
+  ],
+  "physical_spec_sha256": "f9e9b2018bde072c8632befacd4ca4c04b14e7a6230b961a131487d4e4e5300d",
+  "source_cad_sha256": "47531526a8379c4d745766b8914c07b74c6072ca33b81e98e459adc06c996f31",
+  "quotation_batch_sha256": "70b33a79f299d2d222bf30ab2bb286d5e1f9870328a1789f0755760f8b88eeac",
+  "quotation_batch_bounds_mm": [
+    185.0,
+    167.0,
+    38.25
+  ],
+  "print_settings": {
+    "route": "commercial PETG FDM, ordinary adhesive TPE pads",
+    "frame_parts": 7,
+    "sample_pieces": 2,
+    "state": "quotation prototype; manufacturing NOT released",
+    "layer_height_mm": 0.2,
+    "walls": 3,
+    "infill_percent": 25,
+    "printed_soles": false,
+    "mechanical_stops": "unknown, omitted",
+    "measurements_required": [
+      "servo ear spacing/holes/thickness and case axial location",
+      "shaft height, spline, supplied horn shape/hole radii/thickness",
+      "retaining-screw thread/length; horn-to-frame screw thread/length",
+      "lead exit and connector mating; installed screw/tool sweeps",
+      "sample insertion fit and actual printed hole diameters",
+      "printed masses/layer strength, pad friction/adhesion",
+      "Pico header11mm pin envelope, PCB stand-off fit and Dupont/cable clearances"
+    ]
+  },
+  "source_date": "2026-10-24",
+  "unknown_interfaces": [
+    "servo ear spacing/holes/thickness and case axial location",
+    "shaft height, spline, supplied horn shape/hole radii/thickness",
+    "retaining-screw thread/length; horn-to-frame screw thread/length",
+    "lead exit and connector mating; installed screw/tool sweeps",
+    "sample insertion fit and actual printed hole diameters",
+    "printed masses/layer strength, pad friction/adhesion",
+    "Pico header11mm pin envelope, PCB stand-off fit and Dupont/cable clearances"
+  ],
+  "note": "Sample2pieces separately priced/shipped. Full order7pieces only. Combined file is an ALTERNATIVE quote input, not extra quantity. No TPU soles/filament/printer included.",
+  "package": "sample",
+  "package_quantity": 2,
+  "package_contents_sha256": {
+    "build_model.py": "8eee4a7b08e84eb63a34db244979e4ff3df41b49856fe94d3ea8098e982e6466",
+    "cad/ASSEMBLY.md": "480b8e9168d8b9631ef16e0e3012a79636b10ebc9f69aac6f4e47e97f981e11e",
+    "cad/QUOTE_REQUEST.md": "33813965c4d3b6886c2a1f8ea670d174d808efd3b5dcb303431acd9a12e4e2b7",
+    "cad/build_frame.py": "47531526a8379c4d745766b8914c07b74c6072ca33b81e98e459adc06c996f31",
+    "cad/exploded.png": "452874e9707873bc4390f98204854dd88d9ade13108c164c5417eede3c0c3a53",
+    "cad/print_order/ORIENTATION_REVIEW.md": "0b02bb93d96888b2f174ee16759ae60f673c0c0cf3719b4937735063f72a6c52",
+    "cad/print_order/drawings/interfaces.png": "977aed08b61bcb7c0bce204fbf84c65bdaf23262c5631d8a9e5a21c836b41406",
+    "cad/print_order/drawings/interfaces.svg": "0f431b545e690e8758fbbce9075fc42e40846a21ea64d6fde0187e2522744d1b",
+    "cad/print_order/fasteners.csv": "e937fbd1c2bc6d1c2f432a949ce091f3ef935df102d764a6d98c0fcdc0e347eb",
+    "cad/print_order/sample/ear_cradle.stl": "67222ed4048de778daac0139315220df5be1663fd3297086c6fb65f526f1c778",
+    "cad/print_order/sample/horn_plate.stl": "9d6ad9ab4db1a3c0fbb0f7516dc9da7e0c05d6ece2a139de2305184b8b30156e",
+    "physical_spec.json": "f9e9b2018bde072c8632befacd4ca4c04b14e7a6230b961a131487d4e4e5300d",
+    "requirements-dev.txt": "814456c9bc9fdfcc526bf542b6c9fe734755f5596eeb9be24bc868bd033c4464",
+    "requirements.txt": "8fd1001ef996222f02a8aedd484c9c6fb1b2e106d9eac2d6ff2e9cce16765ca3",
+    "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+    "tools/prepare_local_print.py": "9898636821bdc84ac2eec92c7db0d94cf2de5d1ae7221fe0c66572d6705588e9",
+    "tools/prepare_print_order.py": "2152d2d7c63627807a67aa63337ab341b14f3dccb408b17bbb78f1d543c1a5dd"
+  }
+}

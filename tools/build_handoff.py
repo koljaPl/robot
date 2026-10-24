@@ -29,7 +29,9 @@ def main():
     source = source.replace("{{BOM}}", "\n".join(rows))
     from tools.budget_gate import check_basket, cash_comparison
     scenario_rows = []
-    for key, route in basket.get("scenarios", {}).items():
+    active = basket.get("active_scenario")
+    routes = ({active: basket['scenarios'][active]} if active else basket.get('scenarios', {}))
+    for key, route in routes.items():
         scenario_rows.extend([f"### {route['name']} — {route['selection_state']}", "",
                               "| Additional item / source | Qty | Unit € | Line € | Issue |",
                               "|---|---:|---:|---:|---|"])
@@ -41,9 +43,9 @@ def main():
                                  f" | {item['notes']} |")
         scenario_rows.append("")
     source = source.replace("{{SCENARIOS}}", "\n".join(scenario_rows))
-    reports = {"shared_subset": check_basket(basket),
-               "routes": {key: check_basket(basket, key) for key in basket.get("scenarios", {})},
-               "printer_comparisons": {key: cash_comparison(basket, key) for key in basket.get("printer_options", {})}}
+    reports = {"active_required_basket" if active else "shared_subset": check_basket(basket),
+               "routes": {key: check_basket(basket, key) for key in routes},
+               "printer_comparisons": {} if active else {key: cash_comparison(basket, key) for key in basket.get("printer_options", {})}}
     source = source.replace("{{BUDGET}}", "```json\n" + json.dumps(reports, indent=2) + "\n```")
     spec = json.loads((ROOT / "physical_spec.json").read_text())
     mass = json.loads((ROOT / "docs/mass_properties.json").read_text())

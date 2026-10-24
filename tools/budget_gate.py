@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def check_basket(basket, scenario=None):
     """Check one route only; the root list is shared, not a complete robot."""
+    scenario = scenario or basket.get("active_scenario")
     route = basket.get("scenarios", {}).get(scenario) if scenario else None
     if scenario and route is None:
         raise ValueError(f"Unknown scenario: {scenario}")
@@ -56,7 +57,7 @@ def cash_comparison(basket, printer):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--basket", type=Path, default=ROOT / "procurement.json")
-    p.add_argument("--scenario", choices=["standard_parts", "own_printer", "all"])
+    p.add_argument("--scenario", choices=["commercial_print", "standard_parts", "own_printer", "all"])
     p.add_argument("--printer", choices=["a1_mini", "ender_v3_se"])
     args = p.parse_args()
     basket = json.loads(args.basket.read_text())

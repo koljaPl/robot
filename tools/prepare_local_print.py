@@ -62,8 +62,8 @@ def generate(folder=None):
               "source_cad_sha256": hashlib.sha256((ROOT / "cad/build_frame.py").read_bytes()).hexdigest(),
               "physical_spec_sha256": hashlib.sha256((ROOT / "physical_spec.json").read_bytes()).hexdigest(),
               "slicer_verified": False, "structural_orientation_verified": False,
-              "material": "One full 1 kg PETG spool counted in robot basket; no TPU spool",
-              "notes": "Open ONE plate at a time, units mm, scale100%. Old185mm batch does not fit. No supports/holes/strength certified. Grip pads are a proposed revision, not current model contacts."}
+              "material": "Commercial PETG service supplies material; no spool/printer/TPU soles in active basket",
+              "notes": "Open ONE plate at a time, units mm, scale100%. No supports/holes/strength certified. Ordinary grip pads are represented in current provisional contacts, not physically verified. Local180mm layout is an optional quotation orientation, not printer purchase approval."}
     (folder / "layout.json").write_text(json.dumps(report, indent=2) + "\n")
     return report
 

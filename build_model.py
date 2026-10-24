@@ -27,6 +27,11 @@ def physical_bodies(spec):
     return bodies
 
 
+def foot_contact_components(body):
+    """The same owned pad components define physics, diagnostics and drawings."""
+    return [c for c in body["components"] if c.get("primitive") == "cylinder_z"]
+
+
 def aggregate(components):
     mass = sum(c["mass"] for c in components)
     com = sum(c["mass"] * np.array(c["com"]) for c in components) / mass
@@ -87,9 +92,14 @@ def generate(output=ROOT / "robot.xml"):
             ET.SubElement(elem, "joint", **joint_args)
             if b["name"].endswith("foot"):
                 ET.SubElement(elem, "geom", name=b["name"] + "_plate", type="box", pos=fmt(spec["geometry"]["foot_center"]), size=fmt(np.array(spec["geometry"]["foot_dimensions"]) / 2), rgba="0.08 0.36 0.65 1")
-                solepos = np.array(spec["geometry"]["foot_center"]); solepos[2] -= (spec["geometry"]["foot_dimensions"][2] + spec["geometry"]["sole_thickness"]) / 2
-                ET.SubElement(elem, "geom", name=b["name"] + "_sole", type="box", pos=fmt(solepos), size=fmt([* (np.array(spec["geometry"]["foot_dimensions"][:2]) / 2), spec["geometry"]["sole_thickness"] / 2]), rgba="0.15 0.15 0.15 1")
-                ET.SubElement(elem, "site", name=b["name"] + "_sole_center", pos=fmt(solepos + [0, 0, -spec["geometry"]["sole_thickness"] / 2]), size="0.001")
+                pads = foot_contact_components(b)
+                if len(pads) != 4:
+                    raise ValueError("Expected four owned grip pads per foot")
+                for c in pads:
+                    ET.SubElement(elem, "geom", name=c["name"], type="cylinder", pos=fmt(c["com"]),
+                                  size=fmt([c["radius"], c["dimensions"][2]/2]), rgba="0.15 0.15 0.15 1")
+                center = np.mean([np.array(c["com"])-[0,0,c["dimensions"][2]/2] for c in pads], axis=0)
+                ET.SubElement(elem, "site", name=b["name"] + "_contact_center", pos=fmt(center), size="0.001")
             else:
                 # Envelope of thin printed yoke, deliberately narrow for simple contacts.
                 ET.SubElement(elem, "geom", name=b["name"] + "_link", type="capsule", fromto=fmt([0, 0, -0.006, 0, 0, -(spec["geometry"]["thigh_length"] if b["name"].endswith("thigh") else spec["geometry"]["shin_length"]) + 0.006]), size="0.006", rgba="0.12 0.55 0.83 1")

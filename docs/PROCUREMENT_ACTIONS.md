@@ -1,48 +1,69 @@
-# Procurement actions — soldering routes, 2026-10-23
+# Active commercial-print procurement actions — 2026-10-24
 
-No purchases, supplier messages, stock reservations or delivery bookings made.
-Destination25337Germany; PC USB-A confirmed, so no adapter. USB data cable retained.
-Ledger: `../procurement.json`; comparison: `FRAME_ROUTES.md`; complete short plan:
-`../SUMMARY.md`. Published rates are not final checkout quotations.
+Delivery25337Germany; PCUSB-A, no adapter; required USB data cable retained.
+No purchases, supplier messages, reservations or print orders have occurred.
+Authoritative ledger:`../procurement.json`; packages:`../cad/`.
 
-## Required next evidence / precise questions
+## Ready to forward for quotation, not order
 
-| Priority | Human action or future authorized research | Exact evidence needed |
+- [Sample ZIP](../cad/sample_quotation_package.zip): two separate mounting-test pieces.
+- [Frame ZIP](../cad/frame_quotation_package.zip): sevenPETG parts, no TPU soles.
+- [Supplier brief](../cad/QUOTE_REQUEST.md), [drawing](../cad/print_order/drawings/interfaces.png),
+  [quantity/hash manifest](../cad/print_order/manifest.json), [assembly](../cad/ASSEMBLY.md).
+- A combined7component STL is an alternative calculator input only; never add it
+  to the seven individual pieces as extra quantities. Hash final geometry before quote.
+
+## Costs and reductions
+
+Common priced subset95.81EUR +three ear-fastener packs/delivery9.53EUR =
+**105.34EUR before printing, sample delivery and unknown horn hardware**.
+Known shortfall for this basket:5.34EUR; complete delivered total unknown.
+The same parts previously cost95.91before mechanics. A0.50EUR Pico header kit
+plus one0.60EUR40pin pack saves0.10EUR and retains all pins. No weaker motors,
+undersized PSU/wire, omitted mains lead or assumed free consumables.
+
+Shipping/VAT rates remain published Germany snapshots, not a final checkout:
+Welectron4.95, BerryBase4.95, Funduino4.90, Reichelt5.95, Schraubenking5.90EUR.
+One shipping charge per supplier; every staged sample delivery is additional unless
+an actual quotation states otherwise. Print material is inside the service quote:
+**no filament spool/printer/printed TPU** is in the active basket.
+
+Consolidating the IMU at BerryBase was rejected:9.90EUR vs3.62 adds6.28 before any
+4.90shipping saving, with a differing module/interface listing. Combining fasteners
+with pads or printer service remains an unpriced possibility, not credited savings.
+Old quotations refer to old geometry and cannot price this revision.
+A direct3pin-header harness could replace extension cables using the existing pin
+packs, but actual mating/keying,3Acontact suitability and insulation/strain relief
+remain unverified. It is a research candidate only; no saving is credited.
+
+## Public print-service review
+
+| Service | Verified public capability | Price / missing evidence |
 |---|---|---|
-|1|Find a ready-made complete six-MG90S frame, no fabricated adapters|Part list/drawing, torso+2thighs+2shins+2feet, every case/horn/link fastener, exact model, dimensions/mass, VAT and shipping to25337. Hip/knee pitch and ankle roll must all be present. A case bracket alone fails.|
-|2|Ask/inspect Waveshare15024 retailer batch contents|Are six servos in stock? Which horns/retaining screws are supplied? Ear holes/spacing/thickness, shaft/spline/thread, horn hole pattern/thickness and screw sizes? No generic25T assumptions.|
-|3|Confirm JR/FutabaF23108007 harness suitability|Actual conductor gauge, connector continuous/peak current ratings and physical mating to selected servo; test contact temperature/droop at measured demand.|
-|4|Confirm printer access only if user later selects this route|No purchase now. Exact printer/profile/plate/support tools; full spool; any cleaning/release consumables. Print interface sample before frame; do not use185mm batch on180mm bed.|
-|5|Fit the prototype fastener stack|12M2ear screws+12nuts+24washers; measure length/thread projection and horn clearance. Separately6shaft retainers and12horn-frame screws+12washers. Costs/inclusion unresolved.|
-|6|Confirm tool access and final deliveries|Iron available. Meter/stripper/cutters/heat source/scale/support tools borrowed or priced. Verify all stock and complete delivery total at25337checkout. Extra split deliveries cannot be free by assumption.|
+| [Meltlab](https://meltlab.de/konfigurator) | Instant STL calculator; public page describes PETG and selectable support removal | Exact revised-file upload was blocked by automatic approval review; no new quote |
+| [f3dprint](https://www.f3dprint.de/druck-service) | STL/3MF, PETG,0.20mm; online price UI | Required25%infill/3walls/finishing not established; no file quote/upload |
+| [Riesen Consulting](https://riesen-consulting.de/cad-dienstleistungen/3d-druck-service/3d-druck-online-bestellen-preis-sofort-berechnen/) | Instant FDM calculator, Germany delivery | Page explicitly separates fit review/finishing from automated printing; no complete quote/inquiry |
 
-## Budget and shipping
+No service has a complete budget-passing quotation, so **none is selected**.
+Public example prices are not this project's quotation.
 
-Common proposed subset EUR95.91; standard frame/hardware/delivery unknown. Own-print
-subset EUR118.43; minimum known shortfall EUR18.43, before horn/print extras.
-No mandatory helper labour, paid printing or TPU spool in the proposed routes.
+## Required human action / exact questions
 
-- [Welectron](https://www.welectron.com/Shipping-cost): robot-only EUR4.95DPD underEUR49.
-  A1mini189exactvariant in stock, free standard Germany delivery; joint order may
-  save robot shipment once but is not assumed/authorized.
-- [BerryBase](https://www.berrybase.de/versand-und-zahlungsbedingungen): EUR4.95DHL
-  underEUR200; barePico4.10, two header packs1.20, solder1.90.
-- [Funduino](https://funduino.com/policies/shipping-policy): EUR4.90Germany DHL
-  belowEUR69afterdiscounts; IMU+extensions10.46.
-- [Reichelt](https://www.reichelt.de/de/de/shop/service/-12_28): EUR5.95DHL<=10kg;
-  Delock18309pack3.55. Adhesive included, grip unmeasured.
-- [Schraubenking](https://www.schraubenking-shop.de/Versandinformationen): EUR5.90
-  belowEUR99; three prototype ear-fastener packs3.63 (own-print route only).
-- [Creality](https://store.creality.com/de/pages/versand-auslieferung): Germany free
-  fromEUR99; EnderV3SE standalone169listed, no stock count; no optional services.
+1. Authorize uploading the exact current combined frame STL and two sample STLs
+   to **Meltlab** for quotations only, or upload them yourself and return settings,
+   price breakdown and file hashes. Automatic approval review rejected the upload
+   because it shares design data with that provider without specific authorization.
+   This is separate from purchase or supplier-message permission.
+2. Ask for sample2pieces and frame7pieces separately: PETG black,0.20mm,3walls,25%infill,
+   reviewed load orientation, removed supports, usable holes without student drilling,
+   finishing/inspection, VAT, packaging and each delivery to25337.
+3. Confirm six-unit stock and actual Waveshare15024 accessory contents. Measure ear,
+   shaft, horn holes and supplied screws before final geometry or manufacturing approval.
+4. Confirm matching6horns+6retainers and12horn-frame screws+12washers. Ear screw length
+   and wrench/sweep clearance need the real stack; do not guess spline or threads.
+5. Confirm JR wire/contact ratings,3.3V servo signal acceptance, real current/droop and
+   tool access. Test one servo/IMU and the physical disconnect before full assembly.
 
-All figures VAT-inclusive published snapshots2026-10-23. No guaranteed delivery.
-Common total excludes a frame; neither total is a complete purchasable robot.
-
-## Historical alternatives, not default purchases
-
-Commercial-print priced subset EUR163.63 and unresolved finishing/helper costs are
-preserved in `history/2026-10-23/pre_soldering_routes/` and the original quote
-records `procurement/2026-10-23/quotes.json`. Those quotes excluded sole bonding,
-hole finishing and fit certification. Custom laser cutting is also historical.
-No old quote was rewritten into a cheaper or assembly-ready offer.
+A quote over100EUR does not authorize procurement. Preserve its exact shortfall and
+continue independent provisional simulation; no hardware/manufacturing gate is cleared.
+Previous standard/own-printer and commercialTPU comparisons remain under `history/`.

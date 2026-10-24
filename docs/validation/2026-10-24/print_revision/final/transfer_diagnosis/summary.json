@@ -1,0 +1,98 @@
+{
+  "state": "provisional scripted diagnosis, not physical or learned walking",
+  "identity": {
+    "configuration": "4d3b0dcbad59774b12f9c908c74446f6bf7452d5bdf34a08f07cf4271cc15019",
+    "files": {
+      "physical_spec.json": "f9e9b2018bde072c8632befacd4ca4c04b14e7a6230b961a131487d4e4e5300d",
+      "robot.xml": "859065cffb998e3f7f8ab6cd736937882b636949b4ffbba78e4b7dce91ec3917",
+      "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+      "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+      "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+      "humanoid_env.py": "3a9a3fadca8b001b1c294cb051e489221f54e1675a310a58b2af08f3a9da50ae",
+      "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+      "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+      "calibration.py": "b73947a3a1bb772bac45df3356fc108426c8bc199bd388cfb8b7ac51e5125486",
+      "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+      "firmware/control.h": "dfc0dec9642df663dca6410b8414faf16de480736c8c62fa2fd2da166f9c7200"
+    },
+    "calibration": null
+  },
+  "source_sha256": "89db4d3dce39cb187702b22a6e0e6fea8afa2af4efd2243ccac52dbf4017dc28",
+  "unchanged_motor_envelope_Nm": 0.08,
+  "seed": 42,
+  "variants": [
+    {
+      "swing_ankle_roll_deg": 15,
+      "max_whole_foot_clearance_m": [
+        4.064928882251736e-06,
+        1.36103334976833e-06
+      ],
+      "max_abs_roll_rad": 0.12446450352851807,
+      "final_metrics": {
+        "distance_m": -0.00092782709684491,
+        "lateral_distance_m": -0.00098901628815899,
+        "duration_s": 18.0,
+        "mean_speed_m_s": -5.1545949824717225e-05,
+        "fallen": false,
+        "total_reward": 3.5236166283027304,
+        "lifted_steps_left": 0,
+        "lifted_steps_right": 0,
+        "alternations": 0,
+        "gait_distance_m": 0.0,
+        "max_stance_slip_m": 4.9276777545219996e-05,
+        "rejected_steps": 123,
+        "walking_success": false,
+        "domain_randomization": false
+      }
+    },
+    {
+      "swing_ankle_roll_deg": 5,
+      "max_whole_foot_clearance_m": [
+        4.792915528381396e-06,
+        9.394249909609742e-07
+      ],
+      "max_abs_roll_rad": 0.14978346199496703,
+      "final_metrics": {
+        "distance_m": 1.0000934482316207e-05,
+        "lateral_distance_m": -0.0010310234660473147,
+        "duration_s": 18.0,
+        "mean_speed_m_s": 5.556074712397893e-07,
+        "fallen": false,
+        "total_reward": 3.524694047339713,
+        "lifted_steps_left": 0,
+        "lifted_steps_right": 0,
+        "alternations": 0,
+        "gait_distance_m": 0.0,
+        "max_stance_slip_m": 2.120443864129287e-05,
+        "rejected_steps": 124,
+        "walking_success": false,
+        "domain_randomization": false
+      }
+    },
+    {
+      "swing_ankle_roll_deg": 0,
+      "max_whole_foot_clearance_m": [
+        0.0,
+        2.7261458974297582e-06
+      ],
+      "max_abs_roll_rad": 0.16781986376264305,
+      "final_metrics": {
+        "distance_m": -0.0002026867809713245,
+        "lateral_distance_m": -0.0011353541837045178,
+        "duration_s": 18.0,
+        "mean_speed_m_s": -1.1260376720629139e-05,
+        "fallen": false,
+        "total_reward": 3.5168268806828955,
+        "lifted_steps_left": 0,
+        "lifted_steps_right": 0,
+        "alternations": 0,
+        "gait_distance_m": 0.0,
+        "max_stance_slip_m": 2.3585502044607274e-05,
+        "rejected_steps": 124,
+        "walking_success": false,
+        "domain_randomization": false
+      }
+    }
+  ],
+  "interpretation": "These test commanded stance/swing ankle differences. Only existing non-sliding alternating gait metrics can credit steps; a single lift is not walking."
+}

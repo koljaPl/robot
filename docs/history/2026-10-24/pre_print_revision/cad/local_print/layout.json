@@ -1,0 +1,211 @@
+{
+  "state": "PROVISIONAL LAYOUT ONLY; NO MANUFACTURING RELEASE",
+  "units": "mm",
+  "bed_mm": [
+    180,
+    180,
+    180
+  ],
+  "xy_edge_margin_mm": 5,
+  "parts": [
+    {
+      "part": "torso",
+      "quantity": 1,
+      "file": "plate_torso.stl",
+      "source_sha256": "c5d104f5450c3aa17d5440e82bd2e345160ec62aba41712d39889a547d53f5e2",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          93.75,
+          87.0,
+          32.0
+        ]
+      ],
+      "volume_mm3": 16918.305308841893,
+      "components": 1
+    },
+    {
+      "part": "left_thigh",
+      "quantity": 1,
+      "file": "plate_left_thigh.stl",
+      "source_sha256": "dec834440d803f2a75fef9a41dda4bb427bb6c007b1adc5b9863f9437dd67d23",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          29.0,
+          92.75,
+          13.500000000000007
+        ]
+      ],
+      "volume_mm3": 4151.991779835497,
+      "components": 1
+    },
+    {
+      "part": "right_thigh",
+      "quantity": 1,
+      "file": "plate_right_thigh.stl",
+      "source_sha256": "d62fbe9849f09deadc9060f359db90bc23fe1ce1d8d4248cee27ac94892ddcdb",
+      "rotation_deg": [
+        90,
+        0,
+        0
+      ],
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          29.0,
+          92.75,
+          13.5
+        ]
+      ],
+      "volume_mm3": 4151.991779835498,
+      "components": 1
+    },
+    {
+      "part": "left_shin",
+      "quantity": 1,
+      "file": "plate_left_shin.stl",
+      "source_sha256": "dd2e6a50129feb020f3a09cbea4bd35c0fef1d59047ccc2a0026daeb6e55f2d7",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          83.0,
+          29.0,
+          24.0
+        ]
+      ],
+      "volume_mm3": 4900.081498575192,
+      "components": 1
+    },
+    {
+      "part": "right_shin",
+      "quantity": 1,
+      "file": "plate_right_shin.stl",
+      "source_sha256": "c0f6b652ce63ab93d2e894e10597d9434e25d8c2acc8b89b0e8893484f666a07",
+      "rotation_deg": [
+        0,
+        90,
+        0
+      ],
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          83.0,
+          29.0,
+          24.0
+        ]
+      ],
+      "volume_mm3": 4900.081498575192,
+      "components": 1
+    },
+    {
+      "part": "left_foot",
+      "quantity": 1,
+      "file": "plate_left_foot.stl",
+      "source_sha256": "5743f7037b5058d933cae742e17d86598df200c937d23e692d057f2224f52f63",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          95.0,
+          50.0,
+          38.25
+        ]
+      ],
+      "volume_mm3": 14186.070676828871,
+      "components": 1
+    },
+    {
+      "part": "right_foot",
+      "quantity": 1,
+      "file": "plate_right_foot.stl",
+      "source_sha256": "28e593c7b732432a15f5d1f3dead1c909c386186acd5b34cf1f2ff93f0828105",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          95.0,
+          50.0,
+          38.25
+        ]
+      ],
+      "volume_mm3": 14186.070676828871,
+      "components": 1
+    }
+  ],
+  "frame_parts": 7,
+  "sample": {
+    "file": "FIRST_interface_sample.stl",
+    "components": 2,
+    "purpose": "Current servo ear cradle + horn plate; measure actual hardware first",
+    "bounds_mm": [
+      [
+        5.0,
+        5.0,
+        0.0
+      ],
+      [
+        59.0,
+        43.0,
+        3.0000000000000027
+      ]
+    ]
+  },
+  "source_cad_sha256": "da80c964e9b9500e77de27e2e9722fe0643b262d242f64b1d38364c82ae53fd4",
+  "physical_spec_sha256": "d5b242a39dc18ae0b218a9774e6667fd7c96ba9d1002bb8f392dbb2cd9e0b53f",
+  "slicer_verified": false,
+  "structural_orientation_verified": false,
+  "material": "One full 1 kg PETG spool counted in robot basket; no TPU spool",
+  "notes": "Open ONE plate at a time, units mm, scale100%. Old185mm batch does not fit. No supports/holes/strength certified. Grip pads are a proposed revision, not current model contacts."
+}

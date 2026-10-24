@@ -1,10 +1,13 @@
 # Pico firmware — local build and bench preparation
 
-**Soldering update2026-10-23:** proposed bare Pico uses the same RP2040 firmware
+**Frame/control identity update2026-10-24:** proposed bare Pico uses the same RP2040 firmware
 and GPIOs as Pico H. User fits headers and a self-soldered insulated harness; no
 mandatory helper labour. See [wiring sequence](../docs/HARDWARE.md). Do not flash/arm
-this as proof of electrical or mechanical verification. Physical prototype masses
-still refer to Pico H; bare-board replacement remains a measured-twin task.
+this as proof of electrical or mechanical verification. Current provisional twin uses bare Pico+two soldered header rows. Module mass
+is estimated4.2g; actual board/harness measurements remain pending. The generated
+invalid header now carries the r2 fingerprint. OldUF2 images are historical: rebuild
+with this header and later measured calibration before any flash. No current ARM
+build or physical electrical result is claimed by the geometry update.
 
 
 Source is C++17 using official Pico SDK **2.3.1**, revision

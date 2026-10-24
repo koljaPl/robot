@@ -1,0 +1,2 @@
+distance_m,lateral_distance_m,duration_s,mean_speed_m_s,fallen,total_reward,lifted_steps_left,lifted_steps_right,alternations,gait_distance_m,max_stance_slip_m,rejected_steps,walking_success,domain_randomization,episode,seed,terminated,truncated
+-0.020387669783593527,-0.00012138071297473889,30.0,-0.0006795889927864509,False,5.311360911348425,0,0,0,0.0,5.689383822614839e-05,8,False,False,0,2000,False,True

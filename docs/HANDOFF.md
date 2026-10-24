@@ -1,7 +1,7 @@
 # From Simulation to Reality: How does a robot learn?
 
 Generated from source by `python tools/build_handoff.py`. Do not edit HANDOFF.md.
-Research date2026-10-23. Source files, ledgers and evidence states take precedence.
+Research/revision date2026-10-24. Source files, ledgers and evidence states take precedence.
 Short purchase/build plan for humans and AI: [SUMMARY.md](../SUMMARY.md).
 
 ## 1. Short design recommendation
@@ -10,10 +10,10 @@ Retain six Waveshare15024 MG90S servos: hip pitch, knee pitch and ankle roll per
 leg, broad feet, Pico native PWM, MPU6050, PC USB
 inference and separate5V servo power. This is a **provisional** design, not a
 purchasable or calibrated walking robot. Nothing purchased/physically tested.
-User can solder; no mandatory helper labour. Compare a complete standard-parts
-frame (unverified) vs own printing (no access; printer purchase comparison only).
-Existing physical prototype remains Pico H/continuous TPU; bare Pico/TPE pads are
-proposals, not a verified replacement. Commercial printing/laser routes are historical.
+User can solder; no mandatory helper. Active route is outsourced PETG:seven frame
+parts,two separate fit samples,eight bought TPE pads. Bare Pico/header ownership
+and pad contacts now match the provisional twin. No printer/filament/printedTPU
+purchase. Complete delivered budget, actual fit and strength are still blocked.
 The target remains30s standing followed by0.3m visibly alternating walking
 within30s. Software checks and training rewards cannot substitute for that result.
 
@@ -88,15 +88,16 @@ not humanoid appearance, remain the acceptance criterion.
 
 ## 5. Required BOM and incomplete route alternatives
 
-Authoritative `procurement.json`, checked2026-10-23. Null prices are required,
+Authoritative `procurement.json`, checked2026-10-24. Null prices are required,
 unresolved costs, never zero. Quantities include full packs where sold as packs.
 
-Shared parts only; choose and verify a full scenario before procurement.
+Shared parts plus active commercial_print scenario are the required basket. Other
+scenarios are retained comparisons, not additional quantities or purchase selections.
 
 | Category | Exact item / supplier source | Qty | Unit € | Line € | Selection / unresolved issue |
 |---|---|---:|---:|---:|---|
 | Motors | [Waveshare 15024 MG90S](https://www.welectron.com/Waveshare-15024-MG90S-Servo_1) — Welectron | 6 | 3.50 | 21.00 | VAT included, stock shown; horn/screw inclusion unverified |
-| Electronics | [Raspberry Pi Pico (bare RP2040 board)](https://www.berrybase.de/raspberry-pi-pico-rp2040-mikrocontroller-board) — BerryBase | 1 | 4.10 | 4.10 | Proposed soldering basket; solder two 20-pin headers. Same RP2040 and firmware pins. Physical prototype still models Pico H; replacement mass unmeasured. |
+| Electronics | [Raspberry Pi Pico (bare RP2040 board)](https://www.berrybase.de/raspberry-pi-pico-rp2040-mikrocontroller-board) — BerryBase | 1 | 4.10 | 4.10 | Selected provisional bare Pico +soldered headers; GPIOs unchanged. Updated twin owns4.2g inclusive-header module estimate, not a measured mass. |
 | Sensors | [Funduino F23107397 MPU6050 module](https://funduino.com/products/mpu-6050-modul-triaxial-beschleunigungssensor-gyroskop) — Funduino | 1 | 3.62 | 3.62 | Header soldering/board orientation to confirm |
 | Power | [Mean Well GST40A05-P1J 5 V 5 A desktop PSU](https://www.berrybase.de/meanwell-schaltnetzteil-5v-dc-5-0a-mit-hohlstecker-5-5x2-1mm) — BerryBase | 1 | 15.50 | 15.50 | C14 inlet; centre-positive 5.5 x 2.1 mm; no mains lead in package |
 | Power | [Goobay 68604 Schuko to C13, 1.5 m](https://www.berrybase.de/kaltgeraete-netzkabel-schutzkontakt-stecker-abgewinkelt-iec320-c13-buchse-schwarz) — BerryBase | 1 | 3.81 | 3.81 | Exact 1.5 m variant; 10 A AC rating |
@@ -105,35 +106,30 @@ Shared parts only; choose and verify a full scenario before procurement.
 | Wiring/connectors | [Funduino F23108007 JR-Futaba extension, 10 cm](https://funduino.com/products/jr-futaba-servo-verlangerung-kabel-10cm-female-male) — Funduino | 6 | 1.14 | 6.84 | User solders six replaceable servo sockets into short heavy positive/return buses; isolate each signal to its Pico GPIO. Actual wire gauge, contact rating, plug fit and current/droop must pass bench tests. |
 | Wiring/connectors | [Donau E-175-10 red copper wire 0.75 mm², 10 m roll](https://www.berrybase.de/donau-kupferschaltlitze-0-75-mm2-10m-lang-1-adrig-24x0-20mm-pvc-isoliert) — BerryBase | 1 | 5.90 | 5.90 | Short <=10 cm power buses; label negative with black shrink; no long thin power tether |
 | Power | [AiSHi ELK1M16VAWH 1000 µF 16 V capacitor](https://www.berrybase.de/elektrolytkondensator-1000-f-16v-1050c-1-radial-tht) — BerryBase | 1 | 0.29 | 0.29 | Polarity matters; actual tolerance ±20%, inconsistent page title ignored |
-| Wiring/connectors | [PINH-1X40P 40-pin 2.54 mm header](https://www.berrybase.de/stiftleiste-1x-40-polig-rm-2-54-gerade) — BerryBase | 2 | 0.60 | 1.20 | Two full 40-pin packs: 40 Pico pins + up to 8 IMU + 6 individual signal pins = 54, 26 spare. Snap into lengths; no motor current through these headers. |
+| Wiring/connectors | [PINH-1X40P 40-pin 2.54 mm header](https://www.berrybase.de/stiftleiste-1x-40-polig-rm-2-54-gerade) — BerryBase | 1 | 0.60 | 0.60 | One full40pin pack for up to8IMU pins+6signal ends;26spare. Pico headers supplied by separate RPIP-PINH kit. |
 | Wiring/connectors | [McPower T1535561 heat-shrink, 100 pieces](https://www.berrybase.de/schrumpfschlauch-set-100-teilig-schwarz) — BerryBase | 1 | 1.90 | 1.90 | Insulate all user-soldered harness joints and label negative polarity; full shrink pack and separate10g solder pack are included. |
-| Fasteners | [McPower T1535501 cable ties, 100 x 2.5 mm, pack of 100](https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-100x2-5mm) — BerryBase | 1 | 0.45 | 0.45 | 8 board mounts, 4 cable strain relief, 8 harness restraints; keep away from pinch points |
+| Fasteners | [McPower T1535501 cable ties, 100 x 2.5 mm, pack of 100](https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-100x2-5mm) — BerryBase | 1 | 0.45 | 0.45 | Six board ties +four tether strain restraints +eight harness restraints; full100pack, leave joint loops. |
 | Power | [Goobay 11638 DC socket 5.5 x 2.1 mm, solder lugs, 5 A](https://www.berrybase.de/dc-einbaubuchse-fuer-hohlstecker-5-5x2-1mm-metallausfuehrung-loetanschluss) — BerryBase | 1 | 1.10 | 1.10 | Retailer specifies 5 A / 30 V DC, nut and washer. User solders short 0.75 mm2 bus, insulates lugs/case and provides strain relief using listed shrink/ties; support off robot. Unplug PSU DC for physical cutoff. Not branch-current or electrical verification. |
 | Shipping | [Welectron German DPD shipping](https://www.welectron.com/Shipping-cost) — Welectron | 1 | 4.95 | 4.95 | Basket under €49 free-shipping threshold |
 | Shipping | [BerryBase German DHL shipping](https://www.berrybase.de/versand-und-zahlungsbedingungen) — BerryBase | 1 | 4.95 | 4.95 | DHL EUR4.95 below EUR200; free-shipping threshold changed from recorded EUR150 |
 | Shipping | [Funduino German shipping](https://funduino.com/policies/shipping-policy) — Funduino | 1 | 4.90 | 4.90 | Current policy opened in browser: Germany standard DHL EUR4.90 inclVAT; free only from EUR69 after discounts; tracking; no express surcharge. Snapshot docs/procurement/2026-10-23/funduino-shipping.txt |
 | Consumables | [Zhongdi ZD-160 lead-free solder, 1 mm, 2% flux, 10 g](https://www.berrybase.de/zhongdi-loetzinn-bleifrei-oe1-0-mm-2-flussmittel-10-g) — BerryBase | 1 | 1.90 | 1.90 | Full 10 g pack counted; Sn99.3Cu0.7, flux core. No mandatory helper labour. Iron/tool access confirmed by user; other tools must be borrowed or priced separately. |
-| Mechanical | [Delock 18309 self-adhesive TPE pads, 10 x 3 mm, pack50](https://www.reichelt.de/de/de/shop/produkt/gummifuesse_rund_selbstklebend_10_x_3_mm_50_stk_schwarz-371081) — Reichelt | 1 | 3.55 | 3.55 | Candidate: 8 used (4 per foot), 42 spare. 3M adhesive included. Dimensions/material sourced; friction, bond strength and placement unverified. Not yet represented in physical_spec/MJCF. |
+| Mechanical | [Delock 18309 self-adhesive TPE pads, 10 x 3 mm, pack50](https://www.reichelt.de/de/de/shop/produkt/gummifuesse_rund_selbstklebend_10_x_3_mm_50_stk_schwarz-371081) — Reichelt | 1 | 3.55 | 3.55 | Eight used, four per foot;42spare.10mm diameter x3mm TPE with adhesive; new twin uses discrete cylinders. Product dimensions sourced; friction/density/adhesion/positions provisional. |
 | Shipping | [Reichelt German standard DHL delivery](https://www.reichelt.de/de/de/shop/service/-12_28) — Reichelt | 1 | 5.95 | 5.95 | Germany <=10 kg published rate. Final 25337 checkout pending; no booking. |
+| Wiring/connectors | [BerryBase RPIP-PINH Pico header kit](https://www.berrybase.de/stiftleisten-pin-header-set-fuer-raspberry-pi-pico) — BerryBase | 1 | 0.50 | 0.50 | Two20pin headers for Pico; confirm package, solder yourself. Any supplied3pin debug strip is spare, not required. With one40pin pack provides at least80pins. Saves0.10 vs two40pin packs. |
 
-### Ready-made standard parts; no fabrication — comparison only; incomplete
-
-| Additional item / source | Qty | Unit € | Line € | Issue |
-|---|---:|---:|---:|---|
-| Complete compatible six-joint frame, links, feet, horns, retainers and matching fasteners, delivered | 1 | pending | pending | Must include torso, 2 thighs, 2 shins, 2 feet, case holders and every shaft/horn/link connection with no drilling/cutting/bending/printing. Case holders alone are not a leg. Required quantity is ONE complete frame kit, not six arbitrary brackets. |
-
-### Locally print fitted PETG frame; standard grip pads — comparison only; no printer access/purchase selection
+### Commercial PETG frame +ordinary grip pads — selected
 
 | Additional item / source | Qty | Unit € | Line € | Issue |
 |---|---:|---:|---:|---|
-| [SUNLU PETG Black 1.75 mm, 1000 g spool SN5-314224](https://www.welectron.com/Sunlu-PETG-Black-175-mm-1000-g_1) | 1 | 12.99 | 12.99 | Full spool, not refill/sample grams. HAN SL-Y-PETG-BK-1KG-A; GTIN6933582314224. No second TPU spool proposed. Existing robot-only Welectron shipment covers spool+servos (<EUR49). |
 | [Schraubenking P010265 M2 x 8 PH DIN7985 zinc-plated steel 4.8, pack100](https://www.schraubenking-shop.de/M2-x-8mm-Linsenkopfschrauben-PH-DIN7985-Stahl-verzinkt-FKL48-P010265) | 1 | 1.51 | 1.51 | 12 ear screws used; 88 spare. Exact length/ear fit provisional. Head4mm dia/1.6mm high, PH1; M2 coarse thread. Do not order before stack/clearance review. |
 | [Schraubenking P003474 M2 DIN934 zinc-plated steel class8 nuts, pack100](https://www.schraubenking-shop.de/M2-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P003474) | 1 | 1.13 | 1.13 | 12 used;88spare. Current browser price1.13; stale cached page1.16/20%VAT rejected. SW4,1.6mm high,0.4mm pitch; match M2 ear screws. |
 | [Schraubenking P004198 M2 DIN125 A2 washers 2.2 x 5 x 0.3 mm, pack100](https://www.schraubenking-shop.de/22mm-Unterlegscheiben-DIN125-Edelstahl-A2-P004198) | 1 | 0.99 | 0.99 | 24 used at ears: one under each head and nut. 76spare; horn washer compatibility not presumed. Check5mm OD clears plastic ear/slot and horn sweep. |
 | [Schraubenking German standard DHL delivery](https://www.schraubenking-shop.de/Versandinformationen) | 1 | 5.90 | 5.90 | Current Germany standard rate below99EUR; DHL1-3days afterdispatch. No priority selected. One shipment for all three fastener packs. |
 | [6 matching horns + 6 servo shaft retaining screws](https://www.welectron.com/Waveshare-15024-MG90S-Servo_1) | 1 | pending | pending | Manufacturer package photo shows three horn shapes and three screws, but text lists servo only. Six selected horns and six correct retainers required; exact Welectron batch inclusion/spline/thread/geometry remain unconfirmed. No generic 25T substitution; no extra horns bought until confirmed. |
 | 12 horn-to-frame screws and 12 matching washers | 1 | pending | pending | 12 screws + 12 washers, two per horn; diameter/thread/length unknown. Separate from six centre shaft retainers. Measure actual factory horns and frame thickness; do not guess M2 or generic 25T. |
-| Any printer-specific release/cleaning/support-removal consumables not included in printer kit | 1 | pending | pending | Do not assume sample filament or supplies sufficient. Confirm whether no additional consumable is needed on supplied plate; otherwise source full pack. Tools are accounted separately. |
+| PETG full frame:7finished parts, VAT, packaging and delivery to25337 | 1 | pending | pending | No current file-specific delivered quote. One torso+2thighs+2shins+2feet. Support removal, usable holes, finishing and any fit inspection must be priced; no printed soles/filament. |
+| PETG fit sample:2interface pieces, VAT and separate delivery | 1 | pending | pending | Ear cradle +horn plate. Separate fit-first order; include shipping/finishing. Any sample/full-order combination must be explicitly quoted, not assumed free. |
 
 
 Optional: spare matching servo, thin protective surface, slack safety thread,
@@ -144,441 +140,335 @@ short initial indoor trial work; several-metre travel needs a newly budgeted tet
 
 ```json
 {
-  "shared_subset": {
-    "scenario": "shared subset",
-    "status": "INCOMPLETE",
-    "known_delivered_subtotal_eur": "95.91",
-    "remaining_for_all_unknowns_eur": "4.09",
-    "confirmed_minimum_shortfall_eur": "0.00",
+  "active_required_basket": {
+    "scenario": "commercial_print",
+    "status": "OVER BUDGET",
+    "known_delivered_subtotal_eur": "105.34",
+    "remaining_for_all_unknowns_eur": "-5.34",
+    "confirmed_minimum_shortfall_eur": "5.34",
     "total_price_eur": null,
-    "pending_prices": [],
+    "pending_prices": [
+      "6 matching horns + 6 servo shaft retaining screws",
+      "12 horn-to-frame screws and 12 matching washers",
+      "PETG full frame:7finished parts, VAT, packaging and delivery to25337",
+      "PETG fit sample:2interface pieces, VAT and separate delivery"
+    ],
     "unresolved_checks": [
-      "Select and verify a complete six-joint frame and all matching hardware; common items alone are NOT a complete robot",
-      "Six-unit Welectron servo stock, actual accessory contents, ear/shaft/spline/horn interfaces",
-      "JR socket/branch wire gauge and contact rating, 3.3V signal compatibility, current/droop and physical DC cutoff",
-      "Final complete checkout to 25337 Germany; no stock reserved or orders placed",
-      "Grip-pad friction/adhesion/contact placement; no verified change to physical twin",
-      "Shared subset only: choose a complete scenario"
+      "All required full-frame/sample/finishing/horn costs and stock unresolved; unknowns never zero",
+      "Six-unit Waveshare stock and actual supplied horn/shaft screw contents",
+      "3.3V PWM threshold, branch/contact current ratings and PSU droop still need bench testing",
+      "Final complete delivery to25337 incl every sample shipment; no bookings/orders/messages",
+      "Fit/layer strength/pad friction and adhesion require physical measurements",
+      "Complete delivered basket exceeds cap before new printing quotation; no order",
+      "Exact Waveshare batch horns/retainers/screw/ear measurements and interface sample fit",
+      "Current exact-file print/support/finishing/sample/delivery prices missing",
+      "Automatic approval review blocked Meltlab STL upload; provider-specific upload authorization required",
+      "Physical layer strength, continuous clearances, tie/connector routing and pad grip not verified"
     ],
     "purchase_cleared": false
   },
   "routes": {
-    "standard_parts": {
-      "scenario": "standard_parts",
-      "status": "INCOMPLETE",
-      "known_delivered_subtotal_eur": "95.91",
-      "remaining_for_all_unknowns_eur": "4.09",
-      "confirmed_minimum_shortfall_eur": "0.00",
-      "total_price_eur": null,
-      "pending_prices": [
-        "Complete compatible six-joint frame, links, feet, horns, retainers and matching fasteners, delivered"
-      ],
-      "unresolved_checks": [
-        "Select and verify a complete six-joint frame and all matching hardware; common items alone are NOT a complete robot",
-        "Six-unit Welectron servo stock, actual accessory contents, ear/shaft/spline/horn interfaces",
-        "JR socket/branch wire gauge and contact rating, 3.3V signal compatibility, current/droop and physical DC cutoff",
-        "Final complete checkout to 25337 Germany; no stock reserved or orders placed",
-        "Grip-pad friction/adhesion/contact placement; no verified change to physical twin",
-        "No verified complete compatible six-joint ready-made frame; bracket count and link topology unresolved",
-        "Frame dimensions, mass, fastener counts, EUR landed VAT and shipping unknown",
-        "Comparison only; route has not been selected and approved"
-      ],
-      "purchase_cleared": false
-    },
-    "own_printer": {
-      "scenario": "own_printer",
+    "commercial_print": {
+      "scenario": "commercial_print",
       "status": "OVER BUDGET",
-      "known_delivered_subtotal_eur": "118.43",
-      "remaining_for_all_unknowns_eur": "-18.43",
-      "confirmed_minimum_shortfall_eur": "18.43",
+      "known_delivered_subtotal_eur": "105.34",
+      "remaining_for_all_unknowns_eur": "-5.34",
+      "confirmed_minimum_shortfall_eur": "5.34",
       "total_price_eur": null,
       "pending_prices": [
         "6 matching horns + 6 servo shaft retaining screws",
         "12 horn-to-frame screws and 12 matching washers",
-        "Any printer-specific release/cleaning/support-removal consumables not included in printer kit"
+        "PETG full frame:7finished parts, VAT, packaging and delivery to25337",
+        "PETG fit sample:2interface pieces, VAT and separate delivery"
       ],
       "unresolved_checks": [
-        "Select and verify a complete six-joint frame and all matching hardware; common items alone are NOT a complete robot",
-        "Six-unit Welectron servo stock, actual accessory contents, ear/shaft/spline/horn interfaces",
-        "JR socket/branch wire gauge and contact rating, 3.3V signal compatibility, current/droop and physical DC cutoff",
-        "Final complete checkout to 25337 Germany; no stock reserved or orders placed",
-        "Grip-pad friction/adhesion/contact placement; no verified change to physical twin",
-        "No existing printer access; comparison does not authorize buying a printer",
-        "Actual ear/horn fit, screw stack/clearance and sample print unverified; manufacturing gate closed",
-        "Seven parts plus cradle/horn fit sample must be sliced; support/layer orientation, tool access and pad placement not approved",
-        "Current physical_spec/MJCF retain Pico H and continuous TPU soles; update only after mechanics selected and measured",
-        "Comparison only; route has not been selected and approved"
+        "All required full-frame/sample/finishing/horn costs and stock unresolved; unknowns never zero",
+        "Six-unit Waveshare stock and actual supplied horn/shaft screw contents",
+        "3.3V PWM threshold, branch/contact current ratings and PSU droop still need bench testing",
+        "Final complete delivery to25337 incl every sample shipment; no bookings/orders/messages",
+        "Fit/layer strength/pad friction and adhesion require physical measurements",
+        "Complete delivered basket exceeds cap before new printing quotation; no order",
+        "Exact Waveshare batch horns/retainers/screw/ear measurements and interface sample fit",
+        "Current exact-file print/support/finishing/sample/delivery prices missing",
+        "Automatic approval review blocked Meltlab STL upload; provider-specific upload authorization required",
+        "Physical layer strength, continuous clearances, tie/connector routing and pad grip not verified"
       ],
       "purchase_cleared": false
     }
   },
-  "printer_comparisons": {
-    "a1_mini": {
-      "printer": "Bambu Lab A1 mini, non-Combo BL1-101030 / PF002-M-EU",
-      "selected_for_purchase": false,
-      "robot": {
-        "scenario": "own_printer",
-        "status": "OVER BUDGET",
-        "known_delivered_subtotal_eur": "118.43",
-        "remaining_for_all_unknowns_eur": "-18.43",
-        "confirmed_minimum_shortfall_eur": "18.43",
-        "total_price_eur": null,
-        "pending_prices": [
-          "6 matching horns + 6 servo shaft retaining screws",
-          "12 horn-to-frame screws and 12 matching washers",
-          "Any printer-specific release/cleaning/support-removal consumables not included in printer kit"
-        ],
-        "unresolved_checks": [
-          "Select and verify a complete six-joint frame and all matching hardware; common items alone are NOT a complete robot",
-          "Six-unit Welectron servo stock, actual accessory contents, ear/shaft/spline/horn interfaces",
-          "JR socket/branch wire gauge and contact rating, 3.3V signal compatibility, current/droop and physical DC cutoff",
-          "Final complete checkout to 25337 Germany; no stock reserved or orders placed",
-          "Grip-pad friction/adhesion/contact placement; no verified change to physical twin",
-          "No existing printer access; comparison does not authorize buying a printer",
-          "Actual ear/horn fit, screw stack/clearance and sample print unverified; manufacturing gate closed",
-          "Seven parts plus cradle/horn fit sample must be sliced; support/layer orientation, tool access and pad placement not approved",
-          "Current physical_spec/MJCF retain Pico H and continuous TPU soles; update only after mechanics selected and measured",
-          "Comparison only; route has not been selected and approved"
-        ],
-        "purchase_cleared": false
-      },
-      "printer_and_tools_known_eur": "189.00",
-      "printer_and_tools_total_eur": null,
-      "initial_cash_known_eur": "307.43",
-      "initial_cash_total_eur": null,
-      "delivery_evidence": "sourced published Germany rate; postcode checkout pending",
-      "notes": "Published rates, not a booked 25337 checkout. No assumed joint-order shipping credits; no alternatives added together."
-    },
-    "ender_v3_se": {
-      "printer": "Creality Ender-3 V3 SE, standalone (no PLA bundle)",
-      "selected_for_purchase": false,
-      "robot": {
-        "scenario": "own_printer",
-        "status": "OVER BUDGET",
-        "known_delivered_subtotal_eur": "118.43",
-        "remaining_for_all_unknowns_eur": "-18.43",
-        "confirmed_minimum_shortfall_eur": "18.43",
-        "total_price_eur": null,
-        "pending_prices": [
-          "6 matching horns + 6 servo shaft retaining screws",
-          "12 horn-to-frame screws and 12 matching washers",
-          "Any printer-specific release/cleaning/support-removal consumables not included in printer kit"
-        ],
-        "unresolved_checks": [
-          "Select and verify a complete six-joint frame and all matching hardware; common items alone are NOT a complete robot",
-          "Six-unit Welectron servo stock, actual accessory contents, ear/shaft/spline/horn interfaces",
-          "JR socket/branch wire gauge and contact rating, 3.3V signal compatibility, current/droop and physical DC cutoff",
-          "Final complete checkout to 25337 Germany; no stock reserved or orders placed",
-          "Grip-pad friction/adhesion/contact placement; no verified change to physical twin",
-          "No existing printer access; comparison does not authorize buying a printer",
-          "Actual ear/horn fit, screw stack/clearance and sample print unverified; manufacturing gate closed",
-          "Seven parts plus cradle/horn fit sample must be sliced; support/layer orientation, tool access and pad placement not approved",
-          "Current physical_spec/MJCF retain Pico H and continuous TPU soles; update only after mechanics selected and measured",
-          "Comparison only; route has not been selected and approved"
-        ],
-        "purchase_cleared": false
-      },
-      "printer_and_tools_known_eur": "169.00",
-      "printer_and_tools_total_eur": null,
-      "initial_cash_known_eur": "287.43",
-      "initial_cash_total_eur": null,
-      "delivery_evidence": "sourced published Germany free >=EUR99; postcode checkout pending",
-      "notes": "Published rates, not a booked 25337 checkout. No assumed joint-order shipping credits; no alternatives added together."
-    }
-  }
+  "printer_comparisons": {}
 }
 ```
 
-### Procurement actions — soldering routes, 2026-10-23
+### Active commercial-print procurement actions — 2026-10-24
 
-No purchases, supplier messages, stock reservations or delivery bookings made.
-Destination25337Germany; PC USB-A confirmed, so no adapter. USB data cable retained.
-Ledger: `../procurement.json`; comparison: `FRAME_ROUTES.md`; complete short plan:
-`../SUMMARY.md`. Published rates are not final checkout quotations.
+Delivery25337Germany; PCUSB-A, no adapter; required USB data cable retained.
+No purchases, supplier messages, reservations or print orders have occurred.
+Authoritative ledger:`../procurement.json`; packages:`../cad/`.
 
-#### Required next evidence / precise questions
+#### Ready to forward for quotation, not order
 
-| Priority | Human action or future authorized research | Exact evidence needed |
+- [Sample ZIP](../cad/sample_quotation_package.zip): two separate mounting-test pieces.
+- [Frame ZIP](../cad/frame_quotation_package.zip): sevenPETG parts, no TPU soles.
+- [Supplier brief](../cad/QUOTE_REQUEST.md), [drawing](../cad/print_order/drawings/interfaces.png),
+  [quantity/hash manifest](../cad/print_order/manifest.json), [assembly](../cad/ASSEMBLY.md).
+- A combined7component STL is an alternative calculator input only; never add it
+  to the seven individual pieces as extra quantities. Hash final geometry before quote.
+
+#### Costs and reductions
+
+Common priced subset95.81EUR +three ear-fastener packs/delivery9.53EUR =
+**105.34EUR before printing, sample delivery and unknown horn hardware**.
+Known shortfall for this basket:5.34EUR; complete delivered total unknown.
+The same parts previously cost95.91before mechanics. A0.50EUR Pico header kit
+plus one0.60EUR40pin pack saves0.10EUR and retains all pins. No weaker motors,
+undersized PSU/wire, omitted mains lead or assumed free consumables.
+
+Shipping/VAT rates remain published Germany snapshots, not a final checkout:
+Welectron4.95, BerryBase4.95, Funduino4.90, Reichelt5.95, Schraubenking5.90EUR.
+One shipping charge per supplier; every staged sample delivery is additional unless
+an actual quotation states otherwise. Print material is inside the service quote:
+**no filament spool/printer/printed TPU** is in the active basket.
+
+Consolidating the IMU at BerryBase was rejected:9.90EUR vs3.62 adds6.28 before any
+4.90shipping saving, with a differing module/interface listing. Combining fasteners
+with pads or printer service remains an unpriced possibility, not credited savings.
+Old quotations refer to old geometry and cannot price this revision.
+A direct3pin-header harness could replace extension cables using the existing pin
+packs, but actual mating/keying,3Acontact suitability and insulation/strain relief
+remain unverified. It is a research candidate only; no saving is credited.
+
+#### Public print-service review
+
+| Service | Verified public capability | Price / missing evidence |
 |---|---|---|
-|1|Find a ready-made complete six-MG90S frame, no fabricated adapters|Part list/drawing, torso+2thighs+2shins+2feet, every case/horn/link fastener, exact model, dimensions/mass, VAT and shipping to25337. Hip/knee pitch and ankle roll must all be present. A case bracket alone fails.|
-|2|Ask/inspect Waveshare15024 retailer batch contents|Are six servos in stock? Which horns/retaining screws are supplied? Ear holes/spacing/thickness, shaft/spline/thread, horn hole pattern/thickness and screw sizes? No generic25T assumptions.|
-|3|Confirm JR/FutabaF23108007 harness suitability|Actual conductor gauge, connector continuous/peak current ratings and physical mating to selected servo; test contact temperature/droop at measured demand.|
-|4|Confirm printer access only if user later selects this route|No purchase now. Exact printer/profile/plate/support tools; full spool; any cleaning/release consumables. Print interface sample before frame; do not use185mm batch on180mm bed.|
-|5|Fit the prototype fastener stack|12M2ear screws+12nuts+24washers; measure length/thread projection and horn clearance. Separately6shaft retainers and12horn-frame screws+12washers. Costs/inclusion unresolved.|
-|6|Confirm tool access and final deliveries|Iron available. Meter/stripper/cutters/heat source/scale/support tools borrowed or priced. Verify all stock and complete delivery total at25337checkout. Extra split deliveries cannot be free by assumption.|
+| [Meltlab](https://meltlab.de/konfigurator) | Instant STL calculator; public page describes PETG and selectable support removal | Exact revised-file upload was blocked by automatic approval review; no new quote |
+| [f3dprint](https://www.f3dprint.de/druck-service) | STL/3MF, PETG,0.20mm; online price UI | Required25%infill/3walls/finishing not established; no file quote/upload |
+| [Riesen Consulting](https://riesen-consulting.de/cad-dienstleistungen/3d-druck-service/3d-druck-online-bestellen-preis-sofort-berechnen/) | Instant FDM calculator, Germany delivery | Page explicitly separates fit review/finishing from automated printing; no complete quote/inquiry |
 
-#### Budget and shipping
+No service has a complete budget-passing quotation, so **none is selected**.
+Public example prices are not this project's quotation.
 
-Common proposed subset EUR95.91; standard frame/hardware/delivery unknown. Own-print
-subset EUR118.43; minimum known shortfall EUR18.43, before horn/print extras.
-No mandatory helper labour, paid printing or TPU spool in the proposed routes.
+#### Required human action / exact questions
 
-- [Welectron](https://www.welectron.com/Shipping-cost): robot-only EUR4.95DPD underEUR49.
-  A1mini189exactvariant in stock, free standard Germany delivery; joint order may
-  save robot shipment once but is not assumed/authorized.
-- [BerryBase](https://www.berrybase.de/versand-und-zahlungsbedingungen): EUR4.95DHL
-  underEUR200; barePico4.10, two header packs1.20, solder1.90.
-- [Funduino](https://funduino.com/policies/shipping-policy): EUR4.90Germany DHL
-  belowEUR69afterdiscounts; IMU+extensions10.46.
-- [Reichelt](https://www.reichelt.de/de/de/shop/service/-12_28): EUR5.95DHL<=10kg;
-  Delock18309pack3.55. Adhesive included, grip unmeasured.
-- [Schraubenking](https://www.schraubenking-shop.de/Versandinformationen): EUR5.90
-  belowEUR99; three prototype ear-fastener packs3.63 (own-print route only).
-- [Creality](https://store.creality.com/de/pages/versand-auslieferung): Germany free
-  fromEUR99; EnderV3SE standalone169listed, no stock count; no optional services.
+1. Authorize uploading the exact current combined frame STL and two sample STLs
+   to **Meltlab** for quotations only, or upload them yourself and return settings,
+   price breakdown and file hashes. Automatic approval review rejected the upload
+   because it shares design data with that provider without specific authorization.
+   This is separate from purchase or supplier-message permission.
+2. Ask for sample2pieces and frame7pieces separately: PETG black,0.20mm,3walls,25%infill,
+   reviewed load orientation, removed supports, usable holes without student drilling,
+   finishing/inspection, VAT, packaging and each delivery to25337.
+3. Confirm six-unit stock and actual Waveshare15024 accessory contents. Measure ear,
+   shaft, horn holes and supplied screws before final geometry or manufacturing approval.
+4. Confirm matching6horns+6retainers and12horn-frame screws+12washers. Ear screw length
+   and wrench/sweep clearance need the real stack; do not guess spline or threads.
+5. Confirm JR wire/contact ratings,3.3V servo signal acceptance, real current/droop and
+   tool access. Test one servo/IMU and the physical disconnect before full assembly.
 
-All figures VAT-inclusive published snapshots2026-10-23. No guaranteed delivery.
-Common total excludes a frame; neither total is a complete purchasable robot.
-
-#### Historical alternatives, not default purchases
-
-Commercial-print priced subset EUR163.63 and unresolved finishing/helper costs are
-preserved in `history/2026-10-23/pre_soldering_routes/` and the original quote
-records `procurement/2026-10-23/quotes.json`. Those quotes excluded sole bonding,
-hole finishing and fit certification. Custom laser cutting is also historical.
-No old quote was rewritten into a cheaper or assembly-ready offer.
+A quote over100EUR does not authorize procurement. Preserve its exact shortfall and
+continue independent provisional simulation; no hardware/manufacturing gate is cleared.
+Previous standard/own-printer and commercialTPU comparisons remain under `history/`.
 
 ## 7. Mechanical design
 
-`cad/build_frame.py` is editable CSG; individual STLs, quotation bundle,
-print_manifest and exploded drawing are supplied for the existing prototype. Seven
-PETG frames/two TPU soles describe that unchanged physical model. New comparison
-uses standard pads and one full PETG spool if printer access is later available;
-no printer access or purchase is assumed. Standard route must use only ready-made
-parts with no fabrication. Unknown
-horn/ear/screw interfaces block finished manufacture. Broad90×45mm feet and
-short50mm links target roughly18cm height. Solid-CAD masses are estimated.
+`cad/build_frame.py` generates sevenPETG frames from physical_spec.json. Separate
+sample/frame ZIPs include quantities,hashes,editable sources,drawings and fastener
+schedule.90x45mm feet,50mm links,roughly18cm height. Ordinary10x3mm pads replace
+continuous soles. Motor-ear/horn/shaft/screw fit remains unmeasured; sample first.
+No manufacturing approval or actual printed density/strength is implied.
 
-### Frame and printer comparison — 2026-10-23
+### Frame route decision — 2026-10-24
 
-**Comparison, not a purchase selection.** User can solder; no helper labour is mandatory.
-No current printer access. No printing, drilling, cutting or bending of mechanical
-parts is allowed in the standard-parts route. Electrical wire preparation is allowed.
-Authoritative prices/unknowns: `../procurement.json`; short plan: `../SUMMARY.md`.
+**Active:** commercial PETG frame +ordinary TPE pads. No printer purchase, no
+filament spool or printed TPU soles. Self-solder electronics; six original joints.
+User selected this route after comparing ready-made mechanics and own printing.
 
-#### Standard ready-made mechanics
+Deliverables:[sample2pieces](../cad/sample_quotation_package.zip),
+[frame7pieces](../cad/frame_quotation_package.zip),[brief](../cad/QUOTE_REQUEST.md),
+[drawings](../cad/print_order/drawings/interfaces.png),[assembly](../cad/ASSEMBLY.md).
+All are quotation/fit prototypes. No frame manufacturing approval.
 
-[Cytron ROBO-BK-SG90](https://www.cytron.io/p-robo-bracket-for-microservo-motor)
-is a genuine 1.5 mm aluminium-alloy case bracket for the 23 × 12.2 × 29 mm
-microservo family. Manufacturer lists USD2.48 and 82 in stock; pack contains
-one bracket, four M2×6 and four M3×6 screws. No verified EUR landed price to25337.
-Do not convert USD and omit VAT/import/shipping. The selected Waveshare case
-fit is still unmeasured; this is product-family compatibility, not fit approval.
+The physical ledger and MuJoCo now agree on Pico/header component ownership and
+four cylindrical grip pads per foot. Solid-CAD masses and motor/friction parameters
+remain estimates. Exact servo/horn fit, layer strength and budget must be proven.
 
-| Connection required | Evidence / missing item |
-|---|---|
-| Hip cases → torso crosspiece | Bracket exists; no compatible crosspiece/attachment verified |
-| Hip horns → thighs → knee cases | No complete link, horn pattern or screw stack verified |
-| Knee horns → shins → ankle horns | Requires perpendicular pitch/roll interfaces; no stock assembly verified |
-| Ankle cases → two broad feet | No compatible ready-made feet/cradles verified |
-| Horn spline/retainer/screws | Exact supplied batch and thread/geometry unknown |
-| Electronics/cable restraints | Final frame attachment/clearance unknown |
+Active priced basket105.34EUR before print/sample/horn extras, minimum known
+shortfall5.34for this basket. Updated exact-file quote is missing: automatic approval
+review blocked the Meltlab upload. No alternate provider was used to bypass it.
+No supplier messages/orders; precise questions are in PROCUREMENT_ACTIONS.md.
 
-A proposed six case brackets is **not** an orderable frame: count depends on the
-missing topology. The complete required quantity is one verified six-joint kit,
-including all links, feet, retainers and fasteners. No exact assembly instructions
-can be certified before that kit exists. Conditional assembly order is in SUMMARY.
-The [ACEBOTT QD021](https://acebottteam.github.io/acebott-docs-master/kit/Inventor%20Series/QD021.html)
-is four-joint and rejected as a substitute. Pan/tilt holders requiring horn trimming
-and printed holders do not satisfy the standard route. No fabricated adapter is hidden.
+Earlier standard-parts, own-printer/A1mini/Ender and commercialTPU comparisons are
+historical in history/2026-10-24/pre_print_revision/. Their prices/configurations
+are not this revision's quotation and do not authorize any purchase.
 
-**Price:** common electronics/harness/pad subset EUR95.91, leaving EUR4.09 for
-all frame hardware/delivery and other unknowns. Complete route price/shortfall unknown;
-this is not proof that no cheaper basket can exist. No procurement clearance.
+### S6-PETG-pad-r2 — assembly and fit checklist
 
-#### Own printer, cost comparison only
+**Quotation prototype, not manufacturing-approved.** All dimensions are in the
+physical ledger; none of this is a physical test. [Exploded view](exploded.png),
+[interface drawing](print_order/drawings/interfaces.png), [fasteners](print_order/fasteners.csv).
+Commercial printing is active; no printer/spool or printed TPU sole purchase.
 
-| Exact printer | VAT-inclusive price | Standard DE shipping | Stock/delivery evidence | Bed |
-|---|---:|---:|---|---|
-| [A1 mini non-Combo BL1-101030 / PF002-M-EU](https://www.welectron.com/Bambu-Lab-A1-mini-3D-Drucker) | EUR189 | EUR0 | Exact non-Combo listed in stock, 1–3 working days |180³ mm|
-| [Ender-3 V3 SE standalone](https://store.creality.com/de/products/ender-3-v3-se-3d-drucker) | EUR169 | EUR0 | EUR169 standalone order button enabled, no stock count; Oct26–30 estimate shown |220×220×250 mm|
+#### Parts and exact installed quantities
 
-Shipping: [Welectron](https://www.welectron.com/Zahlung-und-Versand),
-[Creality](https://store.creality.com/de/pages/versand-auslieferung) (Germany free
-from EUR99). These are advertised rates, not a completed25337checkout. No promised
-arrival or reservation. No coupons, financing, optional insurance or bundles counted.
-Ender dimensions/material support: [manufacturer](https://www.creality.com/products/creality-ender-3-v3-se).
-A1 includes 0.4 mm nozzle, textured PEI plate and spool holder; no AMS needed.
-Manufacturer setup guides: [A1 mini](https://wiki.bambulab.com/en/a1-mini),
-[Creality support](https://www.creality.com/pages/download-ender-3-v3-se).
+Seven printed PETG parts: torso, L/Rthigh, L/Rshin, L/Rfoot, one each. Two separate
+interface samples are test pieces, not extra frame parts. Eight ordinary Delock18309
+TPE pads, four per foot. [Quote brief](QUOTE_REQUEST.md).
 
-Count one full [SUNLU PETG black 1 kg spool SN5-314224](https://www.welectron.com/Sunlu-PETG-Black-175-mm-1000-g_1),
-EUR12.99, not sample filament/refill/consumed grams. Robot known subset EUR118.43;
-**EUR18.43 over cap before unknown horn hardware and print consumables**.
-Printer/tools are separate: initial known cash EUR307.43(A1) or EUR287.43(Ender),
-plus unresolved robot/tool expenses. Iron access confirmed; other tool access must
-be confirmed/borrowed or priced. Complete initial total remains unknown.
-Joint A1+servo+spool delivery could remove EUR4.95 once, subject to checkout;
-conservative comparison keeps robot-only shipping. Even EUR113.48 exceeds cap.
-
-#### Sole choice and physical-model boundary
-
-Proposed standard replacement: [Delock18309](https://www.delock.com/produkt/18309/pdf.html?sprache=de),
-TPE pads, diameter10 mm,height3 mm,50pack. [Reichelt EUR3.55](https://www.reichelt.de/de/de/shop/produkt/gummifuesse_rund_selbstklebend_10_x_3_mm_50_stk_schwarz-371081)
-plus [EUR5.95 standard DHL](https://www.reichelt.de/de/de/shop/service/-12_28).
-Eight used, four near foot corners, avoiding screws/cradle; exact centres after
-fit review. Adhesive included; friction/peel durability unmeasured. These are discrete
-pads, not a 90×45 mm continuous sole; test stability and slipping before selection.
-No TPU spool is budgeted. Buying TPU only for two soles is avoided in this proposal,
-but no claim of equivalent contact mechanics or verified grip is made.
-
-`physical_spec.json`, `robot.xml` and existing seven frame STLs **remain unchanged**:
-Pico H, continuous1mm TPU soles and current estimated masses. A selected bare-Pico/
-pad branch needs measured PCB/pad masses, foot-contact locations/height, COM/inertia,
-standing-pose and torque recalculation plus new fingerprints before training/deployment.
-The 199.4 g prototype estimate is not the new branch's verified weight.
-
-#### Local print preparation (not manufacturing approval)
-
-Run `python tools/prepare_local_print.py`. `cad/local_print/layout.json` records
-source hashes, rotations and bounds; each of seven unchanged parts has its own
-plate with a 5 mm XY edge margin within180×180×180 mm. The historic185 mm batch
-does not fit A1 mini. Do not import all plates together or use the quote batch.
-
-1. Measure an actual servo, supplied horn and screws; revise interfaces if needed.
-2. Open `FIRST_interface_sample.stl` first (two separate current-CAD interface pieces).
-3. Units mm,100% scale; initial PETG settings0.2 mm layer,3walls,25%infill. Check slicer
-   supports, layer load direction and every hole; these settings are hypotheses.
-4. Verify actual sample fit without drilling/forcing. Failed sample means revise/reprint,
-   not manufacture the full frame. Record printer/profile/tolerances.
-5. Only after fit, strength, fastener clearance and complete budget approval print
-   torso, two thighs, two shins and two feet, one plate at a time. Use ordinary pads.
-6. Finish and inspect supports without cutting structural parts. Verify whether supplied
-   print tools/plate need extra release/cleaning consumables; source them if needed.
-
-Layout bounding-box/volume checks are local software evidence, not a slicer print,
-layer-strength or hardware-fit test. Full spool covers trial material procurement;
-actual consumption/support mass is unknown until slicing. No calibrated mass update.
-
-#### Recommendation / next evidence
-
-Use self-soldering and propose bare Pico (net header-inclusive saving EUR0.80).
-Retain PSU/IMU/servos. **Select neither frame route yet.** First seek an exact stock
-six-joint frame with all interfaces and landed EUR price. If none meets the cap,
-report that outcome; do not buy a printer or relax joints/budget automatically.
-Printing becomes actionable only if access is later provided and budget/fit gates pass.
-
-### S6 historical-geometry assembly reference — fit gate remains open
-
-**2026-10-23 route change:** self-soldering is available; no helper is mandatory.
-The geometry below remains the unchanged Pico-H/continuous-TPU prototype, not a
-selected new frame. Proposed bare Pico and discrete TPE pads need measurements,
-new model contacts/masses and identity after selection. Commercial printing is
-historical; compare stock parts vs own printer in [FRAME_ROUTES](../docs/FRAME_ROUTES.md).
-No printer access/purchase is assumed. Individual180mm layouts and a first interface
-sample are in `local_print/`; the185mm quotation batch does not fit an A1 mini.
-
-
-Editable CAD is `build_frame.py`; dimensions in millimetres are derived from `../physical_spec.json`. `stl/` contains seven PETG frame components and two separate TPU soles. `quotation_plate.stl` is a cost-estimation grouping, not a recommended print-bed arrangement. Individual parts fit within approximately 90 mm; layer orientation/supports remain unapproved. `exploded.png` shows body/part names and axes.
-
-**Do not order these as manufacturing-ready parts.** The expanded audit detects unresolved fastener-envelope conflicts, and the selected servo's ear, shaft, spline, horn pattern and screws are unmeasured. The historical commercial-kit proposal required clear through-holes, removed supports and bonded soles; no drilling, cutting, tapping or heat-set inserts by the assembler. No complete compatible standard kit has been found. Local printing requires its own approved sample/profile; do not buy the complete frame or force holes before fit approval.
-
-Materials: PETG frames, 0.2 mm layers, 3 perimeters, nominal 25% infill; TPU 95A soles 90×45×1 mm bonded to feet. The mass specification uses solid PETG at 1270 kg/m³ as a conservative estimate; actual infill/adhesive mass must be weighed. Layers should be oriented to resist ear loads rather than split across narrow bridges. Ask for stiff local joint mounting walls, smooth holes and no support debris near rotating horns. The new comparison proposes8self-adhesive TPE pads instead, with unmeasured grip. No sole/model substitution has been made here.
-
-#### Fastener schedule — provisional, quote as a complete kit
-
-| Purpose | Quantity | Proposed type / unresolved fit |
+| Use | Installed quantity | Known / unresolved |
 |---|---:|---|
-| Servo housing mounting ears | 12 | M2×8 through screws + 12 M2 nuts + 24 washers; verify real ear holes and combined thickness |
-| Horn shaft retention | 6 | Servo-specific factory screws; thread and supplied inclusion unknown |
-| Horn to moving frame | 12 | Two per horn, matched small screws/washers; factory horn pilot holes and screw lengths unknown |
-| Pico/IMU mounting | 6 ties | Through prepared frame holes; immobilize IMU and keep board faces clear of plastic/metal |
-| Main cable strain relief | 4 ties | At torso near COM; externally support connector weight |
-| Servo harness restraints | 8 ties | Leave a service loop at every joint; no wires crossing horn sweep |
+| Servo ear screws |12|M2×8 P010265;8mm under-head,4mm head diameter,1.6mm head height; actual grip length unverified|
+| Ear nuts |12|P003474 M2,SW4,1.6mm height|
+| Ear washers |24|P004198,2.2×5×0.3mm; one each side|
+| Factory horns |6|Actual Waveshare batch/spline/shape/hole pattern unknown|
+| Shaft retainers |6|Factory-matching thread and length unknown; do not assume M2|
+| Horn-to-frame screws and washers |12+12|Two per horn; diameter/thread/length/washer size unknown|
+| Board / tether / harness ties |6/4/8|From full100pack; exact safe routing needs review|
 
-The CAD horn interface has a 6 mm central access opening and two 2.4 mm-wide radial slots. It is a fit concept, not evidence that the included horns/screws match. If a factory horn cannot fasten without modifying it, **revise/quote the interface before printing**, or have the supplier deliver matched adapters; include their price/mass. Do not press in an incompatible spline or use glue as a structural joint.
+M2 ear hardware has dimensioned clearance shapes at **estimated** positions.
+The old fastener mass boxes were not actual bolts; their550historical intersections
+were not verified physical collisions. Unknown horn hardware still blocks release.
 
-#### Assembly sequence after the budget/fit gate passes
+#### 1 — Fit sample before the full frame
 
-1. Identify L/R frame parts and six individually calibrated servos. Servo housing and lead-out dimensions must match the kit. Inspect prints and holes; revise/reprint failed sample interfaces rather than drilling them.
-2. Test electronics and one servo without a limb attached. Disable outputs and disconnect motor power before installing a horn. Centre the unloaded servo to its calibrated **zero-joint** pulse, then turn power off. Mount horn and retain it with its matching centre screw; do not use the HOME angle as the mechanical zero reference.
-3. Mount two hip servo cases to the torso ear cradles, shafts facing outward ±y. Attach each thigh moving plate to that hip's horn with two matched screws. There is no passive hip roll axis.
-4. Mount each knee servo case to its thigh's lower cradle. Attach the shin's upper plate to the knee horn. Both simulated pitch axes are +y; the physical right-hand motor sign may be opposite and is corrected in calibration.
-5. Mount ankle servo case to its foot's upright cradle with shaft facing +x. Attach the shin's perpendicular lower plate to the ankle horn. Foot and ankle servo case rotate together; the shin carries the horn. The ankle axis is +x, roll only.
-6. This prototype uses continuous TPU soles; a later selected pad branch needs its own contact update. Do not treat the model as already changed. Install boards at the coordinates in the specification using prepared holes/ties; do not put a tie over connector pins or strain the board. IMU must be rigidly immobilized and its measured axis rotation recorded.
-7. Route servo leads and prepared extension harness; verify polarity/continuity with motor supply disconnected. Leave a slack service loop and inspect every safe angle manually without forcing the gearbox. Add USB/power strain relief.
-8. Assemble and weigh one leg, then the entire robot. Confirm pitch/roll signs with very small unloaded motions. Test physical cutoff, watchdog and reboot-disarmed state before supported HOME `(-10°, +10°, 0°)` per leg.
-9. On a low clear floor area with thin protection, test stationary poses and increase test length gradually. For a fall, disconnect power, inspect gears/ears, manually pick up and reset. Optional safety thread stays slack and is not required to hold the robot upright.
+1. Identify one exact servo, original horn and retaining screw. With no horn attached,
+   bench-calibrate the zero pulse using [CALIBRATION](../docs/CALIBRATION.md).
+2. Measure case, ear hole spacing/diameter/thickness, axial ear/shaft locations,
+   supplied horn holes/radii, shaft screw and lead exit. Record units and photos.
+3. After budget approval obtain the **two-piece sample**. Check insertion without
+   bending/cracking, both ear holes, nut/head/washer access and case clearance.
+4. Test a centred original horn on the horn plate. Opening6mm and2.4×7mm radial
+   slots are provisional. Confirm two screws can retain it without drilling the
+   horn/print, splitting plastic or bottoming a screw in the servo.
+5. Measure every printed hole/slot and inspect layers. A failed sample means revise
+   CAD and re-quote; do not force/drill it or print the full frame unchanged.
 
-The finite CAD report does not certify horn fasteners, servo-ear insertion, electronics mounting or every continuous-motion clearance. Simulation contact primitives approximate the structure and do not test printed layer strength. The complete robot has not been assembled.
+#### 2 — Bench and mechanical zero
 
-Current revision: Pico native PWM removes the old PCA9685 envelope conflict.
-The finite checker includes frame/case/electronics and estimated fastener sweeps;
-550 overlaps involve unmeasured mass-envelope proxies across55poses. These are
-not confirmed bolt collisions, but cannot be cleared without actual horn/screw
-geometry. Run `python tools/check_clearance.py`; nonzero exit means no release.
-The exploded view shows frame, servo-case and PCB envelopes; actual horn/fastener
-fit remains specified provisionally in the ledger/schedule and is not certified.
+Solder/insulate the bare Pico, IMU header and replaceable harness as described in
+[HARDWARE](../docs/HARDWARE.md). Test PSU polarity, DC disconnect, one unloaded
+servo,3.3V PWM, IMU, disarmed startup and100ms watchdog first. USB powers logic;
+servo power bypasses Pico/breadboard. No physical gate is passed yet.
 
-#### 2026-10-23 purchasing/fit clarification
+Set each servo to its measured **zero-joint** pulse, then disconnect DC before
+fitting its compatible horn and shaft screw. HOME(-10,+10,0deg per leg) is not
+mechanical zero. Software STOP is not physical isolation.
 
-[Exact component/delivery review](../docs/PROCUREMENT_ACTIONS.md) contains the
-three M2 pack links (buy100each; install12screws/12nuts/24washers) and separate
-unknown horn hardware. M2×8 is provisional:3mm printed plate+two0.3mmwashers+
-1.6mmnut leaves2.8mm for the ear, before thread projection. Check actual stack,
-head4mm/washer5mm/nutSW4 sweep and wrench access; change length only after measurement.
-The12horn-frame screws/12washers are not the six centre shaft retainers.
-Manufacturer photo shows accessory horns/screws but exact retailer-batch fit/inclusion
-is not confirmed. Do not order generic25T horns or assume centre screws areM2.
-Compact quotation layouts are alternatives to individual files, not extra parts;
-web prices exclude bonding and hole finishing. Historical commercial route exceeds budget; new comparison remains blocked; no order.
+#### 3 — Assemble the verified frame
+
+1. Mount left/right hip **cases to torso**. Output shafts face the corresponding
+   lateral sides. Attach each thigh's upper horn plate to its hip horn.
+2. Mount each knee **case to its thigh's lower cradle**. Attach the shin's upper
+   plate to that knee horn. Hip and knee axes are pitch(+Y in the model).
+3. Mount each ankle **case to its foot cradle**, shaft toward the corresponding
+   perpendicular shin plate. Attach the shin's lower plate to the ankle horn.
+   Ankle axis is roll(+X). The shin owns the ankle horn; the foot owns its case.
+4. Fit only the confirmed screw schedule. The example3mm frame+1.4mm assumed ear+
+   two0.3mm washers+1.6mm nut needs6.6mm under-head; M2×8 leaves1.4mm projection
+   **only if that assumed ear stack is correct**. Check sweeps and wrench access.
+
+#### 4 — Electronics, pads and cables
+
+- Bare Pico PCB is51×21mm; two20pin headers are separately represented with an11mm
+  pin envelope. Printed stand-offs support the PCB centre, away from GPIO rows.
+  IMU sits on the opposite side. Check actual connector, tie and solder clearance;
+  immobilize IMU and record its sensor-to-body alignment.
+- Attach four pads under each90×45mm foot: x=-31,+43mm and y=±14.5mm relative
+  to the ankle frame (see drawing). Pads are10mm diameter×3mm. Clean/dry the
+  surface as the pad maker permits; test adhesion and slip before dynamic use.
+- Route six removable servo connections with service loops; keep wires out of
+  horn/fastener sweeps. Support the tether/DC socket externally and restrain the
+  cable near torso COM. Never use a tight overhead line to hold the robot up.
+
+#### 5 — Weigh, inspect and calibrate
+
+Weigh every assembled rigid body and installed hardware once. The current model
+uses solid-CAD PETG inertia and estimated electronics/hardware/pad masses, not
+slicer25%infill or measured masses. Match measured COM/masses and version the twin.
+
+With motor power off inspect full safe sweeps, lead exits, connectors, access to
+retainers and all through-holes. Then test small unloaded motions, physical cutoff,
+watchdog, disarmed reboot and manual standing. At a fall disconnect DC, inspect
+gears/ears, pick up manually and deliberately reinitialize. Physical policies need
+measured validated calibration and matching fingerprints; the smoke policy is not
+approved for hardware. Full-frame release and walking remain blocked.
 
 Body origins/axes, command intervals and mass/COM below derive from the ledger.
 Unknown mechanical stops remain null and are absent from provisional MJCF.
 
 | Body | Parent | Joint / axis | Origin in parent (mm) | Safe commands, NOT mechanical stops (°) | Mass (g) | COM local (mm) |
 |---|---|---|---|---|---:|---|
-| torso | world | root / floating | 0.000, 0.000, 154.240 | free | 72.89 | -6.653, 0.000, -9.861 |
-| left_thigh | torso | left_hip / 0.000, 1.000, 0.000 | 0.000, 34.000, -30.000 | [-35, 35] | 18.97 | 0.000, -9.434, -42.970 |
-| left_shin | left_thigh | left_knee / 0.000, 1.000, 0.000 | 0.000, 0.000, -50.000 | [-10, 60] | 7.72 | 1.432, 1.714, -22.688 |
-| left_foot | left_shin | left_ankle / 1.000, 0.000, 0.000 | 0.000, 0.000, -50.000 | [-20, 20] | 36.58 | -1.919, 0.000, -15.367 |
-| right_thigh | torso | right_hip / 0.000, 1.000, 0.000 | 0.000, -34.000, -30.000 | [-35, 35] | 18.97 | 0.000, 9.434, -42.970 |
-| right_shin | right_thigh | right_knee / 0.000, 1.000, 0.000 | 0.000, 0.000, -50.000 | [-10, 60] | 7.72 | 1.432, -1.714, -22.688 |
-| right_foot | right_shin | right_ankle / 1.000, 0.000, 0.000 | 0.000, 0.000, -50.000 | [-20, 20] | 36.58 | -1.919, -0.000, -15.367 |
+| torso | world | root / floating | 0.000, 0.000, 156.240 | free | 75.74 | -6.321, 0.000, -10.299 |
+| left_thigh | torso | left_hip / 0.000, 1.000, 0.000 | 0.000, 34.000, -30.000 | [-35, 35] | 19.77 | 0.000, -9.229, -43.367 |
+| left_shin | left_thigh | left_knee / 0.000, 1.000, 0.000 | 0.000, 0.000, -50.000 | [-10, 60] | 8.62 | 1.770, 2.022, -25.191 |
+| left_foot | left_shin | left_ankle / 1.000, 0.000, 0.000 | 0.000, 0.000, -50.000 | [-20, 20] | 32.26 | -3.144, 0.000, -14.081 |
+| right_thigh | torso | right_hip / 0.000, 1.000, 0.000 | 0.000, -34.000, -30.000 | [-35, 35] | 19.77 | 0.000, 9.229, -43.367 |
+| right_shin | right_thigh | right_knee / 0.000, 1.000, 0.000 | 0.000, 0.000, -50.000 | [-10, 60] | 8.62 | 1.770, -2.022, -25.191 |
+| right_foot | right_shin | right_ankle / 1.000, 0.000, 0.000 | 0.000, 0.000, -50.000 | [-20, 20] | 32.26 | -3.144, -0.000, -14.081 |
 
 | Body | Component (mass assigned once) | Dimensions xyz (mm) | Mass (g) | COM local xyz (mm) |
 |---|---|---|---:|---|
-| torso | torso_frame | 32.000, 82.000, 88.750 | 21.49 | -16.308, -0.000, -5.438 |
-| torso | pico_h | 6.000, 51.000, 21.000 | 4.00 | -14.500, 0.000, 23.000 |
+| torso | torso_frame | 33.500, 82.000, 88.750 | 21.94 | -16.316, 0.000, -4.846 |
+| torso | pico | 3.500, 51.000, 21.000 | 3.00 | -10.750, 0.000, 23.000 |
 | torso | imu | 4.000, 16.000, 20.000 | 3.00 | -25.500, 0.000, 18.000 |
 | torso | torso_wires_fasteners | 30.000, 70.000, 40.000 | 20.00 | 0.000, 0.000, 5.000 |
 | torso | left_hip_servo | 12.200, 28.500, 22.800 | 12.20 | 0.000, 19.750, -34.750 |
 | torso | right_hip_servo | 12.200, 28.500, 22.800 | 12.20 | 0.000, -19.750, -34.750 |
+| torso | left_hip_ear_bolt_-1 | 5.000, 8.000, 5.000 | 0.55 | 0.000, 27.000, -48.750 |
+| torso | left_hip_ear_bolt_+1 | 5.000, 8.000, 5.000 | 0.55 | 0.000, 27.000, -20.750 |
+| torso | right_hip_ear_bolt_-1 | 5.000, 8.000, 5.000 | 0.55 | 0.000, -27.000, -48.750 |
+| torso | right_hip_ear_bolt_+1 | 5.000, 8.000, 5.000 | 0.55 | 0.000, -27.000, -20.750 |
+| torso | pico_header_0 | 11.000, 50.800, 2.540 | 0.60 | -10.000, 0.000, 14.110 |
+| torso | pico_header_1 | 11.000, 50.800, 2.540 | 0.60 | -10.000, 0.000, 31.890 |
 | left_thigh | left_thigh_frame | 24.000, 13.500, 87.750 | 5.27 | 0.000, -0.974, -24.526 |
 | left_thigh | left_knee_servo | 12.200, 28.500, 22.800 | 12.20 | 0.000, -14.250, -54.750 |
-| left_thigh | left_thigh_joint_fasteners | 20.000, 12.000, 12.000 | 1.50 | 0.000, 0.000, -12.000 |
+| left_thigh | left_knee_ear_bolt_-1 | 5.000, 8.000, 5.000 | 0.55 | 0.000, -7.000, -68.750 |
+| left_thigh | left_knee_ear_bolt_+1 | 5.000, 8.000, 5.000 | 0.55 | 0.000, -7.000, -40.750 |
+| left_thigh | left_hip_horn_hardware | 20.000, 5.000, 26.000 | 1.20 | 0.000, 3.500, 0.000 |
 | left_shin | left_shin_frame | 24.000, 24.000, 78.000 | 6.22 | 1.777, 2.128, -25.264 |
-| left_shin | left_shin_joint_fasteners | 20.000, 12.000, 12.000 | 1.50 | 0.000, 0.000, -12.000 |
+| left_shin | left_knee_horn_hardware | 20.000, 5.000, 26.000 | 1.20 | 0.000, 3.500, 0.000 |
+| left_shin | left_ankle_horn_hardware | 5.000, 20.000, 26.000 | 1.20 | 3.500, 0.000, -50.000 |
 | left_foot | left_foot_frame | 90.000, 45.000, 38.250 | 18.02 | 4.134, 0.000, -20.373 |
-| left_foot | left_sole | 90.000, 45.000, 1.000 | 4.86 | 6.000, 0.000, -24.500 |
 | left_foot | left_ankle_servo | 28.500, 12.200, 22.800 | 12.20 | -14.250, 0.000, -4.750 |
-| left_foot | left_foot_joint_fasteners | 20.000, 12.000, 12.000 | 1.50 | 0.000, 0.000, -12.000 |
+| left_foot | left_foot_pad_0 | 10.000, 10.000, 3.000 | 0.24 | -31.000, -14.500, -25.500 |
+| left_foot | left_foot_pad_1 | 10.000, 10.000, 3.000 | 0.24 | -31.000, 14.500, -25.500 |
+| left_foot | left_foot_pad_2 | 10.000, 10.000, 3.000 | 0.24 | 43.000, -14.500, -25.500 |
+| left_foot | left_foot_pad_3 | 10.000, 10.000, 3.000 | 0.24 | 43.000, 14.500, -25.500 |
+| left_foot | left_ankle_ear_bolt_-1 | 8.000, 5.000, 5.000 | 0.55 | -7.000, 0.000, -18.750 |
+| left_foot | left_ankle_ear_bolt_+1 | 8.000, 5.000, 5.000 | 0.55 | -7.000, 0.000, 9.250 |
 | right_thigh | right_thigh_frame | 24.000, 13.500, 87.750 | 5.27 | 0.000, 0.974, -24.526 |
 | right_thigh | right_knee_servo | 12.200, 28.500, 22.800 | 12.20 | 0.000, 14.250, -54.750 |
-| right_thigh | right_thigh_joint_fasteners | 20.000, 12.000, 12.000 | 1.50 | 0.000, 0.000, -12.000 |
+| right_thigh | right_knee_ear_bolt_-1 | 5.000, 8.000, 5.000 | 0.55 | 0.000, 7.000, -68.750 |
+| right_thigh | right_knee_ear_bolt_+1 | 5.000, 8.000, 5.000 | 0.55 | 0.000, 7.000, -40.750 |
+| right_thigh | right_hip_horn_hardware | 20.000, 5.000, 26.000 | 1.20 | 0.000, -3.500, 0.000 |
 | right_shin | right_shin_frame | 24.000, 24.000, 78.000 | 6.22 | 1.777, -2.128, -25.264 |
-| right_shin | right_shin_joint_fasteners | 20.000, 12.000, 12.000 | 1.50 | 0.000, 0.000, -12.000 |
+| right_shin | right_knee_horn_hardware | 20.000, 5.000, 26.000 | 1.20 | 0.000, -3.500, 0.000 |
+| right_shin | right_ankle_horn_hardware | 5.000, 20.000, 26.000 | 1.20 | 3.500, 0.000, -50.000 |
 | right_foot | right_foot_frame | 90.000, 45.000, 38.250 | 18.02 | 4.134, -0.000, -20.373 |
-| right_foot | right_sole | 90.000, 45.000, 1.000 | 4.86 | 6.000, 0.000, -24.500 |
 | right_foot | right_ankle_servo | 28.500, 12.200, 22.800 | 12.20 | -14.250, 0.000, -4.750 |
-| right_foot | right_foot_joint_fasteners | 20.000, 12.000, 12.000 | 1.50 | 0.000, 0.000, -12.000 |
+| right_foot | right_foot_pad_0 | 10.000, 10.000, 3.000 | 0.24 | -31.000, 14.500, -25.500 |
+| right_foot | right_foot_pad_1 | 10.000, 10.000, 3.000 | 0.24 | -31.000, -14.500, -25.500 |
+| right_foot | right_foot_pad_2 | 10.000, 10.000, 3.000 | 0.24 | 43.000, 14.500, -25.500 |
+| right_foot | right_foot_pad_3 | 10.000, 10.000, 3.000 | 0.24 | 43.000, -14.500, -25.500 |
+| right_foot | right_ankle_ear_bolt_-1 | 8.000, 5.000, 5.000 | 0.55 | -7.000, 0.000, -18.750 |
+| right_foot | right_ankle_ear_bolt_+1 | 8.000, 5.000, 5.000 | 0.55 | -7.000, 0.000, 9.250 |
 
 | Body | Ixx, Iyy, Izz, Ixy, Ixz, Iyz (kg·m²) |
 |---|---|
-| torso | 7.714665e-05, 5.092307e-05, 4.315149e-05, 2.541099e-21, 7.752416e-06, 0 |
-| left_thigh | 1.075608e-05, 9.509007e-06, 2.306097e-06, -1.321365e-23, 9.846622e-24, -2.552041e-06 |
-| left_shin | 3.771568e-06, 3.870593e-06, 4.366762e-07, 1.069363e-08, 2.608766e-07, -1.717284e-07 |
-| left_foot | 7.376615e-06, 2.141873e-05, 2.153521e-05, -9.25926e-23, 2.911645e-06, 1.500083e-22 |
-| right_thigh | 1.075608e-05, 9.509007e-06, 2.306097e-06, 1.321365e-23, 9.846622e-24, 2.552041e-06 |
-| right_shin | 3.771568e-06, 3.870593e-06, 4.366762e-07, -1.069363e-08, 2.608766e-07, 1.717284e-07 |
-| right_foot | 7.376615e-06, 2.141873e-05, 2.153521e-05, 9.25926e-23, 2.911645e-06, -1.500083e-22 |
+| torso | 8.148313e-05, 5.34409e-05, 4.489893e-05, -6.368546e-22, 7.760571e-06, -8.856731e-22 |
+| left_thigh | 1.201339e-05, 1.069531e-05, 2.361686e-06, -1.292697e-23, 9.29062e-24, -2.750783e-06 |
+| left_shin | 5.202857e-06, 5.271289e-06, 4.593362e-07, 2.259578e-08, 3.373974e-07, -3.106646e-07 |
+| left_foot | 6.690079e-06, 1.906431e-05, 1.860375e-05, -7.946503e-23, 2.654014e-06, 1.52336e-22 |
+| right_thigh | 1.201339e-05, 1.069531e-05, 2.361686e-06, 1.292697e-23, 9.29062e-24, 2.750783e-06 |
+| right_shin | 5.202857e-06, 5.271289e-06, 4.593362e-07, -2.259578e-08, 3.373974e-07, 3.106646e-07 |
+| right_foot | 6.690079e-06, 1.906431e-05, 1.860375e-05, 7.946503e-23, 2.654014e-06, -1.52336e-22 |
 
 Authoritative structured physical input (provisional):
 
 ```json
 {
   "name": "School Biped S6",
-  "status": "PROVISIONAL: budget, printed fit and hardware calibration not approved",
+  "status": "PROVISIONAL QUOTATION DESIGN: sample fit, budget, layer strength and physical calibration NOT approved",
   "units": "m, kg, rad, s",
   "coordinates": "x forward, y left, z up; local body axes match parent at zero joint angle",
   "home_joint_angles_deg": [
@@ -655,8 +545,7 @@ Authoritative structured physical input (provisional):
       0,
       -0.0225
     ],
-    "sole_thickness": 0.001,
-    "ankle_to_floor": 0.025,
+    "ankle_to_floor": 0.027,
     "torso_dimensions": [
       0.04,
       0.082,
@@ -664,7 +553,169 @@ Authoritative structured physical input (provisional):
     ],
     "cad_wall": 0.003,
     "cad_clearance": 0.0004,
-    "petg_density": 1270
+    "petg_density": 1270,
+    "mount": {
+      "case_plate_width": 0.02,
+      "case_plate_height": 0.038,
+      "case_plate_y": -0.007,
+      "ear_clearance_diameter": 0.0024,
+      "horn_plate_dimensions": [
+        0.024,
+        0.003,
+        0.028
+      ],
+      "horn_plate_y": 0.0035,
+      "shaft_access_diameter": 0.006,
+      "horn_slot_width": 0.0024,
+      "horn_slot_length": 0.007,
+      "horn_slot_radius": 0.009,
+      "torso_back_x": -0.02,
+      "board_tie_hole_diameter": 0.0032,
+      "board_tie_y": [
+        -0.032,
+        -0.016,
+        0.016,
+        0.032
+      ],
+      "board_tie_z": [
+        0.01,
+        0.028
+      ],
+      "board_support_y": [
+        -0.018,
+        0.018
+      ],
+      "board_support_z": [
+        0.023
+      ],
+      "board_support_size": [
+        0.006,
+        0.005,
+        0.005
+      ],
+      "imu_support_dimensions": [
+        0.002,
+        0.003,
+        0.005
+      ],
+      "imu_support_y": [
+        -0.005,
+        0.005
+      ],
+      "imu_support_z": 0.023
+    },
+    "grip_pad": {
+      "product": "Delock18309",
+      "radius": 0.005,
+      "height": 0.003,
+      "centres_xy": [
+        [
+          -0.031,
+          -0.0145
+        ],
+        [
+          -0.031,
+          0.0145
+        ],
+        [
+          0.043,
+          -0.0145
+        ],
+        [
+          0.043,
+          0.0145
+        ]
+      ],
+      "density_estimate_kg_m3": 1000,
+      "placement_state": "estimated; dimensions sourced, placement/friction/density/adhesion require measurement",
+      "source": "https://www.delock.com/produkt/18309/pdf.html?sprache=de"
+    },
+    "cad_features": {
+      "tool_cut_depth": 0.012,
+      "thigh_bridges": [
+        {
+          "dimensions": [
+            0.004,
+            0.003,
+            0.02
+          ],
+          "center": [
+            0.01,
+            0.0035,
+            -0.022
+          ]
+        },
+        {
+          "dimensions": [
+            0.004,
+            0.0135,
+            0.004
+          ],
+          "center": [
+            0.01,
+            -0.00175,
+            -0.03
+          ]
+        },
+        {
+          "dimensions": [
+            0.004,
+            0.003,
+            0.013
+          ],
+          "center": [
+            0.01,
+            -0.007,
+            -0.0365
+          ]
+        }
+      ],
+      "shin_web_allowance": 0.018,
+      "shin_window_dimensions": [
+        0.016,
+        0.01,
+        0.012
+      ],
+      "shin_window_center": [
+        0,
+        0.0035,
+        -0.023
+      ],
+      "shin_corner_dimensions": [
+        0.006,
+        0.008,
+        0.012
+      ],
+      "shin_corner_offset_from_ankle": [
+        0.005,
+        0.003,
+        0.014
+      ],
+      "foot_rib_dimensions": [
+        0.012,
+        0.004,
+        0.014
+      ],
+      "foot_rib_center": [
+        -0.007,
+        0.0085,
+        -0.017
+      ],
+      "torso_window_dimensions": [
+        0.01,
+        0.042,
+        0.024
+      ],
+      "torso_window_center_z": 0.002,
+      "torso_brace_dimensions": [
+        0.016,
+        0.006,
+        0.008
+      ],
+      "torso_brace_x": -0.014,
+      "torso_brace_hip_inset": 0.007,
+      "torso_brace_z": -0.018
+    }
   },
   "bodies": [
     {
@@ -673,39 +724,39 @@ Authoritative structured physical input (provisional):
       "position": [
         0,
         0,
-        0.154240388
+        0.15624038765061038
       ],
       "joint": "root",
       "axis": null,
       "components": [
         {
           "name": "torso_frame",
-          "mass": 0.021486247742229223,
+          "mass": 0.021943447742229213,
           "dimensions": [
-            0.032,
+            0.0335,
             0.082,
             0.08875
           ],
           "com": [
-            -0.016308210070435095,
-            -5.215214943911107e-19,
-            -0.0054384916759348196
+            -0.016315678648651345,
+            1.0213107951874343e-18,
+            -0.004845964988835626
           ],
           "inertia_tensor": [
             [
-              2.6309016723560255e-05,
-              2.703988807846125e-21,
-              2.1653112995251776e-06
+              2.6798224543308287e-05,
+              -7.858597316502908e-22,
+              2.16987487325085e-06
             ],
             [
-              2.703988807846125e-21,
-              1.3253368557151762e-05,
-              3.4107973696966715e-22
+              -7.858597316502908e-22,
+              1.3620713899047003e-05,
+              -6.688803109154264e-22
             ],
             [
-              2.1653112995251776e-06,
-              3.4107973696966715e-22,
-              1.578588698727872e-05
+              2.16987487325085e-06,
+              -6.688803109154264e-22,
+              1.5916424309425935e-05
             ]
           ],
           "material": "solid PETG estimate, 1270 kg/m\u00b3",
@@ -713,56 +764,56 @@ Authoritative structured physical input (provisional):
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "generated CAD; actual infill/printed density must be weighed"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "inertia_tensor": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             }
           }
         },
         {
-          "name": "pico_h",
-          "mass": 0.004,
+          "name": "pico",
+          "mass": 0.003,
           "dimensions": [
-            0.006,
+            0.0035,
             0.051,
             0.021
           ],
           "com": [
-            -0.0145,
+            -0.01075,
             0,
             0.023
           ],
-          "material": "PCB and headers",
-          "evidence": "estimate",
+          "material": "bare Pico PCB/components, headers separately owned",
+          "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated",
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate"
+              "date": "2026-10-24",
+              "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated"
             },
             "dimensions": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate"
+              "date": "2026-10-24",
+              "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate"
+              "date": "2026-10-24",
+              "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated"
             }
           }
         },
@@ -897,6 +948,204 @@ Authoritative structured physical input (provisional):
               "evidence": "seller mass, estimated uniform inertia"
             }
           }
+        },
+        {
+          "name": "left_hip_ear_bolt_-1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.005,
+            0.008,
+            0.005
+          ],
+          "com": [
+            0,
+            0.027000000000000003,
+            -0.048749999999999995
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "left_hip_ear_bolt_+1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.005,
+            0.008,
+            0.005
+          ],
+          "com": [
+            0,
+            0.027000000000000003,
+            -0.020749999999999998
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "right_hip_ear_bolt_-1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.005,
+            0.008,
+            0.005
+          ],
+          "com": [
+            0,
+            -0.027000000000000003,
+            -0.048749999999999995
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "right_hip_ear_bolt_+1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.005,
+            0.008,
+            0.005
+          ],
+          "com": [
+            0,
+            -0.027000000000000003,
+            -0.020749999999999998
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "pico_header_0",
+          "mass": 0.0006,
+          "dimensions": [
+            0.011,
+            0.0508,
+            0.00254
+          ],
+          "com": [
+            -0.01,
+            0,
+            0.01411
+          ],
+          "material": "20pin 2.54mm header",
+          "evidence": "RPIP-PINH11mm overall pin height sourced; row footprint/position/mass estimated; verify solder projection and jumper access",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Header1x20 2.54mm pitch;11mm overall pin length; actual board fit unmeasured"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Header1x20 2.54mm pitch;11mm overall pin length; actual board fit unmeasured"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Header1x20 2.54mm pitch;11mm overall pin length; actual board fit unmeasured"
+            }
+          }
+        },
+        {
+          "name": "pico_header_1",
+          "mass": 0.0006,
+          "dimensions": [
+            0.011,
+            0.0508,
+            0.00254
+          ],
+          "com": [
+            -0.01,
+            0,
+            0.03189
+          ],
+          "material": "20pin 2.54mm header",
+          "evidence": "RPIP-PINH11mm overall pin height sourced; row footprint/position/mass estimated; verify solder projection and jumper access",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Header1x20 2.54mm pitch;11mm overall pin length; actual board fit unmeasured"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Header1x20 2.54mm pitch;11mm overall pin length; actual board fit unmeasured"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Header1x20 2.54mm pitch;11mm overall pin length; actual board fit unmeasured"
+            }
+          }
         }
       ],
       "safe_command_deg": null,
@@ -957,22 +1206,22 @@ Authoritative structured physical input (provisional):
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "generated CAD; actual infill/printed density must be weighed"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "inertia_tensor": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             }
           }
@@ -1011,35 +1260,101 @@ Authoritative structured physical input (provisional):
           }
         },
         {
-          "name": "left_thigh_joint_fasteners",
-          "mass": 0.0015,
+          "name": "left_knee_ear_bolt_-1",
+          "mass": 0.00055,
           "dimensions": [
-            0.02,
-            0.012,
-            0.012
+            0.005,
+            0.008,
+            0.005
           ],
           "com": [
             0,
-            0,
-            -0.012
+            -0.007,
+            -0.06875
           ],
-          "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn",
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "left_knee_ear_bolt_+1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.005,
+            0.008,
+            0.005
+          ],
+          "com": [
+            0,
+            -0.007,
+            -0.04075
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "left_hip_horn_hardware",
+          "mass": 0.0012,
+          "dimensions": [
+            0.02,
+            0.005,
+            0.026
+          ],
+          "com": [
+            0,
+            0.0035,
+            0
+          ],
+          "material": "factory horn +retainer +2frame screws/washers",
+          "evidence": "unknown interfaces; estimated1.2g allowance, NOT a collision envelope",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
             }
           }
         }
@@ -1105,56 +1420,89 @@ Authoritative structured physical input (provisional):
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "generated CAD; actual infill/printed density must be weighed"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "inertia_tensor": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             }
           }
         },
         {
-          "name": "left_shin_joint_fasteners",
-          "mass": 0.0015,
+          "name": "left_knee_horn_hardware",
+          "mass": 0.0012,
           "dimensions": [
             0.02,
-            0.012,
-            0.012
+            0.005,
+            0.026
           ],
           "com": [
             0,
-            0,
-            -0.012
+            0.0035,
+            0
           ],
-          "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn",
+          "material": "factory horn +retainer +2frame screws/washers",
+          "evidence": "unknown interfaces; estimated1.2g allowance, NOT a collision envelope",
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
             },
             "dimensions": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
+            }
+          }
+        },
+        {
+          "name": "left_ankle_horn_hardware",
+          "mass": 0.0012,
+          "dimensions": [
+            0.005,
+            0.02,
+            0.026
+          ],
+          "com": [
+            0.0035,
+            0,
+            -0.05
+          ],
+          "material": "factory horn +retainer +2frame screws/washers",
+          "evidence": "unknown interfaces; estimated1.2g allowance, NOT a collision envelope",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
             }
           }
         }
@@ -1220,56 +1568,23 @@ Authoritative structured physical input (provisional):
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "generated CAD; actual infill/printed density must be weighed"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "inertia_tensor": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
-            }
-          }
-        },
-        {
-          "name": "left_sole",
-          "mass": 0.00486,
-          "dimensions": [
-            0.09,
-            0.045,
-            0.001
-          ],
-          "com": [
-            0.006,
-            0,
-            -0.0245
-          ],
-          "material": "solid TPU 95A, density estimate 1200 kg/m\u00b3",
-          "evidence": "estimate; includes adhesive uncertainty, weigh actual sole",
-          "parameter_evidence": {
-            "mass": {
-              "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
-            },
-            "com": {
-              "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
             }
           }
         },
@@ -1307,35 +1622,296 @@ Authoritative structured physical input (provisional):
           }
         },
         {
-          "name": "left_foot_joint_fasteners",
-          "mass": 0.0015,
+          "name": "left_foot_pad_0",
+          "mass": 0.00023561944901923448,
           "dimensions": [
-            0.02,
-            0.012,
-            0.012
+            0.01,
+            0.01,
+            0.003
           ],
           "com": [
-            0,
-            0,
-            -0.012
+            -0.031,
+            -0.0145,
+            -0.025500000000000002
           ],
-          "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn",
+          "inertia_tensor": [
+            [
+              1.6493361431346417e-09,
+              0,
+              0
+            ],
+            [
+              0,
+              1.6493361431346417e-09,
+              0
+            ],
+            [
+              0,
+              0,
+              2.9452431127404312e-09
+            ]
+          ],
+          "primitive": "cylinder_z",
+          "radius": 0.005,
+          "material": "TPE + supplied adhesive",
+          "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates",
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "dimensions": {
+              "state": "sourced",
+              "date": "2026-10-24",
+              "evidence": "https://www.delock.com/produkt/18309/pdf.html?sprache=de"
+            }
+          }
+        },
+        {
+          "name": "left_foot_pad_1",
+          "mass": 0.00023561944901923448,
+          "dimensions": [
+            0.01,
+            0.01,
+            0.003
+          ],
+          "com": [
+            -0.031,
+            0.0145,
+            -0.025500000000000002
+          ],
+          "inertia_tensor": [
+            [
+              1.6493361431346417e-09,
+              0,
+              0
+            ],
+            [
+              0,
+              1.6493361431346417e-09,
+              0
+            ],
+            [
+              0,
+              0,
+              2.9452431127404312e-09
+            ]
+          ],
+          "primitive": "cylinder_z",
+          "radius": 0.005,
+          "material": "TPE + supplied adhesive",
+          "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "dimensions": {
+              "state": "sourced",
+              "date": "2026-10-24",
+              "evidence": "https://www.delock.com/produkt/18309/pdf.html?sprache=de"
+            }
+          }
+        },
+        {
+          "name": "left_foot_pad_2",
+          "mass": 0.00023561944901923448,
+          "dimensions": [
+            0.01,
+            0.01,
+            0.003
+          ],
+          "com": [
+            0.043,
+            -0.0145,
+            -0.025500000000000002
+          ],
+          "inertia_tensor": [
+            [
+              1.6493361431346417e-09,
+              0,
+              0
+            ],
+            [
+              0,
+              1.6493361431346417e-09,
+              0
+            ],
+            [
+              0,
+              0,
+              2.9452431127404312e-09
+            ]
+          ],
+          "primitive": "cylinder_z",
+          "radius": 0.005,
+          "material": "TPE + supplied adhesive",
+          "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "dimensions": {
+              "state": "sourced",
+              "date": "2026-10-24",
+              "evidence": "https://www.delock.com/produkt/18309/pdf.html?sprache=de"
+            }
+          }
+        },
+        {
+          "name": "left_foot_pad_3",
+          "mass": 0.00023561944901923448,
+          "dimensions": [
+            0.01,
+            0.01,
+            0.003
+          ],
+          "com": [
+            0.043,
+            0.0145,
+            -0.025500000000000002
+          ],
+          "inertia_tensor": [
+            [
+              1.6493361431346417e-09,
+              0,
+              0
+            ],
+            [
+              0,
+              1.6493361431346417e-09,
+              0
+            ],
+            [
+              0,
+              0,
+              2.9452431127404312e-09
+            ]
+          ],
+          "primitive": "cylinder_z",
+          "radius": 0.005,
+          "material": "TPE + supplied adhesive",
+          "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "dimensions": {
+              "state": "sourced",
+              "date": "2026-10-24",
+              "evidence": "https://www.delock.com/produkt/18309/pdf.html?sprache=de"
+            }
+          }
+        },
+        {
+          "name": "left_ankle_ear_bolt_-1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.008,
+            0.005,
+            0.005
+          ],
+          "com": [
+            -0.007,
+            0,
+            -0.01875
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "left_ankle_ear_bolt_+1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.008,
+            0.005,
+            0.005
+          ],
+          "com": [
+            -0.007,
+            0,
+            0.009250000000000001
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
             }
           }
         }
@@ -1430,8 +2006,8 @@ Authoritative structured physical input (provisional):
       }
     }
   ],
-  "revision": "s6-native-pwm-provisional-2",
-  "updated_date": "2026-10-23",
+  "revision": "S6-PETG-pad-r2",
+  "updated_date": "2026-10-24",
   "controller": {
     "backend": "pico_pwm",
     "pins": [
@@ -1448,13 +2024,14 @@ Authoritative structured physical input (provisional):
       4,
       5
     ],
-    "state": "planned; electrical verification pending"
+    "state": "planned; electrical verification pending",
+    "board": "Raspberry Pi Pico bare, user-soldered headers"
   },
   "parameter_evidence": {
     "geometry": {
       "state": "estimated",
-      "date": "2026-10-23",
-      "evidence": "design intent; not manufactured"
+      "date": "2026-10-24",
+      "evidence": "S6-PETG-pad-r2 design, no physical fit; frame solid-CAD masses regenerated"
     },
     "actuator": {
       "state": "estimated",
@@ -1465,6 +2042,12 @@ Authoritative structured physical input (provisional):
       "state": "unknown",
       "date": "2026-10-23",
       "evidence": "No hardware exists; omitted from MJCF"
+    },
+    "grip_pads": {
+      "state": "sourced",
+      "date": "2026-10-24",
+      "evidence": "https://www.delock.com/produkt/18309/pdf.html?sprache=de",
+      "note": "dimensions only; density/placement/friction estimated"
     }
   },
   "dynamics": {
@@ -1534,6 +2117,68 @@ Authoritative structured physical input (provisional):
       "date": "2026-10-23",
       "evidence": "https://mujoco.readthedocs.io/en/stable/computation/index.html#contact"
     }
+  },
+  "manufacturing": {
+    "route": "commercial PETG FDM, ordinary adhesive TPE pads",
+    "frame_parts": 7,
+    "sample_pieces": 2,
+    "state": "quotation prototype; manufacturing NOT released",
+    "layer_height_mm": 0.2,
+    "walls": 3,
+    "infill_percent": 25,
+    "printed_soles": false,
+    "mechanical_stops": "unknown, omitted",
+    "measurements_required": [
+      "servo ear spacing/holes/thickness and case axial location",
+      "shaft height, spline, supplied horn shape/hole radii/thickness",
+      "retaining-screw thread/length; horn-to-frame screw thread/length",
+      "lead exit and connector mating; installed screw/tool sweeps",
+      "sample insertion fit and actual printed hole diameters",
+      "printed masses/layer strength, pad friction/adhesion",
+      "Pico header11mm pin envelope, PCB stand-off fit and Dupont/cable clearances"
+    ]
+  },
+  "hardware_interfaces": {
+    "ear_bolt": {
+      "screw": "P010265 M2x8 DIN7985",
+      "shaft_diameter": 0.002,
+      "length_under_head": 0.008,
+      "head_diameter": 0.004,
+      "head_height": 0.0016,
+      "nut": "P003474 M2 DIN934",
+      "nut_across_flats": 0.004,
+      "nut_height": 0.0016,
+      "washer": "P004198 DIN125",
+      "washer_id": 0.0022,
+      "washer_od": 0.005,
+      "washer_thickness": 0.0003,
+      "ear_thickness_estimate": 0.0014,
+      "dimensions_state": "sourced; screw/nut/washer product dimensions",
+      "placement_state": "estimated; actual ear/stack must be measured",
+      "sources": [
+        "https://www.schraubenking-shop.de/M2-x-8mm-Linsenkopfschrauben-PH-DIN7985-Stahl-verzinkt-FKL48-P010265",
+        "https://www.schraubenking-shop.de/M2-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P003474",
+        "https://www.schraubenking-shop.de/22mm-Unterlegscheiben-DIN125-Edelstahl-A2-P004198"
+      ]
+    },
+    "horn": {
+      "quantity": 6,
+      "retainers": 6,
+      "frame_screws": 12,
+      "frame_washers": 12,
+      "spline": null,
+      "retainer_thread": null,
+      "retainer_length": null,
+      "horn_hole_radii": null,
+      "frame_screw_thread": null,
+      "frame_screw_length": null,
+      "state": "unknown; factory batch, no generic25T/guessed threads",
+      "designed_slot_radius_interval": [
+        0.0055,
+        0.0125
+      ],
+      "designed_frame_clearance_width": 0.0024
+    }
   }
 }
 ```
@@ -1542,9 +2187,9 @@ Authoritative structured physical input (provisional):
 
 ### Native-PWM S6 hardware and protocol
 
-Updated 2026-10-23. Implemented source and local compilation are distinct from
+Updated 2026-10-24. Implemented source and local compilation are distinct from
 physical verification: **nothing has been purchased or electrically tested**.
-The existing *provisional physical prototype* is Pico H native PWM, six Waveshare15024
+The selected *provisional quotation revision* is bare Pico native PWM, six Waveshare15024
 MG90S, MPU6050 and Mean Well GST40A05-P1J. PCA9685 is not in the current basket.
 Its listing is unavailable and removing it resolves the original board/brace overlap.
 
@@ -1558,10 +2203,12 @@ inside the commercial PSU/lead. Capacitor1000µF/16V goes across the bus with
 correct polarity; it is not a substitute for an adequate supply.
 
 The proposed basket uses a **bare Pico** with user-soldered headers. Existing RP2040
-firmware/pins remain unchanged; current physical mass/geometry still use Pico H.
-Compare Pico H5.50 +one40pin pack0.60 with bare4.10 +two40pin packs1.20:
-header-inclusive saving0.80. Two packs supply40Pico pins +up to8IMU +6signal
-ends, with26spare. Solder10g flux-core, heat-shrink, ties and wire are priced robot
+firmware/pins remain unchanged. The model now separately owns estimated3g bare PCB
+and two0.6g header rows (4.2g together). Header overall pin length11mm is sourced;
+PCB/USB envelope and all masses/placements still need measurement.
+Compare Pico H5.50 +one40pin pack0.60 with bare4.10 +header kit0.50 +40pin pack0.60:
+header-inclusive saving0.90. Kit2x20pins +40pin pack supply80functional pins,
+54used,26spare; supplied3pin SWD strip is extra spare. Solder10g flux-core, heat-shrink, ties and wire are priced robot
 consumables. Iron access is available; other tools must be confirmed/borrowed or
 priced outside the robot cap but inside initial cash. No mandatory paid helper.
 
@@ -1719,11 +2366,14 @@ not double integration of MPU acceleration.
 
 ### Pico firmware — local build and bench preparation
 
-**Soldering update2026-10-23:** proposed bare Pico uses the same RP2040 firmware
+**Frame/control identity update2026-10-24:** proposed bare Pico uses the same RP2040 firmware
 and GPIOs as Pico H. User fits headers and a self-soldered insulated harness; no
 mandatory helper labour. See [wiring sequence](../docs/HARDWARE.md). Do not flash/arm
-this as proof of electrical or mechanical verification. Physical prototype masses
-still refer to Pico H; bare-board replacement remains a measured-twin task.
+this as proof of electrical or mechanical verification. Current provisional twin uses bare Pico+two soldered header rows. Module mass
+is estimated4.2g; actual board/harness measurements remain pending. The generated
+invalid header now carries the r2 fingerprint. OldUF2 images are historical: rebuild
+with this header and later measured calibration before any flash. No current ARM
+build or physical electrical result is claimed by the geometry update.
 
 
 Source is C++17 using official Pico SDK **2.3.1**, revision
@@ -1821,9 +2471,9 @@ constraint, and software angle bounds are not physical motor torque protection.
   <worldbody>
     <light pos="0 -1 2" dir="0 0 -1" diffuse="0.8 0.8 0.8" />
     <geom name="floor" type="plane" size="3 3 0.05" rgba="0.87 0.88 0.90 1" />
-    <body name="torso" pos="0 0 0.154240388">
+    <body name="torso" pos="0 0 0.1562403877">
       <geom name="torso_visual" type="mesh" mesh="torso_mesh" contype="0" conaffinity="0" group="2" rgba="0.12 0.55 0.83 1" />
-      <inertial mass="0.07288624774" pos="-0.006652863288 0 -0.00986129485" fullinertia="7.714665284e-05 5.092307439e-05 4.315149003e-05 2.541098842e-21 7.752415604e-06 0" />
+      <inertial mass="0.07574344774" pos="-0.006320972389 3.578534529e-19 -0.01029907144" fullinertia="8.148312538e-05 5.344089513e-05 4.48989327e-05 -6.368545737e-22 7.760571147e-06 -8.856730812e-22" />
       <freejoint name="root" />
       <geom name="torso_collision" type="box" pos="0 0 0.01" size="0.02 0.041 0.025" rgba="0.10 0.45 0.8 0.8" />
       <site name="imu_site" pos="-0.0255 0 0.018" size="0.003" rgba="1 0.7 0 1" />
@@ -1832,44 +2482,50 @@ constraint, and software angle bounds are not physical motor torque protection.
       <geom name="right_hip_servo_case" type="box" pos="0 -0.01975 -0.03475" size="0.0061 0.01425 0.0114" rgba="0.15 0.15 0.17 1" />
       <body name="left_thigh" pos="0 0.034 -0.03">
         <geom name="left_thigh_visual" type="mesh" mesh="left_thigh_mesh" contype="0" conaffinity="0" group="2" rgba="0.12 0.55 0.83 1" />
-        <inertial mass="0.01897302956" pos="7.38254531e-20 -0.009433651865 -0.04297017599" fullinertia="1.075607705e-05 9.509006643e-06 2.306096954e-06 -1.321364545e-23 9.846621791e-24 -2.552040829e-06" />
+        <inertial mass="0.01977302956" pos="7.08385379e-20 -0.009228983103 -0.04336712372" fullinertia="1.201338719e-05 1.06953106e-05 2.361686476e-06 -1.292696745e-23 9.290620081e-24 -2.750783224e-06" />
         <joint name="left_hip" type="hinge" axis="0 1 0" />
         <geom name="left_thigh_link" type="capsule" fromto="0 0 -0.006 0 0 -0.044" size="0.006" rgba="0.12 0.55 0.83 1" />
         <geom name="left_knee_servo_case" type="box" pos="0 -0.01425 -0.05475" size="0.0061 0.01425 0.0114" rgba="0.15 0.15 0.17 1" />
         <body name="left_shin" pos="0 0 -0.05">
           <geom name="left_shin_visual" type="mesh" mesh="left_shin_mesh" contype="0" conaffinity="0" group="2" rgba="0.12 0.55 0.83 1" />
-          <inertial mass="0.007723103503" pos="0.001431986556 0.001714317795 -0.0226881703" fullinertia="3.771568488e-06 3.870592897e-06 4.366762365e-07 1.069363096e-08 2.608766246e-07 -1.717283681e-07" />
+          <inertial mass="0.008623103503" pos="0.001769592628 0.002022456737 -0.02519082456" fullinertia="5.202857017e-06 5.271289455e-06 4.593362007e-07 2.259577502e-08 3.37397356e-07 -3.106646077e-07" />
           <joint name="left_knee" type="hinge" axis="0 1 0" />
           <geom name="left_shin_link" type="capsule" fromto="0 0 -0.006 0 0 -0.044" size="0.006" rgba="0.12 0.55 0.83 1" />
           <body name="left_foot" pos="0 0 -0.05">
             <geom name="left_foot_visual" type="mesh" mesh="left_foot_mesh" contype="0" conaffinity="0" group="2" rgba="0.12 0.55 0.83 1" />
-            <inertial mass="0.03657630976" pos="-0.001919484737 9.573768603e-21 -0.0153667454" fullinertia="7.376615256e-06 2.141873222e-05 2.153521221e-05 -9.259259754e-23 2.911645236e-06 1.500083034e-22" />
+            <inertial mass="0.03225878756" pos="-0.003143726384 1.312871641e-20 -0.01408134211" fullinertia="6.690079177e-06 1.906430994e-05 1.860375222e-05 -7.946502952e-23 2.654014327e-06 1.523359921e-22" />
             <joint name="left_ankle" type="hinge" axis="1 0 0" />
             <geom name="left_foot_plate" type="box" pos="0.006 0 -0.0225" size="0.045 0.0225 0.0015" rgba="0.08 0.36 0.65 1" />
-            <geom name="left_foot_sole" type="box" pos="0.006 0 -0.0245" size="0.045 0.0225 0.0005" rgba="0.15 0.15 0.15 1" />
-            <site name="left_foot_sole_center" pos="0.006 0 -0.025" size="0.001" />
+            <geom name="left_foot_pad_0" type="cylinder" pos="-0.031 -0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <geom name="left_foot_pad_1" type="cylinder" pos="-0.031 0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <geom name="left_foot_pad_2" type="cylinder" pos="0.043 -0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <geom name="left_foot_pad_3" type="cylinder" pos="0.043 0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <site name="left_foot_contact_center" pos="0.006 0 -0.027" size="0.001" />
             <geom name="left_ankle_servo_case" type="box" pos="-0.01425 0 -0.00475" size="0.01425 0.0061 0.0114" rgba="0.15 0.15 0.17 1" />
           </body>
         </body>
       </body>
       <body name="right_thigh" pos="0 -0.034 -0.03">
         <geom name="right_thigh_visual" type="mesh" mesh="right_thigh_mesh" contype="0" conaffinity="0" group="2" rgba="0.12 0.55 0.83 1" />
-        <inertial mass="0.01897302956" pos="7.38254531e-20 0.009433651865 -0.04297017599" fullinertia="1.075607705e-05 9.509006643e-06 2.306096954e-06 1.321364545e-23 9.846621791e-24 2.552040829e-06" />
+        <inertial mass="0.01977302956" pos="7.08385379e-20 0.009228983103 -0.04336712372" fullinertia="1.201338719e-05 1.06953106e-05 2.361686476e-06 1.292696745e-23 9.290620081e-24 2.750783224e-06" />
         <joint name="right_hip" type="hinge" axis="0 1 0" />
         <geom name="right_thigh_link" type="capsule" fromto="0 0 -0.006 0 0 -0.044" size="0.006" rgba="0.12 0.55 0.83 1" />
         <geom name="right_knee_servo_case" type="box" pos="0 0.01425 -0.05475" size="0.0061 0.01425 0.0114" rgba="0.15 0.15 0.17 1" />
         <body name="right_shin" pos="0 0 -0.05">
           <geom name="right_shin_visual" type="mesh" mesh="right_shin_mesh" contype="0" conaffinity="0" group="2" rgba="0.12 0.55 0.83 1" />
-          <inertial mass="0.007723103503" pos="0.001431986556 -0.001714317795 -0.0226881703" fullinertia="3.771568488e-06 3.870592897e-06 4.366762365e-07 -1.069363096e-08 2.608766246e-07 1.717283681e-07" />
+          <inertial mass="0.008623103503" pos="0.001769592628 -0.002022456737 -0.02519082456" fullinertia="5.202857017e-06 5.271289455e-06 4.593362007e-07 -2.259577502e-08 3.37397356e-07 3.106646077e-07" />
           <joint name="right_knee" type="hinge" axis="0 1 0" />
           <geom name="right_shin_link" type="capsule" fromto="0 0 -0.006 0 0 -0.044" size="0.006" rgba="0.12 0.55 0.83 1" />
           <body name="right_foot" pos="0 0 -0.05">
             <geom name="right_foot_visual" type="mesh" mesh="right_foot_mesh" contype="0" conaffinity="0" group="2" rgba="0.12 0.55 0.83 1" />
-            <inertial mass="0.03657630976" pos="-0.001919484737 -9.573768603e-21 -0.0153667454" fullinertia="7.376615256e-06 2.141873222e-05 2.153521221e-05 9.259259754e-23 2.911645236e-06 -1.500083034e-22" />
+            <inertial mass="0.03225878756" pos="-0.003143726384 -1.312871641e-20 -0.01408134211" fullinertia="6.690079177e-06 1.906430994e-05 1.860375222e-05 7.946502952e-23 2.654014327e-06 -1.523359921e-22" />
             <joint name="right_ankle" type="hinge" axis="1 0 0" />
             <geom name="right_foot_plate" type="box" pos="0.006 0 -0.0225" size="0.045 0.0225 0.0015" rgba="0.08 0.36 0.65 1" />
-            <geom name="right_foot_sole" type="box" pos="0.006 0 -0.0245" size="0.045 0.0225 0.0005" rgba="0.15 0.15 0.15 1" />
-            <site name="right_foot_sole_center" pos="0.006 0 -0.025" size="0.001" />
+            <geom name="right_foot_pad_0" type="cylinder" pos="-0.031 0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <geom name="right_foot_pad_1" type="cylinder" pos="-0.031 -0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <geom name="right_foot_pad_2" type="cylinder" pos="0.043 0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <geom name="right_foot_pad_3" type="cylinder" pos="0.043 -0.0145 -0.0255" size="0.005 0.0015" rgba="0.15 0.15 0.15 1" />
+            <site name="right_foot_contact_center" pos="0.006 0 -0.027" size="0.001" />
             <geom name="right_ankle_servo_case" type="box" pos="-0.01425 0 -0.00475" size="0.01425 0.0061 0.0114" rgba="0.15 0.15 0.17 1" />
           </body>
         </body>
@@ -1889,7 +2545,7 @@ constraint, and software angle bounds are not physical motor torque protection.
     <accelerometer name="imu_accel" site="imu_site" />
   </sensor>
   <keyframe>
-    <key name="home" qpos="0 0 0.154240388 1 0 0 0 -0.1745329252 0.1745329252 0 -0.1745329252 0.1745329252 0" ctrl="-0.1745329252 0.1745329252 0 -0.1745329252 0.1745329252 0" />
+    <key name="home" qpos="0 0 0.1562403877 1 0 0 0 -0.1745329252 0.1745329252 0 -0.1745329252 0.1745329252 0" ctrl="-0.1745329252 0.1745329252 0 -0.1745329252 0.1745329252 0" />
   </keyframe>
 </mujoco>
 ```
@@ -1951,9 +2607,11 @@ class HumanoidEnv(gym.Env):
         self.aids = np.array([self.model.actuator(n + "_servo").id for n in JOINT_NAMES])
         self.torso_id = self.model.body("torso").id
         self.floor_id = self.model.geom("floor").id
-        self.feet_ids = [self.model.geom(s + "_foot_sole").id for s in ("left", "right")]
         self.foot_plate_ids = [self.model.geom(s + "_foot_plate").id for s in ("left", "right")]
-        self.foot_ids = set(self.feet_ids + self.foot_plate_ids)
+        self.foot_geom_groups = [set([self.foot_plate_ids[i]] + [self.model.geom(f"{side}_foot_pad_{j}").id for j in range(4)])
+                                 for i, side in enumerate(("left", "right"))]
+        self.foot_ids = set.union(*self.foot_geom_groups)
+        self.foot_center_sites = [self.model.site(s + "_foot_contact_center").id for s in ("left", "right")]
         self.nominal = {name: getattr(self.model, name).copy() for name in (
             "body_mass", "body_inertia", "geom_friction", "dof_damping", "actuator_forcerange")}
         self.estimator = GravityEstimator()
@@ -2060,15 +2718,23 @@ class HumanoidEnv(gym.Env):
                 if other not in self.foot_ids:
                     bad_contact = True
                 for i in range(2):
-                    if other in (self.feet_ids[i], self.foot_plate_ids[i]):
+                    if other in self.foot_geom_groups[i]:
                         contacts[i] = True
         return contacts, bad_contact
 
     def _minimum_foot_height(self, foot_index):
-        gid = self.feet_ids[foot_index]
-        mat = self.data.geom_xmat[gid].reshape(3, 3)
-        # Lowest box corner: the whole foot must clear the floor, not just a toe.
-        return float(self.data.geom_xpos[gid, 2] - np.dot(np.abs(mat[2]), self.model.geom_size[gid]))
+        heights = []
+        for gid in self.foot_geom_groups[foot_index]:
+            zaxis = self.data.geom_xmat[gid].reshape(3, 3)[2]
+            size = self.model.geom_size[gid]
+            if self.model.geom_type[gid] == mujoco.mjtGeom.mjGEOM_CYLINDER:
+                # Exact support function of a rotated finite cylinder.
+                extent = size[0] * np.linalg.norm(zaxis[:2]) + size[1] * abs(zaxis[2])
+            else:
+                extent = np.dot(np.abs(zaxis), size)
+            heights.append(self.data.geom_xpos[gid, 2] - extent)
+        # All pads AND the plate must clear; a raised toe/one pad is insufficient.
+        return float(min(heights))
 
     def _record_steps(self, contacts):
         load = np.zeros(2)
@@ -2078,11 +2744,11 @@ class HumanoidEnv(gym.Env):
                 continue
             other = contact.geom2 if contact.geom1 == self.floor_id else contact.geom1
             for i in range(2):
-                if other in (self.feet_ids[i], self.foot_plate_ids[i]):
+                if other in self.foot_geom_groups[i]:
                     mujoco.mj_contactForce(self.model, self.data, index, force)
                     load[i] += max(0, force[0])
         supported = load >= .10 * self.model.body_mass.sum()*9.81
-        self.gait.update(self.data.geom_xpos[self.feet_ids],
+        self.gait.update(self.data.site_xpos[self.foot_center_sites],
                          [self._minimum_foot_height(i) for i in range(2)],
                          contacts, supported, PHYSICS_DT)
         self.alternations = self.gait.alternations
@@ -3290,6 +3956,14 @@ from humanoid_env import HumanoidEnv
 from robot_config import ROOT, HOME, CONTROL_DT, target_to_action
 
 
+def show_physical_geometry(model):
+    """Hide overlapping proxy drawings only; their contact physics is unchanged."""
+    for i in range(model.ngeom):
+        name=model.geom(i).name
+        if name=='torso_collision' or name.endswith(('_link','_foot_plate')):
+            model.geom_rgba[i,3]=0
+
+
 def evaluate(model_path=None, episodes=10, seed=1000, randomize=False,
              output=ROOT / "runs" / "evaluation", video=False, render=False,
              episode_seconds=30, baseline="home", policy_seed=0):
@@ -3306,6 +3980,8 @@ def evaluate(model_path=None, episodes=10, seed=1000, randomize=False,
     metadata = check_policy(model_path) if model_path else None
     env = HumanoidEnv(render_mode=mode, domain_randomization=randomize, episode_seconds=episode_seconds,
                       calibration=metadata.get("calibration_record") if metadata else None)
+    if mode is not None:
+        show_physical_geometry(env.model)
     model = None
     if model_path:
         from stable_baselines3 import PPO
@@ -3356,6 +4032,8 @@ def evaluate(model_path=None, episodes=10, seed=1000, randomize=False,
         summary["model_sha256"] = hashlib.sha256(Path(model_path).read_bytes()).hexdigest() if model_path else None
         summary["policy_seed"] = policy_seed if baseline == "untrained" else None
         summary["xml_sha256"] = hashlib.sha256((ROOT / "robot.xml").read_bytes()).hexdigest()
+        summary["evaluation_source_sha256"] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+        summary["visualization"] = "physical CAD/servo cases/pads; overlapping proxy drawings hidden, contacts unchanged" if mode else None
         summary["seeds"] = list(range(seed, seed + episodes))
         with (output / "episodes.csv").open("w", newline="") as f:
             c = csv.DictWriter(f, fieldnames=list(records[0]))
@@ -3560,6 +4238,25 @@ Templates live in `docs/templates/`; fill one measurement row per trial and keep
 original CSV/video. Until those records exist, stages A/B/D/F remain blocked or
 provisional and nothing is physically verified.
 
+
+#### r2 mass ownership and aggregate allowances
+
+The bare Pico PCB and two GPIO headers are separate ledger components (3g +0.6g
++0.6g estimates). Each foot owns its four pads and ankle case; each shin owns
+both knee and ankle output-horn hardware. Case-ear bolts belong to the case's body.
+The torso20g `torso_wires_fasteners` allowance is for additional harness/capacitor/
+nylon tie/restraint hardware, excluding separately owned servos, Pico headers,
+named M2ear assemblies and horn sets. It is not a measured component inventory;
+verify the actual harness/connector distribution and replace this allowance.
+No extra pull-up purchase is assumed: verify the chosen IMU/Pico I2C wiring on
+bench, and add any required components/cost if the module lacks suitable pull-ups.
+
+When weighing an assembled rigid body, do not add that complete weight on top of
+its existing components. Either replace the complete body's ledger accounting,
+or weigh/subtract each known component and replace the remaining allowance.
+Never run solid-CAD mass synchronization over measured masses. Recompute COM and
+inertia and issue a new fingerprint before training or deployment.
+
 ## 17. Sim-to-Real and domain-randomization plan
 
 The `Randomization` dataclass is the single DR configuration: mass/inertia±5%,
@@ -3657,8 +4354,8 @@ continuous torque, loaded speed/response/backlash,3.3V input, printed strength,
 actual masses/COM, friction, IMU alignment/noise and tether forces remain unknown
 or estimated. No compiler run proves electronics safety. PWM STOP is not power
 isolation. Cheap position servos have no measured joint feedback or torque cap.
-Finite sampled clearances do not prove all continuous paths. Current fastener
-proxies cause unresolved conflicts and block manufacture. No physical hardware
+Finite sampled clearances do not prove all continuous paths. Dimensioned M2hardware at estimated
+positions has no sampled modeled collision; five unknown interface groups still block manufacture. No physical hardware
 or measured twin exists. Walking target remains unachieved unless actual recorded
 metrics/video demonstrate otherwise. Standing alone or increasing reward is not
 walking. Long formal training is blocked until fit/calibration/reference gates.
@@ -3673,7 +4370,7 @@ States and actual evidence belong in STATUS.md. No stage is physically verified 
 | Stage / original phases | Work and owner | Completion gate |
 |---|---|---|
 | Entry / 0,13 | AI: concise AGENTS, STATUS and this roadmap; preserve historical evidence | New session can identify constraints, sources, blockers and next command quickly |
-| A / 1 | AI: compare standard stock mechanics vs own printing; soldering basket, headers, pads, connector ratings and delivered costs; no purchases/messages | Complete sourced basket <=EUR100, fit information or explicit unresolved evidence/shortfall |
+| A / 1 | AI: active commercial PETG quotation, complete sample/frame finishing and delivered costs; soldered electronics/ordinary pads; no purchases/messages | Complete sourced basket <=EUR100, fit information or explicit unresolved evidence/shortfall |
 | B / 1,2 | AI: reconcile CAD and physical ledger, PCB/case/frame clearance, fasteners; user/supplier: sample fit | Checked geometry; no unverified manufacturing release; solid masses remain estimates |
 | C / 3,8 | AI: Pico SDK C++ firmware, PC bench/client, bounded protocol and persistent calibration | Firmware builds and host tests pass; actual electrical timing/cutoff still needs bench |
 | D / 2,3,4,9 | AI: common limits/preprocessing, realistic command scheduling, reward and metrics; user: measured parameters | Reproducible twin; no fake stops/positive closed-loop progress/sliding success; measured vs provisional explicit |
@@ -3681,11 +4378,13 @@ States and actual evidence belong in STATUS.md. No stage is physically verified 
 | F / 8,9,10,11,13 | User: bench, assembly, calibration and physical trials; AI: firmware/tools/data analysis/report | Real test data; frozen compatible policies; equal trials and alternating A/B order |
 | Extensions / 12 | Future: turning, terrain, recovery | Stable baseline walking first; no automatic scope expansion |
 
-Current proposed shared subset is EUR95.91 without frame. Standard route lacks a
-complete compatible kit. Own-print robot subset EUR118.43 exceeds cap byEUR18.43
-before unknowns; no printer access or purchase selection. Commercial print/laser
-routes are historical. Next: exact stock-frame interfaces and complete landed cost.
-Physical model remains Pico H/TPU; proposals need selection/measurements before updating it.
+Current checkpoint: quotation CAD and matching r2 twin implemented; real fit,
+strength and complete delivered quotation remain blocked. Common95.81EUR plus
+priced ear hardware/delivery9.53EUR already exceeds100EUR by5.34EUR before printing.
+Next human action: authorize exact current-STL quotation upload toMeltlab or return
+its quote/settings/hashes; no order/message. Then actual servo/horn measurements and
+sample fit are required. Current37tests and2048step smoke are local evidence only.
+The script still produces no qualifying lift; do not expand training to hide that.
 
 #### Fixed engineering contracts
 
@@ -3716,8 +4415,8 @@ Physical model remains Pico H/TPU; proposals need selection/measurements before 
 1. Resolve delivered budget and component interfaces before ordering.
 2. User solders/insulates short harness and headers; checks cutoff, one servo and IMU.
 3. Record pulse mapping, directions, range, speed/strength/current/latency and IMU noise.
-4. Confirm stock-frame interfaces, or measured print sample if access later exists;
-   approve complete budget/clearance, then frame assembly and body weighing.
+4. Confirm printed mounting sample on actual servo/horn, review layer/fastener
+   clearance and complete delivered budget, then obtain frame and weigh bodies.
 5. Validate all six joints, manual stand, watchdog, faults and cables.
 6. Reconcile measured twin and configuration identity; retrain incompatible policies.
 7. Policy stand, short steps, longer trials; use ruler/video, never IMU double integration.
@@ -3727,252 +4426,155 @@ When quotations or measurements block a stage, name the missing evidence and pre
 the precise question/data template. Continue independent software preparation. Do not
 invent a quote or substitute simulation verification for physical verification.
 
-### Current project status
+### Current project status — 2026-10-24
 
-Updated **2026-10-23**. **Nothing purchased, assembled, flashed or physically tested.**
-Start with SUMMARY.md and AGENTS.md; use this file for evidence and ROADMAP.md for gates. Do not restart broad research.
+Start with SUMMARY.md and AGENTS.md. **Nothing bought, printed, assembled, flashed
+or physically verified.** Active revision:**S6-PETG-pad-r2**, outsourced PETG.
 
-#### Current checkpoint
-
-Independent software preparation is implemented and locally checked. Hardware
-feasibility, sample fit and calibration remain blocked. The twin is **provisional**,
-not calibrated. Walking is **not achieved**. No formal measured A/B experiment or
-physical transfer has taken place.
-
-| Stage | State | Actual evidence / blocker |
+| Stage | State | Evidence / blocker |
 |---|---|---|
-| Requirements / entry | implemented | AGENTS.md, ROADMAP.md, this file; six joints and EUR100 maximum retained |
-| A: hardware research | blocked | Two soldering routes in procurement.json; shared subset EUR95.91 before frame; standard kit unverified; own-print subset EUR118.43 (EUR18.43 over cap), no printer access; unknown horn/print/tool costs remain |
-| B: mechanics | implemented / blocked | Native-PWM revision removes PCA envelope; CAD/ledger agree at199.4g estimated;55poses yield550 unreviewed fastener-proxy overlaps, no manufacturing release |
-| C: bench/interface | locally verified | C++ official Pico SDK2.3.1 build/UF2; Python host/bench/deployment, persistent compiled calibration, explicit arm/watchdog/CRC/fingerprints; no electrical test |
-| D: twin/RL | locally verified provisional |29tests, compilation/mass/axes/inertias, Gym/SB3, clipped commands, discrete delay, corrected reward, gait exploit tests; measured response and lifted-step reference still missing |
-| E: experiments | locally verified partial | A0 total49152steps; A/B0 paired2048smokes; validation2000–2004, CSV/aggregate/videos/checkpoints; zero walking; formal seeds0/1/2 blocked |
-| F: physical/calibration/transfer | planned / blocked | No hardware; procedures, data templates, bench/deployment tools and report scaffold ready |
-| Extensions | planned | Conditional on stable walking; not started |
+| Requirements / AI entry | implemented | Six joints,15–20cm,PC/USB,wired power,EUR100retained; no printer purchase |
+| Hardware research / budget | blocked | Common95.81 +ear-hardware delivery9.53 =105.34before prints/sample/horns;5.34over cap. Updated ledger/source dates |
+| CAD / order preparation | implemented, locally verified partial | Seven connected watertightPETGmeshes; two-piece sample ZIP, seven-piece frame ZIP, drawings/manifests/fastener schedule.0modeled collisions/55poses;5unknown fit groups; NOT manufacture-approved |
+| Shared control / firmware | locally verified partial | Existing GPIO/protocol retained; invalid current header/nativeC++tests pass. ARMbuild from previous revision is historical; physical timing/calibration absent |
+| Provisional MuJoCo / Gym | locally verified | New barePico/header ownership,8TPEpad contacts,estimated197.053g,axes/inertias/contacts/reward/provenance checked;37tests pass |
+| Manual reference | blocked |46s reference +three bounded ankle variants:zero qualifying lifts/steps; strength/plant assumptions unmeasured |
+| PPO / evaluation | locally verified smoke only | New2048steps A0, reload/CSV/validation/video;0success/0gait under nominal/randomized validation. No larger run |
+| Physical build / calibration / transfer | planned, blocked | No hardware. Bench/soldering/sample/assembly/calibration procedures ready; requires user measurements and budget/fit clearance |
+| Formal A/B / school experiment | planned, blocked | No current full six-run experiment or real trials. Exact seeds/budgets remain in roadmap |
+| Extensions | planned | Only after stable walking |
 
-#### Selected architecture and authoritative inputs
+#### Current architecture
 
-- Six Waveshare15024 MG90S, hip pitch/knee pitch/ankle roll per leg.
-- Existing prototype Pico H **direct native PWM** GP0,1,2,3,6,7; MPU6050 GP4/5;50Hz commands/200Hz IMU.
-  PCA9685 removed from current basket/spec because unavailable and extra mounting conflict.
-- Wired5V/5A PSU with separate USB logic and common ground. Input socket now sourced5A; branch ratings and
-  MG90S3.3V signal threshold remain unresolved. No programmable hardware torque cap.
-- Basket/evidence: `procurement.json`, `docs/PROCUREMENT_ACTIONS.md`, `SERVO_COMPARISON.md`.
-- Geometry/mass/dynamics/provenance: `physical_spec.json`; generated `robot.xml`,
-  `docs/mass_properties.json`; editable `cad/build_frame.py` and assembly/quote brief.
-- Shared policy contract: `robot_config.py`, `servo_control.py`, `imu_observation.py`.
-- Calibration/identity: `calibration.py`, invalid example in `calibrations/`.
-- Firmware/PC: `firmware/`, `serial_robot.py`, `bench.py`, `deploy.py`, `HARDWARE.md`.
-- Training/evaluation: `train.py`, `evaluate.py`, `tools/experiments.py`, `EXPERIMENT.md`.
+Six exact Waveshare15024MG90S; Lhip/knee pitch/ankle roll, then Rsame.50Hz policy
+and directPicoPWM,200Hz MPU6050,2ms MuJoCo. Bare Pico PCB plus two header rows;
+header11mm envelope retained. Separate USB logic and5V/5A servo bus, common ground,
+self-soldered replaceable harness. SevenPETG frames; four bought10×3mm TPE pads
+per90×45mm foot. No printed TPU, spool/printer purchase or PCA9685.
 
-#### Locally verified results (not hardware evidence)
+Physical parameters are sourced/estimated/unknown in physical_spec.json, not measured.
+CAD/model/accounting derive from that ledger. The policy still sees only IMU-derived
+gravity/gyro, applied command acknowledgements and previous actions (90values);
+no true pose, velocity, joint feedback, contacts or forces. Diagnostics/rewards may
+use simulation truth. Safe command intervals are not mechanical stops.
 
--29pytest tests passed;49installed Python packages pass dependency compatibility check.
-- Seven generated CAD-frame masses match the ledger; every servo assigned once;
-  aggregate inertias positive/physical. Six hinges/position actuators compile.
-- Unknown mechanical stops removed from MJCF; safe command bounds remain enforced.
-- Reward backward displacement fully charged; closed cycles gain no positive progress.
-- Toe pivots, hops, in-place lifts, stance slip and stationary lifts followed by sliding
-  fail synthetic gait tests; valid translating alternating steps are credited.
-- Native C++ state machine tests cover disarmed startup, invalid calibration,
-  corrupt/range/stale/replayed packets, queue delay, slew, PWM bounds and100ms watchdog.
-- Default invalid example cannot policy-arm; deployment rejects it before opening USB.
-- Model/calibration/file fingerprints checked on reload. A/B initial policy hashes match.
-- A0 resumed2048→49152 (not49152extra). Checkpoint selected by success/gait/reward
-  was at10240steps; validation success and qualifying distance were zero at every checkpoint.
-- Selected A0, seeds2000–2004: nominal mean distance0.008577m, speed0.000286m/s,
-  reward6.03602,30s,0/5falls,0walking; randomized mean0.008673m,reward6.03637,0walking.
-- Home baseline also stands30s with essentially zero travel. Standing is not learning evidence.
-- Matched2048step A/B smoke validation completed; not a final robustness comparison.
-- Scripted46s stand/lean/lift attempts (including level-foot/reversed-lean variants)
-  stood without falling but produced no sustained3mm whole-foot lifts. Reference gate stays false.
-- Three30s640×48050fps videos exported; representative frames/assembly drawing inspected.
+#### Evidence and limits
 
-Evidence: `docs/VALIDATION_CURRENT.md` and `docs/validation/2026-10-23/` contain
-source snapshots, hashes, CSV/JSON, models, TensorBoard, videos and invalid-calibration UF2.
-Original2026-10-08 evidence under `docs/validation/` is historical and incompatible.
-Final controller parsing was corrected to fixed-width64bit for uint32 timestamps.
-Current controller hash is `3d93f768188c8c55c903658192be75b87124f9a62852720fb5d2fd5b54666a8a`.
-Archived training hash is `1641779be26172bcb40bd2b94d93a0974f722a676ba6aa2249ec310a8dbf7a1f`;
-all those policies are historical and intentionally rejected by current deployment/evaluation.
-Review them with `tools/replay_snapshot.py`, which isolates the exact archived source.
-This parser-only change leaves simulated dynamics unchanged, but no policies were silently
-relabelled or granted physical compatibility. Current invalid-calibration UF2 is under
-`docs/validation/2026-10-23/final_control_revision/`.
+- Current local report:VALIDATION_CURRENT.md; artifacts:validation/2026-10-24/print_revision/final/.
+-37tests pass, including eight-pad contacts, whole-foot cylinder/plate heights,
+  component ownership, alternative-budget accounting and package quantities/hashes.
+- Current estimated mass197.053g. No infill-adjusted/measured mass claim.
+-0modeled collisions does NOT clear physical fit: horn/screw shapes, servo ear positions,
+  printed tolerances/layer strength, cables/ties/tool access remain unknown. Historical550
+  proxy intersections were replaced by sourced M2shapes at estimated positions; old
+  records retained, no claim of550physical fixes. Named PCB/header attachment exception only.
+- HOME stands30s; manual scripts and PPO still fail lifted walking. Quasi-static HOME
+  single-foot torque~0.0657Nm;2xmargin~0.1314exceeds0.08Nm model estimate. Do not
+  increase torque or train longer simply to hide these failures.
+- Source/config identity:`4d3b0dcbad59774b12f9c908c74446f6bf7452d5bdf34a08f07cf4271cc15019`.
+  Pre-r2policies/UF2are historical and rejected by current deployment; no relabelling.
+  Current2048smoke policy matches provisional twin, **not** physical calibration.
+- All physical/manufacturing/formal gates remain false. Default invalid calibration
+  cannot policy-arm. Software STOP does not isolate servo power.
 
-The superseded first smoke in `runs/2026-10-23/smoke` predates the final fingerprint;
-`final_smoke` is also historical after the controller revision. Review archived policies
-only through the isolated replay tool; no saved checkpoint is currently deployment-compatible.
+#### Exact next task
 
-#### Remaining blockers and unknown assumptions
-
-1. **Procurement:** common soldering/pad subset EUR95.91 before standard frame;
-   no complete stock kit verified. Own-print robot EUR118.43 before unknowns,
-   EUR18.43 over cap. Full PETG spool/ear-fastener delivery counted. Bare Pico
-   saves EUR0.80 including headers; no helper labour. No printer access/purchase.
-   Current twin still Pico H/TPU, not proposed bare Pico/pads. Six-servo stock pending.
-   No order/message/reservation. Historical commercial quotes remain unmodified.
-2. **Fit:** ear/shaft/spline/horn geometry and fastener sweeps unmeasured.550proxy overlaps
-   are not550confirmed physical bolt collisions. Resolve actual hardware interfaces first.
-3. **Physics:** servo sustainable torque/current, loaded response/latency/backlash, supply
-   droop, actual printed masses/COM, friction and IMU bias/alignment are unmeasured.
-  0.08Nm/gains/damping and conservative DR ranges remain explicitly estimated.
-4. **Motion:** no validated manual lifted-step reference; both PPO pilot and reference
-   attempts show no qualifying gait. Do not increase force or train millions to hide this.
-5. **Hardware:** firmware has compiled, not run on a Pico. Watchdog/PWM/USB/IMU electrical
-   timing, signal levels, cutoff, harness and real safety need physical bench verification.
-
-#### Exact next task / executable checks
-
-**Next:** find an exact compatible standard six-joint frame with every link/foot/horn
-connection and full VAT/delivery price to25337. Only EUR4.09 remains in the current
-shared basket before all mechanical extras. If none passes, report the missing
-interfaces/cost; do not buy a printer or resume commercial-print quotations by default.
+1. Obtain **specific permission** for current STL quotation uploads toMeltlab, or have
+   user return exact-file quotes. Automatic approval review blocked the upload because
+   it shares design data externally without named-provider authorization. No upload,
+   supplier message or purchase occurred. Public reviews exist; no new price invented.
+2. Close budget and actual horn/ear/screw dimensions; test mounting sample before full
+   frame. Include every finishing/sample/delivery charge. Current basket alreadyoverEUR100.
+3. Measure plant/current/IMU and assemble/weigh only after approval. Update measured
+   twin/version, then validate lifted steps before larger training or deployment.
 
 ```bash
 .venv/bin/python -m pytest -q
-.venv/bin/python tools/budget_gate.py --scenario all # exit1, own route over cap
-.venv/bin/python tools/prepare_local_print.py # layouts only, not released
-.venv/bin/python tools/check_clearance.py # exit1, unresolved proxy conflicts
+.venv/bin/python tools/budget_gate.py #1, active basket over cap before prints
+MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/prepare_print_order.py
+.venv/bin/python tools/check_clearance.py #1, unresolved interfaces
 ```
 
-User can solder; use the one-servo/IMU bench procedure when hardware is available.
-No physical gate can pass from local checks. See FRAME_ROUTES.md and procurement ledger.
+Human-facing instructions/packages:SUMMARY.md,cad/QUOTE_REQUEST.md,cad/ASSEMBLY.md.
+Historical sources/quotes:history/2026-10-24/pre_print_revision/ and previous validation
+folders. Earlier in-turn geometry results are under development_superseded/ and must
+not be reported as final. No stage is physically verified without real measurement data.
 
-#### Historical commercial-print follow-up evidence
+### Current local verification — 2026-10-24, S6-PETG-pad-r2
 
-`docs/procurement/2026-10-23/quotes.json` records actual STL-based printing prices,
-not public example allowances. The sole quote and Funduino policy have saved DOM;
-the original compact-PETG checkout text was recovered from this session transcript
-after its tab expired (no screenshot).
-`tools/quote_layout.py` creates quotation-only unchanged-geometry batches, with
-source hashes. Actual layer orientation, fit, bonding and grip remain unverified.
-No physics/control code or current identity changed. Prior basket preserved under
-`docs/history/2026-10-23/pre_delivery_check/`. User confirmed delivery postcode25337 Germany and PC USB-A on2026-10-23;
-no adapter needed. Existing quotes remain historical standard-Germany quotes;
-final postcode-specific checkout is pending.
+**No hardware purchased, printed, fitted, electrically tested or deployed.**
+Prior2026-10-23record is preserved under history/2026-10-24/pre_print_revision/docs/.
+Current evidence: validation/2026-10-24/print_revision/final/; earlier in-turn
+records are explicitly superseded, not final results.
 
-#### Soldering/frame comparison update
+#### Geometry, accounting and interface
 
-- **Implemented:** shared/scenario procurement accounting, separate printer/tools/initial
-  cash reporting, self-solder harness instructions, bare-Pico header accounting,
-  ordinary self-adhesive pad candidate and unchanged-part individual180mm plate export.
-- **Sourced:** bare Pico4.10, solder10g1.90, selected black1kg PETG12.99;
-  A1mini non-Combo189in stock, EnderV3SE standalone169orderable listing; both publish
-  free standard German shipping, postcode checkout pending. Pads3.55+5.95shipping.
-- **Not selected/measured:** replacement mechanics, actual pad friction/adhesion, all
-  servo interfaces, branch ratings and any printer operation. No physical spec,
-  dynamics, control source or configuration identity changed.
-- **Historical:** pre-soldering guides/ledger in history/2026-10-23/pre_soldering_routes/;
-  commercial quotations retained as alternatives only. No printer/helper purchase.
-- **Newly locally verified:**32pytest tests pass (including three new route/print
-  checks);55poses still report550estimated fastener-proxy conflicts (expected
-  nonzero check, no clearance approval). Unchanged model regenerated identically;
-  accounting199.431g and identity unchanged. New logs are in
-  validation/2026-10-23/soldering_routes/. Earlier training numbers remain historical.
-  No physical result or new walking/training claim.
+- 37 pytest cases passed in9.69s: original32 plus five new print/pad/ownership/budget checks.
+- Seven watertight connected CAD frames; solid-PETG mass properties match ledger.
+- Total **197.053g estimated**, not weighed. Bare Pico3g +two0.6g headers;
+  eight cylindrical10×3mm TPE pads; horn/fastener masses remain estimated.
+- Sourced M2 screw/nut/washer dimensions replace old mass-proxy boxes for clearance.
+ 55poses: **0modeled collisions**, but **5unknown interface groups remain**.
+  Exact horns/ear locations, stack/tool access, leads/ties and layer strength block release.
+  Intentional PCB/header attachment is the sole named collision exclusion.
+- No unknown mechanical stops in MJCF. Six pitch/pitch/roll hinges; safe commands
+  are software bounds. Eight pad contacts and plate checked for whole-foot lift;
+  test compares rotated-cylinder/box minimum heights to independently transformed meshes.
+- Gym/SB3 API, seeded resets, nominal restoration/inertia scaling, noisy IMU-only
+  observations, delay/clipping/slew/quantization, finite neutral/random/limit commands,
+  reward/gait exploit tests and native C++ control tests pass.
+-30s HOME remains upright with both feet contacting; neutral video seed2000,
+  distance0.00002723m, no fall, zero gait. Standing is not learned walking.
+- Firmware invalid calibration header regenerated for current identity. No new ARM
+  firmware build/UF2/electrical test claimed. Rebuild before flash; historicalUF2is incompatible.
 
-### Local verification record —2026-10-23
+#### Motion diagnosis and strength
 
-Everything below is **locally executed software/compiler/simulation**, never a
-physical result. No procurement, manufacturing, electrical timing or robot trial
-was completed. Historical record: VALIDATION.md; current artifacts: validation/2026-10-23/.
+Original46s reference and three18s bounded stance/swing ankle variants completed
+without a qualifying step. Maximum whole-foot clearances stayed below0.000005m,
+versus required0.003m for0.04s. Logged actual/applied angles, roll and actuator torque;
+CSV and summary retained. Model torque remains0.08Nm; no inflated strength/gains.
 
-#### Checks
+Quasi-static entire-weight-on-left-foot estimates: HOME~0.0657Nm maximum;
+lean~0.0338Nm; lifted-right pose~0.0321Nm; deep-bend stress~0.0451Nm.
+Twice HOME static demand~0.1314Nm exceeds current0.08Nm operating hypothesis.
+This is **not** measured continuous servo capability or a proof of supported gait.
+Torque margin, real plant response and the failed lifted-step sequence need diagnosis
+before large PPO runs or a walking-ready physical claim.
 
-- `python -m pytest -q`:29passed (8.49s in recorded run).
-- `UV_CACHE_DIR=/tmp/robot-uv-cache uv pip check --python .venv/bin/python`:
- 49packages, compatible. Python3.12.3; exact top-level pins in requirements files.
-- Seven CAD meshes have ledger-matching solid-PETG masses; total199.431g estimated.
-  Aggregate inertia tensors positive and satisfy principal-inertia triangle inequalities.
-- MJCF compilation, axes, servo ownership, reset contacts,30s neutral standing,
-  randomized/limit command finiteness, Gym/SB3 semantics, seeded reset restoration pass.
-- Five-frame90value observations use only estimated gravity/raw gyro/applied command
-  and previous action. Privileged-state mutation does not change assembled observations.
-- Delay samples reach both20/40ms; masses and inertias restore and scale together.
-  PWM1µs safe rounding and measured-gain arithmetic tested with synthetic calibration.
-- Progress reward regression: closed motion cycles cannot gain positive progress;
-  backward motion is fully charged. Synthetic false-gait cases fail acceptance.
-- Host framing/CRC/handshake/stale telemetry and native C++ controller tests pass.
-  Native C++ tests with synthetically valid calibration remain test-only, never flashed.
-- Official Pico SDK2.3.1 / Arm GNU14.2.Rel1 builds firmware ELF/bin. Official picotool
- 2.3.1 converts UF2. Saved `final_control_revision/bench_invalid.uf2` **cannot policy-arm**; no flashing tested.
-- Formal training/experiment commands reject all five uncleared gates. Invalid-calibration
-  deployment fails before opening the requested serial port. No automatic arming occurs.
+#### Bounded PPO smoke and reload
 
-Expanded finite clearance command exited1 as intended:550fastener-proxy intersections
-across55poses, zero non-fastener frame/case/electronics conflicts in those samples.
-These are conservative unmeasured fastener mass-envelope proxies, not actual bolt models.
-Manufacturing remains blocked. The previous checker silently omitted these categories.
-Continuous sweeps, horns/ears/lead exits and assembly stiffness still need actual fit.
+Fresh seed0,A nominal, **2048actual timesteps**, current identity. No resume/relabel
+of old checkpoints. Validation2000–2004; final1000–1009unused. Checkpoint reload
+and current evaluation/video succeeded; no measured calibration or physical approval.
 
-#### Bounded training
+| Condition | Episodes | Mean distance m | Mean reward | Falls | Gait distance / success |
+|---|---:|---:|---:|---:|---|
+| Nominal |5|-0.02039646|5.310372|0/5|0 /0of5|
+| Randomized |5|-0.02027713|5.303456|0/5|0 /0of5|
 
-| Run | Actual steps | Initialization / role |
-|---|---:|---|
-| final_smoke A0 |2048|Fresh seed0, current configuration|
-| pilot_A0 |49152total|Resumes A0;2048included; rounds50000down; selected checkpoint10240|
-| smoke_B0 |2048|Fresh randomized seed0, identical initial weights to A0|
+This is stationary/sliding backward drift, **not walking**. No pilot/formal A/B
+training beyond this smoke was run. Preserve older49152step pilot and2048A/B
+records as historical. Current smoke cannot be used on hardware without a new
+measured twin/calibration, compatible training and physical checks.
 
-Initial policy hash for both conditions:
-`7efc1058e8b776f6de8d40b9d9359d2ce96bbefff09272d15dc673690ce166d9`.
-Archived training configuration hash:
-`1641779be26172bcb40bd2b94d93a0974f722a676ba6aa2249ec310a8dbf7a1f`.
-The final ARM timestamp parser fix changes current controller identity to
-`3d93f768188c8c55c903658192be75b87124f9a62852720fb5d2fd5b54666a8a`.
-Archived policies are deliberately incompatible with the current controller; no
-automatic migration/override was added. Exact-source isolated replay was locally
-executed (seed2000:0.0085637m,30s,no fall,no gait). Current firmware was rebuilt;
-model physics/preprocessing are unchanged. New training is required for a current
-identity policy, and measured calibration remains required before deployment.
+Configuration fingerprint:`4d3b0dcbad59774b12f9c908c74446f6bf7452d5bdf34a08f07cf4271cc15019`.
+Current source snapshot includes matching model/control files and CAD STLs.
+Policy manifests record model/source/config hashes, initialization, actual steps,
+validation seeds and algorithm settings. Videos are640×480,50fps; representative frames were inspected. Clean renders in
+`home_clean_video` and `smoke_clean_video` hide overlapping collision-proxy drawings
+only; metrics exactly match the original videos. Physics/controller identity did
+not change. New rendering source hashes/copies are saved with those evaluations.
+No video proves physical success.
 
-Manifests include model hashes, actual steps, source hashes, full randomization and
-algorithm settings. TensorBoard/events and monitor CSVs are retained. Resume reload
-worked; exact interrupted-vs-uninterrupted RNG equivalence is not claimed.
+#### Procurement and next evidence
 
-All validation checkpoints scored zero walking successes and zero gait distance.
-Selection used seeds2000–2004 only.1000–1009 remains reserved for the future final
-experiment. No formal six-run A/B comparison was started and no extra budget authorized.
-The intermediate `runs/.../smoke` predates a source revision and is not a current model.
+Active priced basket105.34EUR **before** current prints/sample/horn extras; minimum
+known shortfall5.34EUR for that basket. No complete quote or budget clearance.
+Automatic approval review rejected uploading the revised STL toMeltlab; design
+was not uploaded, no supplier message/order sent. Public example/old-geometry
+prices are not new quotations. See PROCUREMENT_ACTIONS.md or procurement ledger
+for the exact upload/quote/measurement requirements.
 
-#### Five validation episodes per row, seeds2000–2004
-
-| Policy / environment | Mean body distance m | Mean reward | Falls | Qualifying gait m / success |
-|---|---:|---:|---:|---|
-| Home / nominal |0.0000271|6.00001|0/5|0 /0of5|
-| Untrained / nominal |−0.025824|5.08423|0/5|0 /0of5|
-|2048 A / nominal |−0.019874|5.46253|0/5|0 /0of5|
-|2048 B / nominal |−0.020396|5.37745|0/5|0 /0of5|
-| Selected A pilot / nominal |0.008577|6.03602|0/5|0 /0of5|
-| Selected A pilot / randomized |0.008673|6.03637|0/5|0 /0of5|
-
-All episodes lasted30s. Complete nominal/randomized rows for all policies are in
-`validation/2026-10-23/aggregate.csv` and each experiment's episodes.csv/summary.json.
-This shows stationary/sliding drift, **not walking**. The longer nominal pilot must
-not be compared with the shorter B smoke as a claim about randomization efficacy.
-
-Scripted reference variants completed46s including30s standing, but whole-foot
-clearance stayed far below3mm; zero qualified steps. Counter-rotating hip/knee
-keeps the intended foot pitch level kinematically, but did not produce a supported
-lift dynamically; reversing the lean sign also failed. Joint trajectories, targets,
-clearances and failures are saved rather than declaring the reference gate passed.
-No force gains or torque cap were increased to force success.
-
-Three MP4s (pilot nominal/randomized, B-smoke randomized) are30s,640×480,50fps,H264.
-Representative rendered frames and updated exploded assembly envelopes were visually
-inspected. The image/video shows posture, not independent evidence of successful gait.
-
-#### Reproduce/review
-
-```bash
-python -m pytest -q
-python tools/replay_snapshot.py --episodes 5 --output runs/review_archived
-### New current-identity smoke, only when a fresh development run is desired:
-python train.py --steps 2048 --development --output runs/new_current_smoke
-```
-
-Use new output directories. Source snapshots include the visual STLs; the replay tool runs them in an
-isolated temporary directory and never grants current hardware compatibility. `manifest.json` hashes evidence files. The source archive excludes
-credentials, hidden agent configuration, virtualenvs, toolchains and run scratch.
-Next evidence needed is the delivered quote/interface sample and real bench data;
-no software check can mark those physically verified.
+Next: provider-specific quotation upload authorization or user-returned quote;
+actual servo/horn measurements; sample fit; complete budget. All physical gates false.

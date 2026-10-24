@@ -9,10 +9,11 @@ from tools.budget_gate import check_basket, cash_comparison
 from tools.prepare_local_print import generate
 
 ROOT = Path(__file__).resolve().parents[1]
+HISTORICAL = ROOT / 'docs/history/2026-10-24/pre_print_revision/procurement.json'
 
 
 def test_routes_are_alternatives_and_unknown_frame_is_not_free():
-    basket = json.loads((ROOT / "procurement.json").read_text())
+    basket = json.loads(HISTORICAL.read_text())
     standard = check_basket(basket, "standard_parts")
     own = check_basket(basket, "own_printer")
     assert standard["known_delivered_subtotal_eur"] == "95.91"
@@ -26,7 +27,7 @@ def test_routes_are_alternatives_and_unknown_frame_is_not_free():
 
 
 def test_printer_tools_separate_from_robot_cap_and_unknowns_retained():
-    basket = json.loads((ROOT / "procurement.json").read_text())
+    basket = json.loads(HISTORICAL.read_text())
     report = cash_comparison(basket, "a1_mini")
     assert report["robot"] == check_basket(basket, "own_printer")
     assert report["printer_and_tools_known_eur"] == "189.00"

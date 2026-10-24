@@ -1,0 +1,5 @@
+/home/kolja/home/Code/robot/.venv/lib/python3.12/site-packages/trimesh/triangles.py:302: RuntimeWarning: invalid value encountered in divide
+  center_mass = integrated[1:4] / volume
+/home/kolja/home/Code/robot/.venv/lib/python3.12/site-packages/trimesh/triangles.py:302: RuntimeWarning: divide by zero encountered in divide
+  center_mass = integrated[1:4] / volume
+{"poses": 55, "conflicts": 0, "unknown_interface_groups": 5, "report": "docs/validation/2026-10-24/print_revision/final/clearances.json"}

@@ -1,8 +1,8 @@
 # Native-PWM S6 hardware and protocol
 
-Updated 2026-10-23. Implemented source and local compilation are distinct from
+Updated 2026-10-24. Implemented source and local compilation are distinct from
 physical verification: **nothing has been purchased or electrically tested**.
-The existing *provisional physical prototype* is Pico H native PWM, six Waveshare15024
+The selected *provisional quotation revision* is bare Pico native PWM, six Waveshare15024
 MG90S, MPU6050 and Mean Well GST40A05-P1J. PCA9685 is not in the current basket.
 Its listing is unavailable and removing it resolves the original board/brace overlap.
 
@@ -16,10 +16,12 @@ inside the commercial PSU/lead. Capacitor1000µF/16V goes across the bus with
 correct polarity; it is not a substitute for an adequate supply.
 
 The proposed basket uses a **bare Pico** with user-soldered headers. Existing RP2040
-firmware/pins remain unchanged; current physical mass/geometry still use Pico H.
-Compare Pico H5.50 +one40pin pack0.60 with bare4.10 +two40pin packs1.20:
-header-inclusive saving0.80. Two packs supply40Pico pins +up to8IMU +6signal
-ends, with26spare. Solder10g flux-core, heat-shrink, ties and wire are priced robot
+firmware/pins remain unchanged. The model now separately owns estimated3g bare PCB
+and two0.6g header rows (4.2g together). Header overall pin length11mm is sourced;
+PCB/USB envelope and all masses/placements still need measurement.
+Compare Pico H5.50 +one40pin pack0.60 with bare4.10 +header kit0.50 +40pin pack0.60:
+header-inclusive saving0.90. Kit2x20pins +40pin pack supply80functional pins,
+54used,26spare; supplied3pin SWD strip is extra spare. Solder10g flux-core, heat-shrink, ties and wire are priced robot
 consumables. Iron access is available; other tools must be confirmed/borrowed or
 priced outside the robot cap but inside initial cash. No mandatory paid helper.
 

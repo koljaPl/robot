@@ -1,51 +1,51 @@
 {
-  "total_mass_kg": 0.1994311333885377,
+  "total_mass_kg": 0.19705328898069158,
   "bodies": [
     {
       "body": "torso",
-      "mass_kg": 0.07288624774222922,
+      "mass_kg": 0.07574344774222921,
       "com_m": [
-        -0.006652863288018333,
-        0.0,
-        -0.009861294849957715
+        -0.006320972388727903,
+        3.578534529400058e-19,
+        -0.010299071441109822
       ],
       "fullinertia_kg_m2": [
-        7.714665284266819e-05,
-        5.0923074388658035e-05,
-        4.31514900330104e-05,
-        2.541098841762901e-21,
-        7.752415604087416e-06,
-        0.0
+        8.148312538024962e-05,
+        5.3440895128083204e-05,
+        4.48989327015208e-05,
+        -6.368545737217117e-22,
+        7.760571146613118e-06,
+        -8.856730812238177e-22
       ],
       "components": [
         {
           "name": "torso_frame",
-          "mass": 0.021486247742229223,
+          "mass": 0.021943447742229213,
           "dimensions": [
-            0.032,
+            0.0335,
             0.082,
             0.08875
           ],
           "com": [
-            -0.016308210070435095,
-            -5.215214943911107e-19,
-            -0.0054384916759348196
+            -0.016315678648651345,
+            1.0213107951874343e-18,
+            -0.004845964988835626
           ],
           "inertia_tensor": [
             [
-              2.6309016723560255e-05,
-              2.703988807846125e-21,
-              2.1653112995251776e-06
+              2.6798224543308287e-05,
+              -7.858597316502908e-22,
+              2.16987487325085e-06
             ],
             [
-              2.703988807846125e-21,
-              1.3253368557151762e-05,
-              3.4107973696966715e-22
+              -7.858597316502908e-22,
+              1.3620713899047003e-05,
+              -6.688803109154264e-22
             ],
             [
-              2.1653112995251776e-06,
-              3.4107973696966715e-22,
-              1.578588698727872e-05
+              2.16987487325085e-06,
+              -6.688803109154264e-22,
+              1.5916424309425935e-05
             ]
           ],
           "material": "solid PETG estimate, 1270 kg/m\u00b3",
@@ -53,56 +53,56 @@
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "generated CAD; actual infill/printed density must be weighed"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "inertia_tensor": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             }
           }
         },
         {
-          "name": "pico_h",
-          "mass": 0.004,
+          "name": "pico",
+          "mass": 0.003,
           "dimensions": [
-            0.006,
+            0.0035,
             0.051,
             0.021
           ],
           "com": [
-            -0.0145,
+            -0.01075,
             0,
             0.023
           ],
-          "material": "PCB and headers",
-          "evidence": "estimate",
+          "material": "bare Pico PCB/components, headers separately owned",
+          "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated",
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate"
+              "date": "2026-10-24",
+              "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated"
             },
             "dimensions": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate"
+              "date": "2026-10-24",
+              "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate"
+              "date": "2026-10-24",
+              "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated"
             }
           }
         },
@@ -237,24 +237,222 @@
               "evidence": "seller mass, estimated uniform inertia"
             }
           }
+        },
+        {
+          "name": "left_hip_ear_bolt_-1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.005,
+            0.008,
+            0.005
+          ],
+          "com": [
+            0,
+            0.027000000000000003,
+            -0.048749999999999995
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "left_hip_ear_bolt_+1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.005,
+            0.008,
+            0.005
+          ],
+          "com": [
+            0,
+            0.027000000000000003,
+            -0.020749999999999998
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "right_hip_ear_bolt_-1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.005,
+            0.008,
+            0.005
+          ],
+          "com": [
+            0,
+            -0.027000000000000003,
+            -0.048749999999999995
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "right_hip_ear_bolt_+1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.005,
+            0.008,
+            0.005
+          ],
+          "com": [
+            0,
+            -0.027000000000000003,
+            -0.020749999999999998
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "pico_header_0",
+          "mass": 0.0006,
+          "dimensions": [
+            0.011,
+            0.0508,
+            0.00254
+          ],
+          "com": [
+            -0.01,
+            0,
+            0.01411
+          ],
+          "material": "20pin 2.54mm header",
+          "evidence": "RPIP-PINH11mm overall pin height sourced; row footprint/position/mass estimated; verify solder projection and jumper access",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Header1x20 2.54mm pitch;11mm overall pin length; actual board fit unmeasured"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Header1x20 2.54mm pitch;11mm overall pin length; actual board fit unmeasured"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Header1x20 2.54mm pitch;11mm overall pin length; actual board fit unmeasured"
+            }
+          }
+        },
+        {
+          "name": "pico_header_1",
+          "mass": 0.0006,
+          "dimensions": [
+            0.011,
+            0.0508,
+            0.00254
+          ],
+          "com": [
+            -0.01,
+            0,
+            0.03189
+          ],
+          "material": "20pin 2.54mm header",
+          "evidence": "RPIP-PINH11mm overall pin height sourced; row footprint/position/mass estimated; verify solder projection and jumper access",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Header1x20 2.54mm pitch;11mm overall pin length; actual board fit unmeasured"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Header1x20 2.54mm pitch;11mm overall pin length; actual board fit unmeasured"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Header1x20 2.54mm pitch;11mm overall pin length; actual board fit unmeasured"
+            }
+          }
         }
       ]
     },
     {
       "body": "left_thigh",
-      "mass_kg": 0.018973029560391083,
+      "mass_kg": 0.019773029560391085,
       "com_m": [
-        7.382545309723615e-20,
-        -0.00943365186513801,
-        -0.04297017599264654
+        7.083853790058376e-20,
+        -0.009228983102581911,
+        -0.04336712372298349
       ],
       "fullinertia_kg_m2": [
-        1.0756077049028998e-05,
-        9.509006642599151e-06,
-        2.306096953931545e-06,
-        -1.3213645452119234e-23,
-        9.846621790998822e-24,
-        -2.5520408288135956e-06
+        1.2013387191347213e-05,
+        1.0695310596377189e-05,
+        2.361686475805058e-06,
+        -1.2926967450619679e-23,
+        9.290620080666547e-24,
+        -2.7507832238536964e-06
       ],
       "components": [
         {
@@ -292,22 +490,22 @@
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "generated CAD; actual infill/printed density must be weighed"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "inertia_tensor": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             }
           }
@@ -346,35 +544,101 @@
           }
         },
         {
-          "name": "left_thigh_joint_fasteners",
-          "mass": 0.0015,
+          "name": "left_knee_ear_bolt_-1",
+          "mass": 0.00055,
           "dimensions": [
-            0.02,
-            0.012,
-            0.012
+            0.005,
+            0.008,
+            0.005
           ],
           "com": [
             0,
-            0,
-            -0.012
+            -0.007,
+            -0.06875
           ],
-          "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn",
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "left_knee_ear_bolt_+1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.005,
+            0.008,
+            0.005
+          ],
+          "com": [
+            0,
+            -0.007,
+            -0.04075
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "left_hip_horn_hardware",
+          "mass": 0.0012,
+          "dimensions": [
+            0.02,
+            0.005,
+            0.026
+          ],
+          "com": [
+            0,
+            0.0035,
+            0
+          ],
+          "material": "factory horn +retainer +2frame screws/washers",
+          "evidence": "unknown interfaces; estimated1.2g allowance, NOT a collision envelope",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
             }
           }
         }
@@ -382,19 +646,19 @@
     },
     {
       "body": "left_shin",
-      "mass_kg": 0.007723103503190493,
+      "mass_kg": 0.008623103503190493,
       "com_m": [
-        0.0014319865564526024,
-        0.0017143177954325587,
-        -0.02268817030251092
+        0.0017695926281083036,
+        0.002022456736722963,
+        -0.025190824563793467
       ],
       "fullinertia_kg_m2": [
-        3.771568488213446e-06,
-        3.870592896881635e-06,
-        4.366762364970772e-07,
-        1.069363095673401e-08,
-        2.6087662463514826e-07,
-        -1.7172836805748564e-07
+        5.202857016998059e-06,
+        5.271289455477779e-06,
+        4.593362006721631e-07,
+        2.259577501587653e-08,
+        3.373973560053838e-07,
+        -3.1066460768538797e-07
       ],
       "components": [
         {
@@ -432,56 +696,89 @@
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "generated CAD; actual infill/printed density must be weighed"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "inertia_tensor": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             }
           }
         },
         {
-          "name": "left_shin_joint_fasteners",
-          "mass": 0.0015,
+          "name": "left_knee_horn_hardware",
+          "mass": 0.0012,
           "dimensions": [
             0.02,
-            0.012,
-            0.012
+            0.005,
+            0.026
           ],
           "com": [
             0,
-            0,
-            -0.012
+            0.0035,
+            0
           ],
-          "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn",
+          "material": "factory horn +retainer +2frame screws/washers",
+          "evidence": "unknown interfaces; estimated1.2g allowance, NOT a collision envelope",
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
             },
             "dimensions": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
+            }
+          }
+        },
+        {
+          "name": "left_ankle_horn_hardware",
+          "mass": 0.0012,
+          "dimensions": [
+            0.005,
+            0.02,
+            0.026
+          ],
+          "com": [
+            0.0035,
+            0,
+            -0.05
+          ],
+          "material": "factory horn +retainer +2frame screws/washers",
+          "evidence": "unknown interfaces; estimated1.2g allowance, NOT a collision envelope",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
             }
           }
         }
@@ -489,19 +786,19 @@
     },
     {
       "body": "left_foot",
-      "mass_kg": 0.03657630975957266,
+      "mass_kg": 0.0322587875556496,
       "com_m": [
-        -0.0019194847369377965,
-        9.57376860275346e-21,
-        -0.01536674539934142
+        -0.003143726383566027,
+        1.3128716412436219e-20,
+        -0.014081342106833396
       ],
       "fullinertia_kg_m2": [
-        7.37661525564489e-06,
-        2.1418732221785416e-05,
-        2.1535212209435974e-05,
-        -9.259259754056111e-23,
-        2.911645236049278e-06,
-        1.5000830338133372e-22
+        6.690079177309673e-06,
+        1.906430993822925e-05,
+        1.8603752223249667e-05,
+        -7.946502952008147e-23,
+        2.6540143272450114e-06,
+        1.5233599210845192e-22
       ],
       "components": [
         {
@@ -539,56 +836,23 @@
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "generated CAD; actual infill/printed density must be weighed"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "inertia_tensor": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
-            }
-          }
-        },
-        {
-          "name": "left_sole",
-          "mass": 0.00486,
-          "dimensions": [
-            0.09,
-            0.045,
-            0.001
-          ],
-          "com": [
-            0.006,
-            0,
-            -0.0245
-          ],
-          "material": "solid TPU 95A, density estimate 1200 kg/m\u00b3",
-          "evidence": "estimate; includes adhesive uncertainty, weigh actual sole",
-          "parameter_evidence": {
-            "mass": {
-              "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
-            },
-            "com": {
-              "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
             }
           }
         },
@@ -626,35 +890,296 @@
           }
         },
         {
-          "name": "left_foot_joint_fasteners",
-          "mass": 0.0015,
+          "name": "left_foot_pad_0",
+          "mass": 0.00023561944901923448,
           "dimensions": [
-            0.02,
-            0.012,
-            0.012
+            0.01,
+            0.01,
+            0.003
           ],
           "com": [
-            0,
-            0,
-            -0.012
+            -0.031,
+            -0.0145,
+            -0.025500000000000002
           ],
-          "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn",
+          "inertia_tensor": [
+            [
+              1.6493361431346417e-09,
+              0,
+              0
+            ],
+            [
+              0,
+              1.6493361431346417e-09,
+              0
+            ],
+            [
+              0,
+              0,
+              2.9452431127404312e-09
+            ]
+          ],
+          "primitive": "cylinder_z",
+          "radius": 0.005,
+          "material": "TPE + supplied adhesive",
+          "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates",
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "dimensions": {
+              "state": "sourced",
+              "date": "2026-10-24",
+              "evidence": "https://www.delock.com/produkt/18309/pdf.html?sprache=de"
+            }
+          }
+        },
+        {
+          "name": "left_foot_pad_1",
+          "mass": 0.00023561944901923448,
+          "dimensions": [
+            0.01,
+            0.01,
+            0.003
+          ],
+          "com": [
+            -0.031,
+            0.0145,
+            -0.025500000000000002
+          ],
+          "inertia_tensor": [
+            [
+              1.6493361431346417e-09,
+              0,
+              0
+            ],
+            [
+              0,
+              1.6493361431346417e-09,
+              0
+            ],
+            [
+              0,
+              0,
+              2.9452431127404312e-09
+            ]
+          ],
+          "primitive": "cylinder_z",
+          "radius": 0.005,
+          "material": "TPE + supplied adhesive",
+          "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "dimensions": {
+              "state": "sourced",
+              "date": "2026-10-24",
+              "evidence": "https://www.delock.com/produkt/18309/pdf.html?sprache=de"
+            }
+          }
+        },
+        {
+          "name": "left_foot_pad_2",
+          "mass": 0.00023561944901923448,
+          "dimensions": [
+            0.01,
+            0.01,
+            0.003
+          ],
+          "com": [
+            0.043,
+            -0.0145,
+            -0.025500000000000002
+          ],
+          "inertia_tensor": [
+            [
+              1.6493361431346417e-09,
+              0,
+              0
+            ],
+            [
+              0,
+              1.6493361431346417e-09,
+              0
+            ],
+            [
+              0,
+              0,
+              2.9452431127404312e-09
+            ]
+          ],
+          "primitive": "cylinder_z",
+          "radius": 0.005,
+          "material": "TPE + supplied adhesive",
+          "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "dimensions": {
+              "state": "sourced",
+              "date": "2026-10-24",
+              "evidence": "https://www.delock.com/produkt/18309/pdf.html?sprache=de"
+            }
+          }
+        },
+        {
+          "name": "left_foot_pad_3",
+          "mass": 0.00023561944901923448,
+          "dimensions": [
+            0.01,
+            0.01,
+            0.003
+          ],
+          "com": [
+            0.043,
+            0.0145,
+            -0.025500000000000002
+          ],
+          "inertia_tensor": [
+            [
+              1.6493361431346417e-09,
+              0,
+              0
+            ],
+            [
+              0,
+              1.6493361431346417e-09,
+              0
+            ],
+            [
+              0,
+              0,
+              2.9452431127404312e-09
+            ]
+          ],
+          "primitive": "cylinder_z",
+          "radius": 0.005,
+          "material": "TPE + supplied adhesive",
+          "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "dimensions": {
+              "state": "sourced",
+              "date": "2026-10-24",
+              "evidence": "https://www.delock.com/produkt/18309/pdf.html?sprache=de"
+            }
+          }
+        },
+        {
+          "name": "left_ankle_ear_bolt_-1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.008,
+            0.005,
+            0.005
+          ],
+          "com": [
+            -0.007,
+            0,
+            -0.01875
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "left_ankle_ear_bolt_+1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.008,
+            0.005,
+            0.005
+          ],
+          "com": [
+            -0.007,
+            0,
+            0.009250000000000001
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
             }
           }
         }
@@ -662,19 +1187,19 @@
     },
     {
       "body": "right_thigh",
-      "mass_kg": 0.018973029560391083,
+      "mass_kg": 0.019773029560391085,
       "com_m": [
-        7.382545309723615e-20,
-        0.00943365186513801,
-        -0.04297017599264654
+        7.083853790058376e-20,
+        0.009228983102581911,
+        -0.04336712372298349
       ],
       "fullinertia_kg_m2": [
-        1.0756077049028998e-05,
-        9.509006642599151e-06,
-        2.306096953931545e-06,
-        1.3213645452119234e-23,
-        9.846621790998822e-24,
-        2.5520408288135956e-06
+        1.2013387191347213e-05,
+        1.0695310596377189e-05,
+        2.361686475805058e-06,
+        1.2926967450619679e-23,
+        9.290620080666547e-24,
+        2.7507832238536964e-06
       ],
       "components": [
         {
@@ -712,22 +1237,22 @@
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "generated CAD; actual infill/printed density must be weighed"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "inertia_tensor": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             }
           }
@@ -766,35 +1291,101 @@
           }
         },
         {
-          "name": "right_thigh_joint_fasteners",
-          "mass": 0.0015,
+          "name": "right_knee_ear_bolt_-1",
+          "mass": 0.00055,
           "dimensions": [
-            0.02,
-            0.012,
-            0.012
+            0.005,
+            0.008,
+            0.005
           ],
           "com": [
             0,
-            0,
-            -0.012
+            0.007,
+            -0.06875
           ],
-          "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn",
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "right_knee_ear_bolt_+1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.005,
+            0.008,
+            0.005
+          ],
+          "com": [
+            0,
+            0.007,
+            -0.04075
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "right_hip_horn_hardware",
+          "mass": 0.0012,
+          "dimensions": [
+            0.02,
+            0.005,
+            0.026
+          ],
+          "com": [
+            0,
+            -0.0035,
+            0
+          ],
+          "material": "factory horn +retainer +2frame screws/washers",
+          "evidence": "unknown interfaces; estimated1.2g allowance, NOT a collision envelope",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
             }
           }
         }
@@ -802,19 +1393,19 @@
     },
     {
       "body": "right_shin",
-      "mass_kg": 0.007723103503190493,
+      "mass_kg": 0.008623103503190493,
       "com_m": [
-        0.0014319865564526024,
-        -0.0017143177954325587,
-        -0.02268817030251092
+        0.0017695926281083036,
+        -0.002022456736722963,
+        -0.025190824563793467
       ],
       "fullinertia_kg_m2": [
-        3.771568488213446e-06,
-        3.870592896881635e-06,
-        4.366762364970772e-07,
-        -1.069363095673401e-08,
-        2.6087662463514826e-07,
-        1.7172836805748564e-07
+        5.202857016998059e-06,
+        5.271289455477779e-06,
+        4.593362006721631e-07,
+        -2.259577501587653e-08,
+        3.373973560053838e-07,
+        3.1066460768538797e-07
       ],
       "components": [
         {
@@ -852,56 +1443,89 @@
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "generated CAD; actual infill/printed density must be weighed"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "inertia_tensor": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             }
           }
         },
         {
-          "name": "right_shin_joint_fasteners",
-          "mass": 0.0015,
+          "name": "right_knee_horn_hardware",
+          "mass": 0.0012,
           "dimensions": [
             0.02,
-            0.012,
-            0.012
+            0.005,
+            0.026
           ],
           "com": [
             0,
-            0,
-            -0.012
+            -0.0035,
+            0
           ],
-          "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn",
+          "material": "factory horn +retainer +2frame screws/washers",
+          "evidence": "unknown interfaces; estimated1.2g allowance, NOT a collision envelope",
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
             },
             "dimensions": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
+            }
+          }
+        },
+        {
+          "name": "right_ankle_horn_hardware",
+          "mass": 0.0012,
+          "dimensions": [
+            0.005,
+            0.02,
+            0.026
+          ],
+          "com": [
+            0.0035,
+            0,
+            -0.05
+          ],
+          "material": "factory horn +retainer +2frame screws/washers",
+          "evidence": "unknown interfaces; estimated1.2g allowance, NOT a collision envelope",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "weigh/measure actual horn and screw set; do not use allowance as exact geometry"
             }
           }
         }
@@ -909,19 +1533,19 @@
     },
     {
       "body": "right_foot",
-      "mass_kg": 0.03657630975957266,
+      "mass_kg": 0.0322587875556496,
       "com_m": [
-        -0.0019194847369377965,
-        -9.57376860275346e-21,
-        -0.01536674539934142
+        -0.003143726383566027,
+        -1.3128716412436219e-20,
+        -0.014081342106833396
       ],
       "fullinertia_kg_m2": [
-        7.37661525564489e-06,
-        2.1418732221785416e-05,
-        2.1535212209435974e-05,
-        9.259259754056111e-23,
-        2.911645236049278e-06,
-        -1.5000830338133372e-22
+        6.690079177309673e-06,
+        1.906430993822925e-05,
+        1.8603752223249667e-05,
+        7.946502952008147e-23,
+        2.6540143272450114e-06,
+        -1.5233599210845192e-22
       ],
       "components": [
         {
@@ -959,56 +1583,23 @@
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "generated CAD; actual infill/printed density must be weighed"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
+              "evidence": "generated CAD; actual infill/printed density must be weighed"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
             },
             "inertia_tensor": {
               "state": "estimated",
-              "date": "2026-10-23",
+              "date": "2026-10-24",
               "evidence": "generated CAD; actual infill/printed density must be weighed"
-            }
-          }
-        },
-        {
-          "name": "right_sole",
-          "mass": 0.00486,
-          "dimensions": [
-            0.09,
-            0.045,
-            0.001
-          ],
-          "com": [
-            0.006,
-            0,
-            -0.0245
-          ],
-          "material": "solid TPU 95A, density estimate 1200 kg/m\u00b3",
-          "evidence": "estimate; includes adhesive uncertainty, weigh actual sole",
-          "parameter_evidence": {
-            "mass": {
-              "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
-            },
-            "com": {
-              "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; includes adhesive uncertainty, weigh actual sole"
             }
           }
         },
@@ -1046,35 +1637,296 @@
           }
         },
         {
-          "name": "right_foot_joint_fasteners",
-          "mass": 0.0015,
+          "name": "right_foot_pad_0",
+          "mass": 0.00023561944901923448,
           "dimensions": [
-            0.02,
-            0.012,
-            0.012
+            0.01,
+            0.01,
+            0.003
           ],
           "com": [
-            0,
-            0,
-            -0.012
+            -0.031,
+            0.0145,
+            -0.025500000000000002
           ],
-          "material": "steel and plastic horns",
-          "evidence": "estimate; weigh installed fasteners/horn",
+          "inertia_tensor": [
+            [
+              1.6493361431346417e-09,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.6493361431346417e-09,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              2.9452431127404312e-09
+            ]
+          ],
+          "primitive": "cylinder_z",
+          "radius": 0.005,
+          "material": "TPE + supplied adhesive",
+          "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates",
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
-            },
-            "dimensions": {
-              "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-23",
-              "evidence": "estimate; weigh installed fasteners/horn"
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "dimensions": {
+              "state": "sourced",
+              "date": "2026-10-24",
+              "evidence": "https://www.delock.com/produkt/18309/pdf.html?sprache=de"
+            }
+          }
+        },
+        {
+          "name": "right_foot_pad_1",
+          "mass": 0.00023561944901923448,
+          "dimensions": [
+            0.01,
+            0.01,
+            0.003
+          ],
+          "com": [
+            -0.031,
+            -0.0145,
+            -0.025500000000000002
+          ],
+          "inertia_tensor": [
+            [
+              1.6493361431346417e-09,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.6493361431346417e-09,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              2.9452431127404312e-09
+            ]
+          ],
+          "primitive": "cylinder_z",
+          "radius": 0.005,
+          "material": "TPE + supplied adhesive",
+          "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "dimensions": {
+              "state": "sourced",
+              "date": "2026-10-24",
+              "evidence": "https://www.delock.com/produkt/18309/pdf.html?sprache=de"
+            }
+          }
+        },
+        {
+          "name": "right_foot_pad_2",
+          "mass": 0.00023561944901923448,
+          "dimensions": [
+            0.01,
+            0.01,
+            0.003
+          ],
+          "com": [
+            0.043,
+            0.0145,
+            -0.025500000000000002
+          ],
+          "inertia_tensor": [
+            [
+              1.6493361431346417e-09,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.6493361431346417e-09,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              2.9452431127404312e-09
+            ]
+          ],
+          "primitive": "cylinder_z",
+          "radius": 0.005,
+          "material": "TPE + supplied adhesive",
+          "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "dimensions": {
+              "state": "sourced",
+              "date": "2026-10-24",
+              "evidence": "https://www.delock.com/produkt/18309/pdf.html?sprache=de"
+            }
+          }
+        },
+        {
+          "name": "right_foot_pad_3",
+          "mass": 0.00023561944901923448,
+          "dimensions": [
+            0.01,
+            0.01,
+            0.003
+          ],
+          "com": [
+            0.043,
+            -0.0145,
+            -0.025500000000000002
+          ],
+          "inertia_tensor": [
+            [
+              1.6493361431346417e-09,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.6493361431346417e-09,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              2.9452431127404312e-09
+            ]
+          ],
+          "primitive": "cylinder_z",
+          "radius": 0.005,
+          "material": "TPE + supplied adhesive",
+          "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "inertia_tensor": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "sourced Delock18309 dimensions;1000kg/m3 density and homogeneous-cylinder inertia are estimates"
+            },
+            "dimensions": {
+              "state": "sourced",
+              "date": "2026-10-24",
+              "evidence": "https://www.delock.com/produkt/18309/pdf.html?sprache=de"
+            }
+          }
+        },
+        {
+          "name": "right_ankle_ear_bolt_-1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.008,
+            0.005,
+            0.005
+          ],
+          "com": [
+            -0.007,
+            0,
+            -0.01875
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            }
+          }
+        },
+        {
+          "name": "right_ankle_ear_bolt_+1",
+          "mass": 0.00055,
+          "dimensions": [
+            0.008,
+            0.005,
+            0.005
+          ],
+          "com": [
+            -0.007,
+            0,
+            0.009250000000000001
+          ],
+          "material": "steel, M2x8 screw + nut +2washers",
+          "evidence": "sourced hardware dimensions; installed pose, mass and box inertia estimated",
+          "parameter_evidence": {
+            "mass": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "com": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
+            },
+            "dimensions": {
+              "state": "estimated",
+              "date": "2026-10-24",
+              "evidence": "Actual ear/stack/assembly must be measured;0.55g group estimate"
             }
           }
         }

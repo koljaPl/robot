@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-24",
+  "current_revision": "S6-PETG-pad-r2",
+  "attempts": [
+    {
+      "date": "2026-10-24",
+      "provider": "Meltlab",
+      "url": "https://meltlab.de/konfigurator",
+      "status": "blocked_by_automatic_approval_review",
+      "payload": "cad/print_order/QUOTE_ONLY_seven_components.stl",
+      "upload_performed": false,
+      "reason": "Uploading STL shares project design data externally; review requires provider-specific authorization",
+      "required_human_action": "Authorize this exactSTL upload to Meltlab for quotation only, or upload it yourself and return the quote; no messages/orders needed",
+      "price_eur": null,
+      "payload_sha256": "70b33a79f299d2d222bf30ab2bb286d5e1f9870328a1789f0755760f8b88eeac",
+      "sample_payloads": [
+        {
+          "path": "cad/print_order/sample/ear_cradle.stl",
+          "sha256": "67222ed4048de778daac0139315220df5be1663fd3297086c6fb65f526f1c778"
+        },
+        {
+          "path": "cad/print_order/sample/horn_plate.stl",
+          "sha256": "9d6ad9ab4db1a3c0fbb0f7516dc9da7e0c05d6ece2a139de2305184b8b30156e"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-24",
+      "provider": "f3dprint",
+      "url": "https://www.f3dprint.de/druck-service",
+      "status": "public_information_only",
+      "price_eur": null,
+      "notes": "SupportsPETG and0.20mm; public UI presets20/50/100infill,25/walls/support-finishing not confirmed. No model uploaded or quotation."
+    },
+    {
+      "date": "2026-10-24",
+      "provider": "Riesen Consulting",
+      "url": "https://riesen-consulting.de/cad-dienstleistungen/3d-druck-service/3d-druck-online-bestellen-preis-sofort-berechnen/",
+      "status": "public_information_only",
+      "price_eur": null,
+      "notes": "Public page says automated price is pureFDM, fit review/finishing need separate inquiry. No inquiry sent; not a complete quote."
+    }
+  ],
+  "cost_reduction_review": [
+    {
+      "date": "2026-10-24",
+      "change": "RPIP-PINH0.50 +40pin pack0.60 instead of two40pin packs1.20",
+      "saving_eur": 0.1,
+      "state": "sourced",
+      "source": "https://www.berrybase.de/stiftleisten-pin-header-set-fuer-raspberry-pi-pico"
+    },
+    {
+      "date": "2026-10-24",
+      "change": "Consolidate IMU at BerryBase",
+      "decision": "rejected",
+      "source": "https://www.berrybase.de/elecrow-mpu6050-bewegungsmodul-3-achsen-gyro-und-beschleunigung-i2c-uart-dmp-16g-20000s-5-6v",
+      "reason": "9.90module vs3.62; adds6.28 before any4.90shipping saving; module5–6V/100Hz listing also differs from selected raw3.3V/200Hz interface. Preserve current IMU."
+    },
+    {
+      "date": "2026-10-24",
+      "change": "Full spool/own printer/printed TPU",
+      "decision": "excluded from active outsourced basket",
+      "reason": "Service price includes its material; no spool/printer purchase and no printed soles. Ordinary pads retained."
+    },
+    {
+      "date": "2026-10-24",
+      "change": "Combine fastener/pad or service-hardware delivery",
+      "decision": "unresolved",
+      "reason": "No exact complete compatible kit/landed quote verified; do not credit hypothetical savings or delete required hardware."
+    }
+  ],
+  "quote_selected": null,
+  "purchase_cleared": false
+}

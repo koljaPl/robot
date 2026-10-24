@@ -1,0 +1,27 @@
+{
+  "scenario": "commercial_print",
+  "status": "OVER BUDGET",
+  "known_delivered_subtotal_eur": "105.34",
+  "remaining_for_all_unknowns_eur": "-5.34",
+  "confirmed_minimum_shortfall_eur": "5.34",
+  "total_price_eur": null,
+  "pending_prices": [
+    "6 matching horns + 6 servo shaft retaining screws",
+    "12 horn-to-frame screws and 12 matching washers",
+    "PETG full frame:7finished parts, VAT, packaging and delivery to25337",
+    "PETG fit sample:2interface pieces, VAT and separate delivery"
+  ],
+  "unresolved_checks": [
+    "All required full-frame/sample/finishing/horn costs and stock unresolved; unknowns never zero",
+    "Six-unit Waveshare stock and actual supplied horn/shaft screw contents",
+    "3.3V PWM threshold, branch/contact current ratings and PSU droop still need bench testing",
+    "Final complete delivery to25337 incl every sample shipment; no bookings/orders/messages",
+    "Fit/layer strength/pad friction and adhesion require physical measurements",
+    "Complete delivered basket exceeds cap before new printing quotation; no order",
+    "Exact Waveshare batch horns/retainers/screw/ear measurements and interface sample fit",
+    "Current exact-file print/support/finishing/sample/delivery prices missing",
+    "Automatic approval review blocked Meltlab STL upload; provider-specific upload authorization required",
+    "Physical layer strength, continuous clearances, tie/connector routing and pad grip not verified"
+  ],
+  "purchase_cleared": false
+}

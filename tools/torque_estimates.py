@@ -4,6 +4,7 @@ Ignores contacts of the right foot, tether, acceleration and structural flex.
 Reports geometry demands, never an assertion of servo continuous strength.
 """
 import json
+import argparse
 from pathlib import Path
 import sys
 import numpy as np
@@ -15,6 +16,9 @@ from robot_config import JOINT_NAMES, HOME
 
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output',type=Path,default=ROOT/'runs/geometry/torque_estimates.json')
+    args=parser.parse_args()
     m = mujoco.MjModel.from_xml_path(str(ROOT / "robot.xml"))
     d = mujoco.MjData(m)
     adr = [m.joint(n).qposadr[0] for n in JOINT_NAMES]
@@ -27,7 +31,9 @@ def main():
         d.qpos[adr] = angles
         mujoco.mj_forward(m, d)
         rotation = d.xmat[left].reshape(3, 3).T.copy()
-        position = -rotation @ d.xpos[left] + [0, 0, m.geom("left_foot_sole").size[2] - m.geom("left_foot_sole").pos[2]]
+        site=m.site("left_foot_contact_center").id
+        # Level fixed foot, bottom-pad plane at ground; no full-foot support slab.
+        position = -rotation @ d.site_xpos[site]
         quat = np.zeros(4)
         mujoco.mju_mat2Quat(quat, rotation.reshape(9))
         d.qpos[:3] = position
@@ -50,7 +56,7 @@ def main():
                      "combined_com_m": com.tolist(), "max_abs_gravity_torque_Nm": max(abs(t) for t in torques),
                      "twice_static_demand_Nm": [2 * abs(t) for t in torques]})
     report = {"assumption": "entire weight on fixed left foot, right foot unloaded; equilibrium may be infeasible outside support polygon", "joint_order": JOINT_NAMES, "poses": rows}
-    out = ROOT / "runs/geometry/torque_estimates.json"
+    out = args.output
     out.parent.mkdir(parents=True,exist_ok=True)
     out.write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))

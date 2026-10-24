@@ -76,3 +76,22 @@ and measurements as historical evidence rather than relabelling them compatible.
 Templates live in `docs/templates/`; fill one measurement row per trial and keep
 original CSV/video. Until those records exist, stages A/B/D/F remain blocked or
 provisional and nothing is physically verified.
+
+
+## r2 mass ownership and aggregate allowances
+
+The bare Pico PCB and two GPIO headers are separate ledger components (3g +0.6g
++0.6g estimates). Each foot owns its four pads and ankle case; each shin owns
+both knee and ankle output-horn hardware. Case-ear bolts belong to the case's body.
+The torso20g `torso_wires_fasteners` allowance is for additional harness/capacitor/
+nylon tie/restraint hardware, excluding separately owned servos, Pico headers,
+named M2ear assemblies and horn sets. It is not a measured component inventory;
+verify the actual harness/connector distribution and replace this allowance.
+No extra pull-up purchase is assumed: verify the chosen IMU/Pico I2C wiring on
+bench, and add any required components/cost if the module lacks suitable pull-ups.
+
+When weighing an assembled rigid body, do not add that complete weight on top of
+its existing components. Either replace the complete body's ledger accounting,
+or weigh/subtract each known component and replace the remaining allowance.
+Never run solid-CAD mass synchronization over measured masses. Recompute COM and
+inertia and issue a new fingerprint before training or deployment.

@@ -1,0 +1,125 @@
+- region "Notifications (F8)":
+  - list
+- region "Notifications alt+T"
+- banner:
+  - link "Geschäftskunde oder SLS, Harz & Metall gesucht? 3D-Druckdienstleister.de":
+    - /url: https://3d-druckdienstleister.de
+    - generic: Geschäftskunde oder SLS, Harz & Metall gesucht?
+    - generic: 3D-Druckdienstleister.de
+  - link "+49 5221 12 13 100":
+    - /url: tel:+4952211213100
+    - generic: +49 5221 12 13 100
+  - link "info@meltlab.de":
+    - /url: mailto:info@meltlab.de
+    - generic: info@meltlab.de
+  - link "Meltlab Logo":
+    - /url: /
+    - img "Meltlab Logo"
+  - navigation:
+    - link "Startseite":
+      - /url: /
+    - link "Konfigurator":
+      - /url: /konfigurator
+    - link "Personalisieren":
+      - /url: /personalisieren
+    - link "Materialien":
+      - /url: /materialien
+    - link "Preise":
+      - /url: /preise
+    - link "Ratgeber":
+      - /url: /ratgeber
+    - link "Mieten":
+      - /url: /mieten
+    - link "Über uns":
+      - /url: /ueber-uns
+    - link "Kontakt":
+      - /url: /kontakt
+  - link "Mein Konto":
+    - /url: /konto
+    - generic: Mein Konto
+- main:
+  - paragraph: Sofortpreis
+  - heading "3D-Druck online bestellen · Sofortpreis" [level=1]
+  - paragraph:
+    - text: Keine eigene Datei?
+    - link "Geschenke mit Namen personalisieren":
+      - /url: /personalisieren
+  - paragraph: "3D-Druck-Service: STL hochladen, Material und Farbe wählen, Sofortpreis erhalten und nach Fertigung in 2–4 Arbeitstagen versenden lassen."
+  - heading "Frage zu Bauteil, Material oder Lieferzeit?" [level=2]
+  - search "Suche nach Bauteilen, Materialien und Lieferzeit":
+    - generic: Suchbegriff
+    - searchbox "Suchbegriff"
+    - button "Suchen"
+  - generic: "1"
+  - generic: Datei
+  - generic: "2"
+  - generic: Optionen
+  - generic: "3"
+  - generic: Bestellen
+  - heading "3D-Datei hochladen" [level=2]
+  - paragraph: Lade dein Modell hoch (STL, 3MF, STEP). Du siehst sofort eine 3D-Vorschau.
+  - 'button "3D-Dateien hochladen Unterstützte Formate: STL, 3MF, STEP/STP Max. 25 MB pro Datei für den Sofortpreis Größere Dateien: gern per Anfrage — wir kalkulieren von Hand. Drag & Drop oder klicken"':
+    - paragraph: 3D-Dateien hochladen
+    - paragraph: "Unterstützte Formate: STL, 3MF, STEP/STP"
+    - paragraph: Max. 25 MB pro Datei für den Sofortpreis
+    - paragraph: "Größere Dateien: gern per Anfrage — wir kalkulieren von Hand."
+    - paragraph: Drag & Drop oder klicken
+  - paragraph:
+    - text: Dateien werden lokal in deinem Browser analysiert
+  - button "Weiter zu den Optionen →" [disabled]
+- contentinfo:
+  - img "Meltlab Logo"
+  - generic: Deine Idee. Schicht für Schicht.
+  - paragraph: XH Group
+  - generic: Neuer Markt 2, 32052 Herford
+  - link "info@meltlab.de":
+    - /url: mailto:info@meltlab.de
+  - link "+49 5221 12 13 100":
+    - /url: tel:+4952211213100
+  - link "Per WhatsApp fragen":
+    - /url: https://wa.me/4917664189523
+    - text: Per WhatsApp fragen
+  - paragraph
+  - generic: "Leistungen:"
+  - link "Preise":
+    - /url: /preise
+  - link "Materialien":
+    - /url: /materialien
+  - link "Ratgeber":
+    - /url: /ratgeber
+  - link "Personalisieren":
+    - /url: /personalisieren
+  - link "Multicolor 3D-Druck":
+    - /url: /multicolor-3d-druck
+  - link "Bambu Lab Druckservice":
+    - /url: /bambu-lab-druckservice
+  - link "FAQ":
+    - /url: /faq
+  - link "Suche":
+    - /url: /suche
+  - generic: "Regionen:"
+  - link "3D-Druck Herford":
+    - /url: /3d-druck-herford
+  - link "3D-Druck Bielefeld":
+    - /url: /3d-druck-bielefeld
+  - link "3D-Druck NRW":
+    - /url: /3d-druck-nrw
+  - generic: "B2B & Industrie:"
+  - link "Geschäftskunden":
+    - /url: /geschaeftskunden
+  - link "3D-Druckdienstleister (SLS, Harz & Metall)":
+    - /url: https://3d-druckdienstleister.de
+    - text: 3D-Druckdienstleister (SLS, Harz & Metall)
+  - link "Kontakt":
+    - /url: /kontakt
+  - link "Mein Konto":
+    - /url: /konto
+  - link "Impressum":
+    - /url: /impressum
+  - link "Datenschutz":
+    - /url: /datenschutz
+  - link "Widerruf":
+    - /url: /widerruf
+  - link "AGB":
+    - /url: /agb
+  - generic: © 2026 Meltlab
