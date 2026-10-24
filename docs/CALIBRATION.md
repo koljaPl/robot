@@ -7,7 +7,10 @@ All numbers currently in `physical_spec.json` and `robot_config.py` are estimate
 The [current scripted baseline](REFERENCE_GAIT.md) has a weakest credited flight
 peaking only0.177mm above the3mm threshold; mixed parameter randomization removes
 most qualifying steps. Do not tune further against guessed physics or infer a
-specific cause from those mixed draws. After budget clearance, prioritize:
+specific cause from those mixed draws. The completed [one-factor study](SENSITIVITY.md)
+finds sensitivity to torso-body mass distribution, pad friction, damping and every
+individual±1° zero error tested. These are hypotheses, not measured tolerances.
+After budget clearance, prioritize:
 
 1. Actual servo/horn/ear/screw dimensions and sample fit before the full frame.
 2. Joint pulse mapping and repeated approach from both directions, with external
@@ -18,6 +21,13 @@ specific cause from those mixed draws. After budget clearance, prioritize:
    The0.95s swap is a trajectory choice, not a measured actuator parameter.
 4. Finished pad friction/adhesion and actual assembled body masses/COM. Solid-CAD
    mass and assumed0.8 sliding friction must not become measured by relabelling.
+
+The corrected twin represents unknown shaft-zero error in actuator affine bias,
+separately from bounded command/ack coordinates. Safe-command clipping cannot
+erase that error. Fit the physical mapping in both approach directions, record
+residual offset/uncertainty, and retain conservative measured clearance from actual
+stops. Do not infer safety from a bounded requested angle alone. Current identity
+begins`b11ab929`; all existing policies/UF2are historical, including the r2 smoke.
 
 For `tools/fit_response.py`, `angle_rad` must come from external measurement;
 never fill it with acknowledged commands. Preserve raw timestamped video/CSV,

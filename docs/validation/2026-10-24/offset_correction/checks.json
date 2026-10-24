@@ -1,0 +1,188 @@
+{
+  "state": "locally verified software only; no physical or training clearance",
+  "configuration_identity": {
+    "configuration": "b11ab9292c586ace4f2028c7061aa4ef279b6c84bd3966d2e806e0f96d01560b",
+    "files": {
+      "physical_spec.json": "f9e9b2018bde072c8632befacd4ca4c04b14e7a6230b961a131487d4e4e5300d",
+      "robot.xml": "859065cffb998e3f7f8ab6cd736937882b636949b4ffbba78e4b7dce91ec3917",
+      "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+      "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+      "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+      "humanoid_env.py": "527f548ebc2d630e83c5bb327aced2adcc21947479940f4b5a394e6087ccee3c",
+      "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+      "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+      "calibration.py": "b73947a3a1bb772bac45df3356fc108426c8bc199bd388cfb8b7ac51e5125486",
+      "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+      "firmware/control.h": "dfc0dec9642df663dca6410b8414faf16de480736c8c62fa2fd2da166f9c7200"
+    },
+    "calibration": null
+  },
+  "nominal_metric_dict_exactly_matches_predecessor": true,
+  "geometry_and_shared_command_files_unchanged": true,
+  "both_frozen_source_registries_verified": true,
+  "corrected_isolated_snapshot_compile_reset_step_and_registry_guard": "passed",
+  "historical_policy_rejection": "Policy model/control configuration is incompatible",
+  "firmware_header_current_and_invalid": true,
+  "all_five_gates_false": true,
+  "budget": {
+    "scenario": "commercial_print",
+    "status": "OVER BUDGET",
+    "known_delivered_subtotal_eur": "105.34",
+    "remaining_for_all_unknowns_eur": "-5.34",
+    "confirmed_minimum_shortfall_eur": "5.34",
+    "total_price_eur": null,
+    "pending_prices": [
+      "6 matching horns + 6 servo shaft retaining screws",
+      "12 horn-to-frame screws and 12 matching washers",
+      "PETG full frame:7finished parts, VAT, packaging and delivery to25337",
+      "PETG fit sample:2interface pieces, VAT and separate delivery"
+    ],
+    "unresolved_checks": [
+      "All required full-frame/sample/finishing/horn costs and stock unresolved; unknowns never zero",
+      "Six-unit Waveshare stock and actual supplied horn/shaft screw contents",
+      "3.3V PWM threshold, branch/contact current ratings and PSU droop still need bench testing",
+      "Final complete delivery to25337 incl every sample shipment; no bookings/orders/messages",
+      "Fit/layer strength/pad friction and adhesion require physical measurements",
+      "Complete delivered basket exceeds cap before new printing quotation; no order",
+      "Exact Waveshare batch horns/retainers/screw/ear measurements and interface sample fit",
+      "Current exact-file print/support/finishing/sample/delivery prices missing",
+      "Automatic approval review blocked Meltlab STL upload; provider-specific upload authorization required",
+      "Physical layer strength, continuous clearances, tie/connector routing and pad grip not verified"
+    ],
+    "purchase_cleared": false
+  },
+  "full_suite_log": "pytest.txt",
+  "tests_passed": 55,
+  "suite_duration_s": 14.93,
+  "new_ppo_steps": 0,
+  "sensitivity_cases_per_identity": 29,
+  "corrected_credited_steps_independently_checked": 73,
+  "sensitivity_plot_visually_reviewed": true,
+  "source_sha256": {
+    "humanoid_env.py": "527f548ebc2d630e83c5bb327aced2adcc21947479940f4b5a394e6087ccee3c",
+    "firmware/generated_config.h": "2e9934bd49a61b1654bcea12342995321809a91733225c2a4b504c24ab605054",
+    "tools/sensitivity_probe.py": "b7a9695a1b44acc24cbe9d033411fc59752fdea21ea3ac2cd3618cfa722fed0d",
+    "tools/report_sensitivity.py": "94291c56dd8bb085bdc061a8f2da69ab62fa5765953d566694820094b2d7875b"
+  },
+  "limits": [
+    "No measured robot, ARM rebuild, external upload, procurement or learned-walking claim.",
+    "Existing print ZIPs and geometry remain unchanged."
+  ],
+  "non_offset_full_2ms_trace_equality": [
+    {
+      "case": "nominal",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "mass_low",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "mass_high",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "torso_mass_low",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "torso_mass_high",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "friction_low",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "friction_high",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "strength_low",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "strength_high",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "shaft_speed_low",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "shaft_speed_high",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "target_slew_low",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "target_slew_high",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "damping_low",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "damping_high",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "delay_40ms",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    },
+    {
+      "case": "imu_noise_high",
+      "trace_fields": 13,
+      "trace_rows": 15000,
+      "all_columns_exact": true
+    }
+  ],
+  "clearance_recheck": {
+    "poses": 55,
+    "modeled_conflicts": 0,
+    "unknown_interface_groups": 5,
+    "manufacturing_released": false,
+    "zero_volume_intersection_COM_warnings": 498,
+    "evaluated_volumes_all_finite": true,
+    "script_sha256": "4a6d747b18b9370f2d9e60de7e89548be6b43eae0873c1b55a929c68128c9027"
+  },
+  "unchanged_print_quote_package_sha256": {
+    "sample_quotation_package.zip": "35cea9c0380c50ad250917b9830a1c50b4591bb894fbefac8ea35336c2fb934c",
+    "frame_quotation_package.zip": "182cfe4c1442a761efcd2d2ef89aa17028082c3cbfc22ed3a26f569a1126f68e"
+  }
+}

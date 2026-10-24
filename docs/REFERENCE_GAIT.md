@@ -1,5 +1,10 @@
 # Provisional scripted gait baseline — 2026-10-24
 
+**Historical identity`4d3b0dcb` below.** [Current offset correction and29-case
+sensitivity study](SENSITIVITY.md) retain the exact nominal result/target sequence
+under identity`b11ab929`. Mixed-DR rows below remain historical; do not apply their
+identity/results to the corrected model. All saved policies are historical.
+
 **Locally verified simulation, not a learned policy or physical result.** A new
 weight-handoff sequence produces four qualifying alternating steps from HOME.
 The 30 cm walking target remains unmet, and performance is fragile under the
@@ -87,10 +92,13 @@ it, measured hardware tolerances, or real transfer performance.
 
 ## Reproduction and continuation
 
-[Machine-readable frozen baseline](baselines/scripted_r2.json) records the exact
+[Historical machine-readable baseline](baselines/scripted_r2.json) records the exact
 model/control fingerprint, immutable source snapshot, replay command and expected
 nominal metrics. Use its snapshot to compare later measured revisions explicitly;
 do not relabel a changed model as the same baseline.
+The [current offset-corrected registry](baselines/scripted_r2_offset_corrected.json)
+records a separate source snapshot and the same nominal metrics. Commands below
+use the current workspace; old mixed-DR evidence requires its historical snapshot.
 
 ```bash
 .venv/bin/python tools/phase_study.py --output runs/phase_NEW
@@ -108,10 +116,12 @@ Paths above are under validation/2026-10-24/. Actual diagnostic source versions,
 model/mesh hashes and randomized runtime parameters are retained. No plant,
 observation or threshold changes and no additional PPO training occurred.
 
-**Next:** freeze this script as a diagnostic baseline rather than tune further
+**Follow-up completed:** the script is frozen; [one-factor isolation](SENSITIVITY.md)
+also exposed and corrected a shaft-offset clipping defect. Next, keep it frozen
+rather than tune further
 against guessed physics. Resolve the affordable basket and sample fit, then
 measure joint offsets, loaded response, latency/current and pad friction before
-updating the twin. AI can prepare calibration analysis and isolate individual
-parameter effects; mixed randomization alone cannot identify a cause. Keep
+updating the twin. AI can analyse real calibration records; mixed randomization
+alone cannot identify a cause. Keep
 manufacturing, measured-reference, formal-training and physical-transfer gates
 closed. Hardware measurements are still absent and the full walking target fails.

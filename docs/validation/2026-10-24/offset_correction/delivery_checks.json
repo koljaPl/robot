@@ -1,0 +1,24 @@
+{
+  "state": "local delivery checks, not physical verification",
+  "handoff_sections": 19,
+  "actual_current_source_embedded": true,
+  "AI_guide_lines": 104,
+  "documentation_sha256": {
+    "AGENTS.md": "17027f6a82bb94165718c9b19e5dc847d50150c39371b87e74cad35fdc12c75e",
+    "SUMMARY.md": "d9403dad5110da897bb1942074849ddabdf4c8f2c4d4f61efb6a231dd5b7bfd9",
+    "README.md": "d28586bcc87184f76d42d2ec1eb42952689c57101f6253bb8471297e6e97891e",
+    "docs/STATUS.md": "9d792d683f818288014e067bc225d869403999ef8dc5fe158ad6206acc2157f2",
+    "docs/ROADMAP.md": "60e2660e3b1a5397eb782835661ec5538be16d147a0f0108153c76e49049d5f8",
+    "docs/DEVELOPMENT_PLAN.md": "303aa3b6403c749827cbb3c027acd287d1b1f705633419e967837c677dd9e0ea",
+    "docs/SENSITIVITY.md": "6b46c33beb266c712f6dd26d020df65e44565ad04d923400d2932aed7ee6103d",
+    "docs/CALIBRATION.md": "8cfe28a961ea93a47c3d34b5cfd2bf2c16f618cbdbe541fdbea0a3243d40882f",
+    "docs/VALIDATION_CURRENT.md": "1fc3406c3857e9c208ed3bb6941cfb9c44963cef3b0fecff1dcf2781d283b6bd",
+    "docs/REFERENCE_GAIT.md": "7b402b6b6d2916d6300beda2d5c7fe6aea61dc21575287a8088d19c446f7177d",
+    "docs/HANDOFF.template.md": "77585d6e1856cd819a7a17bc72d798852aaa443e20887b50740393fce82907f9",
+    "docs/HANDOFF.md": "5f2a835ed1554177fce32e86fece488e1362c152785895db981e781039f230d7",
+    "firmware/README.md": "a87cc0fd0c18a4b08f3b5a4391d23de11aa799ad0a6851c606ddcdeca4114085",
+    "docs/baselines/scripted_r2_offset_corrected.json": "8c4b329d4c941fbc3a6baff7af195dfa060801c380eaecfb72051eaa8fda1d77"
+  },
+  "new_training_steps": 0,
+  "external_uploads_messages_orders": 0
+}

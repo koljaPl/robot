@@ -9,15 +9,16 @@ procurement, manufacturing, further training or physical deployment.
 - **Implemented:** seven-part PETG frame, two-part fit sample, drawings and quotation
   ZIPs; provisional r2 MuJoCo twin; shared control/IMU interface, firmware sources,
   PPO/evaluation, calibration and experiment tools.
-- **Locally verified:** 37 existing tests, 30 s neutral standing, one 2048-step r2
-  smoke run and reload. Scripted motions and learned smoke policy achieve **no
-  qualifying walking**. These records are preserved.
+- **Locally verified:**55tests; frozen script gives4qualifying steps/6.60cm in30s,
+  below walking acceptance.29one-factor probes per legacy/corrected configuration;
+  73corrected credited steps independently checked. Earlier30s neutral standing and
+  2048-step smoke/reload are historical; no learned walking or new PPO.
 - **Estimated:** 197.1 g solid-CAD total mass, actuator dynamics, friction, mounting
   dimensions and print strength. No physical measurements exist.
 - **Blocked:** EUR105.34 priced parts/delivery before printing/sample/horn extras;
   exact quote and physical fit missing. No purchases, uploads or supplier messages.
 
-## 1. Diagnose the failed lifted-step reference — AI, executable now
+## 1. Diagnose the reference — local diagnostics complete, measured gate blocked
 
 **Purpose:** establish whether target poses can lift a foot while supporting the
 COM, and distinguish ideal kinematics from actual servo/contact behaviour. More
@@ -41,7 +42,7 @@ approval and substantial training. Static clearance alone never proves gait.
 profile replays, four prepared holds, and two bounded HOME transition probes
 (tools/transfer_reference.py). Mirrored20° prepared holds retain>=25mm clearance
 for3s; both HOME transition orders still produce zero qualifying steps. See
-[diagnosis](SUPPORT_DIAGNOSIS.md). The next control question is reaching single
+[diagnosis](SUPPORT_DIAGNOSIS.md). The next question at that checkpoint was reaching single
 support while preventing stance-foot rocking, with the current limits and measured
 plant. No geometry, gain, torque or policy fingerprint changed; no PPO steps added.
 
@@ -49,14 +50,24 @@ plant. No geometry, gain, torque or policy fingerprint changed; no PPO steps add
 extension now gives one qualifying step from HOME, mirrored on either side. An
 independent raw2ms audit confirms112ms whole-foot clearance>=3mm,22.36mm touchdown
 advance and2.33mm stance motion. Zero alternations; only3.33mm body advance.
-See [current result](STANCE_TRANSFER.md). Next: isolate first-swing clearance and
-phase/foot-placement effects before proposing repeatable alternating motion.
+See [one-step checkpoint](STANCE_TRANSFER.md). This led to first-swing clearance
+and phase/foot-placement tests before the alternating motion below.
 
-**Current continuation:** timing study plus weight handoff gives four alternating
+**Previous continuation:** timing study plus weight handoff gives four alternating
 nominal steps and6.60cm torso advance/30s; mirrored replay agrees. Five randomized
-draws give0–1steps. See [frozen scripted baseline](REFERENCE_GAIT.md). Freeze nominal
-tuning; next prepare calibration analysis/parameter isolation while budget, sample
-fit and real response/friction measurements remain blocked. No extra PPO or gate release.
+draws give0–1steps under the historical environment. See [scripted baseline](REFERENCE_GAIT.md).
+Nominal tuning was frozen for parameter isolation below. Budget, sample fit and
+real response/friction measurements remain blocked. No extra PPO or gate release.
+
+**Completed follow-up:** [SENSITIVITY.md](SENSITIVITY.md) isolates29declared cases,
+then repeats them after fixing clipped shaft-zero errors at safe command bounds.
+Offsets now enter affine actuator bias; nominal trajectories/commands are unchanged.
+55tests pass. Current identity begins`b11ab929`; all existing checkpoints/UF2are
+historical. Torso mass, friction, damping and each tested±1° joint offset can remove
+qualifying steps. These are calibration priorities, not measured tolerances.
+**Next:** preserve this baseline; analyse genuine measured data when available.
+Continue verified basket/delivery consolidation independently. Do not tune unknown
+physics, raise torque or spend additional training steps to hide missing evidence.
 
 ## 2. Close the complete delivered budget and interfaces — AI + user/supplier
 

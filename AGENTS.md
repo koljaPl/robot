@@ -28,8 +28,8 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 - Calibration records: per-servo pulse mapping and IMU alignment/bias; examples are invalid
   for policy deployment until measured and explicitly validated.
 - Source code is authoritative over copies embedded in generated documentation.
-- Frozen provisional script: `docs/baselines/scripted_r2.json` identifies the exact
-  snapshot/replay command and expected metrics; it is not hardware/training approval.
+- Current frozen script: `docs/baselines/scripted_r2_offset_corrected.json`; predecessor
+  `scripted_r2.json` is historical. Exact replay/metrics, not hardware/training approval.
 
 ## Evidence and gates
 
@@ -76,17 +76,20 @@ python tools/prepare_print_order.py  # two quotation ZIPs; never manufacturing a
 - B starts from the same initial weights as A, not from a nominal-pretrained policy.
 - Validation seeds 2000–2004; final test seeds 1000–1009. Do not tune on final tests.
 - Full experiments require the stage gates; provisional tests must say provisional.
-- Pre-r2 policies/UF2 are historical; use isolated replay, never relabel fingerprints.
-- Current2048step r2 smoke is provisional and NOT physical/deployment approval.
+- All saved policies/UF2 are historical after the offset correction; use isolated
+  replay, never relabel fingerprints. No current-compatible policy has been trained.
 - Current firmware header is regenerated invalid; ARM/Pico firmware build must be repeated before flash.
 - The nominal pilot and scripted lifts failed: diagnose fit/model/measurements before
   repeating or extending training; do not increase torque just to force a simulated lift.
 - `docs/REFERENCE_GAIT.md`: handoff script gives4alternating nominal steps,
   mirrored,6.60cm/30s; five randomized draws give0–1steps. Target30cm fails.
   Raw2ms audit retained; no measured-reference/physical/formal-training approval.
-- Next AI task: freeze this script, prepare calibration analysis/parameter isolation;
-  no further nominal tuning, stronger motors, relaxed acceptance or more PPO;
-  next human task: affordable complete quote and measured servo/horn/sample fit.
+- `docs/SENSITIVITY.md`:29 one-factor cases per old/corrected identity;55tests pass.
+  Physical offsets now enter actuator bias, never clipped away at command limits.
+  Nominal unchanged; all12 ±1° offset probes lose steps.73credited steps raw-audited.
+- Next AI task: prepare/validate measured calibration data when available; keep script
+  frozen. Independent track: verified delivered-cost consolidation; never free unknowns.
+  No nominal tuning/stronger motors/relaxed acceptance/more PPO. Human: quote and fit.
 - Stop at the agreed training cap and report failure honestly if walking is unmet.
 
 ## Documentation and packaging

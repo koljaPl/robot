@@ -45,7 +45,8 @@ class HumanoidEnv(gym.Env):
         self.foot_ids = set.union(*self.foot_geom_groups)
         self.foot_center_sites = [self.model.site(s + "_foot_contact_center").id for s in ("left", "right")]
         self.nominal = {name: getattr(self.model, name).copy() for name in (
-            "body_mass", "body_inertia", "geom_friction", "dof_damping", "actuator_forcerange")}
+            "body_mass", "body_inertia", "geom_friction", "dof_damping", "actuator_forcerange",
+            "actuator_biasprm")}
         self.estimator = GravityEstimator()
         self.history = ObservationHistory()
         self.viewer = None
@@ -78,9 +79,19 @@ class HumanoidEnv(gym.Env):
             self.gyro_bias = rng.uniform(-DR.gyro_bias, DR.gyro_bias, 3)
             self.accel_bias = rng.uniform(-DR.accel_bias, DR.accel_bias, 3)
             self.noise_scale = rng.uniform(*DR.sensor_noise_scale)
+        self._apply_joint_offsets()
         self.torque_limit = self.model.actuator_forcerange[self.aids, 1].copy()
         self.servos = ServoTargets(delay=delay, speed=speed, calibration=self.calibration)
         mujoco.mj_setConst(self.model, self.data)
+
+    def _apply_joint_offsets(self):
+        # For our unit-gear position servos, force = kp*(command - q) - kv*qdot.
+        # Add kp*offset as an affine bias: the unobserved physical equilibrium
+        # becomes command+offset while ctrl/ack stay in safe COMMAND coordinates.
+        # Clipping command+offset to ctrlrange would conceal error at the bounds.
+        self.model.actuator_biasprm[self.aids, 0] = (
+            self.nominal['actuator_biasprm'][self.aids, 0]
+            + self.model.actuator_gainprm[self.aids, 0] * self.offset)
 
     def _raw_imu(self):
         gyro = self.data.sensor("imu_gyro").data.copy()
@@ -112,7 +123,7 @@ class HumanoidEnv(gym.Env):
         super().reset(seed=seed)
         self._randomize()
         mujoco.mj_resetDataKeyframe(self.model, self.data, self.model.key("home").id)
-        self.data.ctrl[self.aids] = HOME + self.offset
+        self.data.ctrl[self.aids] = HOME
         # Simulate quiet physical startup before initializing from accelerometer data.
         for _ in range(100):
             self._motor_envelope()
@@ -212,10 +223,10 @@ class HumanoidEnv(gym.Env):
                 self.applied_command = self.servos.advance(self.data.time, CONTROL_DT)
                 self.servo_next_time += CONTROL_DT
             applied = self.applied_command
-            # Offset is an unobserved physical calibration error; acknowledged commands
-            # remain exactly the same command coordinates as on the real controller.
+            # Offset is already represented in the actuator bias, outside the
+            # deployable observation. Bounds apply to commands, not true shaft pose.
             limits = self.model.actuator_ctrlrange[self.aids]
-            self.data.ctrl[self.aids] = np.clip(applied + self.offset, limits[:, 0], limits[:, 1])
+            self.data.ctrl[self.aids] = np.clip(applied, limits[:, 0], limits[:, 1])
             self._motor_envelope()
             mujoco.mj_step(self.model, self.data)
             if self.data.time + 1e-10 >= self.imu_next_time:

@@ -1,0 +1,3584 @@
+{
+  "state": "local numerical warning audit; no physical fit approval",
+  "all_evaluated_intersection_volumes_finite": true,
+  "warning_records": [
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 80,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 95,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 101,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 84,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 90,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 101,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 127,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 108,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 122,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 106,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 116,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 118,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 120,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 118,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 105,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 114,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 84,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 90,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 113,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 112,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 118,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 122,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 129,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 125,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 121,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 114,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 122,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 117,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 87,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 90,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 125,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 119,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 122,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 126,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 102,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 112,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 103,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 103,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 131,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 125,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 114,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 111,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 125,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 120,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 72,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 71,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 104,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 116,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 100,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 110,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 73,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 75,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 115,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 127,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 107,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 114,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 98,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 97,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 75,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 73,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 86,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 109,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 62,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 74,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 92,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 105,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 77,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 103,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 75,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 77,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 62,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 82,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 113,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 109,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 83,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 96,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 100,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 110,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 119,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 115,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 119,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 126,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 112,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 102,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 121,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 104,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 126,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 120,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 83,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 92,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 113,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 110,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 100,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 111,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 71,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 85,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 80,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 80,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 124,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 122,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 98,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 94,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 76,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 118,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 118,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 104,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 116,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 105,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 99,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 124,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 106,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 133,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 118,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 103,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 111,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 78,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 89,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 123,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 107,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 109,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 118,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 62,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 74,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 128,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 125,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 82,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 94,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 112,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 112,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 104,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 117,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 86,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 92,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 125,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 121,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 116,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 114,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 77,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 81,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 113,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 128,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 103,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 113,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 78,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 84,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 124,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 123,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 114,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 123,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 112,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 101,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 116,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 125,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 84,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 93,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 113,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 112,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 63,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 73,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 98,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 99,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 113,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 100,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 130,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 128,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 110,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 112,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 124,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 121,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 82,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 93,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 119,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 120,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 103,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 110,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 85,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 87,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 124,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 122,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 115,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 101,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 81,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 78,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 80,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 74,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 74,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 84,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 91,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 121,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 113,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 115,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 122,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 114,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 100,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 113,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 109,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 130,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 124,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 96,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 92,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 93,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 103,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 86,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 96,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 124,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 106,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 117,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 119,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 126,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 121,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 129,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 123,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 8,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 58,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 59,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 64,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 61,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 113,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "divide by zero encountered in divide",
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 110,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 122,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    },
+    {
+      "vertices": 119,
+      "volume_mm3": 0.0,
+      "warnings": [
+        "invalid value encountered in divide"
+      ]
+    }
+  ],
+  "interpretation": "Warnings arise from zero-volume intersection COM calculations; no non-finite volume is counted as clear."
+}

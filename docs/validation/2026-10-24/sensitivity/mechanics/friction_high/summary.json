@@ -1,0 +1,279 @@
+{
+  "variant": {
+    "name": "friction_high",
+    "family": "friction",
+    "value": 1.15,
+    "joint": null
+  },
+  "seed": 42,
+  "condition": "deterministic one-factor probe, not a DR draw",
+  "runtime_parameters": {
+    "body_mass_kg": [
+      0.0,
+      0.07574344774,
+      0.01977302956,
+      0.008623103503,
+      0.03225878756,
+      0.01977302956,
+      0.008623103503,
+      0.03225878756
+    ],
+    "body_inertia_kg_m2": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        8.306128955765523e-05,
+        5.344089512999997e-05,
+        4.332076852234469e-05
+      ],
+      [
+        1.2013387189999997e-05,
+        1.1521406619015363e-05,
+        1.535590456984635e-06
+      ],
+      [
+        5.291275893692159e-06,
+        5.22672952816605e-06,
+        4.1547725084178906e-07
+      ],
+      [
+        1.9168241744006188e-05,
+        1.9064309939999995e-05,
+        6.1255896529938005e-06
+      ],
+      [
+        1.2013387189999997e-05,
+        1.1521406619015363e-05,
+        1.535590456984635e-06
+      ],
+      [
+        5.291275893692159e-06,
+        5.22672952816605e-06,
+        4.1547725084178906e-07
+      ],
+      [
+        1.9168241744006188e-05,
+        1.9064309939999995e-05,
+        6.1255896529938005e-06
+      ]
+    ],
+    "body_com_local_m": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.006320972389,
+        3.578534529e-19,
+        -0.01029907144
+      ],
+      [
+        7.08385379e-20,
+        -0.009228983103,
+        -0.04336712372
+      ],
+      [
+        0.001769592628,
+        0.002022456737,
+        -0.02519082456
+      ],
+      [
+        -0.003143726384,
+        1.312871641e-20,
+        -0.01408134211
+      ],
+      [
+        7.08385379e-20,
+        0.009228983103,
+        -0.04336712372
+      ],
+      [
+        0.001769592628,
+        -0.002022456737,
+        -0.02519082456
+      ],
+      [
+        -0.003143726384,
+        -1.312871641e-20,
+        -0.01408134211
+      ]
+    ],
+    "geom_sliding_friction": [
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999,
+      0.9199999999999999
+    ],
+    "joint_damping": [
+      0.002,
+      0.002,
+      0.002,
+      0.002,
+      0.002,
+      0.002
+    ],
+    "static_torque_envelope_Nm": [
+      0.08,
+      0.08,
+      0.08,
+      0.08,
+      0.08,
+      0.08
+    ],
+    "target_slew_rad_s": 3.141592653589793,
+    "shaft_no_load_speed_rad_s": 9.519977738150889,
+    "command_delay_s": 0.02,
+    "joint_offsets_rad": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "imu_noise_scale": 1.0,
+    "actuator_ctrlrange_rad": [
+      [
+        -0.6108652382,
+        0.6108652382
+      ],
+      [
+        -0.1745329252,
+        1.047197551
+      ],
+      [
+        -0.3490658504,
+        0.3490658504
+      ],
+      [
+        -0.6108652382,
+        0.6108652382
+      ],
+      [
+        -0.1745329252,
+        1.047197551
+      ],
+      [
+        -0.3490658504,
+        0.3490658504
+      ]
+    ]
+  },
+  "final_metrics": {
+    "distance_m": 0.056163433284719184,
+    "lateral_distance_m": 0.029567853609003807,
+    "duration_s": 30.0,
+    "mean_speed_m_s": 0.0018721144428239728,
+    "fallen": false,
+    "total_reward": 5.924418671201692,
+    "lifted_steps_left": 0,
+    "lifted_steps_right": 0,
+    "alternations": 0,
+    "gait_distance_m": 0.0,
+    "max_stance_slip_m": 0.0025712301169790075,
+    "rejected_steps": 144,
+    "walking_success": false,
+    "domain_randomization": false,
+    "reward_terms": {
+      "forward": -5.522284018955048e-11,
+      "upright": 0.003969850295222063,
+      "lateral": -1.9369538958868837e-11,
+      "smoothness": -0.0,
+      "fall": 0.0
+    }
+  },
+  "events": [],
+  "flights_above_2mm": [
+    {
+      "foot": "right",
+      "touchdown_time_s": 7.00999999999945,
+      "raw_max_continuous_3mm_lift_s": 0.0,
+      "raw_forward_advance_m": 0.01804624926308305,
+      "raw_lateral_advance_m": 0.003137051848956754,
+      "raw_max_stance_slip_m": 0.0021396707759336418,
+      "opposite_continuously_supported": true,
+      "both_supported_at_touchdown": true,
+      "passes_existing_single_step_thresholds": false,
+      "takeoff_time_s": 6.7059999999994835,
+      "peak_height_m": 0.002262602435744064
+    },
+    {
+      "foot": "left",
+      "touchdown_time_s": 13.020000000001017,
+      "raw_max_continuous_3mm_lift_s": 0.0,
+      "raw_forward_advance_m": 0.017896283251349954,
+      "raw_lateral_advance_m": -0.0029161030638920685,
+      "raw_max_stance_slip_m": 0.0025727591126722318,
+      "opposite_continuously_supported": true,
+      "both_supported_at_touchdown": true,
+      "passes_existing_single_step_thresholds": false,
+      "takeoff_time_s": 12.716000000000916,
+      "peak_height_m": 0.0025337735675502312
+    },
+    {
+      "foot": "right",
+      "touchdown_time_s": 19.020000000000337,
+      "raw_max_continuous_3mm_lift_s": 0.0,
+      "raw_forward_advance_m": 0.017926961107474437,
+      "raw_lateral_advance_m": 0.0026420541584743287,
+      "raw_max_stance_slip_m": 0.0025859117354690435,
+      "opposite_continuously_supported": true,
+      "both_supported_at_touchdown": true,
+      "passes_existing_single_step_thresholds": false,
+      "takeoff_time_s": 18.716000000000506,
+      "peak_height_m": 0.0025313313145739445
+    },
+    {
+      "foot": "left",
+      "touchdown_time_s": 25.01999999999701,
+      "raw_max_continuous_3mm_lift_s": 0.0,
+      "raw_forward_advance_m": 0.017897398295966545,
+      "raw_lateral_advance_m": -0.0029079364737051444,
+      "raw_max_stance_slip_m": 0.002572986682845264,
+      "opposite_continuously_supported": true,
+      "both_supported_at_touchdown": true,
+      "passes_existing_single_step_thresholds": false,
+      "takeoff_time_s": 24.71599999999718,
+      "peak_height_m": 0.0025335982594083045
+    }
+  ],
+  "physics_state_sha256_50Hz": "f716190c21c62745aa0954b3256e6a806c4e5da1033c679f19a57c8ea14a4f03",
+  "observation_sha256_50Hz": "05fbbed2ea92029a9156983bff7656ae4b849cc685f47aa0c51b60b7e56b3daf",
+  "offset_target_clipped_control_ticks": 0,
+  "maximum_offset_target_clipped_rad": 0.0,
+  "max_actual_minus_acknowledged_angle_rad_DIAGNOSTIC_ONLY": 0.06716649523610019,
+  "trace_rows": 15000,
+  "runtime_model_changed": true,
+  "limits": "Offsets deliberately retain the existing shifted-target clipping; this may mask physical calibration error at a safe-command boundary.",
+  "runtime_variant_sha256": "be7e19c408f1adb9e41020c2b59a210406d0536ca508f17b5951caa0c6e21a6c",
+  "trace_sha256": "5df404ed0ecd47200eeb57e8a70fe2d3e7b04486e398a222f4905987f89638d5"
+}

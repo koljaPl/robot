@@ -2,8 +2,54 @@
 
 **No hardware purchased, printed, fitted, electrically tested or deployed.**
 Prior2026-10-23record is preserved under history/2026-10-24/pre_print_revision/docs/.
-Current evidence: validation/2026-10-24/print_revision/final/; earlier in-turn
-records are explicitly superseded, not final results.
+Latest evidence: `validation/2026-10-24/offset_correction/`,
+`sensitivity_corrected/` and `sensitivity_report_final/`. The sections labelled
+historical retain the configuration that actually produced them.
+
+## Current offset correction and frozen-script study
+
+Current identity:
+`b11ab9292c586ace4f2028c7061aa4ef279b6c84bd3966d2e806e0f96d01560b`.
+See [SENSITIVITY.md](SENSITIVITY.md) for the actuator law, source documentation,
+complete factor table, raw audit, limitations and replay commands.
+
+- Unknown physical shaft-zero errors now enter affine actuator bias instead of
+  being clipped away at safe command bounds. Acknowledged/control targets remain
+  bounded. Repeated resets restore nominal bias; no fake mechanical stops added.
+- Geometry, estimated197.053g mass, nominal strength/action/observation/thresholds
+  and compact target sequence unchanged. Nominal results exactly match predecessor:
+  four qualifying steps/three alternations,6.602cm torso/4.393cm gait in30s, no fall.
+  This is open-loop scripted motion;30cm walking acceptance remains unmet.
+-29one-factor cases per old/corrected identity, all raw/source hashes preserved.
+  Corrected torso-only mass±5%:0/1steps; friction±15%:4/0; damping±20%:2/3;
+  all12individual±1° joint offsets:1–3steps. All17zero-offset case trajectories
+  exactly match their predecessors. IMU-noise and slew negative controls pass.
+- All73credited steps in the corrected study independently pass existing raw2ms
+  lift≥3mm/40ms, forward touchdown, stance-motion and opposite-support checks.
+  All29episodes remain upright; zero walking successes. These endpoint hypotheses
+  do not establish measured tolerances or a failure probability.
+- **55tests passed in14.93s**, `offset_correction/pytest.txt`; includes native C++
+  tests, Gym/SB3/provenance, reset restoration and offset force at command bounds.
+- Generated invalid header carries the new hash, `CAL_VALID=false`; no new ARM
+  build or electrical test. **All saved policies/UF2are historical/incompatible**,
+  including the2048-step r2 smoke. No new PPO and no stage gate cleared.
+- Geometry recheck again finds0modeled conflicts across55poses,5unknown fit
+  groups. Trimesh emits COM warnings for498zero-volume intersection results;
+  the recorded warning audit confirms every evaluated volume finite and those
+  warning volumes exactly0mm³. This is not manufacturing/continuous-fit approval.
+- Plot visually reviewed; case/credited-step CSVs and source manifests are in
+  `sensitivity_report_final/`. The incomplete slow report attempt is preserved in
+  `sensitivity_report/`, not counted as a result. Supplemental registry snapshot
+  inputs are explicitly hash-recorded; executed source/results were not replaced.
+
+Next: genuine calibration data and affordable quotation/fit, not more nominal
+motion tuning. All five gates remain false; nothing is physically verified.
+
+## Historical r2 geometry and smoke evidence — identity4d3b0dcb
+
+The following records belong to the previous environment. Words such as
+“current” inside these retained descriptions refer to that historical checkpoint,
+not the offset-corrected workspace. Preserve/replay snapshots; never relabel policies.
 
 ## Geometry, accounting and interface
 
@@ -40,7 +86,7 @@ This is **not** measured continuous servo capability or a proof of supported gai
 Torque margin, real plant response and the failed lifted-step sequence need diagnosis
 before large PPO runs or a walking-ready physical claim.
 
-## Bounded PPO smoke and reload
+## Historical bounded PPO smoke and reload
 
 Fresh seed0,A nominal, **2048actual timesteps**, current identity. No resume/relabel
 of old checkpoints. Validation2000–2004; final1000–1009unused. Checkpoint reload
@@ -104,7 +150,7 @@ stance_transfer_review/, stance_transfer_audit/ and stance_transfer_report/.
 Each run retains the diagnostic source version it actually executed, with hashes;
 model/control identity remains4d3b0dcbad59774b12f9c908c74446f6bf7452d5bdf34a08f07cf4271cc15019.
 
-## Phase/history study and weight handoff — latest motion checkpoint
+## Historical phase/history study and weight handoff
 
 [REFERENCE_GAIT.md](REFERENCE_GAIT.md) records the bounded continuation. The
 original first forward flight peaks at2.987mm; faster swaps improve lift but

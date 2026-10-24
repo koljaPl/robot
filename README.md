@@ -20,14 +20,18 @@ Haftpads. Keine gedruckten TPU-Sohlen, kein Drucker-/Filamentkauf. [Druckprobe](
 Der bepreiste Korb kostet105,34€**vor** Druck/Probe/Horn-Kleinteilen: mindestens5,34€
 über der100€Grenze. Eine aktuelle dateispezifische Druckquote fehlt; der STL-Upload
 zuMeltlab wurde durch die automatische Freigabeprüfung blockiert.
-Die vorläufige MuJoCo-Kopie passt zum neuen CAD; geschätzt197.1g.49Tests bestehen.
+Die vorläufige MuJoCo-Kopie passt zum neuen CAD; geschätzt197.1g.55Tests bestehen.
 Der2048Schritte-PPO-Smoke zeigt **kein gelerntes Gehen**; Skriptreferenzen werden separat bewertet.
 Alte Modelle/UF2bleiben historisch. [Prüfstand](docs/VALIDATION_CURRENT.md).
 Eine neue [Standbein-/Schrittdiagnose](docs/STANCE_TRANSFER.md) erreicht einen
 geprüften simulierten Schritt aus dem Stand, auch gespiegelt. Die neuere
 [Schrittreferenz mit Gewichtsübergabe](docs/REFERENCE_GAIT.md) erreicht vier
 abwechselnde Schritte und6,6cm in30s im nominalen Modell; mit randomisierten
-Parametern nur0–1Schritte. Das30cm-Ziel bleibt offen, Modell/Kraftgrenzen unverändert.
+Parametern im historischen Modell nur0–1Schritte. Das30cm-Ziel bleibt offen.
+Die [Einzelparameterprüfung](docs/SENSITIVITY.md) korrigiert einen Modellfehler:
+Kalibrierfehler verschwinden nun nicht mehr an Befehlsgrenzen. Nominale Bewegung,
+Geometrie und Kraftgrenzen bleiben gleich; alle12getesteten±1°Gelenkfehler verlieren
+Schritte. Aktuelle Identität`b11ab929…`; alle gespeicherten Policies/UF2sind historisch.
 
 ```bash
 python3.12 -m venv .venv
@@ -36,12 +40,13 @@ python -m pip install -r requirements-dev.txt
 python -m pytest -q
 python tools/budget_gate.py # Exit1: aktiver Druckservice-Weg schon vor Druck über Budget
 python evaluate.py --episodes 1 --output runs/neutral_new
-python train.py --steps 2048 --seed 0 --development --output runs/smoke_new
+MPLCONFIGDIR=/tmp/s6-mpl python tools/sensitivity_probe.py --cases nominal --output runs/sensitivity_new
 ```
 
 Größere formale A/B-Experimente sind durch dokumentierte Mess-/Modellgates
 gesperrt. Kurze Entwicklungsläufe sind ausdrücklich vorläufig und beweisen
 weder Gehen noch Sim-to-Real. Neue Prüfprotokolle stehen im Statusdokument.
+Jetzt kein weiteres PPO: erst Budget/Passprobe und reale Kalibrierdaten klären.
 
 ## PPP-Woche: Robotik, ML und Simulation
 

@@ -300,6 +300,8 @@ walking. Long formal training is blocked until fit/calibration/reference gates.
 
 {{TEXT:docs/REFERENCE_GAIT.md}}
 
+{{TEXT:docs/SENSITIVITY.md}}
+
 {{TEXT:docs/STATUS.md}}
 
 {{TEXT:docs/VALIDATION_CURRENT.md}}

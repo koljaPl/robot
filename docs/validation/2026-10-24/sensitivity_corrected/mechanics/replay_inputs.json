@@ -1,0 +1,7 @@
+{
+  "state": "supplemental original input for isolated replay; results and executed code unchanged",
+  "reason": "The initial snapshot exporter omitted the new baseline registry. This unchanged input is appended with its own hash.",
+  "files": {
+    "docs/baselines/scripted_r2_offset_corrected.json": "8c4b329d4c941fbc3a6baff7af195dfa060801c380eaecfb72051eaa8fda1d77"
+  }
+}

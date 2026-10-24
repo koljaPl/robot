@@ -9,6 +9,13 @@ invalid header now carries the r2 fingerprint. OldUF2 images are historical: reb
 with this header and later measured calibration before any flash. No current ARM
 build or physical electrical result is claimed by the geometry update.
 
+The subsequent simulated shaft-offset correction changes the full configuration
+identity to`b11ab929…`; `generated_config.h` carries that hash with`CAL_VALID=false`.
+All saved policies and prior UF2files are incompatible, including r2 smoke artifacts.
+Native control tests passed with this header; no new ARM/Pico build is claimed.
+See [current evidence](../docs/SENSITIVITY.md). Rebuild with measured calibration
+before any physical policy operation; never relabel historical binaries.
+
 
 Source is C++17 using official Pico SDK **2.3.1**, revision
 `079c6f39023649b154152db30f1d781e884879bc`, TinyUSB submodule

@@ -1,104 +1,97 @@
 # Current project status — 2026-10-24
 
-Start with SUMMARY.md and AGENTS.md. **Nothing bought, printed, assembled, flashed
-or physically verified.** Active revision:**S6-PETG-pad-r2**, outsourced PETG.
+Read SUMMARY.md → AGENTS.md → relevant roadmap stage. **Nothing bought, printed,
+assembled, flashed or physically verified.** Frame revision **S6-PETG-pad-r2**;
+active route is outsourced PETG, bare Pico and eight ordinary grip pads.
 
 | Stage | State | Evidence / blocker |
 |---|---|---|
-| Requirements / AI entry | implemented | Six joints,15–20cm,PC/USB,wired power,EUR100retained; no printer purchase |
-| Hardware research / budget | blocked | Common95.81 +ear-hardware delivery9.53 =105.34before prints/sample/horns;5.34over cap. Updated ledger/source dates |
-| CAD / order preparation | implemented, locally verified partial | Seven connected watertightPETGmeshes; two-piece sample ZIP, seven-piece frame ZIP, drawings/manifests/fastener schedule.0modeled collisions/55poses;5unknown fit groups; NOT manufacture-approved |
-| Shared control / firmware | locally verified partial | Existing GPIO/protocol retained; invalid current header/nativeC++tests pass. ARMbuild from previous revision is historical; physical timing/calibration absent |
-| Provisional MuJoCo / Gym | locally verified | BarePico/header ownership,8TPEpad contacts,estimated197.053g,axes/inertias/contacts/reward/provenance checked;49tests now pass |
-| Manual reference | locally verified partial, full gate blocked | Handoff script:4alternating steps, mirrored,6.60cm torso/4.39cm gait in30s; no falls. Randomized draws give0–1steps;30cm acceptance and measured plant still missing |
-| PPO / evaluation | locally verified smoke only | New2048steps A0, reload/CSV/validation/video;0success/0gait under nominal/randomized validation. No larger run |
-| Physical build / calibration / transfer | planned, blocked | No hardware. Bench/soldering/sample/assembly/calibration procedures ready; requires user measurements and budget/fit clearance |
-| Formal A/B / school experiment | planned, blocked | No current full six-run experiment or real trials. Exact seeds/budgets remain in roadmap |
-| Extensions | planned | Only after stable walking |
+| Requirements / AI entry | implemented | Six joints,15–20cm,PC/USB,wired power,EUR100; no printer purchase |
+| Hardware research / budget | blocked | Priced basket105.34EUR BEFORE print/sample/horn extras; known shortfall≥5.34EUR. Complete total unknown; dated ledger, not live checkout |
+| CAD / quotation package | implemented, locally verified partial | Seven connected watertight frames, two-piece fit sample, drawings/manifests;0modeled collisions/55poses,5unknown interface groups; NOT manufacturing-approved |
+| Shared control / firmware | locally verified partial | Protocol/native C++tests pass; regenerated current header has invalid calibration. All prior ARM/UF2images historical; physical timing absent |
+| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;55tests pass |
+| Frozen scripted reference | locally verified partial | Four qualifying steps/3alternations,6.60cm torso and4.39cm gait distance in30s;30cm target fails.29one-factor cases show fragile guessed physics |
+| PPO / evaluation | historical local evidence | Prior2048-step smoke/reload:0walking successes/0gait. All saved policies now incompatible; no new PPO. Older49152-step pilot also failed |
+| Physical build / calibration / transfer | planned, blocked | No hardware/measurements. Bench, soldering, fit and measurement procedures prepared |
+| Formal A/B / school experiment | planned, blocked | No full current six-run experiment or physical trials; fixed seeds/budgets retained |
+| Extensions | planned | After stable walking |
 
-## Current architecture
+## Current architecture and identity
 
-Six exact Waveshare15024MG90S; Lhip/knee pitch/ankle roll, then Rsame.50Hz policy
-and directPicoPWM,200Hz MPU6050,2ms MuJoCo. Bare Pico PCB plus two header rows;
-header11mm envelope retained. Separate USB logic and5V/5A servo bus, common ground,
-self-soldered replaceable harness. SevenPETG frames; four bought10×3mm TPE pads
-per90×45mm foot. No printed TPU, spool/printer purchase or PCA9685.
+Six Waveshare15024MG90S; Lhip/knee pitch/ankle roll, then Rsame.50Hz directPicoPWM
+and PC commands,200Hz MPU6050 processing,2ms MuJoCo. Separate USB logic and5V/5A
+servo bus, common ground, self-soldered replaceable harness. Seven PETG frames,
+four bought10×3mm pads per90×45mm foot; no PCA9685, printer/spool or TPU soles.
 
-Physical parameters are sourced/estimated/unknown in physical_spec.json, not measured.
-CAD/model/accounting derive from that ledger. The policy still sees only IMU-derived
-gravity/gyro, applied command acknowledgements and previous actions (90values);
-no true pose, velocity, joint feedback, contacts or forces. Diagnostics/rewards may
-use simulation truth. Safe command intervals are not mechanical stops.
+Policy:90values from five frames of estimated IMU gravity/gyro, acknowledged
+applied targets and previous actions. No true orientation, translation, velocity,
+shaft feedback, contact or force. Diagnostics/rewards may use simulation truth.
+Safe commands are not measured mechanical limits; real stops remain unknown.
 
-## Evidence and limits
+Current configuration:
+`b11ab9292c586ace4f2028c7061aa4ef279b6c84bd3966d2e806e0f96d01560b`.
+[Current frozen registry](baselines/scripted_r2_offset_corrected.json);
+[historical predecessor](baselines/scripted_r2.json), identity`4d3b0dcb…`.
+**All saved policy checkpoints and UF2images are historical/incompatible**, including
+r2 smoke. Never relabel them. Current invalid header needs an ARM rebuild and
+measured calibration before physical policy operation; native tests are not an
+ARM build, electrical test or fit approval.
 
-- Current local report:VALIDATION_CURRENT.md; artifacts:validation/2026-10-24/print_revision/final/.
--49tests pass, including eight-pad contacts, whole-foot cylinder/plate heights,
-  component ownership, alternative-budget accounting and package quantities/hashes.
-- New support analysis/transition tools are locally verified; source/mesh snapshots,
-  CSV and plot are linked from SUPPORT_DIAGNOSIS.md. Earlier full-suite log:
-  validation/2026-10-24/support_diagnosis_final/pytest.txt (41passed in10.31s).
-- New stance-transfer evidence: STANCE_TRANSFER.md and validation/2026-10-24/
-  stance_transfer_report/. One audited step:112ms>=3mm whole-foot clearance,
-  22.36mm forward touchdown,2.33mm stance motion, supported opposite foot.
-  Mirrored starts reproduce it; sensor seeds42–44 do not vary open-loop dynamics.
-  No alternation or walking; no model/control/observation change or new PPO.
-  Earlier full-suite log:validation/2026-10-24/stance_transfer_report/pytest.txt
-  (45passed in13.31s), including transparent trace and independent audit rejection tests.
-- Current REFERENCE_GAIT.md: timing study identifies lift/slip tradeoff;0.95s swaps
-  plus weight handoff produce4alternating nominal steps (56–90ms lift,≥3.177mm,
-  ≤2.525mm raw stance movement). Five randomized draws produce0–1steps, all stay
-  upright, no walking successes. Independent raw audit checks12credited steps
-  across both nominal mirrors and randomized draws. No model/threshold change or PPO.
-  Latest log:validation/2026-10-24/handoff_report/pytest.txt (49passed in14.21s).
-- Current estimated mass197.053g. No infill-adjusted/measured mass claim.
--0modeled collisions does NOT clear physical fit: horn/screw shapes, servo ear positions,
-  printed tolerances/layer strength, cables/ties/tool access remain unknown. Historical550
-  proxy intersections were replaced by sourced M2shapes at estimated positions; old
-  records retained, no claim of550physical fixes. Named PCB/header attachment exception only.
-- HOME stands30s; manual scripts and PPO still fail lifted walking. Quasi-static HOME
-  single-foot torque~0.0657Nm;2xmargin~0.1314exceeds0.08Nm model estimate. Do not
-  increase torque or train longer simply to hide these failures.
-- Source/config identity:`4d3b0dcbad59774b12f9c908c74446f6bf7452d5bdf34a08f07cf4271cc15019`.
-  Pre-r2policies/UF2are historical and rejected by current deployment; no relabelling.
-  Current2048smoke policy matches provisional twin, **not** physical calibration.
-- All physical/manufacturing/formal gates remain false. Default invalid calibration
-  cannot policy-arm. Software STOP does not isolate servo power.
+## Latest completed work
+
+[Full report](SENSITIVITY.md), [current validation](VALIDATION_CURRENT.md).
+
+- Frozen compact sequence: nominal30s metrics exactly match predecessor, four
+  qualifying steps,3alternations,0.066021479m torso/0.043929229m gait, no fall;
+  **not learned walking, not30cm acceptance**. Reference has no HOME return.
+-29one-factor cases under each identity; no target tuning/PPO. Torso-body mass±5%
+  gives0/1steps, friction±15% gives4/0, damping±20% gives2/3. Every individual±1°
+  offset gives1–3steps. These are unmeasured endpoint hypotheses, not failure rates.
+- Found/fixed clipping of unknown shaft-zero error at safe command bounds.
+  Offset now enters affine actuator bias; command/ack bounds, nominal strength,
+  observations and geometry are unchanged. Nominal bias restored every reset.
+- All17non-offset cases exactly preserve previous physics. IMU-noise control
+  changes observations but not this open-loop motion; target-slew probes are inactive
+  here. This does not establish feedback-policy robustness or sensor irrelevance.
+- Independent raw2ms audit validates all73credited steps in the corrected study;
+  none meets project walking acceptance. CSV/plot/source/trace hashes preserved.
+- **55pytest cases pass in14.93s**: `validation/2026-10-24/offset_correction/pytest.txt`.
+  Includes force at both command bounds for each joint, repeated reset restoration,
+  command clipping, one-factor isolation and observation/physics separation.
+- Historical mixed-DR script draws42–46 give1,1,1,1,0steps; retain their old identity.
+  Earlier37/41/45/49-test records, movies, snapshots and policies remain historical.
+
+All physical parameters remain sourced/estimated/unknown, not measured. Solid-CAD
+mass,0.08Nm torque hypothesis, friction and response need measurements. Static HOME
+single-support torque~0.0657Nm;2×margin exceeds0.08Nm. No strength inflation to
+force gait.0modeled collisions does not resolve horns, screws, wires or print strength.
+All five [release gates](gates.json) remain false. Software STOP is not power isolation.
 
 ## Exact next task
 
-**AI, independent work:** freeze the [current scripted baseline](REFERENCE_GAIT.md),
-prepare calibration analysis and isolate parameter sensitivity. Nominal tuning now
-outpaces physical evidence: randomized failures and sub-millimetre lift margins
-require measured plant/fit data. Preserve strength/limits and3mm/40ms acceptance;
-no further PPO. Read relevant
-[support diagnosis](SUPPORT_DIAGNOSIS.md); the [detailed plan](DEVELOPMENT_PLAN.md)
-specifies all remaining dependencies, owners and completion criteria.
+**AI:** keep the script frozen; use SENSITIVITY.md to prepare/inspect genuine
+calibration records when available. Check external angle provenance, per-servo
+zero/gain/backlash/loaded response, assembled body masses/COM and pad friction.
+Independent executable work: verify complete-basket delivery/consumable consolidation
+against procurement.json; no hidden free costs, weaker servos or new fabrication.
+Do not tune guessed physics, relax acceptance, raise torque or add PPO steps.
 
-**Human/supplier-dependent track:**
+**Human-dependent:** obtain a complete affordable exact-file quote and actual
+servo/horn/ear/screw measurements, then mounting sample fit and bench data. The
+previous Meltlab upload was blocked by automatic approval review because specific
+provider/payload sharing authorization was absent. No upload/message/order occurred.
+Use a user-returned quote or specific authorization before sharing the files;
+public example/old-geometry prices do not count. Every finishing/sample/delivery
+charge remains required. Do not purchase while the budget/fit gates fail.
 
-1. Obtain **specific permission** for current STL quotation uploads toMeltlab, or have
-   user return exact-file quotes. Automatic approval review blocked the upload because
-   it shares design data externally without named-provider authorization. No upload,
-   supplier message or purchase occurred. Public reviews exist; no new price invented.
-2. Close budget and actual horn/ear/screw dimensions; test mounting sample before full
-   frame. Include every finishing/sample/delivery charge. Current basket alreadyoverEUR100.
-3. Measure plant/current/IMU and assemble/weigh only after approval. Update measured
-   twin/version, then validate lifted steps before larger training or deployment.
+After real evidence: update/version the measured twin → replay frozen reference →
+validate lifted stepping → bounded fixed/DR training → supervised transfer/equal trials.
+See DEVELOPMENT_PLAN.md for owners/dependencies and CALIBRATION.md for measurements.
 
 ```bash
 .venv/bin/python -m pytest -q
-.venv/bin/python tools/budget_gate.py #1, active basket over cap before prints
-MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/prepare_print_order.py
-.venv/bin/python tools/check_clearance.py #1, unresolved interfaces
-MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/analyze_support.py --output runs/support_NEW
-.venv/bin/python tools/transfer_reference.py --output runs/transfer_NEW
-.venv/bin/python tools/stance_transfer.py --profiles geometric50_swap --output runs/stance_NEW
-.venv/bin/python tools/audit_transfer.py --output runs/stance_audit_NEW
-.venv/bin/python tools/handoff_probe.py --profiles compact --output runs/handoff_NEW
+.venv/bin/python tools/budget_gate.py # expected1:105.34before prints
+.venv/bin/python tools/check_clearance.py # expected1:unknown interfaces
+MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/sensitivity_probe.py --cases nominal --output runs/sensitivity_NEW
 ```
-
-Human-facing instructions/packages:SUMMARY.md,cad/QUOTE_REQUEST.md,cad/ASSEMBLY.md.
-Historical sources/quotes:history/2026-10-24/pre_print_revision/ and previous validation
-folders. Earlier in-turn geometry results are under development_superseded/ and must
-not be reported as final. No stage is physically verified without real measurement data.
