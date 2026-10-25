@@ -1,0 +1,385 @@
+{
+  "state": "dated public-price/stock review; no order, message, CAD upload or quote obtained",
+  "date": "2026-10-25",
+  "destination": "25337 Germany; published country rates only, postcode-specific final checkout pending",
+  "previous_ledger_sha256": "8c7cb01e559e6b07e49d3011a86e0db8ed5dd95ba5ba0451455f6f1f588168ab",
+  "active_ledger_source": "procurement.json",
+  "active_selected_priced_lines": [
+    {
+      "product": "Waveshare 15024 MG90S",
+      "supplier": "Welectron",
+      "quantity": 6,
+      "unit_price_eur_including_VAT": 3.5,
+      "url": "https://www.welectron.com/Waveshare-15024-MG90S-Servo_1",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail and Germany delivery page",
+      "availability": "Short supply; exact six-unit availability still not established;1–3 working days DE advertised"
+    },
+    {
+      "product": "Raspberry Pi Pico (bare RP2040 board)",
+      "supplier": "BerryBase",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 4.1,
+      "url": "https://www.berrybase.de/raspberry-pi-pico-rp2040-mikrocontroller-board",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail; black wire and shipping additionally checked in live browser",
+      "availability": "100+ shown; 1–3 days; no reservation"
+    },
+    {
+      "product": "Funduino F23107397 MPU6050 module",
+      "supplier": "Funduino",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 3.62,
+      "url": "https://funduino.com/products/mpu-6050-modul-triaxial-beschleunigungssensor-gyroskop",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product details; shipping checked in live browser",
+      "availability": "517 shown,1–3working days; not reserved"
+    },
+    {
+      "product": "Mean Well GST40A05-P1J 5 V 5 A desktop PSU",
+      "supplier": "BerryBase",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 15.5,
+      "url": "https://www.berrybase.de/meanwell-schaltnetzteil-5v-dc-5-0a-mit-hohlstecker-5-5x2-1mm",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail; black wire and shipping additionally checked in live browser",
+      "availability": "16 shown at most recent review; stock not reserved"
+    },
+    {
+      "product": "Goobay 68604 Schuko to C13, 1.5 m",
+      "supplier": "BerryBase",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 3.81,
+      "url": "https://www.berrybase.de/kaltgeraete-netzkabel-schutzkontakt-stecker-abgewinkelt-iec320-c13-buchse-schwarz",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail; black wire and shipping additionally checked in live browser",
+      "availability": "See seller; stock count not reserved"
+    },
+    {
+      "product": "Official Raspberry Pi RPI-MUSB-1 USB data cable 1 m",
+      "supplier": "BerryBase",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 1.8,
+      "url": "https://www.berrybase.de/offizielles-raspberry-pi-micro-usb-kabel-rot-1-0m",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail; black wire and shipping additionally checked in live browser",
+      "availability": "See seller; stock count not reserved"
+    },
+    {
+      "product": "DUPK-40-FF-50, 40 female-female Dupont leads, 50 cm",
+      "supplier": "BerryBase",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 2.2,
+      "url": "https://www.berrybase.de/40pin-jumper-dupont-kabel-female-female-trennbar/laenge-0-50-m",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail; black wire and shipping additionally checked in live browser",
+      "availability": "60 shown on selected 50 cm German page"
+    },
+    {
+      "product": "Funduino F23108007 JR-Futaba extension, 10 cm",
+      "supplier": "Funduino",
+      "quantity": 6,
+      "unit_price_eur_including_VAT": 1.14,
+      "url": "https://funduino.com/products/jr-futaba-servo-verlangerung-kabel-10cm-female-male",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product details; shipping checked in live browser",
+      "availability": "55 shown; public sale; no coupon"
+    },
+    {
+      "product": "Donau E-175-11 black copper wire 0.75 mm², 10 m roll",
+      "supplier": "BerryBase",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 5.5,
+      "url": "https://www.berrybase.de/donau-kupferschaltlitze-0-75-mm2-10m-lang-1-adrig-24x0-20mm-pvc-isoliert/farbe-schwarz",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail; black wire and shipping additionally checked in live browser",
+      "availability": "7 rolls shown in browser; 1–3 working days, not reserved"
+    },
+    {
+      "product": "AiSHi ELK1M16VAWH 1000 µF 16 V capacitor",
+      "supplier": "BerryBase",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 0.29,
+      "url": "https://www.berrybase.de/elektrolytkondensator-1000-f-16v-1050c-1-radial-tht",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail; black wire and shipping additionally checked in live browser",
+      "availability": "See seller; stock count not reserved"
+    },
+    {
+      "product": "PINH-1X40P 40-pin 2.54 mm header",
+      "supplier": "BerryBase",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 0.6,
+      "url": "https://www.berrybase.de/stiftleiste-1x-40-polig-rm-2-54-gerade",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail; black wire and shipping additionally checked in live browser",
+      "availability": "See seller; stock count not reserved"
+    },
+    {
+      "product": "McPower T1535561 heat-shrink, 100 pieces",
+      "supplier": "BerryBase",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 1.9,
+      "url": "https://www.berrybase.de/schrumpfschlauch-set-100-teilig-schwarz",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail; black wire and shipping additionally checked in live browser",
+      "availability": "See seller; stock count not reserved"
+    },
+    {
+      "product": "McPower T1535501 cable ties, 100 x 2.5 mm, pack of 100",
+      "supplier": "BerryBase",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 0.6,
+      "url": "https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-100x2-5mm",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail; black wire and shipping additionally checked in live browser",
+      "availability": "6 packs shown for exact transparent100x2.5mm variant;1–3 working days, not reserved"
+    },
+    {
+      "product": "Goobay 11638 DC socket 5.5 x 2.1 mm, solder lugs, 5 A",
+      "supplier": "BerryBase",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 1.1,
+      "url": "https://www.berrybase.de/dc-einbaubuchse-fuer-hohlstecker-5-5x2-1mm-metallausfuehrung-loetanschluss",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail; black wire and shipping additionally checked in live browser",
+      "availability": "100+ shown"
+    },
+    {
+      "product": "Welectron German DPD shipping",
+      "supplier": "Welectron",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 4.95,
+      "url": "https://www.welectron.com/Shipping-cost",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail and Germany delivery page",
+      "availability": "Published standard Germany rate; not a 25337 checkout, reservation or delivery booking"
+    },
+    {
+      "product": "BerryBase German DHL shipping",
+      "supplier": "BerryBase",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 4.95,
+      "url": "https://www.berrybase.de/versand-und-zahlungsbedingungen",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail; black wire and shipping additionally checked in live browser",
+      "availability": "Published standard Germany rate; not a 25337 checkout, reservation or delivery booking"
+    },
+    {
+      "product": "Funduino German shipping",
+      "supplier": "Funduino",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 4.9,
+      "url": "https://funduino.com/policies/shipping-policy",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product details; shipping checked in live browser",
+      "availability": "Published standard Germany rate; not a 25337 checkout, reservation or delivery booking"
+    },
+    {
+      "product": "Zhongdi ZD-160 lead-free solder, 1 mm, 2% flux, 10 g",
+      "supplier": "BerryBase",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 1.9,
+      "url": "https://www.berrybase.de/zhongdi-loetzinn-bleifrei-oe1-0-mm-2-flussmittel-10-g",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail; black wire and shipping additionally checked in live browser",
+      "availability": "90 shown; 1–3 days"
+    },
+    {
+      "product": "Delock 18309 self-adhesive TPE pads, 10 x 3 mm, pack50",
+      "supplier": "Reichelt",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 3.55,
+      "url": "https://www.reichelt.de/de/de/shop/produkt/gummifuesse_rund_selbstklebend_10_x_3_mm_50_stk_schwarz-371081",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "Germany/private-customer live browser product view and published shipping page",
+      "availability": "Browser Germany/private-customer view:3.55incl19%VAT, in stock1–2working days; not reserved. Search cache2.98exVAT is not the gross price."
+    },
+    {
+      "product": "Reichelt German standard DHL delivery",
+      "supplier": "Reichelt",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 5.95,
+      "url": "https://www.reichelt.de/de/de/shop/service/-12_28",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "Germany/private-customer live browser product view and published shipping page",
+      "availability": "Published standard Germany rate; not a 25337 checkout, reservation or delivery booking"
+    },
+    {
+      "product": "BerryBase RPIP-PINH Pico header kit",
+      "supplier": "BerryBase",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 0.5,
+      "url": "https://www.berrybase.de/stiftleisten-pin-header-set-fuer-raspberry-pi-pico",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader product detail; black wire and shipping additionally checked in live browser",
+      "availability": "100+ shown;1–3days"
+    },
+    {
+      "product": "Schraubenking P010265 M2 x 8 PH DIN7985 zinc-plated steel 4.8, pack100",
+      "supplier": "Schraubenking",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 1.51,
+      "url": "https://www.schraubenking-shop.de/M2-x-8mm-Linsenkopfschrauben-PH-DIN7985-Stahl-verzinkt-FKL48-P010265",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader and live browser (nut cached VAT mismatch resolved in browser)",
+      "availability": "Immediately available; DE2-3workingdays"
+    },
+    {
+      "product": "Schraubenking P003474 M2 DIN934 zinc-plated steel class8 nuts, pack100",
+      "supplier": "Schraubenking",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 1.13,
+      "url": "https://www.schraubenking-shop.de/M2-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P003474",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader and live browser (nut cached VAT mismatch resolved in browser)",
+      "availability": "Immediately available; DE2-3workingdays"
+    },
+    {
+      "product": "Schraubenking P004198 M2 DIN125 A2 washers 2.2 x 5 x 0.3 mm, pack100",
+      "supplier": "Schraubenking",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 0.99,
+      "url": "https://www.schraubenking-shop.de/22mm-Unterlegscheiben-DIN125-Edelstahl-A2-P004198",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader and live browser (nut cached VAT mismatch resolved in browser)",
+      "availability": "Immediately available; DE2-3workingdays"
+    },
+    {
+      "product": "Schraubenking German standard DHL delivery",
+      "supplier": "Schraubenking",
+      "quantity": 1,
+      "unit_price_eur_including_VAT": 5.9,
+      "url": "https://www.schraubenking-shop.de/Versandinformationen",
+      "observed_date": "2026-10-25",
+      "evidence_state": "sourced seller claim, not reservation or checkout",
+      "method": "web reader and live browser (nut cached VAT mismatch resolved in browser)",
+      "availability": "See seller; stock count not reserved"
+    }
+  ],
+  "selected_changes": [
+    {
+      "product": "Donau E-175-11",
+      "old_product": "Donau E-175-10",
+      "old_price_eur": 5.9,
+      "new_price_eur": 5.5,
+      "method": "Live browser selected black radio option and verified URL/SKU/stock/price",
+      "url": "https://www.berrybase.de/donau-kupferschaltlitze-0-75-mm2-10m-lang-1-adrig-24x0-20mm-pvc-isoliert/farbe-schwarz",
+      "observed_stock_rolls": 7,
+      "specification": "Same 0.75mm² copper,24x0.20mm strands,PVC,10m; black instead of red",
+      "reason": "Red E-175-10 unavailable; no conductor downgrade. Positive/negative identification uses existing shrink bands."
+    },
+    {
+      "product": "T1535501 transparent100x2.5mm pack100",
+      "old_price_eur": 0.45,
+      "new_price_eur": 0.6,
+      "url": "https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-100x2-5mm",
+      "observed_stock_packs": 6,
+      "method": "Exact size/colour product detail"
+    }
+  ],
+  "resolved_display_conflicts": [
+    {
+      "supplier": "Schraubenking",
+      "product": "P003474",
+      "rejected_display": "Web cache1.16EUR including20%VAT, old Austrian version",
+      "used_display": "Live browser1.13EUR per100; current German screw product cross-link also1.13",
+      "url": "https://www.schraubenking-shop.de/M2-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P003474"
+    },
+    {
+      "supplier": "Reichelt",
+      "product": "DELOCK18309",
+      "rejected_display": "Search cache2.98EUR excluding19%VAT",
+      "used_display": "Live Germany/private-customer view3.55EUR including19%VAT; in stock1–2working days",
+      "url": "https://www.reichelt.de/de/de/shop/produkt/gummifuesse_rund_selbstklebend_10_x_3_mm_50_stk_schwarz-371081"
+    }
+  ],
+  "unselected_pad_option": {
+    "name": "Eight FIX-RF-003 pads in existing BerryBase order; comparison only",
+    "date": "2026-10-25",
+    "selected": false,
+    "base_scenario": "commercial_print",
+    "requires_geometry_revision": true,
+    "remove_products": [
+      "Delock 18309 self-adhesive TPE pads, 10 x 3 mm, pack50",
+      "Reichelt German standard DHL delivery"
+    ],
+    "add_items": [
+      {
+        "category": "Mechanical",
+        "product": "FIX&FASTEN FIX-RF-003 self-adhesive rubber foot, individual unit",
+        "quantity": 8,
+        "unit_price_eur": 0.15,
+        "shop": "BerryBase",
+        "url": "https://www.berrybase.de/fix-fasten-selbstklebender-fuss-rund-oben-9-5mm-unten-10mm-hoehe-4-5mm-gummi-schwarz",
+        "evidence_state": "sourced",
+        "checked_date": "2026-10-25",
+        "evidence_file": "docs/procurement/2026-10-25/basket_review.json",
+        "availability": "In-stock displays disagree on count10vs100+; recheck8units at checkout; not reserved",
+        "notes": "Individual purchase unit per listing, not assumed partial pack. Rubber, upper diameter9.5mm/lower10mm,height4.5mm. Seller gross mass0.682g is not installed measured mass. Friction, hardness, compression and adhesive performance unknown."
+      }
+    ],
+    "required_before_selection": [
+      "Unselected pad alternative is not a purchasing or manufacturing approval",
+      "All print/sample/finishing/horn quotations and unresolved required costs must fit the computed remaining headroom",
+      "Review rubber pad attachment/compression/friction and continuous moving clearances",
+      "Regenerate physical mass/COM/inertia/contact/standing geometry and fingerprints for4.5mm tapered pads; preserve current3mm TPE baseline",
+      "Reichelt shipping may only be removed if no other required Reichelt item remains"
+    ]
+  },
+  "rejected_consolidation_evidence": [
+    {
+      "url": "https://funduino.com/products/schraubenset-kreuzschrauben-sortiment",
+      "product": "F23106261",
+      "price_eur": 9.97,
+      "finding": "M2–M5 in title conflicts with3–5mm technical table; exact screw/nut/washer schedule not established; no substitution"
+    },
+    {
+      "url": "https://www.berrybase.de/bauelemente/mechanische-bauelemente/befestigungsmaterial/",
+      "finding": "Reviewed listings offer M2.5, not a verified complete M2 set; larger hardware cannot silently replace M2"
+    },
+    {
+      "url": "https://www.reichelt.de/de/de/shop/suche/M2x8?GROUPINDEX=0&search=M2x8",
+      "method": "Live browser exact product search",
+      "finding": "0results forM2x8; broadM2Schrauben mostly returns SSD equipment. This is not proof Reichelt sells no M2 fasteners."
+    }
+  ],
+  "no_saving_claims": [
+    "No free delivery credited from unrelated spend thresholds, pickups, memberships or coupons.",
+    "No supplier hardware/print finishing included without exact quotation.",
+    "No unselected pad or connector change credited to the active basket."
+  ],
+  "remaining_unknowns": [
+    "Six-unit servo stock and included six matching horns/shaft retainers",
+    "12correct horn-to-frame screws and12washers; real ear stack/tool fit",
+    "Two fit samples and seven finished PETG parts, VAT and every staged delivery",
+    "Actual current, connector rating/signal compatibility, finished pad grip, mass and fit"
+  ],
+  "physical_configuration_changed": false,
+  "calibration_or_training_performed": false,
+  "current_configuration_identity": "b11ab9292c586ace4f2028c7061aa4ef279b6c84bd3966d2e806e0f96d01560b"
+}

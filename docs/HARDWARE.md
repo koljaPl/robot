@@ -35,8 +35,11 @@ priced outside the robot cap but inside initial cash. No mandatory paid helper.
 3. Remove the unused extension end and expose only short conductor lengths. Solder
    each positive/return branch separately onto short0.75mm² positive/negative buses.
    Keep each bus section to about10cm; stagger splices, insulate individually, then
-   add overall strain relief. Mark the negative red-wire bus with black shrink at
-   every exposed end. Connector/wire ratings remain a required acceptance test.
+   add overall strain relief. The2026-10-25 basket uses in-stock black DonauE-175-11
+   instead of unavailable red wire, with the same0.75mm² copper specification.
+   At every lead end mark positive with two separated bands of existing black
+   shrink and negative with one; trace and meter polarity before powering.
+   Wire colour alone is insufficient. Connector/wire ratings still need bench tests.
 4. Bring each isolated signal to a separate insulated header/jumper and its Pico GPIO.
    No positive servo wire connects to the Pico. Join servo-bus return to Pico GND
    with one logic-reference lead; high-current return goes straight to the PSU.

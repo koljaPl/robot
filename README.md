@@ -9,18 +9,22 @@ enthält den vollständigen Code; Preise stehen in `procurement.json`, Maße/Mas
 in `physical_spec.json`. [Offene Beschaffungsfragen](docs/PROCUREMENT_ACTIONS.md),
 [Hardware/Protokoll](docs/HARDWARE.md), [Firmware](firmware/README.md) und
 [Kalibrierung](docs/CALIBRATION.md) sind die Arbeitsreferenzen.
-Der [detaillierte Entwicklungsplan](docs/DEVELOPMENT_PLAN.md) nennt Reihenfolge,
-Zuständigkeiten und Abschlusskriterien. Die [Stütz-/Hebediagnose](docs/SUPPORT_DIAGNOSIS.md)
+Der [erweiterte Entwicklungsplan](docs/DEVELOPMENT_PLAN.md) deckt alle14Phasen ab:
+erledigte Arbeiten, nächste fünf Aufgaben, elf Arbeitspakete, Vorgehen, Dateien,
+Zuständigkeiten, Abhängigkeiten, Freigaben und Abbruchkriterien.
+Die [Stütz-/Hebediagnose](docs/SUPPORT_DIAGNOSIS.md)
 trennt vorbereitete Einbein-Posen von weiterhin fehlgeschlagenen Übergängen aus dem Stand.
 
 **Nichts bestellt oder physisch geprüft.** Aktiver Entwurf: **S6-PETG-pad-r2**,
 siebenPETG-Teile vom Druckservice, nackter Pico mit Stiftleisten und acht gekaufte
 Haftpads. Keine gedruckten TPU-Sohlen, kein Drucker-/Filamentkauf. [Druckprobe](cad/sample_quotation_package.zip),
 [7-Teile-Angebotspaket](cad/frame_quotation_package.zip), [Zeichnung](cad/print_order/drawings/interfaces.png).
-Der bepreiste Korb kostet105,34€**vor** Druck/Probe/Horn-Kleinteilen: mindestens5,34€
+Der bepreiste Korb kostet105,09€**vor** Druck/Probe/Horn-Kleinteilen: mindestens5,09€
 über der100€Grenze. Eine aktuelle dateispezifische Druckquote fehlt; der STL-Upload
 zuMeltlab wurde durch die automatische Freigabeprüfung blockiert.
-Die vorläufige MuJoCo-Kopie passt zum neuen CAD; geschätzt197.1g.55Tests bestehen.
+Die vorläufige MuJoCo-Kopie passt zum neuen CAD; geschätzt197.1g.
+Letzter protokollierter Gesamtlauf:58bestandene Tests; beim Planupdate wurde nur
+die Sammlung der58aktiven Tests geprüft, kein neues Training ausgeführt.
 Der2048Schritte-PPO-Smoke zeigt **kein gelerntes Gehen**; Skriptreferenzen werden separat bewertet.
 Alte Modelle/UF2bleiben historisch. [Prüfstand](docs/VALIDATION_CURRENT.md).
 Eine neue [Standbein-/Schrittdiagnose](docs/STANCE_TRANSFER.md) erreicht einen
@@ -37,7 +41,7 @@ Schritte. Aktuelle Identität`b11ab929…`; alle gespeicherten Policies/UF2sind 
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-dev.txt
-python -m pytest -q
+python -m pytest -q tests
 python tools/budget_gate.py # Exit1: aktiver Druckservice-Weg schon vor Druck über Budget
 python evaluate.py --episodes 1 --output runs/neutral_new
 MPLCONFIGDIR=/tmp/s6-mpl python tools/sensitivity_probe.py --cases nominal --output runs/sensitivity_new

@@ -1,0 +1,489 @@
+{
+  "date": "2026-10-25",
+  "state": "documentation planning checks; no new implementation, full-suite execution, training or physical result",
+  "plan_phases": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "work_packages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "next_tasks": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "active_test_collection": {
+    "command": ".venv/bin/python -m pytest --collect-only -q tests",
+    "result": "58 tests collected in 1.45s"
+  },
+  "latest_recorded_full_suite": {
+    "path": "docs/validation/2026-10-25/procurement_review/pytest_after_history_exclusion.txt",
+    "result": "58 passed in 16.41s",
+    "sha256": "f4168e37ec73f582bbe688cf2e89ce663e2d703e8d718953921527bb11840329",
+    "executed_this_planning_edit": false
+  },
+  "local_markdown_references_checked": 91,
+  "plan_local_references": [
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "../SUMMARY.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "STATUS.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "ROADMAP.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "EXPERIMENT.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "validation/2026-10-25/procurement_review/pytest_after_history_exclusion.txt"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "baselines/scripted_r2_offset_corrected.json"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "baselines/scripted_r2.json"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "SUPPORT_DIAGNOSIS.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "STANCE_TRANSFER.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "REFERENCE_GAIT.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "SENSITIVITY.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "VALIDATION_CURRENT.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "BUDGET_REVIEW.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "PROCUREMENT_ACTIONS.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "../procurement.json"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "../SUMMARY.md#complete-purchasecost-snapshot--not-cleared-to-buy"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "HARDWARE.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "../firmware/README.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "CALIBRATION.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "../cad/sample_quotation_package.zip"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "../cad/frame_quotation_package.zip"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "../cad/QUOTE_REQUEST.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "../cad/print_order/fasteners.csv"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "../cad/ASSEMBLY.md"
+    },
+    {
+      "source": "docs/DEVELOPMENT_PLAN.md",
+      "target": "gates.json"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "procurement.json"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "physical_spec.json"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/DEVELOPMENT_PLAN.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/DEVELOPMENT_PLAN.md#3-dependency-map-and-next-five-tasks"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "cad/sample_quotation_package.zip"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "cad/frame_quotation_package.zip"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "cad/print_order/drawings/interfaces.png"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "cad/exploded.png"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "cad/print_order/fasteners.csv"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "cad/QUOTE_REQUEST.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "cad/ASSEMBLY.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/BUDGET_REVIEW.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/PROCUREMENT_ACTIONS.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/HARDWARE.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "firmware/README.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "cad/ASSEMBLY.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/validation/2026-10-24/print_revision/final/home_clean_video/episode_0.mp4"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/validation/2026-10-24/print_revision/final/smoke_clean_video/episode_0.mp4"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/VALIDATION_CURRENT.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/STATUS.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/ROADMAP.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "AGENTS.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/SENSITIVITY.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/gates.json"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/HANDOFF.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "school_biped_s6.zip"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/DEVELOPMENT_PLAN.md#5-wp2--prepare-independent-benchsoftware-tools"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/REFERENCE_GAIT.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/SENSITIVITY.md"
+    },
+    {
+      "source": "SUMMARY.md",
+      "target": "docs/BUDGET_REVIEW.md"
+    },
+    {
+      "source": "docs/STATUS.md",
+      "target": "baselines/scripted_r2_offset_corrected.json"
+    },
+    {
+      "source": "docs/STATUS.md",
+      "target": "baselines/scripted_r2.json"
+    },
+    {
+      "source": "docs/STATUS.md",
+      "target": "SENSITIVITY.md"
+    },
+    {
+      "source": "docs/STATUS.md",
+      "target": "VALIDATION_CURRENT.md"
+    },
+    {
+      "source": "docs/STATUS.md",
+      "target": "DEVELOPMENT_PLAN.md"
+    },
+    {
+      "source": "docs/STATUS.md",
+      "target": "gates.json"
+    },
+    {
+      "source": "docs/STATUS.md",
+      "target": "DEVELOPMENT_PLAN.md#5-wp2--prepare-independent-benchsoftware-tools"
+    },
+    {
+      "source": "docs/STATUS.md",
+      "target": "BUDGET_REVIEW.md"
+    },
+    {
+      "source": "docs/ROADMAP.md",
+      "target": "DEVELOPMENT_PLAN.md"
+    },
+    {
+      "source": "docs/ROADMAP.md",
+      "target": "STATUS.md"
+    },
+    {
+      "source": "README.md",
+      "target": "SUMMARY.md"
+    },
+    {
+      "source": "README.md",
+      "target": "AGENTS.md"
+    },
+    {
+      "source": "README.md",
+      "target": "docs/STATUS.md"
+    },
+    {
+      "source": "README.md",
+      "target": "docs/ROADMAP.md"
+    },
+    {
+      "source": "README.md",
+      "target": "docs/HANDOFF.md"
+    },
+    {
+      "source": "README.md",
+      "target": "docs/PROCUREMENT_ACTIONS.md"
+    },
+    {
+      "source": "README.md",
+      "target": "docs/HARDWARE.md"
+    },
+    {
+      "source": "README.md",
+      "target": "firmware/README.md"
+    },
+    {
+      "source": "README.md",
+      "target": "docs/CALIBRATION.md"
+    },
+    {
+      "source": "README.md",
+      "target": "docs/DEVELOPMENT_PLAN.md"
+    },
+    {
+      "source": "README.md",
+      "target": "docs/SUPPORT_DIAGNOSIS.md"
+    },
+    {
+      "source": "README.md",
+      "target": "cad/sample_quotation_package.zip"
+    },
+    {
+      "source": "README.md",
+      "target": "cad/frame_quotation_package.zip"
+    },
+    {
+      "source": "README.md",
+      "target": "cad/print_order/drawings/interfaces.png"
+    },
+    {
+      "source": "README.md",
+      "target": "docs/VALIDATION_CURRENT.md"
+    },
+    {
+      "source": "README.md",
+      "target": "docs/STANCE_TRANSFER.md"
+    },
+    {
+      "source": "README.md",
+      "target": "docs/REFERENCE_GAIT.md"
+    },
+    {
+      "source": "README.md",
+      "target": "docs/SENSITIVITY.md"
+    },
+    {
+      "source": "docs/VALIDATION_CURRENT.md",
+      "target": "validation/2026-10-25/procurement_review/pytest_after_history_exclusion.txt"
+    },
+    {
+      "source": "docs/VALIDATION_CURRENT.md",
+      "target": "BUDGET_REVIEW.md"
+    },
+    {
+      "source": "docs/VALIDATION_CURRENT.md",
+      "target": "SENSITIVITY.md"
+    },
+    {
+      "source": "docs/VALIDATION_CURRENT.md",
+      "target": "SUPPORT_DIAGNOSIS.md"
+    },
+    {
+      "source": "docs/VALIDATION_CURRENT.md",
+      "target": "STANCE_TRANSFER.md"
+    },
+    {
+      "source": "docs/VALIDATION_CURRENT.md",
+      "target": "REFERENCE_GAIT.md"
+    },
+    {
+      "source": "docs/HANDOFF.template.md",
+      "target": "../SUMMARY.md"
+    },
+    {
+      "source": "docs/HANDOFF.template.md",
+      "target": "DEVELOPMENT_PLAN.md"
+    }
+  ],
+  "rollout_and_evaluation_arithmetic_verified": true,
+  "unchanged_configuration_identity": {
+    "configuration": "b11ab9292c586ace4f2028c7061aa4ef279b6c84bd3966d2e806e0f96d01560b",
+    "files": {
+      "physical_spec.json": "f9e9b2018bde072c8632befacd4ca4c04b14e7a6230b961a131487d4e4e5300d",
+      "robot.xml": "859065cffb998e3f7f8ab6cd736937882b636949b4ffbba78e4b7dce91ec3917",
+      "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+      "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+      "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+      "humanoid_env.py": "527f548ebc2d630e83c5bb327aced2adcc21947479940f4b5a394e6087ccee3c",
+      "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+      "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+      "calibration.py": "b73947a3a1bb772bac45df3356fc108426c8bc199bd388cfb8b7ac51e5125486",
+      "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+      "firmware/control.h": "dfc0dec9642df663dca6410b8414faf16de480736c8c62fa2fd2da166f9c7200"
+    },
+    "calibration": null
+  },
+  "gates_unchanged_false": {
+    "delivered_bom_below_100": false,
+    "servo_and_horn_fit_verified": false,
+    "assembly_clearances_reviewed": false,
+    "measured_actuator_and_imu_fit": false,
+    "reference_weight_transfer_and_lifted_step_verified": false
+  },
+  "budget_gate": {
+    "scenario": "commercial_print",
+    "status": "OVER BUDGET",
+    "known_delivered_subtotal_eur": "105.09",
+    "remaining_for_all_unknowns_eur": "-5.09",
+    "confirmed_minimum_shortfall_eur": "5.09",
+    "total_price_eur": null,
+    "pending_prices": [
+      "6 matching horns + 6 servo shaft retaining screws",
+      "12 horn-to-frame screws and 12 matching washers",
+      "PETG full frame:7finished parts, VAT, packaging and delivery to25337",
+      "PETG fit sample:2interface pieces, VAT and separate delivery"
+    ],
+    "unresolved_checks": [
+      "All required full-frame/sample/finishing/horn costs and stock unresolved; unknowns never zero",
+      "Six-unit Waveshare stock and actual supplied horn/shaft screw contents",
+      "3.3V PWM threshold, branch/contact current ratings and PSU droop still need bench testing",
+      "Final complete delivery to25337 incl every sample shipment; no bookings/orders/messages",
+      "Fit/layer strength/pad friction and adhesion require physical measurements",
+      "Active selected basket is over cap; a candidate subtotal is not its complete delivered quotation; no order",
+      "Exact Waveshare batch horns/retainers/screw/ear measurements and interface sample fit",
+      "Current exact-file print/support/finishing/sample/delivery prices missing",
+      "Automatic approval review blocked Meltlab STL upload; provider-specific upload authorization required",
+      "Physical layer strength, continuous clearances, tie/connector routing and pad grip not verified"
+    ],
+    "purchase_cleared": false
+  },
+  "handoff_sections": 19,
+  "current_embedded_sources_match": true,
+  "AI_guide_lines": 109,
+  "documentation_sha256": {
+    "docs/DEVELOPMENT_PLAN.md": "1d3d7804c918a5844d5946a44a87a8142c3e807b274ad93060749e87524925f3",
+    "SUMMARY.md": "10cd05f0c6bea2fff8aa26123f7241f380f373d19d85ec66411ed3beec29feb7",
+    "AGENTS.md": "8507b6104fabc10b30831338efe717376e439a355f0caaec3fe92932b55fa38a",
+    "docs/STATUS.md": "9b392355eb20fe689d47d0ffb9dc1aedd3d04181a0f6fd149e0e0ce4f9318bad",
+    "docs/ROADMAP.md": "2100d2818d6064fdfb819f64c7a6cdb0af8563ba099d8d082004066b555c457f",
+    "README.md": "97d6186135fa2466161548e9d163befaccd0ca735fe3c0db7ddc438174da9983",
+    "docs/VALIDATION_CURRENT.md": "387dd81535c9fecd69050d2b784f1ab3b38139315fb86ddbe92f3f21f6cf1841",
+    "docs/HANDOFF.template.md": "3edfdd66c2e95483c221db62f0c77983012b504733c9fe21d1bd3cd229a7051f",
+    "docs/HANDOFF.md": "048a29854698179ddbfbf311ba772ba8c96b8145b0fc3581a6de6b2afbfec49b"
+  },
+  "planned_gaps_not_implemented": [
+    "measurement-intake and fit-quality validation",
+    "reviewed six-joint manual-control utility",
+    "measured calibration parity for HOME/untrained evaluation"
+  ],
+  "no_new_training_or_physical_actions": true
+}

@@ -1,4 +1,4 @@
-# Current project status — 2026-10-24
+# Current project status — 2026-10-25
 
 Read SUMMARY.md → AGENTS.md → relevant roadmap stage. **Nothing bought, printed,
 assembled, flashed or physically verified.** Frame revision **S6-PETG-pad-r2**;
@@ -7,10 +7,10 @@ active route is outsourced PETG, bare Pico and eight ordinary grip pads.
 | Stage | State | Evidence / blocker |
 |---|---|---|
 | Requirements / AI entry | implemented | Six joints,15–20cm,PC/USB,wired power,EUR100; no printer purchase |
-| Hardware research / budget | blocked | Priced basket105.34EUR BEFORE print/sample/horn extras; known shortfall≥5.34EUR. Complete total unknown; dated ledger, not live checkout |
+| Hardware research / budget | blocked | Priced basket105.09EUR BEFORE print/sample/horn extras; known shortfall≥5.09EUR. Complete total unknown; dated ledger, not live checkout |
 | CAD / quotation package | implemented, locally verified partial | Seven connected watertight frames, two-piece fit sample, drawings/manifests;0modeled collisions/55poses,5unknown interface groups; NOT manufacturing-approved |
 | Shared control / firmware | locally verified partial | Protocol/native C++tests pass; regenerated current header has invalid calibration. All prior ARM/UF2images historical; physical timing absent |
-| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;55tests pass |
+| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest recorded full suite58passes |
 | Frozen scripted reference | locally verified partial | Four qualifying steps/3alternations,6.60cm torso and4.39cm gait distance in30s;30cm target fails.29one-factor cases show fragile guessed physics |
 | PPO / evaluation | historical local evidence | Prior2048-step smoke/reload:0walking successes/0gait. All saved policies now incompatible; no new PPO. Older49152-step pilot also failed |
 | Physical build / calibration / transfer | planned, blocked | No hardware/measurements. Bench, soldering, fit and measurement procedures prepared |
@@ -42,6 +42,20 @@ ARM build, electrical test or fit approval.
 
 [Full report](SENSITIVITY.md), [current validation](VALIDATION_CURRENT.md).
 
+- 2026-10-25 planning refresh: [expanded execution plan](DEVELOPMENT_PLAN.md)
+  now maps all14phases and WP1–WP11, with owners, dependencies, procedures,
+  files, acceptance evidence, failure decisions and conditional commands.
+  No source/model/training/hardware change. Next independent implementation is
+  WP2 measurement-intake validation; six-joint manual tooling is still planned.
+- Planning inspection also found a remaining formal-evaluation gap: HOME/untrained
+  baseline evaluation currently has no measured-calibration CLI input, unlike
+  policy evaluation through metadata. WP2 must add/test parity before formal A/B;
+  no evaluation implementation was changed by this planning edit.
+- Latest recorded full suite: **58passed in16.41s**,
+  `validation/2026-10-25/procurement_review/pytest_after_history_exclusion.txt`.
+  This planning edit rechecked active collection (58tests), not full execution.
+  Use `pytest -q tests` to avoid copied historical test-module collisions.
+
 - Frozen compact sequence: nominal30s metrics exactly match predecessor, four
   qualifying steps,3alternations,0.066021479m torso/0.043929229m gait, no fall;
   **not learned walking, not30cm acceptance**. Reference has no HOME return.
@@ -70,11 +84,16 @@ All five [release gates](gates.json) remain false. Software STOP is not power is
 
 ## Exact next task
 
-**AI:** keep the script frozen; use SENSITIVITY.md to prepare/inspect genuine
-calibration records when available. Check external angle provenance, per-servo
-zero/gain/backlash/loaded response, assembled body masses/COM and pad friction.
-Independent executable work: verify complete-basket delivery/consumable consolidation
-against procurement.json; no hidden free costs, weaker servos or new fabrication.
+**AI:** begin [WP2](DEVELOPMENT_PLAN.md#5-wp2--prepare-independent-benchsoftware-tools)
+measurement intake validation, then reviewed manual six-joint control; these are
+planned additions. Keep the script frozen. When real data arrives, check external
+angle provenance, per-servo mapping/loaded response, masses/COM and pad friction.
+The [completed price/stock review](BUDGET_REVIEW.md) selects same-specification black
+wire (red unavailable) and updates tie pricing:€105.09 still exceeds the cap before
+printing. An unselected taller-pad option gives€96.79 before unknowns and requires
+a revised twin. Do not repeat these searches or select it without a complete quote.
+Next needs actual missing costs/interfaces or a newly evidenced complete basket;
+no hidden free costs, weaker servos or new fabrication.
 Do not tune guessed physics, relax acceptance, raise torque or add PPO steps.
 
 **Human-dependent:** obtain a complete affordable exact-file quote and actual
@@ -90,8 +109,8 @@ validate lifted stepping → bounded fixed/DR training → supervised transfer/e
 See DEVELOPMENT_PLAN.md for owners/dependencies and CALIBRATION.md for measurements.
 
 ```bash
-.venv/bin/python -m pytest -q
-.venv/bin/python tools/budget_gate.py # expected1:105.34before prints
+.venv/bin/python -m pytest -q tests
+.venv/bin/python tools/budget_gate.py # expected1:105.09before prints
 .venv/bin/python tools/check_clearance.py # expected1:unknown interfaces
 MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/sensitivity_probe.py --cases nominal --output runs/sensitivity_NEW
 ```

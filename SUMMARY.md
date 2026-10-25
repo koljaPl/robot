@@ -1,10 +1,12 @@
 # S6 robot — short plan for you and the AI
 
-Updated **2026-10-24**. Costs:[procurement.json](procurement.json). Physical inputs:[physical_spec.json](physical_spec.json). **Nothing ordered or physically tested.**
+Updated **2026-10-25**. Costs:[procurement.json](procurement.json). Physical inputs:[physical_spec.json](physical_spec.json). **Nothing ordered or physically tested.**
 
 **[Detailed development plan](docs/DEVELOPMENT_PLAN.md):** diagnosis → affordable
 complete basket → bench/sample fit → measured twin → fixed/DR training → real trials.
 Each stage identifies its owner, affected files, blockers and completion evidence.
+The expanded plan maps all14phases, eleven work packages, the exact next five
+tasks, release evidence and failure decisions; [start with the next tasks](docs/DEVELOPMENT_PLAN.md#3-dependency-map-and-next-five-tasks).
 
 ## What you receive
 
@@ -29,11 +31,11 @@ All prices are VAT-inclusive dated source snapshots, quantities are full packs. 
 | [RPI-MUSB-1 USB cable](https://www.berrybase.de/offizielles-raspberry-pi-micro-usb-kabel-rot-1-0m) — BerryBase | 1 | 1.80 | 1.80 | USB-A–Micro-B data; no adapter |
 | [DUPK-40-FF-50,40leads](https://www.berrybase.de/40pin-jumper-dupont-kabel-female-female-trennbar/laenge-0-50-m) — BerryBase | 1 | 2.20 | 2.20 | Logic only; shorten I2C |
 | [JR/Futaba F23108007,10cm](https://funduino.com/products/jr-futaba-servo-verlangerung-kabel-10cm-female-male) — Funduino | 6 | 1.14 | 6.84 | Replaceable servo branches;ratings pending |
-| [Donau E-175-10,10m roll](https://www.berrybase.de/donau-kupferschaltlitze-0-75-mm2-10m-lang-1-adrig-24x0-20mm-pvc-isoliert) — BerryBase | 1 | 5.90 | 5.90 | 0.75mm² short power buses |
+| [Donau E-175-11 black,10m roll](https://www.berrybase.de/donau-kupferschaltlitze-0-75-mm2-10m-lang-1-adrig-24x0-20mm-pvc-isoliert/farbe-schwarz) — BerryBase | 1 | 5.50 | 5.50 | 0.75mm² buses; mark polarity at every end |
 | [AiSHi1000µF/16V](https://www.berrybase.de/elektrolytkondensator-1000-f-16v-1050c-1-radial-tht) — BerryBase | 1 | 0.29 | 0.29 | Bulk bus capacitor;polarity matters |
 | [PINH-1X40P,40pins](https://www.berrybase.de/stiftleiste-1x-40-polig-rm-2-54-gerade) — BerryBase | 1 | 0.60 | 0.60 | IMU/signal ends |
 | [T1535561 shrink,100pieces](https://www.berrybase.de/schrumpfschlauch-set-100-teilig-schwarz) — BerryBase | 1 | 1.90 | 1.90 | Solder insulation |
-| [T1535501 ties,100pack](https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-100x2-5mm) — BerryBase | 1 | 0.45 | 0.45 | Board/wire/tether restraints |
+| [T1535501 ties,100pack](https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-100x2-5mm) — BerryBase | 1 | 0.60 | 0.60 | Board/wire/tether restraints |
 | [Goobay11638 DC socket](https://www.berrybase.de/dc-einbaubuchse-fuer-hohlstecker-5-5x2-1mm-metallausfuehrung-loetanschluss) — BerryBase | 1 | 1.10 | 1.10 | 5A5.5×2.1mm input; accessible unplug |
 | [ZD-160 flux-core solder,10g](https://www.berrybase.de/zhongdi-loetzinn-bleifrei-oe1-0-mm-2-flussmittel-10-g) — BerryBase | 1 | 1.90 | 1.90 | Soldering consumable |
 | [Delock18309 pads,50pack](https://www.reichelt.de/de/de/shop/produkt/gummifuesse_rund_selbstklebend_10_x_3_mm_50_stk_schwarz-371081) — Reichelt | 1 | 3.55 | 3.55 | 8used;10mm diameter×3mm,adhesive included |
@@ -46,15 +48,19 @@ Frame ear hardware: buy100each of [M2×8 P010265](https://www.schraubenking-shop
 | Supplier / contents | Parts € | Shipping € | Priced subtotal € |
 |---|---:|---:|---:|
 | Welectron:6servos |21.00|4.95|25.95|
-| BerryBase:controller,power,wiring,solder,headers |40.05|4.95|45.00|
+| BerryBase:controller,power,wiring,solder,headers |39.80|4.95|44.75|
 | Funduino:IMU+6extensions |10.46|4.90|15.36|
 | Reichelt:50pads |3.55|5.95|9.50|
 | Schraubenking:3fastener packs |3.63|5.90|9.53|
-| **Priced basket BEFORE printing/sample/horn extras** |**78.69**|**26.65**|**105.34**|
-| **Known shortfall against€100 for this basket** |||**5.34**|
+| **Priced basket BEFORE printing/sample/horn extras** |**78.44**|**26.65**|**105.09**|
+| **Known shortfall against€100 for this basket** |||**5.09**|
 | **Complete delivered total** |||**Unknown**|
 
-Published German rates, not final postcode checkout or reserved stock. Extra staged deliveries cost extra. Print material belongs in the service quote: **no filament pack, printer or TPU sole purchase**. Header-kit consolidation saves€0.10 versus the previous basket; no unsupported shipping discounts or weaker components. [Research/questions](docs/PROCUREMENT_ACTIONS.md).
+Published German rates, not final postcode checkout or reserved stock. Extra staged deliveries cost extra. Print material belongs in the service quote: **no filament pack, printer or TPU sole purchase**. [2026-10-25 review](docs/BUDGET_REVIEW.md): black wire replaces out-of-stock red
+wire; tie-pack price rose. Net saving€0.25 versus€105.34. An **unselected** taller
+rubber-pad alternative would give€96.79 before prints/horn extras, leaving only€3.21
+for every unknown; it requires a revised twin. Current3mm pads stay selected.
+No unsupported delivery savings or weaker components. [Questions](docs/PROCUREMENT_ACTIONS.md).
 
 **No print service is selected:** the revised-file upload toMeltlab was blocked by automatic approval review because it shares CAD with that provider without specific authorization. Public example prices and old geometry quotes do not price this revision. Next: authorize this exact quotation upload or upload the files yourself and return the settings/breakdown/hashes. No supplier messages or purchases have been sent.
 
@@ -73,7 +79,7 @@ Tools: iron access confirmed; borrow/confirm meter, stripper/cutters, safe shrin
 
 | Stage | Verified now / next |
 |---|---|
-| CAD/print package | Implemented;55 tests now pass,55 sampled poses have0 modeled collisions; **5 unknown interface groups still block manufacture** |
+| CAD/print package | Implemented;latest recorded suite58passes,55 sampled poses have0 modeled collisions; **5 unknown interface groups still block manufacture** |
 | MuJoCo | Compiles; matching pad geometry/mass ownership;30 s neutral standing. Estimated masses/strength/friction, not calibrated |
 | Motion | Frozen script: **four qualifying alternating steps**,6.60cm torso advance/30s; **30cm target still fails**. Corrected29-case study: all12 individual±1° offsets lose steps;73credited steps independently checked |
 | PPO | Historical2048-step smoke/reload/evaluation:0 walking successes,0 gait distance. All saved policies now incompatible after offset-model correction; no extra training |
@@ -88,15 +94,22 @@ Read this → [AGENTS](AGENTS.md) → relevant status/roadmap. Active route is o
 
 **Next human action:** specific permission for Meltlab quotation uploads, or returned quote; then actual servo measurements and sample fit. Keep all[physical gates](docs/gates.json)false. Regenerate handoff and packages after a geometry change. [Full19-section reference](docs/HANDOFF.md), [project archive](school_biped_s6.zip).
 
-**Next AI work:** keep the [scripted baseline](docs/REFERENCE_GAIT.md) frozen;
-use the [completed sensitivity study](docs/SENSITIVITY.md) to analyse measured
-joint offsets/response, body mass distribution and friction when data arrives.
-Meanwhile investigate verified full-basket delivery savings; unknowns are not free.
+**Next AI work:** [WP2 in the expanded plan](docs/DEVELOPMENT_PLAN.md#5-wp2--prepare-independent-benchsoftware-tools):
+prepare measurement-record validation and reviewed six-joint manual control.
+Also close measured-calibration parity for HOME/untrained evaluation baselines
+before formal A/B; this is planned, not an implemented fix.
+These utilities remain planned; no real calibration data exists. Keep the
+[scripted baseline](docs/REFERENCE_GAIT.md) frozen; analyse actual measurements
+when available using the [sensitivity findings](docs/SENSITIVITY.md).
+The [basket review](docs/BUDGET_REVIEW.md) is complete for the checked candidates;
+next needs exact remaining quotation/interface costs or a genuinely complete new
+consolidation. Do not repeat the same searches or change pad geometry for an
+unclosed budget. Unknowns are not free.
 No further tuning/PPO; this provisional script clears no physical or formal gate.
 
 ```bash
-.venv/bin/python -m pytest -q
-.venv/bin/python tools/budget_gate.py # expected1:105.34before prints
+.venv/bin/python -m pytest -q tests # scoped to active tests, not history copies
+.venv/bin/python tools/budget_gate.py # expected1:105.09before prints
 MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/prepare_print_order.py
 .venv/bin/python tools/check_clearance.py # expected1:unknown interfaces
 MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/analyze_support.py --output runs/support_NEW
@@ -106,3 +119,6 @@ MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/analyze_support.py --output runs
 .venv/bin/python tools/handoff_probe.py --profiles compact --output runs/handoff_NEW
 MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/sensitivity_probe.py --cases nominal --output runs/sensitivity_NEW
 ```
+
+Price-only comparison: `.venv/bin/python tools/compare_procurement.py --option berrybase_round_pads`
+(exit2, incomplete/unselected; never purchase approval).

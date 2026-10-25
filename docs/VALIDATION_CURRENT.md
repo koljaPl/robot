@@ -1,10 +1,25 @@
-# Current local verification — 2026-10-24, S6-PETG-pad-r2
+# Current local verification — 2026-10-25, S6-PETG-pad-r2
 
 **No hardware purchased, printed, fitted, electrically tested or deployed.**
 Prior2026-10-23record is preserved under history/2026-10-24/pre_print_revision/docs/.
 Latest evidence: `validation/2026-10-24/offset_correction/`,
 `sensitivity_corrected/` and `sensitivity_report_final/`. The sections labelled
 historical retain the configuration that actually produced them.
+
+## 2026-10-25 documentation and procurement checkpoint
+
+Latest recorded full suite: **58passed in16.41s**,
+[log](validation/2026-10-25/procurement_review/pytest_after_history_exclusion.txt).
+The earlier55-test offset result below remains valid historical evidence.
+The expanded-plan refresh verified active collection (58tests), references,
+ledger/fingerprint/gates and generated delivery; it did not rerun the full suite,
+train, change physics, obtain a quote or perform any physical test.
+Scope future collection to `pytest -q tests`: archived copies caused a previous
+root-discovery import collision; both the failed and successful logs are retained.
+
+Selected dated priced basket now€105.09 before printing/sample/horn extras,
+minimum known shortfall€5.09; complete total unknown. See [budget review](BUDGET_REVIEW.md).
+The€105.34 snapshot near the end belongs to the prior checkpoint, not current prices.
 
 ## Current offset correction and frozen-script study
 
@@ -181,7 +196,7 @@ phase_study_followup_mirror/, handoff_probes/, handoff_review/, handoff_report/.
 Actual source snapshots/hashes and randomized runtime parameters are retained;
 configuration identity remains unchanged. Physical fit/actuator data are absent.
 
-## Procurement and next evidence
+## Historical procurement checkpoint — 2026-10-24
 
 Active priced basket105.34EUR **before** current prints/sample/horn extras; minimum
 known shortfall5.34EUR for that basket. No complete quote or budget clearance.

@@ -1,7 +1,8 @@
 # From Simulation to Reality: How does a robot learn?
 
 Generated from source by `python tools/build_handoff.py`. Do not edit HANDOFF.md.
-Research/revision date2026-10-24. Source files, ledgers and evidence states take precedence.
+Plan/revision date2026-10-25; individual evidence retains its original date.
+Source files, ledgers and evidence states take precedence.
 Short purchase/build plan for humans and AI: [SUMMARY.md](../SUMMARY.md).
 Detailed continuation dependencies and completion gates: [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md).
 
@@ -51,7 +52,7 @@ MuJoCo500Hz simulates200Hz IMU on4/6ms intervals; estimator uses actual dt.
 
 ## 5. Required BOM and incomplete route alternatives
 
-Authoritative `procurement.json`, checked2026-10-24. Null prices are required,
+Authoritative `procurement.json`, price review2026-10-25. Null prices are required,
 unresolved costs, never zero. Quantities include full packs where sold as packs.
 
 Shared parts plus active commercial_print scenario are the required basket. Other
@@ -289,6 +290,8 @@ metrics/video demonstrate otherwise. Standing alone or increasing reward is not
 walking. Long formal training is blocked until fit/calibration/reference gates.
 
 ## 19. Exact build/test order and current checkpoint
+
+{{TEXT:docs/BUDGET_REVIEW.md}}
 
 {{TEXT:docs/ROADMAP.md}}
 

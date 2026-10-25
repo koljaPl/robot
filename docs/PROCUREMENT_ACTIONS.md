@@ -1,4 +1,4 @@
-# Active commercial-print procurement actions — 2026-10-24
+# Active commercial-print procurement actions — 2026-10-25
 
 Delivery25337Germany; PCUSB-A, no adapter; required USB data cable retained.
 No purchases, supplier messages, reservations or print orders have occurred.
@@ -15,12 +15,24 @@ Authoritative ledger:`../procurement.json`; packages:`../cad/`.
 
 ## Costs and reductions
 
-Common priced subset95.81EUR +three ear-fastener packs/delivery9.53EUR =
-**105.34EUR before printing, sample delivery and unknown horn hardware**.
-Known shortfall for this basket:5.34EUR; complete delivered total unknown.
+Common priced subset95.56EUR +three ear-fastener packs/delivery9.53EUR =
+**105.09EUR before printing, sample delivery and unknown horn hardware**.
+Known shortfall for this basket:5.09EUR; complete delivered total unknown.
 The same parts previously cost95.91before mechanics. A0.50EUR Pico header kit
 plus one0.60EUR40pin pack saves0.10EUR and retains all pins. No weaker motors,
 undersized PSU/wire, omitted mains lead or assumed free consumables.
+
+[2026-10-25 source/stock review](BUDGET_REVIEW.md): black DonauE-175-11 at€5.50
+replaces unavailable redE-175-10 at€5.90; exact tie pack rises€0.45→€0.60.
+The net€0.25 reduction changes€105.34→€105.09. All other selected prices/rates
+were rechecked; no stock reservation or postcode checkout. Keep staged delivery
+costs unknown. Meter polarity; both buses now use black wire with coded shrink bands.
+
+An unselected eight-pad FIX-RF-003 comparison would cost€96.79 before the same
+print/sample/horn unknowns, leaving€3.21. Pads are4.5mm tapered rubber, not the
+current3mm TPE cylinders. No current geometry or saving is changed for that option.
+Use `tools/compare_procurement.py --option berrybase_round_pads`; it refuses free
+postage while retaining another item from that supplier and never clears purchase.
 
 Shipping/VAT rates remain published Germany snapshots, not a final checkout:
 Welectron4.95, BerryBase4.95, Funduino4.90, Reichelt5.95, Schraubenking5.90EUR.
@@ -30,7 +42,7 @@ an actual quotation states otherwise. Print material is inside the service quote
 
 Consolidating the IMU at BerryBase was rejected:9.90EUR vs3.62 adds6.28 before any
 4.90shipping saving, with a differing module/interface listing. Combining fasteners
-with pads or printer service remains an unpriced possibility, not credited savings.
+with pads or printer service remains unverified; no complete matched kit was found.
 Old quotations refer to old geometry and cannot price this revision.
 A direct3pin-header harness could replace extension cables using the existing pin
 packs, but actual mating/keying,3Acontact suitability and insulation/strain relief

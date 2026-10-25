@@ -18,8 +18,8 @@ def test_active_commercial_route_counts_sample_and_unknown_finishing():
     basket=json.loads((ROOT/'procurement.json').read_text())
     report=check_basket(basket)
     assert report['scenario']=='commercial_print' and report['status']=='OVER BUDGET'
-    assert report['known_delivered_subtotal_eur']=='105.34'
-    assert report['confirmed_minimum_shortfall_eur']=='5.34'
+    assert report['known_delivered_subtotal_eur']=='105.09'
+    assert report['confirmed_minimum_shortfall_eur']=='5.09'
     assert report['total_price_eur'] is None and not report['purchase_cleared']
     pending=' '.join(report['pending_prices']).lower()
     assert 'sample' in pending and '7finished' in pending

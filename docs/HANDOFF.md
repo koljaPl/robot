@@ -1,7 +1,8 @@
 # From Simulation to Reality: How does a robot learn?
 
 Generated from source by `python tools/build_handoff.py`. Do not edit HANDOFF.md.
-Research/revision date2026-10-24. Source files, ledgers and evidence states take precedence.
+Plan/revision date2026-10-25; individual evidence retains its original date.
+Source files, ledgers and evidence states take precedence.
 Short purchase/build plan for humans and AI: [SUMMARY.md](../SUMMARY.md).
 Detailed continuation dependencies and completion gates: [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md).
 
@@ -89,7 +90,7 @@ not humanoid appearance, remain the acceptance criterion.
 
 ## 5. Required BOM and incomplete route alternatives
 
-Authoritative `procurement.json`, checked2026-10-24. Null prices are required,
+Authoritative `procurement.json`, price review2026-10-25. Null prices are required,
 unresolved costs, never zero. Quantities include full packs where sold as packs.
 
 Shared parts plus active commercial_print scenario are the required basket. Other
@@ -105,11 +106,11 @@ scenarios are retained comparisons, not additional quantities or purchase select
 | Wiring/connectors | [Official Raspberry Pi RPI-MUSB-1 USB data cable 1 m](https://www.berrybase.de/offizielles-raspberry-pi-micro-usb-kabel-rot-1-0m) — BerryBase | 1 | 1.80 | 1.80 | USB-A–Micro-B data cable required for Pico. User confirmed PC USB-A on2026-10-23; no adapter required or included. |
 | Wiring/connectors | [DUPK-40-FF-50, 40 female-female Dupont leads, 50 cm](https://www.berrybase.de/40pin-jumper-dupont-kabel-female-female-trennbar/laenge-0-50-m) — BerryBase | 1 | 2.20 | 2.20 | Logic only. User shortens and insulates signal/I2C leads as needed; preserve removable female ends. Keep I2C short; verify continuity. Never servo power. |
 | Wiring/connectors | [Funduino F23108007 JR-Futaba extension, 10 cm](https://funduino.com/products/jr-futaba-servo-verlangerung-kabel-10cm-female-male) — Funduino | 6 | 1.14 | 6.84 | User solders six replaceable servo sockets into short heavy positive/return buses; isolate each signal to its Pico GPIO. Actual wire gauge, contact rating, plug fit and current/droop must pass bench tests. |
-| Wiring/connectors | [Donau E-175-10 red copper wire 0.75 mm², 10 m roll](https://www.berrybase.de/donau-kupferschaltlitze-0-75-mm2-10m-lang-1-adrig-24x0-20mm-pvc-isoliert) — BerryBase | 1 | 5.90 | 5.90 | Short <=10 cm power buses; label negative with black shrink; no long thin power tether |
+| Wiring/connectors | [Donau E-175-11 black copper wire 0.75 mm², 10 m roll](https://www.berrybase.de/donau-kupferschaltlitze-0-75-mm2-10m-lang-1-adrig-24x0-20mm-pvc-isoliert/farbe-schwarz) — BerryBase | 1 | 5.50 | 5.50 | Replaces unavailable red E-175-10 with same 0.75mm² copper/24x0.20mm/PVC/10m specification. One full roll serves both short buses; identify positive with two separated heat-shrink bands and negative with one at every end, then verify continuity/polarity. Existing shrink pack supplies markings; do not rely on black wire colour. Wiring mass remains an estimate, not a new measured twin. |
 | Power | [AiSHi ELK1M16VAWH 1000 µF 16 V capacitor](https://www.berrybase.de/elektrolytkondensator-1000-f-16v-1050c-1-radial-tht) — BerryBase | 1 | 0.29 | 0.29 | Polarity matters; actual tolerance ±20%, inconsistent page title ignored |
 | Wiring/connectors | [PINH-1X40P 40-pin 2.54 mm header](https://www.berrybase.de/stiftleiste-1x-40-polig-rm-2-54-gerade) — BerryBase | 1 | 0.60 | 0.60 | One full40pin pack for up to8IMU pins+6signal ends;26spare. Pico headers supplied by separate RPIP-PINH kit. |
 | Wiring/connectors | [McPower T1535561 heat-shrink, 100 pieces](https://www.berrybase.de/schrumpfschlauch-set-100-teilig-schwarz) — BerryBase | 1 | 1.90 | 1.90 | Insulate all user-soldered harness joints and label negative polarity; full shrink pack and separate10g solder pack are included. |
-| Fasteners | [McPower T1535501 cable ties, 100 x 2.5 mm, pack of 100](https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-100x2-5mm) — BerryBase | 1 | 0.45 | 0.45 | Six board ties +four tether strain restraints +eight harness restraints; full100pack, leave joint loops. |
+| Fasteners | [McPower T1535501 cable ties, 100 x 2.5 mm, pack of 100](https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-100x2-5mm) — BerryBase | 1 | 0.60 | 0.60 | Six board ties +four tether strain restraints +eight harness restraints; full100pack, leave joint loops. |
 | Power | [Goobay 11638 DC socket 5.5 x 2.1 mm, solder lugs, 5 A](https://www.berrybase.de/dc-einbaubuchse-fuer-hohlstecker-5-5x2-1mm-metallausfuehrung-loetanschluss) — BerryBase | 1 | 1.10 | 1.10 | Retailer specifies 5 A / 30 V DC, nut and washer. User solders short 0.75 mm2 bus, insulates lugs/case and provides strain relief using listed shrink/ties; support off robot. Unplug PSU DC for physical cutoff. Not branch-current or electrical verification. |
 | Shipping | [Welectron German DPD shipping](https://www.welectron.com/Shipping-cost) — Welectron | 1 | 4.95 | 4.95 | Basket under €49 free-shipping threshold |
 | Shipping | [BerryBase German DHL shipping](https://www.berrybase.de/versand-und-zahlungsbedingungen) — BerryBase | 1 | 4.95 | 4.95 | DHL EUR4.95 below EUR200; free-shipping threshold changed from recorded EUR150 |
@@ -144,9 +145,9 @@ short initial indoor trial work; several-metre travel needs a newly budgeted tet
   "active_required_basket": {
     "scenario": "commercial_print",
     "status": "OVER BUDGET",
-    "known_delivered_subtotal_eur": "105.34",
-    "remaining_for_all_unknowns_eur": "-5.34",
-    "confirmed_minimum_shortfall_eur": "5.34",
+    "known_delivered_subtotal_eur": "105.09",
+    "remaining_for_all_unknowns_eur": "-5.09",
+    "confirmed_minimum_shortfall_eur": "5.09",
     "total_price_eur": null,
     "pending_prices": [
       "6 matching horns + 6 servo shaft retaining screws",
@@ -160,7 +161,7 @@ short initial indoor trial work; several-metre travel needs a newly budgeted tet
       "3.3V PWM threshold, branch/contact current ratings and PSU droop still need bench testing",
       "Final complete delivery to25337 incl every sample shipment; no bookings/orders/messages",
       "Fit/layer strength/pad friction and adhesion require physical measurements",
-      "Complete delivered basket exceeds cap before new printing quotation; no order",
+      "Active selected basket is over cap; a candidate subtotal is not its complete delivered quotation; no order",
       "Exact Waveshare batch horns/retainers/screw/ear measurements and interface sample fit",
       "Current exact-file print/support/finishing/sample/delivery prices missing",
       "Automatic approval review blocked Meltlab STL upload; provider-specific upload authorization required",
@@ -172,9 +173,9 @@ short initial indoor trial work; several-metre travel needs a newly budgeted tet
     "commercial_print": {
       "scenario": "commercial_print",
       "status": "OVER BUDGET",
-      "known_delivered_subtotal_eur": "105.34",
-      "remaining_for_all_unknowns_eur": "-5.34",
-      "confirmed_minimum_shortfall_eur": "5.34",
+      "known_delivered_subtotal_eur": "105.09",
+      "remaining_for_all_unknowns_eur": "-5.09",
+      "confirmed_minimum_shortfall_eur": "5.09",
       "total_price_eur": null,
       "pending_prices": [
         "6 matching horns + 6 servo shaft retaining screws",
@@ -188,7 +189,7 @@ short initial indoor trial work; several-metre travel needs a newly budgeted tet
         "3.3V PWM threshold, branch/contact current ratings and PSU droop still need bench testing",
         "Final complete delivery to25337 incl every sample shipment; no bookings/orders/messages",
         "Fit/layer strength/pad friction and adhesion require physical measurements",
-        "Complete delivered basket exceeds cap before new printing quotation; no order",
+        "Active selected basket is over cap; a candidate subtotal is not its complete delivered quotation; no order",
         "Exact Waveshare batch horns/retainers/screw/ear measurements and interface sample fit",
         "Current exact-file print/support/finishing/sample/delivery prices missing",
         "Automatic approval review blocked Meltlab STL upload; provider-specific upload authorization required",
@@ -201,7 +202,7 @@ short initial indoor trial work; several-metre travel needs a newly budgeted tet
 }
 ```
 
-### Active commercial-print procurement actions — 2026-10-24
+### Active commercial-print procurement actions — 2026-10-25
 
 Delivery25337Germany; PCUSB-A, no adapter; required USB data cable retained.
 No purchases, supplier messages, reservations or print orders have occurred.
@@ -218,12 +219,24 @@ Authoritative ledger:`../procurement.json`; packages:`../cad/`.
 
 #### Costs and reductions
 
-Common priced subset95.81EUR +three ear-fastener packs/delivery9.53EUR =
-**105.34EUR before printing, sample delivery and unknown horn hardware**.
-Known shortfall for this basket:5.34EUR; complete delivered total unknown.
+Common priced subset95.56EUR +three ear-fastener packs/delivery9.53EUR =
+**105.09EUR before printing, sample delivery and unknown horn hardware**.
+Known shortfall for this basket:5.09EUR; complete delivered total unknown.
 The same parts previously cost95.91before mechanics. A0.50EUR Pico header kit
 plus one0.60EUR40pin pack saves0.10EUR and retains all pins. No weaker motors,
 undersized PSU/wire, omitted mains lead or assumed free consumables.
+
+[2026-10-25 source/stock review](BUDGET_REVIEW.md): black DonauE-175-11 at€5.50
+replaces unavailable redE-175-10 at€5.90; exact tie pack rises€0.45→€0.60.
+The net€0.25 reduction changes€105.34→€105.09. All other selected prices/rates
+were rechecked; no stock reservation or postcode checkout. Keep staged delivery
+costs unknown. Meter polarity; both buses now use black wire with coded shrink bands.
+
+An unselected eight-pad FIX-RF-003 comparison would cost€96.79 before the same
+print/sample/horn unknowns, leaving€3.21. Pads are4.5mm tapered rubber, not the
+current3mm TPE cylinders. No current geometry or saving is changed for that option.
+Use `tools/compare_procurement.py --option berrybase_round_pads`; it refuses free
+postage while retaining another item from that supplier and never clears purchase.
 
 Shipping/VAT rates remain published Germany snapshots, not a final checkout:
 Welectron4.95, BerryBase4.95, Funduino4.90, Reichelt5.95, Schraubenking5.90EUR.
@@ -233,7 +246,7 @@ an actual quotation states otherwise. Print material is inside the service quote
 
 Consolidating the IMU at BerryBase was rejected:9.90EUR vs3.62 adds6.28 before any
 4.90shipping saving, with a differing module/interface listing. Combining fasteners
-with pads or printer service remains an unpriced possibility, not credited savings.
+with pads or printer service remains unverified; no complete matched kit was found.
 Old quotations refer to old geometry and cannot price this revision.
 A direct3pin-header harness could replace extension cables using the existing pin
 packs, but actual mating/keying,3Acontact suitability and insulation/strain relief
@@ -2223,8 +2236,11 @@ priced outside the robot cap but inside initial cash. No mandatory paid helper.
 3. Remove the unused extension end and expose only short conductor lengths. Solder
    each positive/return branch separately onto short0.75mm² positive/negative buses.
    Keep each bus section to about10cm; stagger splices, insulate individually, then
-   add overall strain relief. Mark the negative red-wire bus with black shrink at
-   every exposed end. Connector/wire ratings remain a required acceptance test.
+   add overall strain relief. The2026-10-25 basket uses in-stock black DonauE-175-11
+   instead of unavailable red wire, with the same0.75mm² copper specification.
+   At every lead end mark positive with two separated bands of existing black
+   shrink and negative with one; trace and meter polarity before powering.
+   Wire colour alone is insufficient. Connector/wire ratings still need bench tests.
 4. Bring each isolated signal to a separate insulated header/jumper and its Pico GPIO.
    No positive servo wire connects to the Pico. Join servo-bus return to Pico GND
    with one logic-reference lead; high-current return goes straight to the PSU.
@@ -4413,257 +4429,748 @@ walking. Long formal training is blocked until fit/calibration/reference gates.
 
 ## 19. Exact build/test order and current checkpoint
 
-### Hardware-first execution roadmap
+### Procurement and delivery review — 2026-10-25
 
-Approved 2026-10-23. Preserve six joints and EUR 100 maximum delivered cost.
-States and actual evidence belong in STATUS.md. No stage is physically verified without data.
-Detailed tasks, owners, files, evidence and dependencies: [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md).
+**No purchases, reservations, messages or CAD uploads.** Prices below include VAT
+and published German delivery rates, not a final checkout for25337. The exact
+source records are in [the dated evidence](procurement/2026-10-25/basket_review.json);
+the selected quantities/prices remain authoritative in [procurement.json](../procurement.json).
 
-| Stage / original phases | Work and owner | Completion gate |
-|---|---|---|
-| Entry / 0,13 | AI: concise AGENTS, STATUS and this roadmap; preserve historical evidence | New session can identify constraints, sources, blockers and next command quickly |
-| A / 1 | AI: active commercial PETG quotation, complete sample/frame finishing and delivered costs; soldered electronics/ordinary pads; no purchases/messages | Complete sourced basket <=EUR100, fit information or explicit unresolved evidence/shortfall |
-| B / 1,2 | AI: reconcile CAD and physical ledger, PCB/case/frame clearance, fasteners; user/supplier: sample fit | Checked geometry; no unverified manufacturing release; solid masses remain estimates |
-| C / 3,8 | AI: Pico SDK C++ firmware, PC bench/client, bounded protocol and persistent calibration | Firmware builds and host tests pass; actual electrical timing/cutoff still needs bench |
-| D / 2,3,4,9 | AI: common limits/preprocessing, realistic command scheduling, reward and metrics; user: measured parameters | Reproducible twin; no fake stops/positive closed-loop progress/sliding success; measured vs provisional explicit |
-| E / 5,6,7 | AI: bounded nominal pilot, equal-budget fixed/DR models, held-out evaluation and videos | Actual gait results, including failures, with fingerprints and complete per-episode metrics |
-| F / 8,9,10,11,13 | User: bench, assembly, calibration and physical trials; AI: firmware/tools/data analysis/report | Real test data; frozen compatible policies; equal trials and alternating A/B order |
-| Extensions / 12 | Future: turning, terrain, recovery | Stable baseline walking first; no automatic scope expansion |
+#### Selected basket refresh
 
-Current checkpoint: quotation CAD and matching r2 twin implemented; real fit,
-strength and complete delivered quotation remain blocked. Common95.81EUR plus
-priced ear hardware/delivery9.53EUR already exceeds100EUR by5.34EUR before printing.
-Next human action: authorize exact current-STL quotation upload toMeltlab or return
-its quote/settings/hashes; no order/message. Then actual servo/horn measurements and
-sample fit are required. Current55tests and historical2048step smoke are local evidence only.
-The newest handoff script gives4qualifying alternating nominal steps, mirrored,
-6.60cm torso advance in30s. Five historical mixed-DR draws drop to0–1steps. The30cm goal
-still fails; do not expand training to hide this or assume measured robustness.
-Earlier offline diagnosis found154ideal poses, including mirrored20° prepared
-states that hold single support for3s after initialization; the original two
-HOME transition orders failed. Anchored holds do not clear the reference gate. Next independent
-AI work was parameter isolation with the script frozen:29cases under each identity,
-73credited steps independently checked; see SENSITIVITY.md. Offset clipping was
-corrected; current identity begins`b11ab929`, all saved policies/UF2are historical.
-Next analyse real calibration data when available, with verified delivered-cost
-consolidation as an independent task. Guessed plant data and fragile nominal
-steps do not clear the measured-reference/training gate.
+| Change | Evidence | Cost effect |
+|---|---|---:|
+| Red Donau E-175-10 unavailable → black E-175-11 | [Exact black variant](https://www.berrybase.de/donau-kupferschaltlitze-0-75-mm2-10m-lang-1-adrig-24x0-20mm-pvc-isoliert/farbe-schwarz), browser:7rolls, €5.50; same0.75mm² copper,24×0.20mm, PVC,10m | −€0.40 |
+| Exact transparent100×2.5mm tie pack | [T1535501](https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-100x2-5mm), now€0.60,6packs displayed | +€0.15 |
+| Other selected prices | Product/standard delivery pages rechecked; no remaining price change credited | €0.00 |
+| **Selected priced subtotal** | Previously€105.34 → **€105.09** | **−€0.25** |
 
-#### Fixed engineering contracts
+This is still **at least€5.09 over the cap before printing, sample deliveries,
+finishing and unresolved horn hardware**. Complete delivered cost remains unknown.
+No supplier is booked; advertised working-day intervals are not promised arrival
+dates. Several staged orders may add postage. None has been assumed free.
 
-- Joint order L hip/knee/ankle, R hip/knee/ankle; +Y pitch, +X roll.
-- Six normalized target-position actions; five 18-value observation frames.
-- Observations use gravity estimated from IMU, gyro, applied targets and previous action.
-- 50 Hz policy/commands; 200 Hz IMU; 2 ms physics. Real timer dt is recorded.
-- Torque limits are simulation estimates, not programmable hardware torque protection.
-- Persistent calibration supplies zero pulses, gains, signs, pulse/safe-angle limits and IMU alignment.
-- Boot disarmed, explicit arm, 100 ms fresh-command watchdog, bounded CRC frames and STOP.
-- Invalid calibration/config identity forbids policy operation; single-channel bench mode is explicit.
+The wire colour change requires polarity identification, not a controller or CAD
+change. Use two separated bands of the existing black heat-shrink at each positive
+lead end and one at each negative end. Trace and meter every branch before power;
+never infer polarity from the all-black conductor colour. Retain separate heavy
+servo buses, insulation, strain relief and accessible physical DC disconnection.
+See [wiring](HARDWARE.md). Actual harness current/connector/PWM tests remain pending.
 
-#### Experiment contract
+#### One useful but unselected alternative
 
-- Smoke 2048 steps; pilot <=50000; final <=1000000 per A/B condition and seed 0,1,2.
-- Round down to complete 1024-step rollouts. Unchanged pilot counts toward its final run.
-- A nominal and B randomized start from matching initial weights and equal budgets.
-- Validation seeds 2000–2004 select success, qualifying gait distance, then reward.
-- Test seeds 1000–1009 are held out until final reporting; evaluate both conditions.
-- Keep home and untrained baselines. Save CSV, summaries, model/config hashes and videos.
-- Standing alone is not walking: retain 3 mm/40 ms lift, non-sliding forward touchdown,
-  alternating support and >=0.3 m qualifying gait progress within 30 s without a fall.
-- Initial success target also requires a separate 30 s stand test.
-- If cap is reached without gait, report unmet target; do not extend automatically.
+[FIX&FASTEN FIX-RF-003](https://www.berrybase.de/fix-fasten-selbstklebender-fuss-rund-oben-9-5mm-unten-10mm-hoehe-4-5mm-gummi-schwarz)
+is sold individually at€0.15 including VAT. Eight cost€1.20 in the existing
+BerryBase delivery. If they replace Delock18309 (€3.55) and Reichelt has no other
+required items, its€5.95 delivery can also be removed: **conditional saving€8.30**.
 
-#### Human-dependent sequence
+| Scenario | Priced subtotal | Maximum left for every unknown | Cleared? |
+|---|---:|---:|---|
+| Selected basket/current3mm TPE pads | €105.09 | Already€5.09 over cap | No |
+| Unselected FIX-RF-003 comparison | €96.79 | €3.21 | No; incomplete and mechanically different |
 
-1. Resolve delivered budget and component interfaces before ordering.
-2. User solders/insulates short harness and headers; checks cutoff, one servo and IMU.
-3. Record pulse mapping, directions, range, speed/strength/current/latency and IMU noise.
-4. Confirm printed mounting sample on actual servo/horn, review layer/fastener
-   clearance and complete delivered budget, then obtain frame and weigh bodies.
-5. Validate all six joints, manual stand, watchdog, faults and cables.
-6. Reconcile measured twin and configuration identity; retrain incompatible policies.
-7. Policy stand, short steps, longer trials; use ruler/video, never IMU double integration.
-8. Equal fixed/DR trials, alternating order, logs and failure records; school report.
+FIX-RF-003 is tapered rubber, upper diameter9.5mm/lower10mm, height4.5mm; the
+current twin uses cylindrical10×3mm TPE pads. The extra1.5mm changes contact and
+standing geometry. Hardness, compression, adhesive performance, installed mass
+and friction remain unknown. The seller's0.682g **gross** mass is not a measured
+installed mass. Stock displays differ (10vs100+); checkout must confirm eight.
 
-When quotations or measurements block a stage, name the missing evidence and prepare
-the precise question/data template. Continue independent software preparation. Do not
-invent a quote or substitute simulation verification for physical verification.
+**Recommendation:** retain the current pad/model baseline until a complete
+affordable basket exists. The alternative leaves only€3.21 for two fit samples,
+seven finished prints, every staged delivery and unresolved horns/screws. No such
+quotation exists. Do not spend a new CAD/control identity on an unclosed budget
+or advertise€96.79 as a complete robot price.
 
-### Detailed continuation plan
+Other reviewed options do not justify a substitution:
 
-Updated 2026-10-24. Read SUMMARY.md for the priced shopping list and assembly
-overview; STATUS.md records evidence. This plan orders the work without clearing
-procurement, manufacturing, further training or physical deployment.
+- [Funduino F23106261 assortment](https://funduino.com/products/schraubenset-kreuzschrauben-sortiment):
+  €9.97; titleM2–M5 conflicts with the3–5mm technical table. Exact12M2×8 screws,
+  12M2nuts and24washers are not established. It is not a complete matched replacement.
+- Reviewed BerryBase fastening listings show M2.5 hardware; it cannot silently
+  replace M2. Reichelt's exactM2x8 search gave no result; this is not proof that
+  its entire catalogue has no suitable fasteners. No complete kit was verified.
+- The previously considered direct-header servo harness still lacks qualified
+  mating/keying/current/insulation evidence. No extension cable saving is credited.
+- Adding unnecessary items to reach free-postage thresholds increases spending.
+  Unconfirmed pickup, coupon, membership or service-supplied hardware is not free.
 
-#### Starting checkpoint
-
-- **Implemented:** seven-part PETG frame, two-part fit sample, drawings and quotation
-  ZIPs; provisional r2 MuJoCo twin; shared control/IMU interface, firmware sources,
-  PPO/evaluation, calibration and experiment tools.
-- **Locally verified:**55tests; frozen script gives4qualifying steps/6.60cm in30s,
-  below walking acceptance.29one-factor probes per legacy/corrected configuration;
-  73corrected credited steps independently checked. Earlier30s neutral standing and
-  2048-step smoke/reload are historical; no learned walking or new PPO.
-- **Estimated:** 197.1 g solid-CAD total mass, actuator dynamics, friction, mounting
-  dimensions and print strength. No physical measurements exist.
-- **Blocked:** EUR105.34 priced parts/delivery before printing/sample/horn extras;
-  exact quote and physical fit missing. No purchases, uploads or supplier messages.
-
-#### 1. Diagnose the reference — local diagnostics complete, measured gate blocked
-
-**Purpose:** establish whether target poses can lift a foot while supporting the
-COM, and distinguish ideal kinematics from actual servo/contact behaviour. More
-PPO cannot answer that question reliably.
-
-- Add an offline diagnostic that anchors either stance foot at the pad plane,
-  computes full-foot clearance, COM/support margin and gravity torque by virtual
-  work. Use the current model and safe limits; do not strengthen actuators.
-- Replay the existing three bounded reference profiles, recording load split,
-  contact footprint, COM margin, joint tracking and torque utilization.
-- Check a finite, documented set of stance/swing poses. A sampled feasible pose
-  is only a candidate; absence in a finite set is not an impossibility proof.
-- Save CSV/JSON, plot, source snapshot and hashes in a new validation directory.
-
-**Files:** tools/analyze_support.py, tests/test_support_analysis.py, validation
-record and status. **Done:** reproducible diagnosis with stated limitations and
-one evidence-based next mechanical/control question. **Blocks:** reference-gait
-approval and substantial training. Static clearance alone never proves gait.
-
-**Implemented and locally checked in this continuation:**154poses, three original
-profile replays, four prepared holds, and two bounded HOME transition probes
-(tools/transfer_reference.py). Mirrored20° prepared holds retain>=25mm clearance
-for3s; both HOME transition orders still produce zero qualifying steps. See
-[diagnosis](SUPPORT_DIAGNOSIS.md). The next question at that checkpoint was reaching single
-support while preventing stance-foot rocking, with the current limits and measured
-plant. No geometry, gain, torque or policy fingerprint changed; no PPO steps added.
-
-**Further local development:** stance-crouch preparation followed by swapping leg
-extension now gives one qualifying step from HOME, mirrored on either side. An
-independent raw2ms audit confirms112ms whole-foot clearance>=3mm,22.36mm touchdown
-advance and2.33mm stance motion. Zero alternations; only3.33mm body advance.
-See [one-step checkpoint](STANCE_TRANSFER.md). This led to first-swing clearance
-and phase/foot-placement tests before the alternating motion below.
-
-**Previous continuation:** timing study plus weight handoff gives four alternating
-nominal steps and6.60cm torso advance/30s; mirrored replay agrees. Five randomized
-draws give0–1steps under the historical environment. See [scripted baseline](REFERENCE_GAIT.md).
-Nominal tuning was frozen for parameter isolation below. Budget, sample fit and
-real response/friction measurements remain blocked. No extra PPO or gate release.
-
-**Completed follow-up:** [SENSITIVITY.md](SENSITIVITY.md) isolates29declared cases,
-then repeats them after fixing clipped shaft-zero errors at safe command bounds.
-Offsets now enter affine actuator bias; nominal trajectories/commands are unchanged.
-55tests pass. Current identity begins`b11ab929`; all existing checkpoints/UF2are
-historical. Torso mass, friction, damping and each tested±1° joint offset can remove
-qualifying steps. These are calibration priorities, not measured tolerances.
-**Next:** preserve this baseline; analyse genuine measured data when available.
-Continue verified basket/delivery consolidation independently. Do not tune unknown
-physics, raise torque or spend additional training steps to hide missing evidence.
-
-#### 2. Close the complete delivered budget and interfaces — AI + user/supplier
-
-- Start from procurement.json; do not treat old printing prices as current quotes.
-  Current known shortfall is **at least EUR5.34**, plus every unknown cost.
-- Verify stock for six exact servos, supplied horns/shaft screws, ear geometry,
-  horn hole pattern, horn-to-frame screw thread/length and branch connector ratings.
-- Seek savings through verified complete deliveries/consumable consolidation;
-  preserve six joints, actuator capability, replaceability and electrical safety.
-- Obtain separate exact-file sample and frame quotes: PETG, finishing, usable
-  holes, support removal, VAT, packaging and delivery to25337. Account for staged
-  shipping. No TPU soles, printer, filament pack or USB adapter.
-- External CAD upload to Meltlab remains subject to specific provider/payload
-  authorization following the prior automatic-review rejection. Alternatively,
-  user uploads the quotation ZIPs and returns itemized quotes/settings/file hashes.
-
-**Files:** procurement.json, docs/PROCUREMENT_ACTIONS.md, SUMMARY.md.
-**Done:** complete sourced <=EUR100 delivered basket, or precise unresolved costs
-and shortfall with procurement still blocked. **Blocks:** any purchase or print
-release. The existing basket is not affordable merely because prints are unpriced.
-
-#### 3. Bench one real servo and IMU; qualify the mounting sample — user + AI
-
-- After budget clearance, inspect exact supplied hardware and measure interfaces
-  before obtaining the fit sample. Failed fit requires CAD revision/requotation.
-- Solder Pico/IMU headers and insulated power harness; servo current bypasses Pico.
-  Verify polarity, common ground, PSU droop/current, branch connections, physical
-  disconnect, USB data and3.3V PWM compatibility.
-- Build current firmware; test disarmed startup, packet rejection, STOP and100ms
-  watchdog in single-channel mode. No policy arming with example calibration.
-- Measure pulse mapping/direction/range, offsets, unloaded and loaded response,
-  command latency, backlash and approximate usable torque without prolonged stall.
-  Record stationary IMU bias/noise/alignment. Test two sample pieces without drilling.
-
-**Files:** firmware/, bench.py, calibrations/, dated raw CSV/video/measurement
-records. Procedures: HARDWARE.md, CALIBRATION.md, cad/ASSEMBLY.md.
-**Done:** measured interface fit and bench records, validated per-channel calibration,
-physical cutoff/watchdog tests. **Blocks:** full frame and policy transfer.
-
-#### 4. Freeze the assembly and measured twin — AI + user
-
-- Resolve diagnostic findings from task1 against measurements; propose any required
-  geometry change explicitly. Recheck torque margin rather than inflating model strength.
-- Regenerate CAD/model from physical_spec.json; check case/board/fastener/tool/cable
-  sweeps and support geometry. Unknown interfaces must still fail manufacturing checks.
-- Obtain the approved full frame; assemble, weigh components and complete rigid bodies
-  without assigning mass twice. Record pad locations/adhesion/friction and tether effects.
-- Fit actuator response/delay/strength/damping; update pulse quantization and IMU model.
-  Record evidence/state/date; keep estimates where COM/inertia cannot be measured.
-- Generate new model/control/calibration fingerprints; preserve incompatible policies
-  as historical. Verify all joint signs, limits, manual standing and lifted reference.
-
-**Files:** physical_spec.json, build_model.py, CAD, calibration, robot_config.py,
-model/control sources when justified, firmware generated configuration.
-**Done:** reproducible model/accounting/clearance tests plus measured fit/plant and
-reviewed lifted-step evidence. **Blocks:** substantial training and physical policy use.
-
-#### 5. Conduct bounded fixed-versus-randomized experiments — AI
-
-- Reuse the established smoke evidence; do not add steps automatically. If a changed
-  configuration requires another smoke, explicitly record the new run/budget first.
-- Once the stage gates pass: <=50000-step nominal pilot; final A/B seeds0,1,2 at
-  equal budgets <=1000000 each, rounded down to1024-step PPO rollouts. An unchanged
-  pilot counts toward its final run. No nominal pretraining advantage for B.
-- Match initial A/B weights. Validation2000–2004 selects success, gait distance,
-  reward in that order; reserve1000–1009 for final testing. Include HOME/untrained
-  baselines and nominal/randomized evaluation for every policy.
-- Save manifests, hashes, actual steps, CSV, aggregate metrics and reviewed videos.
-  Report sliding, toe rocking, stationary lifts and falls separately.
-
-**Files:** train.py, evaluate.py, tools/experiments.py, new run directories.
-**Done:** equal-budget reproducible results or honest failure at the cap. Acceptance:
-30s stand, then >=0.3m qualifying alternating walking within30s, whole-foot lift
->=3mm for>=40ms, non-sliding touchdown progress. **Blocks:** learned walking claim.
-
-#### 6. Supervised transfer and school experiment — user + AI
-
-- Verify compatible fingerprints/calibration, cutoff/watchdog and conservative limits.
-  Begin standing; progress to short steps only after safe manual/bench tests.
-- Use a low clear area, thin protective surface and optional slack line. Support the
-  tether externally without lifting/pushing the robot; record its influence.
-- Alternate fixed/DR trial order with equal conditions, limits and trial budgets.
-  Measure distance and foot motion using video/ruler; log timestamped IMU/commands.
-  Do not infer travel through double integration of the MPU6050.
-- Produce the school report: question, design/budget, method, A/B tables, videos,
-  failures, cable effects and limitations. Turning/recovery/terrain wait for walking.
-
-**Files:** dated physical trial records, docs/EXPERIMENT.md and school report.
-**Done:** actual physical results with provenance; success is optional, honest
-reporting is mandatory. Simulated evidence cannot complete this task.
-
-#### Continuation rules and commands
-
-AI may implement diagnostics, tests and data-analysis preparation while human tasks
-are pending. Keep gates false until their evidence exists. Update STATUS/SUMMARY
-after each completed chunk, preserve historical runs, regenerate handoff/archive.
+#### Reproducible comparison and next action
 
 ```bash
-.venv/bin/python -m pytest -q
-.venv/bin/python tools/analyze_support.py --output runs/support_diagnosis_NEW
-.venv/bin/python tools/budget_gate.py  # expected1 until known shortfall resolved
-.venv/bin/python tools/check_clearance.py  # expected1 while interfaces unknown
+.venv/bin/python tools/budget_gate.py
+### Exit1: selected basket over cap; incomplete total remains null.
+.venv/bin/python tools/compare_procurement.py --option berrybase_round_pads
+### Exit2: comparison only; cannot clear purchase, even below the cap.
+```
+
+The comparison uses declared ledger substitutions without editing the selected
+basket, physical specification or model. It refuses to remove a supplier's postage
+while retaining any required item from that supplier, including unpriced items.
+All pending print/sample/horn lines and fit checks remain in its result.
+
+**Next:** obtain the missing exact-file service/hardware costs or a complete
+verified consolidation that leaves enough room for them. Preserve the six selected
+servos, PSU capacity and all required parts. Print upload authorization remains a
+separate unresolved action; no retry or supplier message occurred in this review.
+All physical/manufacturing/training gates remain false; no new PPO was run.
+
+### Hardware-first execution roadmap
+
+Updated **2026-10-25**. This is the short map; the
+[complete execution plan](DEVELOPMENT_PLAN.md) contains all phases, completed work,
+WP1–WP11 procedures, owners, affected files, acceptance evidence and failure decisions.
+[STATUS](STATUS.md) records evidence; ledgers remain authoritative.
+
+#### Where we are
+
+Implemented: provisional S6-PETG-pad-r2 CAD/twin, common control interface,
+firmware/bench foundations, Gym/PPO/evaluation and diagnostic tools. Latest
+recorded full suite:58passes. No physical robot, measured calibration or current
+compatible learned policy. Four scripted nominal steps/6.60cm in30s fail30cm
+walking acceptance; small unmeasured parameter changes remove steps.
+
+The selected dated basket is€105.09 BEFORE print/sample/horn extras, at least
+€5.09 over cap. No exact complete affordable quote or actual fit exists. The
+unselected taller-pad comparison is€96.79 before unknowns; it is not a complete
+robot and cannot silently replace current contact geometry. See BUDGET_REVIEW.
+
+#### Dependency-ordered work
+
+| Stage / original phases | Detailed work packages and owner | Completion gate |
+|---|---|---|
+| Entry /0,13 | Student+AI: requirements, status, plan, evidence | Constraints/next task unambiguous; claims tied to real evidence |
+| A /1 | WP1 student+AI: complete basket, exact-file quotes, interfaces and staged delivery | Complete ≤€100 delivered cost and reviewed fit path; no purchasing exception assumed |
+| B preparation /3,6,8,9 | WP2 AI: measurement intake, fit quality, six-joint manual utility and measured-baseline calibration parity | Mocked tests/clear procedures; no physical claim; can proceed alongside A |
+| B hardware /1,8,9 | WP3–WP5 student+AI: bench, measured interfaces, sample fit, finished assembly/weighing | Electrical/fit records, safe manual control, real mass ownership |
+| C /2,3,4,9 | WP6–WP7 student+AI: measured twin, observation parity, model/reference validation | Measured calibration and reviewed weight transfer/lift; all five gates backed by evidence |
+| D /5,6,7 | WP8–WP9 AI: bounded matched fixed/DR training and held-out evaluation | Equal initialization/budgets, compatible identities, actual gait results/CSV/videos |
+| E /8,10 | WP10 student+AI: supervised standing, short steps, progressive policy trials | Compatible measured setup, physical safety checks and actual trial records |
+| F /11,13 | WP11 student+AI: equal physical A/B, comparison, report/presentation | Recorded successes/failures, uncertainty, cable effects and reproducible handoff |
+| Extensions /12 | Future scoped work: turning, recovery, terrain | Stable walking first |
+
+**Next AI:** WP2 measurement-intake validation, then reviewed manual six-joint
+control. These are planned additions. Keep the reference frozen; no more nominal
+tuning/PPO, stronger fictitious actuation or repeated identical budget searches.
+**Next human input:** exact remaining quotes/interfaces and actual servo/sample fit;
+all purchases/manufacturing remain blocked. CAD sharing with Meltlab needs the
+previously missing provider/payload authorization, or a user-returned quote.
+This plan sends no upload, message or purchase and asks for none to be executed now.
+
+#### Contracts to preserve
+
+- Six actions in joint order L hip/knee/ankle then R same; +Y pitch, +X roll.
+- 50Hz commands,200Hz IMU processing,2ms physics; actual timestamps matter.
+- Five18-value observation frames: estimated gravity, gyro, acknowledged targets
+  and previous actions. No perfect orientation, shaft feedback, velocity or contacts.
+- Safe command limits are not unknown mechanical stops. Torque is a simulation
+  estimate, not programmable hardware current/torque protection.
+- Boot disarmed, explicit arm,100ms watchdog, bounded/versioned CRC packets,
+  persistent measured calibration/fingerprints; STOP is not physical DC isolation.
+- Current identity begins`b11ab929`; all saved policies/UF2are historical after the
+  offset correction. Use snapshots; never relabel old checkpoints or headers.
+- Smoke2048, pilot≤50000 (49152actual), final≤1000000 (999424actual) each for
+  A/B seeds0,1,2. Compatible pilot counts toward final total; B never resumes A.
+- Match A/B initial weights and budgets. Validation2000–2004 selects success,
+  gait distance, reward; reserve1000–1009 for final tests, with HOME/untrained baselines.
+- Acceptance: separate30s stand; body AND qualifying gait progress≥0.3m/30s,
+  ≥3mm/40ms full-foot lift,≥5mm touchdown,≤3mm stance slip,≥2steps per side and
+  ≥3alternations, no fall. Physical thresholds need video/ruler evidence.
+- Stop/report failure at the agreed cap. No simulation result clears a physical gate.
+
+#### Evidence/continuation rule
+
+Record each step as planned, implemented, locally verified, physically verified
+or blocked. Keep all five gates false until actual evidence closes them. Preserve
+historical trials, quotes and policies. Follow the detailed plan's next executable
+task when human-dependent work is blocked; do not restart already completed research.
+
+### Complete project execution plan
+
+Updated **2026-10-25**. This is the detailed plan for the student and future AI
+sessions. [SUMMARY](../SUMMARY.md) remains the short shopping/build overview;
+[STATUS](STATUS.md) records evidence; [ROADMAP](ROADMAP.md) is the dependency map.
+Prices and physical parameters remain authoritative in their structured ledgers.
+
+**Current position:** the provisional robot design, digital twin, control interface
+and RL pipeline exist. A handwritten script produces four qualifying simulated
+steps. A calibrated physical robot and learned walking do not yet exist.
+The immediate obstacles are an affordable complete basket and real interface/
+actuator measurements. More PPO is not the next task.
+
+#### 1. Objective and fixed constraints
+
+Answer **“From Simulation to Reality: How does a robot learn?”** by building one
+small biped, learning walking in simulation and comparing fixed-parameter and
+domain-randomized policies under matched simulated and physical conditions.
+
+- Six Waveshare 15024 MG90S joints: left hip pitch, knee pitch, ankle roll; then
+  the same right joints. No weaker motor or reduced-joint substitution.
+- Approximately 15–20 cm, lightweight, broad feet, repairable, no arms.
+- PC inference; USB to bare Pico; direct PWM; MPU6050; separate wired servo power.
+- Commercial PETG printing: seven frame parts and two separate fit-test pieces.
+  Eight bought grip pads; no printed TPU, printer purchase or filament packs.
+- Soldering is available. Student assembly needs no mechanical drilling, cutting
+  or bending; the printing service must finish usable mounting holes.
+- Preferred hardware cost €50–75; **complete delivered maximum €100**, including
+  VAT, required parts, full consumable packs, finishing and all staged deliveries.
+  Tools are separate but still belong in initial cash expenditure.
+- Delivery to 25337, Germany; PC USB-A confirmed. Include the USB-A–Micro-B data
+  cable, omit an unnecessary adapter. No battery or onboard neural inference.
+- This planning task authorizes no purchase, reservation, supplier message or CAD
+  upload. Quotation, fit review, manufacturing release and purchase are distinct.
+
+##### Success criteria, fixed before further experiments
+
+| Requirement | Evidence |
+|---|---|
+| Stand for 30 s | Separate unassisted trial; record falls/stops and cable arrangement |
+| Walk at least 0.3 m within 30 s without falling | Both body displacement and qualifying gait distance reach 0.3 m |
+| Alternate real lifted steps | At least two qualifying steps per foot and three alternations |
+| Whole-foot lift, not a toe pivot | At least 3 mm continuously for at least 40 ms |
+| Advancing touchdown with supported stance | Forward touchdown at least 5 mm, stance slip at most 3 mm and opposite supported stance |
+
+Simulation geometry/force diagnostics can audit these criteria but never enter
+policy observations. Physical acceptance uses calibrated video/ruler measurements.
+If measurement resolution cannot establish a threshold, mark it **unverified**.
+Reward growth, standing and sliding alone are not walking.
+Qualifying gait distance is half the sum of accepted forward foot advances;
+it is tracked separately from body displacement and excludes rejected steps.
+
+#### 2. Phase-by-phase checkpoint
+
+States: **implemented** = design/code exists; **locally verified** = recorded
+software evidence; **physically verified** = actual measurements/trials. No phase
+is physically verified now. Blocked work has a named missing dependency.
+
+| Original phase | Already exists / evidence | Remaining work |
+|---|---|---|
+| 0 Requirements | Six-joint layout, constraints and acceptance agreed | Demonstrate feasibility without silently relaxing them |
+| 1 Hardware research | Sourced basket, servo comparison, power/harness design, dated budget review | Complete exact-file quotes, total delivery cost, actual interfaces and electrical ratings |
+| 2 Digital twin | `physical_spec.json` → CAD/MJCF; estimated 197.053 g; local geometry/accounting checks | Confirm printed fit and replace physical estimates with measured evidence |
+| 3 Common interface | Six actions; shared IMU/history processing; serial protocol, calibration and fingerprints | Physical timing/parity tests and reviewed manual multi-joint utility |
+| 4 RL environment | Gymnasium reset/step, bounded servo approximation, reward, falls and gait metrics | Validate against measured dynamics and feasible reference motion |
+| 5 Baseline training | Historical 2,048-step smoke and older 49,152-step pilot; no learned walking | New compatible measured-model baseline after gates pass |
+| 6 Evaluation | CSV/JSON, raw gait audits, nominal/randomized diagnostics and videos | Formal trained-policy and physical comparisons with uncertainty |
+| 7 Domain randomization | Conservative hypotheses implemented; one-factor study completed | Fit ranges from measurements; equal-budget trained A/B experiment |
+| 8 Physical robot | Firmware, wiring/assembly procedures and quotation prototypes prepared | Approved procurement, electrical bench, sample fit, assembly and manual control |
+| 9 Calibration | Templates and first-order response-fit diagnostic | Real per-servo, IMU, mass/COM, contact/current/timing records |
+| 10 Sim-to-Real | Host transport and `deploy.py` prototype | Compatible measured policies; supervised standing and progressive walking |
+| 11 Main experiment | Protocol in [EXPERIMENT](EXPERIMENT.md) | Matched simulated/real A/B trials, failures and analysis |
+| 12 Extensions | Conditional ideas only | Turning/recovery/terrain after stable walking |
+| 13 Documentation | Summary, AI guide, plan, handoff, drawings and archive | Keep synchronized; produce final school report/presentation from actual results |
+
+##### Discoveries that must not be lost
+
+- Latest recorded full suite: **58 passed in 16.41 s**, [2026-10-25 log](validation/2026-10-25/procurement_review/pytest_after_history_exclusion.txt).
+  The earlier offset-correction suite had 55 tests. This planning edit has not
+  rerun the full suite; collection was rechecked and finds 58 tests.
+- Current fingerprint: `b11ab9292c586ace4f2028c7061aa4ef279b6c84bd3966d2e806e0f96d01560b`.
+  [Current frozen reference](baselines/scripted_r2_offset_corrected.json) and
+  [historical predecessor](baselines/scripted_r2.json) remain separate.
+- Seven connected watertight frame meshes; 55 sampled poses, zero modeled known
+  collisions, **five unresolved interface groups**. Not manufacturing approval.
+- Nominal script: four qualifying steps, three alternations, 6.60 cm torso
+  displacement / 4.39 cm qualifying gait distance in 30 s, no fall. It ends
+  leaned, not at HOME; it is time-driven, **not learned walking**.
+- Each tested individual ±1° offset loses steps. Torso-only mass ±5% gives 0/1
+  steps; friction ±15% gives 4/0; damping ±20% gives 2/3. All 73 credited steps
+  in the corrected study were raw-audited. These are not physical failure rates.
+- Shaft-zero error now enters actuator bias instead of disappearing at command
+  bounds. All existing policies/UF2 images are historical and incompatible.
+  Current firmware calibration remains invalid; ARM rebuild/electrical tests pending.
+
+References: [support](SUPPORT_DIAGNOSIS.md), [one-step transfer](STANCE_TRANSFER.md),
+[scripted gait](REFERENCE_GAIT.md), [sensitivity](SENSITIVITY.md),
+[verification](VALIDATION_CURRENT.md). Preserve failed trials and source snapshots.
+
+#### 3. Dependency map and next five tasks
+
+```text
+Existing provisional CAD + control + twin + RL pipeline + diagnostic evidence
+                          ↓ CURRENTLY HERE
+Complete delivered budget + exact interfaces ─────┐
+                                                 ├→ bench + fit sample
+Independent data/manual-control preparation ──────┘        ↓
+                                                   assembly + measurements
+                                                          ↓
+                                                measured twin + reference checks
+                                                          ↓
+                                                 bounded matched A/B training
+                                                          ↓
+                                                 supervised transfer + real A/B
+                                                          ↓
+                                                 school report/presentation
+```
+
+| Order | Concrete task | Owner | Done means / blocks |
+|---|---|---|---|
+| N1 | Obtain missing print/sample/horn costs or a genuinely complete new consolidation | Student supplies quote/permission/interfaces; AI checks ledger | Complete ≤€100 delivered basket and reviewed fit path; otherwise explicit shortfall. Blocks procurement/release |
+| N2 | Prepare measurement-intake validation and logged six-joint manual control | AI; independent of hardware | Mocked tests, explicit arm, immutable logs, no fictitious measurements. Blocks later safe manual standing |
+| N3 | Verify real accessories/dimensions, electrical behaviour and two-piece sample | Student + AI analysis | Photos/dimensions, bench records and actual fit; costs remain accounted. Blocks full frame |
+| N4 | Assemble/weigh; calibrate/version twin; run model and reference checks | Student measures, AI models | Traceable measured calibration and reviewed feasible stepping. Blocks substantial training/deployment |
+| N5 | Run bounded matched A/B training, evaluate, then supervised physical trials | AI training, student trials | Equal budgets/initialization, held-out metrics/videos and failures. Blocks learned-walking/transfer claims |
+
+N1 and N2 can proceed independently. Later tasks require their dependencies;
+there are no invented completion dates while quotes and hardware are absent.
+
+#### 4. WP1 — Close procurement and staged delivery costs
+
+**State:** blocked. **Owner:** AI ledger/research; student external quotes and
+later decisions. **Inputs:** [BUDGET_REVIEW](BUDGET_REVIEW.md),
+[PROCUREMENT_ACTIONS](PROCUREMENT_ACTIONS.md), [procurement.json](../procurement.json).
+
+##### Budget decision
+
+The dated selected basket is **€105.09 before** printing/sample/finishing/horn
+extras: common subset €95.56 plus €9.53 ear-fastener packs/delivery. Known shortfall
+is at least **€5.09**; complete delivered total is unknown. This is not a new live
+checkout. Revalidate price, stock, VAT and postcode delivery before any future order.
+
+The unselected taller FIX-RF-003 comparison is €96.79 before the same unknowns,
+leaving €3.21. It is not an affordable complete robot. Its 4.5 mm geometry differs
+from the selected 3 mm pads and needs a new twin if ever selected. Do not change
+geometry or credit a comparison saving without a complete verified alternative.
+
+##### Quantities to resolve
+
+Exact products, links, full-pack prices and supplier charges remain in the
+[SUMMARY purchase table](../SUMMARY.md#complete-purchasecost-snapshot--not-cleared-to-buy)
+and ledger; this checklist does not create a second price list.
+
+| Group | Required content | Unresolved point |
+|---|---|---|
+| Actuation | 6 exact MG90S, 6 compatible horns, 6 shaft retainers | Six-unit stock/accessories, spline, shape, thread and dimensions |
+| Control/sensing | 1 bare Pico, header kit, 1 MPU6050, header/signal pack, USB data cable | Board envelope, pull-ups, alignment and 3.3 V operation |
+| Power | 1 enclosed 5 V/5 A PSU, mains lead, DC socket, capacitor | Loaded droop/current, connector ratings and cutoff |
+| Harness | 6 removable branches, full heavy-wire roll, signal leads, solder, insulation/ties | Actual mating, pin order, rating and strain relief |
+| Frame | 7 finished PETG parts: torso, two thighs, two shins, two feet | Exact-file quote, usable holes, supports, strength and fit |
+| Samples | 1 cradle + 1 horn plate, separate test pieces | Finishing and separate delivery included |
+| Contacts | 8 Delock 18309 pads installed, bought as 50-pack | Installed mass, compression, adhesion and friction |
+| Ear fasteners | 12 M2×8 screws, 12 M2 nuts, 24 washers installed; priced full packs | Real stack, projection, access and length |
+| Horn fasteners | 12 horn-to-frame screws + 12 matching washers | Unknown diameter/thread/length; shaft retainers are not assumed M2 |
+
+##### Procedure
+
+1. Price the current two quotation ZIPs, quantities, hashes and settings. Send only
+   those files for a quote, never the complete project archive with historical CAD.
+2. Obtain separate sample/frame itemizations: PETG, initial 0.2 mm layers, three
+   walls, 25% infill, reviewed load orientation/supports, removed supports, usable
+   holes without student drilling, finishing, VAT, packing and delivery to 25337.
+   Initial print settings are not a structural strength certification.
+3. Count possible bench-component, sample and finished-frame shipments separately.
+   Splitting the six-servo order can add postage. Rework/reprint costs, when known,
+   belong in the staged budget; no assumed free balance order or finishing.
+4. Resolve accessory contents/interfaces through exact-source data and real
+   measurements. Borrow an exact sample only if actually available; do not assume
+   free borrowing, pickup, hardware or supplier-provided screws.
+5. Prior automatic review rejected sharing CAD with Meltlab without specific
+   provider/payload authorization. Student returns a quote, or a later specifically
+   authorized upload is performed; no bypass/retry elsewhere. Messages and purchases
+   are not authorized by this plan.
+6. If total exceeds €100, record exact shortfall plus unknowns and stop procurement.
+   Seek one evidenced complete consolidation, not repeated speculative searches,
+   weaker servos, omitted leads/consumables or a merely advertised example price.
+
+**Files/deliverable:** dated ledger/source records, quotes/hashes, staged costs,
+SUMMARY/BUDGET_REVIEW/PROCUREMENT_ACTIONS. **Done:** complete compliant cost and
+reviewed interfaces/fit path. Actual fit may require borrowing an exact part.
+If an unverified prototype purchase is necessary first, a separate explicit staged
+prototype decision is required; this plan grants no budget/fit-rule exception.
+**Blocks:** procurement and manufacturing release.
+
+#### 5. WP2 — Prepare independent bench/software tools
+
+**State:** foundations implemented; additions below planned. **Owner:** AI.
+**Depends on:** source inspection, not hardware or new training.
+
+Existing: `hardware_interface.py`, `serial_robot.py`, `calibration.py`, `bench.py`,
+`deploy.py`, Pico firmware, templates and `tools/fit_response.py`. Bounded/versioned
+CRC frames, sequences/timestamps, arm/ack/faults and 100 ms watchdog are implemented.
+The first-order fitter is a diagnostic, not automatic actuator identification.
+
+1. **Measurement intake:** check increasing timestamps, finite values/units,
+   external angle provenance, command/video clock alignment, servo identity,
+   voltage/load and uncertainty. Preserve raw files; never substitute requested or
+   acknowledged angles for measured shaft angles. Missing data stays unknown.
+2. **Fit quality:** detect no motion, insufficient pre/post-step recording, wrong
+   sign, saturation/overshoot and boundary-limited fits. Plot residuals and test
+   held-out steps. Low RMSE alone cannot validate gain/strength/delay. Test with
+   explicitly synthetic data; never automatically overwrite the physical ledger.
+3. **Six-joint manual utility:** provide logged gradual transitions between reviewed
+   calibrated poses over `SerialRobot`. `bench.py` currently controls only one
+   restricted channel, so it is not a complete manual standing controller.
+   Require explicit arm, compatible identity, fresh acknowledgements, rate/angle
+   limits, fault/deadline/tilt handling and STOP on exit. Never auto-arm/reconnect.
+4. Test corrupted/stale packets, invalid calibration, watchdog, disarmed startup
+   and failures with fake serial/native firmware tests before hardware use.
+
+5. **Measured baseline parity:** `evaluate.py` currently obtains calibration from
+   policy metadata, but its HOME/untrained baseline CLI has no calibration option.
+   Before formal experiments, add explicit measured calibration for those baselines
+   and pass it through `tools/experiments.py`. Verify the same pulse quantization,
+   model/control/calibration identity and initial-policy weights as the trained runs.
+   This is a remaining implementation task, not an existing verified capability.
+
+**Affected files later:** tests, templates, calibration-analysis tools and a new
+clearly named manual-control utility; `evaluate.py`, `tools/experiments.py` and
+hardware instructions. New filenames/features
+are planned, not existing capabilities. Fingerprinted-source changes require a new
+identity and preserved baseline. **Done:** reviewed mocked tests/logs, clear bench
+procedure, no fictitious physical data. Keep the gait/plant frozen.
+
+#### 6. WP3 — Electrical bench and exact servo interfaces
+
+**State:** not physically started. **Owner:** student; AI reviews data.
+**Depends on:** WP1 budget/fit/purchasing conditions and required WP2 preparation.
+
+1. Confirm/borrow meter, stripper/cutters, iron/stand, insulation heat source, small
+   screw tools, ruler/protractor, scale and timed video equipment. Iron access is
+   confirmed; other tools/access costs are not silently free.
+2. Follow [HARDWARE](HARDWARE.md): short insulated heavy servo buses, replaceable
+   branches, polarity markings, common ground, capacitor and strain relief.
+   No servo supply current through Pico, breadboard or thin logic jumpers.
+   Mains remains inside the enclosed PSU/lead.
+3. Inspect/continuity-test unpowered; measure all branches with no servo attached.
+   Check USB and stationary IMU. Rebuild current firmware using
+   [firmware instructions](../firmware/README.md), not a historical UF2.
+4. Connect one unloaded servo with horn removed. Verify pin order, 3.3 V PWM,
+   supply droop/current, physical DC cutoff, disarmed boot, STOP/fault recovery
+   and 100 ms command-loss watchdog. Record timing rather than assuming it.
+5. Use restricted single-channel bench mode, not a policy. Its 1400–1600 µs window
+   is a bench bound, not guaranteed mechanical safety. Wider exploration requires
+   measured travel and reviewed limits. Establish a safe centre before fitting horns.
+6. Measure/photograph housing, ears, shaft, lead exit, horn holes and actual supplied
+   screws against a ruler. Identify threads/length without forcing a wrong screw.
+7. Record response in both directions, backlash, repeatability, current and voltage
+   unloaded and under brief small known loads. Avoid prolonged stalls; stop on
+   heat/buzzing/droop. Basic meters may miss peaks—record that uncertainty.
+8. Repeat mapping/identity for all six servos. Record 30–60 s stationary IMU data
+   and multiple known gravity orientations, with and without servo power.
+
+**Evidence/files:** [CALIBRATION](CALIBRATION.md), template measurements/step-response
+CSV, raw bench logs/video/photos, per-servo records. **Done:** measured one-servo
+operation and exact interface table. One unloaded servo test does not establish
+six-servo current capacity or sustainable torque. **Blocks:** real sample/full assembly.
+
+#### 7. WP4 — Sample fit and full-frame manufacturing review
+
+**State:** quotation prototypes ready; actual fit blocked. **Owner:** student/service;
+AI geometry review. **Depends on:** WP1 and WP3 interface measurements.
+
+1. Compare measured case/ear/horn/screw dimensions with the ledger/drawings. Correct
+   authoritative geometry, not separate hidden mesh dimensions. Regenerate/requote
+   any changed hash, settings, quantity or fastener schedule.
+2. Obtain the two reviewed sample pieces first. Test case insertion, both ear holes,
+   horn attachment, retaining-screw access, nut/washer stack and wire exit without
+   drilling, forcing or cracking plastic. Check fasteners do not bottom out.
+3. Inspect measured holes/slots, finishing, layer orientation and strength. A failed
+   interface means revise and repeat, with actual additional costs—not full-frame release.
+4. Review complete assembly sweeps: neighboring cases, links, electronics, the
+   Pico's 11 mm header envelope, fasteners, wires and screwdriver access. Existing
+   55 sampled poses do not prove every continuous path.
+5. Freeze reviewed seven-part geometry, exact hardware and finishing quote. Ensure
+   removed supports do not damage load-bearing features or leave unusable holes.
+
+**Files:** [sample ZIP](../cad/sample_quotation_package.zip),
+[frame ZIP](../cad/frame_quotation_package.zip), [brief](../cad/QUOTE_REQUEST.md),
+[fastener schedule](../cad/print_order/fasteners.csv), `physical_spec.json`, CAD.
+**Done:** photographed fit on actual selected servo/horn/screws; real unknowns
+closed with evidence; complete cost still passes. **Blocks:** full-frame approval.
+A watertight STL or quotation calculator does not satisfy this task.
+
+#### 8. WP5 — Assemble, inspect and weigh
+
+**State:** not physically started. **Owner:** student; AI reconciles ledger.
+**Depends on:** WP3/WP4 and approved finished-frame delivery.
+
+Use the illustrated [assembly instructions](../cad/ASSEMBLY.md):
+
+1. Set each bare servo to measured joint zero, isolate DC, then fit its horn.
+   HOME is a control pose, not the shaft's mechanical zero.
+2. Hip cases → torso, thigh plates → hip horns; knee cases → thighs, shin upper
+   plates → knee horns; ankle cases → feet, shin lower plates → ankle horns.
+   Verify pitch/roll axes and mirrored electrical signs.
+3. Fit only verified fasteners; inspect projection, screw bottoming, layer cracks
+   and tool access. Do not substitute larger screws or drill the student's parts.
+4. Insulate/secure boards, immobilize IMU, attach four selected pads per foot at
+   drawing coordinates and route wire service loops outside sweeps. Support tether
+   externally without lifting/pushing the torso.
+5. Weigh parts and each assembled rigid body. Assign every case/horn/bolt/board/pad/
+   wire section once. Do not add assembled mass on top of its component masses.
+6. Estimate COM by balancing/suspension, recording uncertainty. Inertia derived
+   from measured mass/geometry remains estimated unless experimentally identified.
+7. Use reviewed manual tools: one joint, small combinations, safe poses, six-servo
+   power checks, cutoff/watchdog and standing. Inspect after every fall; manually
+   recover and deliberately reinitialize.
+
+**Deliverable:** measured body/component inventory, photos, calibration and manual
+trial records. **Done:** assembled robot follows safe manual targets; mass totals,
+current and fault checks reconcile. Physical walking is not implied.
+
+#### 9. WP6 — Fit and version the measured twin
+
+**State:** provisional twin implemented; measured twin blocked.
+**Owner:** student measures, AI models. **Depends on:** WP3–WP5.
+
+| Parameter group | How to obtain evidence | Update/verification |
+|---|---|---|
+| Geometry/transforms | Real joints, horns, cases, link lengths and pads | Ledger → CAD/MJCF; compare drawings and assembly |
+| Mass/COM/inertia | Weigh assembled bodies; balance/suspend; reconcile ownership | Consistent masses/inertias, no double count; label estimates |
+| Pulse mapping | Six zeros/gains/signs/ranges, repeated approach both ways | Versioned calibration; inward quantization; safe commands separate from real stops |
+| Actuation | Multiple unloaded/loaded steps, voltage, tracking, delay/heat | Joint fit of gains/strength/damping/speed; held-out response errors |
+| Contact | Finished pad dimensions/compression/adhesion, incline/sliding tests | Baseline sliding friction and evidence-based uncertainty |
+| IMU | Bias/noise/alignment, clipping/filter timing, timestamps | Same estimator in SIM/real; confirm actual firmware ranges/filter behaviour |
+| Tether | Slack, unsupported mass, pull direction and repeated trials | Document experimental confound; never count cable support as unassisted |
+
+The 0.08 N·m model torque and power estimates are hypotheses. HOME single-support
+static demand was about 0.0657 N·m; doubling it exceeds that strength hypothesis.
+Measure usable torque/loaded tracking before claiming margin. If inadequate,
+review lighter geometry/shorter moments within the agreed layout/height; do not
+raise fictitious strength just to obtain a simulated lift.
+
+Use `tools/fit_response.py` only after WP2 quality review: a first-order delay/time
+constant cannot uniquely identify MuJoCo kp/kv, sustainable torque or backlash.
+Fit several amplitudes/loads and validate held-out trajectories.
+
+Every parameter keeps **sourced / estimated / measured / unknown**, units, date,
+evidence and method. New measured calibration stays invalid until all channels
+and IMU entries are evidenced/reviewed. Never run `tools/sync_frame_mass.py` over
+measured masses—it replaces them with solid-CAD estimates.
+
+Regenerate model/config/header, rebuild firmware and issue a new identity after
+relevant changes. Preserve incompatible policies/manifests and old snapshots;
+new measured policies must be trained under their own full fingerprints.
+**Done:** coherent measured/provisional distinction, mass/axis/contact checks,
+held-out response agreement with errors reported, valid calibration/handshake.
+
+#### 10. WP7 — Close model, observation and reference checks
+
+**State:** provisional checks implemented; measured acceptance blocked.
+**Owner:** AI + student. **Depends on:** WP6 and physical manual checks.
+
+1. Compile/regenerate from the same specification; verify ownership, mass, positive
+   inertias, transforms, axes, contacts and continuous assembly access/sweeps.
+2. Check finite HOME, bounded random and limit commands; clipping, target slew,
+   PWM quantization, force/speed envelope, delay and reproducible reset behaviour.
+3. Retain error outside command clipping, nominal restoration and matching inertia
+   scaling. Initial delay is one/two command ticks until actual timing replaces it.
+4. Compare recorded physical commands/IMU through shared preprocessing. Six normalized
+   targets map to safe angles. Five 18-value frames give 90 observations: estimated
+   gravity, gyro, applied-target acknowledgements and previous actions. No true
+   shaft positions, orientation, translation, velocity, contact or force leaks.
+5. Keep progress reward `10 × min(forward_displacement, 0.06 × control_dt)`;
+   upright, lateral-motion, command-smoothness and fall terms remain simple.
+   Backward motion is fully debited. Smoothness is not measured electrical energy.
+6. Recheck zero-net cycles, sliding, stationary lifts, toe pivots and unsupported
+   hops cannot produce walking success. Do not relax thresholds after seeing failures.
+7. Replay the frozen reference against measured dynamics; compare lift, touchdown,
+   slip, support, tracking and torque use with historical snapshots. Verify standing,
+   weight transfer and supported lifted stepping, not only ideal initialized poses.
+8. Adjust a reference only with an explicit new revision and measured reason. Small
+   physical manual tests require review; do not blindly copy the full diagnostic script.
+
+**Done:** source-hashed checks and reviewed measured-model/physical manual step
+records. Current fragile four-step guessed physics does not pass this gate.
+If mechanics cannot support a slow step, return to WP4–WP6 before substantial PPO.
+
+#### 11. WP8 — Bounded training and selection
+
+**State:** pipeline implemented; no current-compatible policy trained.
+**Owner:** AI. **Depends on:** WP7 and all five evidence-backed release gates.
+This plan launches no training; the current instruction remains no further PPO.
+
+| Run | Agreed maximum | Complete 1,024-step rollout budget |
+|---|---:|---:|
+| Measured-config smoke, when explicitly scheduled | 2,048 | 2,048 |
+| Nominal pilot | 50,000 | 49,152 |
+| Final each condition/training seed | 1,000,000 | 999,424 |
+| Six final A/B seed runs combined | 6,000,000 | 5,996,544 maximum |
+
+1. Before running, write seed/condition, code/model/control/calibration hashes,
+   initialization hash, total budget and environment. Historical incompatible
+   smoke/pilot cannot be resumed or used as proof for the measured configuration.
+2. Schedule a bounded new smoke when justified: Gym/SB3, finite training, save/reload,
+   validation, metrics and reviewed video. Then a nominal pilot only if checks pass.
+3. Inspect falls/standing/sliding/lift/placement—not reward alone. Final **A** fixed
+   and **B** randomized use seeds 0,1,2, matching initial weights and equal total
+   training. B never resumes a nominal-trained A. Fit DR ranges from measurements.
+4. An unchanged compatible A0 pilot counts toward its final total. Compatible smoke
+   may count if actually resumed. Do not add these steps on top of the cap; B gets
+   the same total learning budget from matching untrained weights.
+5. Select using nominal AND randomized validation seeds **2000–2004**: walking
+   successes first, qualifying gait distance second, reward third.
+6. Stop at cap. If walking fails, report the mode and return to evidence/model
+   diagnosis; do not silently increase steps, torque or change acceptance.
+
+**Files:** `train.py`, `tools/experiments.py`, `robot_config.py`, new run directories.
+**Done:** bounded matched runs/checkpoints/TensorBoard/manifests and compatible
+reload. Resume preserves budget but is not claimed bitwise identical to uninterrupted
+training because full RNG/simulator rollout state is not checkpointed.
+
+#### 12. WP9 — Final simulated evaluation
+
+**State:** tools/prototype results exist; formal comparison pending.
+**Owner:** AI. **Depends on:** WP8; freeze selection before final tests.
+
+- Reserve seeds **1000–1009** for final evaluation, never diagnostic tuning. Each
+  selected A/B seed policy is tested under nominal and randomized environments.
+- Include HOME and seed-matched untrained baselines under both conditions. The
+  existing full three-seed orchestration gives 120 trained-policy episodes plus
+  20 HOME and 60 untrained episodes: **200 final episodes**.
+  First close WP2's calibration-parity gap; default-calibration baselines are not
+  a matched measured-configuration comparison.
+- Save per-episode distance/speed/duration/falls/reward, left/right steps, alternations,
+  gait distance/slip and stop reasons. Report each training seed and spread; ten
+  environment seeds are not ten independently trained policies.
+- Keep nominal and randomized results separate. Save videos and representative
+  failures. `evaluate.py --video` currently records only the first episode per call;
+  other reviewed episodes need separate immutable calls/output directories.
+- Independently review credited foot motion. If tuning follows final test exposure,
+  report that and define a new protocol instead of calling the tests untouched.
+
+**Files:** `evaluate.py`, `gait_metrics.py`, EXPERIMENT, CSV/JSON/videos.
+**Done:** comparable tables with actual identities/steps and honest acceptance
+result. No trained walking claim from a handwritten script or body displacement alone.
+
+#### 13. WP10 — Conservative physical transfer
+
+**State:** deployment prototype exists; no physical trial.
+**Owner:** student with AI analysis. **Depends on:** safe bench/manual checks,
+measured calibration, compatible trained policy/firmware and reviewed WP9 results.
+
+1. Check exact identities/handshake and rejection of stale checkpoints. Confirm
+   cutoff, watchdog, disarmed boot, faults, deadlines and IMU saturation behaviour.
+2. Use the trained calibrated mapping. Do not clip a wide-range policy into narrower
+   hardware limits; update/version/retrain if limits change. Begin with reviewed
+   standing, then short supervised stepping, then longer attempts.
+3. Use a low clear floor, thin protective surface if needed and optional slack line.
+   Wires must not lift/push the body. Record floor/protection/cable changes; hidden
+   assistance cannot become an unassisted pass.
+4. On fall, unusual heat/buzz/droop or control fault, isolate DC, inspect, recover
+   manually and deliberately reinitialize. Software STOP is not power isolation.
+5. Log commands/acks/IMU/faults with calibrated ruler/video. Commands are not shaft
+   measurements. Never double-integrate the cheap IMU to claim travelled distance.
+   Record interventions, unsuccessful trials and damaged/replaced servos.
+
+**Files:** `deploy.py`, measured calibration, immutable physical trials and
+`docs/templates/physical_trials.csv`. **Done:** actual measured standing/step
+results, not merely a successfully launched Python process.
+
+#### 14. WP11 — Main school experiment and presentation
+
+**State:** protocol exists; physical comparison/report pending.
+**Owner:** student + AI. **Depends on:** compatible A/B policies and safe WP10 trials.
+
+- Fix floor, voltage, start pose, duration, cable route, policy limits and scoring
+  before comparison. Alternate AB/BA order; begin at least five paired attempts
+  only after earlier supervised trials are safe.
+- Keep conditions/budgets equal. Record wear, warm-up, servo replacements and order
+  effects. Include failures, not only successful clips.
+- Compare simulation vs real and A vs B: body/gait distance, speed, falls, upright
+  time, foot motion and uncertainty. Failed transfer is a valid reportable outcome.
+- Report structure: question/hypothesis → hardware/cost → learning/actions/
+  observations/reward → calibration → matched method → tables/videos → failures,
+  cable/simulation limits → conclusion. Label script and PPO behaviours separately.
+- Produce final school report/presentation, brief summary and reproducible archive.
+  Separate priced, actually paid and unknown costs; use actual timestep/model labels.
+
+**Done:** honest reproducible school results, whether walking succeeds or fails.
+Turning, recovery, narrower feet and terrain are separately scoped extensions
+only after stable baseline walking.
+
+#### 15. Release gates and evidence
+
+All five entries in [gates.json](gates.json) are **false**. A changed entry needs
+linked evidence, a status update and reviewed next action; a software test must
+not silently turn a physical gate true.
+
+| Gate key | Required evidence |
+|---|---|
+| `delivered_bom_below_100` | Complete current exact basket, stock/VAT/finishing and all staged deliveries ≤€100 |
+| `servo_and_horn_fit_verified` | Actual exact servo/horn/screw measurements and photographed sample fit |
+| `assembly_clearances_reviewed` | Complete assembly/sweep, wires/tool access, printed fit/strength review—not only sampled meshes |
+| `measured_actuator_and_imu_fit` | Per-servo/IMU calibration, electrical/timing records and held-out response fit |
+| `reference_weight_transfer_and_lifted_step_verified` | Reviewed measured-model and safe physical manual weight transfer/lift evidence |
+
+These gates do not by themselves claim learned walking or transfer success.
+Separate measured trials must satisfy the acceptance criteria.
+
+#### 16. Failure decisions and realistic scheduling
+
+| Failure/risk | Evidence now | Response |
+|---|---|---|
+| No complete robot ≤€100 | Selected subtotal €105.09, prints unknown | Stop procurement; record shortfall. User later decides constraints if no compliant route exists |
+| Horn/ear/screw mismatch | Actual batch unknown | Measure/revise/requote sample; no forced/drilled student assembly |
+| Insufficient torque/power | Hypotheses and limited HOME margin | Measure loaded tracking/current/heat; review mass/moments and cost, not fictitious force |
+| Print failure/hidden sweep conflict | Finite modeled checks only | Sample/load review and physical continuous inspection before dynamics |
+| Fragile gait/poor transfer | Offset/mass/friction/damping sensitivity | Calibrate uncertainty and measured reference; no further guessed-physics tuning |
+| Sliding/reward exploit | Root movement can exceed gait progress | Keep raw foot audit and fixed thresholds; report sliding separately |
+| Timing/preprocessing mismatch | Local tests, no electrical timing | Measure PWM/IMU/USB/acks and shared observation parity |
+| Rework consumes staged budget | Sample/finishing costs unknown | Price staged orders first; no assumed free repeat parts/delivery |
+| No walking at training cap | No learned walking yet | Stop/report failure; retain useful school experiment rather than moving goalposts |
+
+Do not promise a completion date before budget, supply and interfaces are resolved.
+Use gate milestones; record actual dates/effort after completion. Hardware waiting
+can overlap WP2 preparation, not fabricated measurements or speculative long training.
+
+#### 17. AI continuation and executable commands
+
+1. Read SUMMARY → AGENTS → STATUS → relevant work package. Inspect only its source,
+   ledger and evidence; do not restart a whole-repository audit.
+2. Preserve existing working-tree edits. Choose one executable task and identify
+   whether it is software preparation or requires human measurements/quotes.
+3. New experiments use immutable directories with source/config/calibration hashes
+   and actual timesteps/trial conditions. Preserve old failed trials and policies.
+4. Never invent physical evidence. Name the exact missing measurement and continue
+   independent WP2 work when possible. Do not repeat completed budget searches.
+5. Keep procurement/physical/config ledgers authoritative; source code overrides
+   embedded handoff copies. Rebuild after actual geometry/control changes.
+6. Update STATUS/SUMMARY and affected references, regenerate the 19-section handoff
+   and explicit-allowlist archive. Exclude hidden app folders, credentials, installs,
+   toolchains and private files. Forward only quotation ZIPs to print services.
+
+**Available now: no hardware arm, PPO or external upload.** Use `tests/` explicitly:
+archived copied tests can collide during unrestricted root discovery. The prior
+collection error and successful history-excluded run remain preserved.
+
+```bash
+.venv/bin/python -m pytest --collect-only -q tests
+.venv/bin/python -m pytest -q tests
+.venv/bin/python tools/budget_gate.py  # expected exit1; complete total unknown
+.venv/bin/python tools/compare_procurement.py --option berrybase_round_pads # exit2
+
+git diff --check
+```
+
+**Conditional later commands—not instructions to execute them now:**
+
+```bash
+### After reviewed geometry changes; inspect new output before releasing files.
+MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/prepare_print_order.py
+.venv/bin/python tools/check_clearance.py --output runs/geometry_NEW/clearances.json
+
+### With real bench hardware, correct port and a fresh log file.
+.venv/bin/python bench.py --port /dev/ttyACM0 --seconds 10 --output runs/bench_NEW.csv
+
+### Actual external angle measurements; diagnostic requires quality review.
+.venv/bin/python tools/fit_response.py runs/measured_step_NEW.csv --output runs/fit_NEW.json
+
+### Only with measured calibration, all gates and a newly scheduled experiment.
+.venv/bin/python tools/experiments.py --calibration calibrations/measured-v1.json --steps 1000000 --output runs/formal_NEW
+
+### After substantive source/documentation edits.
 .venv/bin/python tools/build_handoff.py
 .venv/bin/python tools/package_project.py
 ```
+
+Measured calibration/CSV and `runs/*_NEW` paths above are placeholders, not existing
+physical records. Firmware build/flash commands stay in its README. Do not supply
+an immediate policy-arm command while physical checks are absent.
+
+**Exact next AI task:** if no new quote/measurement has arrived, begin WP2
+measurement-intake validation. Keep the script frozen; do not rerun sensitivity,
+repeat the same searches, change pad geometry, tune motion or start PPO. If new
+evidence arrives, validate provenance/dependencies before updating any ledger/gate.
 
 ### Support and lifted-step diagnosis — 2026-10-24
 
@@ -5110,7 +5617,7 @@ steps. Reconcile measured parameters, issue a new identity, replay this referenc
 and check robust lifted steps before substantial PPO or any policy deployment.
 All five release gates remain false; no new procurement or physical result exists.
 
-### Current project status — 2026-10-24
+### Current project status — 2026-10-25
 
 Read SUMMARY.md → AGENTS.md → relevant roadmap stage. **Nothing bought, printed,
 assembled, flashed or physically verified.** Frame revision **S6-PETG-pad-r2**;
@@ -5119,10 +5626,10 @@ active route is outsourced PETG, bare Pico and eight ordinary grip pads.
 | Stage | State | Evidence / blocker |
 |---|---|---|
 | Requirements / AI entry | implemented | Six joints,15–20cm,PC/USB,wired power,EUR100; no printer purchase |
-| Hardware research / budget | blocked | Priced basket105.34EUR BEFORE print/sample/horn extras; known shortfall≥5.34EUR. Complete total unknown; dated ledger, not live checkout |
+| Hardware research / budget | blocked | Priced basket105.09EUR BEFORE print/sample/horn extras; known shortfall≥5.09EUR. Complete total unknown; dated ledger, not live checkout |
 | CAD / quotation package | implemented, locally verified partial | Seven connected watertight frames, two-piece fit sample, drawings/manifests;0modeled collisions/55poses,5unknown interface groups; NOT manufacturing-approved |
 | Shared control / firmware | locally verified partial | Protocol/native C++tests pass; regenerated current header has invalid calibration. All prior ARM/UF2images historical; physical timing absent |
-| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;55tests pass |
+| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest recorded full suite58passes |
 | Frozen scripted reference | locally verified partial | Four qualifying steps/3alternations,6.60cm torso and4.39cm gait distance in30s;30cm target fails.29one-factor cases show fragile guessed physics |
 | PPO / evaluation | historical local evidence | Prior2048-step smoke/reload:0walking successes/0gait. All saved policies now incompatible; no new PPO. Older49152-step pilot also failed |
 | Physical build / calibration / transfer | planned, blocked | No hardware/measurements. Bench, soldering, fit and measurement procedures prepared |
@@ -5154,6 +5661,20 @@ ARM build, electrical test or fit approval.
 
 [Full report](SENSITIVITY.md), [current validation](VALIDATION_CURRENT.md).
 
+- 2026-10-25 planning refresh: [expanded execution plan](DEVELOPMENT_PLAN.md)
+  now maps all14phases and WP1–WP11, with owners, dependencies, procedures,
+  files, acceptance evidence, failure decisions and conditional commands.
+  No source/model/training/hardware change. Next independent implementation is
+  WP2 measurement-intake validation; six-joint manual tooling is still planned.
+- Planning inspection also found a remaining formal-evaluation gap: HOME/untrained
+  baseline evaluation currently has no measured-calibration CLI input, unlike
+  policy evaluation through metadata. WP2 must add/test parity before formal A/B;
+  no evaluation implementation was changed by this planning edit.
+- Latest recorded full suite: **58passed in16.41s**,
+  `validation/2026-10-25/procurement_review/pytest_after_history_exclusion.txt`.
+  This planning edit rechecked active collection (58tests), not full execution.
+  Use `pytest -q tests` to avoid copied historical test-module collisions.
+
 - Frozen compact sequence: nominal30s metrics exactly match predecessor, four
   qualifying steps,3alternations,0.066021479m torso/0.043929229m gait, no fall;
   **not learned walking, not30cm acceptance**. Reference has no HOME return.
@@ -5182,11 +5703,16 @@ All five [release gates](gates.json) remain false. Software STOP is not power is
 
 #### Exact next task
 
-**AI:** keep the script frozen; use SENSITIVITY.md to prepare/inspect genuine
-calibration records when available. Check external angle provenance, per-servo
-zero/gain/backlash/loaded response, assembled body masses/COM and pad friction.
-Independent executable work: verify complete-basket delivery/consumable consolidation
-against procurement.json; no hidden free costs, weaker servos or new fabrication.
+**AI:** begin [WP2](DEVELOPMENT_PLAN.md#5-wp2--prepare-independent-benchsoftware-tools)
+measurement intake validation, then reviewed manual six-joint control; these are
+planned additions. Keep the script frozen. When real data arrives, check external
+angle provenance, per-servo mapping/loaded response, masses/COM and pad friction.
+The [completed price/stock review](BUDGET_REVIEW.md) selects same-specification black
+wire (red unavailable) and updates tie pricing:€105.09 still exceeds the cap before
+printing. An unselected taller-pad option gives€96.79 before unknowns and requires
+a revised twin. Do not repeat these searches or select it without a complete quote.
+Next needs actual missing costs/interfaces or a newly evidenced complete basket;
+no hidden free costs, weaker servos or new fabrication.
 Do not tune guessed physics, relax acceptance, raise torque or add PPO steps.
 
 **Human-dependent:** obtain a complete affordable exact-file quote and actual
@@ -5202,19 +5728,34 @@ validate lifted stepping → bounded fixed/DR training → supervised transfer/e
 See DEVELOPMENT_PLAN.md for owners/dependencies and CALIBRATION.md for measurements.
 
 ```bash
-.venv/bin/python -m pytest -q
-.venv/bin/python tools/budget_gate.py # expected1:105.34before prints
+.venv/bin/python -m pytest -q tests
+.venv/bin/python tools/budget_gate.py # expected1:105.09before prints
 .venv/bin/python tools/check_clearance.py # expected1:unknown interfaces
 MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/sensitivity_probe.py --cases nominal --output runs/sensitivity_NEW
 ```
 
-### Current local verification — 2026-10-24, S6-PETG-pad-r2
+### Current local verification — 2026-10-25, S6-PETG-pad-r2
 
 **No hardware purchased, printed, fitted, electrically tested or deployed.**
 Prior2026-10-23record is preserved under history/2026-10-24/pre_print_revision/docs/.
 Latest evidence: `validation/2026-10-24/offset_correction/`,
 `sensitivity_corrected/` and `sensitivity_report_final/`. The sections labelled
 historical retain the configuration that actually produced them.
+
+#### 2026-10-25 documentation and procurement checkpoint
+
+Latest recorded full suite: **58passed in16.41s**,
+[log](validation/2026-10-25/procurement_review/pytest_after_history_exclusion.txt).
+The earlier55-test offset result below remains valid historical evidence.
+The expanded-plan refresh verified active collection (58tests), references,
+ledger/fingerprint/gates and generated delivery; it did not rerun the full suite,
+train, change physics, obtain a quote or perform any physical test.
+Scope future collection to `pytest -q tests`: archived copies caused a previous
+root-discovery import collision; both the failed and successful logs are retained.
+
+Selected dated priced basket now€105.09 before printing/sample/horn extras,
+minimum known shortfall€5.09; complete total unknown. See [budget review](BUDGET_REVIEW.md).
+The€105.34 snapshot near the end belongs to the prior checkpoint, not current prices.
 
 #### Current offset correction and frozen-script study
 
@@ -5391,7 +5932,7 @@ phase_study_followup_mirror/, handoff_probes/, handoff_review/, handoff_report/.
 Actual source snapshots/hashes and randomized runtime parameters are retained;
 configuration identity remains unchanged. Physical fit/actuator data are absent.
 
-#### Procurement and next evidence
+#### Historical procurement checkpoint — 2026-10-24
 
 Active priced basket105.34EUR **before** current prints/sample/horn extras; minimum
 known shortfall5.34EUR for that basket. No complete quote or budget clearance.

@@ -40,8 +40,8 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 - Count full material/consumable packs; tools/printer separate but included in initial cash.
 - Unknown tools, frame hardware, stock or postage must remain unknown, not free.
 - Unknown costs are never zero. Budget and fit must pass before recommending procurement.
-- Active commercial basket: common95.81 +ear-fastener delivery9.53 =105.34EUR BEFORE
-  print/sample/horn extras; minimum known shortfall5.34EUR for this basket. No procurement.
+- Active commercial basket: common95.56 +ear-fastener delivery9.53 =105.09EUR BEFORE
+  print/sample/horn extras; minimum known shortfall5.09EUR for this basket. No procurement.
 - New quotes must identify current geometry hashes; old commercial/own-printer prices are historical.
 - Model revision S6-PETG-pad-r2 owns bare Pico+headers and8discrete pad contacts.
 - Manufacturing remains blocked by real horn/ear/screw fit, finishing/layer strength and budget.
@@ -60,7 +60,7 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 
 ```bash
 source .venv/bin/activate
-python -m pytest -q
+python -m pytest -q tests  # avoid collecting copied historical test modules
 python tools/firmware_config.py  # default invalid calibration cannot policy-arm
 python tools/budget_gate.py  # default active commercial route;1=over cap,2=incomplete
 python tools/prepare_print_order.py  # two quotation ZIPs; never manufacturing approval
@@ -87,8 +87,13 @@ python tools/prepare_print_order.py  # two quotation ZIPs; never manufacturing a
 - `docs/SENSITIVITY.md`:29 one-factor cases per old/corrected identity;55tests pass.
   Physical offsets now enter actuator bias, never clipped away at command limits.
   Nominal unchanged; all12 ±1° offset probes lose steps.73credited steps raw-audited.
-- Next AI task: prepare/validate measured calibration data when available; keep script
-  frozen. Independent track: verified delivered-cost consolidation; never free unknowns.
+- Latest recorded full suite:58passes (2026-10-25 procurement review);55above is
+  the earlier offset checkpoint. Expanded task IDs/gates: `docs/DEVELOPMENT_PLAN.md`.
+- Next AI task: WP2 measurement-intake validation, then reviewed six-joint manual
+  tooling; both are PLANNED additions, not completed physical tests. Keep script
+  frozen. Read `docs/BUDGET_REVIEW.md` before repeating consolidation research.
+  Eight taller FIX-RF-003 pads are an unselected96.79EUR comparison, not a complete
+  affordable robot; only3.21EUR remains for all unknowns. Current pads/twin unchanged.
   No nominal tuning/stronger motors/relaxed acceptance/more PPO. Human: quote and fit.
 - Stop at the agreed training cap and report failure honestly if walking is unmet.
 
