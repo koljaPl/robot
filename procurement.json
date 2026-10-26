@@ -911,5 +911,16 @@
     "physical_fit_verified": false,
     "next_phase": "WP2 bench/calibration software preparation plus separate print templates",
     "notes": "User acceptance closes the provider-selection/design decision. It does not fabricate a paid quote, finished print, fit or hardware test. No repeated supplier-search/upload permission loop for the classmate route."
+  },
+  "ordering_progress": {
+    "state": "ordering_started_user_reported",
+    "date": "2026-10-26",
+    "evidence": "User: I am already starting to place orders",
+    "ordered_items": null,
+    "ordered_quantities": null,
+    "paid_prices_eur": null,
+    "arrival_states": null,
+    "purchases_by_AI": false,
+    "notes": "Quoted basket unchanged; actual spending stored separately when receipts are supplied."
   }
 }

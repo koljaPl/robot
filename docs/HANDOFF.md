@@ -4,14 +4,15 @@ Generated from source by `python tools/build_handoff.py`. Do not edit HANDOFF.md
 Plan/revision date2026-10-26; individual evidence retains its original date.
 Source files, ledgers and evidence states take precedence.
 Short purchase/build plan for humans and AI: [SUMMARY.md](../SUMMARY.md).
-Detailed continuation dependencies and completion gates: [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md).
+Authoritative root plan, dependencies and completion gates: [PLAN.md](../PLAN.md).
 
 ## 1. Short design recommendation
 
 Retain six Waveshare15024 MG90S servos: hip pitch, knee pitch and ankle roll per
 leg, broad feet, Pico2 native PWM, MPU6050, PC USB
 inference and separate5V servo power. This is a **provisional** design, not a
-purchasable or calibrated walking robot. Nothing purchased/physically tested.
+purchasable or calibrated walking robot. Ordering started—reported by user;
+individual purchases/arrivals unknown. Nothing physically verified.
 User can solder; no mandatory helper. Active route is outsourced PETG:seven frame
 parts,two separate fit samples,eight bought TPE pads. Bare Pico2/header ownership
 and pad contacts now match the provisional twin. No printer/filament/printedTPU
@@ -326,15 +327,15 @@ are not this revision's quotation and do not authorize any purchase.
 ### S6-PETG-pad-r2 — assembly and fit checklist
 
 **Quotation prototype, not manufacturing-approved.** All dimensions are in the
-physical ledger; none of this is a physical test. [Exploded view](exploded.png),
-[interface drawing](print_order/drawings/interfaces.png), [fasteners](print_order/fasteners.csv).
+physical ledger; none of this is a physical test. [Exploded view](../cad/exploded.png),
+[interface drawing](../cad/print_order/drawings/interfaces.png), [fasteners](../cad/print_order/fasteners.csv).
 Commercial printing is active; no printer/spool or printed TPU sole purchase.
 
 #### Parts and exact installed quantities
 
 Seven printed PETG parts: torso, L/Rthigh, L/Rshin, L/Rfoot, one each. Two separate
 interface samples are test pieces, not extra frame parts. Eight ordinary Delock18309
-TPE pads, four per foot. [Quote brief](QUOTE_REQUEST.md).
+TPE pads, four per foot. [Quote brief](../cad/QUOTE_REQUEST.md).
 
 | Use | Installed quantity | Known / unresolved |
 |---|---:|---|
@@ -353,7 +354,7 @@ were not verified physical collisions. Unknown horn hardware still blocks releas
 #### 1 — Fit sample before the full frame
 
 1. Identify one exact servo, original horn and retaining screw. With no horn attached,
-   bench-calibrate the zero pulse using [CALIBRATION](../docs/CALIBRATION.md).
+   bench-calibrate the zero pulse using [CALIBRATION](CALIBRATION.md).
 2. Measure case, ear hole spacing/diameter/thickness, axial ear/shaft locations,
    supplied horn holes/radii, shaft screw and lead exit. Record units and photos.
 3. After budget approval obtain the **two-piece sample**. Check insertion without
@@ -367,7 +368,7 @@ were not verified physical collisions. Unknown horn hardware still blocks releas
 #### 2 — Bench and mechanical zero
 
 Solder/insulate the bare Pico, IMU header and replaceable harness as described in
-[HARDWARE](../docs/HARDWARE.md). Test PSU polarity, DC disconnect, one unloaded
+[HARDWARE](HARDWARE.md). Test PSU polarity, DC disconnect, one unloaded
 servo,3.3V PWM, IMU, disarmed startup and100ms watchdog first. USB powers logic;
 servo power bypasses Pico/breadboard. No physical gate is passed yet.
 
@@ -2396,63 +2397,94 @@ reachable. Never reset a fallen robot automatically: power off, inspect, lift,
 replace damaged parts and reinitialize. Real distances/steps require video/ruler,
 not double integration of MPU acceleration.
 
-### Pico 2 firmware — build target and bench preparation
+### Pico 2 firmware — reproducible preparation build
 
-Updated2026-10-26: selected controller is **Raspberry Pi Pico 2, bare RP2350**,
-not RP2040/Pico1 or Pico2W. Native PWM/I2C GPIOs and50Hz/200Hz timing are unchanged.
-Official same51×21mm footprint and MicroUSB documented in the
-[Pico2 datasheet](https://datasheets.raspberrypi.com/pico/pico-2-datasheet.pdf).
-Headers are user-soldered;3g board plus1.2g headers is an estimate, not weighed.
+Updated **2026-10-26**. Selected board: **bare Raspberry Pi Pico 2, RP2350**, not
+Pico 1 or Pico 2 W. Native PWM/I2C pins and50Hz commands/200Hz IMU are unchanged.
+See the official [Pico2 datasheet](https://datasheets.raspberrypi.com/pico/pico-2-datasheet.pdf).
+Board/header masses and physical fit remain estimated. Ordering started according
+to the user; items, paid prices, arrivals and physical measurements remain unknown.
 
-CMake defaults to`pico2` and rejects`pico`; build selection is fingerprinted.
-Current identity starts`685e3802`; generated header is current with`CAL_VALID=false`.
-All prior policies/UF2are historical. Native control tests pass; **no current ARM
-cross-build or electrical verification**: SDK/cross compiler are absent locally.
-Prior RP2040 compilation records do not validate Pico2 binaries. The planned SDK
-is2.3.1; install it and a Cortex-M33-capable Arm toolchain before this build.
-Official [SDK examples](https://github.com/raspberrypi/pico-examples) describe the
-pico2 board/platform selection; [picotool](https://github.com/raspberrypi/picotool)
-documents ELF-to-UF2 conversion/family detection.
+The current preparation firmware is **locally cross-built**, not physically tested.
+Full-policy arming is disabled by `CAL_VALID=false`; every boot starts disarmed.
+Explicit narrow single-servo bench mode remains available only for a later reviewed
+unloaded physical test. STOP is not physical motor-power isolation.
 
-Install an `arm-none-eabi` cross compiler and clone the SDK outside the project:
+#### Pinned dependencies
 
-```bash
-git clone --depth 1 --branch 2.3.1 https://github.com/raspberrypi/pico-sdk.git /tmp/pico-sdk
-git -C /tmp/pico-sdk submodule update --init --depth 1 lib/tinyusb
-source .venv/bin/activate
-python tools/firmware_config.py # invalid example, cannot policy-arm
-export PICO_SDK_PATH=/tmp/pico-sdk
-### Set PICO_TOOLCHAIN_PATH to the directory containing arm-none-eabi-gcc if not in PATH.
-cmake -S firmware -B build/firmware_pico2 -G Ninja -DPICO_BOARD=pico2 -DPICO_NO_PICOTOOL=1
-cmake --build build/firmware_pico2 -j 4
-### Official picotool2.3.1 converts the ELF into a flashable UF2:
-picotool uf2 convert build/firmware_pico2/s6_bench.elf build/firmware_pico2/s6_bench.uf2 --family rp2350-arm-s
-```
+[build_dependencies.json](../firmware/build_dependencies.json) records official URLs, verified
+archive checksums, extracted executable hashes, SDK commit and pinned TinyUSB commit.
 
-`PICO_NO_PICOTOOL=1` avoids CMake implicitly downloading extra code; install
-[picotool](https://github.com/raspberrypi/picotool) separately or use the official
-[SDK tools2.3.1-0 release](https://github.com/raspberrypi/pico-sdk-tools/releases/tag/v2.3.1-0).
-If picotool is configured normally, omit that flag and SDK can produce UF2 itself.
+| Dependency | Version / source |
+|---|---|
+| Pico SDK | [2.3.1](https://github.com/raspberrypi/pico-sdk/tree/2.3.1), commit079c6f39; TinyUSB86ad6e56 |
+| Arm GNU bare-metal compiler | [14.2.Rel1 Linux x86-64](https://developer.arm.com/-/media/Files/downloads/gnu/14.2.rel1/binrel/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi.tar.xz) |
+| picotool | [2.3.1 official Linux x86-64 release](https://github.com/raspberrypi/pico-sdk-tools/releases/tag/v2.3.1-0) |
+| CMake / Ninja | Existing `.venv` executables; pinned in requirements-dev.txt |
 
-For a measured calibration, run:
+Install tools outside the project/archive, for example `/tmp/s6-pico2-tools`.
+This location is temporary: recreate it if the OS clears `/tmp`. The builder
+does not download dependencies or install system packages.
 
 ```bash
-python tools/firmware_config.py --calibration calibrations/measured-v1.json
-cmake --build build/firmware_pico2 -j 4
-picotool uf2 convert build/firmware_pico2/s6_bench.elf build/firmware_pico2/s6_bench.uf2 --family rp2350-arm-s
+mkdir -p /tmp/s6-pico2-tools
+git clone --depth 1 --branch 2.3.1 https://github.com/raspberrypi/pico-sdk.git /tmp/s6-pico2-tools/pico-sdk-2.3.1
+git -C /tmp/s6-pico2-tools/pico-sdk-2.3.1 submodule update --init --depth 1 lib/tinyusb
 ```
 
-Calibration/signs/limits/identity are compiled into firmware flash and survive
-power loss; every boot is disarmed. Do not hand-edit generated_config.h. Physical
-flashing: disconnect servo power, hold BOOTSEL while connecting Pico USB, then
-copy the new Pico2 UF2 onto its BOOTSEL drive (verify the actual mounted device). Release/reset and check read-only telemetry first.
-Never flash or reconnect motor power while a policy process is running.
+Download the compiler and picotool archives from the ledger URLs. Verify their
+SHA256 against that ledger **before extraction**. Extract the compiler tree and
+picotool package there; retain picotool's neighbouring CMake configuration files.
+No OpenOCD, debugger or USB interaction is required for this software build.
 
-The generated header must be regenerated after any fingerprinted control/model
-source edit. A stale image is rejected by the PC handshake. The repository
-example's `CAL_VALID=false` is intentional, not a build error. Single-channel
-bench mode is explicitly allowed without validated joint calibration and is
-restricted to1400–1600µs; it still needs a clear, unloaded setup and cutoff.
+#### Build and inspect without hardware
+
+From the project root, with the existing Python environment installed:
+
+```bash
+.venv/bin/python tools/build_firmware.py \
+  --sdk /tmp/s6-pico2-tools/pico-sdk-2.3.1 \
+  --compiler /tmp/s6-pico2-tools/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc \
+  --picotool /tmp/s6-pico2-tools/picotool/picotool \
+  --output runs/pico2_build_NEW
+```
+
+The new output directory must not exist. Each run keeps logs, source snapshot,
+ELF/UF2 and `manifest.json`, including failed/interrupted builds. It checks the
+whole generated header against the invalid example calibration, SDK/TinyUSB
+commits, executable hashes, tool versions, Pico2/Arm secure flags, embedded hashes
+and file-only ELF/UF2 metadata. It refuses stale headers or a wrong board.
+
+Builds use Release mode, explicit installed picotool and disconnected CMake fetches.
+`SOURCE_DATE_EPOCH` is fixed to the dependency ledger's date at UTC midnight;
+actual execution dates are recorded separately. Inherited compiler overrides are
+removed. No host transport, flash, arm, erase or reboot command is invoked by the
+utility. SDK picotool operations post-process local files only.
+
+Inspection uses `picotool info -a FILE.elf` and `picotool info -a FILE.uf2`.
+**Do not substitute `picotool uf2 info`: that subcommand is device-oriented.**
+Independent parsing checks the RP2350 Arm-S image and its official RP2350-E10
+ignored absolute block separately; their block numbering is intentionally different.
+
+Current identity begins`685e3802`; firmware/model/control sources were not changed
+by the builder. Historical policies and older UF2 images remain untouched.
+[Build evidence](validation/2026-10-26/pico2_crossbuild/README.md) records
+actual results; compilation never proves servo timing, electrical safety or walking.
+
+#### Next physical stage
+
+No flashing was performed. After parts arrive, follow [PLAN.md](../PLAN.md) and
+[bench/calibration instructions](CALIBRATION.md): verify power/polarity and
+physical DC isolation first, then current firmware identity, read-only IMU and one
+unloaded servo. Verify disarmed startup and100ms watchdog before attached limbs.
+[Manual six-joint control](MANUAL_CONTROL.md) defaults to offline preview.
+
+The preparation builder deliberately refuses measured/validated policy calibration.
+Real pulse mapping, directions, response and IMU measurements must be reviewed and
+versioned before a separate measured-calibration image and policy deployment are
+approved. Do not replace invalid calibration with invented measurements or flash
+historical images to bypass a mismatch. Changed fingerprinted sources require
+regeneration/rebuilding and invalidate incompatible policies.
 
 ## 9. MuJoCo parameter table
 
@@ -3340,7 +3372,11 @@ class SerialRobot:
         self.telemetry = None
         self.last_received = 0
         self.buffer = bytearray()
-        self.connection.reset_input_buffer()
+        try:
+            self.connection.reset_input_buffer()
+        except BaseException:
+            self.connection.close()
+            raise
 
     def send(self, fields):
         packet = encode_frame(fields)
@@ -3461,6 +3497,321 @@ def main():
 if __name__=='__main__':main()
 ```
 
+### Reviewed manual movements
+
+`manual_control.py` provides an **offline preview by default**. It does not run
+a policy, open USB in preview mode, or approve physical standing. One-channel
+unloaded calibration remains in `bench.py`.
+
+```bash
+.venv/bin/python manual_control.py \
+  --sequence docs/templates/manual_home_only.json \
+  --output runs/manual_home_preview_NEW
+```
+
+This uses the invalid example calibration only for an estimated command preview.
+The output contains `trajectory.csv` at50Hz and a manifest with movement,
+calibration/configuration/source hashes. Existing output directories are refused.
+It does not change model parameters or release gates.
+
+#### Movement format
+
+Use version1, the exact six-name `joint_order`, `initial_targets_rad` and a
+nonempty list of `segments`. Each segment has `duration_s` and six `targets_rad`.
+The included JSON is a HOME-only example; targets are radians in the shared joint
+order, never degrees or generic servo0–180° angles.
+
+Durations are positive multiples of20ms. Target transitions are linear and must
+already respect calibrated angle and slew limits; invalid input is rejected,
+not clipped. At most100segments and30s of nominal commands including the final
+command interval (waypoint durations therefore total at most29.98s).
+The trajectory describes requested commands, not actual shaft speed or position.
+
+#### Hardware operation, only after physical bench checks
+
+Hardware execution requires explicit `--arm`, `--port` and a measured, validated
+`--calibration` record. The existing example cannot arm. Before using those options,
+a person must verify supply/cutoff, all joint directions/limits, printed fit and
+manual poses, with motor power removable immediately.
+
+The tool handshakes against the firmware/model/calibration identity and requires
+fresh disarmed stationary IMU telemetry. Its reviewed initial command must agree
+with the acknowledged start within PWM/telemetry quantization tolerance; otherwise
+it refuses to arm. Runtime interpolation starts from that acknowledged command.
+**Acknowledgements are not measured shaft positions.** The person must establish
+the real initial pose; a matching command cannot prove it.
+
+Commands target50Hz while telemetry is read continuously. Scheduling jitter never
+causes catch-up bursts: commands stay at least20ms apart and may run more slowly.
+Actual times are logged; the command session stops if it exceeds30s. The existing firmware
+100ms watchdog remains active. Host stops on faults/disarm, stale/reordered IMU,
+old/ahead acknowledgements,50ms telemetry timeout,40ms missed command deadline,
+IMU clipping or excessive tilt. Before completing, the last command must be
+acknowledged within80ms; this still does not prove shaft arrival.
+
+The log directory contains command and raw IMU/ack CSVs, reviewed movement,
+identities, status and any error. Completion, exceptions and Ctrl-C request STOP
+and close the connection; no auto-reconnect/re-arm or automatic return-to-HOME.
+**STOP/PWM silence does not isolate servo power.** Use the physical DC cutoff.
+
+The acknowledgement grace may extend the final command by up to80ms.
+This utility is a bench tool, not the30s walking-acceptance evaluator. Mocked tests
+are labelled software evidence and do not clear physical gates.
+
+```python
+"""Reviewed six-joint movements. Offline preview by default; never auto-arm.
+
+Targets and acknowledgements are command coordinates, NOT measured shaft angles.
+Hardware use requires prior human bench checks and measured validated calibration.
+"""
+import argparse
+import csv
+import hashlib
+import json
+from pathlib import Path
+import time
+
+import numpy as np
+
+from calibration import configuration_identity, load_calibration
+from hardware_interface import command_frame
+from imu_observation import GravityEstimator
+from robot_config import CONTROL_DT, HOME, JOINT_NAMES, IMU_ACCEL_RANGE, IMU_GYRO_RANGE
+from serial_robot import SerialRobot
+
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def vector(value, label):
+    if not isinstance(value, list) or len(value) != 6 or any(
+            isinstance(v, bool) or not isinstance(v, (int, float)) for v in value):
+        raise ValueError(label+' must contain six numeric radian targets')
+    q = np.asarray(value, dtype=float)
+    if not np.isfinite(q).all():
+        raise ValueError(label+' must be finite')
+    return q
+
+
+def compile_trajectory(movement, calibration, *, start=None):
+    if type(movement.get('version')) is not int or movement['version'] != 1:
+        raise ValueError('Movement version must be1')
+    if movement.get('joint_order') != list(JOINT_NAMES):
+        raise ValueError('Movement joint order mismatch')
+    declared = vector(movement.get('initial_targets_rad'), 'initial_targets_rad')
+    q = declared if start is None else np.asarray(start, float)
+    if q.shape != (6,) or not np.isfinite(q).all():
+        raise ValueError('Invalid acknowledged start')
+    low, high = np.asarray(calibration['safe_low_rad']), np.asarray(calibration['safe_high_rad'])
+    if np.any(declared < low) or np.any(declared > high) or np.any(q < low) or np.any(q > high):
+        raise ValueError('Initial command outside calibrated safe angles')
+    segments = movement.get('segments')
+    if not isinstance(segments, list) or not segments or len(segments) > 100:
+        raise ValueError('Need1..100timed segments')
+    result = [q.copy()]
+    for segment in segments:
+        if not isinstance(segment, dict):
+            raise ValueError('Each segment needs duration_s and targets_rad')
+        duration = segment.get('duration_s')
+        if isinstance(duration, bool) or not isinstance(duration, (int, float)) or not np.isfinite(duration):
+            raise ValueError('Segment duration must be finite numeric seconds')
+        if not CONTROL_DT <= duration <= 30:
+            raise ValueError('Segment duration must be20ms..30s')
+        ticks = round(duration/CONTROL_DT)
+        if ticks < 1 or not np.isclose(duration, ticks*CONTROL_DT, rtol=0, atol=1e-9):
+            raise ValueError('Durations must be positive multiples of20ms')
+        # Including one last command interval, no session exceeds30s.
+        if (len(result)+ticks)*CONTROL_DT > 30+1e-9:
+            raise ValueError('Manual session exceeds30seconds')
+        target = vector(segment.get('targets_rad'), 'targets_rad')
+        if np.any(target < low) or np.any(target > high):
+            raise ValueError('Target outside calibrated safe angles')
+        if np.any(np.abs(target-q)/duration > calibration['max_target_speed_rad_s']+1e-12):
+            raise ValueError('Movement exceeds calibrated commanded slew')
+        result.extend(q+(target-q)*(i/ticks) for i in range(1, ticks+1))
+        q = target
+    targets = np.asarray(result)
+    # Validate wire representation offline too; no connection is required.
+    for row in targets:
+        command_frame(0, 0, row)
+    return np.arange(len(targets))*CONTROL_DT, targets
+
+
+def run_sequence(sequence_path, calibration_path, output, *, arm=False, port=None,
+                 robot_factory=None, clock=None):
+    sequence_path, calibration_path, output = map(Path, (sequence_path, calibration_path, output))
+    c = load_calibration(calibration_path, require_valid=arm)
+    raw = sequence_path.read_bytes()
+    movement = json.loads(raw)
+    if not isinstance(movement, dict):
+        raise ValueError('Movement must be a JSON object')
+    times, targets = compile_trajectory(movement, c)
+    if arm and not port:
+        raise ValueError('--arm requires a USB port')
+    if port and not arm:
+        raise ValueError('Offline preview does not accept a port; explicit --arm required')
+    output.mkdir(parents=True, exist_ok=False)
+    manifest = {'mode': 'hardware_manual' if arm else 'offline_preview', 'status': 'started',
+                'identity': configuration_identity(c), 'calibration_record': c,
+                'movement': movement, 'movement_sha256': hashlib.sha256(raw).hexdigest(),
+                'calibration_file_sha256': sha(calibration_path), 'command_hz': 1/CONTROL_DT,
+                'duration_s': len(targets)*CONTROL_DT, 'physically_verified': False,
+                'source_sha256': {n: sha(Path(__file__).parent/n) for n in (
+                    'manual_control.py', 'serial_robot.py', 'hardware_interface.py', 'calibration.py', 'imu_observation.py')},
+                'limits': ['Targets/acknowledgements are not measured shaft positions.',
+                           'Software STOP does not physically isolate servo power.',
+                           'A validated JSON assertion does not replace human bench/fit checks.']}
+    robot = None
+    failure = None
+    clock = clock or time.monotonic
+    try:
+        if arm:
+            robot = (robot_factory or SerialRobot)(port, c)
+            robot.handshake()  # existing transport checks model/calibration fingerprints
+            R = np.asarray(c['imu']['rotation_sensor_to_body'])
+            ab, gb = np.asarray(c['imu']['accel_bias_m_s2']), np.asarray(c['imu']['gyro_bias_rad_s'])
+            estimator = GravityEstimator()
+            last_ms = None
+
+            def inspect(t, expected_status):
+                nonlocal last_ms
+                if t.status != expected_status:
+                    raise RuntimeError('Firmware fault/disarm status '+str(t.status))
+                accel, gyro = np.asarray(t.accelerometer), np.asarray(t.gyroscope)
+                if accel.shape != (3,) or gyro.shape != (3,) or not np.isfinite([accel, gyro]).all():
+                    raise RuntimeError('Invalid IMU sample')
+                if np.any(abs(accel) >= IMU_ACCEL_RANGE*.99) or np.any(abs(gyro) >= IMU_GYRO_RANGE*.99):
+                    raise RuntimeError('IMU saturation')
+                accel, gyro = R@(accel-ab), R@(gyro-gb)
+                if last_ms is None:
+                    if not .8*9.81 < np.linalg.norm(accel) < 1.2*9.81:
+                        raise RuntimeError('Need stationary gravity sample before arming')
+                    estimator.reset(accel)
+                else:
+                    dt = (t.timestamp_ms-last_ms) & 0xffffffff
+                    if not 0 < dt < 100:
+                        raise RuntimeError('Stale/reordered/gapped telemetry timestamp')
+                    estimator.update(gyro, accel, dt/1000)
+                last_ms = t.timestamp_ms
+                if estimator.gravity[2] > -.7:
+                    raise RuntimeError('IMU tilt stop')
+
+            deadline = clock()+.100
+            while True:
+                kind, initial = robot.read()
+                if clock() > deadline:
+                    raise TimeoutError('No fresh startup telemetry within100ms')
+                if kind == 'telemetry':
+                    inspect(initial, 0)  # matched, calibrated, IMU good, disarmed
+                    startup_received = clock()
+                    break
+                if kind == 'identity' and initial != 0:
+                    raise RuntimeError('Unexpected startup firmware status '+str(initial))
+            start = np.asarray(initial.applied_targets, float)
+            tolerance = .5/np.asarray(c['us_per_rad'])+.0005+1e-9
+            declared = np.asarray(movement['initial_targets_rad'])
+            if start.shape != (6,) or not np.isfinite(start).all() or np.any(abs(start-declared) > tolerance):
+                raise ValueError('Acknowledged start differs from reviewed movement start')
+            times, targets = compile_trajectory(movement, c, start=start)
+            manifest['acknowledged_start_rad'] = start.tolist()
+            manifest['acknowledged_start_is_shaft_feedback'] = False
+        with (output/'trajectory.csv').open('x', newline='') as f:
+            writer = csv.writer(f); writer.writerow(['time_s', *[n+'_requested_rad' for n in JOINT_NAMES]])
+            writer.writerows(zip(times, *targets.T))
+        if not arm:
+            manifest['status'] = 'preview_complete'
+            return manifest
+
+        with (output/'commands.csv').open('x', newline='') as commands, \
+                (output/'telemetry.csv').open('x', newline='') as telemetry:
+            cw, tw = csv.writer(commands), csv.writer(telemetry)
+            cw.writerow(['host_elapsed_s', 'index', 'sequence', *[n+'_requested_rad' for n in JOINT_NAMES]])
+            tw.writerow(['host_elapsed_s', 'mcu_ms', 'ack', 'status',
+                         *[n+'_ack_rad' for n in JOINT_NAMES], 'raw_ax','raw_ay','raw_az','raw_gx','raw_gy','raw_gz'])
+            if clock()-startup_received > .050:
+                raise TimeoutError('Startup telemetry aged before arming')
+            robot.arm()  # explicit caller request, measured calibration, matching handshake
+            started = clock(); next_command = started; last_telem = started
+            index = 0; last_ack = None; last_sent_at = None
+            while True:
+                now = clock()
+                if index < len(targets) and now-started > 30:
+                    raise TimeoutError('Manual command session exceeded30seconds')
+                if now-last_telem > .050:
+                    raise TimeoutError('Fresh telemetry deadline exceeded50ms')
+                if index < len(targets) and now+1e-10 >= next_command:
+                    if now-next_command > .040:
+                        raise TimeoutError('PC command deadline missed by40ms')
+                    robot.command(targets[index])
+                    last_sent_at = now
+                    cw.writerow([now-started, index, robot.last_sequence, *targets[index]])
+                    index += 1
+                    # Never burst commands to catch up after scheduling jitter:
+                    # >=20ms spacing preserves the validated commanded slew.
+                    next_command = now+CONTROL_DT
+                if index == len(targets) and now+1e-10 >= last_sent_at+CONTROL_DT:
+                    if last_ack == robot.last_sequence:
+                        break
+                    if now-last_sent_at > .080:
+                        raise TimeoutError('Final command not acknowledged within80ms')
+                kind, t = robot.read()
+                now = clock()
+                if kind != 'telemetry':
+                    if kind == 'identity' and t != 1:
+                        raise RuntimeError('Firmware fault/disarm status '+str(t))
+                    continue
+                tw.writerow([now-started, t.timestamp_ms, t.sequence, t.status,
+                             *t.applied_targets, *t.accelerometer, *t.gyroscope])
+                if now-last_telem > .050:
+                    raise TimeoutError('Fresh telemetry deadline exceeded50ms')
+                # Record even a fault sample before rejecting it.
+                inspect(t, 1)
+                if robot.last_sequence is not None and ((robot.last_sequence-t.sequence) & 0xffff) > 4:
+                    raise RuntimeError('Applied command acknowledgement is too old or ahead')
+                last_ack = t.sequence
+                last_telem = now
+            manifest['commands_sent'] = index
+            manifest['final_command_acknowledged'] = True
+        manifest['status'] = 'completed'
+        return manifest
+    except BaseException as e:
+        failure = e
+        manifest['status'] = 'interrupted' if isinstance(e, KeyboardInterrupt) else 'failed'
+        manifest['error'] = type(e).__name__+': '+str(e)
+        raise
+    finally:
+        close_error = None
+        if robot is not None:
+            try:
+                robot.close()  # SerialRobot.close sends STOP and always closes transport
+                manifest['stop_and_close'] = 'requested'
+            except Exception as e:
+                close_error = e
+                manifest['stop_and_close'] = 'failed: '+str(e)
+                if failure is None:
+                    manifest['status'] = 'failed'
+        (output/'manifest.json').write_text(json.dumps(manifest, indent=2, allow_nan=False)+'\n')
+        if close_error is not None and failure is None:
+            raise close_error
+
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--sequence', type=Path, required=True)
+    p.add_argument('--calibration', type=Path, default=Path(__file__).parent/'calibrations/example.invalid.json')
+    p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--arm', action='store_true')
+    p.add_argument('--port')
+    a = p.parse_args()
+    result = run_sequence(a.sequence, a.calibration, a.output, arm=a.arm, port=a.port)
+    print(json.dumps({k: result[k] for k in ('mode', 'status', 'duration_s', 'physically_verified')}))
+
+
+if __name__ == '__main__':
+    main()
+```
+
 ```python
 """Explicitly armed PC inference. Requires measured calibration and compatible policy.
 
@@ -3522,7 +3873,284 @@ def main():
 if __name__=='__main__':main()
 ```
 
-Firmware source (C++ official Pico SDK):
+Firmware source (C++ official Pico SDK). Current Pico2 preparation build is
+locally cross-built, not physically tested; invalid calibration prevents full-policy
+arming. [Repeatable build and dependencies](../firmware/README.md).
+
+```json
+{
+  "version": 1,
+  "date": "2026-10-26",
+  "host": "Linux-x86_64",
+  "sdk": {
+    "url": "https://github.com/raspberrypi/pico-sdk.git",
+    "tag": "2.3.1",
+    "commit": "079c6f39023649b154152db30f1d781e884879bc",
+    "tinyusb_commit": "86ad6e56c1700e85f1c5678607a762cfe3aa2f47"
+  },
+  "compiler": {
+    "version": "14.2.Rel1",
+    "url": "https://developer.arm.com/-/media/Files/downloads/gnu/14.2.rel1/binrel/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi.tar.xz",
+    "archive_sha256": "62a63b981fe391a9cbad7ef51b17e49aeaa3e7b0d029b36ca1e9c3b2a9b78823",
+    "checksum_source": "https://developer.arm.com/-/media/Files/downloads/gnu/14.2.rel1/binrel/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi.tar.xz.sha256asc",
+    "gcc_sha256": "2e6d1fc0b7709d2fc08278a06bbcbfadb6fafcf5837e13cde01a1fbd07ad6db1"
+  },
+  "picotool": {
+    "version": "2.3.1",
+    "url": "https://github.com/raspberrypi/pico-sdk-tools/releases/download/v2.3.1-0/picotool-2.3.1-x86_64-lin.tar.gz",
+    "archive_sha256": "878a1a1e7d8336b8be60300c7218f366d9790c0d3a211b181d6d172e80b1248e",
+    "checksum_source": "https://api.github.com/repos/raspberrypi/pico-sdk-tools/releases/tags/v2.3.1-0",
+    "binary_sha256": "eefcbd48c2c0fa825a8e2ea3e44239644194d79abff8eb082bc3914971e745e5"
+  },
+  "notes": "Archive checksums verified before extraction; executable hashes taken from those verified archives. No SDK/toolchain is packaged. CMake/Ninja are pinned in requirements-dev.txt."
+}
+```
+
+```python
+"""Pinned file-only Pico 2 build: no USB, flashing, arming or automatic downloads."""
+import argparse
+from datetime import datetime, timezone
+import hashlib
+import json
+import os
+from pathlib import Path
+import platform
+import re
+import shlex
+import shutil
+import struct
+import subprocess
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from calibration import configuration_identity, load_calibration
+from tools.firmware_config import generate
+
+
+class BuildError(RuntimeError):
+    pass
+
+
+def sha256(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def verify_source(output):
+    """Compare every generated value, not only the printed identity strings."""
+    calibration = load_calibration(ROOT/'calibrations/example.invalid.json', require_valid=False)
+    if calibration['state'] == 'measured' or calibration['validated']:
+        raise BuildError('This preparation build requires invalid example calibration')
+    expected = output/'expected_generated_config.h'
+    generate(ROOT/'calibrations/example.invalid.json', expected)
+    if expected.read_bytes() != (ROOT/'firmware/generated_config.h').read_bytes():
+        raise BuildError('Stale generated configuration: regenerate with tools/firmware_config.py')
+    spec = json.loads((ROOT/'physical_spec.json').read_text())
+    if spec['controller']['sdk_board'] != 'pico2':
+        raise BuildError('Physical specification does not select Pico 2')
+    return configuration_identity(calibration)
+
+
+def inspect_artifacts(elf, uf2, identity):
+    """Independent ELF/UF2 structural and identity checks, using files only."""
+    data = elf.read_bytes()
+    if data[:6] != b'\x7fELF\x01\x01' or struct.unpack_from('<H', data, 18)[0] != 40:
+        raise BuildError('Expected ELF32 little-endian Arm executable')
+    for key in ('configuration', 'calibration'):
+        if identity[key].encode() not in data:
+            raise BuildError('Compiled ELF lacks expected '+key+' identity')
+    raw = uf2.read_bytes()
+    if not raw or len(raw) % 512:
+        raise BuildError('Invalid UF2 length')
+    families, blocks, totals = set(), set(), set()
+    absolute_blocks = 0
+    for offset in range(0, len(raw), 512):
+        magic0, magic1, flags, address, size, number, total, family = struct.unpack_from('<8I', raw, offset)
+        if (magic0, magic1) != (0x0A324655, 0x9E5D5157) or struct.unpack_from('<I', raw, offset+508)[0] != 0x0AB16F30:
+            raise BuildError('Invalid UF2 magic')
+        if not flags & 0x2000 or not 0 < size <= 476:
+            raise BuildError('Invalid UF2 family flag/payload/block numbering')
+        families.add(family)
+        if family == 0xE48BFF57:
+            # Official picotool 2.3.1 RP2350-E10 ignored absolute block has its
+            # own deliberately incomplete numbering (0/2), not Arm-image numbering.
+            absolute_blocks += 1
+            if (absolute_blocks > 1 or offset != 0 or flags != 0xA000 or number != 0
+                    or total != 2 or size != 256 or address != 0x10FFFF00
+                    or raw[offset+32:offset+288] != b'\xef'*256
+                    or struct.unpack_from('<I', raw, offset+288)[0] != 0x9957E304):
+                raise BuildError('Invalid RP2350-E10 absolute block')
+        else:
+            if number in blocks: raise BuildError('Duplicate Arm UF2 block')
+            blocks.add(number); totals.add(total)
+    # Picotool may include an absolute-family erratum block as well as Arm-S blocks.
+    if 0xE48BFF59 not in families or not families <= {0xE48BFF59, 0xE48BFF57}:
+        raise BuildError('UF2 is not RP2350 Arm secure-family firmware')
+    if totals != {len(blocks)} or blocks != set(range(len(blocks))):
+        raise BuildError('Incomplete UF2 block sequence')
+    return {'elf_machine': 'ARM', 'elf_class': 32, 'uf2_families': [hex(x) for x in sorted(families)],
+            'uf2_blocks': len(blocks), 'rp2350_e10_absolute_blocks': absolute_blocks}
+
+
+def build(*, sdk, compiler, picotool, output, board='pico2'):
+    """Create a new evidence folder or refuse without modifying an existing one."""
+    output = Path(output).absolute()
+    output.mkdir(parents=True, exist_ok=False)
+    manifest = {'version': 1, 'started_utc': datetime.now(timezone.utc).isoformat(),
+                'state': 'started', 'board': board, 'platform': 'rp2350-arm-s',
+                'policy_arm_allowed': False, 'hardware_accessed': False,
+                'physically_verified': False, 'commands': [], 'artifacts': {}}
+    manifest_path = output/'manifest.json'
+    env = {k: v for k, v in os.environ.items() if not k.startswith(('PICO_', 'PICOTOOL_', 'CMAKE_', 'CCACHE_', 'FETCHCONTENT_'))
+           and k not in {'CC', 'CXX', 'ASM', 'CFLAGS', 'CXXFLAGS', 'LDFLAGS', 'CPATH',
+                         'C_INCLUDE_PATH', 'CPLUS_INCLUDE_PATH', 'LIBRARY_PATH',
+                         'GCC_EXEC_PREFIX', 'COMPILER_PATH', 'SOURCE_DATE_EPOCH'}}
+
+    def save():
+        manifest_path.write_text(json.dumps(manifest, indent=2)+'\n')
+
+    def run(args, *, cwd=ROOT, timeout=300):
+        command = [str(a) for a in args]
+        name = f'{len(manifest["commands"]):02d}.log'
+        entry = {'argv': command, 'cwd': str(cwd), 'log': name}
+        manifest['commands'].append(entry)
+        save()
+        try:
+            result = subprocess.run(command, cwd=cwd, env=env, text=True, stdout=subprocess.PIPE,
+                                    stderr=subprocess.STDOUT, timeout=timeout, check=False)
+            (output/name).write_text(result.stdout)
+            entry['returncode'] = result.returncode
+            save()
+            if result.returncode:
+                raise BuildError(f'Command failed ({result.returncode}); see {name}')
+            return result.stdout.strip()
+        except (OSError, subprocess.TimeoutExpired) as error:
+            entry['error'] = str(error)
+            captured = getattr(error, 'stdout', None) or ''
+            if isinstance(captured, bytes): captured = captured.decode(errors='replace')
+            (output/name).write_text(captured+'\n'+str(error)+'\n')
+            raise BuildError(f'Command unavailable/timed out; see {name}') from error
+
+    save()
+    try:
+        if board != 'pico2':
+            raise BuildError('Only pico2 is permitted; never reuse a Pico 1 build')
+        if (platform.system(), platform.machine()) != ('Linux', 'x86_64'):
+            raise BuildError('Pinned tools require Linux x86_64')
+        identity = verify_source(output)
+        manifest['identity'] = identity
+        manifest['source_sha256'] = {**identity['files'], **{
+            p: sha256(ROOT/p) for p in ('firmware/generated_config.h', 'tools/firmware_config.py',
+                                       'tools/build_firmware.py', 'firmware/build_dependencies.json')}}
+        pins = json.loads((ROOT/'firmware/build_dependencies.json').read_text())
+        manifest['dependency_pins'] = pins
+        # Stabilize compiler date/time macros; actual execution time stays in the manifest.
+        epoch = int(datetime.fromisoformat(pins['date']).replace(tzinfo=timezone.utc).timestamp())
+        env['SOURCE_DATE_EPOCH'] = str(epoch)
+        manifest['source_date_epoch'] = epoch
+        sdk, compiler, picotool = Path(sdk).resolve(), Path(compiler).resolve(), Path(picotool).resolve()
+        cmake, ninja = ROOT/'.venv/bin/cmake', ROOT/'.venv/bin/ninja'
+        required = [sdk/'external/pico_sdk_import.cmake', compiler, picotool,
+                    picotool.parent/'picotoolConfig.cmake', cmake, ninja]
+        required += [compiler.with_name('arm-none-eabi-'+suffix) for suffix in ('g++', 'readelf', 'size')]
+        for p in required:
+            if not p.is_file(): raise BuildError('Missing dependency: '+str(p))
+        if sha256(compiler) != pins['compiler']['gcc_sha256'] or sha256(picotool) != pins['picotool']['binary_sha256']:
+            raise BuildError('Compiler/picotool executable checksum mismatch')
+        revision = run(['git', '-C', sdk, 'rev-parse', 'HEAD'])
+        tinyusb = run(['git', '-C', sdk/'lib/tinyusb', 'rev-parse', 'HEAD'])
+        if revision != pins['sdk']['commit'] or tinyusb != pins['sdk']['tinyusb_commit']:
+            raise BuildError('SDK/TinyUSB revision does not match dependency pins')
+        for tree in (sdk, sdk/'lib/tinyusb'):
+            if run(['git', '-C', tree, 'status', '--porcelain', '--untracked-files=no']):
+                raise BuildError('SDK/TinyUSB has modified tracked files')
+        versions = {'gcc': run([compiler, '--version']), 'target': run([compiler, '-dumpmachine']),
+                    'picotool': run([picotool, 'version']), 'cmake': run([cmake, '--version']),
+                    'ninja': run([ninja, '--version'])}
+        if ('14.2.Rel1' not in versions['gcc'] or versions['target'] != 'arm-none-eabi'
+                or not re.search(r'\bv2\.3\.1\b', versions['picotool'])
+                or 'cmake version 3.31.10' not in versions['cmake'] or not versions['ninja'].startswith('1.13.2')):
+            raise BuildError('Unexpected dependency version/target')
+        manifest['tools'] = {'versions': versions, 'sdk_commit': revision, 'tinyusb_commit': tinyusb,
+                             'executables': {str(p): sha256(p) for p in required if os.access(p, os.X_OK)}}
+        source = output/'source'
+        source.mkdir()
+        for n in ('main.cpp', 'control.h', 'CMakeLists.txt', 'generated_config.h'):
+            shutil.copy2(ROOT/'firmware'/n, source/n)
+        env.update(PICO_SDK_PATH=str(sdk), PICO_TOOLCHAIN_PATH=str(compiler.parent),
+                   PATH=os.pathsep.join((str(cmake.parent), str(compiler.parent), env.get('PATH', ''))))
+        build_dir = output/'build'
+        # SDK debug information also exists in Release ELFs. Normalize absolute
+        # paths so distinct output directories do not change the delivered ELF.
+        prefix_maps = ' '.join(shlex.quote('-ffile-prefix-map='+str(old)+'='+new) for old, new in (
+            (ROOT, '/s6-project'), (sdk, '/pico-sdk'),
+            (compiler.parent.parent, '/arm-toolchain'), (output, '/s6-build')))
+        release_flags = '-g -O3 -DNDEBUG '+prefix_maps
+        manifest['reproducibility_flags'] = release_flags
+        run([cmake, '-S', source, '-B', build_dir, '-G', 'Ninja', '-DPICO_BOARD=pico2',
+             '-DPICO_PLATFORM=rp2350-arm-s', '-DCMAKE_BUILD_TYPE=Release',
+             '-DCMAKE_MAKE_PROGRAM='+str(ninja), '-Dpicotool_DIR='+str(picotool.parent),
+             *['-DCMAKE_'+lang+'_FLAGS_RELEASE='+release_flags for lang in ('C', 'CXX', 'ASM')],
+             '-DFETCHCONTENT_FULLY_DISCONNECTED=ON'])
+        run([cmake, '--build', build_dir, '--parallel', '4'])
+        elf, uf2 = output/'s6_bench.elf', output/'s6_bench.uf2'
+        for target in (elf, uf2): shutil.copy2(build_dir/target.name, target)
+        attributes = run([compiler.with_name('arm-none-eabi-readelf'), '-h', '-A', elf])
+        cache = (build_dir/'CMakeCache.txt').read_text()
+        if 'Tag_CPU_arch: v8-M.mainline' not in attributes or not re.search(
+                r'^CMAKE_CXX_FLAGS:STRING=.*-mcpu=cortex-m33\b.*-mcmse\b', cache, re.M):
+            raise BuildError('ELF/build flags do not identify Armv8-M Cortex-M33 secure target')
+        run([compiler.with_name('arm-none-eabi-size'), elf])
+        for artifact in (elf, uf2):
+            info = run([picotool, 'info', '-a', artifact])
+            if not all(re.search(pattern, info) for pattern in (
+                    r'target chip:\s+RP2350', r'image type:\s+ARM Secure',
+                    r'pico_board:\s+pico2\b', r'sdk version:\s+2\.3\.1\b')):
+                raise BuildError('Artifact metadata does not match Pico2/RP2350 Arm secure/SDK2.3.1')
+        manifest['inspection'] = inspect_artifacts(elf, uf2, identity)
+        if verify_source(output) != identity:
+            raise BuildError('Model/control identity changed during build')
+        if any(sha256(ROOT/name) != expected for name, expected in manifest['source_sha256'].items()):
+            raise BuildError('Build source or dependency ledger changed during build')
+        manifest['artifacts'] = {p.name: {'sha256': sha256(p), 'bytes': p.stat().st_size} for p in (elf, uf2)}
+        manifest['state'] = 'locally_cross_built'
+        manifest['limits'] = ['Invalid example calibration; full-policy arming disabled.',
+                              'Boot disarmed; explicit narrow single-servo bench mode still exists.',
+                              'No USB/device access, flashing, electrical test, fit or physical approval.',
+                              'Software stop is not physical DC isolation.']
+    except (Exception, KeyboardInterrupt) as error:
+        manifest['state'] = 'interrupted' if isinstance(error, KeyboardInterrupt) else 'failed'
+        manifest['error'] = f'{type(error).__name__}: {error}'
+        raise
+    finally:
+        manifest['finished_utc'] = datetime.now(timezone.utc).isoformat()
+        save()
+    return manifest
+
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--sdk', required=True, type=Path)
+    p.add_argument('--compiler', required=True, type=Path, help='Path to arm-none-eabi-gcc')
+    p.add_argument('--picotool', required=True, type=Path, help='Official installed executable beside its CMake config')
+    p.add_argument('--output', required=True, type=Path, help='New output directory; existing folders refused')
+    p.add_argument('--board', default='pico2')
+    args = p.parse_args()
+    try:
+        result = build(**vars(args))
+    except (Exception, KeyboardInterrupt) as error:
+        print(f'Build not completed: {error}', file=sys.stderr)
+        return 1
+    print(json.dumps({'state': result['state'], 'identity': result['identity']['configuration'],
+                      'policy_arm_allowed': False, 'output': str(args.output)}))
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())
+```
+
+Firmware source:
 
 ```text
 cmake_minimum_required(VERSION 3.13)
@@ -4013,20 +4641,26 @@ def show_physical_geometry(model):
 
 def evaluate(model_path=None, episodes=10, seed=1000, randomize=False,
              output=ROOT / "runs" / "evaluation", video=False, render=False,
-             episode_seconds=30, baseline="home", policy_seed=0):
+             episode_seconds=30, baseline="home", policy_seed=0, calibration_path=None):
     output = Path(output)
     if episodes <= 0:
         raise ValueError("episodes must be positive")
     if output.exists() and any(output.iterdir()):
         raise ValueError("Use a new empty output directory; preserve previous evidence")
-    output.mkdir(parents=True, exist_ok=True)
     if video and render:
         raise ValueError("Choose video or human rendering, not both")
     mode = "rgb_array" if video else "human" if render else None
-    from calibration import check_policy
-    metadata = check_policy(model_path) if model_path else None
+    from calibration import check_policy, configuration_identity, load_calibration
+    explicit = load_calibration(calibration_path) if calibration_path is not None else None
+    metadata = check_policy(model_path, calibration=explicit) if model_path else None
+    effective_calibration = explicit if explicit is not None else metadata.get('calibration_record') if metadata else None
+    if metadata is not None:
+        # Verify the embedded mapping too, rather than trusting a mismatched record.
+        if configuration_identity(effective_calibration) != metadata['identity']:
+            raise ValueError('Policy calibration record/identity mismatch')
+    output.mkdir(parents=True, exist_ok=True)
     env = HumanoidEnv(render_mode=mode, domain_randomization=randomize, episode_seconds=episode_seconds,
-                      calibration=metadata.get("calibration_record") if metadata else None)
+                      calibration=effective_calibration)
     if mode is not None:
         show_physical_geometry(env.model)
     model = None
@@ -4075,7 +4709,10 @@ def evaluate(model_path=None, episodes=10, seed=1000, randomize=False,
                    "domain_randomization": randomize, "policy": str(model_path) if model_path else baseline + " baseline"}
         import hashlib
         from calibration import configuration_identity
-        summary["identity"] = metadata["identity"] if metadata else configuration_identity()
+        summary["identity"] = configuration_identity(effective_calibration)
+        summary["calibration_record"] = effective_calibration
+        summary["calibration_source"] = ("explicit_file" if explicit is not None else
+                                         "policy_manifest" if metadata else "nominal_prototype_default")
         summary["model_sha256"] = hashlib.sha256(Path(model_path).read_bytes()).hexdigest() if model_path else None
         summary["policy_seed"] = policy_seed if baseline == "untrained" else None
         summary["xml_sha256"] = hashlib.sha256((ROOT / "robot.xml").read_bytes()).hexdigest()
@@ -4099,6 +4736,7 @@ def main():
     p.add_argument("--model", type=Path)
     p.add_argument("--baseline", choices=("home", "untrained"), default="home")
     p.add_argument("--policy-seed", type=int, default=0)
+    p.add_argument("--calibration", type=Path, help="Measured validated mapping; required by formal baseline runner")
     p.add_argument("--episodes", type=int, default=10)
     p.add_argument("--seed", type=int, default=1000)
     p.add_argument("--randomize", action="store_true")
@@ -4111,7 +4749,8 @@ def main():
     if args.episodes <= 0:
         p.error("--episodes must be positive")
     evaluate(args.model, args.episodes, args.seed, args.randomize, args.output,
-             args.video, args.render, args.episode_seconds, args.baseline, args.policy_seed)
+             args.video, args.render, args.episode_seconds, args.baseline, args.policy_seed,
+             calibration_path=args.calibration)
 
 
 if __name__ == "__main__":
@@ -4533,6 +5172,15 @@ See experiment/physical protocol and report template for equal trials/limits.
 
 ### Reproducible experiment protocol
 
+#### Calibration parity
+
+Formal evaluation passes the selected measured calibration to all trained-policy,
+HOME and untrained baselines. `evaluate.py --calibration` validates the record;
+with a policy it must match the saved calibration fingerprint. Without an explicit
+argument, a policy uses its verified manifest record. Default prototype calibration
+is retained only for explicitly provisional baseline exploration. Result summaries
+record the effective calibration/source and identity; no extra training is implied.
+
 #### Simulation
 
 Current twin is provisional. Full measured-twin experiment requires the gates in
@@ -4708,7 +5356,7 @@ All physical/manufacturing/training gates remain false; no new PPO was run.
 ### Hardware-first execution roadmap
 
 Updated **2026-10-26**. This is the short map; the
-[complete execution plan](DEVELOPMENT_PLAN.md) contains all phases, completed work,
+[complete execution plan](../PLAN.md) contains all phases, completed work,
 WP1–WP11 procedures, owners, affected files, acceptance evidence and failure decisions.
 [STATUS](STATUS.md) records evidence; ledgers remain authoritative.
 
@@ -4719,7 +5367,8 @@ Pico2 selected. Exact printing/transport price remains unknown, not free. This c
 provider-selection research and starts WP2, without claiming physical fit or a numeric
 budget pass. [Print folder](../print_for_classmate/00_START_HERE.md).
 Measurement-intake/provenance checker implemented; manual six-joint utility and
-measured-baseline calibration parity remain next.69tests pass. No new PPO.
+measured-baseline calibration parity and Pico2 preparation firmware now locally verified.
+121tests pass; no new PPO. [Firmware build](../firmware/README.md).
 
 #### Previous checkpoint (2026-10-25; historical costs/identity)
 
@@ -4748,8 +5397,9 @@ robot and cannot silently replace current contact geometry. See BUDGET_REVIEW.
 | F /11,13 | WP11 student+AI: equal physical A/B, comparison, report/presentation | Recorded successes/failures, uncertainty, cable effects and reproducible handoff |
 | Extensions /12 | Future scoped work: turning, recovery, terrain | Stable walking first |
 
-**Next AI:** reviewed manual six-joint control and baseline calibration parity;
-WP2 measurement intake is now implemented. Keep the reference frozen; no more nominal
+**Next AI:** validate actual order/fit/bench records when supplied. Pico2 preparation
+firmware, manual control and baseline calibration parity are locally verified. Ordering has started according to user;
+actual items/paid prices/arrivals unknown. Keep root PLAN updated after each chunk. Keep the reference frozen; no more nominal
 tuning/PPO, stronger fictitious actuation or repeated identical budget searches.
 **Next human/classmate:** print/test2sample pieces on actual servo/horn, then7frame
 parts if fit passes; record dimensions, costs and weights. No more Meltlab upload/
@@ -4765,8 +5415,9 @@ provider-selection loop is needed for this arrangement. Physical checks stay pen
   estimate, not programmable hardware current/torque protection.
 - Boot disarmed, explicit arm,100ms watchdog, bounded/versioned CRC packets,
   persistent measured calibration/fingerprints; STOP is not physical DC isolation.
-- Current Pico2 identity begins`685e3802`; all saved policies/UF2are historical after the
-  offset correction. Use snapshots; never relabel old checkpoints or headers.
+- Current Pico2 identity begins`685e3802`; saved policies/older UF2are historical.
+  Current preparation ELF/UF2 is locally cross-built with invalid calibration.
+  Use snapshots; never relabel old checkpoints or headers.
 - Smoke2048, pilot≤50000 (49152actual), final≤1000000 (999424actual) each for
   A/B seeds0,1,2. Compatible pilot counts toward final total; B never resumes A.
 - Match A/B initial weights and budgets. Validation2000–2004 selects success,
@@ -4783,7 +5434,58 @@ or blocked. Keep all five gates false until actual evidence closes them. Preserv
 historical trials, quotes and policies. Follow the detailed plan's next executable
 task when human-dependent work is blocked; do not restart already completed research.
 
-### Complete project execution plan
+### Project plan — authoritative living record
+
+Updated **2026-10-26**. Read this overview before each work chunk; the complete
+work packages follow. SUMMARY.md is the purchase/build snapshot, not a competing plan.
+
+| Main phase | Current position | Remaining work |
+|---|---|---|
+| Requirements and hardware selection | User agreed; Pico2/classmate printing selected | Record actual purchases/costs |
+| Printable parts and provisional simulation | Print package, twin/RL and intake checker implemented; 121tests pass (current local suite) | Actual fit/strength/calibration |
+| Bench-control software | **LOCALLY VERIFIED:** manual preview/control, calibration parity and Pico2 build;121tests pass | Pico2 firmware locally cross-built; next: actual fit/one-servo bench records |
+| Physical assembly and calibration | **Ordering started—reported by user** | Receive parts, sample-fit, bench, assemble, weigh/measure |
+| Measured twin and learning | Provisional model; scripted motion below walking target | Measured twin/reference, bounded fixed/DR training |
+| Physical transfer and school experiment | Procedures prepared | Supervised trials, matched comparison, report/presentation |
+
+**Update rule:** after every completed task, changed scope, failed check or blocker,
+update this plan before reporting completion. Record date/change/evidence/remaining
+work/exact next action; synchronize STATUS/SUMMARY. Never equate user agreement,
+implementation, local tests and physical verification.
+
+
+#### Current work log
+
+| Date | Change / evidence | Remaining / exact next action |
+|---|---|---|
+|2026-10-26|Root plan created from detailed plan; previous source archived. User says ordering has started; individual items, quantities, paid prices and arrivals remain unknown.|Implement manual_control.py with offline preview and explicit hardware arm, then calibration parity; no new PPO or hardware operation.|
+|2026-10-26|Manual sequence preview/hardware runner and evaluation calibration propagation implemented; no hardware/learning run.|Next: mocked safety, calibration parity and orchestration tests. Existing source-only replay registry must get a successor because evaluate.py changed.|
+|2026-10-26|First mocked manual/calibration batch passed25tests; inspection added explicit final-command acknowledgement before STOP (pending retest). No physical run.|Finish focused tests, create source-only replay successor, then full active suite.|
+|2026-10-26|Focused manual/evaluation suite passed28tests. Timing review found that catch-up bursts could violate host commanded slew; scheduler now enforces≥20ms spacing and a30s command cap, pending targeted verification.|Run the jitter regression and full suite; physical tests still pending.|
+|2026-10-26|Full active suite passed98tests in17.11s. Manual previews/mocked safety, no catch-up bursts/final ACK and measured evaluation parity verified. Source-only replay successor keeps exact nominal metrics and configuration identity; no PPO.|Next: documentation/archive integrity, then Pico2 cross-build preparation. Student: record ordered items as they arrive, sample-fit/bench/calibrate.|
+|2026-10-26|Delivery review added root-plan link rebasing in generated handoff and cleanup if USB buffer initialization fails; regression test added. Geometry/control identity unchanged.|Rerun active suite for the new cleanup regression, then validate document/archive integrity.|
+|2026-10-26|Final active suite99passed in17.21s, including constructor-failure cleanup. HOME-only offline CLI preview passed; no USB, PPO or physical gate change.|Finish link/handoff/archive checks. Next independent task: Pico2 disarmed cross-build; user records actual orders/arrivals and performs fit/bench measurements.|
+|2026-10-26|Delivery link audit failed: extracted print_for_classmate folder absent while its original ZIP remains intact. No source/CAD change.|Verify ZIP manifest and restore identical files, then rerun link/handoff/archive checks.|
+|2026-10-26|Original print ZIP integrity/manifest verified; extracted folder restored byte-for-byte without changing ZIP/STLs or regenerating CAD.|Rerun delivery link checks and regenerate final handoff/archive.|
+|2026-10-26|Second link-check attempt hit a checker false-positive inside embedded C++ code (`int i`), not a document link. Checker now excludes fenced code.|Revalidate actual Markdown links/anchors; no implementation change or extra training.|
+|2026-10-26|Delivery verified:216actual Markdown links,19-section regenerated handoff and1,717-member archive; required new files present and every archived byte matches its source. Original print ZIP unchanged. Final active suite remains99passed; no hardware/PPO.|Refresh the archive with this final log entry. Next AI task: prepare official Pico2 SDK/Arm cross-build and compile disarmed firmware without flashing. Human: supply order/arrival records and perform sample-fit/bench measurements.|
+|2026-10-26|Pico2 cross-build stage started: prepare isolated SDK2.3.1, Arm14.2.Rel1 and picotool2.3.1; implement a file-only reproducible builder. Missing purchase details do not block this software work.|Validate tool provenance/configuration, build current invalid-calibration firmware, test failure paths and record actual results. No USB/flash/arm/PPO or physical gate change.|
+|2026-10-26|Initial dependency metadata download failed in sandbox: curl could not resolve api.github.com. No build claimed.|Retry the official read-only download through permitted network access; continue independent builder/tests if unavailable.|
+|2026-10-26|Official downloads succeeded outside project archive; Arm compiler archive and picotool release checksums verified, SDK2.3.1 commit079c6f39/TinyUSB86ad6e56 fetched. Sandbox DNS failure resolved through permitted download access.|Implement pinned file-only builder and focused safety/failure tests, then actual Pico2 compile. No device access or physical claim.|
+|2026-10-26|First actual Pico2 build compiled/linked ELF+UF2, but builder inspection rejected the ELF because readelf does not print a literal Cortex-M33 model name. Failed run preserved under runs/pico2_crossbuild_20261026_01.|Inspect architecture attributes and compiler flags; correct the overly specific inspection without changing firmware or accepting the wrong target. Retest in a new output directory.|
+|2026-10-26|Inspection resolved: ELF uses Armv8-M architecture attributes; CMake flags explicitly select cortex-m33/secure mode. Picotool uf2 info is device-oriented, so it is excluded; only info -a with an explicit ELF/UF2 filename is allowed. Manual rejected syntax did not access hardware.|Verify both artifacts through file-only metadata and independent UF2 parsing; add target/command regression tests and rerun builder in a new folder. Firmware sources remain unchanged.|
+|2026-10-26|Pico2 build02 passed independent ELF/UF2/identity checks;20focused builder tests passed. Firmware/model/control files unchanged, invalid calibration retained; no USB/flash. Official RP2350-E10 absolute block validated separately from Arm-image numbering.|Fix compiler date macros to a recorded epoch and remove inherited compiler overrides, verify repeat builds in new folders, then active suite/documentation delivery.|
+|2026-10-26|Builder now fixes SOURCE_DATE_EPOCH and strips inherited compiler overrides;21focused tests pass. Build03 passed file-only target/identity inspection. Overview remains six phases; dated evidence is kept in this work log.|Run independent repeat build04 and compare ELF/UF2 hashes; active suite in progress. Then publish compact build evidence and refresh guides/handoff/archive.|
+|2026-10-26|Active suite120passed in18.85s. Repeat builds03/04 both passed target/identity checks, but byte-equality comparison failed; evidence folders retained. No physical result.|Diagnose path-dependent ELF/UF2 differences before claiming repeatability; record actual results, then complete documentation/archive.|
+|2026-10-26|Repeat-build diagnosis: UF2 images already identical; ELF debug paths differed by output folder. Added compiler path normalization and source/ledger drift guard; prior runs preserved.|Verify final builder with normalized repeat builds and active suite, then document evidence. No firmware source/identity or physical gate changes.|
+|2026-10-26|Full suite121passed in17.44s. Normalized builds06/07 have identical ELF/UF2 and source hashes. Inspection noted custom Release flags omitted SDK default debug information; retain -g for usable debugging before final delivery.|Build final two copies with SDK-equivalent -g/-O3/-DNDEBUG plus path normalization, compare hashes, then publish evidence. No control logic or physical changes.|
+|2026-10-26|Final builds08/09 passed: ELF and UF2 byte-identical with debug information retained, fixed timestamp and normalized paths. Firmware/model/control identity remains685e3802; artifacts/manifests copied to docs/validation/2026-10-26/pico2_crossbuild. No USB/flash/PPO.|Finish post-flag active-suite check, source/document links,19-section handoff and explicit-allowlist archive. Next physical dependency: actual samples/electronics and user bench records.|
+|2026-10-26|Post-flag full active suite121passed in18.02s. Current status/summary/AI guide updated; verified ELF explicitly allowed in delivery, toolchains excluded. Earlier inspection/comparison failures retained.|Complete document/allowlist/archive integrity checks and refresh delivery. Then receive and review actual order/fit/bench records; no automatic flash/arm/training.|
+|2026-10-26|Pico2 preparation stage COMPLETE locally:121tests passed in18.02s; final ELF/UF2 repeat byte-identically.249local links/anchors,19-section handoff and initial1,856-member archive passed integrity/byte/allowlist checks. Firmware/model/control files and print ZIP unchanged; all physical gates false.|Refresh final archive with this log and delivery records. Next: user receives parts, tests2fit samples/power/one unloaded servo/IMU and supplies receipts/measurements; AI validates records. Missing order details remain unknown, not blockers to completed software work.|
+
+---
+
+### Detailed execution plan
 
 Updated **2026-10-26**. This is the detailed plan for the student and future AI
 sessions. [SUMMARY](../SUMMARY.md) remains the short shopping/build overview;
@@ -4800,17 +5502,18 @@ Separate ready-to-slice files/instructions: [print folder](../print_for_classmat
 and [print ZIP](../print_for_classmate.zip),2fit samples before7frame parts.
 
 **Next phase WP2 started:** external-angle provenance/measurement quality checker
-implemented,69tests pass. [Usage](MEASUREMENT_INTAKE.md). Six-joint manual tooling
-and measured-baseline parity remain pending; no new PPO. Pico2 identity begins
-`685e3802`; board mass remains estimated, no ARM cross-build/physical tests.
+implemented; manual six-joint tooling and measured-baseline parity now also locally
+verified; current suite121tests passes. [Manual usage](MANUAL_CONTROL.md). No physical operation; no new PPO. Pico2 identity begins
+`685e3802`; board mass remains estimated. Pico2 preparation firmware is now locally
+cross-built; physical tests remain pending.
 All references to older prices/fingerprints/results below retain their historical
 date; current cost ledger is authoritative. Do not repeat earlier supplier searches.
 
 **Current position:** the provisional robot design, digital twin, control interface
 and RL pipeline exist. A handwritten script produces four qualifying simulated
 steps. A calibrated physical robot and learned walking do not yet exist.
-The immediate obstacles are an affordable complete basket and real interface/
-actuator measurements. More PPO is not the next task.
+User ordering has started; purchased items/prices/arrivals are not yet known.
+Physical interface and actuator measurements remain pending. More PPO is not the next task.
 
 #### 1. Objective and fixed constraints
 
@@ -4821,8 +5524,8 @@ domain-randomized policies under matched simulated and physical conditions.
 - Six Waveshare 15024 MG90S joints: left hip pitch, knee pitch, ankle roll; then
   the same right joints. No weaker motor or reduced-joint substitution.
 - Approximately 15–20 cm, lightweight, broad feet, repairable, no arms.
-- PC inference; USB to bare Pico; direct PWM; MPU6050; separate wired servo power.
-- Commercial PETG printing: seven frame parts and two separate fit-test pieces.
+- PC inference; USB to bare Pico2; direct PWM; MPU6050; separate wired servo power.
+- User-arranged classmate PETG printing: seven frame parts and two separate fit-test pieces.
   Eight bought grip pads; no printed TPU, printer purchase or filament packs.
 - Soldering is available. Student assembly needs no mechanical drilling, cutting
   or bending; the printing service must finish usable mounting holes.
@@ -4862,10 +5565,10 @@ is physically verified now. Blocked work has a named missing dependency.
 | 0 Requirements | Six-joint layout, constraints and acceptance agreed | Demonstrate feasibility without silently relaxing them |
 | 1 Hardware research | Sourced basket, servo comparison, power/harness design, dated budget review | Complete exact-file quotes, total delivery cost, actual interfaces and electrical ratings |
 | 2 Digital twin | `physical_spec.json` → CAD/MJCF; estimated 197.053 g; local geometry/accounting checks | Confirm printed fit and replace physical estimates with measured evidence |
-| 3 Common interface | Six actions; shared IMU/history processing; serial protocol, calibration and fingerprints | Physical timing/parity tests and reviewed manual multi-joint utility |
+| 3 Common interface | Six actions, serial/calibration/fingerprints plus locally verified reviewed manual utility | Actual hardware timing/operation and measured calibration |
 | 4 RL environment | Gymnasium reset/step, bounded servo approximation, reward, falls and gait metrics | Validate against measured dynamics and feasible reference motion |
 | 5 Baseline training | Historical 2,048-step smoke and older 49,152-step pilot; no learned walking | New compatible measured-model baseline after gates pass |
-| 6 Evaluation | CSV/JSON, raw gait audits, nominal/randomized diagnostics and videos | Formal trained-policy and physical comparisons with uncertainty |
+| 6 Evaluation | CSV/JSON/videos and calibrated HOME/untrained/policy parity locally verified | Formal trained-policy and physical comparisons with uncertainty |
 | 7 Domain randomization | Conservative hypotheses implemented; one-factor study completed | Fit ranges from measurements; equal-budget trained A/B experiment |
 | 8 Physical robot | Firmware, wiring/assembly procedures and quotation prototypes prepared | Approved procurement, electrical bench, sample fit, assembly and manual control |
 | 9 Calibration | Templates and first-order response-fit diagnostic | Real per-servo, IMU, mass/COM, contact/current/timing records |
@@ -4876,11 +5579,10 @@ is physically verified now. Blocked work has a named missing dependency.
 
 ##### Discoveries that must not be lost
 
-- Latest recorded full suite: **58 passed in 16.41 s**, [2026-10-25 log](validation/2026-10-25/procurement_review/pytest_after_history_exclusion.txt).
-  The earlier offset-correction suite had 55 tests. This planning edit has not
-  rerun the full suite; collection was rechecked and finds 58 tests.
-- Current fingerprint: `b11ab9292c586ace4f2028c7061aa4ef279b6c84bd3966d2e806e0f96d01560b`.
-  [Current frozen reference](baselines/scripted_r2_offset_corrected.json) and
+- Latest recorded full suite: **121 passed in18.02s**, [cross-build final log](validation/2026-10-26/pico2_crossbuild/pytest_release.txt).
+  Earlier99/69/58/55-test records remain historical.
+- Current fingerprint: `685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88`.
+  [Current frozen reference](baselines/scripted_bench_tools.json) and
   [historical predecessor](baselines/scripted_r2.json) remain separate.
 - Seven connected watertight frame meshes; 55 sampled poses, zero modeled known
   collisions, **five unresolved interface groups**. Not manufacturing approval.
@@ -4891,8 +5593,9 @@ is physically verified now. Blocked work has a named missing dependency.
   steps; friction ±15% gives 4/0; damping ±20% gives 2/3. All 73 credited steps
   in the corrected study were raw-audited. These are not physical failure rates.
 - Shaft-zero error now enters actuator bias instead of disappearing at command
-  bounds. All existing policies/UF2 images are historical and incompatible.
-  Current firmware calibration remains invalid; ARM rebuild/electrical tests pending.
+  bounds. All existing policies and older UF2 images are historical and incompatible.
+  Current Pico2 preparation ELF/UF2 is locally cross-built with invalid calibration;
+  electrical tests and measured-policy firmware remain pending.
 
 References: [support](SUPPORT_DIAGNOSIS.md), [one-step transfer](STANCE_TRANSFER.md),
 [scripted gait](REFERENCE_GAIT.md), [sensitivity](SENSITIVITY.md),
@@ -4919,8 +5622,8 @@ Independent data/manual-control preparation ──────┘        ↓
 
 | Order | Concrete task | Owner | Done means / blocks |
 |---|---|---|---|
-| N1 | Obtain missing print/sample/horn costs or a genuinely complete new consolidation | Student supplies quote/permission/interfaces; AI checks ledger | Complete ≤€100 delivered basket and reviewed fit path; otherwise explicit shortfall. Blocks procurement/release |
-| N2 | Prepare measurement-intake validation and logged six-joint manual control | AI; independent of hardware | Mocked tests, explicit arm, immutable logs, no fictitious measurements. Blocks later safe manual standing |
+| N1 | Record user-reported orders/receipts, then inspect actual parts and fit samples | Student supplies receipts/interface measurements; AI reconciles records | Ordering started; exact items/costs unknown. Physical fit and numeric accounting remain distinct from accepted design |
+| N2 | Completed: intake, manual-control previews/mocked safety, measured-baseline parity | AI software locally verified |121tests pass; Pico2 cross-build also verified. Physical manual operation still pending |
 | N3 | Verify real accessories/dimensions, electrical behaviour and two-piece sample | Student + AI analysis | Photos/dimensions, bench records and actual fit; costs remain accounted. Blocks full frame |
 | N4 | Assemble/weigh; calibrate/version twin; run model and reference checks | Student measures, AI models | Traceable measured calibration and reviewed feasible stepping. Blocks substantial training/deployment |
 | N5 | Run bounded matched A/B training, evaluate, then supervised physical trials | AI training, student trials | Equal budgets/initialization, held-out metrics/videos and failures. Blocks learned-walking/transfer claims |
@@ -4936,26 +5639,26 @@ later decisions. **Inputs:** [BUDGET_REVIEW](BUDGET_REVIEW.md),
 
 ##### Budget decision
 
-The dated selected basket is **€105.09 before** printing/sample/finishing/horn
-extras: common subset €95.56 plus €9.53 ear-fastener packs/delivery. Known shortfall
-is at least **€5.09**; complete delivered total is unknown. This is not a new live
+The dated selected basket is **€106.49 before** printing/sample/finishing/horn
+extras: common subset €96.96 plus €9.53 ear-fastener packs/delivery. Known shortfall
+is at least **€6.49**; complete delivered total is unknown. This is not a new live
 checkout. Revalidate price, stock, VAT and postcode delivery before any future order.
 
-The unselected taller FIX-RF-003 comparison is €96.79 before the same unknowns,
-leaving €3.21. It is not an affordable complete robot. Its 4.5 mm geometry differs
+The earlier unselected taller-pad comparison was€96.79 with Pico1; with Pico2
+it would be€98.19 before unknowns, leaving€1.81. It is not an affordable complete robot. Its 4.5 mm geometry differs
 from the selected 3 mm pads and needs a new twin if ever selected. Do not change
 geometry or credit a comparison saving without a complete verified alternative.
 
 ##### Quantities to resolve
 
 Exact products, links, full-pack prices and supplier charges remain in the
-[SUMMARY purchase table](../SUMMARY.md#complete-purchasecost-snapshot--not-cleared-to-buy)
+[SUMMARY purchase table](../SUMMARY.md#cost-record--selected-arrangement-accepted-exact-total-pending)
 and ledger; this checklist does not create a second price list.
 
 | Group | Required content | Unresolved point |
 |---|---|---|
 | Actuation | 6 exact MG90S, 6 compatible horns, 6 shaft retainers | Six-unit stock/accessories, spline, shape, thread and dimensions |
-| Control/sensing | 1 bare Pico, header kit, 1 MPU6050, header/signal pack, USB data cable | Board envelope, pull-ups, alignment and 3.3 V operation |
+| Control/sensing | 1 bare Pico2, header kit, 1 MPU6050, header/signal pack, USB data cable | Board envelope, pull-ups, alignment and 3.3 V operation |
 | Power | 1 enclosed 5 V/5 A PSU, mains lead, DC socket, capacitor | Loaded droop/current, connector ratings and cutoff |
 | Harness | 6 removable branches, full heavy-wire roll, signal leads, solder, insulation/ties | Actual mating, pin order, rating and strain relief |
 | Frame | 7 finished PETG parts: torso, two thighs, two shins, two feet | Exact-file quote, usable holes, supports, strength and fit |
@@ -4964,74 +5667,54 @@ and ledger; this checklist does not create a second price list.
 | Ear fasteners | 12 M2×8 screws, 12 M2 nuts, 24 washers installed; priced full packs | Real stack, projection, access and length |
 | Horn fasteners | 12 horn-to-frame screws + 12 matching washers | Unknown diameter/thread/length; shaft retainers are not assumed M2 |
 
-##### Procedure
+##### Current procedure after user acceptance
 
-1. Price the current two quotation ZIPs, quantities, hashes and settings. Send only
-   those files for a quote, never the complete project archive with historical CAD.
-2. Obtain separate sample/frame itemizations: PETG, initial 0.2 mm layers, three
-   walls, 25% infill, reviewed load orientation/supports, removed supports, usable
-   holes without student drilling, finishing, VAT, packing and delivery to 25337.
-   Initial print settings are not a structural strength certification.
-3. Count possible bench-component, sample and finished-frame shipments separately.
-   Splitting the six-servo order can add postage. Rework/reprint costs, when known,
-   belong in the staged budget; no assumed free balance order or finishing.
-4. Resolve accessory contents/interfaces through exact-source data and real
-   measurements. Borrow an exact sample only if actually available; do not assume
-   free borrowing, pickup, hardware or supplier-provided screws.
-5. Prior automatic review rejected sharing CAD with Meltlab without specific
-   provider/payload authorization. Student returns a quote, or a later specifically
-   authorized upload is performed; no bypass/retry elsewhere. Messages and purchases
-   are not authorized by this plan.
-6. If total exceeds €100, record exact shortfall plus unknowns and stop procurement.
-   Seek one evidenced complete consolidation, not repeated speculative searches,
-   weaker servos, omitted leads/consumables or a merely advertised example price.
+1. The user has started ordering and arranged classmate printing. Record exact
+   item/model, quantity, paid price, postage, order date and arrival only when
+   supplied. Keep historical quotes separate; never infer all items were bought.
+2. Use the separate classmate print folder:2fit samples first, then7frame parts
+   if actual servo/horn/screws fit. Record material/settings, finishing, sample
+   dimensions, actual costs and any transport. Do not print duplicate combined files.
+3. Reconcile actual total against€100, showing unknown amounts as unknown and
+   reporting any shortfall honestly. User acceptance is not a numerical proof.
+4. New suppliers, services, CAD uploads or AI purchases/messages are not authorized
+   or needed by this task. Earlier Meltlab research is historical; do not restart it.
+5. Real fit/current/strength checks remain required before full assembly or dynamic
+   operation; continue independent bench software preparation while parts arrive.
 
-**Files/deliverable:** dated ledger/source records, quotes/hashes, staged costs,
-SUMMARY/BUDGET_REVIEW/PROCUREMENT_ACTIONS. **Done:** complete compliant cost and
-reviewed interfaces/fit path. Actual fit may require borrowing an exact part.
-If an unverified prototype purchase is necessary first, a separate explicit staged
-prototype decision is required; this plan grants no budget/fit-rule exception.
-**Blocks:** procurement and manufacturing release.
+**Files/deliverable:** procurement ledger with separate ordering/paid-cost records,
+classmate print manifest, actual fit/bench evidence. **Decision state:** design/
+printing selection complete; financial accounting and physical checks pending.
+**Blocks:** numerical budget and physical release, not independent software work.
 
 #### 5. WP2 — Prepare independent bench/software tools
 
-**State:** intake/provenance checker and diagnostic quality screens implemented; other additions below pending. **Owner:** AI.
-**Depends on:** source inspection, not hardware or new training.
+**State:** implemented and locally verified; physical use remains pending.
+**Owner:** AI preparation, student later bench operation.
 
-Existing: `hardware_interface.py`, `serial_robot.py`, `calibration.py`, `bench.py`,
-`deploy.py`, Pico firmware, templates and `tools/fit_response.py`. Bounded/versioned
-CRC frames, sequences/timestamps, arm/ack/faults and 100 ms watchdog are implemented.
-The first-order fitter is a diagnostic, not automatic actuator identification.
+- Measurement-intake/provenance checker and diagnostic quality screens exist.
+  Actual external-angle recordings, plots/held-out fits and reviewed physical
+  calibration still await data. See [intake guide](MEASUREMENT_INTAKE.md).
+- `manual_control.py` accepts version1 timed six-radian targets in shared order.
+  Defaults to offline50Hz trajectory/manifest without USB. Hardware requires
+  explicit arm, measured validated calibration, matching identity and fresh
+  stationary disarmed telemetry. Start is the acknowledged command, not shaft feedback.
+- Invalid ranges/durations/slew are rejected before connection. Runtime avoids
+  catch-up bursts, stops on faults/stale data/tilt/saturation/deadlines, requires
+  final command acknowledgement, logs commands/rawIMU/acks/errors, and requests
+  STOP/close on completion, failure or Ctrl-C. No reconnect, GUI or gait policy.
+- Example [HOME-only movement](templates/manual_home_only.json) is for preview,
+  not physical approval. [Manual guide](MANUAL_CONTROL.md) documents limits.
+- `evaluate.py --calibration` now supplies measured calibration to HOME/untrained
+  baselines. Explicit/policy mismatch is rejected; result identities record the
+  effective mapping. Formal orchestration passes the same calibration everywhere.
+- Tests cover mocked safety/USB cleanup, quantization/calibration parity and
+  orchestration without real training or hardware. New source-only replay registry
+  preserves previous snapshots, model/control identity and exact nominal metrics.
 
-1. **Measurement intake:** check increasing timestamps, finite values/units,
-   external angle provenance, command/video clock alignment, servo identity,
-   voltage/load and uncertainty. Preserve raw files; never substitute requested or
-   acknowledged angles for measured shaft angles. Missing data stays unknown.
-2. **Fit quality:** detect no motion, insufficient pre/post-step recording, wrong
-   sign, saturation/overshoot and boundary-limited fits. Plot residuals and test
-   held-out steps. Low RMSE alone cannot validate gain/strength/delay. Test with
-   explicitly synthetic data; never automatically overwrite the physical ledger.
-3. **Six-joint manual utility:** provide logged gradual transitions between reviewed
-   calibrated poses over `SerialRobot`. `bench.py` currently controls only one
-   restricted channel, so it is not a complete manual standing controller.
-   Require explicit arm, compatible identity, fresh acknowledgements, rate/angle
-   limits, fault/deadline/tilt handling and STOP on exit. Never auto-arm/reconnect.
-4. Test corrupted/stale packets, invalid calibration, watchdog, disarmed startup
-   and failures with fake serial/native firmware tests before hardware use.
-
-5. **Measured baseline parity:** `evaluate.py` currently obtains calibration from
-   policy metadata, but its HOME/untrained baseline CLI has no calibration option.
-   Before formal experiments, add explicit measured calibration for those baselines
-   and pass it through `tools/experiments.py`. Verify the same pulse quantization,
-   model/control/calibration identity and initial-policy weights as the trained runs.
-   This is a remaining implementation task, not an existing verified capability.
-
-**Affected files later:** tests, templates, calibration-analysis tools and a new
-clearly named manual-control utility; `evaluate.py`, `tools/experiments.py` and
-hardware instructions. New filenames/features
-are planned, not existing capabilities. Fingerprinted-source changes require a new
-identity and preserved baseline. **Done:** reviewed mocked tests/logs, clear bench
-procedure, no fictitious physical data. Keep the gait/plant frozen.
+**Done evidence:** current bench-tools test/preview/replay records linked above.
+**Next:** Pico2 preparation build is locally verified; receive/inspect parts and perform the
+human-assisted WP3–WP7 checks. No software test clears a physical gate.
 
 #### 6. WP3 — Electrical bench and exact servo interfaces
 
@@ -5232,8 +5915,8 @@ training because full RNG/simulator rollout state is not checkpointed.
 - Include HOME and seed-matched untrained baselines under both conditions. The
   existing full three-seed orchestration gives 120 trained-policy episodes plus
   20 HOME and 60 untrained episodes: **200 final episodes**.
-  First close WP2's calibration-parity gap; default-calibration baselines are not
-  a matched measured-configuration comparison.
+  WP2 calibration parity is implemented; use the explicit measured calibration
+  for all formal baselines, not default prototype quantization.
 - Save per-episode distance/speed/duration/falls/reward, left/right steps, alternations,
   gait distance/slip and stop reasons. Report each training seed and spread; ten
   environment seeds are not ten independently trained policies.
@@ -5314,7 +5997,7 @@ Separate measured trials must satisfy the acceptance criteria.
 
 | Failure/risk | Evidence now | Response |
 |---|---|---|
-| No complete robot ≤€100 | Selected subtotal €105.09, prints unknown | Stop procurement; record shortfall. User later decides constraints if no compliant route exists |
+| No complete robot ≤€100 | Selected subtotal €106.49, prints unknown | Stop procurement; record shortfall. User later decides constraints if no compliant route exists |
 | Horn/ear/screw mismatch | Actual batch unknown | Measure/revise/requote sample; no forced/drilled student assembly |
 | Insufficient torque/power | Hypotheses and limited HOME margin | Measure loaded tracking/current/heat; review mass/moments and cost, not fictitious force |
 | Print failure/hidden sweep conflict | Finite modeled checks only | Sample/load review and physical continuous inspection before dynamics |
@@ -5382,8 +6065,10 @@ Measured calibration/CSV and `runs/*_NEW` paths above are placeholders, not exis
 physical records. Firmware build/flash commands stay in its README. Do not supply
 an immediate policy-arm command while physical checks are absent.
 
-**Exact next AI task:** after completed intake validation, implement reviewed six-joint
-manual tooling, then baseline calibration parity. Keep the script frozen; do not rerun sensitivity,
+**Exact next AI task:** review actual order/arrival, fit-sample and one-servo/IMU bench
+records when supplied; record their provenance and only then update affected ledgers.
+Pico2 cross-build is locally verified; no additional build or training is needed
+without changed sources or new measurements. Never flash/arm without physical checks. Keep the script frozen; do not rerun sensitivity,
 repeat the same searches, change pad geometry, tune motion or start PPO. If new
 evidence arrives, validate provenance/dependencies before updating any ledger/gate.
 
@@ -5852,8 +6537,9 @@ Next phase WP2 has begun; this is not physical/manufacturing/financial verificat
 Separate print folder: [instructions](../print_for_classmate/00_START_HERE.md),
 [ZIP](../print_for_classmate.zip). [Decision record](decisions/2026-10-26-printing-pico2.json).
 
-Read SUMMARY.md → AGENTS.md → relevant roadmap stage. **Nothing bought, printed,
-assembled, flashed or physically verified.** Frame revision **S6-PETG-pad-r2-pico2**;
+Read SUMMARY.md → root PLAN.md → AGENTS.md → relevant roadmap stage.
+**Ordering started—reported by user; exact items, quantities, paid prices and arrivals
+unknown. No physical fit, assembly, firmware flash or calibration verified.** Frame revision **S6-PETG-pad-r2-pico2**;
 active route is classmate PETG, bare Pico2 and eight ordinary grip pads.
 
 | Stage | State | Evidence / blocker |
@@ -5861,11 +6547,11 @@ active route is classmate PETG, bare Pico2 and eight ordinary grip pads.
 | Requirements / AI entry | implemented | Six joints,15–20cm,PC/USB,wired power,EUR100; no printer purchase |
 | Design / printing selection | complete, user accepted | Classmate printing selected; Pico2 adopted. Price unknown; numerical budget remains separate/unverified (106.49before unknowns) |
 | CAD / quotation package | implemented, locally verified partial | Seven connected watertight frames, two-piece fit sample, drawings/manifests;0modeled collisions/55poses,5unknown interface groups; NOT manufacturing-approved |
-| Shared control / firmware | locally verified partial | Protocol/native C++tests pass; regenerated current header has invalid calibration. All prior ARM/UF2images historical; physical timing absent |
-| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite69passes |
+| Shared control / firmware | locally verified partial | Protocol/native tests and current Pico2 cross-build pass; invalid calibration, full-policy arm disabled. Older images historical; physical timing absent |
+| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite121passes |
 | Frozen scripted reference | locally verified partial | Four qualifying steps/3alternations,6.60cm torso and4.39cm gait distance in30s;30cm target fails.29one-factor cases show fragile guessed physics |
 | PPO / evaluation | historical local evidence | Prior2048-step smoke/reload:0walking successes/0gait. All saved policies now incompatible; no new PPO. Older49152-step pilot also failed |
-| Physical build / calibration / transfer | planned, blocked | No hardware/measurements. Bench, soldering, fit and measurement procedures prepared |
+| Physical build / calibration / transfer | planned, blocked | User ordering started; arrivals/measurements unreported. Bench/fit procedures prepared |
 | Formal A/B / school experiment | planned, blocked | No full current six-run experiment or physical trials; fixed seeds/budgets retained |
 | Extensions | planned | After stable walking |
 
@@ -5883,18 +6569,46 @@ Safe commands are not measured mechanical limits; real stops remain unknown.
 
 Current configuration:
 `685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88`.
-[Current frozen registry](baselines/scripted_pico2.json);
+[Current frozen registry](baselines/scripted_bench_tools.json);
 [historical predecessor](baselines/scripted_r2.json), identity`4d3b0dcb…`.
-**All saved policy checkpoints and UF2images are historical/incompatible**, including
-r2 smoke. Never relabel them. Current invalid header needs an ARM rebuild and
-measured calibration before physical policy operation; native tests are not an
-ARM build, electrical test or fit approval.
+**All saved policy checkpoints and older UF2images are historical/incompatible**,
+including r2 smoke. Current Pico2 preparation ELF/UF2 is locally cross-built with
+invalid calibration; no physical test. Never relabel old images. Measured calibration
+and reviewed physical checks remain required before policy operation.
+
+#### Pico2 preparation firmware — latest completed work
+
+- Pinned SDK2.3.1/TinyUSB, Arm14.2.Rel1 and picotool2.3.1; official archive checksums
+  verified before extraction. Toolchains live outside the project archive.
+- File-only build utility rejects stale headers/wrong targets, logs failure/interruption
+  and preserves old evidence. Current preparation calibration invalid; no full-policy arm.
+- **121tests pass in18.02s**; physical operation remains pending.
+- [Build procedure](../firmware/README.md), [evidence](validation/2026-10-26/pico2_crossbuild/README.md).
+  No hardware USB/flash, PPO or change to model/control identity.
+
+#### Root plan and bench tools — previous completed work
+
+- Full living plan moved to root [PLAN.md](../PLAN.md); old path is a pointer.
+  Phase overview and dated progress come first; AI must update it after every
+  completed task/change/failure/blocker before reporting completion.
+- User ordering recorded separately from quoted prices; individual order data unknown.
+- `manual_control.py`: offline preview by default; validated calibrated hardware
+  requires explicit arm, matching handshake and fresh startup telemetry. Timed
+  bounded/slew-checked commands, no catch-up bursts, final ACK, logs, STOP/close.
+  Commands/acknowledgements are not shaft measurements. [Usage](MANUAL_CONTROL.md).
+- HOME/untrained baselines now accept measured calibration; formal runner passes it
+  everywhere; policy/explicit mismatch rejected. Mocked and short software tests only.
+- **99tests pass in17.21s**, validation/2026-10-26/bench_tools/pytest_final.txt. No PPO,
+  hardware operation, geometry/strength/observation change or physical gate release.
+- New source-only frozen registry `scripted_bench_tools.json`; same685e3802model/
+  control identity and exact nominal metrics. Previous source snapshots untouched.
 
 #### New2026-10-26 work
 
 - Pico2 selected in ledger/spec; official same footprint/pins/MicroUSB confirmed.
   CMake defaults to pico2 and refuses pico; build target is now fingerprinted.
-  SDK/cross compiler absent locally: no new ARM image or electrical claim.
+  At that earlier checkpoint SDK/compiler were absent; superseded by the local
+  cross-build below. No electrical claim.
 - Separate print-only folder/ZIP:7frame and2sample STL files, German instructions,
   drawings, hashes, quantities and dimensions; no fit approval.
 - WP2 measurement intake/provenance/quality checker implemented. Eight focused
@@ -5907,7 +6621,7 @@ ARM build, electrical test or fit approval.
 
 [Full report](SENSITIVITY.md), [current validation](VALIDATION_CURRENT.md).
 
-- 2026-10-25 planning refresh: [expanded execution plan](DEVELOPMENT_PLAN.md)
+- 2026-10-25 planning refresh: [expanded execution plan](../PLAN.md)
   now maps all14phases and WP1–WP11, with owners, dependencies, procedures,
   files, acceptance evidence, failure decisions and conditional commands.
   No source/model/training/hardware change. Next independent implementation is
@@ -5949,18 +6663,50 @@ All five [release gates](gates.json) remain false. Software STOP is not power is
 
 #### Exact next task
 
-**AI:** finish reviewed six-joint manual utility and measured-baseline calibration
-parity. Intake validation is implemented; use it on genuine data when available.
-Do not repeat printing-service research or tune nominal physics/PPO.
-**Student/classmate:** use the separate print folder, test2pieces first with actual
-servo/horn/screws, then7frames. Record actual costs and fitted dimensions/masses;
-physical stages remain pending. User decision is complete despite missing numeric
-quote; no factual financial/fit gate has been changed to true.
-
-Commands: `.venv/bin/python -m pytest -q tests`; see MEASUREMENT_INTAKE.md,
-firmware/README.md, DEVELOPMENT_PLAN.md and the print-folder instructions.
+**AI:** review actual receipt/arrival, fit-sample and one-servo/IMU bench records
+when supplied; preserve provenance and keep gates closed until evidence passes.
+Pico2 preparation build complete locally; no automatic flash/arm or extra PPO.
+**Student/classmate:** receive/record exact ordered items, print/test2samples with
+actual servo/horn/screws, then7frames if fit passes; bench, weigh and calibrate.
+No numerical financial or physical gate is cleared by user agreement or software tests.
+See root PLAN.md for full dependencies; do not restart provider-selection research
+or motion tuning. Use `pytest -q tests`, not copied historical test modules.
 
 ### Current local verification — 2026-10-26, S6-PETG-pad-r2
+
+#### Pico2 preparation cross-build — latest2026-10-26
+
+- Current Pico2/RP2350 Arm secure preparation firmware locally compiled and inspected
+  using pinned SDK2.3.1, TinyUSB commit86ad6e56, Arm14.2.Rel1 and picotool2.3.1.
+- Builder is file-only and fail-closed for wrong board, stale header, missing/changed
+  dependencies, target mismatch, corruption, source drift, timeout and interruption.
+- **121tests passed in18.02s**: [final log](validation/2026-10-26/pico2_crossbuild/pytest_release.txt).
+- [Build evidence and repeatability](validation/2026-10-26/pico2_crossbuild/README.md).
+  Identity685e3802unchanged; invalid calibration and disarmed startup retained.
+- No physical USB/flash, electrical timing, fit, measured calibration or PPO result.
+  All five gates remain false; order details remain unknown.
+
+#### Root plan and bench-control/parity delivery — previous2026-10-26
+
+- Root [PLAN.md](../PLAN.md) is authoritative, overview first. The prior path is
+  a pointer; all completed chunks/changes/failures/blockers must update the plan.
+- User reports ordering started; exact items/quantities/paid prices/arrivals unknown.
+  Quoted basket retained separately. No purchases/messages performed by AI.
+- Manual HOME-only CLI preview runs without USB. Hardware mode needs explicit arm,
+  measured calibration, matching handshake, fresh telemetry and reviewed start.
+  Commands/slew/bounds, no catch-up bursts, final ACK, logging, STOP/close verified
+  through mocked transport. Constructor-failure connection cleanup also tested.
+- Evaluation now propagates the same measured calibration through HOME, untrained
+  and policy paths; rejects mismatch. Formal orchestration propagation tested with
+  mocked commands only; reserved test seeds were not actually evaluated.
+- **99tests passed in17.21s**: [final log](validation/2026-10-26/bench_tools/pytest_final.txt).
+  Earlier98-test and focused logs remain evidence for their respective checkpoints.
+- New source-only [reference registry](baselines/scripted_bench_tools.json) keeps
+  exact nominal metrics and the same685e3802configuration. Prior snapshots untouched.
+  No robot geometry/strength/observation change, PPO training or physical gate release.
+- Current manual/source/handoff/preview and delivery checks are under
+  `validation/2026-10-26/bench_tools/`. Subsequent cross-build is recorded above; later
+  student/classmate fit, bench, assembly, weights and actual calibration.
 
 #### Pico2 and classmate-printing continuation — 2026-10-26
 
@@ -5989,7 +6735,8 @@ arrangement, not a fabricated numeric quote. Physical/financial gates remainfals
 next phase WP2 continues despite incomplete accounting. Prior evidence below is
 historical and must not be relabelled as this revision.
 
-**No hardware purchased, printed, fitted, electrically tested or deployed.**
+**Physical purchase/arrival details are unreported; user now reports ordering
+started. No fit, electrical or deployment result is verified.**
 Prior2026-10-23record is preserved under history/2026-10-24/pre_print_revision/docs/.
 Latest evidence: `validation/2026-10-24/offset_correction/`,
 `sensitivity_corrected/` and `sensitivity_report_final/`. The sections labelled
@@ -6010,7 +6757,7 @@ Selected dated priced basket now€105.09 before printing/sample/horn extras,
 minimum known shortfall€5.09; complete total unknown. See [budget review](BUDGET_REVIEW.md).
 The€105.34 snapshot near the end belongs to the prior checkpoint, not current prices.
 
-#### Current offset correction and frozen-script study
+#### Historical offset correction and frozen-script study
 
 Current identity:
 `b11ab9292c586ace4f2028c7061aa4ef279b6c84bd3966d2e806e0f96d01560b`.

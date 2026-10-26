@@ -4,14 +4,15 @@ Generated from source by `python tools/build_handoff.py`. Do not edit HANDOFF.md
 Plan/revision date2026-10-26; individual evidence retains its original date.
 Source files, ledgers and evidence states take precedence.
 Short purchase/build plan for humans and AI: [SUMMARY.md](../SUMMARY.md).
-Detailed continuation dependencies and completion gates: [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md).
+Authoritative root plan, dependencies and completion gates: [PLAN.md](../PLAN.md).
 
 ## 1. Short design recommendation
 
 Retain six Waveshare15024 MG90S servos: hip pitch, knee pitch and ankle roll per
 leg, broad feet, Pico2 native PWM, MPU6050, PC USB
 inference and separate5V servo power. This is a **provisional** design, not a
-purchasable or calibrated walking robot. Nothing purchased/physically tested.
+purchasable or calibrated walking robot. Ordering started—reported by user;
+individual purchases/arrivals unknown. Nothing physically verified.
 User can solder; no mandatory helper. Active route is outsourced PETG:seven frame
 parts,two separate fit samples,eight bought TPE pads. Bare Pico2/header ownership
 and pad contacts now match the provisional twin. No printer/filament/printedTPU
@@ -163,9 +164,21 @@ Bench and deployment tools are part of the checkout; neither auto-arms.
 
 {{CODE:bench.py}}
 
+{{TEXT:docs/MANUAL_CONTROL.md}}
+
+{{CODE:manual_control.py}}
+
 {{CODE:deploy.py}}
 
-Firmware source (C++ official Pico SDK):
+Firmware source (C++ official Pico SDK). Current Pico2 preparation build is
+locally cross-built, not physically tested; invalid calibration prevents full-policy
+arming. [Repeatable build and dependencies](../firmware/README.md).
+
+{{CODE:firmware/build_dependencies.json}}
+
+{{CODE:tools/build_firmware.py}}
+
+Firmware source:
 
 {{CODE:firmware/CMakeLists.txt}}
 
@@ -299,7 +312,7 @@ walking. Long formal training is blocked until fit/calibration/reference gates.
 
 {{TEXT:docs/ROADMAP.md}}
 
-{{TEXT:docs/DEVELOPMENT_PLAN.md}}
+{{TEXT:PLAN.md}}
 
 {{TEXT:docs/SUPPORT_DIAGNOSIS.md}}
 

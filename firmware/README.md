@@ -1,57 +1,88 @@
-# Pico 2 firmware — build target and bench preparation
+# Pico 2 firmware — reproducible preparation build
 
-Updated2026-10-26: selected controller is **Raspberry Pi Pico 2, bare RP2350**,
-not RP2040/Pico1 or Pico2W. Native PWM/I2C GPIOs and50Hz/200Hz timing are unchanged.
-Official same51×21mm footprint and MicroUSB documented in the
-[Pico2 datasheet](https://datasheets.raspberrypi.com/pico/pico-2-datasheet.pdf).
-Headers are user-soldered;3g board plus1.2g headers is an estimate, not weighed.
+Updated **2026-10-26**. Selected board: **bare Raspberry Pi Pico 2, RP2350**, not
+Pico 1 or Pico 2 W. Native PWM/I2C pins and50Hz commands/200Hz IMU are unchanged.
+See the official [Pico2 datasheet](https://datasheets.raspberrypi.com/pico/pico-2-datasheet.pdf).
+Board/header masses and physical fit remain estimated. Ordering started according
+to the user; items, paid prices, arrivals and physical measurements remain unknown.
 
-CMake defaults to`pico2` and rejects`pico`; build selection is fingerprinted.
-Current identity starts`685e3802`; generated header is current with`CAL_VALID=false`.
-All prior policies/UF2are historical. Native control tests pass; **no current ARM
-cross-build or electrical verification**: SDK/cross compiler are absent locally.
-Prior RP2040 compilation records do not validate Pico2 binaries. The planned SDK
-is2.3.1; install it and a Cortex-M33-capable Arm toolchain before this build.
-Official [SDK examples](https://github.com/raspberrypi/pico-examples) describe the
-pico2 board/platform selection; [picotool](https://github.com/raspberrypi/picotool)
-documents ELF-to-UF2 conversion/family detection.
+The current preparation firmware is **locally cross-built**, not physically tested.
+Full-policy arming is disabled by `CAL_VALID=false`; every boot starts disarmed.
+Explicit narrow single-servo bench mode remains available only for a later reviewed
+unloaded physical test. STOP is not physical motor-power isolation.
 
-Install an `arm-none-eabi` cross compiler and clone the SDK outside the project:
+## Pinned dependencies
 
-```bash
-git clone --depth 1 --branch 2.3.1 https://github.com/raspberrypi/pico-sdk.git /tmp/pico-sdk
-git -C /tmp/pico-sdk submodule update --init --depth 1 lib/tinyusb
-source .venv/bin/activate
-python tools/firmware_config.py # invalid example, cannot policy-arm
-export PICO_SDK_PATH=/tmp/pico-sdk
-# Set PICO_TOOLCHAIN_PATH to the directory containing arm-none-eabi-gcc if not in PATH.
-cmake -S firmware -B build/firmware_pico2 -G Ninja -DPICO_BOARD=pico2 -DPICO_NO_PICOTOOL=1
-cmake --build build/firmware_pico2 -j 4
-# Official picotool2.3.1 converts the ELF into a flashable UF2:
-picotool uf2 convert build/firmware_pico2/s6_bench.elf build/firmware_pico2/s6_bench.uf2 --family rp2350-arm-s
-```
+[build_dependencies.json](build_dependencies.json) records official URLs, verified
+archive checksums, extracted executable hashes, SDK commit and pinned TinyUSB commit.
 
-`PICO_NO_PICOTOOL=1` avoids CMake implicitly downloading extra code; install
-[picotool](https://github.com/raspberrypi/picotool) separately or use the official
-[SDK tools2.3.1-0 release](https://github.com/raspberrypi/pico-sdk-tools/releases/tag/v2.3.1-0).
-If picotool is configured normally, omit that flag and SDK can produce UF2 itself.
+| Dependency | Version / source |
+|---|---|
+| Pico SDK | [2.3.1](https://github.com/raspberrypi/pico-sdk/tree/2.3.1), commit079c6f39; TinyUSB86ad6e56 |
+| Arm GNU bare-metal compiler | [14.2.Rel1 Linux x86-64](https://developer.arm.com/-/media/Files/downloads/gnu/14.2.rel1/binrel/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi.tar.xz) |
+| picotool | [2.3.1 official Linux x86-64 release](https://github.com/raspberrypi/pico-sdk-tools/releases/tag/v2.3.1-0) |
+| CMake / Ninja | Existing `.venv` executables; pinned in requirements-dev.txt |
 
-For a measured calibration, run:
+Install tools outside the project/archive, for example `/tmp/s6-pico2-tools`.
+This location is temporary: recreate it if the OS clears `/tmp`. The builder
+does not download dependencies or install system packages.
 
 ```bash
-python tools/firmware_config.py --calibration calibrations/measured-v1.json
-cmake --build build/firmware_pico2 -j 4
-picotool uf2 convert build/firmware_pico2/s6_bench.elf build/firmware_pico2/s6_bench.uf2 --family rp2350-arm-s
+mkdir -p /tmp/s6-pico2-tools
+git clone --depth 1 --branch 2.3.1 https://github.com/raspberrypi/pico-sdk.git /tmp/s6-pico2-tools/pico-sdk-2.3.1
+git -C /tmp/s6-pico2-tools/pico-sdk-2.3.1 submodule update --init --depth 1 lib/tinyusb
 ```
 
-Calibration/signs/limits/identity are compiled into firmware flash and survive
-power loss; every boot is disarmed. Do not hand-edit generated_config.h. Physical
-flashing: disconnect servo power, hold BOOTSEL while connecting Pico USB, then
-copy the new Pico2 UF2 onto its BOOTSEL drive (verify the actual mounted device). Release/reset and check read-only telemetry first.
-Never flash or reconnect motor power while a policy process is running.
+Download the compiler and picotool archives from the ledger URLs. Verify their
+SHA256 against that ledger **before extraction**. Extract the compiler tree and
+picotool package there; retain picotool's neighbouring CMake configuration files.
+No OpenOCD, debugger or USB interaction is required for this software build.
 
-The generated header must be regenerated after any fingerprinted control/model
-source edit. A stale image is rejected by the PC handshake. The repository
-example's `CAL_VALID=false` is intentional, not a build error. Single-channel
-bench mode is explicitly allowed without validated joint calibration and is
-restricted to1400–1600µs; it still needs a clear, unloaded setup and cutoff.
+## Build and inspect without hardware
+
+From the project root, with the existing Python environment installed:
+
+```bash
+.venv/bin/python tools/build_firmware.py \
+  --sdk /tmp/s6-pico2-tools/pico-sdk-2.3.1 \
+  --compiler /tmp/s6-pico2-tools/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc \
+  --picotool /tmp/s6-pico2-tools/picotool/picotool \
+  --output runs/pico2_build_NEW
+```
+
+The new output directory must not exist. Each run keeps logs, source snapshot,
+ELF/UF2 and `manifest.json`, including failed/interrupted builds. It checks the
+whole generated header against the invalid example calibration, SDK/TinyUSB
+commits, executable hashes, tool versions, Pico2/Arm secure flags, embedded hashes
+and file-only ELF/UF2 metadata. It refuses stale headers or a wrong board.
+
+Builds use Release mode, explicit installed picotool and disconnected CMake fetches.
+`SOURCE_DATE_EPOCH` is fixed to the dependency ledger's date at UTC midnight;
+actual execution dates are recorded separately. Inherited compiler overrides are
+removed. No host transport, flash, arm, erase or reboot command is invoked by the
+utility. SDK picotool operations post-process local files only.
+
+Inspection uses `picotool info -a FILE.elf` and `picotool info -a FILE.uf2`.
+**Do not substitute `picotool uf2 info`: that subcommand is device-oriented.**
+Independent parsing checks the RP2350 Arm-S image and its official RP2350-E10
+ignored absolute block separately; their block numbering is intentionally different.
+
+Current identity begins`685e3802`; firmware/model/control sources were not changed
+by the builder. Historical policies and older UF2 images remain untouched.
+[Build evidence](../docs/validation/2026-10-26/pico2_crossbuild/README.md) records
+actual results; compilation never proves servo timing, electrical safety or walking.
+
+## Next physical stage
+
+No flashing was performed. After parts arrive, follow [PLAN.md](../PLAN.md) and
+[bench/calibration instructions](../docs/CALIBRATION.md): verify power/polarity and
+physical DC isolation first, then current firmware identity, read-only IMU and one
+unloaded servo. Verify disarmed startup and100ms watchdog before attached limbs.
+[Manual six-joint control](../docs/MANUAL_CONTROL.md) defaults to offline preview.
+
+The preparation builder deliberately refuses measured/validated policy calibration.
+Real pulse mapping, directions, response and IMU measurements must be reviewed and
+versioned before a separate measured-calibration image and policy deployment are
+approved. Do not replace invalid calibration with invented measurements or flash
+historical images to bypass a mismatch. Changed fingerprinted sources require
+regeneration/rebuilding and invalidate incompatible policies.

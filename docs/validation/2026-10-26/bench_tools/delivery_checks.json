@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-26",
+  "state": "Local delivery checks; physical verification pending",
+  "suite": {
+    "passed": 99,
+    "seconds": 17.21,
+    "log": "pytest_final.txt"
+  },
+  "links_checked_in_delivery_files": 206,
+  "handoff_sections": 19,
+  "first_archive_members_verified": 1717,
+  "archive_all_bytes_matched": true,
+  "root_plan": "PLAN.md",
+  "source_sha256": {
+    "PLAN.md": "979c778140467df33325ca0b197efe7b0e52277a07013a9adf63d26cac291d62",
+    "AGENTS.md": "98bafe6383db7264b31550ae8a23f06169844e9357b9a717593a266669a82e2c",
+    "SUMMARY.md": "f68852ee8ea42e4fc33386db3b98c9ee3bb89887296c55b04abf1497beb64f3d",
+    "README.md": "02f10048ea20790175ea2adbe261e6692addadcf5e98c278a30001c19f5efaff",
+    "docs/STATUS.md": "8ed24b15d0a33e7d1fe7d8aca42f1198c3328445ce3b58dc23147ffbf4c8fa4f",
+    "docs/ROADMAP.md": "cfed4d2f69d23f2787e4cc292796e23f7d5a50eacee8a9b3c69b291f0fa1d61b",
+    "docs/DEVELOPMENT_PLAN.md": "c0670d57dde48a2aa66f01079a16c927ee5b7a28aae6b1e9fc6c55f2e83f8ef5",
+    "docs/MANUAL_CONTROL.md": "5af795e60c853fbeb4c066df9c112070e9d1d82483103434675d558aba04f687",
+    "docs/HANDOFF.md": "bbaa77a24577a6507d3404d7359c1b57229ba33353c0c7dee1e51f4d701fbbdd",
+    "manual_control.py": "ed467ec0b7984a0371d0d46f1eb01418446937e5dab8ac185a7af57e3521421f",
+    "evaluate.py": "9132f2b5f22967e8a4615f7f0e3920da85f8974a2d79c93eb4ba0a42cf1311f7",
+    "serial_robot.py": "2a78a32f028b85d3673b7f817e35642ebd069b336eb869e68a26177d8dfc59ac",
+    "tools/experiments.py": "1dc85f8892e6ce8729f941cc53237816c11bb9eaeeddd322a62776fb32ac0c30",
+    "tools/package_project.py": "225478f16770db2d6f4554cfa3af148e1eb8a03d4adfa15d9fa99e382cce716d",
+    "tools/build_handoff.py": "4ccfc7720bc3e254f89046832bd408ea2655da7c1bf6cda4431777d75b1297c3",
+    "docs/HANDOFF.template.md": "654f75262f193a4da73aadd995499832945d688b1e5827c33960e35673f06793"
+  },
+  "print_only_zip_sha256": "8452232164649d1cedc6fe5ebf7bf057498a54d72ed2e64e8a0f926b3351f91b",
+  "geometry_control_identity": "685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88",
+  "no_hardware_execution": true,
+  "new_PPO_steps": 0,
+  "next_action": "Prepare official Pico2 SDK/Arm cross-build and compile disarmed firmware; no flash.",
+  "user_action": "Record actual orders/arrivals and perform sample fit, electrical bench and calibration."
+}

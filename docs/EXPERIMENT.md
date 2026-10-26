@@ -1,5 +1,14 @@
 # Reproducible experiment protocol
 
+## Calibration parity
+
+Formal evaluation passes the selected measured calibration to all trained-policy,
+HOME and untrained baselines. `evaluate.py --calibration` validates the record;
+with a policy it must match the saved calibration fingerprint. Without an explicit
+argument, a policy uses its verified manifest record. Default prototype calibration
+is retained only for explicitly provisional baseline exploration. Result summaries
+record the effective calibration/source and identity; no extra training is implied.
+
 ## Simulation
 
 Current twin is provisional. Full measured-twin experiment requires the gates in

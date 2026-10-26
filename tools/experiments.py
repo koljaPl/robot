@@ -22,12 +22,12 @@ def main():
             run('train.py','--stage','formal','--steps',a.steps,'--seed',seed,'--output',out,'--calibration',a.calibration,*(['--randomize'] if condition=='B' else []),*(['--resume',a.pilot_a0] if seed==0 and condition=='A' and a.pilot_a0 else []))
             identities.append(json.loads((out/'training_config.json').read_text())['initial_policy_sha256'])
             for randomized in (False,True):
-                run('evaluate.py','--model',out/'best_model.zip','--seed',1000,'--episodes',10,'--output',out/('test_dr' if randomized else 'test_nominal'),'--video',*(['--randomize'] if randomized else []))
+                run('evaluate.py','--model',out/'best_model.zip','--calibration',a.calibration,'--seed',1000,'--episodes',10,'--output',out/('test_dr' if randomized else 'test_nominal'),'--video',*(['--randomize'] if randomized else []))
         if identities[0]!=identities[1]:raise RuntimeError('A/B initial weights mismatch')
     for baseline in ('home','untrained'):
         for randomized in (False,True):
             seeds=(0,1,2) if baseline=='untrained' else (0,)
-            for seed in seeds:run('evaluate.py','--baseline',baseline,'--policy-seed',seed,'--seed',1000,'--episodes',10,'--output',a.output/f'{baseline}_{seed}_{randomized}','--video',*(['--randomize'] if randomized else []))
+            for seed in seeds:run('evaluate.py','--baseline',baseline,'--policy-seed',seed,'--calibration',a.calibration,'--seed',1000,'--episodes',10,'--output',a.output/f'{baseline}_{seed}_{randomized}','--video',*(['--randomize'] if randomized else []))
     summaries=[{'path':str(p.relative_to(a.output)),**json.loads(p.read_text())} for p in a.output.rglob('summary.json')]
     (a.output/'aggregate.json').write_text(json.dumps(summaries,indent=2)+'\n')
 

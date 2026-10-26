@@ -100,7 +100,7 @@ class IsolatedEnv(HumanoidEnv):
 
 
 def verify_frozen_sources(registry_path=None):
-    registry = json.loads(Path(registry_path or ROOT/'docs/baselines/scripted_pico2.json').read_text())
+    registry = json.loads(Path(registry_path or ROOT/'docs/baselines/scripted_bench_tools.json').read_text())
     if configuration_identity() != registry['configuration_identity']:
         raise ValueError('Frozen baseline/model identity changed; create an explicit new study')
     # Protect the complete executed reference dependency set, not just its label.
@@ -172,7 +172,7 @@ def main():
         print(name, 'steps', info['lifted_steps_left']+info['lifted_steps_right'],
               'alternations', info['alternations'], 'fall', info['fallen'], flush=True)
     sources = set(registry['source_sha256']) | {'tools/sensitivity_probe.py', 'docs/baselines/scripted_r2.json',
-                                               'docs/baselines/scripted_r2_offset_corrected.json', 'docs/baselines/scripted_pico2.json'}
+                                               'docs/baselines/scripted_r2_offset_corrected.json', 'docs/baselines/scripted_pico2.json', 'docs/baselines/scripted_bench_tools.json'}
     hashes = {}
     for name in sorted(sources):
         path = args.output/'source'/name

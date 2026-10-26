@@ -9,7 +9,7 @@ enthält den vollständigen Code; Preise stehen in `procurement.json`, Maße/Mas
 in `physical_spec.json`. [Offene Beschaffungsfragen](docs/PROCUREMENT_ACTIONS.md),
 [Hardware/Protokoll](docs/HARDWARE.md), [Firmware](firmware/README.md) und
 [Kalibrierung](docs/CALIBRATION.md) sind die Arbeitsreferenzen.
-Der [erweiterte Entwicklungsplan](docs/DEVELOPMENT_PLAN.md) deckt alle14Phasen ab:
+Der [erweiterte Entwicklungsplan](PLAN.md) deckt alle14Phasen ab:
 erledigte Arbeiten, nächste fünf Aufgaben, elf Arbeitspakete, Vorgehen, Dateien,
 Zuständigkeiten, Abhängigkeiten, Freigaben und Abbruchkriterien.
 Die [Stütz-/Hebediagnose](docs/SUPPORT_DIAGNOSIS.md)
@@ -18,18 +18,22 @@ trennt vorbereitete Einbein-Posen von weiterhin fehlgeschlagenen Übergängen au
 **Entwurf und Druckweg am26.10.2026 vom Nutzer bestätigt.** Ein Klassenkamerad
 druckt die Teile; der genaue Preis/Transport ist noch unbekannt. Kein Druckerkauf.
 Controller jetzt **Raspberry Pi Pico2, RP2350**, gleiche Pins/51×21mm-Grundfläche;
-Firmwareziel`pico2`, alterRP2040-Code muss neu gebaut werden.
+Firmwareziel`pico2`; aktuelle Vorbereitungsfirmware lokal querkompiliert,
+noch nicht geflasht oder elektrisch getestet. [Bauanleitung](firmware/README.md).
 
 **[Separater Druckordner](print_for_classmate/00_START_HERE.md) /
 [Druck-ZIP zum Weitergeben](print_for_classmate.zip):** erst2Passproben, danach
 7Rahmenteile je1×. Deutsche Anleitung, Maße, Hashes und Zeichnungen enthalten.
 Physische Passform/Festigkeit noch nicht geprüft; keine gedruckten Hörner/TPU-Sohlen.
-Die Auswahlphase ist abgeschlossen; die nächsten Softwarevorbereitungen laufen.
+Die Auswahlphase ist abgeschlossen; Bestellungen wurden laut Nutzer begonnen.
+Der vollständige [Plan im Projektstamm](PLAN.md) wird nach jedem Arbeitsschritt geändert.
+Manuelle Steuerung mit Offline-Vorschau und Kalibrierungsparität sind lokal geprüft;
+reale Tests stehen aus. [Bedienung](docs/MANUAL_CONTROL.md).
 [Messdatenprüfung](docs/MEASUREMENT_INTAKE.md) ist implementiert. Rechnerischer
 Budgetnachweis bleibt separat offen; keine erfundenen Druckkosten.
 
 Die vorläufige MuJoCo-Kopie passt zum neuen CAD; geschätzt197.1g.
-Aktueller lokaler Gesamtlauf:69bestandene Tests; kein neues PPO/physisches Ergebnis.
+Aktueller lokaler Gesamtlauf:121bestandene Tests; kein neues PPO/physisches Ergebnis.
 Der2048Schritte-PPO-Smoke zeigt **kein gelerntes Gehen**; Skriptreferenzen werden separat bewertet.
 Alte Modelle/UF2bleiben historisch. [Prüfstand](docs/VALIDATION_CURRENT.md).
 Eine neue [Standbein-/Schrittdiagnose](docs/STANCE_TRANSFER.md) erreicht einen
@@ -40,7 +44,8 @@ Parametern im historischen Modell nur0–1Schritte. Das30cm-Ziel bleibt offen.
 Die [Einzelparameterprüfung](docs/SENSITIVITY.md) korrigiert einen Modellfehler:
 Kalibrierfehler verschwinden nun nicht mehr an Befehlsgrenzen. Nominale Bewegung,
 Geometrie und Kraftgrenzen bleiben gleich; alle12getesteten±1°Gelenkfehler verlieren
-Schritte. Aktuelle Pico2-Identität`685e3802…`; alle gespeicherten Policies/UF2sind historisch.
+Schritte. Aktuelle Pico2-Identität`685e3802…`; Policies/alte UF2sind historisch.
+Die neue Vorbereitungsfirmware enthält absichtlich keine gültige Policy-Kalibrierung.
 
 ```bash
 python3.12 -m venv .venv

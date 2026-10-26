@@ -11,15 +11,17 @@ or [print-only ZIP](print_for_classmate.zip):** two fit pieces first; then seven
 frame parts, each1× after fit. German instructions, STL dimensions/hashes and drawings
 are included. No combined duplicate plate, printed horns or TPU soles.
 
-**Now working on WP2:** measurement-intake checker implemented; manual six-joint
-control and measured-baseline calibration parity are next. Physical testing remains
-pending, but we will not repeat provider-selection research or permission loops.
+**WP2 software locally verified:** manual six-joint previews/control and measured
+HOME/untrained evaluation calibration parity and Pico2 build implemented;121tests pass. Hardware
+operation remains untested. **Ordering started—reported by you**; exact items,
+quantities, paid prices and arrival states remain unknown until you supply them.
+Root [PLAN.md](PLAN.md) is the full living plan and is updated after each work chunk.
 
-**[Detailed development plan](docs/DEVELOPMENT_PLAN.md):** diagnosis → affordable
+**[Detailed development plan](PLAN.md):** diagnosis → affordable
 complete basket → bench/sample fit → measured twin → fixed/DR training → real trials.
 Each stage identifies its owner, affected files, blockers and completion evidence.
 The expanded plan maps all14phases, eleven work packages, the exact next five
-tasks, release evidence and failure decisions; [start with the next tasks](docs/DEVELOPMENT_PLAN.md#3-dependency-map-and-next-five-tasks).
+tasks, release evidence and failure decisions; [start with the next tasks](PLAN.md#3-dependency-map-and-next-five-tasks).
 
 ## What you receive
 
@@ -91,7 +93,7 @@ Tools: iron access confirmed; borrow/confirm meter, stripper/cutters, safe shrin
 
 | Stage | Verified now / next |
 |---|---|
-| CAD/print package | Implemented;latest suite69passes,55 sampled poses have0 modeled collisions; **5 unknown interface groups still block manufacture** |
+| CAD/print package | Implemented;latest suite121passes,55 sampled poses have0 modeled collisions; **5 unknown interface groups still block manufacture** |
 | MuJoCo | Compiles; matching pad geometry/mass ownership;30 s neutral standing. Estimated masses/strength/friction, not calibrated |
 | Motion | Frozen script: **four qualifying alternating steps**,6.60cm torso advance/30s; **30cm target still fails**. Corrected29-case study: all12 individual±1° offsets lose steps;73credited steps independently checked |
 | PPO | Historical2048-step smoke/reload/evaluation:0 walking successes,0 gait distance. All saved policies now incompatible after offset-model correction; no extra training |
@@ -102,17 +104,19 @@ Success remains 30 s standing followed by≥0.3m visibly alternating lifted walk
 
 ## AI entry and exact next action
 
-Read this → [AGENTS](AGENTS.md) → relevant status/roadmap. Active route is outsourced PETG, not printer purchase or stock-frame research. Preserve history and all policies; never relabel fingerprints. [Offset correction/sensitivity](docs/SENSITIVITY.md): Pico2 identity begins`685e3802`; nominal motion unchanged, calibration errors no longer disappear at command bounds. **All saved policies are historical/incompatible.** Current invalid firmware header needs an ARM rebuild/calibration before flashing; older UF2 is historical.
+Read this → [AGENTS](AGENTS.md) → relevant status/roadmap. Active route is outsourced PETG, not printer purchase or stock-frame research. Preserve history and all policies; never relabel fingerprints. [Offset correction/sensitivity](docs/SENSITIVITY.md): Pico2 identity begins`685e3802`; nominal motion unchanged, calibration errors no longer disappear at command bounds. **All saved policies are historical/incompatible.** Current preparation ELF/UF2 is locally cross-built with invalid calibration; older UF2 is historical. No physical test or policy deployment approval.
 
 **Next human action (printing route agreed):** share the print-only folder with your classmate, test the
 2sample pieces on actual servo/horn/screws, then print7frames if they fit. Record
 actual cost and weigh parts when available. The price decision is accepted;
 physical fit and calibration are not claimed. [Full reference](docs/HANDOFF.md).
 
-**Next AI work:** WP2 manual six-joint utility and measured-calibration baseline
-parity. `tools/validate_measurement.py` now checks external-angle provenance,
-units/evidence, response quality and hashes without approving calibration.
-[Usage](docs/MEASUREMENT_INTAKE.md). Keep the gait frozen; no new PPO.
+**Pico2 firmware:** locally cross-built; [build/evidence](firmware/README.md). No USB/flash/arm.
+**Next AI work:** validate real order/arrival and fit/bench records when supplied; no PPO.
+[Manual tool](docs/MANUAL_CONTROL.md) defaults to offline preview; measured validated
+calibration is required for explicit hardware operation. [Data intake](docs/MEASUREMENT_INTAKE.md).
+The model/control identity is unchanged; new source-only reference preserves prior
+snapshots and exact nominal metrics. Update PLAN after each task/change.
 
 ```bash
 .venv/bin/python -m pytest -q tests # scoped to active tests, not history copies

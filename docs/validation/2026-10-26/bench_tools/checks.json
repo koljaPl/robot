@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-26",
+  "state": "local software/document verification; no hardware operation or new PPO",
+  "tests": {
+    "passed": 99,
+    "seconds": 17.21,
+    "log": "pytest_final.txt"
+  },
+  "document_links_checked": 216,
+  "fenced_code_excluded_from_link_scan": true,
+  "canonical_plan": "PLAN.md",
+  "model_control_identity_unchanged": {
+    "configuration": "685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88",
+    "files": {
+      "physical_spec.json": "e2e66dfc8e39f907ba6d410bbf6b3cde40886730284309b207b045df4bcf32a6",
+      "robot.xml": "859065cffb998e3f7f8ab6cd736937882b636949b4ffbba78e4b7dce91ec3917",
+      "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+      "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+      "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+      "humanoid_env.py": "527f548ebc2d630e83c5bb327aced2adcc21947479940f4b5a394e6087ccee3c",
+      "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+      "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+      "calibration.py": "a57a04fbe84f80c0b364ffea42546521c4e99d854515eaed55cd6e55527978fa",
+      "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+      "firmware/control.h": "dfc0dec9642df663dca6410b8414faf16de480736c8c62fa2fd2da166f9c7200",
+      "firmware/CMakeLists.txt": "b53b7bf7c1e71611ff6b362fc4a3e19a654d5bf4bf46f2c06839b6d7a6fd85e6"
+    },
+    "calibration": null
+  },
+  "exact_nominal_reference_unchanged": true,
+  "geometry_strength_observation_files_unchanged": true,
+  "physical_gates_all_false": true,
+  "ordering_progress": {
+    "state": "ordering_started_user_reported",
+    "date": "2026-10-26",
+    "evidence": "User: I am already starting to place orders",
+    "ordered_items": null,
+    "ordered_quantities": null,
+    "paid_prices_eur": null,
+    "arrival_states": null,
+    "purchases_by_AI": false,
+    "notes": "Quoted basket unchanged; actual spending stored separately when receipts are supplied."
+  },
+  "preview_mode_verified": true,
+  "handoff_sections": 19,
+  "source_sha256": {
+    "manual_control.py": "ed467ec0b7984a0371d0d46f1eb01418446937e5dab8ac185a7af57e3521421f",
+    "evaluate.py": "9132f2b5f22967e8a4615f7f0e3920da85f8974a2d79c93eb4ba0a42cf1311f7",
+    "serial_robot.py": "2a78a32f028b85d3673b7f817e35642ebd069b336eb869e68a26177d8dfc59ac",
+    "tools/experiments.py": "1dc85f8892e6ce8729f941cc53237816c11bb9eaeeddd322a62776fb32ac0c30",
+    "tools/build_handoff.py": "4ccfc7720bc3e254f89046832bd408ea2655da7c1bf6cda4431777d75b1297c3",
+    "tools/package_project.py": "225478f16770db2d6f4554cfa3af148e1eb8a03d4adfa15d9fa99e382cce716d",
+    "PLAN.md": "b854d232d7ac8e9b2734a79089eb5d97cc7b8752e483bf7f10f0cb844e19a4a2",
+    "AGENTS.md": "98bafe6383db7264b31550ae8a23f06169844e9357b9a717593a266669a82e2c",
+    "docs/HANDOFF.md": "1acb22d48b49b269783e30cd32d650303f59c3aea60ce09f5d4b498e0d753ce8"
+  },
+  "registry": "docs/baselines/scripted_bench_tools.json",
+  "training_steps_added": 0,
+  "limits": [
+    "Hardware-control tests used fake transport and synthetic test calibration.",
+    "Formal runner mocked; no actual reserved final-seed evaluations or training.",
+    "No physical fit/calibration/printing or numerical-budget claim."
+  ]
+}

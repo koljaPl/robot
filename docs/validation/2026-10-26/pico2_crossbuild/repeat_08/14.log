@@ -1,0 +1,33 @@
+File /home/kolja/home/Code/robot/runs/pico2_crossbuild_20261026_08/s6_bench.uf2
+family ID 'rp2350-arm-s':
+
+Program Information
+ name:                s6_bench
+ features:            USB stdin / stdout
+ binary start:        0x10000000
+ binary end:          0x10009a8c
+ target chip:         RP2350
+ image type:          ARM Secure
+
+Fixed Pin Information
+ none
+
+Build Information
+ sdk version:         2.3.1
+ pico_board:          pico2
+ boot2_name:          boot2_w25q080
+ build date:          Oct 26 2026
+ build attributes:    Release
+
+Metadata Block 1
+ address:             0x10000138
+ next block address:  0x10009a78
+ block type:          image def
+ target chip:         RP2350
+ image type:          ARM Secure
+ extra security:      not enabled
+
+Metadata Block 2
+ address:             0x10009a78
+ next block address:  0x10000138
+ block type:          ignored

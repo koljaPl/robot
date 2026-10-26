@@ -1,0 +1,290 @@
+{
+  "version": 1,
+  "started_utc": "2026-10-26T19:41:11.724259+00:00",
+  "state": "locally_cross_built",
+  "board": "pico2",
+  "platform": "rp2350-arm-s",
+  "policy_arm_allowed": false,
+  "hardware_accessed": false,
+  "physically_verified": false,
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/s6-pico2-tools/pico-sdk-2.3.1",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/home/kolja/home/Code/robot",
+      "log": "00.log",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/s6-pico2-tools/pico-sdk-2.3.1/lib/tinyusb",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/home/kolja/home/Code/robot",
+      "log": "01.log",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/s6-pico2-tools/pico-sdk-2.3.1",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "cwd": "/home/kolja/home/Code/robot",
+      "log": "02.log",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/s6-pico2-tools/pico-sdk-2.3.1/lib/tinyusb",
+        "status",
+        "--porcelain",
+        "--untracked-files=no"
+      ],
+      "cwd": "/home/kolja/home/Code/robot",
+      "log": "03.log",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/tmp/s6-pico2-tools/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+        "--version"
+      ],
+      "cwd": "/home/kolja/home/Code/robot",
+      "log": "04.log",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/tmp/s6-pico2-tools/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc",
+        "-dumpmachine"
+      ],
+      "cwd": "/home/kolja/home/Code/robot",
+      "log": "05.log",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/tmp/s6-pico2-tools/picotool/picotool",
+        "version"
+      ],
+      "cwd": "/home/kolja/home/Code/robot",
+      "log": "06.log",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/home/kolja/home/Code/robot/.venv/bin/cmake",
+        "--version"
+      ],
+      "cwd": "/home/kolja/home/Code/robot",
+      "log": "07.log",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/home/kolja/home/Code/robot/.venv/bin/ninja",
+        "--version"
+      ],
+      "cwd": "/home/kolja/home/Code/robot",
+      "log": "08.log",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/home/kolja/home/Code/robot/.venv/bin/cmake",
+        "-S",
+        "/home/kolja/home/Code/robot/runs/pico2_crossbuild_20261026_02/source",
+        "-B",
+        "/home/kolja/home/Code/robot/runs/pico2_crossbuild_20261026_02/build",
+        "-G",
+        "Ninja",
+        "-DPICO_BOARD=pico2",
+        "-DPICO_PLATFORM=rp2350-arm-s",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_MAKE_PROGRAM=/home/kolja/home/Code/robot/.venv/bin/ninja",
+        "-Dpicotool_DIR=/tmp/s6-pico2-tools/picotool",
+        "-DFETCHCONTENT_FULLY_DISCONNECTED=ON"
+      ],
+      "cwd": "/home/kolja/home/Code/robot",
+      "log": "09.log",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/home/kolja/home/Code/robot/.venv/bin/cmake",
+        "--build",
+        "/home/kolja/home/Code/robot/runs/pico2_crossbuild_20261026_02/build",
+        "--parallel",
+        "4"
+      ],
+      "cwd": "/home/kolja/home/Code/robot",
+      "log": "10.log",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/tmp/s6-pico2-tools/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-readelf",
+        "-h",
+        "-A",
+        "/home/kolja/home/Code/robot/runs/pico2_crossbuild_20261026_02/s6_bench.elf"
+      ],
+      "cwd": "/home/kolja/home/Code/robot",
+      "log": "11.log",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/tmp/s6-pico2-tools/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-size",
+        "/home/kolja/home/Code/robot/runs/pico2_crossbuild_20261026_02/s6_bench.elf"
+      ],
+      "cwd": "/home/kolja/home/Code/robot",
+      "log": "12.log",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/tmp/s6-pico2-tools/picotool/picotool",
+        "info",
+        "-a",
+        "/home/kolja/home/Code/robot/runs/pico2_crossbuild_20261026_02/s6_bench.elf"
+      ],
+      "cwd": "/home/kolja/home/Code/robot",
+      "log": "13.log",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/tmp/s6-pico2-tools/picotool/picotool",
+        "info",
+        "-a",
+        "/home/kolja/home/Code/robot/runs/pico2_crossbuild_20261026_02/s6_bench.uf2"
+      ],
+      "cwd": "/home/kolja/home/Code/robot",
+      "log": "14.log",
+      "returncode": 0
+    }
+  ],
+  "artifacts": {
+    "s6_bench.elf": {
+      "sha256": "ddbbac6e903553d64e41b876e1b7474e246499549662d2efc7d01000bf531d42",
+      "bytes": 709208
+    },
+    "s6_bench.uf2": {
+      "sha256": "2f404167d64db67125f5e5a0d2a5b65b33c8691314001095d3fb860657d730d6",
+      "bytes": 79872
+    }
+  },
+  "identity": {
+    "configuration": "685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88",
+    "files": {
+      "physical_spec.json": "e2e66dfc8e39f907ba6d410bbf6b3cde40886730284309b207b045df4bcf32a6",
+      "robot.xml": "859065cffb998e3f7f8ab6cd736937882b636949b4ffbba78e4b7dce91ec3917",
+      "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+      "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+      "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+      "humanoid_env.py": "527f548ebc2d630e83c5bb327aced2adcc21947479940f4b5a394e6087ccee3c",
+      "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+      "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+      "calibration.py": "a57a04fbe84f80c0b364ffea42546521c4e99d854515eaed55cd6e55527978fa",
+      "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+      "firmware/control.h": "dfc0dec9642df663dca6410b8414faf16de480736c8c62fa2fd2da166f9c7200",
+      "firmware/CMakeLists.txt": "b53b7bf7c1e71611ff6b362fc4a3e19a654d5bf4bf46f2c06839b6d7a6fd85e6"
+    },
+    "calibration": "04e1dd29253c457169b2ce286f728e44321864da91d80e072578953ecdc54479"
+  },
+  "source_sha256": {
+    "physical_spec.json": "e2e66dfc8e39f907ba6d410bbf6b3cde40886730284309b207b045df4bcf32a6",
+    "robot.xml": "859065cffb998e3f7f8ab6cd736937882b636949b4ffbba78e4b7dce91ec3917",
+    "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+    "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+    "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+    "humanoid_env.py": "527f548ebc2d630e83c5bb327aced2adcc21947479940f4b5a394e6087ccee3c",
+    "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+    "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+    "calibration.py": "a57a04fbe84f80c0b364ffea42546521c4e99d854515eaed55cd6e55527978fa",
+    "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+    "firmware/control.h": "dfc0dec9642df663dca6410b8414faf16de480736c8c62fa2fd2da166f9c7200",
+    "firmware/CMakeLists.txt": "b53b7bf7c1e71611ff6b362fc4a3e19a654d5bf4bf46f2c06839b6d7a6fd85e6",
+    "firmware/generated_config.h": "7697611320f2324da164fe643829f534a9589490c9c6643da44bc5bfc6040a84",
+    "tools/firmware_config.py": "d5c9d28f3293c4cfeb165e449e069d0fb7e01dd83f216fd6547fc1f4bf759d9d",
+    "tools/build_firmware.py": "c60d8eb247ce4eb85d01eaa84c6f617e7013723fefcb31d742f9155153584070",
+    "firmware/build_dependencies.json": "b092d6afb140a62f564b4369d065bad2bf30ed3ef6d335fead2bb6d5793b8b3a"
+  },
+  "dependency_pins": {
+    "version": 1,
+    "date": "2026-10-26",
+    "host": "Linux-x86_64",
+    "sdk": {
+      "url": "https://github.com/raspberrypi/pico-sdk.git",
+      "tag": "2.3.1",
+      "commit": "079c6f39023649b154152db30f1d781e884879bc",
+      "tinyusb_commit": "86ad6e56c1700e85f1c5678607a762cfe3aa2f47"
+    },
+    "compiler": {
+      "version": "14.2.Rel1",
+      "url": "https://developer.arm.com/-/media/Files/downloads/gnu/14.2.rel1/binrel/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi.tar.xz",
+      "archive_sha256": "62a63b981fe391a9cbad7ef51b17e49aeaa3e7b0d029b36ca1e9c3b2a9b78823",
+      "checksum_source": "https://developer.arm.com/-/media/Files/downloads/gnu/14.2.rel1/binrel/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi.tar.xz.sha256asc",
+      "gcc_sha256": "2e6d1fc0b7709d2fc08278a06bbcbfadb6fafcf5837e13cde01a1fbd07ad6db1"
+    },
+    "picotool": {
+      "version": "2.3.1",
+      "url": "https://github.com/raspberrypi/pico-sdk-tools/releases/download/v2.3.1-0/picotool-2.3.1-x86_64-lin.tar.gz",
+      "archive_sha256": "878a1a1e7d8336b8be60300c7218f366d9790c0d3a211b181d6d172e80b1248e",
+      "checksum_source": "https://api.github.com/repos/raspberrypi/pico-sdk-tools/releases/tags/v2.3.1-0",
+      "binary_sha256": "eefcbd48c2c0fa825a8e2ea3e44239644194d79abff8eb082bc3914971e745e5"
+    },
+    "notes": "Archive checksums verified before extraction; executable hashes taken from those verified archives. No SDK/toolchain is packaged. CMake/Ninja are pinned in requirements-dev.txt."
+  },
+  "tools": {
+    "versions": {
+      "gcc": "arm-none-eabi-gcc (Arm GNU Toolchain 14.2.Rel1 (Build arm-14.52)) 14.2.1 20241119\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+      "target": "arm-none-eabi",
+      "picotool": "picotool v2.3.1 (Linux, GNU-11.4.0, Release)",
+      "cmake": "cmake version 3.31.10\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).",
+      "ninja": "1.13.2.git.kitware.jobserver-pipe-1"
+    },
+    "sdk_commit": "079c6f39023649b154152db30f1d781e884879bc",
+    "tinyusb_commit": "86ad6e56c1700e85f1c5678607a762cfe3aa2f47",
+    "executables": {
+      "/tmp/s6-pico2-tools/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-gcc": "2e6d1fc0b7709d2fc08278a06bbcbfadb6fafcf5837e13cde01a1fbd07ad6db1",
+      "/tmp/s6-pico2-tools/picotool/picotool": "eefcbd48c2c0fa825a8e2ea3e44239644194d79abff8eb082bc3914971e745e5",
+      "/home/kolja/home/Code/robot/.venv/bin/cmake": "ca273e7cb7769f3ab3704cc77a4fefb97b9c71240e9c3cfe130f8b18ed805b56",
+      "/home/kolja/home/Code/robot/.venv/bin/ninja": "08639e194fffa7f08b259fc4abfa4803aff66b64de52549cee42ec527d55cea6",
+      "/tmp/s6-pico2-tools/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-g++": "55c6e7fe55c98c3360394ca313337d88b6d058aabeee4f0e1f41bd505e78b6ad",
+      "/tmp/s6-pico2-tools/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-readelf": "6cb424fba2c59506e3a310d5f4b7ac96abe4ff48564f9449f544becb93df5af1",
+      "/tmp/s6-pico2-tools/arm-gnu-toolchain-14.2.rel1-x86_64-arm-none-eabi/bin/arm-none-eabi-size": "d4ba66c4a390a6deec2a4a376856a361870a903b0f1d8816cb90b2392dce14e6"
+    }
+  },
+  "inspection": {
+    "elf_machine": "ARM",
+    "elf_class": 32,
+    "uf2_families": [
+      "0xe48bff57",
+      "0xe48bff59"
+    ],
+    "uf2_blocks": 155,
+    "rp2350_e10_absolute_blocks": 1
+  },
+  "limits": [
+    "Invalid example calibration; full-policy arming disabled.",
+    "Boot disarmed; explicit narrow single-servo bench mode still exists.",
+    "No USB/device access, flashing, electrical test, fit or physical approval.",
+    "Software stop is not physical DC isolation."
+  ],
+  "finished_utc": "2026-10-26T19:41:14.330459+00:00"
+}

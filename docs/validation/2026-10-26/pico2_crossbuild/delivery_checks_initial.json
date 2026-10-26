@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-26",
+  "tests": {
+    "passed": 121,
+    "log": "pytest_release.txt"
+  },
+  "markdown_links_checked": 249,
+  "handoff_sections": 19,
+  "archive_members_verified": 1856,
+  "all_archived_bytes_match": true,
+  "explicit_preparation_elf_allowed": true,
+  "toolchains_builds_private_files_excluded": true,
+  "model_control_identity": "685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88",
+  "firmware_sources_unchanged": true,
+  "physical_gates_all_false": true,
+  "print_zip_sha256_unchanged": "8452232164649d1cedc6fe5ebf7bf057498a54d72ed2e64e8a0f926b3351f91b",
+  "source_sha256": {
+    "PLAN.md": "92213480a0d860a6283e491c36dc5ce64076fd436bb1fb267cc0a751c7c21547",
+    "SUMMARY.md": "f8414dcdc711c3eeec070e946bd2c810b53db4c14f06df840507944ffd497ff1",
+    "AGENTS.md": "d7c13079c865cae1722f92da003806a17415369ec5ba4311f8e458b056326e97",
+    "README.md": "f48643322274200bbd73a6aab5a56b40bd0f38647781866191c886036001f56c",
+    "docs/STATUS.md": "bd0d0e34770ef5b4a1e9640dd9476a1ef32341620dabafdb7d5c766f1c5f9ed5",
+    "docs/ROADMAP.md": "2364ae8f1e70bfb96a30313ae87f2c31cf79b6502470b57e9502b40f7ffa2dc2",
+    "docs/VALIDATION_CURRENT.md": "817b132a9a8844d6846bfc64a528d9d018b6b210a4a9e2ff7af006bff12f7a98",
+    "docs/HANDOFF.template.md": "9c1fc6300e41952aa8c84474cb613fcdc0cd4d948efdf6c73dbafee72409a01a",
+    "docs/HANDOFF.md": "4b61f758a44d99e70e35ba6ce1c58a90251dc1efc7d370b3353951aff78b7b51",
+    "firmware/README.md": "48265dc16cf9ab5fbc43501dd812c6ffcea59c2fbb4785fa2e007937d6ce9456",
+    "docs/validation/2026-10-26/pico2_crossbuild/README.md": "529383f8dbad5e7c34cd7154fc1be37ff4a824af2e67d98e4d5fe150a3e112ae",
+    "tools/build_firmware.py": "f3c8925876d4c76fb8b9013048e416be14318ad70c80fabe45bc073c810c0254",
+    "tools/package_project.py": "48941b1c96287aab405ede022ce7212f370b3ed97a9140bb7cff8b5b7511c1dc"
+  }
+}

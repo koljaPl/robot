@@ -1,5 +1,6 @@
 """Build the 19-section handoff with the exact runnable source files embedded."""
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -71,6 +72,17 @@ def main():
         name = match[2]
         content = (ROOT / name).read_text().rstrip()
         if match[1] == "TEXT":
+            # PLAN.md now lives at the root; included text links must be relative
+            # to docs/HANDOFF.md, not to their original source location.
+            def rebase(link):
+                url = link[1]
+                if '://' in url or url.startswith(('#', 'mailto:')):
+                    return link[0]
+                path, sep, anchor = url.partition('#')
+                target = (ROOT/name).parent/path
+                relative = os.path.relpath(target.resolve(), ROOT/'docs')
+                return ']('+relative+(sep+anchor if sep else '')+')'
+            content = re.sub(r'\]\(([^)]+)\)', rebase, content)
             return re.sub(r"^(#+) ", r"##\1 ", content, flags=re.MULTILINE)
         lang = "xml" if name.endswith(".xml") else "json" if name.endswith(".json") else "text" if name.endswith(".txt") else "cpp" if name.endswith((".h", ".cpp")) else "cmake" if name.endswith("CMakeLists.txt") else "python"
         return f"```{lang}\n{content}\n```"

@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-26",
+  "state": "local cross-build delivery; physical checks pending",
+  "tests_passed": 121,
+  "suite_seconds": 18.02,
+  "elf_uf2_repeat_identical": true,
+  "link_check_evidence": "delivery_checks_initial.json",
+  "source_sha256": {
+    "PLAN.md": "e1b96e17ca08ca2f61c1e6f51dfbc6b4ae036a54a34855b7e05e2c22d262e6eb",
+    "AGENTS.md": "d7c13079c865cae1722f92da003806a17415369ec5ba4311f8e458b056326e97",
+    "SUMMARY.md": "f8414dcdc711c3eeec070e946bd2c810b53db4c14f06df840507944ffd497ff1",
+    "README.md": "f48643322274200bbd73a6aab5a56b40bd0f38647781866191c886036001f56c",
+    "docs/STATUS.md": "bd0d0e34770ef5b4a1e9640dd9476a1ef32341620dabafdb7d5c766f1c5f9ed5",
+    "docs/ROADMAP.md": "2364ae8f1e70bfb96a30313ae87f2c31cf79b6502470b57e9502b40f7ffa2dc2",
+    "docs/VALIDATION_CURRENT.md": "817b132a9a8844d6846bfc64a528d9d018b6b210a4a9e2ff7af006bff12f7a98",
+    "docs/HANDOFF.template.md": "9c1fc6300e41952aa8c84474cb613fcdc0cd4d948efdf6c73dbafee72409a01a",
+    "docs/HANDOFF.md": "bf24a6c640fdeeafbe7cbebb244b6a05c2204ca04324539dbc9840ce7e481dae",
+    "firmware/README.md": "48265dc16cf9ab5fbc43501dd812c6ffcea59c2fbb4785fa2e007937d6ce9456",
+    "firmware/build_dependencies.json": "b092d6afb140a62f564b4369d065bad2bf30ed3ef6d335fead2bb6d5793b8b3a",
+    "tools/build_firmware.py": "f3c8925876d4c76fb8b9013048e416be14318ad70c80fabe45bc073c810c0254",
+    "tests/test_firmware_build.py": "4219668c81d854a4ec3dfba5e2c45159cceb4d98a8655d26f56d5c9d38e5e21b",
+    "tools/package_project.py": "48941b1c96287aab405ede022ce7212f370b3ed97a9140bb7cff8b5b7511c1dc"
+  },
+  "hardware_accessed": false,
+  "flashed": false,
+  "new_PPO_steps": 0,
+  "next_action": "Review actual order, sample-fit and one-servo/IMU bench records when supplied; no automatic flash/arm or new PPO."
+}

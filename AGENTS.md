@@ -2,7 +2,7 @@
 
 Read `SUMMARY.md` first: the short plan, purchase/cost snapshot and AI next task.
 Then read `docs/STATUS.md` and only the relevant stage in `docs/ROADMAP.md`.
-Detailed task dependencies/owners/done criteria: `docs/DEVELOPMENT_PLAN.md`.
+Authoritative full plan: root `PLAN.md` (phase overview first, then detailed tasks).
 Use the detailed handoff only for relevant reference; do not reread all embedded code.
 
 ## Goal and constraints
@@ -28,7 +28,7 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 - Calibration records: per-servo pulse mapping and IMU alignment/bias; examples are invalid
   for policy deployment until measured and explicitly validated.
 - Source code is authoritative over copies embedded in generated documentation.
-- Current frozen script: `docs/baselines/scripted_pico2.json`; both r2 registries
+- Current frozen script: `docs/baselines/scripted_bench_tools.json`; both r2 registries
   are historical. Exact replay/metrics, not hardware/training approval.
 
 ## Evidence and gates
@@ -78,9 +78,10 @@ python tools/prepare_print_order.py  # two quotation ZIPs; never manufacturing a
 - B starts from the same initial weights as A, not from a nominal-pretrained policy.
 - Validation seeds 2000–2004; final test seeds 1000–1009. Do not tune on final tests.
 - Full experiments require the stage gates; provisional tests must say provisional.
-- All saved policies/UF2 are historical after the offset correction; use isolated
+- All saved policies and older UF2 are historical after the offset correction; use isolated
   replay, never relabel fingerprints. No current-compatible policy has been trained.
-- Current firmware header is regenerated invalid; ARM/Pico firmware build must be repeated before flash.
+- Current Pico2 preparation ELF/UF2 is locally cross-built with invalid calibration; no physical test.
+- Rebuild after fingerprinted changes; this preparation builder refuses measured policy calibration.
 - The nominal pilot and scripted lifts failed: diagnose fit/model/measurements before
   repeating or extending training; do not increase torque just to force a simulated lift.
 - `docs/REFERENCE_GAIT.md`: handoff script gives4alternating nominal steps,
@@ -89,17 +90,23 @@ python tools/prepare_print_order.py  # two quotation ZIPs; never manufacturing a
 - `docs/SENSITIVITY.md`:29 one-factor cases per old/corrected identity;55tests pass.
   Physical offsets now enter actuator bias, never clipped away at command limits.
   Nominal unchanged; all12 ±1° offset probes lose steps.73credited steps raw-audited.
-- Latest full suite:69passes (2026-10-26 Pico2/intake);55above is
-  the earlier offset checkpoint. Expanded task IDs/gates: `docs/DEVELOPMENT_PLAN.md`.
+- Latest full suite:121passes (2026-10-26 firmware build);55above is
+  the earlier offset checkpoint. Expanded task IDs/gates: root `PLAN.md`.
 - WP2 intake implemented: `tools/validate_measurement.py`, provenance template and tests.
   Never approve calibration automatically; synthetic data remains synthetic.
-- Next AI: reviewed six-joint manual tooling, then measured-calibration parity for
-  HOME/untrained baselines. Keep script frozen; no new tuning/strength/PPO.
+- Manual preview/control and measured-baseline parity now locally verified; hardware pending.
+- Next AI: validate actual receipts/fit/bench records when supplied; otherwise keep gates closed.
+- Firmware build instructions/pins: firmware/README.md; no flash/arm, tuning or new PPO.
 - User/classmate next: fit sample on actual servo/horn, then full frame; measure/weigh.
 - Stop at the agreed training cap and report failure honestly if walking is unmet.
 
 ## Documentation and packaging
 
+- Start each work chunk with a brief phase/done/next update; read root `PLAN.md`.
+- Update `PLAN.md` after every completed task, scope change, failed check or blocker,
+  BEFORE reporting completion: date, change, evidence, remaining work and exact next action.
+- Synchronize STATUS/SUMMARY; do not maintain a competing full plan elsewhere.
+- User ordering started; exact ordered items/paid prices/arrivals unknown until supplied.
 - Keep `SUMMARY.md` brief and synchronized with the authoritative ledgers.
 - Update `docs/STATUS.md` after each completed work chunk: evidence, blockers, next action.
 - Keep `docs/ROADMAP.md` gates synchronized; retain the German school introduction in README.

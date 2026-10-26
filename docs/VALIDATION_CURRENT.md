@@ -1,5 +1,39 @@
 # Current local verification — 2026-10-26, S6-PETG-pad-r2
 
+## Pico2 preparation cross-build — latest2026-10-26
+
+- Current Pico2/RP2350 Arm secure preparation firmware locally compiled and inspected
+  using pinned SDK2.3.1, TinyUSB commit86ad6e56, Arm14.2.Rel1 and picotool2.3.1.
+- Builder is file-only and fail-closed for wrong board, stale header, missing/changed
+  dependencies, target mismatch, corruption, source drift, timeout and interruption.
+- **121tests passed in18.02s**: [final log](validation/2026-10-26/pico2_crossbuild/pytest_release.txt).
+- [Build evidence and repeatability](validation/2026-10-26/pico2_crossbuild/README.md).
+  Identity685e3802unchanged; invalid calibration and disarmed startup retained.
+- No physical USB/flash, electrical timing, fit, measured calibration or PPO result.
+  All five gates remain false; order details remain unknown.
+
+## Root plan and bench-control/parity delivery — previous2026-10-26
+
+- Root [PLAN.md](../PLAN.md) is authoritative, overview first. The prior path is
+  a pointer; all completed chunks/changes/failures/blockers must update the plan.
+- User reports ordering started; exact items/quantities/paid prices/arrivals unknown.
+  Quoted basket retained separately. No purchases/messages performed by AI.
+- Manual HOME-only CLI preview runs without USB. Hardware mode needs explicit arm,
+  measured calibration, matching handshake, fresh telemetry and reviewed start.
+  Commands/slew/bounds, no catch-up bursts, final ACK, logging, STOP/close verified
+  through mocked transport. Constructor-failure connection cleanup also tested.
+- Evaluation now propagates the same measured calibration through HOME, untrained
+  and policy paths; rejects mismatch. Formal orchestration propagation tested with
+  mocked commands only; reserved test seeds were not actually evaluated.
+- **99tests passed in17.21s**: [final log](validation/2026-10-26/bench_tools/pytest_final.txt).
+  Earlier98-test and focused logs remain evidence for their respective checkpoints.
+- New source-only [reference registry](baselines/scripted_bench_tools.json) keeps
+  exact nominal metrics and the same685e3802configuration. Prior snapshots untouched.
+  No robot geometry/strength/observation change, PPO training or physical gate release.
+- Current manual/source/handoff/preview and delivery checks are under
+  `validation/2026-10-26/bench_tools/`. Subsequent cross-build is recorded above; later
+  student/classmate fit, bench, assembly, weights and actual calibration.
+
 ## Pico2 and classmate-printing continuation — 2026-10-26
 
 Design/printing choice complete by user confirmation; printing price unknown.
@@ -27,7 +61,8 @@ arrangement, not a fabricated numeric quote. Physical/financial gates remainfals
 next phase WP2 continues despite incomplete accounting. Prior evidence below is
 historical and must not be relabelled as this revision.
 
-**No hardware purchased, printed, fitted, electrically tested or deployed.**
+**Physical purchase/arrival details are unreported; user now reports ordering
+started. No fit, electrical or deployment result is verified.**
 Prior2026-10-23record is preserved under history/2026-10-24/pre_print_revision/docs/.
 Latest evidence: `validation/2026-10-24/offset_correction/`,
 `sensitivity_corrected/` and `sensitivity_report_final/`. The sections labelled
@@ -48,7 +83,7 @@ Selected dated priced basket now€105.09 before printing/sample/horn extras,
 minimum known shortfall€5.09; complete total unknown. See [budget review](BUDGET_REVIEW.md).
 The€105.34 snapshot near the end belongs to the prior checkpoint, not current prices.
 
-## Current offset correction and frozen-script study
+## Historical offset correction and frozen-script study
 
 Current identity:
 `b11ab9292c586ace4f2028c7061aa4ef279b6c84bd3966d2e806e0f96d01560b`.

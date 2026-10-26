@@ -1,7 +1,7 @@
 # Hardware-first execution roadmap
 
 Updated **2026-10-26**. This is the short map; the
-[complete execution plan](DEVELOPMENT_PLAN.md) contains all phases, completed work,
+[complete execution plan](../PLAN.md) contains all phases, completed work,
 WP1–WP11 procedures, owners, affected files, acceptance evidence and failure decisions.
 [STATUS](STATUS.md) records evidence; ledgers remain authoritative.
 
@@ -12,7 +12,8 @@ Pico2 selected. Exact printing/transport price remains unknown, not free. This c
 provider-selection research and starts WP2, without claiming physical fit or a numeric
 budget pass. [Print folder](../print_for_classmate/00_START_HERE.md).
 Measurement-intake/provenance checker implemented; manual six-joint utility and
-measured-baseline calibration parity remain next.69tests pass. No new PPO.
+measured-baseline calibration parity and Pico2 preparation firmware now locally verified.
+121tests pass; no new PPO. [Firmware build](../firmware/README.md).
 
 ## Previous checkpoint (2026-10-25; historical costs/identity)
 
@@ -41,8 +42,9 @@ robot and cannot silently replace current contact geometry. See BUDGET_REVIEW.
 | F /11,13 | WP11 student+AI: equal physical A/B, comparison, report/presentation | Recorded successes/failures, uncertainty, cable effects and reproducible handoff |
 | Extensions /12 | Future scoped work: turning, recovery, terrain | Stable walking first |
 
-**Next AI:** reviewed manual six-joint control and baseline calibration parity;
-WP2 measurement intake is now implemented. Keep the reference frozen; no more nominal
+**Next AI:** validate actual order/fit/bench records when supplied. Pico2 preparation
+firmware, manual control and baseline calibration parity are locally verified. Ordering has started according to user;
+actual items/paid prices/arrivals unknown. Keep root PLAN updated after each chunk. Keep the reference frozen; no more nominal
 tuning/PPO, stronger fictitious actuation or repeated identical budget searches.
 **Next human/classmate:** print/test2sample pieces on actual servo/horn, then7frame
 parts if fit passes; record dimensions, costs and weights. No more Meltlab upload/
@@ -58,8 +60,9 @@ provider-selection loop is needed for this arrangement. Physical checks stay pen
   estimate, not programmable hardware current/torque protection.
 - Boot disarmed, explicit arm,100ms watchdog, bounded/versioned CRC packets,
   persistent measured calibration/fingerprints; STOP is not physical DC isolation.
-- Current Pico2 identity begins`685e3802`; all saved policies/UF2are historical after the
-  offset correction. Use snapshots; never relabel old checkpoints or headers.
+- Current Pico2 identity begins`685e3802`; saved policies/older UF2are historical.
+  Current preparation ELF/UF2 is locally cross-built with invalid calibration.
+  Use snapshots; never relabel old checkpoints or headers.
 - Smoke2048, pilot≤50000 (49152actual), final≤1000000 (999424actual) each for
   A/B seeds0,1,2. Compatible pilot counts toward final total; B never resumes A.
 - Match A/B initial weights and budgets. Validation2000–2004 selects success,

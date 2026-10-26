@@ -19,20 +19,26 @@ def show_physical_geometry(model):
 
 def evaluate(model_path=None, episodes=10, seed=1000, randomize=False,
              output=ROOT / "runs" / "evaluation", video=False, render=False,
-             episode_seconds=30, baseline="home", policy_seed=0):
+             episode_seconds=30, baseline="home", policy_seed=0, calibration_path=None):
     output = Path(output)
     if episodes <= 0:
         raise ValueError("episodes must be positive")
     if output.exists() and any(output.iterdir()):
         raise ValueError("Use a new empty output directory; preserve previous evidence")
-    output.mkdir(parents=True, exist_ok=True)
     if video and render:
         raise ValueError("Choose video or human rendering, not both")
     mode = "rgb_array" if video else "human" if render else None
-    from calibration import check_policy
-    metadata = check_policy(model_path) if model_path else None
+    from calibration import check_policy, configuration_identity, load_calibration
+    explicit = load_calibration(calibration_path) if calibration_path is not None else None
+    metadata = check_policy(model_path, calibration=explicit) if model_path else None
+    effective_calibration = explicit if explicit is not None else metadata.get('calibration_record') if metadata else None
+    if metadata is not None:
+        # Verify the embedded mapping too, rather than trusting a mismatched record.
+        if configuration_identity(effective_calibration) != metadata['identity']:
+            raise ValueError('Policy calibration record/identity mismatch')
+    output.mkdir(parents=True, exist_ok=True)
     env = HumanoidEnv(render_mode=mode, domain_randomization=randomize, episode_seconds=episode_seconds,
-                      calibration=metadata.get("calibration_record") if metadata else None)
+                      calibration=effective_calibration)
     if mode is not None:
         show_physical_geometry(env.model)
     model = None
@@ -81,7 +87,10 @@ def evaluate(model_path=None, episodes=10, seed=1000, randomize=False,
                    "domain_randomization": randomize, "policy": str(model_path) if model_path else baseline + " baseline"}
         import hashlib
         from calibration import configuration_identity
-        summary["identity"] = metadata["identity"] if metadata else configuration_identity()
+        summary["identity"] = configuration_identity(effective_calibration)
+        summary["calibration_record"] = effective_calibration
+        summary["calibration_source"] = ("explicit_file" if explicit is not None else
+                                         "policy_manifest" if metadata else "nominal_prototype_default")
         summary["model_sha256"] = hashlib.sha256(Path(model_path).read_bytes()).hexdigest() if model_path else None
         summary["policy_seed"] = policy_seed if baseline == "untrained" else None
         summary["xml_sha256"] = hashlib.sha256((ROOT / "robot.xml").read_bytes()).hexdigest()
@@ -105,6 +114,7 @@ def main():
     p.add_argument("--model", type=Path)
     p.add_argument("--baseline", choices=("home", "untrained"), default="home")
     p.add_argument("--policy-seed", type=int, default=0)
+    p.add_argument("--calibration", type=Path, help="Measured validated mapping; required by formal baseline runner")
     p.add_argument("--episodes", type=int, default=10)
     p.add_argument("--seed", type=int, default=1000)
     p.add_argument("--randomize", action="store_true")
@@ -117,7 +127,8 @@ def main():
     if args.episodes <= 0:
         p.error("--episodes must be positive")
     evaluate(args.model, args.episodes, args.seed, args.randomize, args.output,
-             args.video, args.render, args.episode_seconds, args.baseline, args.policy_seed)
+             args.video, args.render, args.episode_seconds, args.baseline, args.policy_seed,
+             calibration_path=args.calibration)
 
 
 if __name__ == "__main__":

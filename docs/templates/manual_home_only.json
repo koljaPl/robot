@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "joint_order": [
+    "left_hip",
+    "left_knee",
+    "left_ankle",
+    "right_hip",
+    "right_knee",
+    "right_ankle"
+  ],
+  "initial_targets_rad": [
+    -0.17453292519943295,
+    0.17453292519943295,
+    0.0,
+    -0.17453292519943295,
+    0.17453292519943295,
+    0.0
+  ],
+  "segments": [
+    {
+      "duration_s": 1.0,
+      "targets_rad": [
+        -0.17453292519943295,
+        0.17453292519943295,
+        0.0,
+        -0.17453292519943295,
+        0.17453292519943295,
+        0.0
+      ]
+    }
+  ],
+  "note": "HOME-only offline preview example, not physical approval; targets/acks are not shaft feedback."
+}

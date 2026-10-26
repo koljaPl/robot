@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-26",
+  "state": "locally_cross_built",
+  "tests": {
+    "passed": 121,
+    "log": "pytest_release.txt",
+    "seconds": 18.02
+  },
+  "configuration_identity": {
+    "configuration": "685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88",
+    "files": {
+      "physical_spec.json": "e2e66dfc8e39f907ba6d410bbf6b3cde40886730284309b207b045df4bcf32a6",
+      "robot.xml": "859065cffb998e3f7f8ab6cd736937882b636949b4ffbba78e4b7dce91ec3917",
+      "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+      "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+      "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+      "humanoid_env.py": "527f548ebc2d630e83c5bb327aced2adcc21947479940f4b5a394e6087ccee3c",
+      "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+      "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+      "calibration.py": "a57a04fbe84f80c0b364ffea42546521c4e99d854515eaed55cd6e55527978fa",
+      "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+      "firmware/control.h": "dfc0dec9642df663dca6410b8414faf16de480736c8c62fa2fd2da166f9c7200",
+      "firmware/CMakeLists.txt": "b53b7bf7c1e71611ff6b362fc4a3e19a654d5bf4bf46f2c06839b6d7a6fd85e6"
+    },
+    "calibration": "04e1dd29253c457169b2ce286f728e44321864da91d80e072578953ecdc54479"
+  },
+  "artifacts": {
+    "s6_bench.elf": {
+      "sha256": "68f96c82f360f6f4cf397b608bc862aacae2b63b375d5c821fa8411736c5dc3a",
+      "bytes": 695772
+    },
+    "s6_bench.uf2": {
+      "sha256": "2f404167d64db67125f5e5a0d2a5b65b33c8691314001095d3fb860657d730d6",
+      "bytes": 79872
+    }
+  },
+  "repeat_builds_byte_identical": true,
+  "repeat_builds": [
+    "repeat_08/manifest.json",
+    "verified/manifest.json"
+  ],
+  "firmware_model_control_sources_unchanged": true,
+  "source_date_epoch": 1792972800,
+  "sdk_commit": "079c6f39023649b154152db30f1d781e884879bc",
+  "tinyusb_commit": "86ad6e56c1700e85f1c5678607a762cfe3aa2f47",
+  "policy_arm_allowed": false,
+  "physically_verified": false,
+  "hardware_accessed": false,
+  "new_PPO_steps": 0,
+  "gates": {
+    "delivered_bom_below_100": false,
+    "servo_and_horn_fit_verified": false,
+    "assembly_clearances_reviewed": false,
+    "measured_actuator_and_imu_fit": false,
+    "reference_weight_transfer_and_lifted_step_verified": false
+  },
+  "ordering_progress": {
+    "state": "ordering_started_user_reported",
+    "date": "2026-10-26",
+    "evidence": "User: I am already starting to place orders",
+    "ordered_items": null,
+    "ordered_quantities": null,
+    "paid_prices_eur": null,
+    "arrival_states": null,
+    "purchases_by_AI": false,
+    "notes": "Quoted basket unchanged; actual spending stored separately when receipts are supplied."
+  },
+  "limits": [
+    "Repeatability demonstrated on this Linux host with pinned tools, not every OS.",
+    "Compilation is not an electrical/USB/PWM/IMU timing or print-fit test.",
+    "No current compatible learned policy. No procurement or physical gate cleared."
+  ]
+}

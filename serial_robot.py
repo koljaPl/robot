@@ -19,7 +19,11 @@ class SerialRobot:
         self.telemetry = None
         self.last_received = 0
         self.buffer = bytearray()
-        self.connection.reset_input_buffer()
+        try:
+            self.connection.reset_input_buffer()
+        except BaseException:
+            self.connection.close()
+            raise
 
     def send(self, fields):
         packet = encode_frame(fields)

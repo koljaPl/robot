@@ -1,0 +1,10 @@
+purpose,installed_quantity,item,fit_state
+Servo case ears,12,M2x8 P010265,source dimensions; stack/length provisional
+Ear nuts,12,M2 DIN934 P003474,SW4 x1.6mm
+Ear washers,24,DIN125 P004198,2.2 x5 x0.3mm
+Factory horns,6,Exact Waveshare15024 accessories,spline/shape/hole pattern UNKNOWN
+Shaft retainers,6,Factory matching screws,thread/length UNKNOWN; NOT assumed M2
+Horn-to-frame screws,12,Match factory horns and3mm plate,thread/diameter/length UNKNOWN
+Horn-to-frame washers,12,Match horn screws,dimensions UNKNOWN
+Board ties,6,100 x2.5mm ties,do not pinch pins; measured routing pending
+Tether/harness ties,12,100 x2.5mm ties,service loops/strain relief; review routing
