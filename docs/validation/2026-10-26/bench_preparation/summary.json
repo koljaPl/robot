@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-26",
+  "state": "locally_verified_offline_and_mocked_only",
+  "tests": {
+    "focused_passed": 41,
+    "full_passed": 162,
+    "seconds": 16.54,
+    "log": "pytest.txt"
+  },
+  "offline_cli_previews": [
+    "read_only_preview/manifest.json",
+    "single_servo_preview/manifest.json"
+  ],
+  "source_sha256": {
+    "bench.py": "cfda893748e886e31a02b3eb167637455b6039bb31fa71482300699e1a8d751a",
+    "serial_robot.py": "2a78a32f028b85d3673b7f817e35642ebd069b336eb869e68a26177d8dfc59ac",
+    "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+    "calibration.py": "a57a04fbe84f80c0b364ffea42546521c4e99d854515eaed55cd6e55527978fa",
+    "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+    "tests/test_bench_preparation.py": "d3cd66aa3f2127f46e3e13d0a9cc989e19b8f644628c0770d55f221c260db213"
+  },
+  "configuration_identity_unchanged": "685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88",
+  "existing_preparation_elf_uf2_unchanged": true,
+  "firmware_model_control_unchanged": true,
+  "physically_verified": false,
+  "real_hardware_accessed": false,
+  "new_PPO_steps": 0,
+  "gates": {
+    "delivered_bom_below_100": false,
+    "servo_and_horn_fit_verified": false,
+    "assembly_clearances_reviewed": false,
+    "measured_actuator_and_imu_fit": false,
+    "reference_weight_transfer_and_lifted_step_verified": false
+  },
+  "ordering_progress": {
+    "state": "ordering_started_user_reported",
+    "date": "2026-10-26",
+    "evidence": "User: I am already starting to place orders",
+    "ordered_items": null,
+    "ordered_quantities": null,
+    "paid_prices_eur": null,
+    "arrival_states": null,
+    "purchases_by_AI": false,
+    "notes": "Quoted basket unchanged; actual spending stored separately when receipts are supplied."
+  },
+  "limits": [
+    "Hardware branches exercised only with fake transport, never connected hardware.",
+    "Bench status confirms mode only, not requested pulse or shaft position.",
+    "Initial bench tool is for an unloaded single servo, not an assembled balancing robot.",
+    "No physical, calibration, procurement or training gate cleared."
+  ]
+}

@@ -75,7 +75,7 @@ actual results; compilation never proves servo timing, electrical safety or walk
 ## Next physical stage
 
 No flashing was performed. After parts arrive, follow [PLAN.md](../PLAN.md) and
-[bench/calibration instructions](../docs/CALIBRATION.md): verify power/polarity and
+[initial bench](../docs/BENCH.md) and [calibration instructions](../docs/CALIBRATION.md): verify power/polarity and
 physical DC isolation first, then current firmware identity, read-only IMU and one
 unloaded servo. Verify disarmed startup and100ms watchdog before attached limbs.
 [Manual six-joint control](../docs/MANUAL_CONTROL.md) defaults to offline preview.

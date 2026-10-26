@@ -85,7 +85,10 @@ rigid body, then update component allocation so totals agree without counting
 servo cases, horns or cables twice. A sample servo/horn and interface print must
 be confirmed before ordering the full frame.
 
-Use `bench.py` to record stationary IMU and a deliberately enabled single channel.
+Use [bench.py](BENCH.md) to preview offline, then explicitly execute stationary
+IMU logging or a deliberately enabled single channel. USB requires `--execute`;
+output is a new session directory. Bench status is mode confirmation only, not
+applied-pulse or shaft feedback. No automatic full-policy ARM is sent.
 The restricted1400–1600µs window is a **bench bound, not a guarantee of mechanical
 safety**. Start unmounted with the horn removed. Wider pulse exploration needs
 a reviewed firmware revision based on measured travel; do not bypass bounds by

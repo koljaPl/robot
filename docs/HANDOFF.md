@@ -2380,13 +2380,16 @@ No historical prototype checkpoint is approved for the new model.
 #### Bench and deployment
 
 See [firmware build](../firmware/README.md) and [calibration](CALIBRATION.md).
-Read-only IMU logging is the bench default. Nothing in these instructions means
+[Initial bench guide](BENCH.md): offline preview is the default; USB requires
+explicit `--execute`. Read-only IMU is the default execution mode. Nothing here means
 an actual motor should be powered before procurement/fit/power gates pass.
 
 ```bash
-python bench.py --port /dev/ttyACM0 --seconds 10 --output runs/stationary.csv
+python bench.py --seconds 10 --output runs/stationary_preview_NEW
+### Later, after reviewed physical preparation (new directory, not a CSV filename):
+python bench.py --execute --port /dev/ttyACM0 --seconds 10 --output runs/stationary_NEW
 ### Explicit single-channel pulse calibration, unloaded servo, horn detached initially:
-python bench.py --port /dev/ttyACM0 --channel 0 --pulse-us 1500 --seconds 2 --output runs/channel0.csv
+python bench.py --execute --port /dev/ttyACM0 --channel 0 --pulse-us 1500 --seconds 2 --output runs/channel0_NEW
 ### Only after all physical checks and training with this measured calibration:
 python deploy.py --port /dev/ttyACM0 --model runs/measured/best_model.zip \
   --calibration calibrations/measured-v1.json --arm --seconds 5 --output runs/trial01.csv
@@ -2474,7 +2477,7 @@ actual results; compilation never proves servo timing, electrical safety or walk
 #### Next physical stage
 
 No flashing was performed. After parts arrive, follow [PLAN.md](../PLAN.md) and
-[bench/calibration instructions](CALIBRATION.md): verify power/polarity and
+[initial bench](BENCH.md) and [calibration instructions](CALIBRATION.md): verify power/polarity and
 physical DC isolation first, then current firmware identity, read-only IMU and one
 unloaded servo. Verify disarmed startup and100ms watchdog before attached limbs.
 [Manual six-joint control](MANUAL_CONTROL.md) defaults to offline preview.
@@ -3465,36 +3468,279 @@ class SerialRobot:
 
 Bench and deployment tools are part of the checkout; neither auto-arms.
 
+### Initial bench test — offline preparation first
+
+This tool prepares the first one-servo/IMU test. It is **locally tested with mocked
+transport, not physically verified**. Parts, exact order costs and measurements
+remain unreported. No policy, automatic gait or six-joint motion is involved.
+
+#### Preview now, without hardware
+
+```bash
+.venv/bin/python bench.py --output runs/imu_preview_NEW
+.venv/bin/python bench.py --channel 0 --pulse-us 1500 --seconds 2 --output runs/servo_preview_NEW
+```
+
+Both commands stay offline. The second previews a constant pulse refreshed at50Hz;
+it does not move a servo. Output folders must be new. Channel order is left
+hip/knee/ankle, right hip/knee/ankle; channels0–5. The old CSV output argument is
+now a **session directory**, and a port requires explicit `--execute`.
+
+#### Later, with reviewed physical preparation
+
+1. Check the actual PSU, lead, wiring polarity, common ground, insulation and
+   accessible physical DC disconnect. Servo supply current bypasses the Pico.
+   Follow [wiring](HARDWARE.md); no exposed mains work.
+2. Use the current [Pico2 preparation firmware](../firmware/README.md), with matching
+   configuration and calibration identities. Disconnect motor power for flashing;
+   no flash was performed during software preparation. Invalid example calibration
+   is permitted for this narrow bench test, never full-policy operation.
+3. With motors disconnected, record stationary raw IMU first. Check sensor axes,
+   supply and disarmed state. Keep original logs and video/photos.
+4. Only after those checks, use **one unloaded servo with its horn removed**.
+   Confirm connector pinout and keep DC disconnection reachable. A1400–1600µs
+   bound does not establish its mechanical range or prevent an initial shaft jump.
+   Do not attach the assembled robot or load for this first test.
+
+Conditional commands below are procedures, not a claim of physical readiness:
+
+```bash
+### Explicit USB execution; read-only IMU, no motor commands:
+.venv/bin/python bench.py --execute --port /dev/ttyACM0 --seconds 10 --output runs/imu_trial_NEW
+### After the physical checks above; one constant pulse, not a sweep:
+.venv/bin/python bench.py --execute --port /dev/ttyACM0 --channel 0 --pulse-us 1500 --seconds 2 --output runs/servo_trial_NEW
+```
+
+The program never calls policy ARM. It requires a matching handshake and two
+fresh stationary IMU samples. Read-only duration is at most60s (default10s);
+one-servo duration is at most5s (default2s). Durations must be20ms multiples.
+Pulse values are integers1400–1600µs; no clipping or automatic sweep is performed.
+
+Motor refreshes are at least20ms apart; no catch-up burst. Command lateness>40ms,
+missing telemetry>50ms, non-increasing/gapped MCU time, sensor saturation, faults,
+unmatched identity or unexpected armed/mode state stop the session. First bench
+mode confirmation must arrive within80ms. Firmware's100ms watchdog remains active;
+its **physical timing still needs testing**. No tilt interpretation is assumed
+before IMU alignment calibration; this is not a standing/balancing controller.
+
+Completion, Ctrl-C and failure request STOP and close USB. A failed STOP is
+recorded; transport is still closed by SerialRobot. No automatic reconnect or
+re-arm occurs. **Software STOP does not physically disconnect servo power.**
+
+#### Records and their limits
+
+Each new folder contains:
+
+- `preview.csv`: planned read-only session or constant-pulse refresh slots.
+- `telemetry.csv` in execution: raw IMU, timestamps, flags and six-joint command
+  acknowledgements. These angles/sequence **do not describe the bench pulse or
+  measured shaft position**. Actual sample timing must be read from the log.
+- `events.jsonl` in execution: requested pulses and firmware identity/status events.
+  Bench status confirms the mode only; this protocol has no per-pulse sequence,
+  pulse-width feedback or shaft feedback.
+- `manifest.json`: configuration/calibration/source hashes, settings, counts,
+  completion/failure and cleanup outcome. It never marks physical approval.
+
+Keep video/ruler/protractor evidence separately. Do not feed command angles to
+step-response fitting as shaft measurements. See [calibration](CALIBRATION.md)
+and [measurement intake](MEASUREMENT_INTAKE.md). No calibration, price, physical
+parameter or gate is updated automatically. Actual receipts, fit and bench results
+are the next inputs; their absence does not invalidate this software preparation.
+
 ```python
-"""Read/log IMU by default. Explicit --channel enables one restricted pulse output."""
+"""Preview initial bench sessions offline; --execute explicitly enables USB.
+
+Read-only by default; --channel requests one constant 1400..1600us bench pulse.
+Never policy-arms. Command acknowledgements are not measured shaft positions.
+"""
 import argparse
 import csv
+import hashlib
+import json
 import time
 from pathlib import Path
-from calibration import load_calibration
+
+import numpy as np
+
+from calibration import configuration_identity, load_calibration
+from robot_config import CONTROL_DT, IMU_ACCEL_RANGE, IMU_GYRO_RANGE, JOINT_NAMES
 from serial_robot import SerialRobot
 
 
-def main():
-    p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--port',required=True);p.add_argument('--calibration',type=Path,default=Path('calibrations/example.invalid.json'))
-    p.add_argument('--seconds',type=float,default=10);p.add_argument('--channel',type=int,choices=range(6));p.add_argument('--pulse-us',type=int,default=1500)
-    p.add_argument('--output',type=Path,default=Path('runs/bench.csv'));a=p.parse_args()
-    if not 0<a.seconds<=60 or not 1400<=a.pulse_us<=1600:p.error('Use 0..60 seconds and 1400..1600 us')
-    c=load_calibration(a.calibration,require_valid=False)
-    robot=SerialRobot(a.port,c);a.output.parent.mkdir(parents=True,exist_ok=True)
-    try:
-        robot.handshake();next_command=time.monotonic();end=next_command+a.seconds
-        with a.output.open('x',newline='') as f:
-            w=csv.writer(f);w.writerow(['host_ns','mcu_ms','ack','status',*[f'target_{i}' for i in range(6)],'ax','ay','az','gx','gy','gz'])
-            while time.monotonic()<end:
-                if a.channel is not None and time.monotonic()>=next_command:
-                    robot.bench(a.channel,a.pulse_us);next_command+=.02
-                kind,t=robot.read()
-                if kind=='telemetry':w.writerow([time.monotonic_ns(),t.timestamp_ms,t.sequence,t.status,*t.applied_targets,*t.accelerometer,*t.gyroscope])
-    finally:robot.close()
+ROOT = Path(__file__).resolve().parent
 
-if __name__=='__main__':main()
+
+def run_bench(output, *, calibration_path=ROOT/'calibrations/example.invalid.json',
+              seconds=None, channel=None, pulse_us=None, execute=False, port=None,
+              robot_factory=None, clock=None):
+    if channel is not None and (type(channel) is not int or not 0 <= channel < 6):
+        raise ValueError('Channel must be an integer0..5')
+    if channel is None and pulse_us is not None:
+        raise ValueError('Pulse requires an explicit channel')
+    if channel is not None:
+        pulse_us = 1500 if pulse_us is None else pulse_us
+        if type(pulse_us) is not int or not 1400 <= pulse_us <= 1600:
+            raise ValueError('Bench pulse must be integer1400..1600us')
+    seconds = (2. if channel is not None else 10.) if seconds is None else seconds
+    maximum = 5 if channel is not None else 60
+    if (isinstance(seconds, bool) or not isinstance(seconds, (int, float))
+            or not np.isfinite(seconds) or not CONTROL_DT <= seconds <= maximum):
+        raise ValueError(f'Duration must be20ms..{maximum}s')
+    ticks = round(seconds/CONTROL_DT)
+    if not np.isclose(seconds, ticks*CONTROL_DT, rtol=0, atol=1e-9):
+        raise ValueError('Duration must be a multiple of20ms')
+    if execute and not port:
+        raise ValueError('--execute requires a port')
+    if port and not execute:
+        raise ValueError('Offline preview does not accept a port; explicit --execute required')
+    calibration_path, output = Path(calibration_path), Path(output)
+    calibration = load_calibration(calibration_path, require_valid=False)
+    output.mkdir(parents=True, exist_ok=False)  # checked before opening USB
+    manifest = {'version': 1, 'mode': 'hardware_bench' if execute else 'offline_preview',
+                'status': 'started', 'session': 'single_servo' if channel is not None else 'read_only_imu',
+                'duration_s': seconds, 'channel': channel, 'requested_pulse_us': pulse_us,
+                'command_hz': 1/CONTROL_DT if channel is not None else 0,
+                'identity': configuration_identity(calibration), 'calibration_record': calibration,
+                'calibration_file_sha256': hashlib.sha256(calibration_path.read_bytes()).hexdigest(),
+                'source_sha256': {n: hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in (
+                    'bench.py','serial_robot.py','hardware_interface.py','calibration.py','robot_config.py')},
+                'hardware_access_attempted': False, 'physically_verified': False,
+                'commands_sent': 0, 'telemetry_samples': 0, 'bench_status_confirmed': False,
+                'limits': ['Preview is not physical verification or permission to power a servo.',
+                           'Use one unloaded servo with horn removed; pulse bounds do not guarantee mechanical safety.',
+                           'Bench identity/status confirms mode only, not applied pulse, sequence or shaft angle.',
+                           'Telemetry command angles/sequence describe the six-joint command state, not bench-pulse feedback.',
+                           'No tilt estimate is assumed before IMU alignment calibration; this is not an assembled-robot controller.',
+                           'STOP requests PWM disable; it is not physical motor-power isolation.']}
+    robot = None
+    failure = None
+    clock = clock or time.monotonic
+    try:
+        with (output/'preview.csv').open('x', newline='') as f:
+            writer = csv.writer(f);writer.writerow(['time_s','operation','channel','requested_pulse_us'])
+            if channel is None:
+                writer.writerow([0.,'read_only_no_motor_command','',''])
+            else:
+                writer.writerows((i*CONTROL_DT,'constant_bench_pulse',channel,pulse_us) for i in range(ticks))
+        if not execute:
+            manifest['status'] = 'preview_complete'
+            return manifest
+
+        with (output/'telemetry.csv').open('x', newline='') as tf, (output/'events.jsonl').open('x') as ef:
+            writer = csv.writer(tf)
+            writer.writerow(['host_elapsed_s','mcu_ms','command_ack_sequence','status',
+                             *[n+'_command_ack_rad' for n in JOINT_NAMES],
+                             'raw_ax','raw_ay','raw_az','raw_gx','raw_gy','raw_gz'])
+            epoch = clock()
+
+            def event(kind, **values):
+                ef.write(json.dumps({'host_elapsed_s': clock()-epoch, 'event': kind, **values})+'\n')
+                ef.flush()
+
+            idle = 0 if calibration['state']=='measured' and calibration['validated'] else 8
+            last_ms = None
+            last_telemetry = clock()
+            active = False
+
+            def inspect(kind, value):
+                nonlocal last_ms, last_telemetry, active
+                now = clock()
+                status = value.status if kind=='telemetry' else value
+                if kind not in ('identity','telemetry'):
+                    raise RuntimeError('Unknown incoming bench frame')
+                if kind=='identity': event('identity_status', status=status)
+                else:
+                    writer.writerow([now-epoch,value.timestamp_ms,value.sequence,status,
+                                     *value.applied_targets,*value.accelerometer,*value.gyroscope])
+                    tf.flush();manifest['telemetry_samples'] += 1
+                permitted = {idle | 32} if active else ({idle, idle | 32} if channel is not None and manifest['commands_sent'] else {idle})
+                if status not in permitted:
+                    raise RuntimeError('Firmware fault/unexpected bench status '+str(status))
+                if status == idle | 32:
+                    active = True;manifest['bench_status_confirmed'] = True
+                if kind != 'telemetry': return
+                if now-last_telemetry > .050:
+                    raise TimeoutError('Fresh telemetry deadline exceeded50ms')
+                accel, gyro = np.asarray(value.accelerometer), np.asarray(value.gyroscope)
+                if accel.shape != (3,) or gyro.shape != (3,) or not np.isfinite([accel,gyro]).all():
+                    raise RuntimeError('Invalid IMU sample')
+                if np.any(abs(accel) >= IMU_ACCEL_RANGE*.99) or np.any(abs(gyro) >= IMU_GYRO_RANGE*.99):
+                    raise RuntimeError('IMU saturation')
+                if last_ms is not None and not 0 < ((value.timestamp_ms-last_ms)&0xffffffff) < 100:
+                    raise RuntimeError('Stale/reordered/gapped telemetry timestamp')
+                last_ms = value.timestamp_ms;last_telemetry = now
+
+            manifest['hardware_access_attempted'] = True
+            robot = (robot_factory or SerialRobot)(port, calibration)
+            robot.handshake()  # match both identities; handshake never arms
+            event('handshake_complete')
+            last_telemetry = clock();deadline = clock()+.100;initial_samples = 0
+            while initial_samples < 2:
+                kind, value = robot.read()
+                if clock() > deadline: raise TimeoutError('Startup telemetry exceeded100ms')
+                inspect(kind, value)
+                if kind=='telemetry':
+                    if not .8*9.81 < np.linalg.norm(value.accelerometer) < 1.2*9.81 or np.linalg.norm(value.gyroscope) > 1:
+                        raise RuntimeError('Need stationary initial IMU samples')
+                    initial_samples += 1
+            started = clock();next_command = started;first_command = None
+            while clock()-started < seconds:
+                now = clock()
+                if now-last_telemetry > .050: raise TimeoutError('No fresh telemetry within50ms')
+                if channel is not None and now >= next_command:
+                    if now-next_command > .040: raise TimeoutError('Bench command deadline exceeded40ms')
+                    robot.bench(channel, pulse_us)
+                    sent = clock()
+                    if first_command is None: first_command = sent
+                    manifest['commands_sent'] += 1
+                    event('bench_request', channel=channel, pulse_us=pulse_us,
+                          acknowledgement='mode_status_only_not_pulse_feedback')
+                    next_command = sent+CONTROL_DT  # never burst to catch up
+                kind, value = robot.read()
+                inspect(kind, value)
+                if first_command is not None and not active and clock()-first_command > .080:
+                    raise TimeoutError('Bench mode not confirmed within80ms')
+            if channel is not None and not active:
+                raise RuntimeError('Bench mode never confirmed')
+            event('session_complete')
+        manifest['status'] = 'completed'
+        return manifest
+    except BaseException as error:
+        failure = error
+        manifest['status'] = 'interrupted' if isinstance(error,KeyboardInterrupt) else 'failed'
+        manifest['error'] = type(error).__name__+': '+str(error)
+        raise
+    finally:
+        close_error = None
+        if robot is not None:
+            try:
+                robot.close()  # STOP and close; SerialRobot closes even if STOP write fails
+                manifest['stop_and_close'] = 'requested_not_physical_isolation'
+            except BaseException as error:
+                close_error = error;manifest['stop_and_close'] = 'failed: '+str(error)
+                if failure is None:
+                    manifest['status'] = 'failed';manifest['error'] = type(error).__name__+': '+str(error)
+        (output/'manifest.json').write_text(json.dumps(manifest,indent=2,allow_nan=False)+'\n')
+        if close_error is not None and failure is None: raise close_error
+
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--port')
+    p.add_argument('--execute', action='store_true', help='Explicitly open USB after physical bench checks')
+    p.add_argument('--calibration', type=Path, default=ROOT/'calibrations/example.invalid.json')
+    p.add_argument('--seconds', type=float)
+    p.add_argument('--channel', type=int, choices=range(6))
+    p.add_argument('--pulse-us', type=int)
+    p.add_argument('--output', type=Path, required=True, help='New session directory, not a CSV filename')
+    a = p.parse_args()
+    result = run_bench(a.output, calibration_path=a.calibration, seconds=a.seconds,
+                       channel=a.channel, pulse_us=a.pulse_us, execute=a.execute, port=a.port)
+    print(json.dumps({k: result[k] for k in ('mode','status','session','physically_verified')}))
+
+
+if __name__ == '__main__':
+    main()
 ```
 
 ### Reviewed manual movements
@@ -4932,7 +5178,10 @@ rigid body, then update component allocation so totals agree without counting
 servo cases, horns or cables twice. A sample servo/horn and interface print must
 be confirmed before ordering the full frame.
 
-Use `bench.py` to record stationary IMU and a deliberately enabled single channel.
+Use [bench.py](BENCH.md) to preview offline, then explicitly execute stationary
+IMU logging or a deliberately enabled single channel. USB requires `--execute`;
+output is a new session directory. Bench status is mode confirmation only, not
+applied-pulse or shaft feedback. No automatic full-policy ARM is sent.
 The restricted1400–1600µs window is a **bench bound, not a guarantee of mechanical
 safety**. Start unmounted with the horn removed. Wider pulse exploration needs
 a reviewed firmware revision based on measured travel; do not bypass bounds by
@@ -5017,8 +5266,10 @@ loads/amplitudes and held-out trajectories; retain raw data and uncertainty.
 Synthetic examples must use `data_kind=synthetic` and remain synthetic in every
 report. Even well-formed physical input returns `physically_verified=false` and
 `calibration_validated=false`: only reviewed measurements complete physical gates.
-No real trials exist yet. Next WP2 work: reviewed six-joint manual-control utility
-and measured-calibration parity for HOME/untrained evaluation baselines.
+No real trials exist yet. Manual-control tooling, measured-baseline parity and
+Pico2 cross-build are now locally verified. [Initial bench preparation](BENCH.md)
+previews without USB; raw command acknowledgements never replace external angles.
+Next: actual fit/bench recordings and held-out measured-response review.
 
 ```python
 """Review externally measured step-response intake; never validates calibration.
@@ -5368,7 +5619,8 @@ provider-selection research and starts WP2, without claiming physical fit or a n
 budget pass. [Print folder](../print_for_classmate/00_START_HERE.md).
 Measurement-intake/provenance checker implemented; manual six-joint utility and
 measured-baseline calibration parity and Pico2 preparation firmware now locally verified.
-121tests pass; no new PPO. [Firmware build](../firmware/README.md).
+Initial bench preview/fault handling also locally verified;162tests pass; no new PPO.
+[Firmware build](../firmware/README.md), [initial bench guide](BENCH.md).
 
 #### Previous checkpoint (2026-10-25; historical costs/identity)
 
@@ -5389,7 +5641,7 @@ robot and cannot silently replace current contact geometry. See BUDGET_REVIEW.
 |---|---|---|
 | Entry /0,13 | Student+AI: requirements, status, plan, evidence | Constraints/next task unambiguous; claims tied to real evidence |
 | A /1 | User-complete design/printing choice, Pico2 selected; actual costs recorded later | Decision complete; numeric budget and physical fit are separate, still unverified |
-| B preparation /3,6,8,9 | WP2 AI: measurement intake, fit quality, six-joint manual utility and measured-baseline calibration parity | Mocked tests/clear procedures; no physical claim; can proceed alongside A |
+| B preparation /3,6,8,9 | WP2 AI: measurement intake, fit quality, six-joint manual utility, initial bench safeguards and measured-baseline parity | Mocked tests/clear procedures; no physical claim; can proceed alongside A |
 | B hardware /1,8,9 | WP3–WP5 student+AI: bench, measured interfaces, sample fit, finished assembly/weighing | Electrical/fit records, safe manual control, real mass ownership |
 | C /2,3,4,9 | WP6–WP7 student+AI: measured twin, observation parity, model/reference validation | Measured calibration and reviewed weight transfer/lift; all five gates backed by evidence |
 | D /5,6,7 | WP8–WP9 AI: bounded matched fixed/DR training and held-out evaluation | Equal initialization/budgets, compatible identities, actual gait results/CSV/videos |
@@ -5442,8 +5694,8 @@ work packages follow. SUMMARY.md is the purchase/build snapshot, not a competing
 | Main phase | Current position | Remaining work |
 |---|---|---|
 | Requirements and hardware selection | User agreed; Pico2/classmate printing selected | Record actual purchases/costs |
-| Printable parts and provisional simulation | Print package, twin/RL and intake checker implemented; 121tests pass (current local suite) | Actual fit/strength/calibration |
-| Bench-control software | **LOCALLY VERIFIED:** manual preview/control, calibration parity and Pico2 build;121tests pass | Pico2 firmware locally cross-built; next: actual fit/one-servo bench records |
+| Printable parts and provisional simulation | Print package, twin/RL and intake checker implemented; 162tests pass (current local suite) | Actual fit/strength/calibration |
+| Bench-control software | **LOCALLY VERIFIED:** initial bench preview/safeguards, manual control, calibration parity and Pico2 build;162tests pass | Pico2 firmware locally cross-built; next: actual fit/one-servo bench records |
 | Physical assembly and calibration | **Ordering started—reported by user** | Receive parts, sample-fit, bench, assemble, weigh/measure |
 | Measured twin and learning | Provisional model; scripted motion below walking target | Measured twin/reference, bounded fixed/DR training |
 | Physical transfer and school experiment | Procedures prepared | Supervised trials, matched comparison, report/presentation |
@@ -5482,6 +5734,10 @@ implementation, local tests and physical verification.
 |2026-10-26|Final builds08/09 passed: ELF and UF2 byte-identical with debug information retained, fixed timestamp and normalized paths. Firmware/model/control identity remains685e3802; artifacts/manifests copied to docs/validation/2026-10-26/pico2_crossbuild. No USB/flash/PPO.|Finish post-flag active-suite check, source/document links,19-section handoff and explicit-allowlist archive. Next physical dependency: actual samples/electronics and user bench records.|
 |2026-10-26|Post-flag full active suite121passed in18.02s. Current status/summary/AI guide updated; verified ELF explicitly allowed in delivery, toolchains excluded. Earlier inspection/comparison failures retained.|Complete document/allowlist/archive integrity checks and refresh delivery. Then receive and review actual order/fit/bench records; no automatic flash/arm/training.|
 |2026-10-26|Pico2 preparation stage COMPLETE locally:121tests passed in18.02s; final ELF/UF2 repeat byte-identically.249local links/anchors,19-section handoff and initial1,856-member archive passed integrity/byte/allowlist checks. Firmware/model/control files and print ZIP unchanged; all physical gates false.|Refresh final archive with this log and delivery records. Next: user receives parts, tests2fit samples/power/one unloaded servo/IMU and supplies receipts/measurements; AI validates records. Missing order details remain unknown, not blockers to completed software work.|
+|2026-10-26|Continuation without purchase details: inspection found initial bench.py ignores firmware faults and opens USB without a separate execute flag. Scope: harden this existing WP3 preparation tool, add default offline preview and mocked checks; no hardware/motion/calibration claim.|Implement/read-only and restricted single-servo safeguards, log requested pulses separately from command acknowledgements, test cleanup/faults/timing, then update handoff/archive. Physical WP3 still needs parts.|
+|2026-10-26|Initial bench recorder hardened: default offline preview, explicit --execute for USB, fresh stationary startup, strict fault/saturation/timestamp/deadline stops, constant one-channel pulse only, new session logs and STOP/close.41focused mocked tests passed; no device accessed.|Run actual offline CLI previews and full suite. Document new output-directory/execute interface, bench status-only confirmation limits and human checks; preserve identity/UF2/geometry/gates.|
+|2026-10-26|Bench preparation complete locally:41focused mocked checks; full active suite162passed in16.54s. Read-only and single-servo CLI previews passed with no USB. Source/model/firmware identity and current ELF/UF2 unchanged; physical gates false. Bench docs/old-CLI migration recorded.|Verify links/current statuses and regenerate19-section handoff/archive. Human next: actual parts, sample fit, safe power and one unloaded servo/IMU; AI reviews their records when supplied.|
+|2026-10-26|Delivery verified:278local links/anchors,19-section current-source handoff and initial1,874-member archive passed integrity/byte checks.162tests passed; no hardware access, new PPO or gate change. Initial bench preparation is locally complete.|Refresh final archive with this record. Next dependency remains actual order/arrival, printed fit and one-servo/IMU bench evidence; use existing offline tools while waiting, never invent measurements or clear physical gates.|
 
 ---
 
@@ -5503,7 +5759,7 @@ and [print ZIP](../print_for_classmate.zip),2fit samples before7frame parts.
 
 **Next phase WP2 started:** external-angle provenance/measurement quality checker
 implemented; manual six-joint tooling and measured-baseline parity now also locally
-verified; current suite121tests passes. [Manual usage](MANUAL_CONTROL.md). No physical operation; no new PPO. Pico2 identity begins
+verified; initial bench preparation now also tested. Current suite162tests passes. [Manual usage](MANUAL_CONTROL.md). No physical operation; no new PPO. Pico2 identity begins
 `685e3802`; board mass remains estimated. Pico2 preparation firmware is now locally
 cross-built; physical tests remain pending.
 All references to older prices/fingerprints/results below retain their historical
@@ -5579,8 +5835,8 @@ is physically verified now. Blocked work has a named missing dependency.
 
 ##### Discoveries that must not be lost
 
-- Latest recorded full suite: **121 passed in18.02s**, [cross-build final log](validation/2026-10-26/pico2_crossbuild/pytest_release.txt).
-  Earlier99/69/58/55-test records remain historical.
+- Latest recorded full suite: **162 passed in16.54s**, [bench preparation log](validation/2026-10-26/bench_preparation/pytest.txt).
+  Earlier121/99/69/58/55-test records remain historical.
 - Current fingerprint: `685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88`.
   [Current frozen reference](baselines/scripted_bench_tools.json) and
   [historical predecessor](baselines/scripted_r2.json) remain separate.
@@ -5623,7 +5879,7 @@ Independent data/manual-control preparation ──────┘        ↓
 | Order | Concrete task | Owner | Done means / blocks |
 |---|---|---|---|
 | N1 | Record user-reported orders/receipts, then inspect actual parts and fit samples | Student supplies receipts/interface measurements; AI reconciles records | Ordering started; exact items/costs unknown. Physical fit and numeric accounting remain distinct from accepted design |
-| N2 | Completed: intake, manual-control previews/mocked safety, measured-baseline parity | AI software locally verified |121tests pass; Pico2 cross-build also verified. Physical manual operation still pending |
+| N2 | Completed: intake, manual-control previews/mocked safety, measured-baseline parity | AI software locally verified |162tests pass; initial bench preparation and Pico2 cross-build also verified. Physical manual operation still pending |
 | N3 | Verify real accessories/dimensions, electrical behaviour and two-piece sample | Student + AI analysis | Photos/dimensions, bench records and actual fit; costs remain accounted. Blocks full frame |
 | N4 | Assemble/weigh; calibrate/version twin; run model and reference checks | Student measures, AI models | Traceable measured calibration and reviewed feasible stepping. Blocks substantial training/deployment |
 | N5 | Run bounded matched A/B training, evaluate, then supervised physical trials | AI training, student trials | Equal budgets/initialization, held-out metrics/videos and failures. Blocks learned-walking/transfer claims |
@@ -5692,6 +5948,10 @@ printing selection complete; financial accounting and physical checks pending.
 **State:** implemented and locally verified; physical use remains pending.
 **Owner:** AI preparation, student later bench operation.
 
+- Initial `bench.py` now previews offline; USB requires explicit `--execute`.
+  Read-only logging or one constant restricted pulse, fresh stationary startup,
+  fault/time/saturation checks, no catch-up refreshes, STOP/close and new session
+  records. [Bench guide](BENCH.md). Status confirms mode only, never pulse/shaft feedback.
 - Measurement-intake/provenance checker and diagnostic quality screens exist.
   Actual external-angle recordings, plots/held-out fits and reviewed physical
   calibration still await data. See [intake guide](MEASUREMENT_INTAKE.md).
@@ -6047,8 +6307,8 @@ git diff --check
 MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/prepare_print_order.py
 .venv/bin/python tools/check_clearance.py --output runs/geometry_NEW/clearances.json
 
-### With real bench hardware, correct port and a fresh log file.
-.venv/bin/python bench.py --port /dev/ttyACM0 --seconds 10 --output runs/bench_NEW.csv
+### With reviewed real bench hardware, correct port and a new session directory.
+.venv/bin/python bench.py --execute --port /dev/ttyACM0 --seconds 10 --output runs/bench_NEW
 
 ### Actual external angle measurements; diagnostic requires quality review.
 .venv/bin/python tools/fit_response.py runs/measured_step_NEW.csv --output runs/fit_NEW.json
@@ -6548,7 +6808,7 @@ active route is classmate PETG, bare Pico2 and eight ordinary grip pads.
 | Design / printing selection | complete, user accepted | Classmate printing selected; Pico2 adopted. Price unknown; numerical budget remains separate/unverified (106.49before unknowns) |
 | CAD / quotation package | implemented, locally verified partial | Seven connected watertight frames, two-piece fit sample, drawings/manifests;0modeled collisions/55poses,5unknown interface groups; NOT manufacturing-approved |
 | Shared control / firmware | locally verified partial | Protocol/native tests and current Pico2 cross-build pass; invalid calibration, full-policy arm disabled. Older images historical; physical timing absent |
-| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite121passes |
+| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite162passes |
 | Frozen scripted reference | locally verified partial | Four qualifying steps/3alternations,6.60cm torso and4.39cm gait distance in30s;30cm target fails.29one-factor cases show fragile guessed physics |
 | PPO / evaluation | historical local evidence | Prior2048-step smoke/reload:0walking successes/0gait. All saved policies now incompatible; no new PPO. Older49152-step pilot also failed |
 | Physical build / calibration / transfer | planned, blocked | User ordering started; arrivals/measurements unreported. Bench/fit procedures prepared |
@@ -6576,7 +6836,18 @@ including r2 smoke. Current Pico2 preparation ELF/UF2 is locally cross-built wit
 invalid calibration; no physical test. Never relabel old images. Measured calibration
 and reviewed physical checks remain required before policy operation.
 
-#### Pico2 preparation firmware — latest completed work
+#### Initial bench preparation — latest completed work
+
+- `bench.py` defaults to offline preview; USB needs explicit `--execute`. New session
+  directories retain settings/source hashes, commands/status events, raw IMU and errors.
+- Read-only logging or one constant restricted pulse; fresh stationary startup,
+  fault/saturation/timestamp/deadline checks and STOP/close. No policy ARM or reconnect.
+- Mode confirmation is not applied-pulse/shaft feedback. CLI migration and physical
+  prerequisites: [bench guide](BENCH.md). Orders/measurements remain unknown.
+-41focused mocked tests; **162tests passed in16.54s**. [Evidence](validation/2026-10-26/bench_preparation/README.md).
+  Both CLI previews ran without USB; no geometry/identity/firmware/PPO/gate change.
+
+#### Pico2 preparation firmware — previous completed work
 
 - Pinned SDK2.3.1/TinyUSB, Arm14.2.Rel1 and picotool2.3.1; official archive checksums
   verified before extraction. Toolchains live outside the project archive.
@@ -6674,7 +6945,18 @@ or motion tuning. Use `pytest -q tests`, not copied historical test modules.
 
 ### Current local verification — 2026-10-26, S6-PETG-pad-r2
 
-#### Pico2 preparation cross-build — latest2026-10-26
+#### Initial bench preparation — latest2026-10-26
+
+- Offline preview default, explicit `--execute` for USB, new session directories.
+- Initial raw IMU or one constant bounded pulse; fresh stationary startup, fault/time/
+  saturation checks, no catch-up bursts, STOP/close and visible cleanup failure.
+- No policy ARM. Bench status and six-joint command acknowledgements are not
+  applied-pulse or shaft feedback. This tool is not an assembled-robot controller.
+-41focused mocked checks; **162tests passed in16.54s**: [log](validation/2026-10-26/bench_preparation/pytest.txt).
+- Actual CLI previews completed offline. [Evidence](validation/2026-10-26/bench_preparation/README.md).
+  Model/control685e3802, prepared ELF/UF2 and all five false gates unchanged. No PPO.
+
+#### Pico2 preparation cross-build — previous2026-10-26
 
 - Current Pico2/RP2350 Arm secure preparation firmware locally compiled and inspected
   using pinned SDK2.3.1, TinyUSB commit86ad6e56, Arm14.2.Rel1 and picotool2.3.1.

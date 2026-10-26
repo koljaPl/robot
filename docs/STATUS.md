@@ -17,7 +17,7 @@ active route is classmate PETG, bare Pico2 and eight ordinary grip pads.
 | Design / printing selection | complete, user accepted | Classmate printing selected; Pico2 adopted. Price unknown; numerical budget remains separate/unverified (106.49before unknowns) |
 | CAD / quotation package | implemented, locally verified partial | Seven connected watertight frames, two-piece fit sample, drawings/manifests;0modeled collisions/55poses,5unknown interface groups; NOT manufacturing-approved |
 | Shared control / firmware | locally verified partial | Protocol/native tests and current Pico2 cross-build pass; invalid calibration, full-policy arm disabled. Older images historical; physical timing absent |
-| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite121passes |
+| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite162passes |
 | Frozen scripted reference | locally verified partial | Four qualifying steps/3alternations,6.60cm torso and4.39cm gait distance in30s;30cm target fails.29one-factor cases show fragile guessed physics |
 | PPO / evaluation | historical local evidence | Prior2048-step smoke/reload:0walking successes/0gait. All saved policies now incompatible; no new PPO. Older49152-step pilot also failed |
 | Physical build / calibration / transfer | planned, blocked | User ordering started; arrivals/measurements unreported. Bench/fit procedures prepared |
@@ -45,7 +45,18 @@ including r2 smoke. Current Pico2 preparation ELF/UF2 is locally cross-built wit
 invalid calibration; no physical test. Never relabel old images. Measured calibration
 and reviewed physical checks remain required before policy operation.
 
-## Pico2 preparation firmware — latest completed work
+## Initial bench preparation — latest completed work
+
+- `bench.py` defaults to offline preview; USB needs explicit `--execute`. New session
+  directories retain settings/source hashes, commands/status events, raw IMU and errors.
+- Read-only logging or one constant restricted pulse; fresh stationary startup,
+  fault/saturation/timestamp/deadline checks and STOP/close. No policy ARM or reconnect.
+- Mode confirmation is not applied-pulse/shaft feedback. CLI migration and physical
+  prerequisites: [bench guide](BENCH.md). Orders/measurements remain unknown.
+-41focused mocked tests; **162tests passed in16.54s**. [Evidence](validation/2026-10-26/bench_preparation/README.md).
+  Both CLI previews ran without USB; no geometry/identity/firmware/PPO/gate change.
+
+## Pico2 preparation firmware — previous completed work
 
 - Pinned SDK2.3.1/TinyUSB, Arm14.2.Rel1 and picotool2.3.1; official archive checksums
   verified before extraction. Toolchains live outside the project archive.

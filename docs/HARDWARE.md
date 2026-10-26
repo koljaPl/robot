@@ -161,13 +161,16 @@ No historical prototype checkpoint is approved for the new model.
 ## Bench and deployment
 
 See [firmware build](../firmware/README.md) and [calibration](CALIBRATION.md).
-Read-only IMU logging is the bench default. Nothing in these instructions means
+[Initial bench guide](BENCH.md): offline preview is the default; USB requires
+explicit `--execute`. Read-only IMU is the default execution mode. Nothing here means
 an actual motor should be powered before procurement/fit/power gates pass.
 
 ```bash
-python bench.py --port /dev/ttyACM0 --seconds 10 --output runs/stationary.csv
+python bench.py --seconds 10 --output runs/stationary_preview_NEW
+# Later, after reviewed physical preparation (new directory, not a CSV filename):
+python bench.py --execute --port /dev/ttyACM0 --seconds 10 --output runs/stationary_NEW
 # Explicit single-channel pulse calibration, unloaded servo, horn detached initially:
-python bench.py --port /dev/ttyACM0 --channel 0 --pulse-us 1500 --seconds 2 --output runs/channel0.csv
+python bench.py --execute --port /dev/ttyACM0 --channel 0 --pulse-us 1500 --seconds 2 --output runs/channel0_NEW
 # Only after all physical checks and training with this measured calibration:
 python deploy.py --port /dev/ttyACM0 --model runs/measured/best_model.zip \
   --calibration calibrations/measured-v1.json --arm --seconds 5 --output runs/trial01.csv

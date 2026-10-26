@@ -162,6 +162,8 @@ must come from video. Conservative diagnostics can reject marginal real steps.
 
 Bench and deployment tools are part of the checkout; neither auto-arms.
 
+{{TEXT:docs/BENCH.md}}
+
 {{CODE:bench.py}}
 
 {{TEXT:docs/MANUAL_CONTROL.md}}

@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "mode": "offline_preview",
+  "status": "preview_complete",
+  "session": "single_servo",
+  "duration_s": 0.1,
+  "channel": 0,
+  "requested_pulse_us": 1500,
+  "command_hz": 50.0,
+  "identity": {
+    "configuration": "685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88",
+    "files": {
+      "physical_spec.json": "e2e66dfc8e39f907ba6d410bbf6b3cde40886730284309b207b045df4bcf32a6",
+      "robot.xml": "859065cffb998e3f7f8ab6cd736937882b636949b4ffbba78e4b7dce91ec3917",
+      "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+      "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+      "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+      "humanoid_env.py": "527f548ebc2d630e83c5bb327aced2adcc21947479940f4b5a394e6087ccee3c",
+      "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+      "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+      "calibration.py": "a57a04fbe84f80c0b364ffea42546521c4e99d854515eaed55cd6e55527978fa",
+      "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+      "firmware/control.h": "dfc0dec9642df663dca6410b8414faf16de480736c8c62fa2fd2da166f9c7200",
+      "firmware/CMakeLists.txt": "b53b7bf7c1e71611ff6b362fc4a3e19a654d5bf4bf46f2c06839b6d7a6fd85e6"
+    },
+    "calibration": "04e1dd29253c457169b2ce286f728e44321864da91d80e072578953ecdc54479"
+  },
+  "calibration_record": {
+    "version": 1,
+    "state": "estimated",
+    "validated": false,
+    "date": "2026-10-23",
+    "evidence": "EXAMPLE ONLY. Never deploy without per-servo/IMU measurements.",
+    "joint_order": [
+      "left_hip",
+      "left_knee",
+      "left_ankle",
+      "right_hip",
+      "right_knee",
+      "right_ankle"
+    ],
+    "sign": [
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1
+    ],
+    "zero_us": [
+      1500,
+      1500,
+      1500,
+      1500,
+      1500,
+      1500
+    ],
+    "us_per_rad": [
+      500,
+      500,
+      500,
+      500,
+      500,
+      500
+    ],
+    "pulse_min_us": [
+      900,
+      900,
+      900,
+      900,
+      900,
+      900
+    ],
+    "pulse_max_us": [
+      2100,
+      2100,
+      2100,
+      2100,
+      2100,
+      2100
+    ],
+    "safe_low_rad": [
+      -0.6108652381980153,
+      -0.17453292519943295,
+      -0.3490658503988659,
+      -0.6108652381980153,
+      -0.17453292519943295,
+      -0.3490658503988659
+    ],
+    "safe_high_rad": [
+      0.6108652381980153,
+      1.0471975511965976,
+      0.3490658503988659,
+      0.6108652381980153,
+      1.0471975511965976,
+      0.3490658503988659
+    ],
+    "max_target_speed_rad_s": 3.141592653589793,
+    "imu": {
+      "rotation_sensor_to_body": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "gyro_bias_rad_s": [
+        0,
+        0,
+        0
+      ],
+      "accel_bias_m_s2": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "calibration_file_sha256": "bbeb88b6eb160c732dfcebd1da68a71d52833b34b48c6757279384c4450003fa",
+  "source_sha256": {
+    "bench.py": "cfda893748e886e31a02b3eb167637455b6039bb31fa71482300699e1a8d751a",
+    "serial_robot.py": "2a78a32f028b85d3673b7f817e35642ebd069b336eb869e68a26177d8dfc59ac",
+    "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+    "calibration.py": "a57a04fbe84f80c0b364ffea42546521c4e99d854515eaed55cd6e55527978fa",
+    "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4"
+  },
+  "hardware_access_attempted": false,
+  "physically_verified": false,
+  "commands_sent": 0,
+  "telemetry_samples": 0,
+  "bench_status_confirmed": false,
+  "limits": [
+    "Preview is not physical verification or permission to power a servo.",
+    "Use one unloaded servo with horn removed; pulse bounds do not guarantee mechanical safety.",
+    "Bench identity/status confirms mode only, not applied pulse, sequence or shaft angle.",
+    "Telemetry command angles/sequence describe the six-joint command state, not bench-pulse feedback.",
+    "No tilt estimate is assumed before IMU alignment calibration; this is not an assembled-robot controller.",
+    "STOP requests PWM disable; it is not physical motor-power isolation."
+  ]
+}

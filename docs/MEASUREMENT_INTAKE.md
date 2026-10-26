@@ -35,5 +35,7 @@ loads/amplitudes and held-out trajectories; retain raw data and uncertainty.
 Synthetic examples must use `data_kind=synthetic` and remain synthetic in every
 report. Even well-formed physical input returns `physically_verified=false` and
 `calibration_validated=false`: only reviewed measurements complete physical gates.
-No real trials exist yet. Next WP2 work: reviewed six-joint manual-control utility
-and measured-calibration parity for HOME/untrained evaluation baselines.
+No real trials exist yet. Manual-control tooling, measured-baseline parity and
+Pico2 cross-build are now locally verified. [Initial bench preparation](BENCH.md)
+previews without USB; raw command acknowledgements never replace external angles.
+Next: actual fit/bench recordings and held-out measured-response review.

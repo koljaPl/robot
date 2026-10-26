@@ -1,0 +1,6 @@
+time_s,operation,channel,requested_pulse_us
+0.0,constant_bench_pulse,0,1500
+0.02,constant_bench_pulse,0,1500
+0.04,constant_bench_pulse,0,1500
+0.06,constant_bench_pulse,0,1500
+0.08,constant_bench_pulse,0,1500

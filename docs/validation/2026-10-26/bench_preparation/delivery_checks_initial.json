@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-26",
+  "tests_passed": 162,
+  "suite_seconds": 16.54,
+  "focused_mocked_tests": 41,
+  "local_links_and_anchors_checked": 278,
+  "handoff_sections": 19,
+  "archive_members_verified": 1874,
+  "all_archived_bytes_match": true,
+  "physical_gates_all_false": true,
+  "firmware_model_control_identity_unchanged": "685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88",
+  "print_zip_unchanged": true,
+  "no_real_hardware_execution": true,
+  "new_PPO_steps": 0,
+  "source_sha256": {
+    "PLAN.md": "82c30ebf991a3d25ea81785be645cd716ca332344373dc02a5dcf1b072f7d6ac",
+    "SUMMARY.md": "4421f91d601d381336ef480d7381dcaa5cb52d785562af5c18a07d3efb7bb2e2",
+    "AGENTS.md": "b210ad0243235e06a5b6207ca2f35b7535d32bdccedfaa4eb2f7cb1da3b16965",
+    "README.md": "47f716dea6b829425abb0967c0de2ab2a6c2f08c8e05e788575f71243c4f360d",
+    "docs/STATUS.md": "909a15b9c48cc3c8e71a3637f0b2045357fc7dacb49a38e86d2c346ea111e61a",
+    "docs/ROADMAP.md": "604167dc0c4e4d53a1c75bb77ddd8fa388f3829669254d4e43aeec717e01f718",
+    "docs/VALIDATION_CURRENT.md": "90e8d1bf082e71f7b9f9da633c3c3440bae82b79cf7daf89a74ce4fbd84ffae7",
+    "docs/HARDWARE.md": "041b1d1d602362f28e4ee2445e530c1770a312a6991992d8d74adda8dc1dcaa8",
+    "docs/CALIBRATION.md": "cc9ca753e7afff1d140e87c430766d65ce365d12d91d198c11ad39c7e50e9486",
+    "docs/MEASUREMENT_INTAKE.md": "3e5722f2c729291a87a0d5023ba64830601d3fc881e193a7552481b9f56ae1f8",
+    "docs/BENCH.md": "39a0e529961a2fe76697f88347749a5248832e8d0ea76747fe06be03f992b287",
+    "docs/HANDOFF.md": "5dcc18e7b6a22715984545566952dc3681942ce1bedcc905b6df3b829501e4f3",
+    "firmware/README.md": "0fb6ecbc3720422fff8a3193813e5cd02e776bc5da20ba8a94a8c1c26da3a1ca",
+    "docs/validation/2026-10-26/bench_preparation/README.md": "8e7e8b30b989d0daf7ada84680692631c10cffe4635f14331a0a3caa4eb90513",
+    "bench.py": "cfda893748e886e31a02b3eb167637455b6039bb31fa71482300699e1a8d751a",
+    "tests/test_bench_preparation.py": "d3cd66aa3f2127f46e3e13d0a9cc989e19b8f644628c0770d55f221c260db213"
+  }
+}

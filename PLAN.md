@@ -6,8 +6,8 @@ work packages follow. SUMMARY.md is the purchase/build snapshot, not a competing
 | Main phase | Current position | Remaining work |
 |---|---|---|
 | Requirements and hardware selection | User agreed; Pico2/classmate printing selected | Record actual purchases/costs |
-| Printable parts and provisional simulation | Print package, twin/RL and intake checker implemented; 121tests pass (current local suite) | Actual fit/strength/calibration |
-| Bench-control software | **LOCALLY VERIFIED:** manual preview/control, calibration parity and Pico2 build;121tests pass | Pico2 firmware locally cross-built; next: actual fit/one-servo bench records |
+| Printable parts and provisional simulation | Print package, twin/RL and intake checker implemented; 162tests pass (current local suite) | Actual fit/strength/calibration |
+| Bench-control software | **LOCALLY VERIFIED:** initial bench preview/safeguards, manual control, calibration parity and Pico2 build;162tests pass | Pico2 firmware locally cross-built; next: actual fit/one-servo bench records |
 | Physical assembly and calibration | **Ordering started—reported by user** | Receive parts, sample-fit, bench, assemble, weigh/measure |
 | Measured twin and learning | Provisional model; scripted motion below walking target | Measured twin/reference, bounded fixed/DR training |
 | Physical transfer and school experiment | Procedures prepared | Supervised trials, matched comparison, report/presentation |
@@ -46,6 +46,10 @@ implementation, local tests and physical verification.
 |2026-10-26|Final builds08/09 passed: ELF and UF2 byte-identical with debug information retained, fixed timestamp and normalized paths. Firmware/model/control identity remains685e3802; artifacts/manifests copied to docs/validation/2026-10-26/pico2_crossbuild. No USB/flash/PPO.|Finish post-flag active-suite check, source/document links,19-section handoff and explicit-allowlist archive. Next physical dependency: actual samples/electronics and user bench records.|
 |2026-10-26|Post-flag full active suite121passed in18.02s. Current status/summary/AI guide updated; verified ELF explicitly allowed in delivery, toolchains excluded. Earlier inspection/comparison failures retained.|Complete document/allowlist/archive integrity checks and refresh delivery. Then receive and review actual order/fit/bench records; no automatic flash/arm/training.|
 |2026-10-26|Pico2 preparation stage COMPLETE locally:121tests passed in18.02s; final ELF/UF2 repeat byte-identically.249local links/anchors,19-section handoff and initial1,856-member archive passed integrity/byte/allowlist checks. Firmware/model/control files and print ZIP unchanged; all physical gates false.|Refresh final archive with this log and delivery records. Next: user receives parts, tests2fit samples/power/one unloaded servo/IMU and supplies receipts/measurements; AI validates records. Missing order details remain unknown, not blockers to completed software work.|
+|2026-10-26|Continuation without purchase details: inspection found initial bench.py ignores firmware faults and opens USB without a separate execute flag. Scope: harden this existing WP3 preparation tool, add default offline preview and mocked checks; no hardware/motion/calibration claim.|Implement/read-only and restricted single-servo safeguards, log requested pulses separately from command acknowledgements, test cleanup/faults/timing, then update handoff/archive. Physical WP3 still needs parts.|
+|2026-10-26|Initial bench recorder hardened: default offline preview, explicit --execute for USB, fresh stationary startup, strict fault/saturation/timestamp/deadline stops, constant one-channel pulse only, new session logs and STOP/close.41focused mocked tests passed; no device accessed.|Run actual offline CLI previews and full suite. Document new output-directory/execute interface, bench status-only confirmation limits and human checks; preserve identity/UF2/geometry/gates.|
+|2026-10-26|Bench preparation complete locally:41focused mocked checks; full active suite162passed in16.54s. Read-only and single-servo CLI previews passed with no USB. Source/model/firmware identity and current ELF/UF2 unchanged; physical gates false. Bench docs/old-CLI migration recorded.|Verify links/current statuses and regenerate19-section handoff/archive. Human next: actual parts, sample fit, safe power and one unloaded servo/IMU; AI reviews their records when supplied.|
+|2026-10-26|Delivery verified:278local links/anchors,19-section current-source handoff and initial1,874-member archive passed integrity/byte checks.162tests passed; no hardware access, new PPO or gate change. Initial bench preparation is locally complete.|Refresh final archive with this record. Next dependency remains actual order/arrival, printed fit and one-servo/IMU bench evidence; use existing offline tools while waiting, never invent measurements or clear physical gates.|
 
 ---
 
@@ -67,7 +71,7 @@ and [print ZIP](print_for_classmate.zip),2fit samples before7frame parts.
 
 **Next phase WP2 started:** external-angle provenance/measurement quality checker
 implemented; manual six-joint tooling and measured-baseline parity now also locally
-verified; current suite121tests passes. [Manual usage](docs/MANUAL_CONTROL.md). No physical operation; no new PPO. Pico2 identity begins
+verified; initial bench preparation now also tested. Current suite162tests passes. [Manual usage](docs/MANUAL_CONTROL.md). No physical operation; no new PPO. Pico2 identity begins
 `685e3802`; board mass remains estimated. Pico2 preparation firmware is now locally
 cross-built; physical tests remain pending.
 All references to older prices/fingerprints/results below retain their historical
@@ -143,8 +147,8 @@ is physically verified now. Blocked work has a named missing dependency.
 
 ### Discoveries that must not be lost
 
-- Latest recorded full suite: **121 passed in18.02s**, [cross-build final log](docs/validation/2026-10-26/pico2_crossbuild/pytest_release.txt).
-  Earlier99/69/58/55-test records remain historical.
+- Latest recorded full suite: **162 passed in16.54s**, [bench preparation log](docs/validation/2026-10-26/bench_preparation/pytest.txt).
+  Earlier121/99/69/58/55-test records remain historical.
 - Current fingerprint: `685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88`.
   [Current frozen reference](docs/baselines/scripted_bench_tools.json) and
   [historical predecessor](docs/baselines/scripted_r2.json) remain separate.
@@ -187,7 +191,7 @@ Independent data/manual-control preparation ──────┘        ↓
 | Order | Concrete task | Owner | Done means / blocks |
 |---|---|---|---|
 | N1 | Record user-reported orders/receipts, then inspect actual parts and fit samples | Student supplies receipts/interface measurements; AI reconciles records | Ordering started; exact items/costs unknown. Physical fit and numeric accounting remain distinct from accepted design |
-| N2 | Completed: intake, manual-control previews/mocked safety, measured-baseline parity | AI software locally verified |121tests pass; Pico2 cross-build also verified. Physical manual operation still pending |
+| N2 | Completed: intake, manual-control previews/mocked safety, measured-baseline parity | AI software locally verified |162tests pass; initial bench preparation and Pico2 cross-build also verified. Physical manual operation still pending |
 | N3 | Verify real accessories/dimensions, electrical behaviour and two-piece sample | Student + AI analysis | Photos/dimensions, bench records and actual fit; costs remain accounted. Blocks full frame |
 | N4 | Assemble/weigh; calibrate/version twin; run model and reference checks | Student measures, AI models | Traceable measured calibration and reviewed feasible stepping. Blocks substantial training/deployment |
 | N5 | Run bounded matched A/B training, evaluate, then supervised physical trials | AI training, student trials | Equal budgets/initialization, held-out metrics/videos and failures. Blocks learned-walking/transfer claims |
@@ -256,6 +260,10 @@ printing selection complete; financial accounting and physical checks pending.
 **State:** implemented and locally verified; physical use remains pending.
 **Owner:** AI preparation, student later bench operation.
 
+- Initial `bench.py` now previews offline; USB requires explicit `--execute`.
+  Read-only logging or one constant restricted pulse, fresh stationary startup,
+  fault/time/saturation checks, no catch-up refreshes, STOP/close and new session
+  records. [Bench guide](docs/BENCH.md). Status confirms mode only, never pulse/shaft feedback.
 - Measurement-intake/provenance checker and diagnostic quality screens exist.
   Actual external-angle recordings, plots/held-out fits and reviewed physical
   calibration still await data. See [intake guide](docs/MEASUREMENT_INTAKE.md).
@@ -611,8 +619,8 @@ git diff --check
 MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/prepare_print_order.py
 .venv/bin/python tools/check_clearance.py --output runs/geometry_NEW/clearances.json
 
-# With real bench hardware, correct port and a fresh log file.
-.venv/bin/python bench.py --port /dev/ttyACM0 --seconds 10 --output runs/bench_NEW.csv
+# With reviewed real bench hardware, correct port and a new session directory.
+.venv/bin/python bench.py --execute --port /dev/ttyACM0 --seconds 10 --output runs/bench_NEW
 
 # Actual external angle measurements; diagnostic requires quality review.
 .venv/bin/python tools/fit_response.py runs/measured_step_NEW.csv --output runs/fit_NEW.json

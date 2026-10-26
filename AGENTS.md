@@ -90,13 +90,15 @@ python tools/prepare_print_order.py  # two quotation ZIPs; never manufacturing a
 - `docs/SENSITIVITY.md`:29 one-factor cases per old/corrected identity;55tests pass.
   Physical offsets now enter actuator bias, never clipped away at command limits.
   Nominal unchanged; all12 ±1° offset probes lose steps.73credited steps raw-audited.
-- Latest full suite:121passes (2026-10-26 firmware build);55above is
+- Latest full suite:162passes (2026-10-26 initial bench preparation);55above is
   the earlier offset checkpoint. Expanded task IDs/gates: root `PLAN.md`.
 - WP2 intake implemented: `tools/validate_measurement.py`, provenance template and tests.
   Never approve calibration automatically; synthetic data remains synthetic.
 - Manual preview/control and measured-baseline parity now locally verified; hardware pending.
 - Next AI: validate actual receipts/fit/bench records when supplied; otherwise keep gates closed.
 - Firmware build instructions/pins: firmware/README.md; no flash/arm, tuning or new PPO.
+- Initial bench defaults offline; --execute explicitly opens USB; see docs/BENCH.md.
+- Bench status/command angles are not applied-pulse/shaft feedback. No full-policy ARM.
 - User/classmate next: fit sample on actual servo/horn, then full frame; measure/weigh.
 - Stop at the agreed training cap and report failure honestly if walking is unmet.
 

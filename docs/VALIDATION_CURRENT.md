@@ -1,6 +1,17 @@
 # Current local verification — 2026-10-26, S6-PETG-pad-r2
 
-## Pico2 preparation cross-build — latest2026-10-26
+## Initial bench preparation — latest2026-10-26
+
+- Offline preview default, explicit `--execute` for USB, new session directories.
+- Initial raw IMU or one constant bounded pulse; fresh stationary startup, fault/time/
+  saturation checks, no catch-up bursts, STOP/close and visible cleanup failure.
+- No policy ARM. Bench status and six-joint command acknowledgements are not
+  applied-pulse or shaft feedback. This tool is not an assembled-robot controller.
+-41focused mocked checks; **162tests passed in16.54s**: [log](validation/2026-10-26/bench_preparation/pytest.txt).
+- Actual CLI previews completed offline. [Evidence](validation/2026-10-26/bench_preparation/README.md).
+  Model/control685e3802, prepared ELF/UF2 and all five false gates unchanged. No PPO.
+
+## Pico2 preparation cross-build — previous2026-10-26
 
 - Current Pico2/RP2350 Arm secure preparation firmware locally compiled and inspected
   using pinned SDK2.3.1, TinyUSB commit86ad6e56, Arm14.2.Rel1 and picotool2.3.1.

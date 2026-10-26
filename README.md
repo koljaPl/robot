@@ -29,11 +29,13 @@ Die Auswahlphase ist abgeschlossen; Bestellungen wurden laut Nutzer begonnen.
 Der vollständige [Plan im Projektstamm](PLAN.md) wird nach jedem Arbeitsschritt geändert.
 Manuelle Steuerung mit Offline-Vorschau und Kalibrierungsparität sind lokal geprüft;
 reale Tests stehen aus. [Bedienung](docs/MANUAL_CONTROL.md).
+Der [erste Prüfstandstest](docs/BENCH.md) lässt sich ohne USB vorab ansehen;
+Hardwarezugriff benötigt ausdrücklich `--execute`.
 [Messdatenprüfung](docs/MEASUREMENT_INTAKE.md) ist implementiert. Rechnerischer
 Budgetnachweis bleibt separat offen; keine erfundenen Druckkosten.
 
 Die vorläufige MuJoCo-Kopie passt zum neuen CAD; geschätzt197.1g.
-Aktueller lokaler Gesamtlauf:121bestandene Tests; kein neues PPO/physisches Ergebnis.
+Aktueller lokaler Gesamtlauf:162bestandene Tests; kein neues PPO/physisches Ergebnis.
 Der2048Schritte-PPO-Smoke zeigt **kein gelerntes Gehen**; Skriptreferenzen werden separat bewertet.
 Alte Modelle/UF2bleiben historisch. [Prüfstand](docs/VALIDATION_CURRENT.md).
 Eine neue [Standbein-/Schrittdiagnose](docs/STANCE_TRANSFER.md) erreicht einen
