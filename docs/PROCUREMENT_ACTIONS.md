@@ -1,5 +1,12 @@
 # Active commercial-print procurement actions — 2026-10-25
 
+**Superseded selection task2026-10-26:** user chooses printing by a classmate and
+accepts the design/printing arrangement; Pico2 replaces Pico1. Exact price unknown,
+excluding delivery. Design/provider phase complete; no further service search or
+Meltlab upload needed. [Print files](../print_for_classmate/00_START_HERE.md).
+The older quote-research notes/questions below are historical alternatives,
+not the current next action. Actual fit/strength/cost records remain to be obtained.
+
 Delivery25337Germany; PCUSB-A, no adapter; required USB data cable retained.
 No purchases, supplier messages, reservations or print orders have occurred.
 Authoritative ledger:`../procurement.json`; packages:`../cad/`.

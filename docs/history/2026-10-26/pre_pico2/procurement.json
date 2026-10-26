@@ -1,0 +1,899 @@
+{
+  "checked_date": "2026-10-25",
+  "currency": "EUR",
+  "budget_max_eur": 100,
+  "destination": "25337, Germany; user-confirmed postcode, standard delivery; final postcode-specific checkout pending",
+  "status": "BLOCKED: common95.56 +ear-fastener delivery9.53 =105.09 before printing/sample/horn extras; minimum known shortfall5.09; complete quotation/fit absent",
+  "items": [
+    {
+      "category": "Motors",
+      "product": "Waveshare 15024 MG90S",
+      "quantity": 6,
+      "unit_price_eur": 3.5,
+      "shop": "Welectron",
+      "url": "https://www.welectron.com/Waveshare-15024-MG90S-Servo_1",
+      "notes": "VAT included, stock shown; horn/screw inclusion unverified",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "availability": "Short supply; exact six-unit availability still not established;1–3 working days DE advertised",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "category": "Electronics",
+      "product": "Raspberry Pi Pico (bare RP2040 board)",
+      "quantity": 1,
+      "unit_price_eur": 4.1,
+      "shop": "BerryBase",
+      "url": "https://www.berrybase.de/raspberry-pi-pico-rp2040-mikrocontroller-board",
+      "notes": "Selected provisional bare Pico +soldered headers; GPIOs unchanged. Updated twin owns4.2g inclusive-header module estimate, not a measured mass.",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "availability": "100+ shown; 1–3 days; no reservation",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "category": "Sensors",
+      "product": "Funduino F23107397 MPU6050 module",
+      "quantity": 1,
+      "unit_price_eur": 3.62,
+      "shop": "Funduino",
+      "url": "https://funduino.com/products/mpu-6050-modul-triaxial-beschleunigungssensor-gyroskop",
+      "notes": "Header soldering/board orientation to confirm",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "availability": "517 shown,1–3working days; not reserved",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "category": "Power",
+      "product": "Mean Well GST40A05-P1J 5 V 5 A desktop PSU",
+      "quantity": 1,
+      "unit_price_eur": 15.5,
+      "shop": "BerryBase",
+      "url": "https://www.berrybase.de/meanwell-schaltnetzteil-5v-dc-5-0a-mit-hohlstecker-5-5x2-1mm",
+      "notes": "C14 inlet; centre-positive 5.5 x 2.1 mm; no mains lead in package",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "availability": "16 shown at most recent review; stock not reserved",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "category": "Power",
+      "product": "Goobay 68604 Schuko to C13, 1.5 m",
+      "quantity": 1,
+      "unit_price_eur": 3.81,
+      "shop": "BerryBase",
+      "url": "https://www.berrybase.de/kaltgeraete-netzkabel-schutzkontakt-stecker-abgewinkelt-iec320-c13-buchse-schwarz",
+      "notes": "Exact 1.5 m variant; 10 A AC rating",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "category": "Wiring/connectors",
+      "product": "Official Raspberry Pi RPI-MUSB-1 USB data cable 1 m",
+      "quantity": 1,
+      "unit_price_eur": 1.8,
+      "shop": "BerryBase",
+      "url": "https://www.berrybase.de/offizielles-raspberry-pi-micro-usb-kabel-rot-1-0m",
+      "notes": "USB-A–Micro-B data cable required for Pico. User confirmed PC USB-A on2026-10-23; no adapter required or included.",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "category": "Wiring/connectors",
+      "product": "DUPK-40-FF-50, 40 female-female Dupont leads, 50 cm",
+      "quantity": 1,
+      "unit_price_eur": 2.2,
+      "shop": "BerryBase",
+      "url": "https://www.berrybase.de/40pin-jumper-dupont-kabel-female-female-trennbar/laenge-0-50-m",
+      "notes": "Logic only. User shortens and insulates signal/I2C leads as needed; preserve removable female ends. Keep I2C short; verify continuity. Never servo power.",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "availability": "60 shown on selected 50 cm German page",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "category": "Wiring/connectors",
+      "product": "Funduino F23108007 JR-Futaba extension, 10 cm",
+      "quantity": 6,
+      "unit_price_eur": 1.14,
+      "shop": "Funduino",
+      "url": "https://funduino.com/products/jr-futaba-servo-verlangerung-kabel-10cm-female-male",
+      "notes": "User solders six replaceable servo sockets into short heavy positive/return buses; isolate each signal to its Pico GPIO. Actual wire gauge, contact rating, plug fit and current/droop must pass bench tests.",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "availability": "55 shown; public sale; no coupon",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "category": "Wiring/connectors",
+      "product": "Donau E-175-11 black copper wire 0.75 mm², 10 m roll",
+      "quantity": 1,
+      "unit_price_eur": 5.5,
+      "shop": "BerryBase",
+      "url": "https://www.berrybase.de/donau-kupferschaltlitze-0-75-mm2-10m-lang-1-adrig-24x0-20mm-pvc-isoliert/farbe-schwarz",
+      "notes": "Replaces unavailable red E-175-10 with same 0.75mm² copper/24x0.20mm/PVC/10m specification. One full roll serves both short buses; identify positive with two separated heat-shrink bands and negative with one at every end, then verify continuity/polarity. Existing shrink pack supplies markings; do not rely on black wire colour. Wiring mass remains an estimate, not a new measured twin.",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "availability": "7 rolls shown in browser; 1–3 working days, not reserved",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "category": "Power",
+      "product": "AiSHi ELK1M16VAWH 1000 µF 16 V capacitor",
+      "quantity": 1,
+      "unit_price_eur": 0.29,
+      "shop": "BerryBase",
+      "url": "https://www.berrybase.de/elektrolytkondensator-1000-f-16v-1050c-1-radial-tht",
+      "notes": "Polarity matters; actual tolerance ±20%, inconsistent page title ignored",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "category": "Wiring/connectors",
+      "product": "PINH-1X40P 40-pin 2.54 mm header",
+      "quantity": 1,
+      "unit_price_eur": 0.6,
+      "shop": "BerryBase",
+      "url": "https://www.berrybase.de/stiftleiste-1x-40-polig-rm-2-54-gerade",
+      "notes": "One full40pin pack for up to8IMU pins+6signal ends;26spare. Pico headers supplied by separate RPIP-PINH kit.",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "category": "Wiring/connectors",
+      "product": "McPower T1535561 heat-shrink, 100 pieces",
+      "quantity": 1,
+      "unit_price_eur": 1.9,
+      "shop": "BerryBase",
+      "url": "https://www.berrybase.de/schrumpfschlauch-set-100-teilig-schwarz",
+      "notes": "Insulate all user-soldered harness joints and label negative polarity; full shrink pack and separate10g solder pack are included.",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "category": "Fasteners",
+      "product": "McPower T1535501 cable ties, 100 x 2.5 mm, pack of 100",
+      "quantity": 1,
+      "unit_price_eur": 0.6,
+      "shop": "BerryBase",
+      "url": "https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-100x2-5mm",
+      "notes": "Six board ties +four tether strain restraints +eight harness restraints; full100pack, leave joint loops.",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json",
+      "availability": "6 packs shown for exact transparent100x2.5mm variant;1–3 working days, not reserved"
+    },
+    {
+      "category": "Power",
+      "product": "Goobay 11638 DC socket 5.5 x 2.1 mm, solder lugs, 5 A",
+      "quantity": 1,
+      "unit_price_eur": 1.1,
+      "shop": "BerryBase",
+      "url": "https://www.berrybase.de/dc-einbaubuchse-fuer-hohlstecker-5-5x2-1mm-metallausfuehrung-loetanschluss",
+      "notes": "Retailer specifies 5 A / 30 V DC, nut and washer. User solders short 0.75 mm2 bus, insulates lugs/case and provides strain relief using listed shrink/ties; support off robot. Unplug PSU DC for physical cutoff. Not branch-current or electrical verification.",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "availability": "100+ shown",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "category": "Shipping",
+      "product": "Welectron German DPD shipping",
+      "quantity": 1,
+      "unit_price_eur": 4.95,
+      "shop": "Welectron",
+      "url": "https://www.welectron.com/Shipping-cost",
+      "notes": "Basket under €49 free-shipping threshold",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json",
+      "availability": "Published standard Germany rate; not a 25337 checkout, reservation or delivery booking"
+    },
+    {
+      "category": "Shipping",
+      "product": "BerryBase German DHL shipping",
+      "quantity": 1,
+      "unit_price_eur": 4.95,
+      "shop": "BerryBase",
+      "url": "https://www.berrybase.de/versand-und-zahlungsbedingungen",
+      "notes": "DHL EUR4.95 below EUR200; free-shipping threshold changed from recorded EUR150",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json",
+      "availability": "Published standard Germany rate; not a 25337 checkout, reservation or delivery booking"
+    },
+    {
+      "category": "Shipping",
+      "product": "Funduino German shipping",
+      "quantity": 1,
+      "unit_price_eur": 4.9,
+      "shop": "Funduino",
+      "url": "https://funduino.com/policies/shipping-policy",
+      "notes": "Current policy opened in browser: Germany standard DHL EUR4.90 inclVAT; free only from EUR69 after discounts; tracking; no express surcharge. Snapshot docs/procurement/2026-10-23/funduino-shipping.txt",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json",
+      "availability": "Published standard Germany rate; not a 25337 checkout, reservation or delivery booking"
+    },
+    {
+      "category": "Consumables",
+      "product": "Zhongdi ZD-160 lead-free solder, 1 mm, 2% flux, 10 g",
+      "quantity": 1,
+      "unit_price_eur": 1.9,
+      "shop": "BerryBase",
+      "url": "https://www.berrybase.de/zhongdi-loetzinn-bleifrei-oe1-0-mm-2-flussmittel-10-g",
+      "notes": "Full 10 g pack counted; Sn99.3Cu0.7, flux core. No mandatory helper labour. Iron/tool access confirmed by user; other tools must be borrowed or priced separately.",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "availability": "90 shown; 1–3 days",
+      "evidence_file": "docs/procurement/2026-10-23/soldering_routes/solder.txt",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "category": "Mechanical",
+      "product": "Delock 18309 self-adhesive TPE pads, 10 x 3 mm, pack50",
+      "quantity": 1,
+      "unit_price_eur": 3.55,
+      "shop": "Reichelt",
+      "url": "https://www.reichelt.de/de/de/shop/produkt/gummifuesse_rund_selbstklebend_10_x_3_mm_50_stk_schwarz-371081",
+      "notes": "Eight used, four per foot;42spare.10mm diameter x3mm TPE with adhesive; new twin uses discrete cylinders. Product dimensions sourced; friction/density/adhesion/positions provisional.",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "manufacturer_url": "https://www.delock.com/produkt/18309/pdf.html?sprache=de",
+      "availability": "Browser Germany/private-customer view:3.55incl19%VAT, in stock1–2working days; not reserved. Search cache2.98exVAT is not the gross price.",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "category": "Shipping",
+      "product": "Reichelt German standard DHL delivery",
+      "quantity": 1,
+      "unit_price_eur": 5.95,
+      "shop": "Reichelt",
+      "url": "https://www.reichelt.de/de/de/shop/service/-12_28",
+      "notes": "Germany <=10 kg published rate. Final 25337 checkout pending; no booking.",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json",
+      "availability": "Published standard Germany rate; not a 25337 checkout, reservation or delivery booking"
+    },
+    {
+      "category": "Wiring/connectors",
+      "product": "BerryBase RPIP-PINH Pico header kit",
+      "quantity": 1,
+      "unit_price_eur": 0.5,
+      "shop": "BerryBase",
+      "url": "https://www.berrybase.de/stiftleisten-pin-header-set-fuer-raspberry-pi-pico",
+      "notes": "Two20pin headers for Pico; confirm package, solder yourself. Any supplied3pin debug strip is spare, not required. With one40pin pack provides at least80pins. Saves0.10 vs two40pin packs.",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-25",
+      "availability": "100+ shown;1–3days",
+      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+    }
+  ],
+  "unresolved_checks": [
+    "All required full-frame/sample/finishing/horn costs and stock unresolved; unknowns never zero",
+    "Six-unit Waveshare stock and actual supplied horn/shaft screw contents",
+    "3.3V PWM threshold, branch/contact current ratings and PSU droop still need bench testing",
+    "Final complete delivery to25337 incl every sample shipment; no bookings/orders/messages",
+    "Fit/layer strength/pad friction and adhesion require physical measurements"
+  ],
+  "optional": [
+    "one spare MG90S: €3.50 plus any additional delivery",
+    "slack safety line",
+    "thin protective test mat",
+    "longer USB cable and adequately thick power tether: not yet sourced"
+  ],
+  "architecture": "Bare Pico RP2040 directPWM GP0,1,2,3,6,7; MPU6050 GP4/5; S6-PETG-pad-r2 sevenPETGframes +8ordinaryTPEpads, physical verification pending",
+  "rejected_alternatives": [
+    {
+      "product": "BerryBase157066 PCA9685",
+      "price_eur": 6.5,
+      "checked_date": "2026-10-23",
+      "reason": "out of stock; original mounting overlap; native PWM eliminates board and unknown board power rating",
+      "url": "https://www.berrybase.de/berrybase-16-kanal-pwm-servo-treiber-board-pca9685-i2c-12bit-1-6khz-3-3-5v"
+    },
+    {
+      "product": "Delock83290 input cable",
+      "checked_date": "2026-10-23",
+      "reason": "Replaced provisionally by BerryBase Goobay11638 rated5A socket atEUR1.10; no additional supplier/shipping. User soldering required; no helper labour."
+    }
+  ],
+  "quote_evidence": "docs/procurement/2026-10-23/quotes.json",
+  "delivery_policy": "Rates are published standard Germany rates applicable in principle to 25337, not postcode checkout quotations or reservations. Robot-only costs retain Welectron EUR4.95. Joint A1-printer order could remove that once, but is not assumed. Every extra bench/sample split delivery must be counted.",
+  "user_confirmed": {
+    "checked_date": "2026-10-23",
+    "evidence_state": "sourced",
+    "evidence": "User reply to delivery/USB questions on 2026-10-23",
+    "delivery_postcode": "25337",
+    "country": "Germany",
+    "pc_has_usb_a": true,
+    "usb_adapter_required": false,
+    "can_solder": true,
+    "helper_required": false,
+    "printer_access": false,
+    "printer_purchase_authorized": false,
+    "frame_comparison": "standard ready-made parts vs own printer; no fabrication for standard route",
+    "active_manufacturing_route": "commercial printing service requested2026-10-24",
+    "outsourced_print_design_authorized": true
+  },
+  "historical_routes": [
+    {
+      "name": "Commercial PETG + TPU printing / helper preparation",
+      "state": "historical, not default",
+      "known_delivered_subtotal_eur": 163.63,
+      "complete_total_eur": null,
+      "snapshot": "docs/history/2026-10-23/pre_soldering_routes/procurement.json",
+      "quote_evidence": "docs/procurement/2026-10-23/quotes.json",
+      "notes": "Quoted print/support/VAT/shipping only; unpriced finishing/bonding/helper/horn hardware. Custom laser cutting also historical, not a default purchase."
+    },
+    {
+      "name": "Standard vs own-printer comparison2026-10-23",
+      "snapshot": "docs/history/2026-10-24/pre_print_revision/procurement.json",
+      "known_shared_subset_eur": 95.91,
+      "known_own_print_subset_eur": 118.43,
+      "complete_total_eur": null,
+      "state": "historical; no printer purchase"
+    }
+  ],
+  "scenarios": {
+    "standard_parts": {
+      "name": "Ready-made standard parts; no fabrication",
+      "selection_state": "historical comparison only; inactive",
+      "items": [
+        {
+          "category": "Mechanical",
+          "product": "Complete compatible six-joint frame, links, feet, horns, retainers and matching fasteners, delivered",
+          "quantity": 1,
+          "unit_price_eur": null,
+          "shop": "No verified supplier",
+          "url": null,
+          "notes": "Must include torso, 2 thighs, 2 shins, 2 feet, case holders and every shaft/horn/link connection with no drilling/cutting/bending/printing. Case holders alone are not a leg. Required quantity is ONE complete frame kit, not six arbitrary brackets.",
+          "evidence_state": "unknown",
+          "checked_date": "2026-10-23"
+        }
+      ],
+      "unresolved_checks": [
+        "No verified complete compatible six-joint ready-made frame; bracket count and link topology unresolved",
+        "Frame dimensions, mass, fastener counts, EUR landed VAT and shipping unknown"
+      ],
+      "research_candidates": [
+        {
+          "product": "Cytron ROBO-BK-SG90",
+          "url": "https://www.cytron.io/p-robo-bracket-for-microservo-motor",
+          "unit_price_usd": 2.48,
+          "availability": "82 shown",
+          "quantity_required": null,
+          "evidence_state": "sourced",
+          "checked_date": "2026-10-23",
+          "specification": "1.5 mm aluminium alloy; microservo case 23 x 12.2 x 29 mm; pack 1 bracket + 4 M2x6 + 4 M3x6 screws",
+          "missing": "No verified torso/link/horn/foot interconnections; no EUR VAT/delivery quote; actual MG90S case fit unmeasured. Quantity cannot be frozen."
+        },
+        {
+          "product": "ACEBOTT QD021",
+          "url": "https://acebottteam.github.io/acebott-docs-master/kit/Inventor%20Series/QD021.html",
+          "decision": "Rejected as drop-in: four joints, not agreed six; no weaker/fewer-joint substitution."
+        }
+      ]
+    },
+    "own_printer": {
+      "name": "Locally print fitted PETG frame; standard grip pads",
+      "selection_state": "historical comparison only; inactive",
+      "items": [
+        {
+          "category": "Mechanical",
+          "product": "SUNLU PETG Black 1.75 mm, 1000 g spool SN5-314224",
+          "quantity": 1,
+          "unit_price_eur": 12.99,
+          "shop": "Welectron",
+          "url": "https://www.welectron.com/Sunlu-PETG-Black-175-mm-1000-g_1",
+          "notes": "Full spool, not refill/sample grams. HAN SL-Y-PETG-BK-1KG-A; GTIN6933582314224. No second TPU spool proposed. Existing robot-only Welectron shipment covers spool+servos (<EUR49).",
+          "evidence_state": "sourced",
+          "checked_date": "2026-10-23",
+          "evidence_file": "docs/procurement/2026-10-23/soldering_routes/petg-black.txt",
+          "availability": "Selected black variant in stock; 1–3 business days"
+        },
+        {
+          "category": "Fasteners",
+          "product": "Schraubenking P010265 M2 x 8 PH DIN7985 zinc-plated steel 4.8, pack100",
+          "quantity": 1,
+          "unit_price_eur": 1.51,
+          "shop": "Schraubenking",
+          "url": "https://www.schraubenking-shop.de/M2-x-8mm-Linsenkopfschrauben-PH-DIN7985-Stahl-verzinkt-FKL48-P010265",
+          "notes": "12 ear screws used; 88 spare. Exact length/ear fit provisional. Head4mm dia/1.6mm high, PH1; M2 coarse thread. Do not order before stack/clearance review.",
+          "evidence_state": "sourced",
+          "checked_date": "2026-10-23",
+          "availability": "Immediately available; DE2-3workingdays"
+        },
+        {
+          "category": "Fasteners",
+          "product": "Schraubenking P003474 M2 DIN934 zinc-plated steel class8 nuts, pack100",
+          "quantity": 1,
+          "unit_price_eur": 1.13,
+          "shop": "Schraubenking",
+          "url": "https://www.schraubenking-shop.de/M2-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P003474",
+          "notes": "12 used;88spare. Current browser price1.13; stale cached page1.16/20%VAT rejected. SW4,1.6mm high,0.4mm pitch; match M2 ear screws.",
+          "evidence_state": "sourced",
+          "checked_date": "2026-10-23",
+          "availability": "Immediately available; DE2-3workingdays"
+        },
+        {
+          "category": "Fasteners",
+          "product": "Schraubenking P004198 M2 DIN125 A2 washers 2.2 x 5 x 0.3 mm, pack100",
+          "quantity": 1,
+          "unit_price_eur": 0.99,
+          "shop": "Schraubenking",
+          "url": "https://www.schraubenking-shop.de/22mm-Unterlegscheiben-DIN125-Edelstahl-A2-P004198",
+          "notes": "24 used at ears: one under each head and nut. 76spare; horn washer compatibility not presumed. Check5mm OD clears plastic ear/slot and horn sweep.",
+          "evidence_state": "sourced",
+          "checked_date": "2026-10-23",
+          "availability": "Immediately available; DE2-3workingdays"
+        },
+        {
+          "category": "Shipping",
+          "product": "Schraubenking German standard DHL delivery",
+          "quantity": 1,
+          "unit_price_eur": 5.9,
+          "shop": "Schraubenking",
+          "url": "https://www.schraubenking-shop.de/Versandinformationen",
+          "notes": "Current Germany standard rate below99EUR; DHL1-3days afterdispatch. No priority selected. One shipment for all three fastener packs.",
+          "evidence_state": "sourced",
+          "checked_date": "2026-10-23"
+        },
+        {
+          "category": "Mechanical",
+          "product": "6 matching horns + 6 servo shaft retaining screws",
+          "quantity": 1,
+          "unit_price_eur": null,
+          "shop": "Selected servo supplier; package confirmation pending",
+          "url": "https://www.welectron.com/Waveshare-15024-MG90S-Servo_1",
+          "notes": "Manufacturer package photo shows three horn shapes and three screws, but text lists servo only. Six selected horns and six correct retainers required; exact Welectron batch inclusion/spline/thread/geometry remain unconfirmed. No generic 25T substitution; no extra horns bought until confirmed.",
+          "evidence_state": "unknown",
+          "checked_date": "2026-10-23",
+          "evidence_url": "https://www.waveshare.com/img/devkit/accBoard/MG90S-Servo/MG90S-Servo-1.jpg"
+        },
+        {
+          "category": "Fasteners",
+          "product": "12 horn-to-frame screws and 12 matching washers",
+          "quantity": 1,
+          "unit_price_eur": null,
+          "shop": "Servo/print supplier; interface confirmation pending",
+          "url": null,
+          "notes": "12 screws + 12 washers, two per horn; diameter/thread/length unknown. Separate from six centre shaft retainers. Measure actual factory horns and frame thickness; do not guess M2 or generic 25T.",
+          "evidence_state": "unknown",
+          "checked_date": "2026-10-23"
+        },
+        {
+          "category": "Consumables",
+          "product": "Any printer-specific release/cleaning/support-removal consumables not included in printer kit",
+          "quantity": 1,
+          "unit_price_eur": null,
+          "shop": "To verify after slicer/plate selection",
+          "url": null,
+          "notes": "Do not assume sample filament or supplies sufficient. Confirm whether no additional consumable is needed on supplied plate; otherwise source full pack. Tools are accounted separately.",
+          "evidence_state": "unknown",
+          "checked_date": "2026-10-23"
+        }
+      ],
+      "unresolved_checks": [
+        "No existing printer access; comparison does not authorize buying a printer",
+        "Actual ear/horn fit, screw stack/clearance and sample print unverified; manufacturing gate closed",
+        "Seven parts plus cradle/horn fit sample must be sliced; support/layer orientation, tool access and pad placement not approved",
+        "Historical2026-10-23 comparison. Current active twin is r2 barePico/pads; do not treat this as a current manufacturing/price approval."
+      ],
+      "local_layout_manifest": "cad/local_print/layout.json",
+      "notes": "Inactive comparison; authoritative old amounts/configuration in docs/history/2026-10-24/pre_print_revision/procurement.json. No spool/printer purchase in active commercial route."
+    },
+    "commercial_print": {
+      "name": "Commercial PETG frame +ordinary grip pads",
+      "selection_state": "selected",
+      "items": [
+        {
+          "category": "Fasteners",
+          "product": "Schraubenking P010265 M2 x 8 PH DIN7985 zinc-plated steel 4.8, pack100",
+          "quantity": 1,
+          "unit_price_eur": 1.51,
+          "shop": "Schraubenking",
+          "url": "https://www.schraubenking-shop.de/M2-x-8mm-Linsenkopfschrauben-PH-DIN7985-Stahl-verzinkt-FKL48-P010265",
+          "notes": "12 ear screws used; 88 spare. Exact length/ear fit provisional. Head4mm dia/1.6mm high, PH1; M2 coarse thread. Do not order before stack/clearance review.",
+          "evidence_state": "sourced",
+          "checked_date": "2026-10-25",
+          "availability": "Immediately available; DE2-3workingdays",
+          "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+        },
+        {
+          "category": "Fasteners",
+          "product": "Schraubenking P003474 M2 DIN934 zinc-plated steel class8 nuts, pack100",
+          "quantity": 1,
+          "unit_price_eur": 1.13,
+          "shop": "Schraubenking",
+          "url": "https://www.schraubenking-shop.de/M2-Sechskantmuttern-DIN934-Stahl-verzinkt-FKL8-P003474",
+          "notes": "12 used;88spare. Current browser price1.13; stale cached page1.16/20%VAT rejected. SW4,1.6mm high,0.4mm pitch; match M2 ear screws.",
+          "evidence_state": "sourced",
+          "checked_date": "2026-10-25",
+          "availability": "Immediately available; DE2-3workingdays",
+          "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+        },
+        {
+          "category": "Fasteners",
+          "product": "Schraubenking P004198 M2 DIN125 A2 washers 2.2 x 5 x 0.3 mm, pack100",
+          "quantity": 1,
+          "unit_price_eur": 0.99,
+          "shop": "Schraubenking",
+          "url": "https://www.schraubenking-shop.de/22mm-Unterlegscheiben-DIN125-Edelstahl-A2-P004198",
+          "notes": "24 used at ears: one under each head and nut. 76spare; horn washer compatibility not presumed. Check5mm OD clears plastic ear/slot and horn sweep.",
+          "evidence_state": "sourced",
+          "checked_date": "2026-10-25",
+          "availability": "Immediately available; DE2-3workingdays",
+          "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+        },
+        {
+          "category": "Shipping",
+          "product": "Schraubenking German standard DHL delivery",
+          "quantity": 1,
+          "unit_price_eur": 5.9,
+          "shop": "Schraubenking",
+          "url": "https://www.schraubenking-shop.de/Versandinformationen",
+          "notes": "Current Germany standard rate below99EUR; DHL1-3days afterdispatch. No priority selected. One shipment for all three fastener packs.",
+          "evidence_state": "sourced",
+          "checked_date": "2026-10-25",
+          "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+        },
+        {
+          "category": "Mechanical",
+          "product": "6 matching horns + 6 servo shaft retaining screws",
+          "quantity": 1,
+          "unit_price_eur": null,
+          "shop": "Selected servo supplier; package confirmation pending",
+          "url": "https://www.welectron.com/Waveshare-15024-MG90S-Servo_1",
+          "notes": "Manufacturer package photo shows three horn shapes and three screws, but text lists servo only. Six selected horns and six correct retainers required; exact Welectron batch inclusion/spline/thread/geometry remain unconfirmed. No generic 25T substitution; no extra horns bought until confirmed.",
+          "evidence_state": "unknown",
+          "checked_date": "2026-10-24",
+          "evidence_url": "https://www.waveshare.com/img/devkit/accBoard/MG90S-Servo/MG90S-Servo-1.jpg"
+        },
+        {
+          "category": "Fasteners",
+          "product": "12 horn-to-frame screws and 12 matching washers",
+          "quantity": 1,
+          "unit_price_eur": null,
+          "shop": "Servo/print supplier; interface confirmation pending",
+          "url": null,
+          "notes": "12 screws + 12 washers, two per horn; diameter/thread/length unknown. Separate from six centre shaft retainers. Measure actual factory horns and frame thickness; do not guess M2 or generic 25T.",
+          "evidence_state": "unknown",
+          "checked_date": "2026-10-24"
+        },
+        {
+          "category": "Mechanical",
+          "product": "PETG full frame:7finished parts, VAT, packaging and delivery to25337",
+          "quantity": 1,
+          "unit_price_eur": null,
+          "shop": "Commercial PETG service, not selected",
+          "url": null,
+          "notes": "No current file-specific delivered quote. One torso+2thighs+2shins+2feet. Support removal, usable holes, finishing and any fit inspection must be priced; no printed soles/filament.",
+          "evidence_state": "unknown",
+          "checked_date": "2026-10-24"
+        },
+        {
+          "category": "Mechanical",
+          "product": "PETG fit sample:2interface pieces, VAT and separate delivery",
+          "quantity": 1,
+          "unit_price_eur": null,
+          "shop": "Commercial PETG service, not selected",
+          "url": null,
+          "notes": "Ear cradle +horn plate. Separate fit-first order; include shipping/finishing. Any sample/full-order combination must be explicitly quoted, not assumed free.",
+          "evidence_state": "unknown",
+          "checked_date": "2026-10-24"
+        }
+      ],
+      "unresolved_checks": [
+        "Active selected basket is over cap; a candidate subtotal is not its complete delivered quotation; no order",
+        "Exact Waveshare batch horns/retainers/screw/ear measurements and interface sample fit",
+        "Current exact-file print/support/finishing/sample/delivery prices missing",
+        "Automatic approval review blocked Meltlab STL upload; provider-specific upload authorization required",
+        "Physical layer strength, continuous clearances, tie/connector routing and pad grip not verified"
+      ],
+      "package_full": "cad/frame_quotation_package.zip",
+      "package_sample": "cad/sample_quotation_package.zip",
+      "notes": "User-selected outsourced route; no purchases/messages; design remains quotation prototype. Selected does not mean budget/manufacturing cleared. Price/wire-colour refresh2026-10-25 changes no CAD/spec/contacts. Quote packages retain creation identity; current runtime identity differs only by the documented shaft-offset correction.",
+      "geometry_revision": "S6-PETG-pad-r2",
+      "physical_spec_sha256": "f9e9b2018bde072c8632befacd4ca4c04b14e7a6230b961a131487d4e4e5300d",
+      "configuration": "b11ab9292c586ace4f2028c7061aa4ef279b6c84bd3966d2e806e0f96d01560b",
+      "configuration_at_quote_package_creation": "4d3b0dcbad59774b12f9c908c74446f6bf7452d5bdf34a08f07cf4271cc15019"
+    }
+  },
+  "controller_comparison": {
+    "evidence_state": "sourced",
+    "checked_date": "2026-10-24",
+    "bare_pico_eur": 4.1,
+    "bare_header_packs": 1,
+    "pico_h_eur": 5.5,
+    "pico_h_header_packs": 1,
+    "header_pack_eur": 0.6,
+    "assembly_saving_eur": 0.9,
+    "notes": "Bare4.10 +Pico header kit0.50 +one40pin pack0.60 =5.20 vsPicoH5.50 +one40pin pack0.60 =6.10. New4.2g module mass is estimated including installed headers.",
+    "bare_pico_header_kit_eur": 0.5
+  },
+  "printer_options": {
+    "a1_mini": {
+      "name": "Bambu Lab A1 mini, non-Combo BL1-101030 / PF002-M-EU",
+      "selected": false,
+      "unit_price_eur": 189,
+      "shipping_eur": 0,
+      "shipping_state": "sourced published Germany rate; postcode checkout pending",
+      "url": "https://www.welectron.com/Bambu-Lab-A1-mini-3D-Drucker",
+      "shipping_url": "https://www.welectron.com/Zahlung-und-Versand",
+      "evidence_file": "docs/procurement/2026-10-23/soldering_routes/a1-mini.txt",
+      "availability": "Exact non-Combo in stock, 1–3 working days advertised",
+      "build_volume_mm": [
+        180,
+        180,
+        180
+      ],
+      "included": "0.4mm nozzle, textured PEI plate, spool holder, accessory box; sample filament not counted as project material",
+      "checked_date": "2026-10-23",
+      "evidence_state": "sourced"
+    },
+    "ender_v3_se": {
+      "name": "Creality Ender-3 V3 SE, standalone (no PLA bundle)",
+      "selected": false,
+      "unit_price_eur": 169,
+      "shipping_eur": 0,
+      "shipping_state": "sourced published Germany free >=EUR99; postcode checkout pending",
+      "url": "https://store.creality.com/de/products/ender-3-v3-se-3d-drucker",
+      "shipping_url": "https://store.creality.com/de/pages/versand-auslieferung",
+      "evidence_file": "docs/procurement/2026-10-23/soldering_routes/ender-v3-se.txt",
+      "availability": "Standalone EUR169 add-to-cart enabled; estimated Oct26–30 shown, stock count not published/reserved",
+      "build_volume_mm": [
+        220,
+        220,
+        250
+      ],
+      "checked_date": "2026-10-23",
+      "evidence_state": "sourced",
+      "specification_url": "https://www.creality.com/products/creality-ender-3-v3-se"
+    }
+  },
+  "tool_items": [
+    {
+      "category": "Tools",
+      "product": "Soldering iron access (user confirmed)",
+      "quantity": 1,
+      "unit_price_eur": 0,
+      "shop": "Existing access",
+      "url": null,
+      "notes": "Access confirmed by user; no new iron purchase assumed. This zero applies to a tool, not an unknown robot part.",
+      "evidence_state": "sourced",
+      "checked_date": "2026-10-23"
+    },
+    {
+      "category": "Tools",
+      "product": "Borrow or price remaining bench/print tools: meter, stripper/cutters, heat source, scale, support-removal tools",
+      "quantity": 1,
+      "unit_price_eur": null,
+      "shop": "Access not confirmed",
+      "url": null,
+      "notes": "Excluded from EUR100 robot cap, included as unknown initial cash until borrowed/owned or priced. Printer is reported separately. Existing screwdrivers/PC tools alone do not establish a complete bench.",
+      "evidence_state": "unknown",
+      "checked_date": "2026-10-23"
+    }
+  ],
+  "proposed_parameters": {
+    "pico_replacement": {
+      "state": "sourced",
+      "date": "2026-10-23",
+      "source": "https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html",
+      "value": "RP2040 bare Pico vs Pico H headers; existing GPIO contract preserved",
+      "measured_mass_kg": null
+    },
+    "pad_dimensions_mm": {
+      "state": "sourced",
+      "date": "2026-10-23",
+      "source": "https://www.delock.com/produkt/18309/pdf.html?sprache=de",
+      "value": {
+        "diameter": 10,
+        "height": 3,
+        "pack_quantity": 50,
+        "material": "TPE",
+        "self_adhesive": true
+      }
+    },
+    "pad_layout": {
+      "state": "estimated",
+      "date": "2026-10-24",
+      "evidence": "Selected provisional pad layout inphysical_spec; hardware fit/contact remains unmeasured",
+      "value": {
+        "per_foot": 4,
+        "total": 8,
+        "centres_mm": [
+          [
+            -31,
+            -14.5
+          ],
+          [
+            -31,
+            14.5
+          ],
+          [
+            43,
+            -14.5
+          ],
+          [
+            43,
+            14.5
+          ]
+        ]
+      }
+    },
+    "pad_friction_and_mass": {
+      "state": "unknown",
+      "date": "2026-10-23",
+      "evidence": "No physical pads measured; retailer gives no verified coefficient",
+      "friction": null,
+      "mass_kg": null
+    },
+    "servo_harness_ratings": {
+      "state": "unknown",
+      "date": "2026-10-23",
+      "evidence": "JR cable/contact ratings and signal threshold not published/confirmed for actual batch",
+      "branch_current_a": null,
+      "servo_signal_high_threshold_v": null
+    }
+  },
+  "active_scenario": "commercial_print",
+  "cost_reduction_review": [
+    {
+      "date": "2026-10-24",
+      "change": "RPIP-PINH0.50 +40pin pack0.60 instead of two40pin packs1.20",
+      "saving_eur": 0.1,
+      "state": "sourced",
+      "source": "https://www.berrybase.de/stiftleisten-pin-header-set-fuer-raspberry-pi-pico"
+    },
+    {
+      "date": "2026-10-24",
+      "change": "Consolidate IMU at BerryBase",
+      "decision": "rejected",
+      "source": "https://www.berrybase.de/elecrow-mpu6050-bewegungsmodul-3-achsen-gyro-und-beschleunigung-i2c-uart-dmp-16g-20000s-5-6v",
+      "reason": "9.90module vs3.62; adds6.28 before any4.90shipping saving; module5–6V/100Hz listing also differs from selected raw3.3V/200Hz interface. Preserve current IMU."
+    },
+    {
+      "date": "2026-10-24",
+      "change": "Full spool/own printer/printed TPU",
+      "decision": "excluded from active outsourced basket",
+      "reason": "Service price includes its material; no spool/printer purchase and no printed soles. Ordinary pads retained."
+    },
+    {
+      "date": "2026-10-24",
+      "change": "Combine fastener/pad or service-hardware delivery",
+      "decision": "unresolved",
+      "reason": "No exact complete compatible kit/landed quote verified; do not credit hypothetical savings or delete required hardware."
+    },
+    {
+      "date": "2026-10-24",
+      "change": "Replace six extension cables with six insulated3pin header servo sockets on a heavy soldered bus",
+      "decision": "candidate only, NOT selected or credited",
+      "source": "https://www.berrybase.de/stiftleisten-pin-header-set-fuer-raspberry-pi-pico",
+      "reason": "Header listing specifies3A/contact. Existing pin packs could cover66installed pins, but actual JR/Futaba mating, keying, insulation/strain relief, peak current and soldered construction are unverified. Do not remove the priced replaceable extensions until a concrete bench-qualified connector design exists."
+    },
+    {
+      "date": "2026-10-25",
+      "change": "Selected in-stock black Donau E-175-11 instead of unavailable red E-175-10",
+      "decision": "selected supply-only revision",
+      "saving_eur": 0.4,
+      "state": "sourced",
+      "source": "https://www.berrybase.de/donau-kupferschaltlitze-0-75-mm2-10m-lang-1-adrig-24x0-20mm-pvc-isoliert/farbe-schwarz",
+      "evidence_file": "docs/procurement/2026-10-25/basket_review.json",
+      "reason": "Same conductor/material/length specification; retain heavy separate servo bus and mark polarity using existing shrink. No weaker actuator/PSU or mechanical revision."
+    },
+    {
+      "date": "2026-10-25",
+      "change": "Exact T1535501 transparent100x2.5mm tie pack price refresh",
+      "decision": "retained",
+      "saving_eur": -0.15,
+      "state": "sourced",
+      "source": "https://www.berrybase.de/kabelbinder-uv-bestaendig-nylon-100-stueck/farbe-transparent/masse-100x2-5mm",
+      "evidence_file": "docs/procurement/2026-10-25/basket_review.json"
+    },
+    {
+      "date": "2026-10-25",
+      "change": "Eight FIX-RF-003 rubber pads at BerryBase; remove Delock18309 and Reichelt-only delivery",
+      "decision": "unselected comparison, no credited active saving",
+      "conditional_saving_eur": 8.3,
+      "source": "https://www.berrybase.de/fix-fasten-selbstklebender-fuss-rund-oben-9-5mm-unten-10mm-hoehe-4-5mm-gummi-schwarz",
+      "reason": "8x0.15=1.20EUR versus3.55+5.95. Candidate subtotal96.79 leaves3.21for every print/sample/horn unknown. 4.5mm tapered rubber is not current3mm cylindrical TPE: geometry/contact/adhesion/strength review and new identity would be required. Do not select before a complete viable basket."
+    },
+    {
+      "date": "2026-10-25",
+      "change": "Funduino F23106261 nominal M2–M5 screw assortment",
+      "decision": "rejected as a complete replacement",
+      "source": "https://funduino.com/products/schraubenset-kreuzschrauben-sortiment",
+      "reason": "9.97EUR; title says M2–M5 but technical table3–5mm. Exact12M2x8,12M2nuts and24washers not established. Higher price than current9.53delivered fastener basket, with no justified removal of required hardware."
+    },
+    {
+      "date": "2026-10-25",
+      "change": "Fastener consolidation at existing suppliers",
+      "decision": "unverified; no saving credited",
+      "evidence_file": "docs/procurement/2026-10-25/basket_review.json",
+      "reason": "BerryBase listings reviewed show M2.5 hardware, not compatible M2. Reichelt exactM2x8 UIsearch0results (not proof of no inventory); no complete matched set found. Do not substitute larger screws or omit nuts/washers."
+    }
+  ],
+  "quote_attempts": [
+    {
+      "date": "2026-10-24",
+      "provider": "Meltlab",
+      "url": "https://meltlab.de/konfigurator",
+      "status": "blocked_by_automatic_approval_review",
+      "payload": "cad/print_order/QUOTE_ONLY_seven_components.stl",
+      "upload_performed": false,
+      "reason": "Uploading STL shares project design data externally; review requires provider-specific authorization",
+      "required_human_action": "Authorize this exactSTL upload to Meltlab for quotation only, or upload it yourself and return the quote; no messages/orders needed",
+      "price_eur": null,
+      "payload_sha256": "70b33a79f299d2d222bf30ab2bb286d5e1f9870328a1789f0755760f8b88eeac",
+      "sample_payloads": [
+        {
+          "path": "cad/print_order/sample/ear_cradle.stl",
+          "sha256": "67222ed4048de778daac0139315220df5be1663fd3297086c6fb65f526f1c778"
+        },
+        {
+          "path": "cad/print_order/sample/horn_plate.stl",
+          "sha256": "9d6ad9ab4db1a3c0fbb0f7516dc9da7e0c05d6ece2a139de2305184b8b30156e"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-24",
+      "provider": "f3dprint",
+      "url": "https://www.f3dprint.de/druck-service",
+      "status": "public_information_only",
+      "price_eur": null,
+      "notes": "SupportsPETG and0.20mm; public UI presets20/50/100infill,25/walls/support-finishing not confirmed. No model uploaded or quotation."
+    },
+    {
+      "date": "2026-10-24",
+      "provider": "Riesen Consulting",
+      "url": "https://riesen-consulting.de/cad-dienstleistungen/3d-druck-service/3d-druck-online-bestellen-preis-sofort-berechnen/",
+      "status": "public_information_only",
+      "price_eur": null,
+      "notes": "Public page says automated price is pureFDM, fit review/finishing need separate inquiry. No inquiry sent; not a complete quote."
+    }
+  ],
+  "cost_options": {
+    "berrybase_round_pads": {
+      "name": "Eight FIX-RF-003 pads in existing BerryBase order; comparison only",
+      "date": "2026-10-25",
+      "selected": false,
+      "base_scenario": "commercial_print",
+      "requires_geometry_revision": true,
+      "remove_products": [
+        "Delock 18309 self-adhesive TPE pads, 10 x 3 mm, pack50",
+        "Reichelt German standard DHL delivery"
+      ],
+      "add_items": [
+        {
+          "category": "Mechanical",
+          "product": "FIX&FASTEN FIX-RF-003 self-adhesive rubber foot, individual unit",
+          "quantity": 8,
+          "unit_price_eur": 0.15,
+          "shop": "BerryBase",
+          "url": "https://www.berrybase.de/fix-fasten-selbstklebender-fuss-rund-oben-9-5mm-unten-10mm-hoehe-4-5mm-gummi-schwarz",
+          "evidence_state": "sourced",
+          "checked_date": "2026-10-25",
+          "evidence_file": "docs/procurement/2026-10-25/basket_review.json",
+          "availability": "In-stock displays disagree on count10vs100+; recheck8units at checkout; not reserved",
+          "notes": "Individual purchase unit per listing, not assumed partial pack. Rubber, upper diameter9.5mm/lower10mm,height4.5mm. Seller gross mass0.682g is not installed measured mass. Friction, hardness, compression and adhesive performance unknown."
+        }
+      ],
+      "required_before_selection": [
+        "Unselected pad alternative is not a purchasing or manufacturing approval",
+        "All print/sample/finishing/horn quotations and unresolved required costs must fit the computed remaining headroom",
+        "Review rubber pad attachment/compression/friction and continuous moving clearances",
+        "Regenerate physical mass/COM/inertia/contact/standing geometry and fingerprints for4.5mm tapered pads; preserve current3mm TPE baseline",
+        "Reichelt shipping may only be removed if no other required Reichelt item remains"
+      ]
+    }
+  }
+}

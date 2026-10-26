@@ -1,11 +1,20 @@
 # Hardware-first execution roadmap
 
-Updated **2026-10-25**. This is the short map; the
+Updated **2026-10-26**. This is the short map; the
 [complete execution plan](DEVELOPMENT_PLAN.md) contains all phases, completed work,
 WP1–WP11 procedures, owners, affected files, acceptance evidence and failure decisions.
 [STATUS](STATUS.md) records evidence; ledgers remain authoritative.
 
-## Where we are
+## Current user decision / next phase
+
+2026-10-26: design and classmate-printing arrangement COMPLETE by user confirmation;
+Pico2 selected. Exact printing/transport price remains unknown, not free. This closes
+provider-selection research and starts WP2, without claiming physical fit or a numeric
+budget pass. [Print folder](../print_for_classmate/00_START_HERE.md).
+Measurement-intake/provenance checker implemented; manual six-joint utility and
+measured-baseline calibration parity remain next.69tests pass. No new PPO.
+
+## Previous checkpoint (2026-10-25; historical costs/identity)
 
 Implemented: provisional S6-PETG-pad-r2 CAD/twin, common control interface,
 firmware/bench foundations, Gym/PPO/evaluation and diagnostic tools. Latest
@@ -23,7 +32,7 @@ robot and cannot silently replace current contact geometry. See BUDGET_REVIEW.
 | Stage / original phases | Detailed work packages and owner | Completion gate |
 |---|---|---|
 | Entry /0,13 | Student+AI: requirements, status, plan, evidence | Constraints/next task unambiguous; claims tied to real evidence |
-| A /1 | WP1 student+AI: complete basket, exact-file quotes, interfaces and staged delivery | Complete ≤€100 delivered cost and reviewed fit path; no purchasing exception assumed |
+| A /1 | User-complete design/printing choice, Pico2 selected; actual costs recorded later | Decision complete; numeric budget and physical fit are separate, still unverified |
 | B preparation /3,6,8,9 | WP2 AI: measurement intake, fit quality, six-joint manual utility and measured-baseline calibration parity | Mocked tests/clear procedures; no physical claim; can proceed alongside A |
 | B hardware /1,8,9 | WP3–WP5 student+AI: bench, measured interfaces, sample fit, finished assembly/weighing | Electrical/fit records, safe manual control, real mass ownership |
 | C /2,3,4,9 | WP6–WP7 student+AI: measured twin, observation parity, model/reference validation | Measured calibration and reviewed weight transfer/lift; all five gates backed by evidence |
@@ -32,13 +41,12 @@ robot and cannot silently replace current contact geometry. See BUDGET_REVIEW.
 | F /11,13 | WP11 student+AI: equal physical A/B, comparison, report/presentation | Recorded successes/failures, uncertainty, cable effects and reproducible handoff |
 | Extensions /12 | Future scoped work: turning, recovery, terrain | Stable walking first |
 
-**Next AI:** WP2 measurement-intake validation, then reviewed manual six-joint
-control. These are planned additions. Keep the reference frozen; no more nominal
+**Next AI:** reviewed manual six-joint control and baseline calibration parity;
+WP2 measurement intake is now implemented. Keep the reference frozen; no more nominal
 tuning/PPO, stronger fictitious actuation or repeated identical budget searches.
-**Next human input:** exact remaining quotes/interfaces and actual servo/sample fit;
-all purchases/manufacturing remain blocked. CAD sharing with Meltlab needs the
-previously missing provider/payload authorization, or a user-returned quote.
-This plan sends no upload, message or purchase and asks for none to be executed now.
+**Next human/classmate:** print/test2sample pieces on actual servo/horn, then7frame
+parts if fit passes; record dimensions, costs and weights. No more Meltlab upload/
+provider-selection loop is needed for this arrangement. Physical checks stay pending.
 
 ## Contracts to preserve
 
@@ -50,7 +58,7 @@ This plan sends no upload, message or purchase and asks for none to be executed 
   estimate, not programmable hardware current/torque protection.
 - Boot disarmed, explicit arm,100ms watchdog, bounded/versioned CRC packets,
   persistent measured calibration/fingerprints; STOP is not physical DC isolation.
-- Current identity begins`b11ab929`; all saved policies/UF2are historical after the
+- Current Pico2 identity begins`685e3802`; all saved policies/UF2are historical after the
   offset correction. Use snapshots; never relabel old checkpoints or headers.
 - Smoke2048, pilot≤50000 (49152actual), final≤1000000 (999424actual) each for
   A/B seeds0,1,2. Compatible pilot counts toward final total; B never resumes A.

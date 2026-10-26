@@ -2,6 +2,11 @@
 
 All numbers currently in `physical_spec.json` and `robot_config.py` are estimates except the explicitly labelled seller claims. A school kitchen scale, ruler, protractor, phone camera, known weights and a borrowed multimeter are enough to replace many estimates. No prolonged stall tests.
 
+2026-10-26: selected controller now bare Pico2; same pin/board footprint, new
+configuration identity685e3802…. No actual mass/response measurements exist.
+Use [measurement intake/provenance checker](MEASUREMENT_INTAKE.md) before fitting;
+passing structural/quality checks never validates physical calibration automatically.
+
 ## Priorities from the provisional gait diagnosis
 
 The [current scripted baseline](REFERENCE_GAIT.md) has a weakest credited flight

@@ -1,6 +1,6 @@
 #pragma once
 // Generated. Calibration persists in firmware flash; reboot always disarmed.
-constexpr const char* CONFIG_HASH="b11ab9292c586ace4f2028c7061aa4ef279b6c84bd3966d2e806e0f96d01560b";
+constexpr const char* CONFIG_HASH="685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88";
 constexpr const char* CAL_HASH="04e1dd29253c457169b2ce286f728e44321864da91d80e072578953ecdc54479";
 constexpr bool CAL_VALID=false;
 constexpr float SIGN[6]={1.0f,1.0f,1.0f,-1.0f,-1.0f,-1.0f};

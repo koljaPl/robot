@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-26",
+  "product": "RPI-PICO2, bare RP2350 board",
+  "price_eur": 5.5,
+  "VAT": "included",
+  "product_source": "https://www.berrybase.de/raspberry-pi-pico-2-rp2350-mikrocontroller-board",
+  "method": "Web search product snapshot; direct open twice timed out. Final checkout and stock not reserved.",
+  "official_sources": [
+    "https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html",
+    "https://datasheets.raspberrypi.com/pico/pico-2-datasheet.pdf"
+  ],
+  "confirmed_claims": [
+    "21x51mm PCB",
+    "Micro-USB B power/data",
+    "non-wireless pin/layout compatible; selected GPIOs unchanged"
+  ],
+  "unknown": [
+    "installed board mass",
+    "exact printing and delivery price",
+    "physical servo fit",
+    "electrical timing"
+  ],
+  "known_basket_subtotal_eur": 106.49,
+  "numerical_budget_gate": "not passed; decision phase user-complete, not financial proof"
+}

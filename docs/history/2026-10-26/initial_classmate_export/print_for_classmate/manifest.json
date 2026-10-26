@@ -1,0 +1,265 @@
+{
+  "revision": "S6-PETG-pad-r2-pico2",
+  "frame_geometry": "r2 unchanged; controller selection Pico 2",
+  "state": "user-selected classmate printing; sample-first, physical fit/strength unverified",
+  "units": "mm",
+  "scale_percent": 100,
+  "frame_parts": 7,
+  "fit_samples": 2,
+  "physical_spec_sha256": "e2e66dfc8e39f907ba6d410bbf6b3cde40886730284309b207b045df4bcf32a6",
+  "files": [
+    {
+      "file": "02_FRAME/torso.stl",
+      "quantity": 1,
+      "units": "mm",
+      "sha256": "517d9c7c5394299944620a42e6c6b7cc41654d75fe5d7a3e903d1a7cf9a69000",
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          93.75,
+          87.0,
+          33.5
+        ]
+      ],
+      "dimensions_mm": [
+        88.75,
+        82.0,
+        33.5
+      ],
+      "volume_cm3": 17.278305335236613,
+      "watertight": true,
+      "connected_parts": 1
+    },
+    {
+      "file": "02_FRAME/left_thigh.stl",
+      "quantity": 1,
+      "units": "mm",
+      "sha256": "c24ea94df155e47f556e10b62e5e29e156f363d539e3dbf10564e5ddc9c07fd6",
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          29.0,
+          92.75,
+          13.5
+        ]
+      ],
+      "dimensions_mm": [
+        24.0,
+        87.75,
+        13.5
+      ],
+      "volume_cm3": 4.15199180696097,
+      "watertight": true,
+      "connected_parts": 1
+    },
+    {
+      "file": "02_FRAME/right_thigh.stl",
+      "quantity": 1,
+      "units": "mm",
+      "sha256": "ea2bacfe19b7fa8695e23fdd179e0c2a6f5660ab6e3866958a87b0121eda7bb7",
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          29.0,
+          92.75,
+          13.5
+        ]
+      ],
+      "dimensions_mm": [
+        24.0,
+        87.75,
+        13.5
+      ],
+      "volume_cm3": 4.15199180696097,
+      "watertight": true,
+      "connected_parts": 1
+    },
+    {
+      "file": "02_FRAME/left_shin.stl",
+      "quantity": 1,
+      "units": "mm",
+      "sha256": "7eb73aa80b859f34575fa5554855a56b23740f2d3c20f659019207414d060f5d",
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          83.0,
+          29.0,
+          24.0
+        ]
+      ],
+      "dimensions_mm": [
+        78.0,
+        24.0,
+        24.0
+      ],
+      "volume_cm3": 4.90008150791235,
+      "watertight": true,
+      "connected_parts": 1
+    },
+    {
+      "file": "02_FRAME/right_shin.stl",
+      "quantity": 1,
+      "units": "mm",
+      "sha256": "de0ea74ac68d77f5391b0f39fefee3203b8ff7c9f16a4e59ae0c337c03a14fc1",
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          83.0,
+          29.0,
+          24.0
+        ]
+      ],
+      "dimensions_mm": [
+        78.0,
+        24.0,
+        24.0
+      ],
+      "volume_cm3": 4.900081495037746,
+      "watertight": true,
+      "connected_parts": 1
+    },
+    {
+      "file": "02_FRAME/left_foot.stl",
+      "quantity": 1,
+      "units": "mm",
+      "sha256": "269dc33b5405c14ca1b316c4a218cba9c93e0b6b500a506d460353fa6011177f",
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          95.0,
+          50.0,
+          38.25
+        ]
+      ],
+      "dimensions_mm": [
+        90.0,
+        45.0,
+        38.25
+      ],
+      "volume_cm3": 14.186070791263454,
+      "watertight": true,
+      "connected_parts": 1
+    },
+    {
+      "file": "02_FRAME/right_foot.stl",
+      "quantity": 1,
+      "units": "mm",
+      "sha256": "8b8f5566729e14b72fd3c376a90653238e735384f3b97a458708d0a296f9f286",
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          95.0,
+          50.0,
+          38.25
+        ]
+      ],
+      "dimensions_mm": [
+        90.0,
+        45.0,
+        38.25
+      ],
+      "volume_cm3": 14.186070791263454,
+      "watertight": true,
+      "connected_parts": 1
+    },
+    {
+      "file": "01_FIT_SAMPLE/ear_cradle.stl",
+      "quantity": 1,
+      "units": "mm",
+      "sha256": "67222ed4048de778daac0139315220df5be1663fd3297086c6fb65f526f1c778",
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          25.0,
+          43.0,
+          3.0
+        ]
+      ],
+      "dimensions_mm": [
+        20.0,
+        38.0,
+        3.0
+      ],
+      "volume_cm3": 1.3760707897711084,
+      "watertight": true,
+      "connected_parts": 1
+    },
+    {
+      "file": "01_FIT_SAMPLE/horn_plate.stl",
+      "quantity": 1,
+      "units": "mm",
+      "sha256": "9d6ad9ab4db1a3c0fbb0f7516dc9da7e0c05d6ece2a139de2305184b8b30156e",
+      "bounds_mm": [
+        [
+          5.0,
+          5.0,
+          0.0
+        ],
+        [
+          29.0,
+          33.0,
+          3.0
+        ]
+      ],
+      "dimensions_mm": [
+        24.0,
+        28.0,
+        3.0
+      ],
+      "volume_cm3": 1.8309209420959807,
+      "watertight": true,
+      "connected_parts": 1
+    }
+  ],
+  "all_package_files_sha256": {
+    "00_START_HERE.md": "2b4c6865d2cea6ff6054c6dcaafbeaa8867d27667dbac37113f7a7449fa41244",
+    "01_FIT_SAMPLE/ear_cradle.stl": "67222ed4048de778daac0139315220df5be1663fd3297086c6fb65f526f1c778",
+    "01_FIT_SAMPLE/horn_plate.stl": "9d6ad9ab4db1a3c0fbb0f7516dc9da7e0c05d6ece2a139de2305184b8b30156e",
+    "02_FRAME/left_foot.stl": "269dc33b5405c14ca1b316c4a218cba9c93e0b6b500a506d460353fa6011177f",
+    "02_FRAME/left_shin.stl": "7eb73aa80b859f34575fa5554855a56b23740f2d3c20f659019207414d060f5d",
+    "02_FRAME/left_thigh.stl": "c24ea94df155e47f556e10b62e5e29e156f363d539e3dbf10564e5ddc9c07fd6",
+    "02_FRAME/right_foot.stl": "8b8f5566729e14b72fd3c376a90653238e735384f3b97a458708d0a296f9f286",
+    "02_FRAME/right_shin.stl": "de0ea74ac68d77f5391b0f39fefee3203b8ff7c9f16a4e59ae0c337c03a14fc1",
+    "02_FRAME/right_thigh.stl": "ea2bacfe19b7fa8695e23fdd179e0c2a6f5660ab6e3866958a87b0121eda7bb7",
+    "02_FRAME/torso.stl": "517d9c7c5394299944620a42e6c6b7cc41654d75fe5d7a3e903d1a7cf9a69000",
+    "03_DRAWINGS/ORIENTATION_REVIEW.md": "0b02bb93d96888b2f174ee16759ae60f673c0c0cf3719b4937735063f72a6c52",
+    "03_DRAWINGS/exploded.png": "452874e9707873bc4390f98204854dd88d9ade13108c164c5417eede3c0c3a53",
+    "03_DRAWINGS/fasteners.csv": "e937fbd1c2bc6d1c2f432a949ce091f3ef935df102d764a6d98c0fcdc0e347eb",
+    "03_DRAWINGS/interfaces.png": "d18425eafff84a04b3d59036aea5e742c607a7d9d929ff71e4c554755347875b",
+    "03_DRAWINGS/interfaces.svg": "46eebc60f3d42043fa74bae0e6e5ddfd5750de8aa26946e94d4ee4b947ccff3d"
+  },
+  "price_eur": null,
+  "physical_fit_verified": false
+}

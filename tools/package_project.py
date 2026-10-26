@@ -11,7 +11,7 @@ def main():
     # quantities. Build both explicitly with prepare_print_order.py before packaging.
     shutil.copy2(ROOT/'cad/frame_quotation_package.zip',ROOT/'cad/quote_bundle.zip')
     with zipfile.ZipFile(ROOT / "school_biped_s6.zip", "w", zipfile.ZIP_DEFLATED) as z:
-        roots = ["docs", "cad", "tests", "tools", "firmware", "calibrations"]
+        roots = ["docs", "cad", "tests", "tools", "firmware", "calibrations", "print_for_classmate"]
         candidates = [ROOT / name for name in ("AGENTS.md", "SUMMARY.md", "README.md", "requirements.txt", "requirements-dev.txt", "robot.xml", "physical_spec.json", "procurement.json", "build_model.py", "robot_config.py", "humanoid_env.py", "servo_control.py", "imu_observation.py", "gait_metrics.py", "calibration.py", "hardware_interface.py", "serial_robot.py", "bench.py", "deploy.py", "reference_motion.py", "train.py", "evaluate.py")]
         for folder in roots:
             candidates.extend((ROOT / folder).rglob("*"))

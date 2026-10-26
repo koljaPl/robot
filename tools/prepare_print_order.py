@@ -95,13 +95,16 @@ def write_fasteners(folder):
           ['Board ties',6,'100 x2.5mm ties','do not pinch pins; measured routing pending'],
           ['Tether/harness ties',12,'100 x2.5mm ties','service loops/strain relief; review routing']]
     with (folder/'fasteners.csv').open('w',newline='') as f:
-        w=csv.writer(f);w.writerow(['purpose','installed_quantity','item','fit_state']);w.writerows(rows)
+        w=csv.writer(f,lineterminator='\n');w.writerow(['purpose','installed_quantity','item','fit_state']);w.writerows(rows)
 
 
 def build():
     spec=json.loads((ROOT/'physical_spec.json').read_text());base=ROOT/'cad/print_order';base.mkdir(parents=True,exist_ok=True)
     plates=prepare_plates();draw=base/'drawings';draw.mkdir(exist_ok=True)
     interface_drawing(draw,spec);part_drawings(draw,spec);write_fasteners(base)
+    # Matplotlib's SVG path lines include trailing spaces; normalize before hashes.
+    for drawing in draw.glob('*.svg'):
+        drawing.write_text('\n'.join(line.rstrip() for line in drawing.read_text().splitlines())+'\n')
     full=base/'frame';sample=base/'sample';full.mkdir(exist_ok=True);sample.mkdir(exist_ok=True)
     files=[]
     for part in plates['parts']:
@@ -128,7 +131,7 @@ def build():
     combined=trimesh.util.concatenate(batch)
     assert len(combined.split())==7
     combined.export(base/'QUOTE_ONLY_seven_components.stl')
-    report={'revision':spec['revision'],'state':'QUOTATION PROTOTYPE / FIT SAMPLE; NOT RELEASED','manufacturing_approved':False,'units':'mm','scale_percent':100,'frame_parts':7,'sample_pieces':2,'files':files,'physical_spec_sha256':sha(ROOT/'physical_spec.json'),'source_cad_sha256':sha(ROOT/'cad/build_frame.py'),'quotation_batch_sha256':sha(base/'QUOTE_ONLY_seven_components.stl'),'quotation_batch_bounds_mm':combined.extents.tolist(),'print_settings':spec['manufacturing'],'source_date':'2026-10-24','unknown_interfaces':spec['manufacturing']['measurements_required'],'note':'Sample2pieces separately priced/shipped. Full order7pieces only. Combined file is an ALTERNATIVE quote input, not extra quantity. No TPU soles/filament/printer included.'}
+    report={'revision':spec['revision'],'state':'QUOTATION PROTOTYPE / FIT SAMPLE; NOT RELEASED','manufacturing_approved':False,'units':'mm','scale_percent':100,'frame_parts':7,'sample_pieces':2,'files':files,'physical_spec_sha256':sha(ROOT/'physical_spec.json'),'source_cad_sha256':sha(ROOT/'cad/build_frame.py'),'quotation_batch_sha256':sha(base/'QUOTE_ONLY_seven_components.stl'),'quotation_batch_bounds_mm':combined.extents.tolist(),'print_settings':spec['manufacturing'],'source_date':spec['updated_date'],'unknown_interfaces':spec['manufacturing']['measurements_required'],'note':'Sample2pieces separately priced/shipped. Full order7pieces only. Combined file is an ALTERNATIVE quote input, not extra quantity. No TPU soles/filament/printer included.'}
     (base/'manifest.json').write_text(json.dumps(report,indent=2)+'\n')
     for kind in ('sample','frame'):
         selected=[r for r in files if r['file'].startswith(kind+'/')]

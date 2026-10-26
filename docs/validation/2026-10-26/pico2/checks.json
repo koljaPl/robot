@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-26",
+  "design_printing_decision": "complete by user; no numeric quote invented",
+  "configuration": {
+    "configuration": "685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88",
+    "files": {
+      "physical_spec.json": "e2e66dfc8e39f907ba6d410bbf6b3cde40886730284309b207b045df4bcf32a6",
+      "robot.xml": "859065cffb998e3f7f8ab6cd736937882b636949b4ffbba78e4b7dce91ec3917",
+      "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+      "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+      "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+      "humanoid_env.py": "527f548ebc2d630e83c5bb327aced2adcc21947479940f4b5a394e6087ccee3c",
+      "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+      "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+      "calibration.py": "a57a04fbe84f80c0b364ffea42546521c4e99d854515eaed55cd6e55527978fa",
+      "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+      "firmware/control.h": "dfc0dec9642df663dca6410b8414faf16de480736c8c62fa2fd2da166f9c7200",
+      "firmware/CMakeLists.txt": "b53b7bf7c1e71611ff6b362fc4a3e19a654d5bf4bf46f2c06839b6d7a6fd85e6"
+    },
+    "calibration": null
+  },
+  "nominal_metrics_exactly_unchanged": true,
+  "xml_and_frame_STL_payloads_unchanged": true,
+  "estimated_mass_kg": 0.197053288986,
+  "print_folder_and_zip_integrity": true,
+  "frame_quantity": 7,
+  "fit_sample_quantity": 2,
+  "all_physical_gates_false": true,
+  "tests": {
+    "passed": 69,
+    "duration_s": 16.52,
+    "log": "pytest.txt"
+  },
+  "synthetic_intake_cli_passed": true,
+  "new_training_steps": 0,
+  "ARM_cross_build": "not run; SDK/toolchain absent",
+  "physical_verification": false,
+  "handoff_sections": 19,
+  "budget": {
+    "scenario": "commercial_print",
+    "status": "OVER BUDGET",
+    "known_delivered_subtotal_eur": "106.49",
+    "remaining_for_all_unknowns_eur": "-6.49",
+    "confirmed_minimum_shortfall_eur": "6.49",
+    "total_price_eur": null,
+    "pending_prices": [
+      "6 matching horns + 6 servo shaft retaining screws",
+      "12 horn-to-frame screws and 12 matching washers",
+      "PETG full frame:7finished parts, VAT, packaging and delivery to25337",
+      "PETG fit sample:2interface pieces, VAT and separate delivery"
+    ],
+    "unresolved_checks": [
+      "All required full-frame/sample/finishing/horn costs and stock unresolved; unknowns never zero",
+      "Six-unit Waveshare stock and actual supplied horn/shaft screw contents",
+      "3.3V PWM threshold, branch/contact current ratings and PSU droop still need bench testing",
+      "Final complete delivery to25337 incl every sample shipment; no bookings/orders/messages",
+      "Fit/layer strength/pad friction and adhesion require physical measurements",
+      "Classmate printing accepted by user; exact cost/finishing/delivery accounting unknown. Financial gate remains separate from completed design/provider decision.",
+      "Active selected basket is over cap; a candidate subtotal is not its complete delivered quotation; no order",
+      "Exact Waveshare batch horns/retainers/screw/ear measurements and interface sample fit",
+      "Current exact-file print/support/finishing/sample/delivery prices missing",
+      "Physical layer strength, continuous clearances, tie/connector routing and pad grip not verified"
+    ],
+    "purchase_cleared": false
+  },
+  "source_sha256": {
+    "physical_spec.json": "e2e66dfc8e39f907ba6d410bbf6b3cde40886730284309b207b045df4bcf32a6",
+    "calibration.py": "a57a04fbe84f80c0b364ffea42546521c4e99d854515eaed55cd6e55527978fa",
+    "firmware/CMakeLists.txt": "b53b7bf7c1e71611ff6b362fc4a3e19a654d5bf4bf46f2c06839b6d7a6fd85e6",
+    "tools/prepare_classmate_print.py": "3afc3939680deadedd7ba340af996aa7cddaa7d60eb35e31fa1b53b4aa1b247b",
+    "tools/validate_measurement.py": "8f0efc7269f4e3fbcd8e8ef09e448b223adf128c305cbf68c961ef920e9e2587"
+  },
+  "decision_record": "docs/decisions/2026-10-26-printing-pico2.json"
+}

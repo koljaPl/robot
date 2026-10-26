@@ -15,16 +15,21 @@ Zuständigkeiten, Abhängigkeiten, Freigaben und Abbruchkriterien.
 Die [Stütz-/Hebediagnose](docs/SUPPORT_DIAGNOSIS.md)
 trennt vorbereitete Einbein-Posen von weiterhin fehlgeschlagenen Übergängen aus dem Stand.
 
-**Nichts bestellt oder physisch geprüft.** Aktiver Entwurf: **S6-PETG-pad-r2**,
-siebenPETG-Teile vom Druckservice, nackter Pico mit Stiftleisten und acht gekaufte
-Haftpads. Keine gedruckten TPU-Sohlen, kein Drucker-/Filamentkauf. [Druckprobe](cad/sample_quotation_package.zip),
-[7-Teile-Angebotspaket](cad/frame_quotation_package.zip), [Zeichnung](cad/print_order/drawings/interfaces.png).
-Der bepreiste Korb kostet105,09€**vor** Druck/Probe/Horn-Kleinteilen: mindestens5,09€
-über der100€Grenze. Eine aktuelle dateispezifische Druckquote fehlt; der STL-Upload
-zuMeltlab wurde durch die automatische Freigabeprüfung blockiert.
+**Entwurf und Druckweg am26.10.2026 vom Nutzer bestätigt.** Ein Klassenkamerad
+druckt die Teile; der genaue Preis/Transport ist noch unbekannt. Kein Druckerkauf.
+Controller jetzt **Raspberry Pi Pico2, RP2350**, gleiche Pins/51×21mm-Grundfläche;
+Firmwareziel`pico2`, alterRP2040-Code muss neu gebaut werden.
+
+**[Separater Druckordner](print_for_classmate/00_START_HERE.md) /
+[Druck-ZIP zum Weitergeben](print_for_classmate.zip):** erst2Passproben, danach
+7Rahmenteile je1×. Deutsche Anleitung, Maße, Hashes und Zeichnungen enthalten.
+Physische Passform/Festigkeit noch nicht geprüft; keine gedruckten Hörner/TPU-Sohlen.
+Die Auswahlphase ist abgeschlossen; die nächsten Softwarevorbereitungen laufen.
+[Messdatenprüfung](docs/MEASUREMENT_INTAKE.md) ist implementiert. Rechnerischer
+Budgetnachweis bleibt separat offen; keine erfundenen Druckkosten.
+
 Die vorläufige MuJoCo-Kopie passt zum neuen CAD; geschätzt197.1g.
-Letzter protokollierter Gesamtlauf:58bestandene Tests; beim Planupdate wurde nur
-die Sammlung der58aktiven Tests geprüft, kein neues Training ausgeführt.
+Aktueller lokaler Gesamtlauf:69bestandene Tests; kein neues PPO/physisches Ergebnis.
 Der2048Schritte-PPO-Smoke zeigt **kein gelerntes Gehen**; Skriptreferenzen werden separat bewertet.
 Alte Modelle/UF2bleiben historisch. [Prüfstand](docs/VALIDATION_CURRENT.md).
 Eine neue [Standbein-/Schrittdiagnose](docs/STANCE_TRANSFER.md) erreicht einen
@@ -35,7 +40,7 @@ Parametern im historischen Modell nur0–1Schritte. Das30cm-Ziel bleibt offen.
 Die [Einzelparameterprüfung](docs/SENSITIVITY.md) korrigiert einen Modellfehler:
 Kalibrierfehler verschwinden nun nicht mehr an Befehlsgrenzen. Nominale Bewegung,
 Geometrie und Kraftgrenzen bleiben gleich; alle12getesteten±1°Gelenkfehler verlieren
-Schritte. Aktuelle Identität`b11ab929…`; alle gespeicherten Policies/UF2sind historisch.
+Schritte. Aktuelle Pico2-Identität`685e3802…`; alle gespeicherten Policies/UF2sind historisch.
 
 ```bash
 python3.12 -m venv .venv
@@ -126,7 +131,7 @@ Zusätzlich wollen wir testen, ob das Training besser funktioniert, wenn sich w�
 - MuJoCo
 - Gymnasium
 - Stable-Baselines3 / PPO
-- Raspberry Pi Pico mit selbst gelöteten Stiftleisten, direktem PWM und MPU6050
+- Raspberry Pi Pico2 mit selbst gelöteten Stiftleisten, direktem PWM und MPU6050
 
 ## Ziel
 

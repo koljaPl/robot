@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "data_kind": "synthetic",
+  "servo_id": "SYNTHETIC_DEMO_NOT_HARDWARE",
+  "joint_index": 0,
+  "angle_source": "synthetic_generator",
+  "clock_alignment": "single synthetic timebase",
+  "measurement_method": "known analytic first-order test response; not recorded hardware",
+  "angle_uncertainty_rad": 0.0001,
+  "evidence_files": [],
+  "units": {
+    "time_s": "s",
+    "target_rad": "rad",
+    "angle_rad": "rad",
+    "voltage_v": "V",
+    "load_nm": "N*m"
+  }
+}

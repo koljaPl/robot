@@ -1,9 +1,25 @@
 # Complete project execution plan
 
-Updated **2026-10-25**. This is the detailed plan for the student and future AI
+Updated **2026-10-26**. This is the detailed plan for the student and future AI
 sessions. [SUMMARY](../SUMMARY.md) remains the short shopping/build overview;
 [STATUS](STATUS.md) records evidence; [ROADMAP](ROADMAP.md) is the dependency map.
 Prices and physical parameters remain authoritative in their structured ledgers.
+
+## Active decision update — 2026-10-26
+
+**WP1 design/printing selection COMPLETE by user confirmation.** Classmate printing
+is accepted; exact price unknown/excluding delivery. Selected board now bare Pico2
+RP2350. This supersedes the earlier provider-selection/quotation-search next task
+below; it does not invent a≤€100 numerical total or actual print fit.
+Separate ready-to-slice files/instructions: [print folder](../print_for_classmate/00_START_HERE.md)
+and [print ZIP](../print_for_classmate.zip),2fit samples before7frame parts.
+
+**Next phase WP2 started:** external-angle provenance/measurement quality checker
+implemented,69tests pass. [Usage](MEASUREMENT_INTAKE.md). Six-joint manual tooling
+and measured-baseline parity remain pending; no new PPO. Pico2 identity begins
+`685e3802`; board mass remains estimated, no ARM cross-build/physical tests.
+All references to older prices/fingerprints/results below retain their historical
+date; current cost ledger is authoritative. Do not repeat earlier supplier searches.
 
 **Current position:** the provisional robot design, digital twin, control interface
 and RL pipeline exist. A handwritten script produces four qualifying simulated
@@ -129,7 +145,7 @@ there are no invented completion dates while quotes and hardware are absent.
 
 ## 4. WP1 — Close procurement and staged delivery costs
 
-**State:** blocked. **Owner:** AI ledger/research; student external quotes and
+**State:** design/provider decision complete by user; numeric accounting and fit pending. **Owner:** AI ledger; student external quotes and
 later decisions. **Inputs:** [BUDGET_REVIEW](BUDGET_REVIEW.md),
 [PROCUREMENT_ACTIONS](PROCUREMENT_ACTIONS.md), [procurement.json](../procurement.json).
 
@@ -194,7 +210,7 @@ prototype decision is required; this plan grants no budget/fit-rule exception.
 
 ## 5. WP2 — Prepare independent bench/software tools
 
-**State:** foundations implemented; additions below planned. **Owner:** AI.
+**State:** intake/provenance checker and diagnostic quality screens implemented; other additions below pending. **Owner:** AI.
 **Depends on:** source inspection, not hardware or new training.
 
 Existing: `hardware_interface.py`, `serial_robot.py`, `calibration.py`, `bench.py`,
@@ -581,7 +597,7 @@ Measured calibration/CSV and `runs/*_NEW` paths above are placeholders, not exis
 physical records. Firmware build/flash commands stay in its README. Do not supply
 an immediate policy-arm command while physical checks are absent.
 
-**Exact next AI task:** if no new quote/measurement has arrived, begin WP2
-measurement-intake validation. Keep the script frozen; do not rerun sensitivity,
+**Exact next AI task:** after completed intake validation, implement reviewed six-joint
+manual tooling, then baseline calibration parity. Keep the script frozen; do not rerun sensitivity,
 repeat the same searches, change pad geometry, tune motion or start PPO. If new
 evidence arrives, validate provenance/dependencies before updating any ledger/gate.

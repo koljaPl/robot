@@ -1,0 +1,8 @@
+{
+  "state": "synthetic demonstration only; no physical result",
+  "source_sha256": {
+    "tools/validate_measurement.py": "8f0efc7269f4e3fbcd8e8ef09e448b223adf128c305cbf68c961ef920e9e2587",
+    "tools/fit_response.py": "a89d9e9535f7b9eeedfd17c088d84e4332f1f8ce5b0bdaf9b67ee4f30276a8c0",
+    "tests/test_measurement_intake.py": "954f7aee023fb7e059eb42846291043c46981cd026566c5d11a9b267abe1f1d9"
+  }
+}

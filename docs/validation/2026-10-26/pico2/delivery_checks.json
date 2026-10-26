@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-26",
+  "state": "final delivery checks, not physical verification",
+  "phase": "design/printing complete by user; WP2 intake implemented",
+  "configuration": "685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88",
+  "full_suite": "69passed in16.52s",
+  "post_SVG_normalization_package_tests": "8passed in0.45s",
+  "print_only_zip_sha256": "8452232164649d1cedc6fe5ebf7bf057498a54d72ed2e64e8a0f926b3351f91b",
+  "print_only_files_and_hashes_match": true,
+  "interface_drawing_visually_reviewed": true,
+  "handoff_sections": 19,
+  "new_PPO_steps": 0,
+  "physical_or_financial_gates_cleared": false,
+  "build_prerequisites": {
+    "PICO_SDK_PATH": "unset",
+    "arm_none_eabi_gcc_on_PATH": false,
+    "picotool_on_PATH": false,
+    "CMake_used_for_guard_test": ".venv/bin/cmake"
+  },
+  "source_sha256": {
+    "tools/prepare_print_order.py": "569e2ab2a5acf7453abbee02260cd1f8dbb3cca815ca429f24bb7b0772242576",
+    "tools/prepare_classmate_print.py": "3afc3939680deadedd7ba340af996aa7cddaa7d60eb35e31fa1b53b4aa1b247b",
+    "tools/validate_measurement.py": "8f0efc7269f4e3fbcd8e8ef09e448b223adf128c305cbf68c961ef920e9e2587",
+    "firmware/CMakeLists.txt": "b53b7bf7c1e71611ff6b362fc4a3e19a654d5bf4bf46f2c06839b6d7a6fd85e6",
+    "docs/HANDOFF.md": "5566899d485f41ba50002d0505fcc2d4cae853556ec56a62cc566b174b505e11",
+    "AGENTS.md": "40b29b14006fede4b37a0526b850a95be864724a2112ab735f341e3632e3258b",
+    "SUMMARY.md": "cbcd68dc562d319e2b2f4bd9b8a5f688e47f05018a77362684c692fb3359e4dd",
+    "docs/STATUS.md": "7abef756e3fcb2462881e9c60c9b07150400ea43dc12abd085897e7a1662cb16"
+  }
+}

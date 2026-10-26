@@ -1,7 +1,7 @@
 # From Simulation to Reality: How does a robot learn?
 
 Generated from source by `python tools/build_handoff.py`. Do not edit HANDOFF.md.
-Plan/revision date2026-10-25; individual evidence retains its original date.
+Plan/revision date2026-10-26; individual evidence retains its original date.
 Source files, ledgers and evidence states take precedence.
 Short purchase/build plan for humans and AI: [SUMMARY.md](../SUMMARY.md).
 Detailed continuation dependencies and completion gates: [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md).
@@ -9,11 +9,11 @@ Detailed continuation dependencies and completion gates: [DEVELOPMENT_PLAN.md](D
 ## 1. Short design recommendation
 
 Retain six Waveshare15024 MG90S servos: hip pitch, knee pitch and ankle roll per
-leg, broad feet, Pico native PWM, MPU6050, PC USB
+leg, broad feet, Pico2 native PWM, MPU6050, PC USB
 inference and separate5V servo power. This is a **provisional** design, not a
 purchasable or calibrated walking robot. Nothing purchased/physically tested.
 User can solder; no mandatory helper. Active route is outsourced PETG:seven frame
-parts,two separate fit samples,eight bought TPE pads. Bare Pico/header ownership
+parts,two separate fit samples,eight bought TPE pads. Bare Pico2/header ownership
 and pad contacts now match the provisional twin. No printer/filament/printedTPU
 purchase. Complete delivered budget, actual fit and strength are still blocked.
 The target remains30s standing followed by0.3m visibly alternating walking
@@ -257,6 +257,10 @@ python tools/package_project.py
 ## 16. Calibration procedure for the real robot
 
 {{TEXT:docs/CALIBRATION.md}}
+
+{{TEXT:docs/MEASUREMENT_INTAKE.md}}
+
+{{CODE:tools/validate_measurement.py}}
 
 ## 17. Sim-to-Real and domain-randomization plan
 

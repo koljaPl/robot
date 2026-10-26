@@ -86,25 +86,26 @@
             0,
             0.023
           ],
-          "material": "bare Pico PCB/components, headers separately owned",
-          "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated",
+          "material": "bare Pico 2 PCB/components; two headers separately owned",
+          "evidence": "Pico2 official21x51mm footprint;3g mass/3.5mm populated envelope/COM retained estimates awaiting weighing/fit. Not retailer gross mass.",
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-24",
-              "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated"
+              "date": "2026-10-26",
+              "evidence": "Pico2 official21x51mm footprint;3g mass/3.5mm populated envelope/COM retained estimates awaiting weighing/fit. Not retailer gross mass."
             },
             "dimensions": {
               "state": "estimated",
-              "date": "2026-10-24",
-              "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated"
+              "date": "2026-10-26",
+              "evidence": "Pico2 official21x51mm footprint;3g mass/3.5mm populated envelope/COM retained estimates awaiting weighing/fit. Not retailer gross mass."
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-24",
-              "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated"
+              "date": "2026-10-26",
+              "evidence": "Pico2 official21x51mm footprint;3g mass/3.5mm populated envelope/COM retained estimates awaiting weighing/fit. Not retailer gross mass."
             }
-          }
+          },
+          "model": "Raspberry Pi Pico 2 (bare RP2350)"
         },
         {
           "name": "imu",

@@ -1,7 +1,7 @@
 # From Simulation to Reality: How does a robot learn?
 
 Generated from source by `python tools/build_handoff.py`. Do not edit HANDOFF.md.
-Plan/revision date2026-10-25; individual evidence retains its original date.
+Plan/revision date2026-10-26; individual evidence retains its original date.
 Source files, ledgers and evidence states take precedence.
 Short purchase/build plan for humans and AI: [SUMMARY.md](../SUMMARY.md).
 Detailed continuation dependencies and completion gates: [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md).
@@ -9,11 +9,11 @@ Detailed continuation dependencies and completion gates: [DEVELOPMENT_PLAN.md](D
 ## 1. Short design recommendation
 
 Retain six Waveshare15024 MG90S servos: hip pitch, knee pitch and ankle roll per
-leg, broad feet, Pico native PWM, MPU6050, PC USB
+leg, broad feet, Pico2 native PWM, MPU6050, PC USB
 inference and separate5V servo power. This is a **provisional** design, not a
 purchasable or calibrated walking robot. Nothing purchased/physically tested.
 User can solder; no mandatory helper. Active route is outsourced PETG:seven frame
-parts,two separate fit samples,eight bought TPE pads. Bare Pico/header ownership
+parts,two separate fit samples,eight bought TPE pads. Bare Pico2/header ownership
 and pad contacts now match the provisional twin. No printer/filament/printedTPU
 purchase. Complete delivered budget, actual fit and strength are still blocked.
 The target remains30s standing followed by0.3m visibly alternating walking
@@ -99,7 +99,7 @@ scenarios are retained comparisons, not additional quantities or purchase select
 | Category | Exact item / supplier source | Qty | Unit € | Line € | Selection / unresolved issue |
 |---|---|---:|---:|---:|---|
 | Motors | [Waveshare 15024 MG90S](https://www.welectron.com/Waveshare-15024-MG90S-Servo_1) — Welectron | 6 | 3.50 | 21.00 | VAT included, stock shown; horn/screw inclusion unverified |
-| Electronics | [Raspberry Pi Pico (bare RP2040 board)](https://www.berrybase.de/raspberry-pi-pico-rp2040-mikrocontroller-board) — BerryBase | 1 | 4.10 | 4.10 | Selected provisional bare Pico +soldered headers; GPIOs unchanged. Updated twin owns4.2g inclusive-header module estimate, not a measured mass. |
+| Electronics | [Raspberry Pi Pico 2 (bare RP2350 board), RPI-PICO2](https://www.berrybase.de/raspberry-pi-pico-2-rp2350-mikrocontroller-board) — BerryBase | 1 | 5.50 | 5.50 | User-selected Pico 2, bare board; existing header kit retained. Official 51x21mm footprint and pinout compatible. 3g board mass is a retained provisional estimate, NOT measured or seller gross mass. |
 | Sensors | [Funduino F23107397 MPU6050 module](https://funduino.com/products/mpu-6050-modul-triaxial-beschleunigungssensor-gyroskop) — Funduino | 1 | 3.62 | 3.62 | Header soldering/board orientation to confirm |
 | Power | [Mean Well GST40A05-P1J 5 V 5 A desktop PSU](https://www.berrybase.de/meanwell-schaltnetzteil-5v-dc-5-0a-mit-hohlstecker-5-5x2-1mm) — BerryBase | 1 | 15.50 | 15.50 | C14 inlet; centre-positive 5.5 x 2.1 mm; no mains lead in package |
 | Power | [Goobay 68604 Schuko to C13, 1.5 m](https://www.berrybase.de/kaltgeraete-netzkabel-schutzkontakt-stecker-abgewinkelt-iec320-c13-buchse-schwarz) — BerryBase | 1 | 3.81 | 3.81 | Exact 1.5 m variant; 10 A AC rating |
@@ -120,7 +120,7 @@ scenarios are retained comparisons, not additional quantities or purchase select
 | Shipping | [Reichelt German standard DHL delivery](https://www.reichelt.de/de/de/shop/service/-12_28) — Reichelt | 1 | 5.95 | 5.95 | Germany <=10 kg published rate. Final 25337 checkout pending; no booking. |
 | Wiring/connectors | [BerryBase RPIP-PINH Pico header kit](https://www.berrybase.de/stiftleisten-pin-header-set-fuer-raspberry-pi-pico) — BerryBase | 1 | 0.50 | 0.50 | Two20pin headers for Pico; confirm package, solder yourself. Any supplied3pin debug strip is spare, not required. With one40pin pack provides at least80pins. Saves0.10 vs two40pin packs. |
 
-### Commercial PETG frame +ordinary grip pads — selected
+### User-arranged classmate PETG printing — selected
 
 | Additional item / source | Qty | Unit € | Line € | Issue |
 |---|---:|---:|---:|---|
@@ -130,8 +130,8 @@ scenarios are retained comparisons, not additional quantities or purchase select
 | [Schraubenking German standard DHL delivery](https://www.schraubenking-shop.de/Versandinformationen) | 1 | 5.90 | 5.90 | Current Germany standard rate below99EUR; DHL1-3days afterdispatch. No priority selected. One shipment for all three fastener packs. |
 | [6 matching horns + 6 servo shaft retaining screws](https://www.welectron.com/Waveshare-15024-MG90S-Servo_1) | 1 | pending | pending | Manufacturer package photo shows three horn shapes and three screws, but text lists servo only. Six selected horns and six correct retainers required; exact Welectron batch inclusion/spline/thread/geometry remain unconfirmed. No generic 25T substitution; no extra horns bought until confirmed. |
 | 12 horn-to-frame screws and 12 matching washers | 1 | pending | pending | 12 screws + 12 washers, two per horn; diameter/thread/length unknown. Separate from six centre shaft retainers. Measure actual factory horns and frame thickness; do not guess M2 or generic 25T. |
-| PETG full frame:7finished parts, VAT, packaging and delivery to25337 | 1 | pending | pending | No current file-specific delivered quote. One torso+2thighs+2shins+2feet. Support removal, usable holes, finishing and any fit inspection must be priced; no printed soles/filament. |
-| PETG fit sample:2interface pieces, VAT and separate delivery | 1 | pending | pending | Ear cradle +horn plate. Separate fit-first order; include shipping/finishing. Any sample/full-order combination must be explicitly quoted, not assumed free. |
+| PETG full frame:7finished parts, VAT, packaging and delivery to25337 | 1 | pending | pending | No current file-specific delivered quote. One torso+2thighs+2shins+2feet. Support removal, usable holes, finishing and any fit inspection must be priced; no printed soles/filament. User selected this arrangement on2026-10-26; exact print/finishing/delivery cost still unknown, never zero. |
+| PETG fit sample:2interface pieces, VAT and separate delivery | 1 | pending | pending | Ear cradle +horn plate. Separate fit-first order; include shipping/finishing. Any sample/full-order combination must be explicitly quoted, not assumed free. User selected this arrangement on2026-10-26; exact print/finishing/delivery cost still unknown, never zero. |
 
 
 Optional: spare matching servo, thin protective surface, slack safety thread,
@@ -145,9 +145,9 @@ short initial indoor trial work; several-metre travel needs a newly budgeted tet
   "active_required_basket": {
     "scenario": "commercial_print",
     "status": "OVER BUDGET",
-    "known_delivered_subtotal_eur": "105.09",
-    "remaining_for_all_unknowns_eur": "-5.09",
-    "confirmed_minimum_shortfall_eur": "5.09",
+    "known_delivered_subtotal_eur": "106.49",
+    "remaining_for_all_unknowns_eur": "-6.49",
+    "confirmed_minimum_shortfall_eur": "6.49",
     "total_price_eur": null,
     "pending_prices": [
       "6 matching horns + 6 servo shaft retaining screws",
@@ -161,10 +161,10 @@ short initial indoor trial work; several-metre travel needs a newly budgeted tet
       "3.3V PWM threshold, branch/contact current ratings and PSU droop still need bench testing",
       "Final complete delivery to25337 incl every sample shipment; no bookings/orders/messages",
       "Fit/layer strength/pad friction and adhesion require physical measurements",
+      "Classmate printing accepted by user; exact cost/finishing/delivery accounting unknown. Financial gate remains separate from completed design/provider decision.",
       "Active selected basket is over cap; a candidate subtotal is not its complete delivered quotation; no order",
       "Exact Waveshare batch horns/retainers/screw/ear measurements and interface sample fit",
       "Current exact-file print/support/finishing/sample/delivery prices missing",
-      "Automatic approval review blocked Meltlab STL upload; provider-specific upload authorization required",
       "Physical layer strength, continuous clearances, tie/connector routing and pad grip not verified"
     ],
     "purchase_cleared": false
@@ -173,9 +173,9 @@ short initial indoor trial work; several-metre travel needs a newly budgeted tet
     "commercial_print": {
       "scenario": "commercial_print",
       "status": "OVER BUDGET",
-      "known_delivered_subtotal_eur": "105.09",
-      "remaining_for_all_unknowns_eur": "-5.09",
-      "confirmed_minimum_shortfall_eur": "5.09",
+      "known_delivered_subtotal_eur": "106.49",
+      "remaining_for_all_unknowns_eur": "-6.49",
+      "confirmed_minimum_shortfall_eur": "6.49",
       "total_price_eur": null,
       "pending_prices": [
         "6 matching horns + 6 servo shaft retaining screws",
@@ -189,10 +189,10 @@ short initial indoor trial work; several-metre travel needs a newly budgeted tet
         "3.3V PWM threshold, branch/contact current ratings and PSU droop still need bench testing",
         "Final complete delivery to25337 incl every sample shipment; no bookings/orders/messages",
         "Fit/layer strength/pad friction and adhesion require physical measurements",
+        "Classmate printing accepted by user; exact cost/finishing/delivery accounting unknown. Financial gate remains separate from completed design/provider decision.",
         "Active selected basket is over cap; a candidate subtotal is not its complete delivered quotation; no order",
         "Exact Waveshare batch horns/retainers/screw/ear measurements and interface sample fit",
         "Current exact-file print/support/finishing/sample/delivery prices missing",
-        "Automatic approval review blocked Meltlab STL upload; provider-specific upload authorization required",
         "Physical layer strength, continuous clearances, tie/connector routing and pad grip not verified"
       ],
       "purchase_cleared": false
@@ -203,6 +203,13 @@ short initial indoor trial work; several-metre travel needs a newly budgeted tet
 ```
 
 ### Active commercial-print procurement actions — 2026-10-25
+
+**Superseded selection task2026-10-26:** user chooses printing by a classmate and
+accepts the design/printing arrangement; Pico2 replaces Pico1. Exact price unknown,
+excluding delivery. Design/provider phase complete; no further service search or
+Meltlab upload needed. [Print files](../print_for_classmate/00_START_HERE.md).
+The older quote-research notes/questions below are historical alternatives,
+not the current next action. Actual fit/strength/cost records remain to be obtained.
 
 Delivery25337Germany; PCUSB-A, no adapter; required USB data cable retained.
 No purchases, supplier messages, reservations or print orders have occurred.
@@ -482,7 +489,7 @@ Authoritative structured physical input (provisional):
 ```json
 {
   "name": "School Biped S6",
-  "status": "PROVISIONAL QUOTATION DESIGN: sample fit, budget, layer strength and physical calibration NOT approved",
+  "status": "USER ACCEPTED design/printing arrangement; provisional mechanics pending actual servo/sample fit and physical calibration",
   "units": "m, kg, rad, s",
   "coordinates": "x forward, y left, z up; local body axes match parent at zero joint angle",
   "home_joint_angles_deg": [
@@ -811,25 +818,26 @@ Authoritative structured physical input (provisional):
             0,
             0.023
           ],
-          "material": "bare Pico PCB/components, headers separately owned",
-          "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated",
+          "material": "bare Pico 2 PCB/components; two headers separately owned",
+          "evidence": "Pico2 official21x51mm footprint;3g mass/3.5mm populated envelope/COM retained estimates awaiting weighing/fit. Not retailer gross mass.",
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-24",
-              "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated"
+              "date": "2026-10-26",
+              "evidence": "Pico2 official21x51mm footprint;3g mass/3.5mm populated envelope/COM retained estimates awaiting weighing/fit. Not retailer gross mass."
             },
             "dimensions": {
               "state": "estimated",
-              "date": "2026-10-24",
-              "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated"
+              "date": "2026-10-26",
+              "evidence": "Pico2 official21x51mm footprint;3g mass/3.5mm populated envelope/COM retained estimates awaiting weighing/fit. Not retailer gross mass."
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-24",
-              "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated"
+              "date": "2026-10-26",
+              "evidence": "Pico2 official21x51mm footprint;3g mass/3.5mm populated envelope/COM retained estimates awaiting weighing/fit. Not retailer gross mass."
             }
-          }
+          },
+          "model": "Raspberry Pi Pico 2 (bare RP2350)"
         },
         {
           "name": "imu",
@@ -2020,8 +2028,8 @@ Authoritative structured physical input (provisional):
       }
     }
   ],
-  "revision": "S6-PETG-pad-r2",
-  "updated_date": "2026-10-24",
+  "revision": "S6-PETG-pad-r2-pico2",
+  "updated_date": "2026-10-26",
   "controller": {
     "backend": "pico_pwm",
     "pins": [
@@ -2038,8 +2046,16 @@ Authoritative structured physical input (provisional):
       4,
       5
     ],
-    "state": "planned; electrical verification pending",
-    "board": "Raspberry Pi Pico bare, user-soldered headers"
+    "state": "selected by user; electrical and firmware cross-build verification pending",
+    "board": "Raspberry Pi Pico 2 bare (RP2350), user-soldered headers",
+    "sdk_board": "pico2",
+    "architecture": "rp2350-arm-s",
+    "evidence": {
+      "state": "sourced",
+      "date": "2026-10-26",
+      "source": "https://datasheets.raspberrypi.com/pico/pico-2-datasheet.pdf",
+      "notes": "21x51mm board, Micro-USB B, pin-compatible non-wireless footprint; existing GPIO allocation retained"
+    }
   },
   "parameter_evidence": {
     "geometry": {
@@ -2133,7 +2149,7 @@ Authoritative structured physical input (provisional):
     }
   },
   "manufacturing": {
-    "route": "commercial PETG FDM, ordinary adhesive TPE pads",
+    "route": "user-arranged classmate PETG FDM, ordinary adhesive TPE pads",
     "frame_parts": 7,
     "sample_pieces": 2,
     "state": "quotation prototype; manufacturing NOT released",
@@ -2150,7 +2166,8 @@ Authoritative structured physical input (provisional):
       "sample insertion fit and actual printed hole diameters",
       "printed masses/layer strength, pad friction/adhesion",
       "Pico header11mm pin envelope, PCB stand-off fit and Dupont/cable clearances"
-    ]
+    ],
+    "arrangement_state": "user accepted2026-10-26; price unknown; physical sample fit still required"
   },
   "hardware_interfaces": {
     "ear_bolt": {
@@ -2201,9 +2218,9 @@ Authoritative structured physical input (provisional):
 
 ### Native-PWM S6 hardware and protocol
 
-Updated 2026-10-24. Implemented source and local compilation are distinct from
+Updated 2026-10-26. Implemented source and local compilation are distinct from
 physical verification: **nothing has been purchased or electrically tested**.
-The selected *provisional quotation revision* is bare Pico native PWM, six Waveshare15024
+The selected *provisional quotation revision* is bare Pico 2 native PWM, six Waveshare15024
 MG90S, MPU6050 and Mean Well GST40A05-P1J. PCA9685 is not in the current basket.
 Its listing is unavailable and removing it resolves the original board/brace overlap.
 
@@ -2216,15 +2233,13 @@ Join logic ground to the short heavy servo-return bus once. Mains wiring remains
 inside the commercial PSU/lead. Capacitor1000µF/16V goes across the bus with
 correct polarity; it is not a substitute for an adequate supply.
 
-The proposed basket uses a **bare Pico** with user-soldered headers. Existing RP2040
-firmware/pins remain unchanged. The model now separately owns estimated3g bare PCB
-and two0.6g header rows (4.2g together). Header overall pin length11mm is sourced;
-PCB/USB envelope and all masses/placements still need measurement.
-Compare Pico H5.50 +one40pin pack0.60 with bare4.10 +header kit0.50 +40pin pack0.60:
-header-inclusive saving0.90. Kit2x20pins +40pin pack supply80functional pins,
-54used,26spare; supplied3pin SWD strip is extra spare. Solder10g flux-core, heat-shrink, ties and wire are priced robot
-consumables. Iron access is available; other tools must be confirmed/borrowed or
-priced outside the robot cap but inside initial cash. No mandatory paid helper.
+The user selected **bare Raspberry Pi Pico 2 RP2350** on2026-10-26; headers
+are soldered by the student. Official footprint/pin layout is compatible with
+non-wireless Pico1 (51×21mm), so the GPIO table and MicroUSB cable remain.
+Use SDK board`pico2`, not an RP2040 binary. Board3g +two0.6g header rows are
+retained provisional mass estimates; populated envelope/COM require measurements.
+Selected Pico2 price snapshot€5.50 plus existing€0.50 header kit and€0.60 pin pack.
+No current Pico2 ARM build/electrical test exists. [Firmware](../firmware/README.md).
 
 **Prepare unpowered, with the PSU disconnected from mains and DC, and USB removed:**
 
@@ -2313,7 +2328,7 @@ Firmware sends raw scaled sensor-frame readings. PC removes measured biases,
 rotates into body coordinates and uses `GravityEstimator`. The simulated
 44Hz first-order filter is a provisional surrogate, not exact silicon transfer.
 References: [Pico](https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html),
-[pinout](https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf),
+[pinout](https://datasheets.raspberrypi.com/pico/pico-2-datasheet.pdf),
 [IMU register map](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf).
 
 #### Executable version1 protocol
@@ -2381,30 +2396,23 @@ reachable. Never reset a fallen robot automatically: power off, inspect, lift,
 replace damaged parts and reinitialize. Real distances/steps require video/ruler,
 not double integration of MPU acceleration.
 
-### Pico firmware — local build and bench preparation
+### Pico 2 firmware — build target and bench preparation
 
-**Frame/control identity update2026-10-24:** proposed bare Pico uses the same RP2040 firmware
-and GPIOs as Pico H. User fits headers and a self-soldered insulated harness; no
-mandatory helper labour. See [wiring sequence](../docs/HARDWARE.md). Do not flash/arm
-this as proof of electrical or mechanical verification. Current provisional twin uses bare Pico+two soldered header rows. Module mass
-is estimated4.2g; actual board/harness measurements remain pending. The generated
-invalid header now carries the r2 fingerprint. OldUF2 images are historical: rebuild
-with this header and later measured calibration before any flash. No current ARM
-build or physical electrical result is claimed by the geometry update.
+Updated2026-10-26: selected controller is **Raspberry Pi Pico 2, bare RP2350**,
+not RP2040/Pico1 or Pico2W. Native PWM/I2C GPIOs and50Hz/200Hz timing are unchanged.
+Official same51×21mm footprint and MicroUSB documented in the
+[Pico2 datasheet](https://datasheets.raspberrypi.com/pico/pico-2-datasheet.pdf).
+Headers are user-soldered;3g board plus1.2g headers is an estimate, not weighed.
 
-The subsequent simulated shaft-offset correction changes the full configuration
-identity to`b11ab929…`; `generated_config.h` carries that hash with`CAL_VALID=false`.
-All saved policies and prior UF2files are incompatible, including r2 smoke artifacts.
-Native control tests passed with this header; no new ARM/Pico build is claimed.
-See [current evidence](../docs/SENSITIVITY.md). Rebuild with measured calibration
-before any physical policy operation; never relabel historical binaries.
-
-
-Source is C++17 using official Pico SDK **2.3.1**, revision
-`079c6f39023649b154152db30f1d781e884879bc`, TinyUSB submodule
-`86ad6e56c1700e85f1c5678607a762cfe3aa2f47`.
-Locally compiled with Arm GNU14.2.Rel1, CMake3.31.10 and Ninja1.13.2.
-No electrical/timing/flash test on a Pico is claimed.
+CMake defaults to`pico2` and rejects`pico`; build selection is fingerprinted.
+Current identity starts`685e3802`; generated header is current with`CAL_VALID=false`.
+All prior policies/UF2are historical. Native control tests pass; **no current ARM
+cross-build or electrical verification**: SDK/cross compiler are absent locally.
+Prior RP2040 compilation records do not validate Pico2 binaries. The planned SDK
+is2.3.1; install it and a Cortex-M33-capable Arm toolchain before this build.
+Official [SDK examples](https://github.com/raspberrypi/pico-examples) describe the
+pico2 board/platform selection; [picotool](https://github.com/raspberrypi/picotool)
+documents ELF-to-UF2 conversion/family detection.
 
 Install an `arm-none-eabi` cross compiler and clone the SDK outside the project:
 
@@ -2415,10 +2423,10 @@ source .venv/bin/activate
 python tools/firmware_config.py # invalid example, cannot policy-arm
 export PICO_SDK_PATH=/tmp/pico-sdk
 ### Set PICO_TOOLCHAIN_PATH to the directory containing arm-none-eabi-gcc if not in PATH.
-cmake -S firmware -B build/firmware -G Ninja -DPICO_BOARD=pico -DPICO_NO_PICOTOOL=1
-cmake --build build/firmware -j 4
+cmake -S firmware -B build/firmware_pico2 -G Ninja -DPICO_BOARD=pico2 -DPICO_NO_PICOTOOL=1
+cmake --build build/firmware_pico2 -j 4
 ### Official picotool2.3.1 converts the ELF into a flashable UF2:
-picotool uf2 convert build/firmware/s6_bench.elf build/firmware/s6_bench.uf2 --family rp2040
+picotool uf2 convert build/firmware_pico2/s6_bench.elf build/firmware_pico2/s6_bench.uf2 --family rp2350-arm-s
 ```
 
 `PICO_NO_PICOTOOL=1` avoids CMake implicitly downloading extra code; install
@@ -2430,14 +2438,14 @@ For a measured calibration, run:
 
 ```bash
 python tools/firmware_config.py --calibration calibrations/measured-v1.json
-cmake --build build/firmware -j 4
-picotool uf2 convert build/firmware/s6_bench.elf build/firmware/s6_bench.uf2 --family rp2040
+cmake --build build/firmware_pico2 -j 4
+picotool uf2 convert build/firmware_pico2/s6_bench.elf build/firmware_pico2/s6_bench.uf2 --family rp2350-arm-s
 ```
 
 Calibration/signs/limits/identity are compiled into firmware flash and survive
 power loss; every boot is disarmed. Do not hand-edit generated_config.h. Physical
 flashing: disconnect servo power, hold BOOTSEL while connecting Pico USB, then
-copy the UF2 onto RPI-RP2. Release/reset and check read-only telemetry first.
+copy the new Pico2 UF2 onto its BOOTSEL drive (verify the actual mounted device). Release/reset and check read-only telemetry first.
 Never flash or reconnect motor power while a policy process is running.
 
 The generated header must be regenerated after any fingerprinted control/model
@@ -3251,7 +3259,7 @@ def digest(value):
 
 def configuration_identity(calibration=None):
     names = ('physical_spec.json', 'robot.xml', 'robot_config.py', 'servo_control.py',
-             'imu_observation.py', 'humanoid_env.py', 'gait_metrics.py', 'hardware_interface.py', 'calibration.py', 'firmware/main.cpp', 'firmware/control.h')
+             'imu_observation.py', 'humanoid_env.py', 'gait_metrics.py', 'hardware_interface.py', 'calibration.py', 'firmware/main.cpp', 'firmware/control.h', 'firmware/CMakeLists.txt')
     files = {n: hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in names}
     return {'configuration': digest(files), 'files': files,
             'calibration': digest(calibration) if calibration else None}
@@ -3518,6 +3526,10 @@ Firmware source (C++ official Pico SDK):
 
 ```text
 cmake_minimum_required(VERSION 3.13)
+set(PICO_BOARD pico2 CACHE STRING "Selected S6 controller: Raspberry Pi Pico 2")
+if(NOT PICO_BOARD STREQUAL "pico2")
+    message(FATAL_ERROR "This S6 revision targets Pico 2; use a fresh build directory with -DPICO_BOARD=pico2")
+endif()
 include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 project(s6_bench C CXX ASM)
 set(CMAKE_CXX_STANDARD 17)
@@ -4198,6 +4210,11 @@ python tools/package_project.py
 
 All numbers currently in `physical_spec.json` and `robot_config.py` are estimates except the explicitly labelled seller claims. A school kitchen scale, ruler, protractor, phone camera, known weights and a borrowed multimeter are enough to replace many estimates. No prolonged stall tests.
 
+2026-10-26: selected controller now bare Pico2; same pin/board footprint, new
+configuration identity685e3802…. No actual mass/response measurements exist.
+Use [measurement intake/provenance checker](MEASUREMENT_INTAKE.md) before fitting;
+passing structural/quality checks never validates physical calibration automatically.
+
 #### Priorities from the provisional gait diagnosis
 
 The [current scripted baseline](REFERENCE_GAIT.md) has a weakest credited flight
@@ -4323,6 +4340,180 @@ its existing components. Either replace the complete body's ledger accounting,
 or weigh/subtract each known component and replace the remaining allowance.
 Never run solid-CAD mass synchronization over measured masses. Recompute COM and
 inertia and issue a new fingerprint before training or deployment.
+
+### Step-response measurement intake — 2026-10-26
+
+Implemented WP2 preparation, **not physical calibration**. The checker validates
+data/provenance structure, hashes evidence and screens response quality before a
+human reviews the original video. It never changes calibration, the model or gates.
+
+1. Copy `docs/templates/step_response.csv` and
+   `docs/templates/step_response_provenance.example.json` to a new trial directory.
+2. Record `time_s,target_rad,angle_rad,voltage_v,load_nm` in that exact order.
+   `angle_rad` must be externally observed, not the target or applied acknowledgement.
+   Use at least20 finite samples, increasing timestamps, at least3before the step,
+   at least10after and0.5s post-step duration. A single step must be at least5°.
+   These are data-analysis requirements, not instructions to move an untested servo.
+3. Fill servo identity, joint index0–5, SI units, clock alignment, measurement
+   method, positive angle uncertainty and paths to original evidence relative to
+   the sidecar. Physical records require external video/protractor/encoder evidence.
+4. Run against fresh output (the tool refuses to overwrite an existing report):
+
+```bash
+.venv/bin/python tools/validate_measurement.py runs/trial_NEW/step.csv \
+  --metadata runs/trial_NEW/provenance.json --output runs/trial_NEW/intake.json
+```
+
+Exit0 means ready for **human fit review**, not approved calibration. Exit2 flags
+unresolved motion, direction, gain, fit-boundary/residual, overshoot or voltage
+issues. Invalid schema/provenance is rejected. Original evidence must be reviewed:
+a filename/hash or a claimed external source cannot prove truthful measurements.
+
+Quality screens (gain0.5–1.5, residual relative to step/uncertainty, at least3×
+uncertainty resolved motion, etc.) are explicit diagnostic hypotheses in the source,
+not published servo tolerances. The first-order response fitter cannot uniquely
+identify sustainable torque, backlash or MuJoCo kp/kv from one step. Use multiple
+loads/amplitudes and held-out trajectories; retain raw data and uncertainty.
+
+Synthetic examples must use `data_kind=synthetic` and remain synthetic in every
+report. Even well-formed physical input returns `physically_verified=false` and
+`calibration_validated=false`: only reviewed measurements complete physical gates.
+No real trials exist yet. Next WP2 work: reviewed six-joint manual-control utility
+and measured-calibration parity for HOME/untrained evaluation baselines.
+
+```python
+"""Review externally measured step-response intake; never validates calibration.
+
+Requires a versioned provenance sidecar. Synthetic fixtures remain synthetic.
+Quality thresholds are conservative diagnostic screens, not servo specifications.
+"""
+import argparse
+import csv
+import hashlib
+import json
+from pathlib import Path
+import sys
+
+import numpy as np
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from tools.fit_response import fit
+
+COLUMNS = ('time_s', 'target_rad', 'angle_rad', 'voltage_v', 'load_nm')
+UNITS = {'time_s': 's', 'target_rad': 'rad', 'angle_rad': 'rad',
+         'voltage_v': 'V', 'load_nm': 'N*m'}
+EXTERNAL_ANGLE_SOURCES = ('external_video', 'external_protractor', 'external_encoder')
+
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def validate_trial(csv_path, metadata_path):
+    csv_path, metadata_path = Path(csv_path), Path(metadata_path)
+    meta = json.loads(metadata_path.read_text())
+    if meta.get('version') != 1 or meta.get('data_kind') not in ('physical', 'synthetic'):
+        raise ValueError('Specify version1 and data_kind physical or synthetic')
+    if meta.get('units') != UNITS:
+        raise ValueError('Explicit SI units must match the CSV schema')
+    if not isinstance(meta.get('joint_index'), int) or isinstance(meta['joint_index'], bool) or not 0 <= meta['joint_index'] < 6:
+        raise ValueError('joint_index must be0..5 in shared joint order')
+    for key in ('servo_id', 'clock_alignment', 'measurement_method'):
+        if not isinstance(meta.get(key), str) or not meta[key].strip():
+            raise ValueError('Missing provenance: '+key)
+    source = meta.get('angle_source')
+    if source not in EXTERNAL_ANGLE_SOURCES and not (meta['data_kind'] == 'synthetic' and source == 'synthetic_generator'):
+        raise ValueError('Angles must be externally observed, never commands or acknowledgements')
+    uncertainty = meta.get('angle_uncertainty_rad')
+    if isinstance(uncertainty, bool) or not isinstance(uncertainty, (int, float)) or not np.isfinite(uncertainty) or uncertainty <= 0:
+        raise ValueError('Positive finite angle_uncertainty_rad required')
+    evidence = meta.get('evidence_files', [])
+    if not isinstance(evidence, list) or any(not isinstance(s, str) or not s.strip() for s in evidence):
+        raise ValueError('evidence_files must be a list of nonempty paths')
+    if meta['data_kind'] == 'physical' and not evidence:
+        raise ValueError('Physical data requires original external measurement evidence')
+    hashes = {}
+    for name in evidence:
+        path = metadata_path.parent/name
+        if not path.is_file():
+            raise ValueError('Missing evidence file: '+name)
+        hashes[name] = sha(path)
+    with csv_path.open(newline='') as f:
+        reader = csv.DictReader(f)
+        if reader.fieldnames != list(COLUMNS):
+            raise ValueError('Expected CSV header: '+','.join(COLUMNS))
+        try:
+            rows = [[float(row[k]) for k in COLUMNS] for row in reader]
+        except (ValueError, TypeError, KeyError) as e:
+            raise ValueError('All CSV values must be numeric and present') from e
+    values = np.asarray(rows, float)
+    if values.shape[0] < 20 or values.ndim != 2 or values.shape[1] != 5 or not np.isfinite(values).all():
+        raise ValueError('Need at least20 complete finite samples')
+    t, u, q, voltage, load = values.T
+    if np.any(np.diff(t) <= 0) or np.any(voltage <= 0):
+        raise ValueError('Need increasing timestamps and positive recorded voltage')
+    changes = np.flatnonzero(np.abs(np.diff(u)) > 1e-5)
+    if len(changes) != 1:
+        raise ValueError('Use one isolated command step per file')
+    index = changes[0]+1
+    if index < 3 or len(t)-index < 10 or t[-1]-t[index] < .5:
+        raise ValueError('Need>=3pre-step,>=10post-step samples and>=0.5s post-step recording')
+    amplitude = u[-1]-u[0]
+    if abs(amplitude) < np.deg2rad(5):
+        raise ValueError('Need a step of at least5degrees for this diagnostic')
+    data = np.array(list(zip(t, u, q)), dtype=[(k, float) for k in COLUMNS[:3]])
+    fitted = fit(data)
+    q0 = float(np.median(q[:index]))
+    response = float(np.median(q[-max(3, len(q)//10):])-q0)
+    flags = []
+    if abs(response) < max(3*uncertainty, .1*abs(amplitude)):
+        flags.append('insufficient_resolved_motion')
+    elif response*amplitude <= 0:
+        flags.append('response_direction_disagrees_with_command')
+    if not .5 <= fitted['step_gain'] <= 1.5:
+        flags.append('gain_outside_diagnostic_screen')
+    if fitted['delay_s'] >= .078 or fitted['time_constant_s'] <= .015001 or fitted['time_constant_s'] >= .499999:
+        flags.append('fit_at_search_boundary')
+    if np.deg2rad(fitted['rmse_deg']) > max(3*uncertainty, .1*abs(amplitude)):
+        flags.append('residual_exceeds_diagnostic_screen')
+    directed = (q-q0)*np.sign(amplitude)
+    if float(np.max(directed)) > 1.2*abs(response)+3*uncertainty:
+        flags.append('overshoot_or_nonfirstorder_response')
+    if np.any((voltage < 4.8) | (voltage > 6.0)):
+        flags.append('recorded_voltage_outside_selected_servo_claim')
+    return {'state': 'intake review only, not validated actuator or calibration',
+            'data_kind': meta['data_kind'], 'physically_verified': False,
+            'calibration_validated': False, 'metadata': meta, 'samples': len(t),
+            'source_sha256': {'csv': sha(csv_path), 'metadata': sha(metadata_path), 'evidence': hashes},
+            'time_span_s': float(t[-1]-t[0]), 'post_step_s': float(t[-1]-t[index]),
+            'command_step_rad': float(amplitude), 'observed_response_rad': response,
+            'voltage_range_v': [float(voltage.min()), float(voltage.max())],
+            'load_range_nm': [float(load.min()), float(load.max())], 'first_order_fit': fitted,
+            'quality_flags': flags, 'ready_for_human_fit_review': not flags,
+            'limits': ['Provenance assertions require human/video review; hashes do not establish truth.',
+                       'Screens are diagnostic hypotheses, not hardware tolerances.',
+                       'One step cannot identify sustainable torque, backlash or MuJoCo gains uniquely.',
+                       'Never automatically update calibration, physical parameters or release gates.']}
+
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('csv', type=Path)
+    p.add_argument('--metadata', type=Path, required=True)
+    p.add_argument('--output', type=Path, required=True)
+    a = p.parse_args()
+    result = validate_trial(a.csv, a.metadata)
+    with a.output.open('x') as f:
+        json.dump(result, f, indent=2, allow_nan=False)
+        f.write('\n')
+    print(json.dumps({k: result[k] for k in ('data_kind', 'samples', 'quality_flags', 'ready_for_human_fit_review')}))
+    return 0 if result['ready_for_human_fit_review'] else 2
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())
+```
 
 ## 17. Sim-to-Real and domain-randomization plan
 
@@ -4516,12 +4707,21 @@ All physical/manufacturing/training gates remain false; no new PPO was run.
 
 ### Hardware-first execution roadmap
 
-Updated **2026-10-25**. This is the short map; the
+Updated **2026-10-26**. This is the short map; the
 [complete execution plan](DEVELOPMENT_PLAN.md) contains all phases, completed work,
 WP1–WP11 procedures, owners, affected files, acceptance evidence and failure decisions.
 [STATUS](STATUS.md) records evidence; ledgers remain authoritative.
 
-#### Where we are
+#### Current user decision / next phase
+
+2026-10-26: design and classmate-printing arrangement COMPLETE by user confirmation;
+Pico2 selected. Exact printing/transport price remains unknown, not free. This closes
+provider-selection research and starts WP2, without claiming physical fit or a numeric
+budget pass. [Print folder](../print_for_classmate/00_START_HERE.md).
+Measurement-intake/provenance checker implemented; manual six-joint utility and
+measured-baseline calibration parity remain next.69tests pass. No new PPO.
+
+#### Previous checkpoint (2026-10-25; historical costs/identity)
 
 Implemented: provisional S6-PETG-pad-r2 CAD/twin, common control interface,
 firmware/bench foundations, Gym/PPO/evaluation and diagnostic tools. Latest
@@ -4539,7 +4739,7 @@ robot and cannot silently replace current contact geometry. See BUDGET_REVIEW.
 | Stage / original phases | Detailed work packages and owner | Completion gate |
 |---|---|---|
 | Entry /0,13 | Student+AI: requirements, status, plan, evidence | Constraints/next task unambiguous; claims tied to real evidence |
-| A /1 | WP1 student+AI: complete basket, exact-file quotes, interfaces and staged delivery | Complete ≤€100 delivered cost and reviewed fit path; no purchasing exception assumed |
+| A /1 | User-complete design/printing choice, Pico2 selected; actual costs recorded later | Decision complete; numeric budget and physical fit are separate, still unverified |
 | B preparation /3,6,8,9 | WP2 AI: measurement intake, fit quality, six-joint manual utility and measured-baseline calibration parity | Mocked tests/clear procedures; no physical claim; can proceed alongside A |
 | B hardware /1,8,9 | WP3–WP5 student+AI: bench, measured interfaces, sample fit, finished assembly/weighing | Electrical/fit records, safe manual control, real mass ownership |
 | C /2,3,4,9 | WP6–WP7 student+AI: measured twin, observation parity, model/reference validation | Measured calibration and reviewed weight transfer/lift; all five gates backed by evidence |
@@ -4548,13 +4748,12 @@ robot and cannot silently replace current contact geometry. See BUDGET_REVIEW.
 | F /11,13 | WP11 student+AI: equal physical A/B, comparison, report/presentation | Recorded successes/failures, uncertainty, cable effects and reproducible handoff |
 | Extensions /12 | Future scoped work: turning, recovery, terrain | Stable walking first |
 
-**Next AI:** WP2 measurement-intake validation, then reviewed manual six-joint
-control. These are planned additions. Keep the reference frozen; no more nominal
+**Next AI:** reviewed manual six-joint control and baseline calibration parity;
+WP2 measurement intake is now implemented. Keep the reference frozen; no more nominal
 tuning/PPO, stronger fictitious actuation or repeated identical budget searches.
-**Next human input:** exact remaining quotes/interfaces and actual servo/sample fit;
-all purchases/manufacturing remain blocked. CAD sharing with Meltlab needs the
-previously missing provider/payload authorization, or a user-returned quote.
-This plan sends no upload, message or purchase and asks for none to be executed now.
+**Next human/classmate:** print/test2sample pieces on actual servo/horn, then7frame
+parts if fit passes; record dimensions, costs and weights. No more Meltlab upload/
+provider-selection loop is needed for this arrangement. Physical checks stay pending.
 
 #### Contracts to preserve
 
@@ -4566,7 +4765,7 @@ This plan sends no upload, message or purchase and asks for none to be executed 
   estimate, not programmable hardware current/torque protection.
 - Boot disarmed, explicit arm,100ms watchdog, bounded/versioned CRC packets,
   persistent measured calibration/fingerprints; STOP is not physical DC isolation.
-- Current identity begins`b11ab929`; all saved policies/UF2are historical after the
+- Current Pico2 identity begins`685e3802`; all saved policies/UF2are historical after the
   offset correction. Use snapshots; never relabel old checkpoints or headers.
 - Smoke2048, pilot≤50000 (49152actual), final≤1000000 (999424actual) each for
   A/B seeds0,1,2. Compatible pilot counts toward final total; B never resumes A.
@@ -4586,10 +4785,26 @@ task when human-dependent work is blocked; do not restart already completed rese
 
 ### Complete project execution plan
 
-Updated **2026-10-25**. This is the detailed plan for the student and future AI
+Updated **2026-10-26**. This is the detailed plan for the student and future AI
 sessions. [SUMMARY](../SUMMARY.md) remains the short shopping/build overview;
 [STATUS](STATUS.md) records evidence; [ROADMAP](ROADMAP.md) is the dependency map.
 Prices and physical parameters remain authoritative in their structured ledgers.
+
+#### Active decision update — 2026-10-26
+
+**WP1 design/printing selection COMPLETE by user confirmation.** Classmate printing
+is accepted; exact price unknown/excluding delivery. Selected board now bare Pico2
+RP2350. This supersedes the earlier provider-selection/quotation-search next task
+below; it does not invent a≤€100 numerical total or actual print fit.
+Separate ready-to-slice files/instructions: [print folder](../print_for_classmate/00_START_HERE.md)
+and [print ZIP](../print_for_classmate.zip),2fit samples before7frame parts.
+
+**Next phase WP2 started:** external-angle provenance/measurement quality checker
+implemented,69tests pass. [Usage](MEASUREMENT_INTAKE.md). Six-joint manual tooling
+and measured-baseline parity remain pending; no new PPO. Pico2 identity begins
+`685e3802`; board mass remains estimated, no ARM cross-build/physical tests.
+All references to older prices/fingerprints/results below retain their historical
+date; current cost ledger is authoritative. Do not repeat earlier supplier searches.
 
 **Current position:** the provisional robot design, digital twin, control interface
 and RL pipeline exist. A handwritten script produces four qualifying simulated
@@ -4715,7 +4930,7 @@ there are no invented completion dates while quotes and hardware are absent.
 
 #### 4. WP1 — Close procurement and staged delivery costs
 
-**State:** blocked. **Owner:** AI ledger/research; student external quotes and
+**State:** design/provider decision complete by user; numeric accounting and fit pending. **Owner:** AI ledger; student external quotes and
 later decisions. **Inputs:** [BUDGET_REVIEW](BUDGET_REVIEW.md),
 [PROCUREMENT_ACTIONS](PROCUREMENT_ACTIONS.md), [procurement.json](../procurement.json).
 
@@ -4780,7 +4995,7 @@ prototype decision is required; this plan grants no budget/fit-rule exception.
 
 #### 5. WP2 — Prepare independent bench/software tools
 
-**State:** foundations implemented; additions below planned. **Owner:** AI.
+**State:** intake/provenance checker and diagnostic quality screens implemented; other additions below pending. **Owner:** AI.
 **Depends on:** source inspection, not hardware or new training.
 
 Existing: `hardware_interface.py`, `serial_robot.py`, `calibration.py`, `bench.py`,
@@ -5167,8 +5382,8 @@ Measured calibration/CSV and `runs/*_NEW` paths above are placeholders, not exis
 physical records. Firmware build/flash commands stay in its README. Do not supply
 an immediate policy-arm command while physical checks are absent.
 
-**Exact next AI task:** if no new quote/measurement has arrived, begin WP2
-measurement-intake validation. Keep the script frozen; do not rerun sensitivity,
+**Exact next AI task:** after completed intake validation, implement reviewed six-joint
+manual tooling, then baseline calibration parity. Keep the script frozen; do not rerun sensitivity,
 repeat the same searches, change pad geometry, tune motion or start PPO. If new
 evidence arrives, validate provenance/dependencies before updating any ledger/gate.
 
@@ -5356,6 +5571,12 @@ step is insufficient for repeatable alternating walking or measured Sim-to-Real.
 
 ### Provisional scripted gait baseline — 2026-10-24
 
+**2026-10-26 follow-up:** this report retains its historical identity. Current
+Pico2 registry is [scripted_pico2.json](baselines/scripted_pico2.json), identity
+`685e3802…`; nominal metrics exactly reproduced. No sensitivity/DR rerun or new
+PPO. User-arranged classmate printing is accepted, physical fit still pending.
+
+
 **Historical identity`4d3b0dcb` below.** [Current offset correction and29-case
 sensitivity study](SENSITIVITY.md) retain the exact nominal result/target sequence
 under identity`b11ab929`. Mixed-DR rows below remain historical; do not apply their
@@ -5483,6 +5704,12 @@ manufacturing, measured-reference, formal-training and physical-transfer gates
 closed. Hardware measurements are still absent and the full walking target fails.
 
 ### Frozen-script sensitivity and offset correction — 2026-10-24
+
+**2026-10-26 follow-up:** this report retains its historical identity. Current
+Pico2 registry is [scripted_pico2.json](baselines/scripted_pico2.json), identity
+`685e3802…`; nominal metrics exactly reproduced. No sensitivity/DR rerun or new
+PPO. User-arranged classmate printing is accepted, physical fit still pending.
+
 
 **Locally verified diagnostics; no physical calibration or new PPO training.**
 The unchanged compact handoff script still produces four qualifying steps and
@@ -5617,19 +5844,25 @@ steps. Reconcile measured parameters, issue a new identity, replay this referenc
 and check robust lifted steps before substantial PPO or any policy deployment.
 All five release gates remain false; no new procurement or physical result exists.
 
-### Current project status — 2026-10-25
+### Current project status — 2026-10-26
+
+**Design/printing selection COMPLETE by user2026-10-26.** Classmate printing is
+accepted; exact price unknown/excluding delivery. Selected board now Pico2.
+Next phase WP2 has begun; this is not physical/manufacturing/financial verification.
+Separate print folder: [instructions](../print_for_classmate/00_START_HERE.md),
+[ZIP](../print_for_classmate.zip). [Decision record](decisions/2026-10-26-printing-pico2.json).
 
 Read SUMMARY.md → AGENTS.md → relevant roadmap stage. **Nothing bought, printed,
-assembled, flashed or physically verified.** Frame revision **S6-PETG-pad-r2**;
-active route is outsourced PETG, bare Pico and eight ordinary grip pads.
+assembled, flashed or physically verified.** Frame revision **S6-PETG-pad-r2-pico2**;
+active route is classmate PETG, bare Pico2 and eight ordinary grip pads.
 
 | Stage | State | Evidence / blocker |
 |---|---|---|
 | Requirements / AI entry | implemented | Six joints,15–20cm,PC/USB,wired power,EUR100; no printer purchase |
-| Hardware research / budget | blocked | Priced basket105.09EUR BEFORE print/sample/horn extras; known shortfall≥5.09EUR. Complete total unknown; dated ledger, not live checkout |
+| Design / printing selection | complete, user accepted | Classmate printing selected; Pico2 adopted. Price unknown; numerical budget remains separate/unverified (106.49before unknowns) |
 | CAD / quotation package | implemented, locally verified partial | Seven connected watertight frames, two-piece fit sample, drawings/manifests;0modeled collisions/55poses,5unknown interface groups; NOT manufacturing-approved |
 | Shared control / firmware | locally verified partial | Protocol/native C++tests pass; regenerated current header has invalid calibration. All prior ARM/UF2images historical; physical timing absent |
-| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest recorded full suite58passes |
+| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite69passes |
 | Frozen scripted reference | locally verified partial | Four qualifying steps/3alternations,6.60cm torso and4.39cm gait distance in30s;30cm target fails.29one-factor cases show fragile guessed physics |
 | PPO / evaluation | historical local evidence | Prior2048-step smoke/reload:0walking successes/0gait. All saved policies now incompatible; no new PPO. Older49152-step pilot also failed |
 | Physical build / calibration / transfer | planned, blocked | No hardware/measurements. Bench, soldering, fit and measurement procedures prepared |
@@ -5649,15 +5882,28 @@ shaft feedback, contact or force. Diagnostics/rewards may use simulation truth.
 Safe commands are not measured mechanical limits; real stops remain unknown.
 
 Current configuration:
-`b11ab9292c586ace4f2028c7061aa4ef279b6c84bd3966d2e806e0f96d01560b`.
-[Current frozen registry](baselines/scripted_r2_offset_corrected.json);
+`685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88`.
+[Current frozen registry](baselines/scripted_pico2.json);
 [historical predecessor](baselines/scripted_r2.json), identity`4d3b0dcb…`.
 **All saved policy checkpoints and UF2images are historical/incompatible**, including
 r2 smoke. Never relabel them. Current invalid header needs an ARM rebuild and
 measured calibration before physical policy operation; native tests are not an
 ARM build, electrical test or fit approval.
 
-#### Latest completed work
+#### New2026-10-26 work
+
+- Pico2 selected in ledger/spec; official same footprint/pins/MicroUSB confirmed.
+  CMake defaults to pico2 and refuses pico; build target is now fingerprinted.
+  SDK/cross compiler absent locally: no new ARM image or electrical claim.
+- Separate print-only folder/ZIP:7frame and2sample STL files, German instructions,
+  drawings, hashes, quantities and dimensions; no fit approval.
+- WP2 measurement intake/provenance/quality checker implemented. Eight focused
+  intake tests and full69-test suite pass (16.52s); log:validation/2026-10-26/pico2/pytest.txt. Synthetic response
+  never becomes measured calibration; commands/acknowledgements rejected as angles.
+- New nominal reference replay exactly matches prior complete metrics:4steps,
+  6.60cm torso/4.39cm gait in30s, no fall. No new PPO, strength or trajectory change.
+
+#### Previous completed work (historical identities/evidence)
 
 [Full report](SENSITIVITY.md), [current validation](VALIDATION_CURRENT.md).
 
@@ -5703,38 +5949,45 @@ All five [release gates](gates.json) remain false. Software STOP is not power is
 
 #### Exact next task
 
-**AI:** begin [WP2](DEVELOPMENT_PLAN.md#5-wp2--prepare-independent-benchsoftware-tools)
-measurement intake validation, then reviewed manual six-joint control; these are
-planned additions. Keep the script frozen. When real data arrives, check external
-angle provenance, per-servo mapping/loaded response, masses/COM and pad friction.
-The [completed price/stock review](BUDGET_REVIEW.md) selects same-specification black
-wire (red unavailable) and updates tie pricing:€105.09 still exceeds the cap before
-printing. An unselected taller-pad option gives€96.79 before unknowns and requires
-a revised twin. Do not repeat these searches or select it without a complete quote.
-Next needs actual missing costs/interfaces or a newly evidenced complete basket;
-no hidden free costs, weaker servos or new fabrication.
-Do not tune guessed physics, relax acceptance, raise torque or add PPO steps.
+**AI:** finish reviewed six-joint manual utility and measured-baseline calibration
+parity. Intake validation is implemented; use it on genuine data when available.
+Do not repeat printing-service research or tune nominal physics/PPO.
+**Student/classmate:** use the separate print folder, test2pieces first with actual
+servo/horn/screws, then7frames. Record actual costs and fitted dimensions/masses;
+physical stages remain pending. User decision is complete despite missing numeric
+quote; no factual financial/fit gate has been changed to true.
 
-**Human-dependent:** obtain a complete affordable exact-file quote and actual
-servo/horn/ear/screw measurements, then mounting sample fit and bench data. The
-previous Meltlab upload was blocked by automatic approval review because specific
-provider/payload sharing authorization was absent. No upload/message/order occurred.
-Use a user-returned quote or specific authorization before sharing the files;
-public example/old-geometry prices do not count. Every finishing/sample/delivery
-charge remains required. Do not purchase while the budget/fit gates fail.
+Commands: `.venv/bin/python -m pytest -q tests`; see MEASUREMENT_INTAKE.md,
+firmware/README.md, DEVELOPMENT_PLAN.md and the print-folder instructions.
 
-After real evidence: update/version the measured twin → replay frozen reference →
-validate lifted stepping → bounded fixed/DR training → supervised transfer/equal trials.
-See DEVELOPMENT_PLAN.md for owners/dependencies and CALIBRATION.md for measurements.
+### Current local verification — 2026-10-26, S6-PETG-pad-r2
 
-```bash
-.venv/bin/python -m pytest -q tests
-.venv/bin/python tools/budget_gate.py # expected1:105.09before prints
-.venv/bin/python tools/check_clearance.py # expected1:unknown interfaces
-MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/sensitivity_probe.py --cases nominal --output runs/sensitivity_NEW
-```
+#### Pico2 and classmate-printing continuation — 2026-10-26
 
-### Current local verification — 2026-10-25, S6-PETG-pad-r2
+Design/printing choice complete by user confirmation; printing price unknown.
+This is decision evidence, not a numerical budget, actual fit or physical test.
+Current spec revisionS6-PETG-pad-r2-pico2; fingerprint
+`685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88`.
+
+- Official same51×21mm footprint/pinout/MicroUSB; GPIO mapping retained. Board3g,
+  populated envelope3.5mm and COM remain estimates; no mass borrowed from gross data.
+- CMake pico2 default/wrong-board rejection; CMake now part of identity. Invalid
+  generated header current. No installed SDK/cross compiler: no new ARM build/UF2.
+- Separate classmate folder and ZIP checked:7frame STL files plus2sample STL files,
+  1×each, connected/watertight, dimensions/hashes and German instructions/drawings.
+  Template exists; actual servo/horn fit and printed layer strength still unknown.
+- Measurement intake checker rejects target/ack/simulated-angle provenance, missing
+  original evidence, bad units/nonfinite samples, and flags stuck/reversed response.
+  Synthetic examples stay synthetic; no automatic calibration approval/gate change.
+- **69tests pass in16.52s**, `validation/2026-10-26/pico2/pytest.txt`.
+- New nominal replay exactly matches every predecessor metric:4steps,6.60cm torso/
+  4.39cm qualifying gait distance/30s, no fall; still fails30cm walking target.
+  [New frozen registry](baselines/scripted_pico2.json). No new PPO or retuned motion.
+
+Current ledger subtotal€106.49 before printing/horn unknowns. The user accepts the
+arrangement, not a fabricated numeric quote. Physical/financial gates remainfalse;
+next phase WP2 continues despite incomplete accounting. Prior evidence below is
+historical and must not be relabelled as this revision.
 
 **No hardware purchased, printed, fitted, electrically tested or deployed.**
 Prior2026-10-23record is preserved under history/2026-10-24/pre_print_revision/docs/.

@@ -1,8 +1,8 @@
 # Native-PWM S6 hardware and protocol
 
-Updated 2026-10-24. Implemented source and local compilation are distinct from
+Updated 2026-10-26. Implemented source and local compilation are distinct from
 physical verification: **nothing has been purchased or electrically tested**.
-The selected *provisional quotation revision* is bare Pico native PWM, six Waveshare15024
+The selected *provisional quotation revision* is bare Pico 2 native PWM, six Waveshare15024
 MG90S, MPU6050 and Mean Well GST40A05-P1J. PCA9685 is not in the current basket.
 Its listing is unavailable and removing it resolves the original board/brace overlap.
 
@@ -15,15 +15,13 @@ Join logic ground to the short heavy servo-return bus once. Mains wiring remains
 inside the commercial PSU/lead. Capacitor1000µF/16V goes across the bus with
 correct polarity; it is not a substitute for an adequate supply.
 
-The proposed basket uses a **bare Pico** with user-soldered headers. Existing RP2040
-firmware/pins remain unchanged. The model now separately owns estimated3g bare PCB
-and two0.6g header rows (4.2g together). Header overall pin length11mm is sourced;
-PCB/USB envelope and all masses/placements still need measurement.
-Compare Pico H5.50 +one40pin pack0.60 with bare4.10 +header kit0.50 +40pin pack0.60:
-header-inclusive saving0.90. Kit2x20pins +40pin pack supply80functional pins,
-54used,26spare; supplied3pin SWD strip is extra spare. Solder10g flux-core, heat-shrink, ties and wire are priced robot
-consumables. Iron access is available; other tools must be confirmed/borrowed or
-priced outside the robot cap but inside initial cash. No mandatory paid helper.
+The user selected **bare Raspberry Pi Pico 2 RP2350** on2026-10-26; headers
+are soldered by the student. Official footprint/pin layout is compatible with
+non-wireless Pico1 (51×21mm), so the GPIO table and MicroUSB cable remain.
+Use SDK board`pico2`, not an RP2040 binary. Board3g +two0.6g header rows are
+retained provisional mass estimates; populated envelope/COM require measurements.
+Selected Pico2 price snapshot€5.50 plus existing€0.50 header kit and€0.60 pin pack.
+No current Pico2 ARM build/electrical test exists. [Firmware](../firmware/README.md).
 
 **Prepare unpowered, with the PSU disconnected from mains and DC, and USB removed:**
 
@@ -112,7 +110,7 @@ Firmware sends raw scaled sensor-frame readings. PC removes measured biases,
 rotates into body coordinates and uses `GravityEstimator`. The simulated
 44Hz first-order filter is a provisional surrogate, not exact silicon transfer.
 References: [Pico](https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html),
-[pinout](https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf),
+[pinout](https://datasheets.raspberrypi.com/pico/pico-2-datasheet.pdf),
 [IMU register map](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf).
 
 ## Executable version1 protocol

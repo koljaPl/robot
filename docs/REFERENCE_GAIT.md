@@ -1,5 +1,11 @@
 # Provisional scripted gait baseline — 2026-10-24
 
+**2026-10-26 follow-up:** this report retains its historical identity. Current
+Pico2 registry is [scripted_pico2.json](baselines/scripted_pico2.json), identity
+`685e3802…`; nominal metrics exactly reproduced. No sensitivity/DR rerun or new
+PPO. User-arranged classmate printing is accepted, physical fit still pending.
+
+
 **Historical identity`4d3b0dcb` below.** [Current offset correction and29-case
 sensitivity study](SENSITIVITY.md) retain the exact nominal result/target sequence
 under identity`b11ab929`. Mixed-DR rows below remain historical; do not apply their

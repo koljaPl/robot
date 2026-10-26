@@ -1,16 +1,22 @@
-# Current project status — 2026-10-25
+# Current project status — 2026-10-26
+
+**Design/printing selection COMPLETE by user2026-10-26.** Classmate printing is
+accepted; exact price unknown/excluding delivery. Selected board now Pico2.
+Next phase WP2 has begun; this is not physical/manufacturing/financial verification.
+Separate print folder: [instructions](../print_for_classmate/00_START_HERE.md),
+[ZIP](../print_for_classmate.zip). [Decision record](decisions/2026-10-26-printing-pico2.json).
 
 Read SUMMARY.md → AGENTS.md → relevant roadmap stage. **Nothing bought, printed,
-assembled, flashed or physically verified.** Frame revision **S6-PETG-pad-r2**;
-active route is outsourced PETG, bare Pico and eight ordinary grip pads.
+assembled, flashed or physically verified.** Frame revision **S6-PETG-pad-r2-pico2**;
+active route is classmate PETG, bare Pico2 and eight ordinary grip pads.
 
 | Stage | State | Evidence / blocker |
 |---|---|---|
 | Requirements / AI entry | implemented | Six joints,15–20cm,PC/USB,wired power,EUR100; no printer purchase |
-| Hardware research / budget | blocked | Priced basket105.09EUR BEFORE print/sample/horn extras; known shortfall≥5.09EUR. Complete total unknown; dated ledger, not live checkout |
+| Design / printing selection | complete, user accepted | Classmate printing selected; Pico2 adopted. Price unknown; numerical budget remains separate/unverified (106.49before unknowns) |
 | CAD / quotation package | implemented, locally verified partial | Seven connected watertight frames, two-piece fit sample, drawings/manifests;0modeled collisions/55poses,5unknown interface groups; NOT manufacturing-approved |
 | Shared control / firmware | locally verified partial | Protocol/native C++tests pass; regenerated current header has invalid calibration. All prior ARM/UF2images historical; physical timing absent |
-| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest recorded full suite58passes |
+| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite69passes |
 | Frozen scripted reference | locally verified partial | Four qualifying steps/3alternations,6.60cm torso and4.39cm gait distance in30s;30cm target fails.29one-factor cases show fragile guessed physics |
 | PPO / evaluation | historical local evidence | Prior2048-step smoke/reload:0walking successes/0gait. All saved policies now incompatible; no new PPO. Older49152-step pilot also failed |
 | Physical build / calibration / transfer | planned, blocked | No hardware/measurements. Bench, soldering, fit and measurement procedures prepared |
@@ -30,15 +36,28 @@ shaft feedback, contact or force. Diagnostics/rewards may use simulation truth.
 Safe commands are not measured mechanical limits; real stops remain unknown.
 
 Current configuration:
-`b11ab9292c586ace4f2028c7061aa4ef279b6c84bd3966d2e806e0f96d01560b`.
-[Current frozen registry](baselines/scripted_r2_offset_corrected.json);
+`685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88`.
+[Current frozen registry](baselines/scripted_pico2.json);
 [historical predecessor](baselines/scripted_r2.json), identity`4d3b0dcb…`.
 **All saved policy checkpoints and UF2images are historical/incompatible**, including
 r2 smoke. Never relabel them. Current invalid header needs an ARM rebuild and
 measured calibration before physical policy operation; native tests are not an
 ARM build, electrical test or fit approval.
 
-## Latest completed work
+## New2026-10-26 work
+
+- Pico2 selected in ledger/spec; official same footprint/pins/MicroUSB confirmed.
+  CMake defaults to pico2 and refuses pico; build target is now fingerprinted.
+  SDK/cross compiler absent locally: no new ARM image or electrical claim.
+- Separate print-only folder/ZIP:7frame and2sample STL files, German instructions,
+  drawings, hashes, quantities and dimensions; no fit approval.
+- WP2 measurement intake/provenance/quality checker implemented. Eight focused
+  intake tests and full69-test suite pass (16.52s); log:validation/2026-10-26/pico2/pytest.txt. Synthetic response
+  never becomes measured calibration; commands/acknowledgements rejected as angles.
+- New nominal reference replay exactly matches prior complete metrics:4steps,
+  6.60cm torso/4.39cm gait in30s, no fall. No new PPO, strength or trajectory change.
+
+## Previous completed work (historical identities/evidence)
 
 [Full report](SENSITIVITY.md), [current validation](VALIDATION_CURRENT.md).
 
@@ -84,33 +103,13 @@ All five [release gates](gates.json) remain false. Software STOP is not power is
 
 ## Exact next task
 
-**AI:** begin [WP2](DEVELOPMENT_PLAN.md#5-wp2--prepare-independent-benchsoftware-tools)
-measurement intake validation, then reviewed manual six-joint control; these are
-planned additions. Keep the script frozen. When real data arrives, check external
-angle provenance, per-servo mapping/loaded response, masses/COM and pad friction.
-The [completed price/stock review](BUDGET_REVIEW.md) selects same-specification black
-wire (red unavailable) and updates tie pricing:€105.09 still exceeds the cap before
-printing. An unselected taller-pad option gives€96.79 before unknowns and requires
-a revised twin. Do not repeat these searches or select it without a complete quote.
-Next needs actual missing costs/interfaces or a newly evidenced complete basket;
-no hidden free costs, weaker servos or new fabrication.
-Do not tune guessed physics, relax acceptance, raise torque or add PPO steps.
+**AI:** finish reviewed six-joint manual utility and measured-baseline calibration
+parity. Intake validation is implemented; use it on genuine data when available.
+Do not repeat printing-service research or tune nominal physics/PPO.
+**Student/classmate:** use the separate print folder, test2pieces first with actual
+servo/horn/screws, then7frames. Record actual costs and fitted dimensions/masses;
+physical stages remain pending. User decision is complete despite missing numeric
+quote; no factual financial/fit gate has been changed to true.
 
-**Human-dependent:** obtain a complete affordable exact-file quote and actual
-servo/horn/ear/screw measurements, then mounting sample fit and bench data. The
-previous Meltlab upload was blocked by automatic approval review because specific
-provider/payload sharing authorization was absent. No upload/message/order occurred.
-Use a user-returned quote or specific authorization before sharing the files;
-public example/old-geometry prices do not count. Every finishing/sample/delivery
-charge remains required. Do not purchase while the budget/fit gates fail.
-
-After real evidence: update/version the measured twin → replay frozen reference →
-validate lifted stepping → bounded fixed/DR training → supervised transfer/equal trials.
-See DEVELOPMENT_PLAN.md for owners/dependencies and CALIBRATION.md for measurements.
-
-```bash
-.venv/bin/python -m pytest -q tests
-.venv/bin/python tools/budget_gate.py # expected1:105.09before prints
-.venv/bin/python tools/check_clearance.py # expected1:unknown interfaces
-MPLCONFIGDIR=/tmp/s6-mpl .venv/bin/python tools/sensitivity_probe.py --cases nominal --output runs/sensitivity_NEW
-```
+Commands: `.venv/bin/python -m pytest -q tests`; see MEASUREMENT_INTAKE.md,
+firmware/README.md, DEVELOPMENT_PLAN.md and the print-folder instructions.

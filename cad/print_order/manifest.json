@@ -1,5 +1,5 @@
 {
-  "revision": "S6-PETG-pad-r2",
+  "revision": "S6-PETG-pad-r2-pico2",
   "state": "QUOTATION PROTOTYPE / FIT SAMPLE; NOT RELEASED",
   "manufacturing_approved": false,
   "units": "mm",
@@ -377,7 +377,7 @@
       "role": "fit sample only; not an eighth/ninth frame part"
     }
   ],
-  "physical_spec_sha256": "f9e9b2018bde072c8632befacd4ca4c04b14e7a6230b961a131487d4e4e5300d",
+  "physical_spec_sha256": "e2e66dfc8e39f907ba6d410bbf6b3cde40886730284309b207b045df4bcf32a6",
   "source_cad_sha256": "47531526a8379c4d745766b8914c07b74c6072ca33b81e98e459adc06c996f31",
   "quotation_batch_sha256": "70b33a79f299d2d222bf30ab2bb286d5e1f9870328a1789f0755760f8b88eeac",
   "quotation_batch_bounds_mm": [
@@ -386,7 +386,7 @@
     38.25
   ],
   "print_settings": {
-    "route": "commercial PETG FDM, ordinary adhesive TPE pads",
+    "route": "user-arranged classmate PETG FDM, ordinary adhesive TPE pads",
     "frame_parts": 7,
     "sample_pieces": 2,
     "state": "quotation prototype; manufacturing NOT released",
@@ -403,9 +403,10 @@
       "sample insertion fit and actual printed hole diameters",
       "printed masses/layer strength, pad friction/adhesion",
       "Pico header11mm pin envelope, PCB stand-off fit and Dupont/cable clearances"
-    ]
+    ],
+    "arrangement_state": "user accepted2026-10-26; price unknown; physical sample fit still required"
   },
-  "source_date": "2026-10-24",
+  "source_date": "2026-10-26",
   "unknown_interfaces": [
     "servo ear spacing/holes/thickness and case axial location",
     "shaft height, spline, supplied horn shape/hole radii/thickness",

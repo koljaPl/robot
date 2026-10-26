@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "data_kind": "physical",
+  "servo_id": "",
+  "joint_index": 0,
+  "angle_source": "external_video",
+  "measurement_method": "",
+  "clock_alignment": "",
+  "angle_uncertainty_rad": null,
+  "evidence_files": [],
+  "units": {"time_s": "s", "target_rad": "rad", "angle_rad": "rad", "voltage_v": "V", "load_nm": "N*m"},
+  "note": "Invalid until actual provenance/uncertainty/evidence supplied. CSV targets or acknowledgements are not shaft measurements."
+}

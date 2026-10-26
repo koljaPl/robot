@@ -15,7 +15,7 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 - Preferred delivered cost EUR 50–75; hard maximum EUR 100 including every part,
   VAT, shipping and any paid assembly preparation. No weaker-servo substitution.
 - User can solder: self-prepared harness/headers, no mandatory helper labour.
-- Active route: commercial PETG printing, seven frame parts +two separate fit samples.
+- Active route: user-arranged classmate PETG printing, seven frame parts +two separate fit samples.
 - Eight ordinary TPE pads; no printed TPU soles or filament spool in active basket.
 - No printer purchase. Student does no mechanical drilling/cutting/bending; service finishes holes.
 - No purchases or supplier messages are authorized by the implementation task.
@@ -28,8 +28,8 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 - Calibration records: per-servo pulse mapping and IMU alignment/bias; examples are invalid
   for policy deployment until measured and explicitly validated.
 - Source code is authoritative over copies embedded in generated documentation.
-- Current frozen script: `docs/baselines/scripted_r2_offset_corrected.json`; predecessor
-  `scripted_r2.json` is historical. Exact replay/metrics, not hardware/training approval.
+- Current frozen script: `docs/baselines/scripted_pico2.json`; both r2 registries
+  are historical. Exact replay/metrics, not hardware/training approval.
 
 ## Evidence and gates
 
@@ -40,13 +40,15 @@ Use the detailed handoff only for relevant reference; do not reread all embedded
 - Count full material/consumable packs; tools/printer separate but included in initial cash.
 - Unknown tools, frame hardware, stock or postage must remain unknown, not free.
 - Unknown costs are never zero. Budget and fit must pass before recommending procurement.
-- Active commercial basket: common95.56 +ear-fastener delivery9.53 =105.09EUR BEFORE
-  print/sample/horn extras; minimum known shortfall5.09EUR for this basket. No procurement.
-- New quotes must identify current geometry hashes; old commercial/own-printer prices are historical.
-- Model revision S6-PETG-pad-r2 owns bare Pico+headers and8discrete pad contacts.
-- Manufacturing remains blocked by real horn/ear/screw fit, finishing/layer strength and budget.
-- Automatic approval review blocked Meltlab STL upload. No upload/message/order occurred;
-  get specific authorization for that provider/payload or let user return the quote.
+- 2026-10-26 user completes design/printing decision: classmate prints; price unknown,
+  excluding delivery. No printer purchase/upload/messages by AI; no repeat quote-search loop.
+- Selected controller: bare Raspberry Pi Pico 2 RP2350; SDK target pico2. Pins and
+  51x21mm footprint unchanged;3g board mass/3.5mm populated envelope still estimates.
+- Priced subtotal now106.49EUR before unknown print/horn extras. Financial≤100 gate
+  remains false; user acceptance is not a fabricated numeric quote or physical fit.
+- Model S6-PETG-pad-r2-pico2; new identity685e3802…; all prior policies/UF2historical.
+- Print-only deliverable: `print_for_classmate/` +ZIP; two fit samples before7frames.
+  No combined duplicate plate/printed horns/TPU; physical sample and strength checks pending.
 - User confirmed25337 Germany and PC USB-A on2026-10-23: no adapter required.
   USB-A–Micro-B data cable remains required; recheck final checkout for25337.
 - Physical stages need the user's assembly/measurements; continue independent software work.
@@ -87,14 +89,13 @@ python tools/prepare_print_order.py  # two quotation ZIPs; never manufacturing a
 - `docs/SENSITIVITY.md`:29 one-factor cases per old/corrected identity;55tests pass.
   Physical offsets now enter actuator bias, never clipped away at command limits.
   Nominal unchanged; all12 ±1° offset probes lose steps.73credited steps raw-audited.
-- Latest recorded full suite:58passes (2026-10-25 procurement review);55above is
+- Latest full suite:69passes (2026-10-26 Pico2/intake);55above is
   the earlier offset checkpoint. Expanded task IDs/gates: `docs/DEVELOPMENT_PLAN.md`.
-- Next AI task: WP2 measurement-intake validation, then reviewed six-joint manual
-  tooling; both are PLANNED additions, not completed physical tests. Keep script
-  frozen. Read `docs/BUDGET_REVIEW.md` before repeating consolidation research.
-  Eight taller FIX-RF-003 pads are an unselected96.79EUR comparison, not a complete
-  affordable robot; only3.21EUR remains for all unknowns. Current pads/twin unchanged.
-  No nominal tuning/stronger motors/relaxed acceptance/more PPO. Human: quote and fit.
+- WP2 intake implemented: `tools/validate_measurement.py`, provenance template and tests.
+  Never approve calibration automatically; synthetic data remains synthetic.
+- Next AI: reviewed six-joint manual tooling, then measured-calibration parity for
+  HOME/untrained baselines. Keep script frozen; no new tuning/strength/PPO.
+- User/classmate next: fit sample on actual servo/horn, then full frame; measure/weigh.
 - Stop at the agreed training cap and report failure honestly if walking is unmet.
 
 ## Documentation and packaging

@@ -1,0 +1,69 @@
+# Hardware-first execution roadmap
+
+Updated **2026-10-25**. This is the short map; the
+[complete execution plan](DEVELOPMENT_PLAN.md) contains all phases, completed work,
+WP1–WP11 procedures, owners, affected files, acceptance evidence and failure decisions.
+[STATUS](STATUS.md) records evidence; ledgers remain authoritative.
+
+## Where we are
+
+Implemented: provisional S6-PETG-pad-r2 CAD/twin, common control interface,
+firmware/bench foundations, Gym/PPO/evaluation and diagnostic tools. Latest
+recorded full suite:58passes. No physical robot, measured calibration or current
+compatible learned policy. Four scripted nominal steps/6.60cm in30s fail30cm
+walking acceptance; small unmeasured parameter changes remove steps.
+
+The selected dated basket is€105.09 BEFORE print/sample/horn extras, at least
+€5.09 over cap. No exact complete affordable quote or actual fit exists. The
+unselected taller-pad comparison is€96.79 before unknowns; it is not a complete
+robot and cannot silently replace current contact geometry. See BUDGET_REVIEW.
+
+## Dependency-ordered work
+
+| Stage / original phases | Detailed work packages and owner | Completion gate |
+|---|---|---|
+| Entry /0,13 | Student+AI: requirements, status, plan, evidence | Constraints/next task unambiguous; claims tied to real evidence |
+| A /1 | WP1 student+AI: complete basket, exact-file quotes, interfaces and staged delivery | Complete ≤€100 delivered cost and reviewed fit path; no purchasing exception assumed |
+| B preparation /3,6,8,9 | WP2 AI: measurement intake, fit quality, six-joint manual utility and measured-baseline calibration parity | Mocked tests/clear procedures; no physical claim; can proceed alongside A |
+| B hardware /1,8,9 | WP3–WP5 student+AI: bench, measured interfaces, sample fit, finished assembly/weighing | Electrical/fit records, safe manual control, real mass ownership |
+| C /2,3,4,9 | WP6–WP7 student+AI: measured twin, observation parity, model/reference validation | Measured calibration and reviewed weight transfer/lift; all five gates backed by evidence |
+| D /5,6,7 | WP8–WP9 AI: bounded matched fixed/DR training and held-out evaluation | Equal initialization/budgets, compatible identities, actual gait results/CSV/videos |
+| E /8,10 | WP10 student+AI: supervised standing, short steps, progressive policy trials | Compatible measured setup, physical safety checks and actual trial records |
+| F /11,13 | WP11 student+AI: equal physical A/B, comparison, report/presentation | Recorded successes/failures, uncertainty, cable effects and reproducible handoff |
+| Extensions /12 | Future scoped work: turning, recovery, terrain | Stable walking first |
+
+**Next AI:** WP2 measurement-intake validation, then reviewed manual six-joint
+control. These are planned additions. Keep the reference frozen; no more nominal
+tuning/PPO, stronger fictitious actuation or repeated identical budget searches.
+**Next human input:** exact remaining quotes/interfaces and actual servo/sample fit;
+all purchases/manufacturing remain blocked. CAD sharing with Meltlab needs the
+previously missing provider/payload authorization, or a user-returned quote.
+This plan sends no upload, message or purchase and asks for none to be executed now.
+
+## Contracts to preserve
+
+- Six actions in joint order L hip/knee/ankle then R same; +Y pitch, +X roll.
+- 50Hz commands,200Hz IMU processing,2ms physics; actual timestamps matter.
+- Five18-value observation frames: estimated gravity, gyro, acknowledged targets
+  and previous actions. No perfect orientation, shaft feedback, velocity or contacts.
+- Safe command limits are not unknown mechanical stops. Torque is a simulation
+  estimate, not programmable hardware current/torque protection.
+- Boot disarmed, explicit arm,100ms watchdog, bounded/versioned CRC packets,
+  persistent measured calibration/fingerprints; STOP is not physical DC isolation.
+- Current identity begins`b11ab929`; all saved policies/UF2are historical after the
+  offset correction. Use snapshots; never relabel old checkpoints or headers.
+- Smoke2048, pilot≤50000 (49152actual), final≤1000000 (999424actual) each for
+  A/B seeds0,1,2. Compatible pilot counts toward final total; B never resumes A.
+- Match A/B initial weights and budgets. Validation2000–2004 selects success,
+  gait distance, reward; reserve1000–1009 for final tests, with HOME/untrained baselines.
+- Acceptance: separate30s stand; body AND qualifying gait progress≥0.3m/30s,
+  ≥3mm/40ms full-foot lift,≥5mm touchdown,≤3mm stance slip,≥2steps per side and
+  ≥3alternations, no fall. Physical thresholds need video/ruler evidence.
+- Stop/report failure at the agreed cap. No simulation result clears a physical gate.
+
+## Evidence/continuation rule
+
+Record each step as planned, implemented, locally verified, physically verified
+or blocked. Keep all five gates false until actual evidence closes them. Preserve
+historical trials, quotes and policies. Follow the detailed plan's next executable
+task when human-dependent work is blocked; do not restart already completed research.

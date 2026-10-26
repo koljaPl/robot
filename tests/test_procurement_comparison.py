@@ -12,10 +12,10 @@ def test_pad_comparison_removes_only_unused_delivery_and_never_clears_purchase()
     before = copy.deepcopy(basket)
     result = compare_option(basket, 'berrybase_round_pads')
     assert basket == before
-    assert result['base_known_subtotal_eur'] == '105.09'
+    assert result['base_known_subtotal_eur'] == '106.49'
     assert result['known_saving_eur'] == '8.30'
-    assert result['candidate']['known_delivered_subtotal_eur'] == '96.79'
-    assert result['candidate']['remaining_for_all_unknowns_eur'] == '3.21'
+    assert result['candidate']['known_delivered_subtotal_eur'] == '98.19'
+    assert result['candidate']['remaining_for_all_unknowns_eur'] == '1.81'
     assert result['candidate']['total_price_eur'] is None
     assert not result['candidate']['purchase_cleared'] and not result['selected']
     assert result['candidate_requires_geometry_revision']

@@ -203,7 +203,7 @@
     ]
   },
   "source_cad_sha256": "47531526a8379c4d745766b8914c07b74c6072ca33b81e98e459adc06c996f31",
-  "physical_spec_sha256": "f9e9b2018bde072c8632befacd4ca4c04b14e7a6230b961a131487d4e4e5300d",
+  "physical_spec_sha256": "e2e66dfc8e39f907ba6d410bbf6b3cde40886730284309b207b045df4bcf32a6",
   "slicer_verified": false,
   "structural_orientation_verified": false,
   "material": "Commercial PETG service supplies material; no spool/printer/TPU soles in active basket",

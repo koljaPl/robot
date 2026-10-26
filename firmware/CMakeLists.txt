@@ -1,4 +1,8 @@
 cmake_minimum_required(VERSION 3.13)
+set(PICO_BOARD pico2 CACHE STRING "Selected S6 controller: Raspberry Pi Pico 2")
+if(NOT PICO_BOARD STREQUAL "pico2")
+    message(FATAL_ERROR "This S6 revision targets Pico 2; use a fresh build directory with -DPICO_BOARD=pico2")
+endif()
 include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 project(s6_bench C CXX ASM)
 set(CMAKE_CXX_STANDARD 17)

@@ -1,4 +1,31 @@
-# Current local verification — 2026-10-25, S6-PETG-pad-r2
+# Current local verification — 2026-10-26, S6-PETG-pad-r2
+
+## Pico2 and classmate-printing continuation — 2026-10-26
+
+Design/printing choice complete by user confirmation; printing price unknown.
+This is decision evidence, not a numerical budget, actual fit or physical test.
+Current spec revisionS6-PETG-pad-r2-pico2; fingerprint
+`685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88`.
+
+- Official same51×21mm footprint/pinout/MicroUSB; GPIO mapping retained. Board3g,
+  populated envelope3.5mm and COM remain estimates; no mass borrowed from gross data.
+- CMake pico2 default/wrong-board rejection; CMake now part of identity. Invalid
+  generated header current. No installed SDK/cross compiler: no new ARM build/UF2.
+- Separate classmate folder and ZIP checked:7frame STL files plus2sample STL files,
+  1×each, connected/watertight, dimensions/hashes and German instructions/drawings.
+  Template exists; actual servo/horn fit and printed layer strength still unknown.
+- Measurement intake checker rejects target/ack/simulated-angle provenance, missing
+  original evidence, bad units/nonfinite samples, and flags stuck/reversed response.
+  Synthetic examples stay synthetic; no automatic calibration approval/gate change.
+- **69tests pass in16.52s**, `validation/2026-10-26/pico2/pytest.txt`.
+- New nominal replay exactly matches every predecessor metric:4steps,6.60cm torso/
+  4.39cm qualifying gait distance/30s, no fall; still fails30cm walking target.
+  [New frozen registry](baselines/scripted_pico2.json). No new PPO or retuned motion.
+
+Current ledger subtotal€106.49 before printing/horn unknowns. The user accepts the
+arrangement, not a fabricated numeric quote. Physical/financial gates remainfalse;
+next phase WP2 continues despite incomplete accounting. Prior evidence below is
+historical and must not be relabelled as this revision.
 
 **No hardware purchased, printed, fitted, electrically tested or deployed.**
 Prior2026-10-23record is preserved under history/2026-10-24/pre_print_revision/docs/.

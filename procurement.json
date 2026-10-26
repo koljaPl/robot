@@ -1,9 +1,9 @@
 {
-  "checked_date": "2026-10-25",
+  "checked_date": "2026-10-26",
   "currency": "EUR",
   "budget_max_eur": 100,
   "destination": "25337, Germany; user-confirmed postcode, standard delivery; final postcode-specific checkout pending",
-  "status": "BLOCKED: common95.56 +ear-fastener delivery9.53 =105.09 before printing/sample/horn extras; minimum known shortfall5.09; complete quotation/fit absent",
+  "status": "DESIGN/PRINTING ARRANGEMENT COMPLETE: user accepted classmate printing and Pico 2. Exact print/delivery/horn costs unknown; numerical budget/physical fit not verified. Continue WP2.",
   "items": [
     {
       "category": "Motors",
@@ -15,21 +15,21 @@
       "notes": "VAT included, stock shown; horn/screw inclusion unverified",
       "evidence_state": "sourced",
       "checked_date": "2026-10-25",
-      "availability": "Short supply; exact six-unit availability still not established;1–3 working days DE advertised",
+      "availability": "Short supply; exact six-unit availability still not established;1\u20133 working days DE advertised",
       "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
     },
     {
       "category": "Electronics",
-      "product": "Raspberry Pi Pico (bare RP2040 board)",
+      "product": "Raspberry Pi Pico 2 (bare RP2350 board), RPI-PICO2",
       "quantity": 1,
-      "unit_price_eur": 4.1,
+      "unit_price_eur": 5.5,
       "shop": "BerryBase",
-      "url": "https://www.berrybase.de/raspberry-pi-pico-rp2040-mikrocontroller-board",
-      "notes": "Selected provisional bare Pico +soldered headers; GPIOs unchanged. Updated twin owns4.2g inclusive-header module estimate, not a measured mass.",
+      "url": "https://www.berrybase.de/raspberry-pi-pico-2-rp2350-mikrocontroller-board",
+      "notes": "User-selected Pico 2, bare board; existing header kit retained. Official 51x21mm footprint and pinout compatible. 3g board mass is a retained provisional estimate, NOT measured or seller gross mass.",
       "evidence_state": "sourced",
-      "checked_date": "2026-10-25",
-      "availability": "100+ shown; 1–3 days; no reservation",
-      "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
+      "checked_date": "2026-10-26",
+      "availability": "Search-visible product snapshot:100+ and1\u20133days; direct page timed out; no reservation or final postcode checkout.",
+      "price_availability_evidence": "docs/procurement/2026-10-26/pico2.json"
     },
     {
       "category": "Sensors",
@@ -41,7 +41,7 @@
       "notes": "Header soldering/board orientation to confirm",
       "evidence_state": "sourced",
       "checked_date": "2026-10-25",
-      "availability": "517 shown,1–3working days; not reserved",
+      "availability": "517 shown,1\u20133working days; not reserved",
       "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
     },
     {
@@ -76,7 +76,7 @@
       "unit_price_eur": 1.8,
       "shop": "BerryBase",
       "url": "https://www.berrybase.de/offizielles-raspberry-pi-micro-usb-kabel-rot-1-0m",
-      "notes": "USB-A–Micro-B data cable required for Pico. User confirmed PC USB-A on2026-10-23; no adapter required or included.",
+      "notes": "USB-A\u2013Micro-B data cable required for Pico. User confirmed PC USB-A on2026-10-23; no adapter required or included.",
       "evidence_state": "sourced",
       "checked_date": "2026-10-25",
       "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
@@ -109,25 +109,25 @@
     },
     {
       "category": "Wiring/connectors",
-      "product": "Donau E-175-11 black copper wire 0.75 mm², 10 m roll",
+      "product": "Donau E-175-11 black copper wire 0.75 mm\u00b2, 10 m roll",
       "quantity": 1,
       "unit_price_eur": 5.5,
       "shop": "BerryBase",
       "url": "https://www.berrybase.de/donau-kupferschaltlitze-0-75-mm2-10m-lang-1-adrig-24x0-20mm-pvc-isoliert/farbe-schwarz",
-      "notes": "Replaces unavailable red E-175-10 with same 0.75mm² copper/24x0.20mm/PVC/10m specification. One full roll serves both short buses; identify positive with two separated heat-shrink bands and negative with one at every end, then verify continuity/polarity. Existing shrink pack supplies markings; do not rely on black wire colour. Wiring mass remains an estimate, not a new measured twin.",
+      "notes": "Replaces unavailable red E-175-10 with same 0.75mm\u00b2 copper/24x0.20mm/PVC/10m specification. One full roll serves both short buses; identify positive with two separated heat-shrink bands and negative with one at every end, then verify continuity/polarity. Existing shrink pack supplies markings; do not rely on black wire colour. Wiring mass remains an estimate, not a new measured twin.",
       "evidence_state": "sourced",
       "checked_date": "2026-10-25",
-      "availability": "7 rolls shown in browser; 1–3 working days, not reserved",
+      "availability": "7 rolls shown in browser; 1\u20133 working days, not reserved",
       "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
     },
     {
       "category": "Power",
-      "product": "AiSHi ELK1M16VAWH 1000 µF 16 V capacitor",
+      "product": "AiSHi ELK1M16VAWH 1000 \u00b5F 16 V capacitor",
       "quantity": 1,
       "unit_price_eur": 0.29,
       "shop": "BerryBase",
       "url": "https://www.berrybase.de/elektrolytkondensator-1000-f-16v-1050c-1-radial-tht",
-      "notes": "Polarity matters; actual tolerance ±20%, inconsistent page title ignored",
+      "notes": "Polarity matters; actual tolerance \u00b120%, inconsistent page title ignored",
       "evidence_state": "sourced",
       "checked_date": "2026-10-25",
       "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
@@ -167,7 +167,7 @@
       "evidence_state": "sourced",
       "checked_date": "2026-10-25",
       "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json",
-      "availability": "6 packs shown for exact transparent100x2.5mm variant;1–3 working days, not reserved"
+      "availability": "6 packs shown for exact transparent100x2.5mm variant;1\u20133 working days, not reserved"
     },
     {
       "category": "Power",
@@ -189,7 +189,7 @@
       "unit_price_eur": 4.95,
       "shop": "Welectron",
       "url": "https://www.welectron.com/Shipping-cost",
-      "notes": "Basket under €49 free-shipping threshold",
+      "notes": "Basket under \u20ac49 free-shipping threshold",
       "evidence_state": "sourced",
       "checked_date": "2026-10-25",
       "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json",
@@ -231,7 +231,7 @@
       "notes": "Full 10 g pack counted; Sn99.3Cu0.7, flux core. No mandatory helper labour. Iron/tool access confirmed by user; other tools must be borrowed or priced separately.",
       "evidence_state": "sourced",
       "checked_date": "2026-10-25",
-      "availability": "90 shown; 1–3 days",
+      "availability": "90 shown; 1\u20133 days",
       "evidence_file": "docs/procurement/2026-10-23/soldering_routes/solder.txt",
       "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
     },
@@ -246,7 +246,7 @@
       "evidence_state": "sourced",
       "checked_date": "2026-10-25",
       "manufacturer_url": "https://www.delock.com/produkt/18309/pdf.html?sprache=de",
-      "availability": "Browser Germany/private-customer view:3.55incl19%VAT, in stock1–2working days; not reserved. Search cache2.98exVAT is not the gross price.",
+      "availability": "Browser Germany/private-customer view:3.55incl19%VAT, in stock1\u20132working days; not reserved. Search cache2.98exVAT is not the gross price.",
       "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
     },
     {
@@ -272,7 +272,7 @@
       "notes": "Two20pin headers for Pico; confirm package, solder yourself. Any supplied3pin debug strip is spare, not required. With one40pin pack provides at least80pins. Saves0.10 vs two40pin packs.",
       "evidence_state": "sourced",
       "checked_date": "2026-10-25",
-      "availability": "100+ shown;1–3days",
+      "availability": "100+ shown;1\u20133days",
       "price_availability_evidence": "docs/procurement/2026-10-25/basket_review.json"
     }
   ],
@@ -281,10 +281,11 @@
     "Six-unit Waveshare stock and actual supplied horn/shaft screw contents",
     "3.3V PWM threshold, branch/contact current ratings and PSU droop still need bench testing",
     "Final complete delivery to25337 incl every sample shipment; no bookings/orders/messages",
-    "Fit/layer strength/pad friction and adhesion require physical measurements"
+    "Fit/layer strength/pad friction and adhesion require physical measurements",
+    "Classmate printing accepted by user; exact cost/finishing/delivery accounting unknown. Financial gate remains separate from completed design/provider decision."
   ],
   "optional": [
-    "one spare MG90S: €3.50 plus any additional delivery",
+    "one spare MG90S: \u20ac3.50 plus any additional delivery",
     "slack safety line",
     "thin protective test mat",
     "longer USB cable and adequately thick power tether: not yet sourced"
@@ -396,7 +397,7 @@
           "evidence_state": "sourced",
           "checked_date": "2026-10-23",
           "evidence_file": "docs/procurement/2026-10-23/soldering_routes/petg-black.txt",
-          "availability": "Selected black variant in stock; 1–3 business days"
+          "availability": "Selected black variant in stock; 1\u20133 business days"
         },
         {
           "category": "Fasteners",
@@ -490,7 +491,7 @@
       "notes": "Inactive comparison; authoritative old amounts/configuration in docs/history/2026-10-24/pre_print_revision/procurement.json. No spool/printer purchase in active commercial route."
     },
     "commercial_print": {
-      "name": "Commercial PETG frame +ordinary grip pads",
+      "name": "User-arranged classmate PETG printing",
       "selection_state": "selected",
       "items": [
         {
@@ -572,9 +573,9 @@
           "product": "PETG full frame:7finished parts, VAT, packaging and delivery to25337",
           "quantity": 1,
           "unit_price_eur": null,
-          "shop": "Commercial PETG service, not selected",
+          "shop": "Classmate printing (user arranged)",
           "url": null,
-          "notes": "No current file-specific delivered quote. One torso+2thighs+2shins+2feet. Support removal, usable holes, finishing and any fit inspection must be priced; no printed soles/filament.",
+          "notes": "No current file-specific delivered quote. One torso+2thighs+2shins+2feet. Support removal, usable holes, finishing and any fit inspection must be priced; no printed soles/filament. User selected this arrangement on2026-10-26; exact print/finishing/delivery cost still unknown, never zero.",
           "evidence_state": "unknown",
           "checked_date": "2026-10-24"
         },
@@ -583,9 +584,9 @@
           "product": "PETG fit sample:2interface pieces, VAT and separate delivery",
           "quantity": 1,
           "unit_price_eur": null,
-          "shop": "Commercial PETG service, not selected",
+          "shop": "Classmate printing (user arranged)",
           "url": null,
-          "notes": "Ear cradle +horn plate. Separate fit-first order; include shipping/finishing. Any sample/full-order combination must be explicitly quoted, not assumed free.",
+          "notes": "Ear cradle +horn plate. Separate fit-first order; include shipping/finishing. Any sample/full-order combination must be explicitly quoted, not assumed free. User selected this arrangement on2026-10-26; exact print/finishing/delivery cost still unknown, never zero.",
           "evidence_state": "unknown",
           "checked_date": "2026-10-24"
         }
@@ -594,7 +595,6 @@
         "Active selected basket is over cap; a candidate subtotal is not its complete delivered quotation; no order",
         "Exact Waveshare batch horns/retainers/screw/ear measurements and interface sample fit",
         "Current exact-file print/support/finishing/sample/delivery prices missing",
-        "Automatic approval review blocked Meltlab STL upload; provider-specific upload authorization required",
         "Physical layer strength, continuous clearances, tie/connector routing and pad grip not verified"
       ],
       "package_full": "cad/frame_quotation_package.zip",
@@ -628,7 +628,7 @@
       "url": "https://www.welectron.com/Bambu-Lab-A1-mini-3D-Drucker",
       "shipping_url": "https://www.welectron.com/Zahlung-und-Versand",
       "evidence_file": "docs/procurement/2026-10-23/soldering_routes/a1-mini.txt",
-      "availability": "Exact non-Combo in stock, 1–3 working days advertised",
+      "availability": "Exact non-Combo in stock, 1\u20133 working days advertised",
       "build_volume_mm": [
         180,
         180,
@@ -647,7 +647,7 @@
       "url": "https://store.creality.com/de/products/ender-3-v3-se-3d-drucker",
       "shipping_url": "https://store.creality.com/de/pages/versand-auslieferung",
       "evidence_file": "docs/procurement/2026-10-23/soldering_routes/ender-v3-se.txt",
-      "availability": "Standalone EUR169 add-to-cart enabled; estimated Oct26–30 shown, stock count not published/reserved",
+      "availability": "Standalone EUR169 add-to-cart enabled; estimated Oct26\u201330 shown, stock count not published/reserved",
       "build_volume_mm": [
         220,
         220,
@@ -758,7 +758,7 @@
       "change": "Consolidate IMU at BerryBase",
       "decision": "rejected",
       "source": "https://www.berrybase.de/elecrow-mpu6050-bewegungsmodul-3-achsen-gyro-und-beschleunigung-i2c-uart-dmp-16g-20000s-5-6v",
-      "reason": "9.90module vs3.62; adds6.28 before any4.90shipping saving; module5–6V/100Hz listing also differs from selected raw3.3V/200Hz interface. Preserve current IMU."
+      "reason": "9.90module vs3.62; adds6.28 before any4.90shipping saving; module5\u20136V/100Hz listing also differs from selected raw3.3V/200Hz interface. Preserve current IMU."
     },
     {
       "date": "2026-10-24",
@@ -808,10 +808,10 @@
     },
     {
       "date": "2026-10-25",
-      "change": "Funduino F23106261 nominal M2–M5 screw assortment",
+      "change": "Funduino F23106261 nominal M2\u2013M5 screw assortment",
       "decision": "rejected as a complete replacement",
       "source": "https://funduino.com/products/schraubenset-kreuzschrauben-sortiment",
-      "reason": "9.97EUR; title says M2–M5 but technical table3–5mm. Exact12M2x8,12M2nuts and24washers not established. Higher price than current9.53delivered fastener basket, with no justified removal of required hardware."
+      "reason": "9.97EUR; title says M2\u2013M5 but technical table3\u20135mm. Exact12M2x8,12M2nuts and24washers not established. Higher price than current9.53delivered fastener basket, with no justified removal of required hardware."
     },
     {
       "date": "2026-10-25",
@@ -895,5 +895,21 @@
         "Reichelt shipping may only be removed if no other required Reichelt item remains"
       ]
     }
+  },
+  "phase_completion": {
+    "date": "2026-10-26",
+    "state": "complete_user_accepted_design_and_printing_arrangement",
+    "evidence": "User confirms current plan, chooses Pico 2 and printing by a classmate; exact price unknown, excluding delivery; requests separate printable templates.",
+    "printing_provider": "classmate (user arranged)",
+    "price_eur": null,
+    "delivery_eur": null,
+    "controller": "Raspberry Pi Pico 2 bare, RP2350; not Pico 2 W",
+    "purchases_or_messages_by_AI_authorized": false,
+    "printer_purchase": false,
+    "research_phase_complete": true,
+    "budget_numerically_verified": false,
+    "physical_fit_verified": false,
+    "next_phase": "WP2 bench/calibration software preparation plus separate print templates",
+    "notes": "User acceptance closes the provider-selection/design decision. It does not fabricate a paid quote, finished print, fit or hardware test. No repeated supplier-search/upload permission loop for the classmate route."
   }
 }

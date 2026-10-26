@@ -12,7 +12,7 @@ def digest(value):
 
 def configuration_identity(calibration=None):
     names = ('physical_spec.json', 'robot.xml', 'robot_config.py', 'servo_control.py',
-             'imu_observation.py', 'humanoid_env.py', 'gait_metrics.py', 'hardware_interface.py', 'calibration.py', 'firmware/main.cpp', 'firmware/control.h')
+             'imu_observation.py', 'humanoid_env.py', 'gait_metrics.py', 'hardware_interface.py', 'calibration.py', 'firmware/main.cpp', 'firmware/control.h', 'firmware/CMakeLists.txt')
     files = {n: hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in names}
     return {'configuration': digest(files), 'files': files,
             'calibration': digest(calibration) if calibration else None}

@@ -18,15 +18,15 @@ def test_active_commercial_route_counts_sample_and_unknown_finishing():
     basket=json.loads((ROOT/'procurement.json').read_text())
     report=check_basket(basket)
     assert report['scenario']=='commercial_print' and report['status']=='OVER BUDGET'
-    assert report['known_delivered_subtotal_eur']=='105.09'
-    assert report['confirmed_minimum_shortfall_eur']=='5.09'
+    assert report['known_delivered_subtotal_eur']=='106.49'
+    assert report['confirmed_minimum_shortfall_eur']=='6.49'
     assert report['total_price_eur'] is None and not report['purchase_cleared']
     pending=' '.join(report['pending_prices']).lower()
     assert 'sample' in pending and '7finished' in pending
     active=basket['items']+basket['scenarios']['commercial_print']['items']
     assert not any('spool' in r['product'].lower() or 'printer purchase' in r['product'].lower() for r in active)
     # An unknown cheaper print is never interpreted as free or a budget pass.
-    assert all(r['unit_price_eur'] is None for r in active if r['shop'].startswith('Commercial PETG'))
+    assert all(r['unit_price_eur'] is None for r in active if r['shop']=='Classmate printing (user arranged)')
 
 
 def test_eight_owned_pads_no_continuous_sole_and_horns_follow_frames():

@@ -1,6 +1,6 @@
 {
   "name": "School Biped S6",
-  "status": "PROVISIONAL QUOTATION DESIGN: sample fit, budget, layer strength and physical calibration NOT approved",
+  "status": "USER ACCEPTED design/printing arrangement; provisional mechanics pending actual servo/sample fit and physical calibration",
   "units": "m, kg, rad, s",
   "coordinates": "x forward, y left, z up; local body axes match parent at zero joint angle",
   "home_joint_angles_deg": [
@@ -329,25 +329,26 @@
             0,
             0.023
           ],
-          "material": "bare Pico PCB/components, headers separately owned",
-          "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated",
+          "material": "bare Pico 2 PCB/components; two headers separately owned",
+          "evidence": "Pico2 official21x51mm footprint;3g mass/3.5mm populated envelope/COM retained estimates awaiting weighing/fit. Not retailer gross mass.",
           "parameter_evidence": {
             "mass": {
               "state": "estimated",
-              "date": "2026-10-24",
-              "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated"
+              "date": "2026-10-26",
+              "evidence": "Pico2 official21x51mm footprint;3g mass/3.5mm populated envelope/COM retained estimates awaiting weighing/fit. Not retailer gross mass."
             },
             "dimensions": {
               "state": "estimated",
-              "date": "2026-10-24",
-              "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated"
+              "date": "2026-10-26",
+              "evidence": "Pico2 official21x51mm footprint;3g mass/3.5mm populated envelope/COM retained estimates awaiting weighing/fit. Not retailer gross mass."
             },
             "com": {
               "state": "estimated",
-              "date": "2026-10-24",
-              "evidence": "PCB51x21mm sourced;3g/3.5mm populated envelope and placement estimated"
+              "date": "2026-10-26",
+              "evidence": "Pico2 official21x51mm footprint;3g mass/3.5mm populated envelope/COM retained estimates awaiting weighing/fit. Not retailer gross mass."
             }
-          }
+          },
+          "model": "Raspberry Pi Pico 2 (bare RP2350)"
         },
         {
           "name": "imu",
@@ -1538,8 +1539,8 @@
       }
     }
   ],
-  "revision": "S6-PETG-pad-r2",
-  "updated_date": "2026-10-24",
+  "revision": "S6-PETG-pad-r2-pico2",
+  "updated_date": "2026-10-26",
   "controller": {
     "backend": "pico_pwm",
     "pins": [
@@ -1556,8 +1557,16 @@
       4,
       5
     ],
-    "state": "planned; electrical verification pending",
-    "board": "Raspberry Pi Pico bare, user-soldered headers"
+    "state": "selected by user; electrical and firmware cross-build verification pending",
+    "board": "Raspberry Pi Pico 2 bare (RP2350), user-soldered headers",
+    "sdk_board": "pico2",
+    "architecture": "rp2350-arm-s",
+    "evidence": {
+      "state": "sourced",
+      "date": "2026-10-26",
+      "source": "https://datasheets.raspberrypi.com/pico/pico-2-datasheet.pdf",
+      "notes": "21x51mm board, Micro-USB B, pin-compatible non-wireless footprint; existing GPIO allocation retained"
+    }
   },
   "parameter_evidence": {
     "geometry": {
@@ -1651,7 +1660,7 @@
     }
   },
   "manufacturing": {
-    "route": "commercial PETG FDM, ordinary adhesive TPE pads",
+    "route": "user-arranged classmate PETG FDM, ordinary adhesive TPE pads",
     "frame_parts": 7,
     "sample_pieces": 2,
     "state": "quotation prototype; manufacturing NOT released",
@@ -1668,7 +1677,8 @@
       "sample insertion fit and actual printed hole diameters",
       "printed masses/layer strength, pad friction/adhesion",
       "Pico header11mm pin envelope, PCB stand-off fit and Dupont/cable clearances"
-    ]
+    ],
+    "arrangement_state": "user accepted2026-10-26; price unknown; physical sample fit still required"
   },
   "hardware_interfaces": {
     "ear_bolt": {

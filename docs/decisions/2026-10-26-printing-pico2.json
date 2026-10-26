@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-26",
+  "state": "complete_user_accepted_design_and_printing_arrangement",
+  "evidence": "User confirms current plan, chooses Pico 2 and printing by a classmate; exact price unknown, excluding delivery; requests separate printable templates.",
+  "printing_provider": "classmate (user arranged)",
+  "price_eur": null,
+  "delivery_eur": null,
+  "controller": "Raspberry Pi Pico 2 bare, RP2350; not Pico 2 W",
+  "purchases_or_messages_by_AI_authorized": false,
+  "printer_purchase": false,
+  "research_phase_complete": true,
+  "budget_numerically_verified": false,
+  "physical_fit_verified": false,
+  "next_phase": "WP2 bench/calibration software preparation plus separate print templates",
+  "notes": "User acceptance closes the provider-selection/design decision. It does not fabricate a paid quote, finished print, fit or hardware test. No repeated supplier-search/upload permission loop for the classmate route."
+}

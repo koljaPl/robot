@@ -1,5 +1,11 @@
 # Frozen-script sensitivity and offset correction — 2026-10-24
 
+**2026-10-26 follow-up:** this report retains its historical identity. Current
+Pico2 registry is [scripted_pico2.json](baselines/scripted_pico2.json), identity
+`685e3802…`; nominal metrics exactly reproduced. No sensitivity/DR rerun or new
+PPO. User-arranged classmate printing is accepted, physical fit still pending.
+
+
 **Locally verified diagnostics; no physical calibration or new PPO training.**
 The unchanged compact handoff script still produces four qualifying steps and
 6.60cm torso advance in30s nominally. It fails the30cm walking target. One-factor
