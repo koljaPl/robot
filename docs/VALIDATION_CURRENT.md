@@ -1,6 +1,20 @@
 # Current local verification — 2026-10-26, S6-PETG-pad-r2
 
-## Initial bench preparation — latest2026-10-26
+## Servo-response review — latest2026-10-26
+
+- Locked first-order fit predicted separate synthetic trials without fitting validation
+  data. Pre-step-only baseline, condition/shared-evidence reporting, CSV/PNG/JSON
+  artifacts and source hashes verified. No automatic acceptance or calibration update.
+- Default intake result exactly matches historical code; no-fit mode skips fitted
+  screens explicitly. Byte/numerical duplicates, invalid provenance/units, missing
+  evidence, wrong servo/joint/kind, NaNs and overwrite attempts tested.
+-32focused tests; **186tests passed in16.80s**: [log](validation/2026-10-26/response_review/pytest_final.txt).
+- [Evidence/plots](validation/2026-10-26/response_review/README.md), [guide](RESPONSE_REVIEW.md).
+  Synthetic matching negative step~0.0146degRMSE versus mismatched step~2.8288deg;
+  these are invented fixtures, never MG90S measurements.
+- Fingerprinted core685e3802/current ELF/UF2/gates unchanged; no physical test/PPO.
+
+## Initial bench preparation — previous2026-10-26
 
 - Offline preview default, explicit `--execute` for USB, new session directories.
 - Initial raw IMU or one constant bounded pulse; fresh stationary startup, fault/time/

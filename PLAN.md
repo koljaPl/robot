@@ -6,8 +6,8 @@ work packages follow. SUMMARY.md is the purchase/build snapshot, not a competing
 | Main phase | Current position | Remaining work |
 |---|---|---|
 | Requirements and hardware selection | User agreed; Pico2/classmate printing selected | Record actual purchases/costs |
-| Printable parts and provisional simulation | Print package, twin/RL and intake checker implemented; 162tests pass (current local suite) | Actual fit/strength/calibration |
-| Bench-control software | **LOCALLY VERIFIED:** initial bench preview/safeguards, manual control, calibration parity and Pico2 build;162tests pass | Pico2 firmware locally cross-built; next: actual fit/one-servo bench records |
+| Printable parts and provisional simulation | Print package, twin/RL and intake checker implemented; 186tests pass (current local suite) | Actual fit/strength/calibration |
+| Bench-control software | **LOCALLY VERIFIED:** initial bench preview/safeguards, manual control, calibration parity, response review and Pico2 build;186tests pass | Pico2 firmware locally cross-built; next: actual fit/one-servo bench records |
 | Physical assembly and calibration | **Ordering started—reported by user** | Receive parts, sample-fit, bench, assemble, weigh/measure |
 | Measured twin and learning | Provisional model; scripted motion below walking target | Measured twin/reference, bounded fixed/DR training |
 | Physical transfer and school experiment | Procedures prepared | Supervised trials, matched comparison, report/presentation |
@@ -50,6 +50,13 @@ implementation, local tests and physical verification.
 |2026-10-26|Initial bench recorder hardened: default offline preview, explicit --execute for USB, fresh stationary startup, strict fault/saturation/timestamp/deadline stops, constant one-channel pulse only, new session logs and STOP/close.41focused mocked tests passed; no device accessed.|Run actual offline CLI previews and full suite. Document new output-directory/execute interface, bench status-only confirmation limits and human checks; preserve identity/UF2/geometry/gates.|
 |2026-10-26|Bench preparation complete locally:41focused mocked checks; full active suite162passed in16.54s. Read-only and single-servo CLI previews passed with no USB. Source/model/firmware identity and current ELF/UF2 unchanged; physical gates false. Bench docs/old-CLI migration recorded.|Verify links/current statuses and regenerate19-section handoff/archive. Human next: actual parts, sample fit, safe power and one unloaded servo/IMU; AI reviews their records when supplied.|
 |2026-10-26|Delivery verified:278local links/anchors,19-section current-source handoff and initial1,874-member archive passed integrity/byte checks.162tests passed; no hardware access, new PPO or gate change. Initial bench preparation is locally complete.|Refresh final archive with this record. Next dependency remains actual order/arrival, printed fit and one-servo/IMU bench evidence; use existing offline tools while waiting, never invent measurements or clear physical gates.|
+|2026-10-26|Servo-response review stage started: preserve current fitter/intake history, add opt-out fitting for validation trials and a locked-fit report with synthetic matching/mismatched examples. No hardware, model/firmware/calibration or training changes.|Implement provenance/duplicate checks, fit-only-on-training prediction, metrics/plots/source hashes; test leakage and failure cases; then update docs/handoff/archive. Physical records still pending.|
+|2026-10-26|Response tool/intake no-fit mode and deterministic synthetic demo implemented.29focused tests passed in3.12s (including8existing intake checks); exact legacy default result preserved. Actual demo CLI generated reports with validation parameters locked and no physical approval.|Inspect plots, strengthen/report input edge cases, run full suite; update current guide/status/handoff/archive. No hardware or measured model change.|
+|2026-10-26|Full suite184passed in17.29s. Synthetic held-out demo: matching negative step~0.0146degRMSE, intentionally mismatched step~2.8288deg with same fit; plot inspected. Review found duplicate guard only hashes CSV bytes, allowing reformatted numerical copies.|Strengthen duplicate rejection for timestamp/target/angle arrays, including copies with changed condition labels; rerun checks/demo under new evidence directory, then publish docs/archive. No measured evidence or gates changed.|
+|2026-10-26|Duplicate checks now cover exact numerical timestamp/target/angle arrays as well as CSV bytes; copied data cannot be relabelled with changed voltage/load. Updated demo preserved separately as final_report; fit and validation metrics unchanged.|Run final focused/full suites; verify artifact/source hashes, plot quality and unchanged prototype/firmware/gates; finish synchronized status/handoff/archive.|
+|2026-10-26|Response review locally complete:32focused checks/186full tests passed (16.80s full). Final synthetic CLI report and no-fit intake passed; matching/mismatched plots inspected, source/artifact hashes checked, numerical duplicate rejection tested. Model/control685e3802, firmware ELF/UF2 and all gates unchanged.|Synchronize current docs, regenerate19-section handoff and verify links/allowlisted archive. Next human inputs: actual receipt/fit/bench/external-angle records; no automatic calibration, physical release or PPO.|
+|2026-10-26|Current guide/status/summary and19-section source handoff regenerated. Preliminary report source bytes recovered and verified against original hashes; final source snapshot and synthetic evidence remain separate. No historical report overwritten.|Verify current document links and complete allowlisted archive; then refresh final delivery record. Physical data is still the next dependency, not more synthetic tuning or PPO.|
+|2026-10-26|Response-review delivery verified:305local links/anchors,19-section exact-source handoff and initial1,925-member archive passed integrity/byte checks.32focused/186full tests; source/configuration/print hashes and unchanged gates verified. All response examples remain synthetic.|Refresh final archive with this record/checks. Next: review actual order/fit/bench/external-angle inputs when supplied; do not infer calibration, approve gates or start more PPO from synthetic results.|
 
 ---
 
@@ -71,7 +78,7 @@ and [print ZIP](print_for_classmate.zip),2fit samples before7frame parts.
 
 **Next phase WP2 started:** external-angle provenance/measurement quality checker
 implemented; manual six-joint tooling and measured-baseline parity now also locally
-verified; initial bench preparation now also tested. Current suite162tests passes. [Manual usage](docs/MANUAL_CONTROL.md). No physical operation; no new PPO. Pico2 identity begins
+verified; initial bench preparation now also tested. Current suite186tests passes. [Manual usage](docs/MANUAL_CONTROL.md). No physical operation; no new PPO. Pico2 identity begins
 `685e3802`; board mass remains estimated. Pico2 preparation firmware is now locally
 cross-built; physical tests remain pending.
 All references to older prices/fingerprints/results below retain their historical
@@ -147,8 +154,8 @@ is physically verified now. Blocked work has a named missing dependency.
 
 ### Discoveries that must not be lost
 
-- Latest recorded full suite: **162 passed in16.54s**, [bench preparation log](docs/validation/2026-10-26/bench_preparation/pytest.txt).
-  Earlier121/99/69/58/55-test records remain historical.
+- Latest recorded full suite: **186 passed in16.80s**, [response review log](docs/validation/2026-10-26/response_review/pytest_final.txt).
+  Earlier162/121/99/69/58/55-test records remain historical.
 - Current fingerprint: `685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88`.
   [Current frozen reference](docs/baselines/scripted_bench_tools.json) and
   [historical predecessor](docs/baselines/scripted_r2.json) remain separate.
@@ -191,7 +198,7 @@ Independent data/manual-control preparation ──────┘        ↓
 | Order | Concrete task | Owner | Done means / blocks |
 |---|---|---|---|
 | N1 | Record user-reported orders/receipts, then inspect actual parts and fit samples | Student supplies receipts/interface measurements; AI reconciles records | Ordering started; exact items/costs unknown. Physical fit and numeric accounting remain distinct from accepted design |
-| N2 | Completed: intake, manual-control previews/mocked safety, measured-baseline parity | AI software locally verified |162tests pass; initial bench preparation and Pico2 cross-build also verified. Physical manual operation still pending |
+| N2 | Completed: intake, manual-control previews/mocked safety, measured-baseline parity | AI software locally verified |186tests pass; response review, initial bench preparation and Pico2 cross-build verified. Physical manual operation still pending |
 | N3 | Verify real accessories/dimensions, electrical behaviour and two-piece sample | Student + AI analysis | Photos/dimensions, bench records and actual fit; costs remain accounted. Blocks full frame |
 | N4 | Assemble/weigh; calibrate/version twin; run model and reference checks | Student measures, AI models | Traceable measured calibration and reviewed feasible stepping. Blocks substantial training/deployment |
 | N5 | Run bounded matched A/B training, evaluate, then supervised physical trials | AI training, student trials | Equal budgets/initialization, held-out metrics/videos and failures. Blocks learned-walking/transfer claims |
@@ -265,8 +272,10 @@ printing selection complete; financial accounting and physical checks pending.
   fault/time/saturation checks, no catch-up refreshes, STOP/close and new session
   records. [Bench guide](docs/BENCH.md). Status confirms mode only, never pulse/shaft feedback.
 - Measurement-intake/provenance checker and diagnostic quality screens exist.
-  Actual external-angle recordings, plots/held-out fits and reviewed physical
-  calibration still await data. See [intake guide](docs/MEASUREMENT_INTAKE.md).
+  Locked-fit response reports/plots now have a synthetic demo; actual external-angle
+  recordings and reviewed physical fits/calibration still await data.
+  [Intake guide](docs/MEASUREMENT_INTAKE.md), [response review](docs/RESPONSE_REVIEW.md).
+  Validation trials use no-fit intake; no automatic model/calibration approval.
 - `manual_control.py` accepts version1 timed six-radian targets in shared order.
   Defaults to offline50Hz trajectory/manifest without USB. Hardware requires
   explicit arm, measured validated calibration, matching identity and fresh
@@ -400,7 +409,9 @@ raise fictitious strength just to obtain a simulated lift.
 
 Use `tools/fit_response.py` only after WP2 quality review: a first-order delay/time
 constant cannot uniquely identify MuJoCo kp/kv, sustainable torque or backlash.
-Fit several amplitudes/loads and validate held-out trajectories.
+Fit several amplitudes/loads and validate separate trajectories with
+[locked-fit response review](docs/RESPONSE_REVIEW.md); no validation refitting
+or automatic calibration/model approval. Synthetic examples are software checks only.
 
 Every parameter keeps **sourced / estimated / measured / unknown**, units, date,
 evidence and method. New measured calibration stays invalid until all channels

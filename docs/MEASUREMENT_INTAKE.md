@@ -38,4 +38,7 @@ report. Even well-formed physical input returns `physically_verified=false` and
 No real trials exist yet. Manual-control tooling, measured-baseline parity and
 Pico2 cross-build are now locally verified. [Initial bench preparation](BENCH.md)
 previews without USB; raw command acknowledgements never replace external angles.
-Next: actual fit/bench recordings and held-out measured-response review.
+[Separate-trial response review](RESPONSE_REVIEW.md) now prepares plots and locked-fit
+predictions. Validation calls `validate_trial(..., perform_fit=False)`; CLI `--no-fit`
+skips fitting and explicitly lists skipped screens. Default intake behaviour stays
+unchanged. Demonstrations are synthetic; next: real fit/bench recordings and review.

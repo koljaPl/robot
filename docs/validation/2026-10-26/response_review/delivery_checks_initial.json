@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-26",
+  "tests_passed": 186,
+  "suite_seconds": 16.8,
+  "focused_tests": 32,
+  "local_links_checked": 305,
+  "handoff_sections": 19,
+  "archive_members_verified": 1925,
+  "all_archived_bytes_match": true,
+  "physical_gates_all_false": true,
+  "print_zip_sha256_unchanged": "8452232164649d1cedc6fe5ebf7bf057498a54d72ed2e64e8a0f926b3351f91b",
+  "no_hardware_or_PPO": true,
+  "source_sha256": {
+    "PLAN.md": "e5268c6553f2f4d7cc74374fe84030ae29fb4032b96da4eb06b29e2e7b7b8564",
+    "SUMMARY.md": "5065f95fc93a97a1cf51254dca37f37db544f06b0e19299aec71aa07b12c24a9",
+    "AGENTS.md": "71fa8f1778281d2e21accc382c88e02ae4c2de9d4aa171153a0e634c5c92d329",
+    "README.md": "1f157af6ef4108d87cfb5ee6713101459b6df8850b70efcd8fdf303c1486cd58",
+    "docs/STATUS.md": "eeeb6f9cb8bbfe3cae2fabac92b843c440e77c222d132b3b38adbdc920da730f",
+    "docs/ROADMAP.md": "e0b1195104f8c166f3df3ed6bebfdae0f8d456b22c9dc32af671dd8305351267",
+    "docs/VALIDATION_CURRENT.md": "c98cb8d214e98b90eb4b00b8ec91e32f26b2c68f533502f0ddbfc682d1d67cae",
+    "docs/CALIBRATION.md": "7f807dd69bb07d7541baa0941478239c9ac34b4127408983f6afbfe5b2c1a912",
+    "docs/MEASUREMENT_INTAKE.md": "aef38654e7cd520c658a3f07d65ee1463cc0187a7d84b29e3f8999406445e41e",
+    "docs/RESPONSE_REVIEW.md": "e111ee2f81c9637e869820b7cf8c5a9583f552be31f2269b27311aec3fd2dd34",
+    "docs/HANDOFF.md": "fa8851b8a04cf41baba35c915c62047ccd4cdb7fd6ce493431c28acfaad1a4af",
+    "docs/validation/2026-10-26/response_review/README.md": "3ee25f964ed411438e424a55e5b286331852c61d1f117d638aaaa4cf8c830dbe",
+    "docs/validation/2026-10-26/response_review/final_report/report.md": "b31befcc22a54f1ea8e8c383ea046f110b4e4bef0a20c5b2007a141c4702d391"
+  }
+}

@@ -1,0 +1,419 @@
+{
+  "version": 1,
+  "created_utc": "2026-10-26T21:34:09.741151+00:00",
+  "state": "diagnostic_awaiting_human_review",
+  "data_kind": "synthetic",
+  "servo_id": "SYNTHETIC_ONLY_S6_SERVO",
+  "joint_index": 0,
+  "physically_verified": false,
+  "calibration_validated": false,
+  "model_updated": false,
+  "trial_independence_verified": false,
+  "fit_parameters": {
+    "delay_s": 0.03,
+    "time_constant_s": 0.10156694574902926,
+    "step_gain": 0.95127896756334,
+    "mse_rad2": 1.3521578485717198e-07,
+    "rmse_deg": 0.021068631591798885
+  },
+  "fit_trial_role": "fit",
+  "validation_parameters_refitted": false,
+  "trials": [
+    {
+      "role": "fit",
+      "csv": "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/fit.csv",
+      "metadata": "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/fit.json",
+      "numeric_data_sha256": "58e209fc8edd62e576d1a8200b8ac0202f056a2d1d3e6b009ac2287ebd275025",
+      "baseline": {
+        "pre_step_angle_rad": 0.04,
+        "step_time_s": 0.15,
+        "command_step_rad": 0.2,
+        "step_index": 30
+      },
+      "metrics": {
+        "rmse_rad": 0.0003677169901665845,
+        "rmse_deg": 0.021068631591798885,
+        "mae_deg": 0.015418218833752606,
+        "max_abs_error_deg": 0.05326941718584503,
+        "post_step_rmse_deg": 0.02251664199217297,
+        "rmse_over_declared_uncertainty": 0.21068631591798884
+      },
+      "angle_uncertainty_rad": 0.0017453292519943296,
+      "conditions": {
+        "voltage_range_v": {
+          "fit": [
+            5.0,
+            5.0
+          ],
+          "trial": [
+            5.0,
+            5.0
+          ],
+          "differs_from_fit": false
+        },
+        "load_range_nm": {
+          "fit": [
+            0.0,
+            0.0
+          ],
+          "trial": [
+            0.0,
+            0.0
+          ],
+          "differs_from_fit": false
+        }
+      },
+      "intake": {
+        "state": "intake review only, not validated actuator or calibration",
+        "data_kind": "synthetic",
+        "physically_verified": false,
+        "calibration_validated": false,
+        "metadata": {
+          "version": 1,
+          "data_kind": "synthetic",
+          "servo_id": "SYNTHETIC_ONLY_S6_SERVO",
+          "joint_index": 0,
+          "angle_source": "synthetic_generator",
+          "measurement_method": "Deterministic first-order fixture; no physical observation",
+          "clock_alignment": "Same generated timebase",
+          "angle_uncertainty_rad": 0.0017453292519943296,
+          "evidence_files": [
+            "generation.json"
+          ],
+          "units": {
+            "time_s": "s",
+            "target_rad": "rad",
+            "angle_rad": "rad",
+            "voltage_v": "V",
+            "load_nm": "N*m"
+          },
+          "note": "Shared generation metadata is not proof of independent physical trials."
+        },
+        "samples": 241,
+        "source_sha256": {
+          "csv": "3333ef708fb896174860ea9af73f790d3071f755f7f9b9b1368e926d86ddc8f6",
+          "metadata": "cd9653380d102e64ab883ced5bc133b50e7b2777f5a87a25091c62699d01846e",
+          "evidence": {
+            "generation.json": "a71d9d0aa729ebc56e7a9bac35e876b0ff57ec57e3a978a725531947a3e7f77d"
+          }
+        },
+        "time_span_s": 1.2,
+        "post_step_s": 1.05,
+        "command_step_rad": 0.2,
+        "observed_response_rad": 0.1899874453411651,
+        "voltage_range_v": [
+          5.0,
+          5.0
+        ],
+        "load_range_nm": [
+          0.0,
+          0.0
+        ],
+        "first_order_fit": {
+          "delay_s": 0.03,
+          "time_constant_s": 0.10156694574902926,
+          "step_gain": 0.95127896756334,
+          "mse_rad2": 1.3521578485717198e-07,
+          "rmse_deg": 0.021068631591798885
+        },
+        "quality_flags": [],
+        "ready_for_human_fit_review": true,
+        "limits": [
+          "Provenance assertions require human/video review; hashes do not establish truth.",
+          "Screens are diagnostic hypotheses, not hardware tolerances.",
+          "One step cannot identify sustainable torque, backlash or MuJoCo gains uniquely.",
+          "Never automatically update calibration, physical parameters or release gates."
+        ]
+      },
+      "prediction_csv": "fit_prediction.csv",
+      "plot_png": "fit.png"
+    },
+    {
+      "role": "validation_01",
+      "csv": "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/matching.csv",
+      "metadata": "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/matching.json",
+      "numeric_data_sha256": "9e10da797d5fce79fe3ae4d0175f53d92ca7db71bcd2a734cdd29a899a918370",
+      "baseline": {
+        "pre_step_angle_rad": -0.06,
+        "step_time_s": 0.2,
+        "command_step_rad": -0.14,
+        "step_index": 40
+      },
+      "metrics": {
+        "rmse_rad": 0.0002548351173741068,
+        "rmse_deg": 0.01460097669725728,
+        "mae_deg": 0.010369555357561915,
+        "max_abs_error_deg": 0.03728859203009184,
+        "post_step_rmse_deg": 0.01598793597483777,
+        "rmse_over_declared_uncertainty": 0.14600976697257279
+      },
+      "angle_uncertainty_rad": 0.0017453292519943296,
+      "conditions": {
+        "voltage_range_v": {
+          "fit": [
+            5.0,
+            5.0
+          ],
+          "trial": [
+            5.0,
+            5.0
+          ],
+          "differs_from_fit": false
+        },
+        "load_range_nm": {
+          "fit": [
+            0.0,
+            0.0
+          ],
+          "trial": [
+            0.0,
+            0.0
+          ],
+          "differs_from_fit": false
+        }
+      },
+      "intake": {
+        "state": "intake review only, not validated actuator or calibration",
+        "data_kind": "synthetic",
+        "physically_verified": false,
+        "calibration_validated": false,
+        "metadata": {
+          "version": 1,
+          "data_kind": "synthetic",
+          "servo_id": "SYNTHETIC_ONLY_S6_SERVO",
+          "joint_index": 0,
+          "angle_source": "synthetic_generator",
+          "measurement_method": "Deterministic first-order fixture; no physical observation",
+          "clock_alignment": "Same generated timebase",
+          "angle_uncertainty_rad": 0.0017453292519943296,
+          "evidence_files": [
+            "generation.json"
+          ],
+          "units": {
+            "time_s": "s",
+            "target_rad": "rad",
+            "angle_rad": "rad",
+            "voltage_v": "V",
+            "load_nm": "N*m"
+          },
+          "note": "Shared generation metadata is not proof of independent physical trials."
+        },
+        "samples": 241,
+        "source_sha256": {
+          "csv": "19af19af8d2dac06fe3fbb847c031b3a28d111e54cd3c944804e48c19dfdc754",
+          "metadata": "cd9653380d102e64ab883ced5bc133b50e7b2777f5a87a25091c62699d01846e",
+          "evidence": {
+            "generation.json": "a71d9d0aa729ebc56e7a9bac35e876b0ff57ec57e3a978a725531947a3e7f77d"
+          }
+        },
+        "time_span_s": 1.2,
+        "post_step_s": 1.0,
+        "command_step_rad": -0.14,
+        "observed_response_rad": -0.13298551060685276,
+        "voltage_range_v": [
+          5.0,
+          5.0
+        ],
+        "load_range_nm": [
+          0.0,
+          0.0
+        ],
+        "first_order_fit": null,
+        "quality_flags": [],
+        "ready_for_human_fit_review": true,
+        "limits": [
+          "Provenance assertions require human/video review; hashes do not establish truth.",
+          "Screens are diagnostic hypotheses, not hardware tolerances.",
+          "One step cannot identify sustainable torque, backlash or MuJoCo gains uniquely.",
+          "Never automatically update calibration, physical parameters or release gates."
+        ],
+        "fit_performed": false,
+        "skipped_fit_screens": [
+          "gain_outside_diagnostic_screen",
+          "fit_at_search_boundary",
+          "residual_exceeds_diagnostic_screen"
+        ]
+      },
+      "prediction_csv": "validation_01_prediction.csv",
+      "plot_png": "validation_01.png"
+    },
+    {
+      "role": "validation_02",
+      "csv": "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/mismatched.csv",
+      "metadata": "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/mismatched.json",
+      "numeric_data_sha256": "ef811208d202dadc0f540788e36a6c01238d7c243f66ef916dc696050fb460a2",
+      "baseline": {
+        "pre_step_angle_rad": 0.03,
+        "step_time_s": 0.25,
+        "command_step_rad": 0.16,
+        "step_index": 50
+      },
+      "metrics": {
+        "rmse_rad": 0.049372313036235814,
+        "rmse_deg": 2.8288251617750473,
+        "mae_deg": 2.4138429106889467,
+        "max_abs_error_deg": 4.237959401579617,
+        "post_step_rmse_deg": 3.177590613806671,
+        "rmse_over_declared_uncertainty": 28.288251617750472
+      },
+      "angle_uncertainty_rad": 0.0017453292519943296,
+      "conditions": {
+        "voltage_range_v": {
+          "fit": [
+            5.0,
+            5.0
+          ],
+          "trial": [
+            4.85,
+            4.85
+          ],
+          "differs_from_fit": true
+        },
+        "load_range_nm": {
+          "fit": [
+            0.0,
+            0.0
+          ],
+          "trial": [
+            0.005,
+            0.005
+          ],
+          "differs_from_fit": true
+        }
+      },
+      "intake": {
+        "state": "intake review only, not validated actuator or calibration",
+        "data_kind": "synthetic",
+        "physically_verified": false,
+        "calibration_validated": false,
+        "metadata": {
+          "version": 1,
+          "data_kind": "synthetic",
+          "servo_id": "SYNTHETIC_ONLY_S6_SERVO",
+          "joint_index": 0,
+          "angle_source": "synthetic_generator",
+          "measurement_method": "Deterministic first-order fixture; no physical observation",
+          "clock_alignment": "Same generated timebase",
+          "angle_uncertainty_rad": 0.0017453292519943296,
+          "evidence_files": [
+            "generation.json"
+          ],
+          "units": {
+            "time_s": "s",
+            "target_rad": "rad",
+            "angle_rad": "rad",
+            "voltage_v": "V",
+            "load_nm": "N*m"
+          },
+          "note": "Shared generation metadata is not proof of independent physical trials."
+        },
+        "samples": 241,
+        "source_sha256": {
+          "csv": "48487ed07ed383f08bb14dcb260b62fc1a0660224814ff1b13075571f1052224",
+          "metadata": "cd9653380d102e64ab883ced5bc133b50e7b2777f5a87a25091c62699d01846e",
+          "evidence": {
+            "generation.json": "a71d9d0aa729ebc56e7a9bac35e876b0ff57ec57e3a978a725531947a3e7f77d"
+          }
+        },
+        "time_span_s": 1.2,
+        "post_step_s": 0.95,
+        "command_step_rad": 0.16,
+        "observed_response_rad": 0.10893290194102223,
+        "voltage_range_v": [
+          4.85,
+          4.85
+        ],
+        "load_range_nm": [
+          0.005,
+          0.005
+        ],
+        "first_order_fit": null,
+        "quality_flags": [],
+        "ready_for_human_fit_review": true,
+        "limits": [
+          "Provenance assertions require human/video review; hashes do not establish truth.",
+          "Screens are diagnostic hypotheses, not hardware tolerances.",
+          "One step cannot identify sustainable torque, backlash or MuJoCo gains uniquely.",
+          "Never automatically update calibration, physical parameters or release gates."
+        ],
+        "fit_performed": false,
+        "skipped_fit_screens": [
+          "gain_outside_diagnostic_screen",
+          "fit_at_search_boundary",
+          "residual_exceeds_diagnostic_screen"
+        ]
+      },
+      "prediction_csv": "validation_02_prediction.csv",
+      "plot_png": "validation_02.png"
+    }
+  ],
+  "shared_evidence_files": [
+    [
+      {
+        "trial": "fit",
+        "file": "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/generation.json"
+      },
+      {
+        "trial": "validation_01",
+        "file": "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/generation.json"
+      },
+      {
+        "trial": "validation_02",
+        "file": "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/generation.json"
+      }
+    ]
+  ],
+  "input_sha256": {
+    "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/review.json": "650ed0eed6976f546b3b0a84a46f9d56943f66a69a3df54210a11d9a562b6e53",
+    "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/fit.csv": "3333ef708fb896174860ea9af73f790d3071f755f7f9b9b1368e926d86ddc8f6",
+    "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/fit.json": "cd9653380d102e64ab883ced5bc133b50e7b2777f5a87a25091c62699d01846e",
+    "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/generation.json": "a71d9d0aa729ebc56e7a9bac35e876b0ff57ec57e3a978a725531947a3e7f77d",
+    "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/matching.csv": "19af19af8d2dac06fe3fbb847c031b3a28d111e54cd3c944804e48c19dfdc754",
+    "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/matching.json": "cd9653380d102e64ab883ced5bc133b50e7b2777f5a87a25091c62699d01846e",
+    "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/mismatched.csv": "48487ed07ed383f08bb14dcb260b62fc1a0660224814ff1b13075571f1052224",
+    "/home/kolja/home/Code/robot/docs/validation/2026-10-26/response_review/synthetic_inputs/mismatched.json": "cd9653380d102e64ab883ced5bc133b50e7b2777f5a87a25091c62699d01846e"
+  },
+  "source_sha256": {
+    "tools/review_responses.py": "2a3cdd8973e9ff75035f91fe4438f805462f5b9713e72ba38f5298e3597a4353",
+    "tools/validate_measurement.py": "efa43f95b1b17e3606d3a674501f72459ff925923efee8f4a1839f9af9825845",
+    "tools/fit_response.py": "a89d9e9535f7b9eeedfd17c088d84e4332f1f8ce5b0bdaf9b67ee4f30276a8c0",
+    "requirements.txt": "8fd1001ef996222f02a8aedd484c9c6fb1b2e106d9eac2d6ff2e9cce16765ca3",
+    "requirements-dev.txt": "814456c9bc9fdfcc526bf542b6c9fe734755f5596eeb9be24bc868bd033c4464"
+  },
+  "project_configuration_reference": {
+    "configuration": "685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88",
+    "files": {
+      "physical_spec.json": "e2e66dfc8e39f907ba6d410bbf6b3cde40886730284309b207b045df4bcf32a6",
+      "robot.xml": "859065cffb998e3f7f8ab6cd736937882b636949b4ffbba78e4b7dce91ec3917",
+      "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+      "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+      "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+      "humanoid_env.py": "527f548ebc2d630e83c5bb327aced2adcc21947479940f4b5a394e6087ccee3c",
+      "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+      "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+      "calibration.py": "a57a04fbe84f80c0b364ffea42546521c4e99d854515eaed55cd6e55527978fa",
+      "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+      "firmware/control.h": "dfc0dec9642df663dca6410b8414faf16de480736c8c62fa2fd2da166f9c7200",
+      "firmware/CMakeLists.txt": "b53b7bf7c1e71611ff6b362fc4a3e19a654d5bf4bf46f2c06839b6d7a6fd85e6"
+    },
+    "calibration": null
+  },
+  "limits": [
+    "A first-order diagnostic cannot identify sustainable torque, backlash or MuJoCo gains uniquely.",
+    "Validation parameters are locked; only command timing and pre-step angle baseline come from each trial.",
+    "Distinct CSV hashes do not prove independent physical trials; review source recordings and alignment.",
+    "Shared evidence and voltage/load differences require human review; trials are never pooled.",
+    "Uncertainty is declared measurement uncertainty, not an inferred statistical confidence interval.",
+    "No automatic acceptance threshold, calibration, physical parameter or gate update."
+  ],
+  "intake_quality_flags_present": false,
+  "artifact_sha256": {
+    "report.md": "b31befcc22a54f1ea8e8c383ea046f110b4e4bef0a20c5b2007a141c4702d391",
+    "fit_prediction.csv": "6c57f8d4eda75113ff98fbc686c72546c422ac537e34572a7d51f8e54170a654",
+    "fit.png": "abf13d6dcf537cf57f3a8a1995a3048e714792a41b8ad763204e42889fc073ae",
+    "validation_01_prediction.csv": "e8a8e2ff94d874b697018b1904d10108f4536a965384f5514986bc6f951f1bf9",
+    "validation_01.png": "11a4104fd00cfda7583f14bf1956affb8aa482abf9a278be2b17a39e54a31d6b",
+    "validation_02_prediction.csv": "899b818ec28ecf7c7c5a324c2f34361963aeb02bcb009f29685d6f8b5131b85a",
+    "validation_02.png": "6267c1dc2f5d7067bee332a4f282107d578c3c2515322eb2ffce677e08e0ea24"
+  }
+}

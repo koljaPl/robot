@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "fit_trial": {"csv": "fit_step.csv", "metadata": "fit_provenance.json"},
+  "validation_trials": [
+    {"csv": "separate_validation_step.csv", "metadata": "validation_provenance.json"}
+  ],
+  "note": "Paths are relative to this manifest. Invalid until original CSV/provenance/evidence exists. Same servo/joint/data kind; separate trials. No automatic calibration approval."
+}

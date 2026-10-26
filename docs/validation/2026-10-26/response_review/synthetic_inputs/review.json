@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "fit_trial": {
+    "csv": "fit.csv",
+    "metadata": "fit.json"
+  },
+  "validation_trials": [
+    {
+      "csv": "matching.csv",
+      "metadata": "matching.json"
+    },
+    {
+      "csv": "mismatched.csv",
+      "metadata": "mismatched.json"
+    }
+  ],
+  "note": "SYNTHETIC ONLY. No calibration, model or physical gate may be updated."
+}

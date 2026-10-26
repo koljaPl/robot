@@ -13,7 +13,8 @@ provider-selection research and starts WP2, without claiming physical fit or a n
 budget pass. [Print folder](../print_for_classmate/00_START_HERE.md).
 Measurement-intake/provenance checker implemented; manual six-joint utility and
 measured-baseline calibration parity and Pico2 preparation firmware now locally verified.
-Initial bench preview/fault handling also locally verified;162tests pass; no new PPO.
+Initial bench safeguards and locked-fit response review locally verified;186tests pass;
+no new PPO. [Response review](RESPONSE_REVIEW.md).
 [Firmware build](../firmware/README.md), [initial bench guide](BENCH.md).
 
 ## Previous checkpoint (2026-10-25; historical costs/identity)
@@ -35,7 +36,7 @@ robot and cannot silently replace current contact geometry. See BUDGET_REVIEW.
 |---|---|---|
 | Entry /0,13 | Student+AI: requirements, status, plan, evidence | Constraints/next task unambiguous; claims tied to real evidence |
 | A /1 | User-complete design/printing choice, Pico2 selected; actual costs recorded later | Decision complete; numeric budget and physical fit are separate, still unverified |
-| B preparation /3,6,8,9 | WP2 AI: measurement intake, fit quality, six-joint manual utility, initial bench safeguards and measured-baseline parity | Mocked tests/clear procedures; no physical claim; can proceed alongside A |
+| B preparation /3,6,8,9 | WP2 AI: measurement intake, fit quality, six-joint manual utility, initial bench safeguards, response review and measured-baseline parity | Mocked/synthetic tests/clear procedures; no physical claim; can proceed alongside A |
 | B hardware /1,8,9 | WP3–WP5 student+AI: bench, measured interfaces, sample fit, finished assembly/weighing | Electrical/fit records, safe manual control, real mass ownership |
 | C /2,3,4,9 | WP6–WP7 student+AI: measured twin, observation parity, model/reference validation | Measured calibration and reviewed weight transfer/lift; all five gates backed by evidence |
 | D /5,6,7 | WP8–WP9 AI: bounded matched fixed/DR training and held-out evaluation | Equal initialization/budgets, compatible identities, actual gait results/CSV/videos |

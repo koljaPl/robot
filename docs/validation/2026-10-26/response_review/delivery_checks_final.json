@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-26",
+  "state": "locally_verified_synthetic_response_review",
+  "tests_passed": 186,
+  "suite_seconds": 16.8,
+  "delivery_check": "delivery_checks_initial.json",
+  "source_sha256": {
+    "PLAN.md": "7e82cc1bdee02c33e10a01b81f4733b50b89e5855043f7edd197d6ed4d6fc528",
+    "SUMMARY.md": "5065f95fc93a97a1cf51254dca37f37db544f06b0e19299aec71aa07b12c24a9",
+    "AGENTS.md": "71fa8f1778281d2e21accc382c88e02ae4c2de9d4aa171153a0e634c5c92d329",
+    "README.md": "1f157af6ef4108d87cfb5ee6713101459b6df8850b70efcd8fdf303c1486cd58",
+    "docs/STATUS.md": "eeeb6f9cb8bbfe3cae2fabac92b843c440e77c222d132b3b38adbdc920da730f",
+    "docs/ROADMAP.md": "e0b1195104f8c166f3df3ed6bebfdae0f8d456b22c9dc32af671dd8305351267",
+    "docs/VALIDATION_CURRENT.md": "c98cb8d214e98b90eb4b00b8ec91e32f26b2c68f533502f0ddbfc682d1d67cae",
+    "docs/RESPONSE_REVIEW.md": "e111ee2f81c9637e869820b7cf8c5a9583f552be31f2269b27311aec3fd2dd34",
+    "docs/HANDOFF.md": "4040968982d1334f0a48cee66464b0d6426df40c09abb6f5012545a8f3001c3f",
+    "tools/review_responses.py": "2a3cdd8973e9ff75035f91fe4438f805462f5b9713e72ba38f5298e3597a4353",
+    "tools/make_response_demo.py": "e0f59cbea995f09c32ddedce13b5ab881a204fc1fa54a098ed71ce3bd258d928",
+    "tools/validate_measurement.py": "efa43f95b1b17e3606d3a674501f72459ff925923efee8f4a1839f9af9825845",
+    "tools/fit_response.py": "a89d9e9535f7b9eeedfd17c088d84e4332f1f8ce5b0bdaf9b67ee4f30276a8c0",
+    "tests/test_response_review.py": "b72d80deb7ad86a323e29dc362f0e13f419b4733a5028d71c9067965ae914144"
+  },
+  "hardware_accessed": false,
+  "physically_verified": false,
+  "calibration_validated": false,
+  "new_PPO_steps": 0,
+  "next_action": "Review actual receipts/fit/bench and externally measured shaft trials when supplied; no synthetic parameter transfer or automatic gate update."
+}

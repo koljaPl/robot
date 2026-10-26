@@ -5190,6 +5190,10 @@ and video identify command-to-PWM and PWM-to-shaft delays separately. USB round
 trip is not one-way latency. A cheap meter can miss current peaks: treat readings
 as incomplete peak evidence. Avoid prolonged stalls or hot servos.
 
+Use [separate-trial response review](RESPONSE_REVIEW.md) to plot locked-fit
+predictions and residuals before any model update. It never approves calibration
+or identifies MuJoCo gains automatically.
+
 Fit provisional gains/strength/damping/speed in `physical_spec.json`'s `dynamics`
 from **multiple** step amplitudes and loaded/unloaded trials. Minimize angle
 trajectory error across held-out steps, inspect overshoot and settling, then
@@ -5269,7 +5273,10 @@ report. Even well-formed physical input returns `physically_verified=false` and
 No real trials exist yet. Manual-control tooling, measured-baseline parity and
 Pico2 cross-build are now locally verified. [Initial bench preparation](BENCH.md)
 previews without USB; raw command acknowledgements never replace external angles.
-Next: actual fit/bench recordings and held-out measured-response review.
+[Separate-trial response review](RESPONSE_REVIEW.md) now prepares plots and locked-fit
+predictions. Validation calls `validate_trial(..., perform_fit=False)`; CLI `--no-fit`
+skips fitting and explicitly lists skipped screens. Default intake behaviour stays
+unchanged. Demonstrations are synthetic; next: real fit/bench recordings and review.
 
 ```python
 """Review externally measured step-response intake; never validates calibration.
@@ -5300,10 +5307,12 @@ def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def validate_trial(csv_path, metadata_path):
+def validate_trial(csv_path, metadata_path, *, perform_fit=True):
+    if type(perform_fit) is not bool:
+        raise ValueError('perform_fit must be a boolean')
     csv_path, metadata_path = Path(csv_path), Path(metadata_path)
     meta = json.loads(metadata_path.read_text())
-    if meta.get('version') != 1 or meta.get('data_kind') not in ('physical', 'synthetic'):
+    if not isinstance(meta, dict) or type(meta.get('version')) is not int or meta['version'] != 1 or meta.get('data_kind') not in ('physical', 'synthetic'):
         raise ValueError('Specify version1 and data_kind physical or synthetic')
     if meta.get('units') != UNITS:
         raise ValueError('Explicit SI units must match the CSV schema')
@@ -5353,7 +5362,7 @@ def validate_trial(csv_path, metadata_path):
     if abs(amplitude) < np.deg2rad(5):
         raise ValueError('Need a step of at least5degrees for this diagnostic')
     data = np.array(list(zip(t, u, q)), dtype=[(k, float) for k in COLUMNS[:3]])
-    fitted = fit(data)
+    fitted = fit(data) if perform_fit else None
     q0 = float(np.median(q[:index]))
     response = float(np.median(q[-max(3, len(q)//10):])-q0)
     flags = []
@@ -5361,18 +5370,18 @@ def validate_trial(csv_path, metadata_path):
         flags.append('insufficient_resolved_motion')
     elif response*amplitude <= 0:
         flags.append('response_direction_disagrees_with_command')
-    if not .5 <= fitted['step_gain'] <= 1.5:
+    if fitted is not None and not .5 <= fitted['step_gain'] <= 1.5:
         flags.append('gain_outside_diagnostic_screen')
-    if fitted['delay_s'] >= .078 or fitted['time_constant_s'] <= .015001 or fitted['time_constant_s'] >= .499999:
+    if fitted is not None and (fitted['delay_s'] >= .078 or fitted['time_constant_s'] <= .015001 or fitted['time_constant_s'] >= .499999):
         flags.append('fit_at_search_boundary')
-    if np.deg2rad(fitted['rmse_deg']) > max(3*uncertainty, .1*abs(amplitude)):
+    if fitted is not None and np.deg2rad(fitted['rmse_deg']) > max(3*uncertainty, .1*abs(amplitude)):
         flags.append('residual_exceeds_diagnostic_screen')
     directed = (q-q0)*np.sign(amplitude)
     if float(np.max(directed)) > 1.2*abs(response)+3*uncertainty:
         flags.append('overshoot_or_nonfirstorder_response')
     if np.any((voltage < 4.8) | (voltage > 6.0)):
         flags.append('recorded_voltage_outside_selected_servo_claim')
-    return {'state': 'intake review only, not validated actuator or calibration',
+    result = {'state': 'intake review only, not validated actuator or calibration',
             'data_kind': meta['data_kind'], 'physically_verified': False,
             'calibration_validated': False, 'metadata': meta, 'samples': len(t),
             'source_sha256': {'csv': sha(csv_path), 'metadata': sha(metadata_path), 'evidence': hashes},
@@ -5385,6 +5394,11 @@ def validate_trial(csv_path, metadata_path):
                        'Screens are diagnostic hypotheses, not hardware tolerances.',
                        'One step cannot identify sustainable torque, backlash or MuJoCo gains uniquely.',
                        'Never automatically update calibration, physical parameters or release gates.']}
+    if not perform_fit:
+        result['fit_performed'] = False
+        result['skipped_fit_screens'] = ['gain_outside_diagnostic_screen', 'fit_at_search_boundary',
+                                         'residual_exceeds_diagnostic_screen']
+    return result
 
 
 def main():
@@ -5392,8 +5406,9 @@ def main():
     p.add_argument('csv', type=Path)
     p.add_argument('--metadata', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--no-fit', action='store_true', help='Provenance/basic screens only; never fit validation data')
     a = p.parse_args()
-    result = validate_trial(a.csv, a.metadata)
+    result = validate_trial(a.csv, a.metadata, perform_fit=not a.no_fit)
     with a.output.open('x') as f:
         json.dump(result, f, indent=2, allow_nan=False)
         f.write('\n')
@@ -5403,6 +5418,412 @@ def main():
 
 if __name__ == '__main__':
     raise SystemExit(main())
+```
+
+### Servo-response review — separate trials, locked fit
+
+This is an **offline diagnostic**, never calibration approval or a MuJoCo parameter
+update. The robot still needs actual fit, electrical and externally observed shaft
+measurements. Current examples are synthetic; nothing here moves a motor.
+
+#### Try the synthetic demonstration now
+
+```bash
+.venv/bin/python tools/make_response_demo.py --output runs/response_inputs_NEW
+MPLCONFIGDIR=/tmp/s6-response-mpl .venv/bin/python tools/review_responses.py \
+  --manifest runs/response_inputs_NEW/review.json --output runs/response_report_NEW
+```
+
+Both directories must be new. The generator creates one fitting step, a matching
+negative step and a deliberately slower/lower-gain step with changed voltage/load
+labels. Every angle, uncertainty and condition is invented for testing the software;
+none is a verified MG90S specification. Shared generation metadata is reported.
+
+#### Later, with actual external measurements
+
+Use the existing [CSV/provenance requirements](MEASUREMENT_INTAKE.md). Each trial
+needs its own CSV and metadata sidecar, matching servo identity/joint and the same
+physical/synthetic data kind. Physical data requires original external evidence.
+The [example manifest](templates/response_review.example.json) has this structure:
+
+```json
+{
+  "version": 1,
+  "fit_trial": {"csv": "fit_step.csv", "metadata": "fit_provenance.json"},
+  "validation_trials": [
+    {"csv": "other_step.csv", "metadata": "other_provenance.json"}
+  ]
+}
+```
+
+Paths are relative to the manifest (absolute paths also work). Select the fitting
+trial before examining validation results. Duplicate CSV bytes, including renamed
+copies, are rejected across all trials. Exact numerical time/target/angle copies
+are also rejected after parsing, even with different formatting or voltage/load
+labels. Different hashes alone cannot prove
+independent physical trials. Shared source recordings are listed by content hash;
+review clips/time windows manually. Conditions are reported separately, not pooled.
+
+The tool calls the existing first-order fitter **only for fit_trial**. For each
+validation step it predicts:
+
+`q_pred = q_pre + gain × command_step × (1 − exp(−max(0, t − t_step − delay)/tau))`
+
+Gain, delay and tau stay locked. Only recorded command timing, command amplitude
+and the median externally observed **pre-step** angle come from each validation
+trial. No post-step angle, time shift or parameter selection is fitted to validation
+data. Record clock alignment honestly; do not silently realign traces to improve fit.
+
+The intake API now accepts `perform_fit=False`, and its CLI accepts `--no-fit`.
+Default results/fit behaviour are preserved. No-fit mode retains provenance/basic
+motion/voltage checks but explicitly skips gain, search-boundary and fitted-residual
+screens. It returns no first-order fit; this is not equivalent to full fit review.
+
+The [initial bench logger](BENCH.md) provides raw IMU/command records and a constant
+single-servo pulse. It does not supply measured shaft angles or create a complete
+isolated step experiment. Use reviewed later measurement procedures and external
+video/protractor/encoder evidence; never substitute command acknowledgements.
+
+#### Outputs and interpretation
+
+- `report.json`: locked parameters, trial RMSE/MAE/maximum and post-step errors,
+  uncertainty, voltage/load ranges and differences, shared evidence and source hashes.
+- `report.md`: brief comparison and links to each plot/CSV.
+- `fit_prediction.csv` / `validation_XX_prediction.csv`: target, external angle,
+  prediction, measured-minus-predicted residual, voltage and load, in SI units.
+- `fit.png` / `validation_XX.png`: angle traces and residuals with the declared
+  uncertainty band. The band is not an inferred confidence interval.
+
+Inputs are checked before creating output; an existing output is never overwritten.
+A generation error after creation leaves `failure.json`; partial plots are not a
+completed report. Original data/videos are not copied automatically. Keep them.
+
+Exit0 means **report generated**, not adequate fit; the deliberately mismatched demo
+can also return0. Exit2 means existing intake quality flags need review. Invalid
+inputs fail. No new automatic prediction-error acceptance threshold is imposed.
+Report state remains awaiting human review, including records labelled physical.
+No physical-verification/calibration flag or project gate is set automatically.
+
+Review errors against declared measurement uncertainty and repeatability, sample
+rate, voltage/load changes, backlash, clock alignment and source evidence. One
+first-order step cannot identify sustainable torque, friction or MuJoCo kp/kv
+uniquely. Actual measured-twin changes require later reviewed multi-trial evidence,
+versioned parameters and the existing hardware/training gates.
+
+```python
+"""Grid-fit a FIRST-ORDER diagnostic to one isolated measured servo step.
+
+CSV time_s,target_rad,angle_rad; >=20 timestamped externally measured samples.
+This does not identify continuous torque, backlash, or MuJoCo kp/kv uniquely.
+"""
+import argparse
+import json
+from pathlib import Path
+import numpy as np
+
+
+def fit(data):
+    t,u,q=[np.atleast_1d(data[k]).astype(float) for k in ('time_s','target_rad','angle_rad')]
+    if len(t)<20 or not np.isfinite([t,u,q]).all() or np.any(np.diff(t)<=0):raise ValueError('Need >=20 finite increasing samples')
+    changes=np.flatnonzero(np.abs(np.diff(u))>1e-5)
+    if len(changes)!=1:raise ValueError('Use one isolated step per file, with pre-step samples')
+    index=changes[0]+1;t0=t[index];q0=np.median(q[:index]);amplitude=u[-1]-u[0]
+    if abs(amplitude)<np.deg2rad(5):raise ValueError('Step too small for this diagnostic')
+    best=None
+    for delay in np.arange(0,.081,.002):
+        for tau in np.geomspace(.015,.5,100):
+            basis=1-np.exp(-np.maximum(0,t-t0-delay)/tau)
+            gain=float(np.dot(basis,q-q0)/max(np.dot(basis,basis),1e-12))
+            pred=q0+gain*basis;error=float(np.mean((q-pred)**2))
+            if best is None or error<best['mse_rad2']:
+                best={'delay_s':float(delay),'time_constant_s':float(tau),'step_gain':gain/amplitude,'mse_rad2':error,'rmse_deg':float(np.rad2deg(np.sqrt(error)))}
+    return best
+
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('csv',type=Path);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
+    result={'source':str(a.csv),'fit':fit(np.genfromtxt(a.csv,delimiter=',',names=True)),'state':'measured-data fit only; requires source/video review, not a validated actuator model'}
+    with a.output.open('x') as f:json.dump(result,f,indent=2)
+    print(json.dumps(result,indent=2))
+
+if __name__=='__main__':main()
+```
+
+```python
+"""Review a first-order servo fit against separate trials; never approves calibration."""
+import argparse
+import csv
+from datetime import datetime, timezone
+import hashlib
+import json
+from pathlib import Path
+import sys
+
+import numpy as np
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from calibration import configuration_identity
+from tools.validate_measurement import COLUMNS, sha, validate_trial
+
+
+def predict_response(values, parameters):
+    """Use the locked fit and this trial's command timing/pre-step angle only."""
+    t, u, q = values[:, :3].T
+    index = int(np.flatnonzero(np.abs(np.diff(u)) > 1e-5)[0]+1)
+    q0 = float(np.median(q[:index]))
+    amplitude = float(u[-1]-u[0])
+    pred = q0 + parameters['step_gain']*amplitude*(
+        1-np.exp(-np.maximum(0, t-t[index]-parameters['delay_s'])/parameters['time_constant_s']))
+    return pred, {'pre_step_angle_rad': q0, 'step_time_s': float(t[index]),
+                  'command_step_rad': amplitude, 'step_index': index}
+
+
+def error_metrics(values, prediction, step_index):
+    residual = values[:, 2]-prediction  # measured minus predicted
+    if not np.isfinite(residual).all():
+        raise ValueError('Nonfinite prediction/residual')
+    rmse = float(np.sqrt(np.mean(residual**2)))
+    return {'rmse_rad': rmse, 'rmse_deg': float(np.rad2deg(rmse)),
+            'mae_deg': float(np.rad2deg(np.mean(np.abs(residual)))),
+            'max_abs_error_deg': float(np.rad2deg(np.max(np.abs(residual)))),
+            'post_step_rmse_deg': float(np.rad2deg(np.sqrt(np.mean(residual[step_index:]**2))))}
+
+
+def plot_trial(values, prediction, uncertainty, role, kind, path):
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    fig, axes = plt.subplots(2, 1, figsize=(9, 6), layout='constrained', sharex=True)
+    try:
+        t, u, q = values[:, :3].T
+        axes[0].step(t, np.rad2deg(u), where='post', color='0.6', label='Recorded target')
+        axes[0].plot(t, np.rad2deg(q), color='black', lw=1, label='External angle / synthetic fixture')
+        axes[0].plot(t, np.rad2deg(prediction), '--', color='tab:blue', label='Locked fit prediction')
+        axes[0].set(ylabel='Angle (degrees)',
+                    title=f'{role} — {kind}, diagnostic only; awaiting human review')
+        axes[0].legend(fontsize=8)
+        axes[1].plot(t, np.rad2deg(q-prediction), label='Measured minus predicted', color='tab:orange')
+        axes[1].axhline(0, color='black', lw=.7)
+        axes[1].fill_between(t, -np.rad2deg(uncertainty), np.rad2deg(uncertainty),
+                             alpha=.2, color='tab:blue', label='Declared angle uncertainty (not a confidence interval)')
+        axes[1].set(xlabel='Recorded aligned time (s)', ylabel='Residual (degrees)')
+        axes[1].legend(fontsize=8)
+        for ax in axes: ax.grid(alpha=.25)
+        fig.savefig(path, dpi=150)
+    finally:
+        plt.close(fig)
+
+
+def review(manifest_path, output):
+    manifest_path, output = Path(manifest_path).resolve(), Path(output)
+    if output.exists():
+        raise FileExistsError('Use a new output directory; existing reports are preserved')
+    manifest_hash = sha(manifest_path)
+    manifest = json.loads(manifest_path.read_text())
+    if not isinstance(manifest, dict) or type(manifest.get('version')) is not int or manifest['version'] != 1:
+        raise ValueError('Response-review manifest must be version1')
+    validation = manifest.get('validation_trials')
+    if not isinstance(validation, list) or not validation:
+        raise ValueError('At least one validation trial is required')
+    entries = [('fit', manifest.get('fit_trial'))] + [
+        (f'validation_{i:02d}', trial) for i, trial in enumerate(validation, 1)]
+    trials, input_hashes, evidence_uses = [], {str(manifest_path): manifest_hash}, {}
+    seen_data, seen_numeric_data = set(), set()
+    cohort = None
+    for role, entry in entries:
+        if not isinstance(entry, dict) or any(not isinstance(entry.get(k), str) or not entry[k].strip() for k in ('csv','metadata')):
+            raise ValueError('Each trial needs csv and metadata paths')
+        csv_path, meta_path = ((manifest_path.parent/entry[k]).resolve() for k in ('csv','metadata'))
+        intake = validate_trial(csv_path, meta_path, perform_fit=(role=='fit'))
+        digest = intake['source_sha256']['csv']
+        if digest in seen_data:
+            raise ValueError('Duplicate fitting/validation CSV data; separate trials required')
+        seen_data.add(digest)
+        meta = intake['metadata']
+        signature = (meta['servo_id'], meta['joint_index'], meta['data_kind'])
+        if cohort is None: cohort = signature
+        if signature != cohort:
+            raise ValueError('Trials must match servo identity, joint and physical/synthetic data kind')
+        input_hashes[str(csv_path)] = digest
+        input_hashes[str(meta_path)] = intake['source_sha256']['metadata']
+        for name, evidence_hash in intake['source_sha256']['evidence'].items():
+            evidence_path = (meta_path.parent/name).resolve()
+            input_hashes[str(evidence_path)] = evidence_hash
+            evidence_uses.setdefault(evidence_hash, []).append({'trial': role, 'file': str(evidence_path)})
+        # The intake already checked exact columns, finite values and isolated step.
+        with csv_path.open(newline='') as f:
+            values = np.asarray([[float(row[k]) for k in COLUMNS] for row in csv.DictReader(f)])
+        trajectory = np.array(values[:, :3], dtype='<f8', order='C')
+        trajectory[trajectory == 0] = 0.  # canonicalize negative zero
+        numeric_hash = hashlib.sha256(trajectory.tobytes()).hexdigest()
+        if numeric_hash in seen_numeric_data:
+            raise ValueError('Duplicate numerical time/target/angle trajectory; separate trials required')
+        seen_numeric_data.add(numeric_hash)
+        trials.append({'role': role, 'csv': str(csv_path), 'metadata': str(meta_path),
+                       'intake': intake, 'values': values, 'numeric_data_sha256': numeric_hash})
+    parameters = dict(trials[0]['intake']['first_order_fit'])
+    source_hashes = {n: sha(ROOT/n) for n in (
+        'tools/review_responses.py','tools/validate_measurement.py','tools/fit_response.py',
+        'requirements.txt','requirements-dev.txt')}
+    result = {'version': 1, 'created_utc': datetime.now(timezone.utc).isoformat(),
+              'state': 'diagnostic_awaiting_human_review', 'data_kind': cohort[2],
+              'servo_id': cohort[0], 'joint_index': cohort[1],
+              'physically_verified': False, 'calibration_validated': False,
+              'model_updated': False, 'trial_independence_verified': False,
+              'fit_parameters': parameters, 'fit_trial_role': 'fit',
+              'validation_parameters_refitted': False, 'trials': [],
+              'shared_evidence_files': [uses for uses in evidence_uses.values() if len({u['trial'] for u in uses}) > 1],
+              'input_sha256': input_hashes, 'source_sha256': source_hashes,
+              'project_configuration_reference': configuration_identity(),
+              'limits': ['A first-order diagnostic cannot identify sustainable torque, backlash or MuJoCo gains uniquely.',
+                         'Validation parameters are locked; only command timing and pre-step angle baseline come from each trial.',
+                         'Distinct CSV hashes do not prove independent physical trials; review source recordings and alignment.',
+                         'Shared evidence and voltage/load differences require human review; trials are never pooled.',
+                         'Uncertainty is declared measurement uncertainty, not an inferred statistical confidence interval.',
+                         'No automatic acceptance threshold, calibration, physical parameter or gate update.']}
+    # Hashes must describe the bytes used, including evidence read during intake.
+    def verify_inputs():
+        for path, expected in input_hashes.items():
+            if sha(path) != expected: raise ValueError('Input changed during review: '+path)
+        for name, expected in source_hashes.items():
+            if sha(ROOT/name) != expected: raise ValueError('Review source changed during execution: '+name)
+    verify_inputs()
+    output.mkdir(parents=True, exist_ok=False)
+    try:
+        fit_intake = trials[0]['intake']
+        for trial in trials:
+            role, values, intake = trial['role'], trial['values'], trial['intake']
+            pred, baseline = predict_response(values, parameters)
+            metrics = error_metrics(values, pred, baseline['step_index'])
+            uncertainty = intake['metadata']['angle_uncertainty_rad']
+            metrics['rmse_over_declared_uncertainty'] = metrics['rmse_rad']/uncertainty
+            prediction_file, plot_file = role+'_prediction.csv', role+'.png'
+            with (output/prediction_file).open('x', newline='') as f:
+                writer = csv.writer(f)
+                writer.writerow(['time_s','target_rad','measured_angle_rad','predicted_angle_rad',
+                                 'residual_rad','voltage_v','load_nm'])
+                writer.writerows(zip(values[:,0], values[:,1], values[:,2], pred,
+                                     values[:,2]-pred, values[:,3], values[:,4]))
+            plot_trial(values, pred, uncertainty, role, cohort[2], output/plot_file)
+            differences = {key: {'fit': fit_intake[key], 'trial': intake[key],
+                                 'differs_from_fit': intake[key] != fit_intake[key]}
+                           for key in ('voltage_range_v','load_range_nm')}
+            result['trials'].append({'role': role, 'csv': trial['csv'], 'metadata': trial['metadata'],
+                                     'numeric_data_sha256': trial['numeric_data_sha256'],
+                                     'baseline': baseline, 'metrics': metrics,
+                                     'angle_uncertainty_rad': uncertainty,
+                                     'conditions': differences, 'intake': intake,
+                                     'prediction_csv': prediction_file, 'plot_png': plot_file})
+        result['intake_quality_flags_present'] = any(t['intake']['quality_flags'] for t in result['trials'])
+        lines = ['# Servo-response diagnostic — awaiting human review', '',
+                 f"Data kind: **{cohort[2]}**. No physical verification or calibration approval.", '',
+                 'One fitting trial supplies the parameters below. Validation trials are never fitted.', '',
+                 f"Delay {parameters['delay_s']:.6g}s; time constant {parameters['time_constant_s']:.6g}s; "
+                 f"gain {parameters['step_gain']:.6g}.", '',
+                 '| Trial | RMSE (deg) | Max error (deg) | Declared uncertainty (deg) | RMSE / uncertainty |',
+                 '|---|---:|---:|---:|---:|']
+        for t in result['trials']:
+            m = t['metrics']
+            lines.append(f"| {t['role']} | {m['rmse_deg']:.4g} | {m['max_abs_error_deg']:.4g} | "
+                         f"{np.rad2deg(t['angle_uncertainty_rad']):.4g} | {m['rmse_over_declared_uncertainty']:.4g} |")
+        for t in result['trials']:
+            flags = ', '.join(t['intake']['quality_flags']) or 'none in performed screens'
+            changed = ', '.join(k for k,v in t['conditions'].items() if v['differs_from_fit']) or 'none'
+            lines += ['', f"## {t['role']}", '', f"Intake flags: {flags}. Condition differences: {changed}.",
+                      f"Voltage {t['intake']['voltage_range_v']}V; load {t['intake']['load_range_nm']}N·m.",
+                      f"![Response and residual]({t['plot_png']})", '', f"[Prediction/residual CSV]({t['prediction_csv']})"]
+        lines += ['', f"Shared evidence groups: {len(result['shared_evidence_files'])}; details and hashes in [report.json](report.json).", '',
+                  'Residual = measured minus predicted. Validation baseline uses only pre-step samples.',
+                  'No automated goodness threshold: a generated report is not proof of an adequate model.',
+                  'Validation no-fit intake omits gain/search-boundary/fit-residual screens; predictions above use the locked fitting parameters.',
+                  'Declared uncertainty is not a confidence interval. Review raw recordings, time alignment, conditions and independence.',
+                  'Never infer shaft angles from acknowledgements or infer sustainable torque/MuJoCo gains from this fit.', '']
+        (output/'report.md').write_text('\n'.join(lines))
+        verify_inputs()
+        artifact_names = ['report.md'] + [t[k] for t in result['trials'] for k in ('prediction_csv','plot_png')]
+        result['artifact_sha256'] = {n: sha(output/n) for n in artifact_names}
+        (output/'report.json').write_text(json.dumps(result, indent=2, allow_nan=False)+'\n')
+        return result
+    except BaseException as error:
+        (output/'failure.json').write_text(json.dumps({'state': 'failed_diagnostic_generation',
+            'error': type(error).__name__+': '+str(error), 'physically_verified': False,
+            'calibration_validated': False, 'input_sha256': input_hashes,
+            'source_sha256': source_hashes}, indent=2)+'\n')
+        raise
+
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--manifest', type=Path, required=True)
+    p.add_argument('--output', type=Path, required=True)
+    args = p.parse_args()
+    result = review(args.manifest, args.output)
+    print(json.dumps({k: result[k] for k in ('state','data_kind','physically_verified','calibration_validated')}))
+    return 2 if result['intake_quality_flags_present'] else 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())
+```
+
+```python
+"""Generate deterministic SYNTHETIC servo-response examples, never measurements."""
+import argparse
+import csv
+import json
+from pathlib import Path
+import sys
+
+import numpy as np
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from tools.validate_measurement import COLUMNS, UNITS, sha
+
+
+def create(output):
+    output = Path(output)
+    output.mkdir(parents=True, exist_ok=False)
+    cases = {
+        'fit': {'step_s': .15, 'amplitude_rad': .2, 'baseline_rad': .04,
+                'delay_s': .03, 'tau_s': .1, 'gain': .95, 'voltage_v': 5., 'load_nm': 0.},
+        'matching': {'step_s': .2, 'amplitude_rad': -.14, 'baseline_rad': -.06,
+                     'delay_s': .03, 'tau_s': .1, 'gain': .95, 'voltage_v': 5., 'load_nm': 0.},
+        'mismatched': {'step_s': .25, 'amplitude_rad': .16, 'baseline_rad': .03,
+                       'delay_s': .065, 'tau_s': .23, 'gain': .7, 'voltage_v': 4.85, 'load_nm': .005}}
+    generation = {'data_kind': 'synthetic', 'physically_verified': False,
+                  'generator_sha256': sha(__file__), 'cases': cases,
+                  'note': 'Invented first-order fixtures for software demonstration, not MG90S specifications.'}
+    (output/'generation.json').write_text(json.dumps(generation, indent=2)+'\n')
+    for name, p in cases.items():
+        t = np.arange(241)*.005
+        u = np.where(t < p['step_s'], 0., p['amplitude_rad'])
+        q = p['baseline_rad'] + p['gain']*p['amplitude_rad']*(
+            1-np.exp(-np.maximum(0, t-p['step_s']-p['delay_s'])/p['tau_s']))
+        with (output/(name+'.csv')).open('x', newline='') as f:
+            w = csv.writer(f);w.writerow(COLUMNS)
+            w.writerows(zip(t,u,q,np.full(len(t),p['voltage_v']),np.full(len(t),p['load_nm'])))
+        meta = {'version': 1, 'data_kind': 'synthetic', 'servo_id': 'SYNTHETIC_ONLY_S6_SERVO',
+                'joint_index': 0, 'angle_source': 'synthetic_generator',
+                'measurement_method': 'Deterministic first-order fixture; no physical observation',
+                'clock_alignment': 'Same generated timebase', 'angle_uncertainty_rad': float(np.deg2rad(.1)),
+                'evidence_files': ['generation.json'], 'units': UNITS,
+                'note': 'Shared generation metadata is not proof of independent physical trials.'}
+        (output/(name+'.json')).write_text(json.dumps(meta, indent=2)+'\n')
+    def trial(name): return {'csv': name+'.csv', 'metadata': name+'.json'}
+    manifest = {'version': 1, 'fit_trial': trial('fit'),
+                'validation_trials': [trial('matching'),trial('mismatched')],
+                'note': 'SYNTHETIC ONLY. No calibration, model or physical gate may be updated.'}
+    (output/'review.json').write_text(json.dumps(manifest, indent=2)+'\n')
+    return manifest
+
+
+if __name__ == '__main__':
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--output', required=True, type=Path)
+    a = p.parse_args();create(a.output)
+    print(json.dumps({'data_kind': 'synthetic', 'physically_verified': False, 'manifest': str(a.output/'review.json')}))
 ```
 
 ## 17. Sim-to-Real and domain-randomization plan
@@ -5619,7 +6040,8 @@ provider-selection research and starts WP2, without claiming physical fit or a n
 budget pass. [Print folder](../print_for_classmate/00_START_HERE.md).
 Measurement-intake/provenance checker implemented; manual six-joint utility and
 measured-baseline calibration parity and Pico2 preparation firmware now locally verified.
-Initial bench preview/fault handling also locally verified;162tests pass; no new PPO.
+Initial bench safeguards and locked-fit response review locally verified;186tests pass;
+no new PPO. [Response review](RESPONSE_REVIEW.md).
 [Firmware build](../firmware/README.md), [initial bench guide](BENCH.md).
 
 #### Previous checkpoint (2026-10-25; historical costs/identity)
@@ -5641,7 +6063,7 @@ robot and cannot silently replace current contact geometry. See BUDGET_REVIEW.
 |---|---|---|
 | Entry /0,13 | Student+AI: requirements, status, plan, evidence | Constraints/next task unambiguous; claims tied to real evidence |
 | A /1 | User-complete design/printing choice, Pico2 selected; actual costs recorded later | Decision complete; numeric budget and physical fit are separate, still unverified |
-| B preparation /3,6,8,9 | WP2 AI: measurement intake, fit quality, six-joint manual utility, initial bench safeguards and measured-baseline parity | Mocked tests/clear procedures; no physical claim; can proceed alongside A |
+| B preparation /3,6,8,9 | WP2 AI: measurement intake, fit quality, six-joint manual utility, initial bench safeguards, response review and measured-baseline parity | Mocked/synthetic tests/clear procedures; no physical claim; can proceed alongside A |
 | B hardware /1,8,9 | WP3–WP5 student+AI: bench, measured interfaces, sample fit, finished assembly/weighing | Electrical/fit records, safe manual control, real mass ownership |
 | C /2,3,4,9 | WP6–WP7 student+AI: measured twin, observation parity, model/reference validation | Measured calibration and reviewed weight transfer/lift; all five gates backed by evidence |
 | D /5,6,7 | WP8–WP9 AI: bounded matched fixed/DR training and held-out evaluation | Equal initialization/budgets, compatible identities, actual gait results/CSV/videos |
@@ -5694,8 +6116,8 @@ work packages follow. SUMMARY.md is the purchase/build snapshot, not a competing
 | Main phase | Current position | Remaining work |
 |---|---|---|
 | Requirements and hardware selection | User agreed; Pico2/classmate printing selected | Record actual purchases/costs |
-| Printable parts and provisional simulation | Print package, twin/RL and intake checker implemented; 162tests pass (current local suite) | Actual fit/strength/calibration |
-| Bench-control software | **LOCALLY VERIFIED:** initial bench preview/safeguards, manual control, calibration parity and Pico2 build;162tests pass | Pico2 firmware locally cross-built; next: actual fit/one-servo bench records |
+| Printable parts and provisional simulation | Print package, twin/RL and intake checker implemented; 186tests pass (current local suite) | Actual fit/strength/calibration |
+| Bench-control software | **LOCALLY VERIFIED:** initial bench preview/safeguards, manual control, calibration parity, response review and Pico2 build;186tests pass | Pico2 firmware locally cross-built; next: actual fit/one-servo bench records |
 | Physical assembly and calibration | **Ordering started—reported by user** | Receive parts, sample-fit, bench, assemble, weigh/measure |
 | Measured twin and learning | Provisional model; scripted motion below walking target | Measured twin/reference, bounded fixed/DR training |
 | Physical transfer and school experiment | Procedures prepared | Supervised trials, matched comparison, report/presentation |
@@ -5738,6 +6160,13 @@ implementation, local tests and physical verification.
 |2026-10-26|Initial bench recorder hardened: default offline preview, explicit --execute for USB, fresh stationary startup, strict fault/saturation/timestamp/deadline stops, constant one-channel pulse only, new session logs and STOP/close.41focused mocked tests passed; no device accessed.|Run actual offline CLI previews and full suite. Document new output-directory/execute interface, bench status-only confirmation limits and human checks; preserve identity/UF2/geometry/gates.|
 |2026-10-26|Bench preparation complete locally:41focused mocked checks; full active suite162passed in16.54s. Read-only and single-servo CLI previews passed with no USB. Source/model/firmware identity and current ELF/UF2 unchanged; physical gates false. Bench docs/old-CLI migration recorded.|Verify links/current statuses and regenerate19-section handoff/archive. Human next: actual parts, sample fit, safe power and one unloaded servo/IMU; AI reviews their records when supplied.|
 |2026-10-26|Delivery verified:278local links/anchors,19-section current-source handoff and initial1,874-member archive passed integrity/byte checks.162tests passed; no hardware access, new PPO or gate change. Initial bench preparation is locally complete.|Refresh final archive with this record. Next dependency remains actual order/arrival, printed fit and one-servo/IMU bench evidence; use existing offline tools while waiting, never invent measurements or clear physical gates.|
+|2026-10-26|Servo-response review stage started: preserve current fitter/intake history, add opt-out fitting for validation trials and a locked-fit report with synthetic matching/mismatched examples. No hardware, model/firmware/calibration or training changes.|Implement provenance/duplicate checks, fit-only-on-training prediction, metrics/plots/source hashes; test leakage and failure cases; then update docs/handoff/archive. Physical records still pending.|
+|2026-10-26|Response tool/intake no-fit mode and deterministic synthetic demo implemented.29focused tests passed in3.12s (including8existing intake checks); exact legacy default result preserved. Actual demo CLI generated reports with validation parameters locked and no physical approval.|Inspect plots, strengthen/report input edge cases, run full suite; update current guide/status/handoff/archive. No hardware or measured model change.|
+|2026-10-26|Full suite184passed in17.29s. Synthetic held-out demo: matching negative step~0.0146degRMSE, intentionally mismatched step~2.8288deg with same fit; plot inspected. Review found duplicate guard only hashes CSV bytes, allowing reformatted numerical copies.|Strengthen duplicate rejection for timestamp/target/angle arrays, including copies with changed condition labels; rerun checks/demo under new evidence directory, then publish docs/archive. No measured evidence or gates changed.|
+|2026-10-26|Duplicate checks now cover exact numerical timestamp/target/angle arrays as well as CSV bytes; copied data cannot be relabelled with changed voltage/load. Updated demo preserved separately as final_report; fit and validation metrics unchanged.|Run final focused/full suites; verify artifact/source hashes, plot quality and unchanged prototype/firmware/gates; finish synchronized status/handoff/archive.|
+|2026-10-26|Response review locally complete:32focused checks/186full tests passed (16.80s full). Final synthetic CLI report and no-fit intake passed; matching/mismatched plots inspected, source/artifact hashes checked, numerical duplicate rejection tested. Model/control685e3802, firmware ELF/UF2 and all gates unchanged.|Synchronize current docs, regenerate19-section handoff and verify links/allowlisted archive. Next human inputs: actual receipt/fit/bench/external-angle records; no automatic calibration, physical release or PPO.|
+|2026-10-26|Current guide/status/summary and19-section source handoff regenerated. Preliminary report source bytes recovered and verified against original hashes; final source snapshot and synthetic evidence remain separate. No historical report overwritten.|Verify current document links and complete allowlisted archive; then refresh final delivery record. Physical data is still the next dependency, not more synthetic tuning or PPO.|
+|2026-10-26|Response-review delivery verified:305local links/anchors,19-section exact-source handoff and initial1,925-member archive passed integrity/byte checks.32focused/186full tests; source/configuration/print hashes and unchanged gates verified. All response examples remain synthetic.|Refresh final archive with this record/checks. Next: review actual order/fit/bench/external-angle inputs when supplied; do not infer calibration, approve gates or start more PPO from synthetic results.|
 
 ---
 
@@ -5759,7 +6188,7 @@ and [print ZIP](../print_for_classmate.zip),2fit samples before7frame parts.
 
 **Next phase WP2 started:** external-angle provenance/measurement quality checker
 implemented; manual six-joint tooling and measured-baseline parity now also locally
-verified; initial bench preparation now also tested. Current suite162tests passes. [Manual usage](MANUAL_CONTROL.md). No physical operation; no new PPO. Pico2 identity begins
+verified; initial bench preparation now also tested. Current suite186tests passes. [Manual usage](MANUAL_CONTROL.md). No physical operation; no new PPO. Pico2 identity begins
 `685e3802`; board mass remains estimated. Pico2 preparation firmware is now locally
 cross-built; physical tests remain pending.
 All references to older prices/fingerprints/results below retain their historical
@@ -5835,8 +6264,8 @@ is physically verified now. Blocked work has a named missing dependency.
 
 ##### Discoveries that must not be lost
 
-- Latest recorded full suite: **162 passed in16.54s**, [bench preparation log](validation/2026-10-26/bench_preparation/pytest.txt).
-  Earlier121/99/69/58/55-test records remain historical.
+- Latest recorded full suite: **186 passed in16.80s**, [response review log](validation/2026-10-26/response_review/pytest_final.txt).
+  Earlier162/121/99/69/58/55-test records remain historical.
 - Current fingerprint: `685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88`.
   [Current frozen reference](baselines/scripted_bench_tools.json) and
   [historical predecessor](baselines/scripted_r2.json) remain separate.
@@ -5879,7 +6308,7 @@ Independent data/manual-control preparation ──────┘        ↓
 | Order | Concrete task | Owner | Done means / blocks |
 |---|---|---|---|
 | N1 | Record user-reported orders/receipts, then inspect actual parts and fit samples | Student supplies receipts/interface measurements; AI reconciles records | Ordering started; exact items/costs unknown. Physical fit and numeric accounting remain distinct from accepted design |
-| N2 | Completed: intake, manual-control previews/mocked safety, measured-baseline parity | AI software locally verified |162tests pass; initial bench preparation and Pico2 cross-build also verified. Physical manual operation still pending |
+| N2 | Completed: intake, manual-control previews/mocked safety, measured-baseline parity | AI software locally verified |186tests pass; response review, initial bench preparation and Pico2 cross-build verified. Physical manual operation still pending |
 | N3 | Verify real accessories/dimensions, electrical behaviour and two-piece sample | Student + AI analysis | Photos/dimensions, bench records and actual fit; costs remain accounted. Blocks full frame |
 | N4 | Assemble/weigh; calibrate/version twin; run model and reference checks | Student measures, AI models | Traceable measured calibration and reviewed feasible stepping. Blocks substantial training/deployment |
 | N5 | Run bounded matched A/B training, evaluate, then supervised physical trials | AI training, student trials | Equal budgets/initialization, held-out metrics/videos and failures. Blocks learned-walking/transfer claims |
@@ -5953,8 +6382,10 @@ printing selection complete; financial accounting and physical checks pending.
   fault/time/saturation checks, no catch-up refreshes, STOP/close and new session
   records. [Bench guide](BENCH.md). Status confirms mode only, never pulse/shaft feedback.
 - Measurement-intake/provenance checker and diagnostic quality screens exist.
-  Actual external-angle recordings, plots/held-out fits and reviewed physical
-  calibration still await data. See [intake guide](MEASUREMENT_INTAKE.md).
+  Locked-fit response reports/plots now have a synthetic demo; actual external-angle
+  recordings and reviewed physical fits/calibration still await data.
+  [Intake guide](MEASUREMENT_INTAKE.md), [response review](RESPONSE_REVIEW.md).
+  Validation trials use no-fit intake; no automatic model/calibration approval.
 - `manual_control.py` accepts version1 timed six-radian targets in shared order.
   Defaults to offline50Hz trajectory/manifest without USB. Hardware requires
   explicit arm, measured validated calibration, matching identity and fresh
@@ -6088,7 +6519,9 @@ raise fictitious strength just to obtain a simulated lift.
 
 Use `tools/fit_response.py` only after WP2 quality review: a first-order delay/time
 constant cannot uniquely identify MuJoCo kp/kv, sustainable torque or backlash.
-Fit several amplitudes/loads and validate held-out trajectories.
+Fit several amplitudes/loads and validate separate trajectories with
+[locked-fit response review](RESPONSE_REVIEW.md); no validation refitting
+or automatic calibration/model approval. Synthetic examples are software checks only.
 
 Every parameter keeps **sourced / estimated / measured / unknown**, units, date,
 evidence and method. New measured calibration stays invalid until all channels
@@ -6808,7 +7241,7 @@ active route is classmate PETG, bare Pico2 and eight ordinary grip pads.
 | Design / printing selection | complete, user accepted | Classmate printing selected; Pico2 adopted. Price unknown; numerical budget remains separate/unverified (106.49before unknowns) |
 | CAD / quotation package | implemented, locally verified partial | Seven connected watertight frames, two-piece fit sample, drawings/manifests;0modeled collisions/55poses,5unknown interface groups; NOT manufacturing-approved |
 | Shared control / firmware | locally verified partial | Protocol/native tests and current Pico2 cross-build pass; invalid calibration, full-policy arm disabled. Older images historical; physical timing absent |
-| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite162passes |
+| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite186passes |
 | Frozen scripted reference | locally verified partial | Four qualifying steps/3alternations,6.60cm torso and4.39cm gait distance in30s;30cm target fails.29one-factor cases show fragile guessed physics |
 | PPO / evaluation | historical local evidence | Prior2048-step smoke/reload:0walking successes/0gait. All saved policies now incompatible; no new PPO. Older49152-step pilot also failed |
 | Physical build / calibration / transfer | planned, blocked | User ordering started; arrivals/measurements unreported. Bench/fit procedures prepared |
@@ -6836,7 +7269,19 @@ including r2 smoke. Current Pico2 preparation ELF/UF2 is locally cross-built wit
 invalid calibration; no physical test. Never relabel old images. Measured calibration
 and reviewed physical checks remain required before policy operation.
 
-#### Initial bench preparation — latest completed work
+#### Servo-response review — latest completed work
+
+- One fitting trial supplies locked delay/tau/gain; separate validation trials never
+  refit. Baselines use pre-step samples only; plots/residual CSV/metrics/hashes exported.
+- Intake no-fit API/CLI retains provenance/basic screens; valid default output exactly
+  matches historical behaviour. Byte/numerical duplicate trajectories rejected;
+  shared evidence and voltage/load differences remain visible.
+-32focused tests; **186tests passed in16.80s**. [Evidence](validation/2026-10-26/response_review/README.md),
+  [usage](RESPONSE_REVIEW.md). Synthetic match~0.0146degRMSE; mismatch~2.8288deg.
+- No hardware, measured calibration, model update, firmware change or PPO. All gates
+  stay false; real inputs still need human review. Report generation is not approval.
+
+#### Initial bench preparation — previous completed work
 
 - `bench.py` defaults to offline preview; USB needs explicit `--execute`. New session
   directories retain settings/source hashes, commands/status events, raw IMU and errors.
@@ -6945,7 +7390,21 @@ or motion tuning. Use `pytest -q tests`, not copied historical test modules.
 
 ### Current local verification — 2026-10-26, S6-PETG-pad-r2
 
-#### Initial bench preparation — latest2026-10-26
+#### Servo-response review — latest2026-10-26
+
+- Locked first-order fit predicted separate synthetic trials without fitting validation
+  data. Pre-step-only baseline, condition/shared-evidence reporting, CSV/PNG/JSON
+  artifacts and source hashes verified. No automatic acceptance or calibration update.
+- Default intake result exactly matches historical code; no-fit mode skips fitted
+  screens explicitly. Byte/numerical duplicates, invalid provenance/units, missing
+  evidence, wrong servo/joint/kind, NaNs and overwrite attempts tested.
+-32focused tests; **186tests passed in16.80s**: [log](validation/2026-10-26/response_review/pytest_final.txt).
+- [Evidence/plots](validation/2026-10-26/response_review/README.md), [guide](RESPONSE_REVIEW.md).
+  Synthetic matching negative step~0.0146degRMSE versus mismatched step~2.8288deg;
+  these are invented fixtures, never MG90S measurements.
+- Fingerprinted core685e3802/current ELF/UF2/gates unchanged; no physical test/PPO.
+
+#### Initial bench preparation — previous2026-10-26
 
 - Offline preview default, explicit `--execute` for USB, new session directories.
 - Initial raw IMU or one constant bounded pulse; fresh stationary startup, fault/time/

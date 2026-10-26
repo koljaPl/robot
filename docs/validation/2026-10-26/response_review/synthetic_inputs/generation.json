@@ -1,0 +1,38 @@
+{
+  "data_kind": "synthetic",
+  "physically_verified": false,
+  "generator_sha256": "e0f59cbea995f09c32ddedce13b5ab881a204fc1fa54a098ed71ce3bd258d928",
+  "cases": {
+    "fit": {
+      "step_s": 0.15,
+      "amplitude_rad": 0.2,
+      "baseline_rad": 0.04,
+      "delay_s": 0.03,
+      "tau_s": 0.1,
+      "gain": 0.95,
+      "voltage_v": 5.0,
+      "load_nm": 0.0
+    },
+    "matching": {
+      "step_s": 0.2,
+      "amplitude_rad": -0.14,
+      "baseline_rad": -0.06,
+      "delay_s": 0.03,
+      "tau_s": 0.1,
+      "gain": 0.95,
+      "voltage_v": 5.0,
+      "load_nm": 0.0
+    },
+    "mismatched": {
+      "step_s": 0.25,
+      "amplitude_rad": 0.16,
+      "baseline_rad": 0.03,
+      "delay_s": 0.065,
+      "tau_s": 0.23,
+      "gain": 0.7,
+      "voltage_v": 4.85,
+      "load_nm": 0.005
+    }
+  },
+  "note": "Invented first-order fixtures for software demonstration, not MG90S specifications."
+}

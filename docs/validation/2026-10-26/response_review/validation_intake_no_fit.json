@@ -1,0 +1,62 @@
+{
+  "state": "intake review only, not validated actuator or calibration",
+  "data_kind": "synthetic",
+  "physically_verified": false,
+  "calibration_validated": false,
+  "metadata": {
+    "version": 1,
+    "data_kind": "synthetic",
+    "servo_id": "SYNTHETIC_ONLY_S6_SERVO",
+    "joint_index": 0,
+    "angle_source": "synthetic_generator",
+    "measurement_method": "Deterministic first-order fixture; no physical observation",
+    "clock_alignment": "Same generated timebase",
+    "angle_uncertainty_rad": 0.0017453292519943296,
+    "evidence_files": [
+      "generation.json"
+    ],
+    "units": {
+      "time_s": "s",
+      "target_rad": "rad",
+      "angle_rad": "rad",
+      "voltage_v": "V",
+      "load_nm": "N*m"
+    },
+    "note": "Shared generation metadata is not proof of independent physical trials."
+  },
+  "samples": 241,
+  "source_sha256": {
+    "csv": "19af19af8d2dac06fe3fbb847c031b3a28d111e54cd3c944804e48c19dfdc754",
+    "metadata": "cd9653380d102e64ab883ced5bc133b50e7b2777f5a87a25091c62699d01846e",
+    "evidence": {
+      "generation.json": "a71d9d0aa729ebc56e7a9bac35e876b0ff57ec57e3a978a725531947a3e7f77d"
+    }
+  },
+  "time_span_s": 1.2,
+  "post_step_s": 1.0,
+  "command_step_rad": -0.14,
+  "observed_response_rad": -0.13298551060685276,
+  "voltage_range_v": [
+    5.0,
+    5.0
+  ],
+  "load_range_nm": [
+    0.0,
+    0.0
+  ],
+  "first_order_fit": null,
+  "quality_flags": [],
+  "ready_for_human_fit_review": true,
+  "limits": [
+    "Provenance assertions require human/video review; hashes do not establish truth.",
+    "Screens are diagnostic hypotheses, not hardware tolerances.",
+    "One step cannot identify sustainable torque, backlash or MuJoCo gains uniquely.",
+    "Never automatically update calibration, physical parameters or release gates."
+  ],
+  "fit_performed": false,
+  "skipped_fit_screens": [
+    "gain_outside_diagnostic_screen",
+    "fit_at_search_boundary",
+    "residual_exceeds_diagnostic_screen"
+  ]
+}

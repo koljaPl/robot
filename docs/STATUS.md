@@ -17,7 +17,7 @@ active route is classmate PETG, bare Pico2 and eight ordinary grip pads.
 | Design / printing selection | complete, user accepted | Classmate printing selected; Pico2 adopted. Price unknown; numerical budget remains separate/unverified (106.49before unknowns) |
 | CAD / quotation package | implemented, locally verified partial | Seven connected watertight frames, two-piece fit sample, drawings/manifests;0modeled collisions/55poses,5unknown interface groups; NOT manufacturing-approved |
 | Shared control / firmware | locally verified partial | Protocol/native tests and current Pico2 cross-build pass; invalid calibration, full-policy arm disabled. Older images historical; physical timing absent |
-| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite162passes |
+| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite186passes |
 | Frozen scripted reference | locally verified partial | Four qualifying steps/3alternations,6.60cm torso and4.39cm gait distance in30s;30cm target fails.29one-factor cases show fragile guessed physics |
 | PPO / evaluation | historical local evidence | Prior2048-step smoke/reload:0walking successes/0gait. All saved policies now incompatible; no new PPO. Older49152-step pilot also failed |
 | Physical build / calibration / transfer | planned, blocked | User ordering started; arrivals/measurements unreported. Bench/fit procedures prepared |
@@ -45,7 +45,19 @@ including r2 smoke. Current Pico2 preparation ELF/UF2 is locally cross-built wit
 invalid calibration; no physical test. Never relabel old images. Measured calibration
 and reviewed physical checks remain required before policy operation.
 
-## Initial bench preparation — latest completed work
+## Servo-response review — latest completed work
+
+- One fitting trial supplies locked delay/tau/gain; separate validation trials never
+  refit. Baselines use pre-step samples only; plots/residual CSV/metrics/hashes exported.
+- Intake no-fit API/CLI retains provenance/basic screens; valid default output exactly
+  matches historical behaviour. Byte/numerical duplicate trajectories rejected;
+  shared evidence and voltage/load differences remain visible.
+-32focused tests; **186tests passed in16.80s**. [Evidence](validation/2026-10-26/response_review/README.md),
+  [usage](RESPONSE_REVIEW.md). Synthetic match~0.0146degRMSE; mismatch~2.8288deg.
+- No hardware, measured calibration, model update, firmware change or PPO. All gates
+  stay false; real inputs still need human review. Report generation is not approval.
+
+## Initial bench preparation — previous completed work
 
 - `bench.py` defaults to offline preview; USB needs explicit `--execute`. New session
   directories retain settings/source hashes, commands/status events, raw IMU and errors.

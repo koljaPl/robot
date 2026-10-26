@@ -97,6 +97,10 @@ and video identify command-to-PWM and PWM-to-shaft delays separately. USB round
 trip is not one-way latency. A cheap meter can miss current peaks: treat readings
 as incomplete peak evidence. Avoid prolonged stalls or hot servos.
 
+Use [separate-trial response review](RESPONSE_REVIEW.md) to plot locked-fit
+predictions and residuals before any model update. It never approves calibration
+or identifies MuJoCo gains automatically.
+
 Fit provisional gains/strength/damping/speed in `physical_spec.json`'s `dynamics`
 from **multiple** step amplitudes and loaded/unloaded trials. Minimize angle
 trajectory error across held-out steps, inspect overshoot and settling, then

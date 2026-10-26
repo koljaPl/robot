@@ -277,6 +277,14 @@ python tools/package_project.py
 
 {{CODE:tools/validate_measurement.py}}
 
+{{TEXT:docs/RESPONSE_REVIEW.md}}
+
+{{CODE:tools/fit_response.py}}
+
+{{CODE:tools/review_responses.py}}
+
+{{CODE:tools/make_response_demo.py}}
+
 ## 17. Sim-to-Real and domain-randomization plan
 
 The `Randomization` dataclass is the single DR configuration: mass/inertia±5%,

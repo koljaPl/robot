@@ -26,10 +26,12 @@ def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def validate_trial(csv_path, metadata_path):
+def validate_trial(csv_path, metadata_path, *, perform_fit=True):
+    if type(perform_fit) is not bool:
+        raise ValueError('perform_fit must be a boolean')
     csv_path, metadata_path = Path(csv_path), Path(metadata_path)
     meta = json.loads(metadata_path.read_text())
-    if meta.get('version') != 1 or meta.get('data_kind') not in ('physical', 'synthetic'):
+    if not isinstance(meta, dict) or type(meta.get('version')) is not int or meta['version'] != 1 or meta.get('data_kind') not in ('physical', 'synthetic'):
         raise ValueError('Specify version1 and data_kind physical or synthetic')
     if meta.get('units') != UNITS:
         raise ValueError('Explicit SI units must match the CSV schema')
@@ -79,7 +81,7 @@ def validate_trial(csv_path, metadata_path):
     if abs(amplitude) < np.deg2rad(5):
         raise ValueError('Need a step of at least5degrees for this diagnostic')
     data = np.array(list(zip(t, u, q)), dtype=[(k, float) for k in COLUMNS[:3]])
-    fitted = fit(data)
+    fitted = fit(data) if perform_fit else None
     q0 = float(np.median(q[:index]))
     response = float(np.median(q[-max(3, len(q)//10):])-q0)
     flags = []
@@ -87,18 +89,18 @@ def validate_trial(csv_path, metadata_path):
         flags.append('insufficient_resolved_motion')
     elif response*amplitude <= 0:
         flags.append('response_direction_disagrees_with_command')
-    if not .5 <= fitted['step_gain'] <= 1.5:
+    if fitted is not None and not .5 <= fitted['step_gain'] <= 1.5:
         flags.append('gain_outside_diagnostic_screen')
-    if fitted['delay_s'] >= .078 or fitted['time_constant_s'] <= .015001 or fitted['time_constant_s'] >= .499999:
+    if fitted is not None and (fitted['delay_s'] >= .078 or fitted['time_constant_s'] <= .015001 or fitted['time_constant_s'] >= .499999):
         flags.append('fit_at_search_boundary')
-    if np.deg2rad(fitted['rmse_deg']) > max(3*uncertainty, .1*abs(amplitude)):
+    if fitted is not None and np.deg2rad(fitted['rmse_deg']) > max(3*uncertainty, .1*abs(amplitude)):
         flags.append('residual_exceeds_diagnostic_screen')
     directed = (q-q0)*np.sign(amplitude)
     if float(np.max(directed)) > 1.2*abs(response)+3*uncertainty:
         flags.append('overshoot_or_nonfirstorder_response')
     if np.any((voltage < 4.8) | (voltage > 6.0)):
         flags.append('recorded_voltage_outside_selected_servo_claim')
-    return {'state': 'intake review only, not validated actuator or calibration',
+    result = {'state': 'intake review only, not validated actuator or calibration',
             'data_kind': meta['data_kind'], 'physically_verified': False,
             'calibration_validated': False, 'metadata': meta, 'samples': len(t),
             'source_sha256': {'csv': sha(csv_path), 'metadata': sha(metadata_path), 'evidence': hashes},
@@ -111,6 +113,11 @@ def validate_trial(csv_path, metadata_path):
                        'Screens are diagnostic hypotheses, not hardware tolerances.',
                        'One step cannot identify sustainable torque, backlash or MuJoCo gains uniquely.',
                        'Never automatically update calibration, physical parameters or release gates.']}
+    if not perform_fit:
+        result['fit_performed'] = False
+        result['skipped_fit_screens'] = ['gain_outside_diagnostic_screen', 'fit_at_search_boundary',
+                                         'residual_exceeds_diagnostic_screen']
+    return result
 
 
 def main():
@@ -118,8 +125,9 @@ def main():
     p.add_argument('csv', type=Path)
     p.add_argument('--metadata', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--no-fit', action='store_true', help='Provenance/basic screens only; never fit validation data')
     a = p.parse_args()
-    result = validate_trial(a.csv, a.metadata)
+    result = validate_trial(a.csv, a.metadata, perform_fit=not a.no_fit)
     with a.output.open('x') as f:
         json.dump(result, f, indent=2, allow_nan=False)
         f.write('\n')

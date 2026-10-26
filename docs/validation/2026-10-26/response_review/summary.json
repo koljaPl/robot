@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-26",
+  "state": "locally_verified_synthetic_diagnostic_only",
+  "tests": {
+    "focused_passed": 32,
+    "focused_seconds": 2.1,
+    "full_passed": 186,
+    "seconds": 16.8,
+    "log": "pytest_final.txt"
+  },
+  "report": "final_report/report.json",
+  "matching_validation_rmse_deg": 0.01460097669725728,
+  "mismatched_validation_rmse_deg": 2.8288251617750473,
+  "validation_refitted": false,
+  "default_intake_legacy_equality_test_passed": true,
+  "source_sha256": {
+    "tools/review_responses.py": "2a3cdd8973e9ff75035f91fe4438f805462f5b9713e72ba38f5298e3597a4353",
+    "tools/make_response_demo.py": "e0f59cbea995f09c32ddedce13b5ab881a204fc1fa54a098ed71ce3bd258d928",
+    "tools/validate_measurement.py": "efa43f95b1b17e3606d3a674501f72459ff925923efee8f4a1839f9af9825845",
+    "tools/fit_response.py": "a89d9e9535f7b9eeedfd17c088d84e4332f1f8ce5b0bdaf9b67ee4f30276a8c0",
+    "tests/test_response_review.py": "b72d80deb7ad86a323e29dc362f0e13f419b4733a5028d71c9067965ae914144",
+    "tests/test_measurement_intake.py": "954f7aee023fb7e059eb42846291043c46981cd026566c5d11a9b267abe1f1d9"
+  },
+  "model_control_identity_unchanged": "685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88",
+  "firmware_binaries_unchanged": true,
+  "frozen_reference_not_replayed_or_tuned": true,
+  "plots_visually_checked": [
+    "final_report/validation_01.png",
+    "final_report/validation_02.png"
+  ],
+  "second_plot_matches_preliminary_inspected_plot": true,
+  "hardware_accessed": false,
+  "physically_verified": false,
+  "calibration_validated": false,
+  "new_PPO_steps": 0,
+  "gates": {
+    "delivered_bom_below_100": false,
+    "servo_and_horn_fit_verified": false,
+    "assembly_clearances_reviewed": false,
+    "measured_actuator_and_imu_fit": false,
+    "reference_weight_transfer_and_lifted_step_verified": false
+  },
+  "ordering_progress": {
+    "state": "ordering_started_user_reported",
+    "date": "2026-10-26",
+    "evidence": "User: I am already starting to place orders",
+    "ordered_items": null,
+    "ordered_quantities": null,
+    "paid_prices_eur": null,
+    "arrival_states": null,
+    "purchases_by_AI": false,
+    "notes": "Quoted basket unchanged; actual spending stored separately when receipts are supplied."
+  }
+}
