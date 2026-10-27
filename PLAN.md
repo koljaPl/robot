@@ -1,13 +1,13 @@
 # Project plan — authoritative living record
 
-Updated **2026-10-26**. Read this overview before each work chunk; the complete
+Updated **2026-10-27**. Read this overview before each work chunk; the complete
 work packages follow. SUMMARY.md is the purchase/build snapshot, not a competing plan.
 
 | Main phase | Current position | Remaining work |
 |---|---|---|
 | Requirements and hardware selection | User agreed; Pico2/classmate printing selected | Record actual purchases/costs |
-| Printable parts and provisional simulation | Print package, twin/RL and intake checker implemented; 186tests pass (current local suite) | Actual fit/strength/calibration |
-| Bench-control software | **LOCALLY VERIFIED:** initial bench preview/safeguards, manual control, calibration parity, response review and Pico2 build;186tests pass | Pico2 firmware locally cross-built; next: actual fit/one-servo bench records |
+| Printable parts and provisional simulation | Print package, twin/RL and intake checker implemented; 238tests pass (current local suite) | Actual fit/strength/calibration |
+| Bench-control software | **LOCALLY VERIFIED:** initial bench preview/safeguards, manual control, calibration parity, response/receiving review and Pico2 build;238tests pass | Pico2 firmware locally cross-built; next: actual fit/one-servo bench records |
 | Physical assembly and calibration | **Ordering started—reported by user** | Receive parts, sample-fit, bench, assemble, weigh/measure |
 | Measured twin and learning | Provisional model; scripted motion below walking target | Measured twin/reference, bounded fixed/DR training |
 | Physical transfer and school experiment | Procedures prepared | Supervised trials, matched comparison, report/presentation |
@@ -57,12 +57,19 @@ implementation, local tests and physical verification.
 |2026-10-26|Response review locally complete:32focused checks/186full tests passed (16.80s full). Final synthetic CLI report and no-fit intake passed; matching/mismatched plots inspected, source/artifact hashes checked, numerical duplicate rejection tested. Model/control685e3802, firmware ELF/UF2 and all gates unchanged.|Synchronize current docs, regenerate19-section handoff and verify links/allowlisted archive. Next human inputs: actual receipt/fit/bench/external-angle records; no automatic calibration, physical release or PPO.|
 |2026-10-26|Current guide/status/summary and19-section source handoff regenerated. Preliminary report source bytes recovered and verified against original hashes; final source snapshot and synthetic evidence remain separate. No historical report overwritten.|Verify current document links and complete allowlisted archive; then refresh final delivery record. Physical data is still the next dependency, not more synthetic tuning or PPO.|
 |2026-10-26|Response-review delivery verified:305local links/anchors,19-section exact-source handoff and initial1,925-member archive passed integrity/byte checks.32focused/186full tests; source/configuration/print hashes and unchanged gates verified. All response examples remain synthetic.|Refresh final archive with this record/checks. Next: review actual order/fit/bench/external-angle inputs when supplied; do not infer calibration, approve gates or start more PPO from synthetic results.|
+|2026-10-27|Receiving/sample-review preparation started: add a blank versioned record, printable checklist and offline evidence/cost reviewer. Actual orders/arrivals and fit remain unknown; no hardware/model/PPO/gate change.|Implement source-linked intake and diagnostic reports, test partial/failed/stale/private-record paths, then synchronize documentation and handoff/archive.|
+|2026-10-27|Blank-record builder and offline receiving reviewer implemented: exact ledger products, per-order shipping, null unknowns, source/sample identities, fit checklist and private-record location checks. Not yet verified; no physical claim.|Generate blank template, add diagnostics/privacy/accounting tests, then run focused suite before marking software verified.|
+|2026-10-27|First focused receiving suite:46passed/2failed. Invalid-unit test revealed the blank-record builder shared its units dictionary with the validator, contaminating subsequent in-process records. No source identity/physical gates changed.|Return an independent units mapping per template, add a regression, then rerun receiving and full suites; software not yet marked verified.|
+|2026-10-27|Receiving focused suite49passed after units isolation fix. Packaging now excludes private session markers and local receiving folders. Review caught a new per-order summary being captured before its item costs; moved it after aggregation and added a subtotal reconciliation regression.|Finish human checklist and synthetic CLI evidence, rerun focused/full checks, then update delivery. No receipts or physical fit supplied.|
+|2026-10-27|Receiving guide, printable checklist and current action page complete; obsolete supplier requests archived byte-for-byte.49focused tests passed after per-order reconciliation fix; additional direct-STL/shipping/settings regressions added.|Run synthetic CLI demonstrations and full active suite; publish actual results and regenerate checked handoff/archive. Orders/fit/costs remain unknown.|
+|2026-10-27|Receiving review locally verified:52focused tests,238full tests passed in21.07s; four synthetic CLI reports (complete/partial/failed/blank) returned expected statuses. Per-order/overall payments reconcile; private records excluded. No arrivals/fit claimed.|Synchronize status/summary/AI guide, regenerate19-section handoff and verify sources/links/archive. Next human input remains actual servo/accessories, receipts and two fit samples; no PPO.|
+|2026-10-27|Receiving stage COMPLETE locally:52focused/238full tests; four synthetic CLI reports;344local links,19handoff sections/29exact source inclusions and initial1,963-member archive checked.18protected files, print ZIP and all gates unchanged; private records excluded.|Refresh archive/checksum with this final entry, then review actual receipts/servo accessories and two fit samples when supplied. No hardware/PPO or automatic physical release.|
 
 ---
 
 # Detailed execution plan
 
-Updated **2026-10-26**. This is the detailed plan for the student and future AI
+Updated **2026-10-27**. This is the detailed plan for the student and future AI
 sessions. [SUMMARY](SUMMARY.md) remains the short shopping/build overview;
 [STATUS](docs/STATUS.md) records evidence; [ROADMAP](docs/ROADMAP.md) is the dependency map.
 Prices and physical parameters remain authoritative in their structured ledgers.
@@ -76,9 +83,9 @@ below; it does not invent a≤€100 numerical total or actual print fit.
 Separate ready-to-slice files/instructions: [print folder](print_for_classmate/00_START_HERE.md)
 and [print ZIP](print_for_classmate.zip),2fit samples before7frame parts.
 
-**Next phase WP2 started:** external-angle provenance/measurement quality checker
-implemented; manual six-joint tooling and measured-baseline parity now also locally
-verified; initial bench preparation now also tested. Current suite186tests passes. [Manual usage](docs/MANUAL_CONTROL.md). No physical operation; no new PPO. Pico2 identity begins
+**WP2 independent preparation locally complete:** receiving/sample review and
+external-angle provenance/measurement quality checker implemented; manual six-joint tooling and measured-baseline parity now also locally
+verified; initial bench preparation now also tested. Current suite238tests passes. [Manual usage](docs/MANUAL_CONTROL.md). No physical operation; no new PPO. Pico2 identity begins
 `685e3802`; board mass remains estimated. Pico2 preparation firmware is now locally
 cross-built; physical tests remain pending.
 All references to older prices/fingerprints/results below retain their historical
@@ -154,8 +161,8 @@ is physically verified now. Blocked work has a named missing dependency.
 
 ### Discoveries that must not be lost
 
-- Latest recorded full suite: **186 passed in16.80s**, [response review log](docs/validation/2026-10-26/response_review/pytest_final.txt).
-  Earlier162/121/99/69/58/55-test records remain historical.
+- Latest recorded full suite: **238 passed in21.07s**, [receiving review log](docs/validation/2026-10-27/receiving_review/pytest_full.txt).
+  Earlier186/162/121/99/69/58/55-test records remain historical.
 - Current fingerprint: `685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88`.
   [Current frozen reference](docs/baselines/scripted_bench_tools.json) and
   [historical predecessor](docs/baselines/scripted_r2.json) remain separate.
@@ -197,8 +204,8 @@ Independent data/manual-control preparation ──────┘        ↓
 
 | Order | Concrete task | Owner | Done means / blocks |
 |---|---|---|---|
-| N1 | Record user-reported orders/receipts, then inspect actual parts and fit samples | Student supplies receipts/interface measurements; AI reconciles records | Ordering started; exact items/costs unknown. Physical fit and numeric accounting remain distinct from accepted design |
-| N2 | Completed: intake, manual-control previews/mocked safety, measured-baseline parity | AI software locally verified |186tests pass; response review, initial bench preparation and Pico2 cross-build verified. Physical manual operation still pending |
+| N1 | Record user-reported orders/receipts, then inspect actual parts and fit samples | Student supplies receipts/interface measurements; AI reconciles records with offline receiving reviewer | Ordering started; exact items/costs unknown. Physical fit and numeric accounting remain distinct from accepted design |
+| N2 | Completed: intake, manual-control previews/mocked safety, measured-baseline parity | AI software locally verified |238tests pass; receiving/response review, initial bench preparation and Pico2 cross-build verified. Physical manual operation still pending |
 | N3 | Verify real accessories/dimensions, electrical behaviour and two-piece sample | Student + AI analysis | Photos/dimensions, bench records and actual fit; costs remain accounted. Blocks full frame |
 | N4 | Assemble/weigh; calibrate/version twin; run model and reference checks | Student measures, AI models | Traceable measured calibration and reviewed feasible stepping. Blocks substantial training/deployment |
 | N5 | Run bounded matched A/B training, evaluate, then supervised physical trials | AI training, student trials | Equal budgets/initialization, held-out metrics/videos and failures. Blocks learned-walking/transfer claims |
@@ -246,7 +253,9 @@ and ledger; this checklist does not create a second price list.
 
 1. The user has started ordering and arranged classmate printing. Record exact
    item/model, quantity, paid price, postage, order date and arrival only when
-   supplied. Keep historical quotes separate; never infer all items were bought.
+   supplied. Keep historical quotes separate; never infer all items were bought. Use the
+   [receiving record/checklist](docs/RECEIVING.md); private receipts/photos stay in
+   unarchived local_records, never packaged documentation.
 2. Use the separate classmate print folder:2fit samples first, then7frame parts
    if actual servo/horn/screws fit. Record material/settings, finishing, sample
    dimensions, actual costs and any transport. Do not print duplicate combined files.
@@ -267,6 +276,10 @@ printing selection complete; financial accounting and physical checks pending.
 **State:** implemented and locally verified; physical use remains pending.
 **Owner:** AI preparation, student later bench operation.
 
+- Receiving/sample record and offline reviewer now provide source/sample hashes,
+  per-order known payments, missing checks and reported failures. Private physical
+  records stay outside packaged folders; no automatic budget/fit/gate approval.
+  [Receiving guide](docs/RECEIVING.md), [printable checklist](docs/RECEIVING_CHECKLIST.md).
 - Initial `bench.py` now previews offline; USB requires explicit `--execute`.
   Read-only logging or one constant restricted pulse, fresh stationary startup,
   fault/time/saturation checks, no catch-up refreshes, STOP/close and new session

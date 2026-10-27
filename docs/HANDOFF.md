@@ -1,7 +1,7 @@
 # From Simulation to Reality: How does a robot learn?
 
 Generated from source by `python tools/build_handoff.py`. Do not edit HANDOFF.md.
-Plan/revision date2026-10-26; individual evidence retains its original date.
+Plan/revision date2026-10-27; individual evidence retains its original date.
 Source files, ledgers and evidence states take precedence.
 Short purchase/build plan for humans and AI: [SUMMARY.md](../SUMMARY.md).
 Authoritative root plan, dependencies and completion gates: [PLAN.md](../PLAN.md).
@@ -203,94 +203,35 @@ short initial indoor trial work; several-metre travel needs a newly budgeted tet
 }
 ```
 
-### Active commercial-print procurement actions — 2026-10-25
+### Current procurement / receiving actions — 2026-10-27
 
-**Superseded selection task2026-10-26:** user chooses printing by a classmate and
-accepts the design/printing arrangement; Pico2 replaces Pico1. Exact price unknown,
-excluding delivery. Design/provider phase complete; no further service search or
-Meltlab upload needed. [Print files](../print_for_classmate/00_START_HERE.md).
-The older quote-research notes/questions below are historical alternatives,
-not the current next action. Actual fit/strength/cost records remain to be obtained.
+**User arrangement selected:** classmate PETG printing, bare Pico2, two fit samples
+before seven frames. Ordering started according to the user; exact items, paid
+costs and arrivals remain unknown. No AI purchases/messages/uploads. No further
+Meltlab upload/provider search is required.
 
-Delivery25337Germany; PCUSB-A, no adapter; required USB data cable retained.
-No purchases, supplier messages, reservations or print orders have occurred.
-Authoritative ledger:`../procurement.json`; packages:`../cad/`.
+1. Record actual products, quantities, receipts and arrivals using the
+   [receiving guide](RECEIVING.md), [blank record](templates/receiving.example.json)
+   or [printable checklist](RECEIVING_CHECKLIST.md). Unknown values stay blank/null.
+2. Inspect actual servo ears/shaft, supplied horns/retainers and screws; photograph
+   and measure without guessing splines/threads. Test the two
+   [classmate print samples](../print_for_classmate/00_START_HERE.md).
+3. Review failures, remaining continuous clearances/strength, tool access and exact
+   hardware before seven frames; [assembly details](../cad/ASSEMBLY.md).
+4. Reconcile actual delivered cost separately from dated quotes. Source ledger:
+   [procurement.json](../procurement.json). **€106.49 quoted before unknown print/
+   finishing/transport/horn extras; at least €6.49 over the €100 cap.** Classmate price
+   remains unknown, not free. No numerical budget clearance.
+5. Follow the separate [one-servo/IMU bench guide](BENCH.md). Software STOP is not
+   DC isolation; fit reports do not approve electrical operation.
 
-#### Ready to forward for quotation, not order
+Delivery record:25337Germany; USB-A present, no adapter; USB-A–Micro-B data cable
+still required. Account for every shipment/full consumable pack. All physical gates
+remain closed; a report only summarizes reported evidence.
 
-- [Sample ZIP](../cad/sample_quotation_package.zip): two separate mounting-test pieces.
-- [Frame ZIP](../cad/frame_quotation_package.zip): sevenPETG parts, no TPU soles.
-- [Supplier brief](../cad/QUOTE_REQUEST.md), [drawing](../cad/print_order/drawings/interfaces.png),
-  [quantity/hash manifest](../cad/print_order/manifest.json), [assembly](../cad/ASSEMBLY.md).
-- A combined7component STL is an alternative calculator input only; never add it
-  to the seven individual pieces as extra quantities. Hash final geometry before quote.
-
-#### Costs and reductions
-
-Common priced subset95.56EUR +three ear-fastener packs/delivery9.53EUR =
-**105.09EUR before printing, sample delivery and unknown horn hardware**.
-Known shortfall for this basket:5.09EUR; complete delivered total unknown.
-The same parts previously cost95.91before mechanics. A0.50EUR Pico header kit
-plus one0.60EUR40pin pack saves0.10EUR and retains all pins. No weaker motors,
-undersized PSU/wire, omitted mains lead or assumed free consumables.
-
-[2026-10-25 source/stock review](BUDGET_REVIEW.md): black DonauE-175-11 at€5.50
-replaces unavailable redE-175-10 at€5.90; exact tie pack rises€0.45→€0.60.
-The net€0.25 reduction changes€105.34→€105.09. All other selected prices/rates
-were rechecked; no stock reservation or postcode checkout. Keep staged delivery
-costs unknown. Meter polarity; both buses now use black wire with coded shrink bands.
-
-An unselected eight-pad FIX-RF-003 comparison would cost€96.79 before the same
-print/sample/horn unknowns, leaving€3.21. Pads are4.5mm tapered rubber, not the
-current3mm TPE cylinders. No current geometry or saving is changed for that option.
-Use `tools/compare_procurement.py --option berrybase_round_pads`; it refuses free
-postage while retaining another item from that supplier and never clears purchase.
-
-Shipping/VAT rates remain published Germany snapshots, not a final checkout:
-Welectron4.95, BerryBase4.95, Funduino4.90, Reichelt5.95, Schraubenking5.90EUR.
-One shipping charge per supplier; every staged sample delivery is additional unless
-an actual quotation states otherwise. Print material is inside the service quote:
-**no filament spool/printer/printed TPU** is in the active basket.
-
-Consolidating the IMU at BerryBase was rejected:9.90EUR vs3.62 adds6.28 before any
-4.90shipping saving, with a differing module/interface listing. Combining fasteners
-with pads or printer service remains unverified; no complete matched kit was found.
-Old quotations refer to old geometry and cannot price this revision.
-A direct3pin-header harness could replace extension cables using the existing pin
-packs, but actual mating/keying,3Acontact suitability and insulation/strain relief
-remain unverified. It is a research candidate only; no saving is credited.
-
-#### Public print-service review
-
-| Service | Verified public capability | Price / missing evidence |
-|---|---|---|
-| [Meltlab](https://meltlab.de/konfigurator) | Instant STL calculator; public page describes PETG and selectable support removal | Exact revised-file upload was blocked by automatic approval review; no new quote |
-| [f3dprint](https://www.f3dprint.de/druck-service) | STL/3MF, PETG,0.20mm; online price UI | Required25%infill/3walls/finishing not established; no file quote/upload |
-| [Riesen Consulting](https://riesen-consulting.de/cad-dienstleistungen/3d-druck-service/3d-druck-online-bestellen-preis-sofort-berechnen/) | Instant FDM calculator, Germany delivery | Page explicitly separates fit review/finishing from automated printing; no complete quote/inquiry |
-
-No service has a complete budget-passing quotation, so **none is selected**.
-Public example prices are not this project's quotation.
-
-#### Required human action / exact questions
-
-1. Authorize uploading the exact current combined frame STL and two sample STLs
-   to **Meltlab** for quotations only, or upload them yourself and return settings,
-   price breakdown and file hashes. Automatic approval review rejected the upload
-   because it shares design data with that provider without specific authorization.
-   This is separate from purchase or supplier-message permission.
-2. Ask for sample2pieces and frame7pieces separately: PETG black,0.20mm,3walls,25%infill,
-   reviewed load orientation, removed supports, usable holes without student drilling,
-   finishing/inspection, VAT, packaging and each delivery to25337.
-3. Confirm six-unit stock and actual Waveshare15024 accessory contents. Measure ear,
-   shaft, horn holes and supplied screws before final geometry or manufacturing approval.
-4. Confirm matching6horns+6retainers and12horn-frame screws+12washers. Ear screw length
-   and wrench/sweep clearance need the real stack; do not guess spline or threads.
-5. Confirm JR wire/contact ratings,3.3V servo signal acceptance, real current/droop and
-   tool access. Test one servo/IMU and the physical disconnect before full assembly.
-
-A quote over100EUR does not authorize procurement. Preserve its exact shortfall and
-continue independent provisional simulation; no hardware/manufacturing gate is cleared.
-Previous standard/own-printer and commercialTPU comparisons remain under `history/`.
+Previous supplier research is preserved byte-for-byte in the
+[historical page](history/2026-10-27/pre_receiving/PROCUREMENT_ACTIONS.md.txt).
+Those old requests/prices are not the active task or a fresh checkout.
 
 ## 7. Mechanical design
 
@@ -5091,6 +5032,549 @@ python tools/package_project.py
 
 ## 16. Calibration procedure for the real robot
 
+### Receive parts and review the two fit samples
+
+Prepared **2026-10-27**. Offline evidence review, not approval to manufacture,
+power or deploy. **No arrivals or actual costs are recorded yet.** Use the
+[printable checklist](RECEIVING_CHECKLIST.md) first; you can supply notes/photos
+and let the AI enter them later. JSON is optional for the student.
+
+#### Start a private record
+
+```bash
+mkdir -p local_records/receiving_01
+cp docs/templates/receiving.example.json local_records/receiving_01/record.json
+### Fill known fields; keep receipts/photos beside this private record.
+.venv/bin/python tools/review_receiving.py local_records/receiving_01/record.json \
+  --output local_records/receiving_01/review_01
+```
+
+`local_records/` is ignored by Git and excluded from delivery. Do not put real
+receipts, addresses, photos or reports under docs/cad/tests/tools/firmware/
+calibrations/print_for_classmate. The reviewer refuses physical inputs, outputs
+and evidence in those packaged directories. Private reports also have a
+`PRIVATE_RECEIVING_RECORD` marker that packaging excludes. Nothing opens USB.
+
+Outputs: `report.md` and `report.json`: source/evidence SHA-256 hashes, per-order
+known payments, missing costs/checks and reported failures. Exit **0**: diagnostic
+record complete with no flags; **2**: incomplete, failed fit, changed print settings/
+material or recorded spending over cap; **1**: invalid input, stale sources, missing
+file or existing output. Even exit0 **never approves budget, fit or calibration**.
+Use a fresh output directory after editing; keep previous reports.
+
+#### Filling the version1 template
+
+- `data_kind`: `physical` for actual records; `synthetic` only for labelled fiction.
+  Dates: YYYY-MM-DD or `null`. Units: dimensions **mm**, costs **EUR**, quantities
+  integers in purchase units. One pack100 washers is quantity1, not100. Installed
+  quantities remain in [assembly](../cad/ASSEMBLY.md); software still uses SI units.
+- `orders`: template groups expected products by source; **these are not claimed
+  orders**. Set unique local `order_id` values when known. Keep exact ledger product
+  names; fill dates, received quantities, accessories and relative `evidence_files`.
+  Split deliveries may be separate records; do not duplicate payments. A changed
+  product requires ledger/interface review, not a renamed label.
+- `paid_line_eur`: actual whole-line payment, including VAT but **excluding** separately
+  recorded shipping/other charges. Record `shipping_paid_eur` once per order;
+  `other_paid_eur` covers separate finishing/fees. Old print-product names mention
+  delivery: separate that charge here. Explicitly confirmed zero is allowed;
+  `null` means unknown, never free.
+- If horns are confirmed included, record the required accessory line at zero
+  additional cost in the servo order with shared receipt evidence. Remove its
+  unused placeholder order. Do not presume inclusion, spline or screw compatibility.
+- `hardware`: actual tested servo ID, supplied horn/screw interfaces. Unknown spline/
+  thread stays `null`; do not guess25T or M2. Lengths are under-head dimensions;
+  hole radii are distances from the shaft centre.
+- `printing`: material, actual settings, finishing/deviations, then both named samples.
+  `received`: true/false/null. Check status: pending/passed/failed; a passed damage
+  check means **no visible damage**. Add descriptions, photographs and named
+  `measurements_mm`; instrument/uncertainty in notes. No fit tolerance is invented.
+
+The template is tied to procurement, physical-specification, model/control and
+print-manifest hashes, plus each sample STL hash. A changed source requires a
+reviewed migration to a new record; do not blindly replace hashes to pass intake.
+
+Known payments are **not the complete delivered robot cost**, even if every field
+is filled. Quotes are never added to actual payments. The dated quotation remains
+**€106.49 before unknown print/horn extras**, at least€6.49 over€100. Reconcile final
+costs separately, including every printing/finishing/transport stage. The reviewer
+never edits procurement, geometry, calibration or gates.
+
+#### Next physical actions
+
+1. Inspect actual servo/accessories against the [drawing](../cad/print_order/drawings/interfaces.png).
+2. Check two samples; failed fit means revise/reprint, not drilling or forcing.
+   Review complete costs and remaining clearance/strength uncertainties before seven frames.
+3. Follow [one-servo/IMU bench](BENCH.md), [assembly](../cad/ASSEMBLY.md), then
+   [measurement intake](MEASUREMENT_INTAKE.md). Horn mounting needing a centred
+   shaft follows the unloaded bench test; disconnect servo DC before mechanical fit.
+
+Hashes preserve provenance, not truth. Photos cannot verify continuous clearance,
+structural strength, six-servo current capacity or learned walking.
+
+### Parts and fit samples — student checklist
+
+**Date:** __________ **Tested servo ID:** __________ **Print revision:** __________
+
+No arrivals/fit assumed. Mark **pending / passed / failed**, add notes and photos.
+Keep receipts/photos private; [record/reviewer](RECEIVING.md).
+
+#### 1. Receive and record
+
+- [ ] Exact model/supplier; order date, ordered/received quantities and arrival.
+- [ ] VAT-inclusive line payments; shipping once per order; finishing/transport.
+- [ ] Included horns, shaft retainers and mounting screws: photograph/count/identify.
+- [ ] Missing prices/dates/accessories stay unknown; quotes are separate.
+
+Required installed hardware: **6 horns +6 shaft retainers;12 M2×8 ear screws,
+12 M2 nuts +24 washers;12 horn-to-frame screws +12 matching washers**.
+Ear stack/horn screws remain provisional; do not assume the centre screw is M2.
+
+#### 2. Print two samples first (PETG, mm, 100%)
+
+Use only [ear_cradle +horn_plate](../print_for_classmate/00_START_HERE.md), one each.
+Record file hashes, actual settings, orientation, support removal, finishing and
+deviations. Starting instructions:0.2mm layers,3walls,25%infill.
+
+| Check | Result / dimensions / photo reference |
+|---|---|
+| Cradle: case inserts freely; case dimensions/lead position | |
+| Cradle: both ear holes align; spacing/diameter/ear thickness | |
+| Cradle: frame/ear/washers/nut stack; screw length/projection/access | |
+| Cradle: cable exit free, no trapping edge | |
+| Cradle: usable holes; no cracks, splits or visible layer damage | |
+| Horn plate: supplied horn fits; hole radii/thickness/confirmed screws | |
+| Horn plate: shaft-retainer screwdriver access; no bottoming | |
+| Horn plate: usable holes; no cracks, splits or visible layer damage | |
+
+**Do not drill, force plastic or trial an unidentified thread.** Test unpowered;
+establish shaft centre by the unloaded bench procedure before mounting its horn,
+then disconnect DC. Unknown fit means pending.
+
+#### 3. Review before seven frame parts
+
+- [ ] Failed/uncertain interfaces reviewed; revised samples if needed.
+- [ ] Complete cost, fasteners and remaining clearance/strength uncertainties reviewed.
+- [ ] Seven frames only after sample review; no duplicate combined plate, printed
+  horns or TPU soles. Physical assembly/bench/calibration remain separate.
+
+[Assembly](../cad/ASSEMBLY.md), [drawing](../cad/print_order/drawings/interfaces.png)
+and [bench](BENCH.md). This is human-reported evidence, **not automatic manufacturing,
+budget or electrical approval**.
+
+```python
+"""Offline receiving/sample evidence review; never approves purchases or physical gates."""
+import argparse
+from datetime import date
+from decimal import Decimal, InvalidOperation
+import hashlib
+import json
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from calibration import configuration_identity
+
+UNITS = {'length': 'mm', 'currency': 'EUR'}
+SAMPLES = {
+    '01_FIT_SAMPLE/ear_cradle.stl': (
+        'servo_insertion', 'ear_holes', 'mounting_stack', 'wire_exit',
+        'usable_holes', 'visible_print_damage'),
+    '01_FIT_SAMPLE/horn_plate.stl': (
+        'horn_attachment', 'retaining_screw_access', 'usable_holes', 'visible_print_damage'),
+}
+PACKAGED_ROOTS = ('docs', 'cad', 'tests', 'tools', 'firmware', 'calibrations', 'print_for_classmate')
+HARDWARE_FIELDS = ('servo_id', 'spline', 'retainer_thread', 'retainer_length_mm',
+                   'horn_hole_radii_mm', 'frame_screw_thread', 'frame_screw_length_mm')
+
+
+def sha(path):
+    h = hashlib.sha256()
+    with Path(path).open('rb') as f:
+        for block in iter(lambda: f.read(1024 * 1024), b''):
+            h.update(block)
+    return h.hexdigest()
+
+
+def load_json(path):
+    def pairs(items):
+        result = {}
+        for key, value in items:
+            if key in result:
+                raise ValueError('Duplicate JSON key: ' + key)
+            result[key] = value
+        return result
+    return json.loads(Path(path).read_text(), object_pairs_hook=pairs,
+                      parse_constant=lambda x: (_ for _ in ()).throw(ValueError('Nonfinite JSON: ' + x)))
+
+
+def sources():
+    ledger = load_json(ROOT / 'procurement.json')
+    spec = load_json(ROOT / 'physical_spec.json')
+    manifest = load_json(ROOT / 'print_for_classmate/manifest.json')
+    identity = {name: sha(ROOT / name) for name in
+                ('procurement.json', 'physical_spec.json', 'print_for_classmate/manifest.json')}
+    identity['configuration'] = configuration_identity()['configuration']
+    if manifest['physical_spec_sha256'] != identity['physical_spec.json']:
+        raise ValueError('Current print manifest does not match physical specification')
+    meshes = {item['file']: item for item in manifest['files']}
+    for name in SAMPLES:
+        if name not in meshes or sha(ROOT / 'print_for_classmate' / name) != meshes[name]['sha256']:
+            raise ValueError('Current sample file/hash mismatch: ' + name)
+    items = ledger['items'] + ledger['scenarios'][ledger['active_scenario']]['items']
+    # Shipping is recorded once per actual order, never as an item as well.
+    products = {item['product']: item for item in items if item['category'] != 'Shipping'}
+    return identity, ledger, spec, manifest, meshes, products
+
+
+def blank_record():
+    """Template only: expected products are not assertions of orders or arrivals."""
+    identity, _, _, manifest, meshes, products = sources()
+    orders = {}
+    for name, product in products.items():
+        order = orders.setdefault(product['shop'], {
+            'order_id': None, 'supplier': product['shop'], 'ordered_date': None,
+            'arrival_date': None, 'shipping_paid_eur': None, 'other_paid_eur': None,
+            'evidence_files': [], 'notes': None, 'items': []})
+        order['items'].append({'product': name, 'quantity_ordered': None,
+                               'quantity_received': None, 'paid_line_eur': None,
+                               'accessories': None, 'evidence_files': []})
+    return {'version': 1, 'data_kind': 'physical', 'record_date': None, 'units': UNITS.copy(),
+            'source_identity': identity, 'orders': list(orders.values()),
+            'hardware': {field: None for field in HARDWARE_FIELDS},
+            'printing': {'revision': manifest['revision'], 'material': None,
+                         'layer_height_mm': None, 'walls': None, 'infill_percent': None,
+                         'finishing': None, 'deviations': None, 'evidence_files': [],
+                         'samples': [{'file': name, 'sha256': meshes[name]['sha256'],
+                                      'received': None, 'print_date': None,
+                                      'checks': {key: {'status': 'pending', 'measurements_mm': {},
+                                                       'notes': None, 'evidence_files': []}
+                                                 for key in keys}}
+                                     for name, keys in SAMPLES.items()]}}
+
+
+def text_or_null(value, label):
+    if value is not None and (not isinstance(value, str) or not value.strip()):
+        raise ValueError(label + ' must be a nonempty string or null')
+
+
+def integer_or_null(value, label):
+    if value is not None and (type(value) is not int or value < 0):
+        raise ValueError(label + ' must be a nonnegative integer or null')
+
+
+def number(value, label, *, money=False):
+    if value is None:
+        return None
+    if type(value) not in (int, float):
+        raise ValueError(label + ' must be a finite nonnegative number or null')
+    try:
+        d = Decimal(str(value))
+        if not d.is_finite() or d < 0 or (money and d != d.quantize(Decimal('.01'))):
+            raise ValueError(label + ' must be finite, nonnegative, and whole cents for costs')
+    except InvalidOperation as e:
+        raise ValueError('Invalid number: ' + label) from e
+    return d
+
+
+def day(value, label):
+    text_or_null(value, label)
+    if value is not None:
+        try:
+            if date.fromisoformat(value).isoformat() != value:
+                raise ValueError()
+        except ValueError as e:
+            raise ValueError(label + ' must be YYYY-MM-DD or null') from e
+
+
+def packaged(path):
+    path = Path(path).resolve()
+    return any(path.is_relative_to((ROOT / folder).resolve()) for folder in PACKAGED_ROOTS)
+
+
+def review(record_path, output):
+    record_path, output = Path(record_path).resolve(), Path(output).resolve()
+    if output.exists():
+        raise FileExistsError('Output already exists: ' + str(output))
+    record = load_json(record_path)
+    if not isinstance(record, dict) or type(record.get('version')) is not int or record['version'] != 1:
+        raise ValueError('Expected receiving record version 1')
+    kind = record.get('data_kind')
+    if kind not in ('physical', 'synthetic') or record.get('units') != UNITS:
+        raise ValueError('Specify physical/synthetic and explicit mm/EUR units')
+    if kind == 'physical' and (packaged(record_path) or packaged(output)):
+        raise ValueError('Keep physical records/reports outside packaged folders; use local_records/')
+    identity, ledger, spec, manifest, meshes, products = sources()
+    if record.get('source_identity') != identity:
+        raise ValueError('Stale or incompatible source identity; review changed sources before migrating records')
+    missing, failures, warnings, evidence = [], [], [], {}
+
+    def require(value, label):
+        if value is None:
+            missing.append(label)
+
+    def files(names, label):
+        if not isinstance(names, list) or any(not isinstance(n, str) or not n.strip() for n in names):
+            raise ValueError(label + ' evidence_files must be a list of paths')
+        if len(set(names)) != len(names):
+            raise ValueError('Duplicate evidence reference: ' + label)
+        for name in names:
+            p = (record_path.parent / name).resolve()
+            if not p.is_file():
+                raise ValueError('Missing evidence file: ' + name)
+            if kind == 'physical' and packaged(p):
+                raise ValueError('Private evidence must stay outside packaged folders')
+            evidence[name] = sha(p)
+        return bool(names)
+
+    day(record.get('record_date'), 'record_date')
+    require(record.get('record_date'), 'record_date')
+    orders = record.get('orders')
+    if not isinstance(orders, list):
+        raise ValueError('orders must be a list')
+    seen, order_costs = set(), []
+    known, cost_fields = Decimal(0), 0
+    cost_unknown = []
+    quantities = {name: {'ordered': 0, 'received': 0} for name in products}
+    for i, order in enumerate(orders):
+        if not isinstance(order, dict):
+            raise ValueError('Order must be an object')
+        label = 'orders[' + str(i) + ']'
+        for field in ('order_id', 'supplier', 'notes'):
+            text_or_null(order.get(field), label + '.' + field)
+        for field in ('order_id', 'supplier'):
+            require(order.get(field), label + '.' + field)
+        if order.get('order_id') is not None:
+            if order['order_id'] != order['order_id'].strip():
+                raise ValueError('Order identifiers must not have surrounding whitespace')
+            if order['order_id'] in seen:
+                raise ValueError('Duplicate order identifier: ' + order['order_id'])
+            seen.add(order['order_id'])
+        for field in ('ordered_date', 'arrival_date'):
+            day(order.get(field), label + '.' + field)
+            require(order.get(field), label + '.' + field)
+        if order.get('arrival_date') and order.get('ordered_date') and order['arrival_date'] < order['ordered_date']:
+            raise ValueError('Arrival precedes order date')
+        order_evidence = files(order.get('evidence_files'), label)
+        if not order_evidence:
+            missing.append(label + '.receipt_evidence')
+        start_known, start_fields, start_unknown = known, cost_fields, len(cost_unknown)
+        for field in ('shipping_paid_eur', 'other_paid_eur'):
+            amount = number(order.get(field), label + '.' + field, money=True)
+            if amount is None:
+                cost_unknown.append(label + '.' + field)
+            else:
+                known += amount
+                cost_fields += 1
+        items = order.get('items')
+        if not isinstance(items, list) or not items:
+            raise ValueError('Each order requires at least one item')
+        order_products = set()
+        for j, item in enumerate(items):
+            if not isinstance(item, dict) or item.get('product') not in products:
+                raise ValueError('Unknown product; record exact ledger name or review a ledger revision first')
+            name = item['product']
+            if name in order_products:
+                raise ValueError('Duplicate product in one order; aggregate its quantity/line payment')
+            order_products.add(name)
+            key = label + '.items[' + str(j) + ']'
+            for field, bucket in (('quantity_ordered', 'ordered'), ('quantity_received', 'received')):
+                integer_or_null(item.get(field), key + '.' + field)
+                require(item.get(field), key + '.' + field)
+                if item.get(field) is not None:
+                    quantities[name][bucket] += item[field]
+            if item.get('quantity_ordered') is not None and item.get('quantity_received') is not None and item['quantity_received'] > item['quantity_ordered']:
+                raise ValueError('Received quantity exceeds ordered quantity; explain extras separately')
+            text_or_null(item.get('accessories'), key + '.accessories')
+            require(item.get('accessories'), key + '.accessories')
+            files(item.get('evidence_files'), key)
+            amount = number(item.get('paid_line_eur'), key + '.paid_line_eur', money=True)
+            if amount is None:
+                cost_unknown.append(key + '.paid_line_eur')
+            else:
+                known += amount
+                cost_fields += 1
+        order_costs.append({'order_id': order.get('order_id'), 'supplier': order.get('supplier'),
+                            'known_payments_eur': format(known - start_known, '.2f') if cost_fields > start_fields else None,
+                            'unresolved_cost_fields': cost_unknown[start_unknown:]})
+    coverage = []
+    for name, product in products.items():
+        coverage.append({'product': name, 'required_purchase_units': product['quantity'],
+                         'known_reported_ordered_units': quantities[name]['ordered'],
+                         'known_reported_received_units': quantities[name]['received']})
+        if quantities[name]['received'] < product['quantity']:
+            missing.append('Required receipt incomplete: ' + name)
+        if not any(item['product'] == name for order in orders for item in order['items']):
+            cost_unknown.append('Unrecorded required product: ' + name)
+    hardware = record.get('hardware')
+    if not isinstance(hardware, dict) or set(hardware) != set(HARDWARE_FIELDS):
+        raise ValueError('hardware must contain the documented identity/interface fields')
+    for field, value in hardware.items():
+        require(value, 'hardware.' + field)
+        if field == 'horn_hole_radii_mm':
+            if value is not None:
+                if not isinstance(value, list) or not value:
+                    raise ValueError('horn_hole_radii_mm must be a nonempty list or null')
+                for v in value:
+                    if number(v, field) in (None, Decimal(0)):
+                        raise ValueError('Horn hole radii must be positive')
+        elif field.endswith('_mm'):
+            if value is not None and number(value, field) == 0:
+                raise ValueError('Screw lengths must be positive')
+        else:
+            text_or_null(value, 'hardware.' + field)
+    printing = record.get('printing')
+    if not isinstance(printing, dict) or printing.get('revision') != manifest['revision']:
+        raise ValueError('Print revision mismatch')
+    for field in ('material', 'finishing', 'deviations'):
+        text_or_null(printing.get(field), 'printing.' + field)
+        require(printing.get(field), 'printing.' + field)
+    if printing.get('material') is not None and printing['material'].upper() != 'PETG':
+        warnings.append('Reported material differs from PETG; engineering review required')
+    for field in ('layer_height_mm', 'infill_percent'):
+        v = number(printing.get(field), 'printing.' + field)
+        require(v, 'printing.' + field)
+        if v is not None and ((field == 'layer_height_mm' and v == 0) or (field == 'infill_percent' and v > 100)):
+            raise ValueError('Invalid positive print setting: ' + field)
+    integer_or_null(printing.get('walls'), 'printing.walls')
+    require(printing.get('walls'), 'printing.walls')
+    if printing.get('walls') == 0:
+        raise ValueError('Print walls must be positive')
+    for field in ('layer_height_mm', 'walls', 'infill_percent'):
+        if printing.get(field) is not None and printing[field] != spec['manufacturing'][field]:
+            warnings.append('Reported ' + field + ' differs from provisional print instructions; review required')
+    files(printing.get('evidence_files'), 'printing')
+    samples = printing.get('samples')
+    if not isinstance(samples, list) or len(samples) != len(SAMPLES):
+        raise ValueError('Require exactly the two individual fit samples')
+    seen_samples, checks = set(), []
+    for sample in samples:
+        if not isinstance(sample, dict) or sample.get('file') not in SAMPLES:
+            raise ValueError('Unknown sample')
+        name = sample['file']
+        if name in seen_samples or sample.get('sha256') != meshes[name]['sha256']:
+            raise ValueError('Duplicate sample or stale sample hash: ' + name)
+        seen_samples.add(name)
+        if sample.get('received') is not None and type(sample['received']) is not bool:
+            raise ValueError('Sample received must be true, false or null')
+        if sample.get('received') is not True:
+            missing.append('Sample not reported received: ' + name)
+        day(sample.get('print_date'), name + '.print_date')
+        require(sample.get('print_date'), name + '.print_date')
+        if not isinstance(sample.get('checks'), dict) or set(sample['checks']) != set(SAMPLES[name]):
+            raise ValueError('Sample check list mismatch: ' + name)
+        for key, check in sample['checks'].items():
+            if not isinstance(check, dict) or check.get('status') not in ('pending', 'passed', 'failed'):
+                raise ValueError('Check requires pending/passed/failed status')
+            label = name + ':' + key
+            text_or_null(check.get('notes'), label + '.notes')
+            m = check.get('measurements_mm')
+            if not isinstance(m, dict) or any(not isinstance(k, str) or not k.strip() for k in m):
+                raise ValueError('measurements_mm must be an object of named dimensions')
+            for dimension, value in m.items():
+                if number(value, label + '.' + dimension) is None:
+                    missing.append(label + '.' + dimension)
+            has_evidence = files(check.get('evidence_files'), label)
+            if check['status'] == 'pending':
+                missing.append(label)
+            else:
+                if sample.get('received') is not True:
+                    raise ValueError('Cannot report a fit check on a sample not received')
+                if not has_evidence:
+                    missing.append(label + '.photo_or_measurement_evidence')
+                if check['notes'] is None:
+                    missing.append(label + '.description')
+                if key in ('ear_holes', 'mounting_stack', 'horn_attachment') and not m:
+                    missing.append(label + '.dimensions_mm')
+            if check['status'] == 'failed':
+                failures.append(label)
+            checks.append({'sample': name, 'check': key, **check})
+    missing.extend(cost_unknown)
+    missing = sorted(set(missing))
+    # Quoted values are contextual only: never add quotes to actual payments.
+    from tools.budget_gate import check_basket
+    quote = check_basket(ledger)
+    report = {
+        'version': 1, 'state': 'diagnostic_awaiting_human_review', 'data_kind': kind,
+        'record_complete': not missing, 'missing_checks_or_fields': missing,
+        'reported_failures': failures, 'warnings': warnings,
+        'source_identity': identity, 'record_sha256': sha(record_path),
+        'reviewer_sha256': sha(Path(__file__)), 'evidence_sha256': evidence,
+        'spending': {'recorded_payments_eur': format(known, '.2f') if cost_fields else None,
+                     'known_payment_fields': cost_fields, 'unresolved_costs': cost_unknown,
+                     'orders': order_costs,
+                     'scope': 'Recorded payments only; not a complete delivered robot total',
+                     'complete_delivered_robot_total_eur': None,
+                     'budget_max_eur': ledger['budget_max_eur'],
+                     'recorded_payments_exceed_cap': known > Decimal(str(ledger['budget_max_eur'])),
+                     'quoted_basket_snapshot': quote},
+        'required_product_coverage': coverage, 'orders_reported': orders, 'hardware_reported': hardware,
+        'printing_reported': printing, 'sample_checks': checks,
+        'provisional_drawing_comparisons_mm': {
+            'horn_slot_radius_interval': [1000 * x for x in spec['hardware_interfaces']['horn']['designed_slot_radius_interval']],
+            'horn_slot_width': 1000 * spec['hardware_interfaces']['horn']['designed_frame_clearance_width'],
+            'ear_thickness_estimate': 1000 * spec['hardware_interfaces']['ear_bolt']['ear_thickness_estimate']},
+        'physically_verified': False, 'manufacturing_approved': False,
+        'budget_cleared': False, 'gates_updated': False,
+        'limits': ['Fit assertions are human-reported evidence awaiting review; hashes do not establish truth.',
+                   'Drawing dimensions are provisional comparisons, not invented fit tolerances.',
+                   'No automatic ledger, geometry, calibration, purchase or release update.',
+                   'Incomplete receipts never establish complete delivered cost; unknown amounts are not zero.',
+                   'Synthetic examples are not arrivals, purchases, measurements or fit evidence.']}
+    markdown = render_report(report)
+    output.mkdir(parents=True, exist_ok=False)
+    if kind == 'physical':
+        (output / 'PRIVATE_RECEIVING_RECORD').write_text('Private receiving report: do not package.\n')
+    (output / 'report.json').write_text(json.dumps(report, indent=2, allow_nan=False) + '\n')
+    (output / 'report.md').write_text(markdown)
+    return report
+
+
+def render_report(report):
+    def safe(value):
+        return str(value).replace('|', '\\|').replace('\n', ' ').replace('\r', ' ')
+    spending = report['spending']
+    lines = ['# Receiving and sample review — ' + report['data_kind'].upper(), '',
+             '**Diagnostic: human-reported evidence awaiting review. No gates approved.**', '',
+             'Record fields complete: ' + str(report['record_complete']) + '.',
+             'Recorded payments: ' + str(spending['recorded_payments_eur']) + ' EUR (known entries only).',
+             'Complete delivered robot total: **unknown**. Quotes remain separate.', '',
+             '## Recorded payments', '', '| Order / supplier | Known payments EUR | Unresolved cost fields |',
+             '|---|---:|---:|']
+    for order in spending['orders']:
+        lines.append('| ' + safe(str(order['order_id']) + ' / ' + str(order['supplier'])) + ' | ' +
+                     safe(order['known_payments_eur']) + ' | ' + str(len(order['unresolved_cost_fields'])) + ' |')
+    lines.extend(['', '## Sample checklist', '', '| Sample / check | Reported result |', '|---|---|'])
+    for c in report['sample_checks']:
+        lines.append('| ' + safe(c['sample'] + ' / ' + c['check']) + ' | ' + safe(c['status']) + ' |')
+    for title, values in (('Reported failures', report['reported_failures']),
+                          ('Missing checks / fields', report['missing_checks_or_fields']),
+                          ('Review notes', report['warnings'] + report['limits'])):
+        lines.extend(['', '## ' + title, ''])
+        lines.extend('- ' + safe(v) for v in values or ['None reported; this is not approval.'])
+    lines.extend(['', 'Next: review actual servo/accessories and both samples; resolve failures before seven frames.', ''])
+    return '\n'.join(lines)
+
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('record', type=Path)
+    p.add_argument('--output', type=Path, required=True)
+    args = p.parse_args()
+    try:
+        report = review(args.record, args.output)
+    except (ValueError, OSError, KeyError, TypeError) as e:
+        print('Receiving review refused: ' + str(e), file=sys.stderr)
+        return 1
+    print(json.dumps({k: report[k] for k in ('state', 'data_kind', 'record_complete', 'reported_failures')}))
+    return 2 if (report['missing_checks_or_fields'] or report['reported_failures'] or
+                 report['warnings'] or report['spending']['recorded_payments_exceed_cap']) else 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())
+```
+
 ### Parameters to measure on the real robot
 
 All numbers currently in `physical_spec.json` and `robot_config.py` are estimates except the explicitly labelled seller claims. A school kitchen scale, ruler, protractor, phone camera, known weights and a borrowed multimeter are enough to replace many estimates. No prolonged stall tests.
@@ -6027,7 +6511,7 @@ All physical/manufacturing/training gates remain false; no new PPO was run.
 
 ### Hardware-first execution roadmap
 
-Updated **2026-10-26**. This is the short map; the
+Updated **2026-10-27**. This is the short map; the
 [complete execution plan](../PLAN.md) contains all phases, completed work,
 WP1–WP11 procedures, owners, affected files, acceptance evidence and failure decisions.
 [STATUS](STATUS.md) records evidence; ledgers remain authoritative.
@@ -6040,8 +6524,8 @@ provider-selection research and starts WP2, without claiming physical fit or a n
 budget pass. [Print folder](../print_for_classmate/00_START_HERE.md).
 Measurement-intake/provenance checker implemented; manual six-joint utility and
 measured-baseline calibration parity and Pico2 preparation firmware now locally verified.
-Initial bench safeguards and locked-fit response review locally verified;186tests pass;
-no new PPO. [Response review](RESPONSE_REVIEW.md).
+Initial bench safeguards and response/receiving review locally verified;238tests pass;
+no new PPO. [Response review](RESPONSE_REVIEW.md), [receiving checklist](RECEIVING.md).
 [Firmware build](../firmware/README.md), [initial bench guide](BENCH.md).
 
 #### Previous checkpoint (2026-10-25; historical costs/identity)
@@ -6110,14 +6594,14 @@ task when human-dependent work is blocked; do not restart already completed rese
 
 ### Project plan — authoritative living record
 
-Updated **2026-10-26**. Read this overview before each work chunk; the complete
+Updated **2026-10-27**. Read this overview before each work chunk; the complete
 work packages follow. SUMMARY.md is the purchase/build snapshot, not a competing plan.
 
 | Main phase | Current position | Remaining work |
 |---|---|---|
 | Requirements and hardware selection | User agreed; Pico2/classmate printing selected | Record actual purchases/costs |
-| Printable parts and provisional simulation | Print package, twin/RL and intake checker implemented; 186tests pass (current local suite) | Actual fit/strength/calibration |
-| Bench-control software | **LOCALLY VERIFIED:** initial bench preview/safeguards, manual control, calibration parity, response review and Pico2 build;186tests pass | Pico2 firmware locally cross-built; next: actual fit/one-servo bench records |
+| Printable parts and provisional simulation | Print package, twin/RL and intake checker implemented; 238tests pass (current local suite) | Actual fit/strength/calibration |
+| Bench-control software | **LOCALLY VERIFIED:** initial bench preview/safeguards, manual control, calibration parity, response/receiving review and Pico2 build;238tests pass | Pico2 firmware locally cross-built; next: actual fit/one-servo bench records |
 | Physical assembly and calibration | **Ordering started—reported by user** | Receive parts, sample-fit, bench, assemble, weigh/measure |
 | Measured twin and learning | Provisional model; scripted motion below walking target | Measured twin/reference, bounded fixed/DR training |
 | Physical transfer and school experiment | Procedures prepared | Supervised trials, matched comparison, report/presentation |
@@ -6167,12 +6651,19 @@ implementation, local tests and physical verification.
 |2026-10-26|Response review locally complete:32focused checks/186full tests passed (16.80s full). Final synthetic CLI report and no-fit intake passed; matching/mismatched plots inspected, source/artifact hashes checked, numerical duplicate rejection tested. Model/control685e3802, firmware ELF/UF2 and all gates unchanged.|Synchronize current docs, regenerate19-section handoff and verify links/allowlisted archive. Next human inputs: actual receipt/fit/bench/external-angle records; no automatic calibration, physical release or PPO.|
 |2026-10-26|Current guide/status/summary and19-section source handoff regenerated. Preliminary report source bytes recovered and verified against original hashes; final source snapshot and synthetic evidence remain separate. No historical report overwritten.|Verify current document links and complete allowlisted archive; then refresh final delivery record. Physical data is still the next dependency, not more synthetic tuning or PPO.|
 |2026-10-26|Response-review delivery verified:305local links/anchors,19-section exact-source handoff and initial1,925-member archive passed integrity/byte checks.32focused/186full tests; source/configuration/print hashes and unchanged gates verified. All response examples remain synthetic.|Refresh final archive with this record/checks. Next: review actual order/fit/bench/external-angle inputs when supplied; do not infer calibration, approve gates or start more PPO from synthetic results.|
+|2026-10-27|Receiving/sample-review preparation started: add a blank versioned record, printable checklist and offline evidence/cost reviewer. Actual orders/arrivals and fit remain unknown; no hardware/model/PPO/gate change.|Implement source-linked intake and diagnostic reports, test partial/failed/stale/private-record paths, then synchronize documentation and handoff/archive.|
+|2026-10-27|Blank-record builder and offline receiving reviewer implemented: exact ledger products, per-order shipping, null unknowns, source/sample identities, fit checklist and private-record location checks. Not yet verified; no physical claim.|Generate blank template, add diagnostics/privacy/accounting tests, then run focused suite before marking software verified.|
+|2026-10-27|First focused receiving suite:46passed/2failed. Invalid-unit test revealed the blank-record builder shared its units dictionary with the validator, contaminating subsequent in-process records. No source identity/physical gates changed.|Return an independent units mapping per template, add a regression, then rerun receiving and full suites; software not yet marked verified.|
+|2026-10-27|Receiving focused suite49passed after units isolation fix. Packaging now excludes private session markers and local receiving folders. Review caught a new per-order summary being captured before its item costs; moved it after aggregation and added a subtotal reconciliation regression.|Finish human checklist and synthetic CLI evidence, rerun focused/full checks, then update delivery. No receipts or physical fit supplied.|
+|2026-10-27|Receiving guide, printable checklist and current action page complete; obsolete supplier requests archived byte-for-byte.49focused tests passed after per-order reconciliation fix; additional direct-STL/shipping/settings regressions added.|Run synthetic CLI demonstrations and full active suite; publish actual results and regenerate checked handoff/archive. Orders/fit/costs remain unknown.|
+|2026-10-27|Receiving review locally verified:52focused tests,238full tests passed in21.07s; four synthetic CLI reports (complete/partial/failed/blank) returned expected statuses. Per-order/overall payments reconcile; private records excluded. No arrivals/fit claimed.|Synchronize status/summary/AI guide, regenerate19-section handoff and verify sources/links/archive. Next human input remains actual servo/accessories, receipts and two fit samples; no PPO.|
+|2026-10-27|Receiving stage COMPLETE locally:52focused/238full tests; four synthetic CLI reports;344local links,19handoff sections/29exact source inclusions and initial1,963-member archive checked.18protected files, print ZIP and all gates unchanged; private records excluded.|Refresh archive/checksum with this final entry, then review actual receipts/servo accessories and two fit samples when supplied. No hardware/PPO or automatic physical release.|
 
 ---
 
 ### Detailed execution plan
 
-Updated **2026-10-26**. This is the detailed plan for the student and future AI
+Updated **2026-10-27**. This is the detailed plan for the student and future AI
 sessions. [SUMMARY](../SUMMARY.md) remains the short shopping/build overview;
 [STATUS](STATUS.md) records evidence; [ROADMAP](ROADMAP.md) is the dependency map.
 Prices and physical parameters remain authoritative in their structured ledgers.
@@ -6186,9 +6677,9 @@ below; it does not invent a≤€100 numerical total or actual print fit.
 Separate ready-to-slice files/instructions: [print folder](../print_for_classmate/00_START_HERE.md)
 and [print ZIP](../print_for_classmate.zip),2fit samples before7frame parts.
 
-**Next phase WP2 started:** external-angle provenance/measurement quality checker
-implemented; manual six-joint tooling and measured-baseline parity now also locally
-verified; initial bench preparation now also tested. Current suite186tests passes. [Manual usage](MANUAL_CONTROL.md). No physical operation; no new PPO. Pico2 identity begins
+**WP2 independent preparation locally complete:** receiving/sample review and
+external-angle provenance/measurement quality checker implemented; manual six-joint tooling and measured-baseline parity now also locally
+verified; initial bench preparation now also tested. Current suite238tests passes. [Manual usage](MANUAL_CONTROL.md). No physical operation; no new PPO. Pico2 identity begins
 `685e3802`; board mass remains estimated. Pico2 preparation firmware is now locally
 cross-built; physical tests remain pending.
 All references to older prices/fingerprints/results below retain their historical
@@ -6264,8 +6755,8 @@ is physically verified now. Blocked work has a named missing dependency.
 
 ##### Discoveries that must not be lost
 
-- Latest recorded full suite: **186 passed in16.80s**, [response review log](validation/2026-10-26/response_review/pytest_final.txt).
-  Earlier162/121/99/69/58/55-test records remain historical.
+- Latest recorded full suite: **238 passed in21.07s**, [receiving review log](validation/2026-10-27/receiving_review/pytest_full.txt).
+  Earlier186/162/121/99/69/58/55-test records remain historical.
 - Current fingerprint: `685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88`.
   [Current frozen reference](baselines/scripted_bench_tools.json) and
   [historical predecessor](baselines/scripted_r2.json) remain separate.
@@ -6307,8 +6798,8 @@ Independent data/manual-control preparation ──────┘        ↓
 
 | Order | Concrete task | Owner | Done means / blocks |
 |---|---|---|---|
-| N1 | Record user-reported orders/receipts, then inspect actual parts and fit samples | Student supplies receipts/interface measurements; AI reconciles records | Ordering started; exact items/costs unknown. Physical fit and numeric accounting remain distinct from accepted design |
-| N2 | Completed: intake, manual-control previews/mocked safety, measured-baseline parity | AI software locally verified |186tests pass; response review, initial bench preparation and Pico2 cross-build verified. Physical manual operation still pending |
+| N1 | Record user-reported orders/receipts, then inspect actual parts and fit samples | Student supplies receipts/interface measurements; AI reconciles records with offline receiving reviewer | Ordering started; exact items/costs unknown. Physical fit and numeric accounting remain distinct from accepted design |
+| N2 | Completed: intake, manual-control previews/mocked safety, measured-baseline parity | AI software locally verified |238tests pass; receiving/response review, initial bench preparation and Pico2 cross-build verified. Physical manual operation still pending |
 | N3 | Verify real accessories/dimensions, electrical behaviour and two-piece sample | Student + AI analysis | Photos/dimensions, bench records and actual fit; costs remain accounted. Blocks full frame |
 | N4 | Assemble/weigh; calibrate/version twin; run model and reference checks | Student measures, AI models | Traceable measured calibration and reviewed feasible stepping. Blocks substantial training/deployment |
 | N5 | Run bounded matched A/B training, evaluate, then supervised physical trials | AI training, student trials | Equal budgets/initialization, held-out metrics/videos and failures. Blocks learned-walking/transfer claims |
@@ -6356,7 +6847,9 @@ and ledger; this checklist does not create a second price list.
 
 1. The user has started ordering and arranged classmate printing. Record exact
    item/model, quantity, paid price, postage, order date and arrival only when
-   supplied. Keep historical quotes separate; never infer all items were bought.
+   supplied. Keep historical quotes separate; never infer all items were bought. Use the
+   [receiving record/checklist](RECEIVING.md); private receipts/photos stay in
+   unarchived local_records, never packaged documentation.
 2. Use the separate classmate print folder:2fit samples first, then7frame parts
    if actual servo/horn/screws fit. Record material/settings, finishing, sample
    dimensions, actual costs and any transport. Do not print duplicate combined files.
@@ -6377,6 +6870,10 @@ printing selection complete; financial accounting and physical checks pending.
 **State:** implemented and locally verified; physical use remains pending.
 **Owner:** AI preparation, student later bench operation.
 
+- Receiving/sample record and offline reviewer now provide source/sample hashes,
+  per-order known payments, missing checks and reported failures. Private physical
+  records stay outside packaged folders; no automatic budget/fit/gate approval.
+  [Receiving guide](RECEIVING.md), [printable checklist](RECEIVING_CHECKLIST.md).
 - Initial `bench.py` now previews offline; USB requires explicit `--execute`.
   Read-only logging or one constant restricted pulse, fresh stationary startup,
   fault/time/saturation checks, no catch-up refreshes, STOP/close and new session
@@ -7222,11 +7719,11 @@ steps. Reconcile measured parameters, issue a new identity, replay this referenc
 and check robust lifted steps before substantial PPO or any policy deployment.
 All five release gates remain false; no new procurement or physical result exists.
 
-### Current project status — 2026-10-26
+### Current project status — 2026-10-27
 
 **Design/printing selection COMPLETE by user2026-10-26.** Classmate printing is
 accepted; exact price unknown/excluding delivery. Selected board now Pico2.
-Next phase WP2 has begun; this is not physical/manufacturing/financial verification.
+Independent WP2 preparation is locally verified; this is not physical/manufacturing/financial verification.
 Separate print folder: [instructions](../print_for_classmate/00_START_HERE.md),
 [ZIP](../print_for_classmate.zip). [Decision record](decisions/2026-10-26-printing-pico2.json).
 
@@ -7241,7 +7738,7 @@ active route is classmate PETG, bare Pico2 and eight ordinary grip pads.
 | Design / printing selection | complete, user accepted | Classmate printing selected; Pico2 adopted. Price unknown; numerical budget remains separate/unverified (106.49before unknowns) |
 | CAD / quotation package | implemented, locally verified partial | Seven connected watertight frames, two-piece fit sample, drawings/manifests;0modeled collisions/55poses,5unknown interface groups; NOT manufacturing-approved |
 | Shared control / firmware | locally verified partial | Protocol/native tests and current Pico2 cross-build pass; invalid calibration, full-policy arm disabled. Older images historical; physical timing absent |
-| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite186passes |
+| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite238passes |
 | Frozen scripted reference | locally verified partial | Four qualifying steps/3alternations,6.60cm torso and4.39cm gait distance in30s;30cm target fails.29one-factor cases show fragile guessed physics |
 | PPO / evaluation | historical local evidence | Prior2048-step smoke/reload:0walking successes/0gait. All saved policies now incompatible; no new PPO. Older49152-step pilot also failed |
 | Physical build / calibration / transfer | planned, blocked | User ordering started; arrivals/measurements unreported. Bench/fit procedures prepared |
@@ -7269,7 +7766,25 @@ including r2 smoke. Current Pico2 preparation ELF/UF2 is locally cross-built wit
 invalid calibration; no physical test. Never relabel old images. Measured calibration
 and reviewed physical checks remain required before policy operation.
 
-#### Servo-response review — latest completed work
+#### Receiving / sample review — latest completed work
+
+- Blank source-linked record, printable checklist and offline reviewer implemented.
+  Actual dates/quantities/payments stay null; no arrivals or fit were invented.
+- Reports keep shared shipping once per order, quotes separate from actual known
+  payments, and complete delivered cost unknown. Sample/manifest/source hashes,
+  measurements/photos, missing checks and reported failures retained for human review.
+- Physical inputs/reports/evidence refused in packaged directories; local_records
+  ignored/excluded; private-session marker provides an additional archive exclusion.
+- **52focused /238full tests pass** (21.07s full). Four synthetic CLI demonstrations
+  returned expected exit codes; no synthetic result becomes physical approval.
+  [Guide](RECEIVING.md), [checklist](RECEIVING_CHECKLIST.md),
+  [evidence](validation/2026-10-27/receiving_review/README.md).
+- Delivery source/link/allowlist checks passed;19handoff sections contain current code.
+  [Initial delivery check](validation/2026-10-27/receiving_review/initial_delivery_checks.json).
+- Model/control, firmware ELF/UF2, print ZIP, procurement and all five gates unchanged.
+  Next: actual servo/accessories and two samples; verify physical records when supplied.
+
+#### Servo-response review — previous completed work
 
 - One fitting trial supplies locked delay/tau/gain; separate validation trials never
   refit. Baselines use pre-step samples only; plots/residual CSV/metrics/hashes exported.
@@ -7379,8 +7894,8 @@ All five [release gates](gates.json) remain false. Software STOP is not power is
 
 #### Exact next task
 
-**AI:** review actual receipt/arrival, fit-sample and one-servo/IMU bench records
-when supplied; preserve provenance and keep gates closed until evidence passes.
+**AI:** review actual receipt/arrival and fit-sample records with the offline
+[receiving tool](RECEIVING.md), plus one-servo/IMU bench records when supplied; preserve provenance and keep gates closed until evidence passes.
 Pico2 preparation build complete locally; no automatic flash/arm or extra PPO.
 **Student/classmate:** receive/record exact ordered items, print/test2samples with
 actual servo/horn/screws, then7frames if fit passes; bench, weigh and calibrate.
@@ -7388,9 +7903,24 @@ No numerical financial or physical gate is cleared by user agreement or software
 See root PLAN.md for full dependencies; do not restart provider-selection research
 or motion tuning. Use `pytest -q tests`, not copied historical test modules.
 
-### Current local verification — 2026-10-26, S6-PETG-pad-r2
+### Current local verification — 2026-10-27, S6-PETG-pad-r2-pico2
 
-#### Servo-response review — latest2026-10-26
+#### Receiving / sample review — latest2026-10-27
+
+- Version1 blank record, private evidence intake, exact source/sample identities,
+  per-order payment reconciliation, unknown-cost/partial receipt and failed-fit reports.
+- **52focused /238full tests passed** (21.07s full):
+  [focused](validation/2026-10-27/receiving_review/pytest_focused.txt),
+  [full](validation/2026-10-27/receiving_review/pytest_full.txt).
+- Four explicitly synthetic CLI reports returned0/2/2/2; no actual arrivals,
+  paid costs, measured dimensions or fit results are inferred from them.
+- Packaging excludes local receiving folders, symlinks and private-report marker trees.
+  Model/control685e3802, procurement, prints, firmware and all five gates unchanged.
+- [Receiving guide](RECEIVING.md), [checklist](RECEIVING_CHECKLIST.md),
+  [evidence/reproduction](validation/2026-10-27/receiving_review/README.md).
+  Next physical input: actual servo/accessories, receipts and the two fit samples.
+
+#### Servo-response review — previous2026-10-26
 
 - Locked first-order fit predicted separate synthetic trials without fitting validation
   data. Pre-step-only baseline, condition/shared-evidence reporting, CSV/PNG/JSON

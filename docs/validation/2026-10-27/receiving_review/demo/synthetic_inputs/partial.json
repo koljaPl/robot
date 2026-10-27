@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "data_kind": "synthetic",
+  "record_date": "2026-10-27",
+  "units": {
+    "length": "mm",
+    "currency": "EUR"
+  },
+  "source_identity": {
+    "procurement.json": "f4f9ac21a4599f5dc56c989cb077809ccbfcf8c19e6b3028f7533c3ca4bb80a8",
+    "physical_spec.json": "e2e66dfc8e39f907ba6d410bbf6b3cde40886730284309b207b045df4bcf32a6",
+    "print_for_classmate/manifest.json": "10d2bcc933927e925c2954d6c109c397c25b1042672f2679f0c9c183f2e6d31a",
+    "configuration": "685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88"
+  },
+  "orders": [
+    {
+      "order_id": "SYNTHETIC-0",
+      "supplier": "Welectron",
+      "ordered_date": "2026-10-26",
+      "arrival_date": null,
+      "shipping_paid_eur": null,
+      "other_paid_eur": 0,
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ],
+      "notes": null,
+      "items": [
+        {
+          "product": "Waveshare 15024 MG90S",
+          "quantity_ordered": 6,
+          "quantity_received": 6,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        }
+      ]
+    }
+  ],
+  "hardware": {
+    "servo_id": "SYNTHETIC-ONLY",
+    "spline": "Synthetic unspecified",
+    "retainer_thread": "Synthetic unspecified",
+    "retainer_length_mm": 3,
+    "horn_hole_radii_mm": [
+      7
+    ],
+    "frame_screw_thread": "Synthetic unspecified",
+    "frame_screw_length_mm": 4
+  },
+  "printing": {
+    "revision": "S6-PETG-pad-r2-pico2",
+    "material": "PETG",
+    "layer_height_mm": 0.2,
+    "walls": 3,
+    "infill_percent": 25,
+    "finishing": "Synthetic fixture",
+    "deviations": "None in fictitious fixture",
+    "evidence_files": [
+      "SYNTHETIC.txt"
+    ],
+    "samples": [
+      {
+        "file": "01_FIT_SAMPLE/ear_cradle.stl",
+        "sha256": "67222ed4048de778daac0139315220df5be1663fd3297086c6fb65f526f1c778",
+        "received": true,
+        "print_date": "2026-10-27",
+        "checks": {
+          "servo_insertion": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "ear_holes": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "mounting_stack": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "wire_exit": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "usable_holes": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "visible_print_damage": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          }
+        }
+      },
+      {
+        "file": "01_FIT_SAMPLE/horn_plate.stl",
+        "sha256": "9d6ad9ab4db1a3c0fbb0f7516dc9da7e0c05d6ece2a139de2305184b8b30156e",
+        "received": true,
+        "print_date": "2026-10-27",
+        "checks": {
+          "horn_attachment": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "retaining_screw_access": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "usable_holes": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "visible_print_damage": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

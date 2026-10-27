@@ -1,0 +1,54 @@
+{
+  "complete": {
+    "command": [
+      "/home/kolja/home/Code/robot/.venv/bin/python",
+      "/home/kolja/home/Code/robot/tools/review_receiving.py",
+      "/home/kolja/home/Code/robot/docs/validation/2026-10-27/receiving_review/demo/synthetic_inputs/complete.json",
+      "--output",
+      "/home/kolja/home/Code/robot/docs/validation/2026-10-27/receiving_review/demo/complete"
+    ],
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "stdout": "{\"state\": \"diagnostic_awaiting_human_review\", \"data_kind\": \"synthetic\", \"record_complete\": true, \"reported_failures\": []}\n",
+    "stderr": ""
+  },
+  "partial": {
+    "command": [
+      "/home/kolja/home/Code/robot/.venv/bin/python",
+      "/home/kolja/home/Code/robot/tools/review_receiving.py",
+      "/home/kolja/home/Code/robot/docs/validation/2026-10-27/receiving_review/demo/synthetic_inputs/partial.json",
+      "--output",
+      "/home/kolja/home/Code/robot/docs/validation/2026-10-27/receiving_review/demo/partial"
+    ],
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "stdout": "{\"state\": \"diagnostic_awaiting_human_review\", \"data_kind\": \"synthetic\", \"record_complete\": false, \"reported_failures\": []}\n",
+    "stderr": ""
+  },
+  "failed_fit": {
+    "command": [
+      "/home/kolja/home/Code/robot/.venv/bin/python",
+      "/home/kolja/home/Code/robot/tools/review_receiving.py",
+      "/home/kolja/home/Code/robot/docs/validation/2026-10-27/receiving_review/demo/synthetic_inputs/failed_fit.json",
+      "--output",
+      "/home/kolja/home/Code/robot/docs/validation/2026-10-27/receiving_review/demo/failed_fit"
+    ],
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "stdout": "{\"state\": \"diagnostic_awaiting_human_review\", \"data_kind\": \"synthetic\", \"record_complete\": true, \"reported_failures\": [\"01_FIT_SAMPLE/ear_cradle.stl:servo_insertion\"]}\n",
+    "stderr": ""
+  },
+  "blank": {
+    "command": [
+      "/home/kolja/home/Code/robot/.venv/bin/python",
+      "/home/kolja/home/Code/robot/tools/review_receiving.py",
+      "/home/kolja/home/Code/robot/docs/validation/2026-10-27/receiving_review/demo/synthetic_inputs/blank.json",
+      "--output",
+      "/home/kolja/home/Code/robot/docs/validation/2026-10-27/receiving_review/demo/blank"
+    ],
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "stdout": "{\"state\": \"diagnostic_awaiting_human_review\", \"data_kind\": \"synthetic\", \"record_complete\": false, \"reported_failures\": []}\n",
+    "stderr": ""
+  }
+}

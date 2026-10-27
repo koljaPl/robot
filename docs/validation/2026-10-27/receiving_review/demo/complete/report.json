@@ -1,0 +1,840 @@
+{
+  "version": 1,
+  "state": "diagnostic_awaiting_human_review",
+  "data_kind": "synthetic",
+  "record_complete": true,
+  "missing_checks_or_fields": [],
+  "reported_failures": [],
+  "warnings": [],
+  "source_identity": {
+    "procurement.json": "f4f9ac21a4599f5dc56c989cb077809ccbfcf8c19e6b3028f7533c3ca4bb80a8",
+    "physical_spec.json": "e2e66dfc8e39f907ba6d410bbf6b3cde40886730284309b207b045df4bcf32a6",
+    "print_for_classmate/manifest.json": "10d2bcc933927e925c2954d6c109c397c25b1042672f2679f0c9c183f2e6d31a",
+    "configuration": "685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88"
+  },
+  "record_sha256": "ac76ce9ba15db709ece562e0f738ebcb446b5b95787e4b3f0cea38a3cfa07c12",
+  "reviewer_sha256": "3bbf42a1fb4eda5d3852c0449fac2321d94c2eaea5576cacef27dc3852220775",
+  "evidence_sha256": {
+    "SYNTHETIC.txt": "5162c3b4ad7af1f2684cef8c98d4ec11e0613a7fec44a2355bcd6168b1f86ce2"
+  },
+  "spending": {
+    "recorded_payments_eur": "50.00",
+    "known_payment_fields": 40,
+    "unresolved_costs": [],
+    "orders": [
+      {
+        "order_id": "SYNTHETIC-0",
+        "supplier": "Welectron",
+        "known_payments_eur": "3.75",
+        "unresolved_cost_fields": []
+      },
+      {
+        "order_id": "SYNTHETIC-1",
+        "supplier": "BerryBase",
+        "known_payments_eur": "18.75",
+        "unresolved_cost_fields": []
+      },
+      {
+        "order_id": "SYNTHETIC-2",
+        "supplier": "Funduino",
+        "known_payments_eur": "5.00",
+        "unresolved_cost_fields": []
+      },
+      {
+        "order_id": "SYNTHETIC-3",
+        "supplier": "Reichelt",
+        "known_payments_eur": "3.75",
+        "unresolved_cost_fields": []
+      },
+      {
+        "order_id": "SYNTHETIC-4",
+        "supplier": "Schraubenking",
+        "known_payments_eur": "6.25",
+        "unresolved_cost_fields": []
+      },
+      {
+        "order_id": "SYNTHETIC-5",
+        "supplier": "Selected servo supplier; package confirmation pending",
+        "known_payments_eur": "3.75",
+        "unresolved_cost_fields": []
+      },
+      {
+        "order_id": "SYNTHETIC-6",
+        "supplier": "Servo/print supplier; interface confirmation pending",
+        "known_payments_eur": "3.75",
+        "unresolved_cost_fields": []
+      },
+      {
+        "order_id": "SYNTHETIC-7",
+        "supplier": "Classmate printing (user arranged)",
+        "known_payments_eur": "5.00",
+        "unresolved_cost_fields": []
+      }
+    ],
+    "scope": "Recorded payments only; not a complete delivered robot total",
+    "complete_delivered_robot_total_eur": null,
+    "budget_max_eur": 100,
+    "recorded_payments_exceed_cap": false,
+    "quoted_basket_snapshot": {
+      "scenario": "commercial_print",
+      "status": "OVER BUDGET",
+      "known_delivered_subtotal_eur": "106.49",
+      "remaining_for_all_unknowns_eur": "-6.49",
+      "confirmed_minimum_shortfall_eur": "6.49",
+      "total_price_eur": null,
+      "pending_prices": [
+        "6 matching horns + 6 servo shaft retaining screws",
+        "12 horn-to-frame screws and 12 matching washers",
+        "PETG full frame:7finished parts, VAT, packaging and delivery to25337",
+        "PETG fit sample:2interface pieces, VAT and separate delivery"
+      ],
+      "unresolved_checks": [
+        "All required full-frame/sample/finishing/horn costs and stock unresolved; unknowns never zero",
+        "Six-unit Waveshare stock and actual supplied horn/shaft screw contents",
+        "3.3V PWM threshold, branch/contact current ratings and PSU droop still need bench testing",
+        "Final complete delivery to25337 incl every sample shipment; no bookings/orders/messages",
+        "Fit/layer strength/pad friction and adhesion require physical measurements",
+        "Classmate printing accepted by user; exact cost/finishing/delivery accounting unknown. Financial gate remains separate from completed design/provider decision.",
+        "Active selected basket is over cap; a candidate subtotal is not its complete delivered quotation; no order",
+        "Exact Waveshare batch horns/retainers/screw/ear measurements and interface sample fit",
+        "Current exact-file print/support/finishing/sample/delivery prices missing",
+        "Physical layer strength, continuous clearances, tie/connector routing and pad grip not verified"
+      ],
+      "purchase_cleared": false
+    }
+  },
+  "required_product_coverage": [
+    {
+      "product": "Waveshare 15024 MG90S",
+      "required_purchase_units": 6,
+      "known_reported_ordered_units": 6,
+      "known_reported_received_units": 6
+    },
+    {
+      "product": "Raspberry Pi Pico 2 (bare RP2350 board), RPI-PICO2",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "Funduino F23107397 MPU6050 module",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "Mean Well GST40A05-P1J 5 V 5 A desktop PSU",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "Goobay 68604 Schuko to C13, 1.5 m",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "Official Raspberry Pi RPI-MUSB-1 USB data cable 1 m",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "DUPK-40-FF-50, 40 female-female Dupont leads, 50 cm",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "Funduino F23108007 JR-Futaba extension, 10 cm",
+      "required_purchase_units": 6,
+      "known_reported_ordered_units": 6,
+      "known_reported_received_units": 6
+    },
+    {
+      "product": "Donau E-175-11 black copper wire 0.75 mm\u00b2, 10 m roll",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "AiSHi ELK1M16VAWH 1000 \u00b5F 16 V capacitor",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "PINH-1X40P 40-pin 2.54 mm header",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "McPower T1535561 heat-shrink, 100 pieces",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "McPower T1535501 cable ties, 100 x 2.5 mm, pack of 100",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "Goobay 11638 DC socket 5.5 x 2.1 mm, solder lugs, 5 A",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "Zhongdi ZD-160 lead-free solder, 1 mm, 2% flux, 10 g",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "Delock 18309 self-adhesive TPE pads, 10 x 3 mm, pack50",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "BerryBase RPIP-PINH Pico header kit",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "Schraubenking P010265 M2 x 8 PH DIN7985 zinc-plated steel 4.8, pack100",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "Schraubenking P003474 M2 DIN934 zinc-plated steel class8 nuts, pack100",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "Schraubenking P004198 M2 DIN125 A2 washers 2.2 x 5 x 0.3 mm, pack100",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "6 matching horns + 6 servo shaft retaining screws",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "12 horn-to-frame screws and 12 matching washers",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "PETG full frame:7finished parts, VAT, packaging and delivery to25337",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    },
+    {
+      "product": "PETG fit sample:2interface pieces, VAT and separate delivery",
+      "required_purchase_units": 1,
+      "known_reported_ordered_units": 1,
+      "known_reported_received_units": 1
+    }
+  ],
+  "orders_reported": [
+    {
+      "order_id": "SYNTHETIC-0",
+      "supplier": "Welectron",
+      "ordered_date": "2026-10-26",
+      "arrival_date": "2026-10-27",
+      "shipping_paid_eur": 2.5,
+      "other_paid_eur": 0,
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ],
+      "notes": null,
+      "items": [
+        {
+          "product": "Waveshare 15024 MG90S",
+          "quantity_ordered": 6,
+          "quantity_received": 6,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        }
+      ]
+    },
+    {
+      "order_id": "SYNTHETIC-1",
+      "supplier": "BerryBase",
+      "ordered_date": "2026-10-26",
+      "arrival_date": "2026-10-27",
+      "shipping_paid_eur": 2.5,
+      "other_paid_eur": 0,
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ],
+      "notes": null,
+      "items": [
+        {
+          "product": "Raspberry Pi Pico 2 (bare RP2350 board), RPI-PICO2",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "Mean Well GST40A05-P1J 5 V 5 A desktop PSU",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "Goobay 68604 Schuko to C13, 1.5 m",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "Official Raspberry Pi RPI-MUSB-1 USB data cable 1 m",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "DUPK-40-FF-50, 40 female-female Dupont leads, 50 cm",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "Donau E-175-11 black copper wire 0.75 mm\u00b2, 10 m roll",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "AiSHi ELK1M16VAWH 1000 \u00b5F 16 V capacitor",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "PINH-1X40P 40-pin 2.54 mm header",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "McPower T1535561 heat-shrink, 100 pieces",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "McPower T1535501 cable ties, 100 x 2.5 mm, pack of 100",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "Goobay 11638 DC socket 5.5 x 2.1 mm, solder lugs, 5 A",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "Zhongdi ZD-160 lead-free solder, 1 mm, 2% flux, 10 g",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "BerryBase RPIP-PINH Pico header kit",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        }
+      ]
+    },
+    {
+      "order_id": "SYNTHETIC-2",
+      "supplier": "Funduino",
+      "ordered_date": "2026-10-26",
+      "arrival_date": "2026-10-27",
+      "shipping_paid_eur": 2.5,
+      "other_paid_eur": 0,
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ],
+      "notes": null,
+      "items": [
+        {
+          "product": "Funduino F23107397 MPU6050 module",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "Funduino F23108007 JR-Futaba extension, 10 cm",
+          "quantity_ordered": 6,
+          "quantity_received": 6,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        }
+      ]
+    },
+    {
+      "order_id": "SYNTHETIC-3",
+      "supplier": "Reichelt",
+      "ordered_date": "2026-10-26",
+      "arrival_date": "2026-10-27",
+      "shipping_paid_eur": 2.5,
+      "other_paid_eur": 0,
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ],
+      "notes": null,
+      "items": [
+        {
+          "product": "Delock 18309 self-adhesive TPE pads, 10 x 3 mm, pack50",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        }
+      ]
+    },
+    {
+      "order_id": "SYNTHETIC-4",
+      "supplier": "Schraubenking",
+      "ordered_date": "2026-10-26",
+      "arrival_date": "2026-10-27",
+      "shipping_paid_eur": 2.5,
+      "other_paid_eur": 0,
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ],
+      "notes": null,
+      "items": [
+        {
+          "product": "Schraubenking P010265 M2 x 8 PH DIN7985 zinc-plated steel 4.8, pack100",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "Schraubenking P003474 M2 DIN934 zinc-plated steel class8 nuts, pack100",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "Schraubenking P004198 M2 DIN125 A2 washers 2.2 x 5 x 0.3 mm, pack100",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        }
+      ]
+    },
+    {
+      "order_id": "SYNTHETIC-5",
+      "supplier": "Selected servo supplier; package confirmation pending",
+      "ordered_date": "2026-10-26",
+      "arrival_date": "2026-10-27",
+      "shipping_paid_eur": 2.5,
+      "other_paid_eur": 0,
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ],
+      "notes": null,
+      "items": [
+        {
+          "product": "6 matching horns + 6 servo shaft retaining screws",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        }
+      ]
+    },
+    {
+      "order_id": "SYNTHETIC-6",
+      "supplier": "Servo/print supplier; interface confirmation pending",
+      "ordered_date": "2026-10-26",
+      "arrival_date": "2026-10-27",
+      "shipping_paid_eur": 2.5,
+      "other_paid_eur": 0,
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ],
+      "notes": null,
+      "items": [
+        {
+          "product": "12 horn-to-frame screws and 12 matching washers",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        }
+      ]
+    },
+    {
+      "order_id": "SYNTHETIC-7",
+      "supplier": "Classmate printing (user arranged)",
+      "ordered_date": "2026-10-26",
+      "arrival_date": "2026-10-27",
+      "shipping_paid_eur": 2.5,
+      "other_paid_eur": 0,
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ],
+      "notes": null,
+      "items": [
+        {
+          "product": "PETG full frame:7finished parts, VAT, packaging and delivery to25337",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        },
+        {
+          "product": "PETG fit sample:2interface pieces, VAT and separate delivery",
+          "quantity_ordered": 1,
+          "quantity_received": 1,
+          "paid_line_eur": 1.25,
+          "accessories": "SYNTHETIC fixture only",
+          "evidence_files": []
+        }
+      ]
+    }
+  ],
+  "hardware_reported": {
+    "servo_id": "SYNTHETIC-ONLY",
+    "spline": "Synthetic unspecified",
+    "retainer_thread": "Synthetic unspecified",
+    "retainer_length_mm": 3,
+    "horn_hole_radii_mm": [
+      7
+    ],
+    "frame_screw_thread": "Synthetic unspecified",
+    "frame_screw_length_mm": 4
+  },
+  "printing_reported": {
+    "revision": "S6-PETG-pad-r2-pico2",
+    "material": "PETG",
+    "layer_height_mm": 0.2,
+    "walls": 3,
+    "infill_percent": 25,
+    "finishing": "Synthetic fixture",
+    "deviations": "None in fictitious fixture",
+    "evidence_files": [
+      "SYNTHETIC.txt"
+    ],
+    "samples": [
+      {
+        "file": "01_FIT_SAMPLE/ear_cradle.stl",
+        "sha256": "67222ed4048de778daac0139315220df5be1663fd3297086c6fb65f526f1c778",
+        "received": true,
+        "print_date": "2026-10-27",
+        "checks": {
+          "servo_insertion": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "ear_holes": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "mounting_stack": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "wire_exit": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "usable_holes": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "visible_print_damage": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          }
+        }
+      },
+      {
+        "file": "01_FIT_SAMPLE/horn_plate.stl",
+        "sha256": "9d6ad9ab4db1a3c0fbb0f7516dc9da7e0c05d6ece2a139de2305184b8b30156e",
+        "received": true,
+        "print_date": "2026-10-27",
+        "checks": {
+          "horn_attachment": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "retaining_screw_access": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "usable_holes": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          },
+          "visible_print_damage": {
+            "status": "passed",
+            "measurements_mm": {
+              "synthetic_dimension": 3
+            },
+            "notes": "SYNTHETIC: not physically observed",
+            "evidence_files": [
+              "SYNTHETIC.txt"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "sample_checks": [
+    {
+      "sample": "01_FIT_SAMPLE/ear_cradle.stl",
+      "check": "servo_insertion",
+      "status": "passed",
+      "measurements_mm": {
+        "synthetic_dimension": 3
+      },
+      "notes": "SYNTHETIC: not physically observed",
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ]
+    },
+    {
+      "sample": "01_FIT_SAMPLE/ear_cradle.stl",
+      "check": "ear_holes",
+      "status": "passed",
+      "measurements_mm": {
+        "synthetic_dimension": 3
+      },
+      "notes": "SYNTHETIC: not physically observed",
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ]
+    },
+    {
+      "sample": "01_FIT_SAMPLE/ear_cradle.stl",
+      "check": "mounting_stack",
+      "status": "passed",
+      "measurements_mm": {
+        "synthetic_dimension": 3
+      },
+      "notes": "SYNTHETIC: not physically observed",
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ]
+    },
+    {
+      "sample": "01_FIT_SAMPLE/ear_cradle.stl",
+      "check": "wire_exit",
+      "status": "passed",
+      "measurements_mm": {
+        "synthetic_dimension": 3
+      },
+      "notes": "SYNTHETIC: not physically observed",
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ]
+    },
+    {
+      "sample": "01_FIT_SAMPLE/ear_cradle.stl",
+      "check": "usable_holes",
+      "status": "passed",
+      "measurements_mm": {
+        "synthetic_dimension": 3
+      },
+      "notes": "SYNTHETIC: not physically observed",
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ]
+    },
+    {
+      "sample": "01_FIT_SAMPLE/ear_cradle.stl",
+      "check": "visible_print_damage",
+      "status": "passed",
+      "measurements_mm": {
+        "synthetic_dimension": 3
+      },
+      "notes": "SYNTHETIC: not physically observed",
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ]
+    },
+    {
+      "sample": "01_FIT_SAMPLE/horn_plate.stl",
+      "check": "horn_attachment",
+      "status": "passed",
+      "measurements_mm": {
+        "synthetic_dimension": 3
+      },
+      "notes": "SYNTHETIC: not physically observed",
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ]
+    },
+    {
+      "sample": "01_FIT_SAMPLE/horn_plate.stl",
+      "check": "retaining_screw_access",
+      "status": "passed",
+      "measurements_mm": {
+        "synthetic_dimension": 3
+      },
+      "notes": "SYNTHETIC: not physically observed",
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ]
+    },
+    {
+      "sample": "01_FIT_SAMPLE/horn_plate.stl",
+      "check": "usable_holes",
+      "status": "passed",
+      "measurements_mm": {
+        "synthetic_dimension": 3
+      },
+      "notes": "SYNTHETIC: not physically observed",
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ]
+    },
+    {
+      "sample": "01_FIT_SAMPLE/horn_plate.stl",
+      "check": "visible_print_damage",
+      "status": "passed",
+      "measurements_mm": {
+        "synthetic_dimension": 3
+      },
+      "notes": "SYNTHETIC: not physically observed",
+      "evidence_files": [
+        "SYNTHETIC.txt"
+      ]
+    }
+  ],
+  "provisional_drawing_comparisons_mm": {
+    "horn_slot_radius_interval": [
+      5.5,
+      12.5
+    ],
+    "horn_slot_width": 2.4,
+    "ear_thickness_estimate": 1.4
+  },
+  "physically_verified": false,
+  "manufacturing_approved": false,
+  "budget_cleared": false,
+  "gates_updated": false,
+  "limits": [
+    "Fit assertions are human-reported evidence awaiting review; hashes do not establish truth.",
+    "Drawing dimensions are provisional comparisons, not invented fit tolerances.",
+    "No automatic ledger, geometry, calibration, purchase or release update.",
+    "Incomplete receipts never establish complete delivered cost; unknown amounts are not zero.",
+    "Synthetic examples are not arrivals, purchases, measurements or fit evidence."
+  ]
+}

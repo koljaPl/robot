@@ -1,7 +1,7 @@
 # From Simulation to Reality: How does a robot learn?
 
 Generated from source by `python tools/build_handoff.py`. Do not edit HANDOFF.md.
-Plan/revision date2026-10-26; individual evidence retains its original date.
+Plan/revision date2026-10-27; individual evidence retains its original date.
 Source files, ledgers and evidence states take precedence.
 Short purchase/build plan for humans and AI: [SUMMARY.md](../SUMMARY.md).
 Authoritative root plan, dependencies and completion gates: [PLAN.md](../PLAN.md).
@@ -270,6 +270,12 @@ python tools/package_project.py
 ```
 
 ## 16. Calibration procedure for the real robot
+
+{{TEXT:docs/RECEIVING.md}}
+
+{{TEXT:docs/RECEIVING_CHECKLIST.md}}
+
+{{CODE:tools/review_receiving.py}}
 
 {{TEXT:docs/CALIBRATION.md}}
 

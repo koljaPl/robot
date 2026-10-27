@@ -1,0 +1,31 @@
+{
+  "expected_exit": 1,
+  "actual_exit": 1,
+  "report": {
+    "scenario": "commercial_print",
+    "status": "OVER BUDGET",
+    "known_delivered_subtotal_eur": "106.49",
+    "remaining_for_all_unknowns_eur": "-6.49",
+    "confirmed_minimum_shortfall_eur": "6.49",
+    "total_price_eur": null,
+    "pending_prices": [
+      "6 matching horns + 6 servo shaft retaining screws",
+      "12 horn-to-frame screws and 12 matching washers",
+      "PETG full frame:7finished parts, VAT, packaging and delivery to25337",
+      "PETG fit sample:2interface pieces, VAT and separate delivery"
+    ],
+    "unresolved_checks": [
+      "All required full-frame/sample/finishing/horn costs and stock unresolved; unknowns never zero",
+      "Six-unit Waveshare stock and actual supplied horn/shaft screw contents",
+      "3.3V PWM threshold, branch/contact current ratings and PSU droop still need bench testing",
+      "Final complete delivery to25337 incl every sample shipment; no bookings/orders/messages",
+      "Fit/layer strength/pad friction and adhesion require physical measurements",
+      "Classmate printing accepted by user; exact cost/finishing/delivery accounting unknown. Financial gate remains separate from completed design/provider decision.",
+      "Active selected basket is over cap; a candidate subtotal is not its complete delivered quotation; no order",
+      "Exact Waveshare batch horns/retainers/screw/ear measurements and interface sample fit",
+      "Current exact-file print/support/finishing/sample/delivery prices missing",
+      "Physical layer strength, continuous clearances, tie/connector routing and pad grip not verified"
+    ],
+    "purchase_cleared": false
+  }
+}

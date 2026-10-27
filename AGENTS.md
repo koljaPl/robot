@@ -90,11 +90,11 @@ python tools/prepare_print_order.py  # two quotation ZIPs; never manufacturing a
 - `docs/SENSITIVITY.md`:29 one-factor cases per old/corrected identity;55tests pass.
   Physical offsets now enter actuator bias, never clipped away at command limits.
   Nominal unchanged; all12 ±1° offset probes lose steps.73credited steps raw-audited.
-- Latest full suite:186passes (2026-10-26 response review);55above is
+- Latest full suite:238passes (2026-10-27 receiving review);55above is
   the earlier offset checkpoint. Expanded task IDs/gates: root `PLAN.md`.
 - WP2 intake/review: `tools/validate_measurement.py`; validation uses --no-fit.
 - Locked-fit reports/synthetic demo: docs/RESPONSE_REVIEW.md; never auto-approve calibration.
-  Never approve calibration automatically; synthetic data remains synthetic.
+- Receiving: docs/RECEIVING.md; physical receipts/photos/reports only in unarchived local_records.
 - Manual preview/control and measured-baseline parity now locally verified; hardware pending.
 - Next AI: validate actual receipts/fit/bench records when supplied; otherwise keep gates closed.
 - Firmware build instructions/pins: firmware/README.md; no flash/arm, tuning or new PPO.

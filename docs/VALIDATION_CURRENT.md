@@ -1,6 +1,21 @@
-# Current local verification — 2026-10-26, S6-PETG-pad-r2
+# Current local verification — 2026-10-27, S6-PETG-pad-r2-pico2
 
-## Servo-response review — latest2026-10-26
+## Receiving / sample review — latest2026-10-27
+
+- Version1 blank record, private evidence intake, exact source/sample identities,
+  per-order payment reconciliation, unknown-cost/partial receipt and failed-fit reports.
+- **52focused /238full tests passed** (21.07s full):
+  [focused](validation/2026-10-27/receiving_review/pytest_focused.txt),
+  [full](validation/2026-10-27/receiving_review/pytest_full.txt).
+- Four explicitly synthetic CLI reports returned0/2/2/2; no actual arrivals,
+  paid costs, measured dimensions or fit results are inferred from them.
+- Packaging excludes local receiving folders, symlinks and private-report marker trees.
+  Model/control685e3802, procurement, prints, firmware and all five gates unchanged.
+- [Receiving guide](RECEIVING.md), [checklist](RECEIVING_CHECKLIST.md),
+  [evidence/reproduction](validation/2026-10-27/receiving_review/README.md).
+  Next physical input: actual servo/accessories, receipts and the two fit samples.
+
+## Servo-response review — previous2026-10-26
 
 - Locked first-order fit predicted separate synthetic trials without fitting validation
   data. Pre-step-only baseline, condition/shared-evidence reporting, CSV/PNG/JSON

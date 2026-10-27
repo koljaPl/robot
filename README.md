@@ -34,9 +34,11 @@ Hardwarezugriff benötigt ausdrücklich `--execute`.
 [Messdatenprüfung](docs/MEASUREMENT_INTAKE.md) und [Antwortkurvenvergleich](docs/RESPONSE_REVIEW.md)
 sind implementiert; separate Prüfdaten ändern die Anpassungsparameter nicht. Rechnerischer
 Budgetnachweis bleibt separat offen; keine erfundenen Druckkosten.
+[Wareneingang/Passproben](docs/RECEIVING.md) und die [kurze Checkliste](docs/RECEIVING_CHECKLIST.md)
+sind vorbereitet; echte Belege/Fotos bleiben privat außerhalb des Projektarchivs.
 
 Die vorläufige MuJoCo-Kopie passt zum neuen CAD; geschätzt197.1g.
-Aktueller lokaler Gesamtlauf:186bestandene Tests; kein neues PPO/physisches Ergebnis.
+Aktueller lokaler Gesamtlauf:238bestandene Tests; kein neues PPO/physisches Ergebnis.
 Der2048Schritte-PPO-Smoke zeigt **kein gelerntes Gehen**; Skriptreferenzen werden separat bewertet.
 Alte Modelle/UF2bleiben historisch. [Prüfstand](docs/VALIDATION_CURRENT.md).
 Eine neue [Standbein-/Schrittdiagnose](docs/STANCE_TRANSFER.md) erreicht einen

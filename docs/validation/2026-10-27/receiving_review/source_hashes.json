@@ -1,0 +1,30 @@
+{
+  "tools/review_receiving.py": {
+    "sha256": "3bbf42a1fb4eda5d3852c0449fac2321d94c2eaea5576cacef27dc3852220775",
+    "snapshot": "source/tools/review_receiving.py"
+  },
+  "tools/package_project.py": {
+    "sha256": "f88295b0c6f88e2083f5d83c488478ebecaa75702660d425f5003ef745e08e58",
+    "snapshot": "source/tools/package_project.py"
+  },
+  "tests/test_receiving_review.py": {
+    "sha256": "91bf980cc280432a5f2d737c9557f82704d4369c98e0d9f9fc4af5deaf6b19fd",
+    "snapshot": "source/tests/test_receiving_review.py.txt"
+  },
+  "docs/templates/receiving.example.json": {
+    "sha256": "79aaeaaa3483102e6c662b6314a705dc59f472bcbf397f9338b364f18aebc059",
+    "snapshot": "source/docs/templates/receiving.example.json"
+  },
+  "docs/RECEIVING.md": {
+    "sha256": "0c6e4973211b059ba4b3eb679b2d251bab47301cad54aae4f092290633f4e52d",
+    "snapshot": "source/docs/RECEIVING.md"
+  },
+  "docs/RECEIVING_CHECKLIST.md": {
+    "sha256": "0a294ec3a9129ae6578fc98535f00c4511c5437ccd4a1342a1541c7310c1c38a",
+    "snapshot": "source/docs/RECEIVING_CHECKLIST.md"
+  },
+  "docs/PROCUREMENT_ACTIONS.md": {
+    "sha256": "64ba8dd33768f3c87e7b20aefdb00746f9a4f47ce7bb615a7e0e4577b490ac50",
+    "snapshot": "source/docs/PROCUREMENT_ACTIONS.md"
+  }
+}

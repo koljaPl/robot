@@ -1,6 +1,6 @@
 # Hardware-first execution roadmap
 
-Updated **2026-10-26**. This is the short map; the
+Updated **2026-10-27**. This is the short map; the
 [complete execution plan](../PLAN.md) contains all phases, completed work,
 WP1–WP11 procedures, owners, affected files, acceptance evidence and failure decisions.
 [STATUS](STATUS.md) records evidence; ledgers remain authoritative.
@@ -13,8 +13,8 @@ provider-selection research and starts WP2, without claiming physical fit or a n
 budget pass. [Print folder](../print_for_classmate/00_START_HERE.md).
 Measurement-intake/provenance checker implemented; manual six-joint utility and
 measured-baseline calibration parity and Pico2 preparation firmware now locally verified.
-Initial bench safeguards and locked-fit response review locally verified;186tests pass;
-no new PPO. [Response review](RESPONSE_REVIEW.md).
+Initial bench safeguards and response/receiving review locally verified;238tests pass;
+no new PPO. [Response review](RESPONSE_REVIEW.md), [receiving checklist](RECEIVING.md).
 [Firmware build](../firmware/README.md), [initial bench guide](BENCH.md).
 
 ## Previous checkpoint (2026-10-25; historical costs/identity)

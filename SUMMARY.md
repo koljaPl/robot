@@ -1,6 +1,6 @@
 # S6 robot — short plan for you and the AI
 
-Updated **2026-10-26**. Costs:[procurement.json](procurement.json). Physical inputs:[physical_spec.json](physical_spec.json). **Design/printing arrangement accepted by you; physical fit/tests not yet reported.**
+Updated **2026-10-27**. Costs:[procurement.json](procurement.json). Physical inputs:[physical_spec.json](physical_spec.json). **Design/printing arrangement accepted by you; physical fit/tests not yet reported.**
 
 **Design and printing-selection phase: COMPLETE by your confirmation (2026-10-26).**
 Your classmate will print the parts; exact price/transport remain unknown, not zero.
@@ -12,8 +12,8 @@ frame parts, each1× after fit. German instructions, STL dimensions/hashes and d
 are included. No combined duplicate plate, printed horns or TPU soles.
 
 **WP2 software locally verified:** manual six-joint previews/control and measured
-HOME/untrained calibration parity, Pico2 build, bench safeguards and response review
-implemented;186tests pass. Hardware
+HOME/untrained calibration parity, Pico2 build, bench safeguards and response/receiving review
+implemented;238tests pass. Hardware
 operation remains untested. **Ordering started—reported by you**; exact items,
 quantities, paid prices and arrival states remain unknown until you supply them.
 Root [PLAN.md](PLAN.md) is the full living plan and is updated after each work chunk.
@@ -117,7 +117,10 @@ physical fit and calibration are not claimed. [Full reference](docs/HANDOFF.md).
 USB requires `--execute`; faults/deadlines stop and logs retain hashes. No hardware test claimed.
 **Response review:** [locked-fit plots on separate trials](docs/RESPONSE_REVIEW.md);
 synthetic demo available now, actual shaft measurements still required.
-**Next AI work:** validate real order/arrival and fit/bench records when supplied; no PPO.
+**Receiving:** [printable checklist](docs/RECEIVING_CHECKLIST.md) and
+[offline report/template](docs/RECEIVING.md) are ready; keep actual receipts/photos
+in unarchived local_records. Unknown costs/arrivals stay unknown.
+**Next AI work:** review real order/arrival and sample/bench records when supplied; no PPO.
 [Manual tool](docs/MANUAL_CONTROL.md) defaults to offline preview; measured validated
 calibration is required for explicit hardware operation. [Data intake](docs/MEASUREMENT_INTAKE.md).
 The model/control identity is unchanged; new source-only reference preserves prior

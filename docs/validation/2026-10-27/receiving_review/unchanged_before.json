@@ -1,0 +1,20 @@
+{
+  "procurement.json": "f4f9ac21a4599f5dc56c989cb077809ccbfcf8c19e6b3028f7533c3ca4bb80a8",
+  "physical_spec.json": "e2e66dfc8e39f907ba6d410bbf6b3cde40886730284309b207b045df4bcf32a6",
+  "robot.xml": "859065cffb998e3f7f8ab6cd736937882b636949b4ffbba78e4b7dce91ec3917",
+  "robot_config.py": "32e902f53dd29930e7958d8acac2aaaf9c04edcf84f6e5273294be817de52bf4",
+  "servo_control.py": "f21b24e4e6a643c4b1f185269ff5f733f59a5b615741bf97f99a3035a7a1061c",
+  "imu_observation.py": "dbb1111101c28835850661fff1c4e17dd657a99f1f92686593d8a49bbb0faf00",
+  "humanoid_env.py": "527f548ebc2d630e83c5bb327aced2adcc21947479940f4b5a394e6087ccee3c",
+  "gait_metrics.py": "32ddf9e9f0935267d6a75fc5cacf4f4122c48de8de3f6d68df9958d2bb544fdc",
+  "hardware_interface.py": "f72ad2b66aca61f439b58c5b3d6e5c9f7c637b96ccae69a33f9c242f454ac874",
+  "calibration.py": "a57a04fbe84f80c0b364ffea42546521c4e99d854515eaed55cd6e55527978fa",
+  "firmware/main.cpp": "e73eb84ed965957e2b109b81b8d49e5a26d9c5ed3f6b6027bfd081022575e85c",
+  "firmware/control.h": "dfc0dec9642df663dca6410b8414faf16de480736c8c62fa2fd2da166f9c7200",
+  "firmware/CMakeLists.txt": "b53b7bf7c1e71611ff6b362fc4a3e19a654d5bf4bf46f2c06839b6d7a6fd85e6",
+  "docs/gates.json": "055b4af340e15e8947ec06282c8681d1881ca79cfee78a71c3ce5d1809694dd2",
+  "print_for_classmate/manifest.json": "10d2bcc933927e925c2954d6c109c397c25b1042672f2679f0c9c183f2e6d31a",
+  "print_for_classmate.zip": "8452232164649d1cedc6fe5ebf7bf057498a54d72ed2e64e8a0f926b3351f91b",
+  "docs/validation/2026-10-26/pico2_crossbuild/verified/s6_bench.elf": "68f96c82f360f6f4cf397b608bc862aacae2b63b375d5c821fa8411736c5dc3a",
+  "docs/validation/2026-10-26/pico2_crossbuild/verified/s6_bench.uf2": "2f404167d64db67125f5e5a0d2a5b65b33c8691314001095d3fb860657d730d6"
+}

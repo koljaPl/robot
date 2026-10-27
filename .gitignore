@@ -4,3 +4,5 @@ __pycache__/
 runs/
 *.pyc
 build/
+local_records/
+receiving_records/

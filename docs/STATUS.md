@@ -1,8 +1,8 @@
-# Current project status — 2026-10-26
+# Current project status — 2026-10-27
 
 **Design/printing selection COMPLETE by user2026-10-26.** Classmate printing is
 accepted; exact price unknown/excluding delivery. Selected board now Pico2.
-Next phase WP2 has begun; this is not physical/manufacturing/financial verification.
+Independent WP2 preparation is locally verified; this is not physical/manufacturing/financial verification.
 Separate print folder: [instructions](../print_for_classmate/00_START_HERE.md),
 [ZIP](../print_for_classmate.zip). [Decision record](decisions/2026-10-26-printing-pico2.json).
 
@@ -17,7 +17,7 @@ active route is classmate PETG, bare Pico2 and eight ordinary grip pads.
 | Design / printing selection | complete, user accepted | Classmate printing selected; Pico2 adopted. Price unknown; numerical budget remains separate/unverified (106.49before unknowns) |
 | CAD / quotation package | implemented, locally verified partial | Seven connected watertight frames, two-piece fit sample, drawings/manifests;0modeled collisions/55poses,5unknown interface groups; NOT manufacturing-approved |
 | Shared control / firmware | locally verified partial | Protocol/native tests and current Pico2 cross-build pass; invalid calibration, full-policy arm disabled. Older images historical; physical timing absent |
-| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite186passes |
+| Provisional twin / Gym | locally verified | Estimated197.053g; matching barePico/pad ownership; no fake mechanical stops or privileged policy inputs;latest full suite238passes |
 | Frozen scripted reference | locally verified partial | Four qualifying steps/3alternations,6.60cm torso and4.39cm gait distance in30s;30cm target fails.29one-factor cases show fragile guessed physics |
 | PPO / evaluation | historical local evidence | Prior2048-step smoke/reload:0walking successes/0gait. All saved policies now incompatible; no new PPO. Older49152-step pilot also failed |
 | Physical build / calibration / transfer | planned, blocked | User ordering started; arrivals/measurements unreported. Bench/fit procedures prepared |
@@ -45,7 +45,25 @@ including r2 smoke. Current Pico2 preparation ELF/UF2 is locally cross-built wit
 invalid calibration; no physical test. Never relabel old images. Measured calibration
 and reviewed physical checks remain required before policy operation.
 
-## Servo-response review — latest completed work
+## Receiving / sample review — latest completed work
+
+- Blank source-linked record, printable checklist and offline reviewer implemented.
+  Actual dates/quantities/payments stay null; no arrivals or fit were invented.
+- Reports keep shared shipping once per order, quotes separate from actual known
+  payments, and complete delivered cost unknown. Sample/manifest/source hashes,
+  measurements/photos, missing checks and reported failures retained for human review.
+- Physical inputs/reports/evidence refused in packaged directories; local_records
+  ignored/excluded; private-session marker provides an additional archive exclusion.
+- **52focused /238full tests pass** (21.07s full). Four synthetic CLI demonstrations
+  returned expected exit codes; no synthetic result becomes physical approval.
+  [Guide](RECEIVING.md), [checklist](RECEIVING_CHECKLIST.md),
+  [evidence](validation/2026-10-27/receiving_review/README.md).
+- Delivery source/link/allowlist checks passed;19handoff sections contain current code.
+  [Initial delivery check](validation/2026-10-27/receiving_review/initial_delivery_checks.json).
+- Model/control, firmware ELF/UF2, print ZIP, procurement and all five gates unchanged.
+  Next: actual servo/accessories and two samples; verify physical records when supplied.
+
+## Servo-response review — previous completed work
 
 - One fitting trial supplies locked delay/tau/gain; separate validation trials never
   refit. Baselines use pre-step samples only; plots/residual CSV/metrics/hashes exported.
@@ -155,8 +173,8 @@ All five [release gates](gates.json) remain false. Software STOP is not power is
 
 ## Exact next task
 
-**AI:** review actual receipt/arrival, fit-sample and one-servo/IMU bench records
-when supplied; preserve provenance and keep gates closed until evidence passes.
+**AI:** review actual receipt/arrival and fit-sample records with the offline
+[receiving tool](RECEIVING.md), plus one-servo/IMU bench records when supplied; preserve provenance and keep gates closed until evidence passes.
 Pico2 preparation build complete locally; no automatic flash/arm or extra PPO.
 **Student/classmate:** receive/record exact ordered items, print/test2samples with
 actual servo/horn/screws, then7frames if fit passes; bench, weigh and calibrate.

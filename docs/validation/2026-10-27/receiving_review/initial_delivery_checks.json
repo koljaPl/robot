@@ -1,0 +1,13 @@
+{
+  "state": "locally_verified_only",
+  "protected_files_unchanged": 18,
+  "configuration": "685e3802999f8c9f72abbe119b17377380f9a41f13eeea32953432b17c153c88",
+  "local_links_checked": 344,
+  "handoff_sections": 19,
+  "exact_code_inclusions": 29,
+  "archive_members": 1963,
+  "archive_sources_equal": true,
+  "print_zip_unchanged": true,
+  "physical_gates": false,
+  "archive_stage": "Initial verification before final plan/delivery log refresh; rerun verify_delivery.py on final archive"
+}
