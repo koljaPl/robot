@@ -2,6 +2,8 @@
 
 ## Einstieg und aktueller Stand
 
+I’ve ordered everything!
+
 Der kurze Gesamtplan für Menschen und KI steht in [SUMMARY.md](SUMMARY.md).
 KI/Entwickler lesen danach [AGENTS.md](AGENTS.md) und [Status](docs/STATUS.md)
 und [Roadmap](docs/ROADMAP.md). Die [generierte Übergabe mit19Abschnitten](docs/HANDOFF.md)
